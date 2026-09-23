@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adobe Express for Education - Student Creative Studio</title>
+  <meta name="description" content="Dedicated Student Studio for Adobe Express: 12-month creative curriculum challenges, video tutorials, and project submissions.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Dedicated Student Header (Zero Teacher Links) -->
+  <header class="student-header">
+    <div class="header-inner">
+      <div class="brand-group">
+        <div class="adobe-logo">A</div>
+        <div class="brand-text">
+          <h1 id="siteTitle">Adobe Express for Education</h1>
+          <p id="tagline">Student Creative Studio</p>
+        </div>
+      </div>
+
+      <!-- Bilingual Language Switcher -->
+      <div class="lang-switch" id="langSwitcher" role="button" tabindex="0" title="Switch Language / भाषा बदलें">
+        <span class="lang-opt active" data-lang="en">EN</span>
+        <span class="lang-opt" data-lang="hi">हिं</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Student Canvas -->
+  <main class="student-canvas">
+    <div class="hero-box">
+      <h2 id="studentHeading">Student Creative Activity Studio</h2>
+      <p id="studentSubheading">12 months of curriculum-aligned creative challenges. Select your month, follow the video tutorial, design in Adobe Express, and submit!</p>
+    </div>
+
+    <!-- 4-Step Flow Bar -->
+    <div class="flow-bar" id="flowBar"></div>
+
+    <!-- Month Selection -->
+    <div style="margin-bottom: 12px;">
+      <span style="font-size: 0.85rem; font-weight: 800; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.05em;">
+        Select Month (Use ← / → keyboard arrows to switch):
+      </span>
+    </div>
+
+    <div class="pills-bar" id="pillsContainer" role="tablist"></div>
+
+    <!-- Active Month Activity Card -->
+    <div class="active-panel" id="activeCard" role="tabpanel"></div>
+  </main>
+
+  <footer class="student-footer">
+    <p>© Adobe Express for Education • Certified Student Learning Program</p>
+  </footer>
+
+  <div id="toastAnchor"></div>
+
+  <script src="data.js"></script>
+  <script src="student.js"></script>
+</body>
+</html>

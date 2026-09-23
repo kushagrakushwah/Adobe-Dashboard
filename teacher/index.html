@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adobe Express for Education - Educator & Curriculum Hub</title>
+  <meta name="description" content="Dedicated Educator Portal for Adobe Express: Adobe ID credentials, accredited CPD 1-5 modules, and DCAIS curriculum frameworks.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Dedicated Teacher Header (Zero Student Links) -->
+  <header class="teacher-header">
+    <div class="header-inner">
+      <div class="brand-group">
+        <div class="adobe-logo">A</div>
+        <div class="brand-text">
+          <h1 id="siteTitle">Adobe Express for Education</h1>
+          <p id="tagline">Educator & Curriculum Hub</p>
+        </div>
+      </div>
+
+      <!-- Bilingual Language Switcher -->
+      <div class="lang-switch" id="langSwitcher" role="button" tabindex="0" title="Switch Language / भाषा बदलें">
+        <span class="lang-opt active" data-lang="en">EN</span>
+        <span class="lang-opt" data-lang="hi">हिं</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Teacher Canvas -->
+  <main class="teacher-canvas">
+    <div class="hero-box">
+      <h2 id="teacherHeading">Educator Dashboard & Curriculum Hub</h2>
+      <p id="teacherSubheading">Institutional credential management, accredited professional training (CPD 1–5), and DCAIS instructional resources</p>
+    </div>
+
+    <!-- Live Search Filter -->
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchBox" placeholder="Search curriculum, CPD modules, or activities...">
+    </div>
+
+    <!-- Section A: Adobe ID & Password -->
+    <section class="section-panel" id="adobeIdSec">
+      <div class="panel-header-wrap">
+        <h3 class="panel-heading" id="adobeIdTitle">A. Adobe ID & Password Section</h3>
+      </div>
+      <p class="panel-subtext" id="adobeIdDesc">Dedicated credential management, license verification, and institutional authentication guidance for school teachers.</p>
+
+      <div class="notice-banner" id="noticeBox"></div>
+      <div class="action-grid" id="adobeGrid"></div>
+    </section>
+
+    <!-- Section B: CPD 1-5 Modules -->
+    <section class="section-panel" id="cpdSec">
+      <div class="panel-header-wrap">
+        <h3 class="panel-heading" id="cpdTitle">B. CPD – Continuous Professional Development</h3>
+      </div>
+      <p class="panel-subtext" id="cpdDesc">5 progressive, accredited modules designed to equip educators with foundational to advanced digital creativity pedagogy.</p>
+
+      <div class="acc-stack" id="cpdStack"></div>
+    </section>
+
+    <!-- Section C: DCAIS Curriculum -->
+    <section class="section-panel" id="dcaisSec">
+      <div class="panel-header-wrap">
+        <h3 class="panel-heading" id="dcaisTitle">C. DCAIS – Digital Creativity and Innovation Skills</h3>
+      </div>
+      <p class="panel-subtext" id="dcaisDesc">Comprehensive digital curriculum framework, teacher pedagogical manuals, and modular student activity packages.</p>
+
+      <div class="dcais-grid" id="dcaisCoreGrid"></div>
+
+      <h4 style="font-size: 1.3rem; font-weight: 900; margin: 32px 0 16px; color: var(--ink);" id="dcaisTreeTitle">
+        Activities of DCAIS – Modular Breakdown
+      </h4>
+      <div id="dcaisTreeContainer"></div>
+    </section>
+  </main>
+
+  <footer class="teacher-footer">
+    <p>© Adobe Express for Education • Certified Educator Professional Development Program</p>
+  </footer>
+
+  <div id="toastAnchor"></div>
+
+  <script src="data.js"></script>
+  <script src="teacher.js"></script>
+</body>
+</html>

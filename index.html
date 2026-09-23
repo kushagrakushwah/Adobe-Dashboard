@@ -4,16 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adobe Express for Education - Enterprise Portal</title>
-  <meta name="description" content="Official enterprise portal for Adobe Express for Education: Educator accreditation, CPD modules 1-5, DCAIS curriculum, and 12-month student project dashboard.">
+  <meta name="description" content="Official enterprise portal for Adobe Express for Education: Separate dedicated sites for Educators and Students.">
   
-  <!-- Adobe Spectrum Stylesheets -->
   <link rel="stylesheet" href="css/spectrum-tokens.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body data-page="home">
 
-  <!-- Sticky Global App Header -->
   <header class="app-header">
     <div class="header-inner">
       <a href="index.html" class="brand-anchor" aria-label="Adobe Express for Education Home">
@@ -27,12 +25,11 @@
       <div class="header-right">
         <nav class="app-nav" aria-label="Primary Navigation">
           <a href="index.html" class="nav-link-btn active" data-bind="homeLink">Home</a>
-          <a href="teacher.html" class="nav-link-btn" data-bind="teacherLink">Teacher Portal</a>
-          <a href="student.html" class="nav-link-btn" data-bind="studentLink">Student Portal</a>
+          <a href="teacher/" class="nav-link-btn" data-bind="teacherLink">Teacher Portal</a>
+          <a href="student/" class="nav-link-btn" data-bind="studentLink">Student Portal</a>
         </nav>
 
-        <!-- Bilingual Switcher -->
-        <div class="lang-switcher" id="langSwitcher" role="button" tabindex="0" title="Switch Language / भाषा बदलें" aria-label="Toggle language between English and Hindi">
+        <div class="lang-switcher" id="langSwitcher" role="button" tabindex="0" title="Switch Language / भाषा बदलें">
           <span class="lang-btn active" data-lang="en">EN</span>
           <span class="lang-btn" data-lang="hi">हिं</span>
         </div>
@@ -40,24 +37,20 @@
     </div>
   </header>
 
-  <!-- Main Portal Canvas -->
   <main class="app-canvas">
     <section class="hero-section">
       <div class="hero-pill-badge" id="heroBadge">Ministry of Education & Adobe Certified Initiative</div>
       <h1 id="heroTitle">Empowering Every Classroom with Creative Digital Skills</h1>
       <p id="heroSubtitle">A unified enterprise platform providing verified educator credentials, 5 accredited CPD modules, and a 12-month student project studio.</p>
 
-      <!-- Key Platform Metrics -->
-      <div class="stats-grid" id="statsGrid">
-        <!-- Rendered dynamically -->
-      </div>
+      <div class="stats-grid" id="statsGrid"></div>
     </section>
 
-    <!-- Role Decision Grid: TEACHER | STUDENT (Separate Web Pages) -->
+    <!-- Role Decision Grid: Points to completely isolated standalone sites -->
     <div class="portal-decision-grid">
       
       <!-- Teacher Portal Gateway Card -->
-      <a href="teacher.html" class="portal-card" aria-label="Navigate to dedicated Teacher Portal">
+      <a href="teacher/" class="portal-card" aria-label="Navigate to dedicated Teacher Portal site">
         <div class="portal-card-top">
           <div class="portal-icon">👩‍🏫</div>
           <span class="portal-badge" id="tCardBadge">For Educators & Administrators</span>
@@ -65,15 +58,13 @@
         <h2 class="portal-card-title" id="tCardTitle">Teacher Portal</h2>
         <p class="portal-card-desc" id="tCardDesc">Authenticate with your institutional Adobe ID, complete 5 accredited Continuous Professional Development (CPD) modules, and explore the complete DCAIS curriculum repository.</p>
         
-        <ul class="portal-bullets" id="tCardBullets">
-          <!-- Rendered dynamically -->
-        </ul>
+        <ul class="portal-bullets" id="tCardBullets"></ul>
 
-        <div class="portal-card-cta" id="tCardCta">Open Teacher Portal →</div>
+        <div class="portal-card-cta" id="tCardCta">Open Teacher Site →</div>
       </a>
 
       <!-- Student Portal Gateway Card -->
-      <a href="student.html" class="portal-card" aria-label="Navigate to dedicated Student Portal">
+      <a href="student/" class="portal-card" aria-label="Navigate to dedicated Student Portal site">
         <div class="portal-card-top">
           <div class="portal-icon">🎒</div>
           <span class="portal-badge" id="sCardBadge">For Grades 6–12 Students</span>
@@ -81,24 +72,20 @@
         <h2 class="portal-card-title" id="sCardTitle">Student Portal</h2>
         <p class="portal-card-desc" id="sCardDesc">An interactive 12-month creative dashboard. Select your current month, watch step-by-step video tutorials, design in Adobe Express, and submit completed projects.</p>
         
-        <ul class="portal-bullets" id="sCardBullets">
-          <!-- Rendered dynamically -->
-        </ul>
+        <ul class="portal-bullets" id="sCardBullets"></ul>
 
-        <div class="portal-card-cta" id="sCardCta">Open Student Portal →</div>
+        <div class="portal-card-cta" id="sCardCta">Open Student Site →</div>
       </a>
 
     </div>
   </main>
 
-  <!-- Enterprise Footer -->
   <footer class="app-footer">
     <p>© Adobe Express for Education • Certified Digital Skills Program for Schools & Educators</p>
   </footer>
 
   <div id="toastAnchor"></div>
 
-  <!-- Dual Data Provider & App Core -->
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
 </body>
