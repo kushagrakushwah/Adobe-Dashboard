@@ -1,0 +1,101 @@
+/* ==========================================================================
+   Adobe Spectrum Design Tokens (Production SaaS Grade)
+   ========================================================================== */
+
+:root {
+  /* Adobe Express Spectrum Brand Palette */
+  --spectrum-red-900: #850000;
+  --spectrum-red-800: #A80A00;
+  --spectrum-red-700: #C90D00;
+  --spectrum-red-600: #E60F00;
+  --spectrum-red-500: #FA0F00; /* Primary Adobe Express Red */
+  --spectrum-red-400: #FF3B30;
+  --spectrum-red-100: #FFF0F0;
+  --spectrum-red-subtle: rgba(250, 15, 0, 0.08);
+  --spectrum-red-glow: rgba(250, 15, 0, 0.28);
+
+  /* Spectrum Gray Palette */
+  --spectrum-gray-900: #141414; /* Ink / Primary Heading */
+  --spectrum-gray-800: #2C2C2C; /* Body Text */
+  --spectrum-gray-700: #4B4B4B; /* Secondary Text */
+  --spectrum-gray-600: #686868; /* Muted / Sub-descriptions */
+  --spectrum-gray-500: #8E8E8E;
+  --spectrum-gray-400: #BCBCBC;
+  --spectrum-gray-300: #D5D5D5;
+  --spectrum-gray-200: #E6E6E6; /* Borders */
+  --spectrum-gray-100: #F4F4F6; /* Panel / Card Background */
+  --spectrum-gray-50:  #FBFBFD; /* App Page Canvas */
+  --spectrum-white:    #FFFFFF;
+
+  /* Accent Status Colors */
+  --spectrum-blue:   #1473E6;
+  --spectrum-green:  #02854A;
+  --spectrum-purple: #7232DA;
+  --spectrum-amber:  #D97706;
+
+  /* Typography System */
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Type Scale */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 3rem;       /* 48px */
+
+  /* Radii (Spectrum curves) */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 9999px;
+
+  /* Elevation Shadows */
+  --elevation-1: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --elevation-2: 0 4px 12px rgba(0, 0, 0, 0.06), 0 2px 4px rgba(0, 0, 0, 0.03);
+  --elevation-3: 0 10px 28px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04);
+  --elevation-hover: 0 16px 36px rgba(250, 15, 0, 0.12), 0 6px 12px rgba(0, 0, 0, 0.04);
+  --elevation-modal: 0 24px 60px rgba(0, 0, 0, 0.18), 0 8px 18px rgba(0, 0, 0, 0.08);
+
+  /* Animation Timings */
+  --duration-instant: 120ms;
+  --duration-normal:  220ms;
+  --duration-slow:    350ms;
+  --easing-standard:  cubic-bezier(0.16, 1, 0.3, 1);
+  --easing-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-family-base);
+  color: var(--spectrum-gray-900);
+  background-color: var(--spectrum-gray-50);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+:focus-visible {
+  outline: 3px solid var(--spectrum-red-500);
+  outline-offset: 3px;
+}

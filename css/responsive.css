@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Responsive Adaptations & Accessibility Utilities
+   ========================================================================== */
+
+/* Tablet & Mobile Screens (<= 992px) */
+@media (max-width: 992px) {
+  .hero-section h1 {
+    font-size: 2.35rem;
+  }
+  .portal-decision-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .portal-card {
+    padding: 34px 28px;
+  }
+}
+
+/* Mobile Screens (<= 768px) */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+  .header-right {
+    justify-content: space-between;
+    width: 100%;
+  }
+  .app-nav {
+    flex: 1;
+    justify-content: center;
+  }
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  .hero-section p {
+    font-size: 1rem;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .action-card-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .btn-spectrum-primary, .btn-spectrum-secondary {
+    align-self: flex-start;
+  }
+  .active-showcase-panel {
+    padding: 26px 20px;
+  }
+  .showcase-title {
+    font-size: 1.7rem;
+  }
+  .showcase-action-group {
+    flex-direction: column;
+  }
+  .btn-action-tutorial, .btn-action-activity, .btn-action-submit {
+    width: 100%;
+    justify-content: center;
+  }
+  .content-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .dcais-resource-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Reduced Motion Mode for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print Optimization */
+@media print {
+  header.app-header, 
+  .lang-switcher, 
+  .showcase-action-group, 
+  .search-container, 
+  footer.app-footer,
+  #toastAnchor {
+    display: none !important;
+  }
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  .spectrum-panel, .portal-card, .active-showcase-panel {
+    border: 1px solid #CCC !important;
+    box-shadow: none !important;
+    padding: 16px !important;
+  }
+  .accordion-body {
+    display: block !important;
+  }
+}
