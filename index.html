@@ -1,96 +1,96 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adobe Express for Education - Enterprise Portal</title>
-  <meta name="description" content="Official enterprise portal for Adobe Express for Education: Separate dedicated sites for Educators and Students.">
-  
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  
-  <link rel="stylesheet" href="css/spectrum-tokens.css?v=20260924_v3">
-  <link rel="stylesheet" href="css/components.css?v=20260924_v3">
-  <link rel="stylesheet" href="css/responsive.css?v=20260924_v3">
+  <title>Adobe Express for Education - Official Digital Learning Portal</title>
+  <meta name="description" content="Official Adobe Express for Education Portal for Indian Schools: Teacher professional development (CPD 1-5), DCAIS curriculum, and 12-month student project workflows.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body data-page="home">
 
-  <header class="app-header">
-    <div class="header-inner">
-      <a href="index.html" class="brand-anchor" aria-label="Adobe Express for Education Home">
-        <div class="adobe-logo-mark">A</div>
-        <div class="brand-meta">
-          <span class="brand-name" data-bind="siteTitle">Adobe Express for Education</span>
-          <span class="brand-tag" data-bind="tagline">Official Learning & Creative Skills Portal</span>
+  <header class="site-header">
+    <div class="header-container">
+      <a href="https://kushagrakushwah.github.io/Adobe-Dashboard/" class="brand-wrapper" aria-label="Adobe Express for Education Home">
+        <div class="adobe-logo-badge">A</div>
+        <div class="brand-title-wrap">
+          <span class="brand-title" data-bind="siteTitle">Adobe Express for Education</span>
+          <span class="brand-subtitle">Digital Learning Initiative</span>
         </div>
       </a>
       
-      <div class="header-right">
-        <nav class="app-nav" aria-label="Primary Navigation">
-          <a href="index.html" class="nav-link-btn active" data-bind="homeLink">Home</a>
-          <a href="teacher/" class="nav-link-btn" data-bind="teacherLink">Teacher Portal</a>
-          <a href="student/" class="nav-link-btn" data-bind="studentLink">Student Portal</a>
+      <div class="header-controls">
+        <nav class="nav-links" aria-label="Portal Navigation">
+          <a href="https://kushagrakushwah.github.io/Adobe-Dashboard/" class="nav-pill active" data-bind="homeLink">Home</a>
+          <a href="https://kushagrakushwah.github.io/Adobe-Dashboard/teacher/" class="nav-pill" data-bind="teacherLink">Teacher Portal</a>
+          <a href="https://kushagrakushwah.github.io/Adobe-Dashboard/student/" class="nav-pill" data-bind="studentLink">Student Portal</a>
         </nav>
 
-        <div class="lang-switcher" id="langSwitcher" role="button" tabindex="0" title="Switch Language / भाषा बदलें">
-          <span class="lang-btn active" data-lang="en">EN</span>
-          <span class="lang-btn" data-lang="hi">हिं</span>
+        <div class="lang-toggle-btn" id="langToggleBtn" role="button" tabindex="0" title="Switch Language / à¤­à¤¾à¤·à¤¾ à¤¬à¤¦à¤²à¥‡à¤‚" aria-label="Switch Language between English and Hindi">
+          <span class="lang-option active" data-lang="en">EN</span>
+          <span class="lang-option" data-lang="hi">à¤¹à¤¿à¤‚</span>
         </div>
       </div>
     </div>
   </header>
 
-  <main class="app-canvas">
-    <section class="hero-section">
-      <div class="hero-pill-badge" id="heroBadge">Ministry of Education & Adobe Certified Initiative</div>
-      <h1 id="heroTitle">Empowering Every Classroom with Creative Digital Skills</h1>
-      <p id="heroSubtitle">A unified enterprise platform providing verified educator credentials, 5 accredited CPD modules, and a 12-month student project studio.</p>
+  <main class="main-content">
+    <section class="hero-header">
+      <div class="hero-badge" id="homeBadge">Ministry of Education & Adobe Initiative</div>
+      <h1 id="homeTitle">Empowering Classrooms with Creative Digital Skills</h1>
+      <p id="homeSubtitle">Access verified educator resources, structured CPD certifications, and 12-month student project workflows.</p>
 
-      <div class="stats-grid" id="statsGrid"></div>
+      <!-- Stats Banner -->
+      <div class="stats-banner" id="homeStats">
+        <!-- Rendered dynamically from data -->
+      </div>
     </section>
 
-    <!-- Role Decision Grid: Points to completely isolated standalone sites -->
-    <div class="portal-decision-grid">
-      
-      <!-- Teacher Portal Gateway Card -->
-      <a href="teacher/" class="portal-card" aria-label="Navigate to dedicated Teacher Portal site">
-        <div class="portal-card-top">
-          <div class="portal-icon">👩‍🏫</div>
-          <span class="portal-badge" id="tCardBadge">For Educators & Administrators</span>
+    <!-- Role Decision Grid -->
+    <div class="decision-grid">
+      <!-- Teacher Portal Card -->
+      <a href="https://kushagrakushwah.github.io/Adobe-Dashboard/teacher/" class="decision-card" aria-label="Navigate to Teacher Portal">
+        <div class="card-top-row">
+          <div class="decision-icon-badge">ðŸ‘©â€ðŸ«</div>
+          <span class="role-tag" id="tCardTag">For Educators & Mentors</span>
         </div>
-        <h2 class="portal-card-title" id="tCardTitle">Teacher Portal</h2>
-        <p class="portal-card-desc" id="tCardDesc">Authenticate with your institutional Adobe ID, complete 5 accredited Continuous Professional Development (CPD) modules, and explore the complete DCAIS curriculum repository.</p>
+        <h2 class="decision-title" id="tCardTitle">Teacher Portal</h2>
+        <p class="decision-desc" id="tCardDesc">Log in with institutional Adobe ID credentials, enroll in 5 Continuous Professional Development (CPD) modules, and access official DCAIS curriculum manuals.</p>
         
-        <ul class="portal-bullets" id="tCardBullets"></ul>
+        <ul class="feature-bullets" id="tCardBullets">
+          <!-- Rendered dynamically -->
+        </ul>
 
-        <div class="portal-card-cta" id="tCardCta">Open Teacher Site →</div>
+        <div class="decision-cta" id="tCardBtn">Enter Teacher Portal â†’</div>
       </a>
 
-      <!-- Student Portal Gateway Card -->
-      <a href="student/" class="portal-card" aria-label="Navigate to dedicated Student Portal site">
-        <div class="portal-card-top">
-          <div class="portal-icon">🎒</div>
-          <span class="portal-badge" id="sCardBadge">For Grades 6–12 Students</span>
+      <!-- Student Portal Card -->
+      <a href="https://kushagrakushwah.github.io/Adobe-Dashboard/student/" class="decision-card" aria-label="Navigate to Student Portal">
+        <div class="card-top-row">
+          <div class="decision-icon-badge">ðŸŽ’</div>
+          <span class="role-tag" id="sCardTag">For Grades 6â€“12 Students</span>
         </div>
-        <h2 class="portal-card-title" id="sCardTitle">Student Portal</h2>
-        <p class="portal-card-desc" id="sCardDesc">An interactive 12-month creative dashboard. Select your current month, watch step-by-step video tutorials, design in Adobe Express, and submit completed projects.</p>
+        <h2 class="decision-title" id="sCardTitle">Student Portal</h2>
+        <p class="decision-desc" id="sCardDesc">An interactive 12-month creative dashboard. Pick any month to watch expert video tutorials, design directly in Adobe Express, and submit completed assignments.</p>
         
-        <ul class="portal-bullets" id="sCardBullets"></ul>
+        <ul class="feature-bullets" id="sCardBullets">
+          <!-- Rendered dynamically -->
+        </ul>
 
-        <div class="portal-card-cta" id="sCardCta">Open Student Site →</div>
+        <div class="decision-cta" id="sCardBtn">Enter Student Portal â†’</div>
       </a>
-
     </div>
   </main>
 
-  <footer class="app-footer">
-    <p>© Adobe Express for Education • Certified Digital Skills Program for Schools & Educators</p>
+  <footer class="site-footer">
+    <p>Â© Adobe Express for Education â€¢ Certified Digital Skills Program for Schools & Educators</p>
   </footer>
 
-  <div id="toastAnchor"></div>
+  <div id="toastContainer"></div>
 
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
+  <!-- Dual Data Provider Script (Works offline file:// & on web servers) -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
+
