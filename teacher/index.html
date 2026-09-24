@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Educator Hub — Adobe Express for Education</title>
+<title>Educator Hub &mdash; Adobe Express for Education</title>
 <meta name="description" content="Educator workspace for CPD professional development, DCAIS curriculum, classroom resources, and Adobe certification.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23FA0F00'/><text y='.9em' font-size='72' x='12' fill='white' font-weight='900'>T</text></svg>">
@@ -11,7 +11,7 @@
 /* ===== RESET ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F5;color:#1C1C1E;line-height:1.5;min-height:100vh;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F5;color:#1C1C1E;line-height:1.5;min-height:100vh}
 
 /* ===== TOKENS (ADOBE RED & WHITE) ===== */
 :root{
@@ -29,13 +29,13 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 /* ===== HEADER ===== */
 .hdr{
   position:sticky;top:0;z-index:200;
-  background:rgba(255,255,255,.92);
+  background:rgba(255,255,255,.94);
   backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
   border-bottom:1px solid var(--border);
   padding:0 28px;
 }
-.hdr-in{max-width:1160px;margin:0 auto;height:60px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit}
+.hdr-in{max-width:1160px;margin:0 auto;height:62px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit;cursor:pointer}
 .brand-mark{
   width:38px;height:38px;border-radius:10px;
   background:var(--red);color:#FFF;
@@ -58,7 +58,7 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 .hero{
   background:linear-gradient(150deg,#FA0F00 0%,#8B0000 55%,#3D0000 100%);
   color:#FFF;
-  padding:64px 28px 56px;
+  padding:54px 28px 48px;
   position:relative;overflow:hidden;
 }
 .hero::before{
@@ -73,17 +73,17 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
   color:rgba(255,255,255,.9);
   font-size:.74rem;font-weight:700;
   padding:5px 14px;border-radius:999px;
-  margin-bottom:20px;letter-spacing:.03em;
+  margin-bottom:18px;letter-spacing:.03em;
 }
 .hero-tag-dot{width:6px;height:6px;border-radius:50%;background:#FFD60A}
 .hero h1{
-  font-size:clamp(1.8rem,4.5vw,3rem);
-  font-weight:900;letter-spacing:-.035em;line-height:1.15;
-  margin-bottom:14px;max-width:640px;
+  font-size:clamp(1.8rem,4vw,2.8rem);
+  font-weight:900;letter-spacing:-.035em;line-height:1.18;
+  margin-bottom:12px;max-width:680px;
 }
 .hero-sub{
-  font-size:1rem;color:rgba(255,255,255,.78);
-  max-width:520px;line-height:1.65;margin-bottom:36px;
+  font-size:.98rem;color:rgba(255,255,255,.82);
+  max-width:560px;line-height:1.6;margin-bottom:28px;
 }
 .stats-row{
   display:flex;flex-wrap:wrap;
@@ -92,100 +92,154 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
   border-radius:var(--radius);width:fit-content;
   overflow:hidden;
 }
-.stat{padding:16px 28px;text-align:center;border-right:1px solid rgba(255,255,255,.2)}
+.stat{padding:14px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.2)}
 .stat:last-child{border-right:none}
-.stat-n{display:block;font-size:1.6rem;font-weight:900;line-height:1;color:#FFF}
+.stat-n{display:block;font-size:1.5rem;font-weight:900;line-height:1;color:#FFF}
 .stat-l{display:block;font-size:.68rem;font-weight:700;color:rgba(255,255,255,.8);text-transform:uppercase;letter-spacing:.05em;margin-top:4px}
 
-/* ===== MAIN ===== */
-.main{max-width:1160px;margin:0 auto;padding:40px 28px 80px}
+/* ===== MAIN CONTAINER ===== */
+.main{max-width:1160px;margin:0 auto;padding:36px 28px 80px}
 
-/* ===== GUIDE ===== */
+/* ===== GUIDE BAR ===== */
 .guide{
   display:flex;align-items:center;gap:12px;
   background:var(--surface);border:1px solid var(--border);
   border-left:4px solid var(--red);
   border-radius:var(--radius);
-  padding:14px 20px;margin-bottom:32px;
+  padding:14px 20px;margin-bottom:28px;
   box-shadow:var(--shadow-sm);
 }
 .guide-icon{font-size:1.1rem;flex-shrink:0}
 .guide p{font-size:.88rem;color:var(--ink-2);line-height:1.5}
 .guide strong{color:var(--ink)}
 
-/* ===== SECTION GRID ===== */
-.sec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
-
-/* ===== SECTION CARD ===== */
-.sc{
+/* ===== SECTION TILES DASHBOARD GRID ===== */
+.tiles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+.tile-card{
   background:var(--surface);border:1.5px solid var(--border);
-  border-radius:var(--radius-lg);overflow:hidden;
+  border-radius:var(--radius-lg);padding:24px;
+  cursor:pointer;user-select:none;
+  transition:all .22s cubic-bezier(.16,1,.3,1);
   box-shadow:var(--shadow-sm);
-  transition:border-color .2s,box-shadow .2s;
+  display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;overflow:hidden;
 }
-.sc.open{border-color:var(--red);box-shadow:0 8px 32px rgba(250,15,0,.1)}
-.sc-head{
-  display:flex;align-items:center;gap:14px;
-  padding:20px 22px;cursor:pointer;user-select:none;
-  transition:background .18s;
+.tile-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:var(--red);opacity:0;transition:opacity .2s;
 }
-.sc-head:hover{background:var(--red-bg)}
-.sc.open .sc-head{background:var(--red-bg);border-bottom:1.5px solid var(--red-border)}
-.sc-letter{
-  width:44px;height:44px;border-radius:11px;
+.tile-card:hover{
+  border-color:var(--red);transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(250,15,0,.12);
+  background:var(--surface);
+}
+.tile-card:hover::before{opacity:1}
+.tile-top{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
+.tile-letter{
+  width:46px;height:46px;border-radius:12px;
   background:var(--surface-3);border:1.5px solid var(--border);
   display:flex;align-items:center;justify-content:center;
-  font-size:.9rem;font-weight:900;color:var(--ink-3);
+  font-size:1.05rem;font-weight:900;color:var(--ink-2);
   flex-shrink:0;transition:all .2s;font-family:'Georgia',serif;
 }
-.sc.open .sc-letter,.sc-head:hover .sc-letter{background:var(--red);color:#FFF;border-color:var(--red)}
-.sc-info{flex:1;min-width:0}
-.sc-tag{font-size:.64rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}
-.sc.open .sc-tag{color:var(--red)}
-.sc-title{font-size:.97rem;font-weight:800;color:var(--ink);line-height:1.3;margin-bottom:2px}
-.sc-desc{font-size:.77rem;color:var(--ink-3);line-height:1.4}
-.sc-toggle{
-  width:28px;height:28px;border-radius:7px;
-  background:var(--surface-3);border:1.5px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;transition:all .3s;
+.tile-card:hover .tile-letter{background:var(--red);color:#FFF;border-color:var(--red)}
+.tile-info{flex:1;min-width:0}
+.tile-tag{font-size:.65rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+.tile-title{font-size:1.05rem;font-weight:800;color:var(--ink);line-height:1.3;margin-bottom:4px}
+.tile-desc{font-size:.82rem;color:var(--ink-3);line-height:1.45}
+.tile-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:14px;margin-top:14px;border-top:1px solid var(--border);
 }
-.sc.open .sc-toggle,.sc-head:hover .sc-toggle{background:var(--red);border-color:var(--red)}
-.sc-toggle svg{transition:transform .35s cubic-bezier(.16,1,.3,1)}
-.sc.open .sc-toggle svg{transform:rotate(180deg)}
-.sc-toggle path{transition:stroke .2s}
-.sc.open .sc-toggle path,.sc-head:hover .sc-toggle path{stroke:#FFF}
+.tile-hint{font-size:.74rem;color:var(--ink-3);font-weight:600}
+.tile-btn{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--red-bg);color:var(--red);
+  font-size:.78rem;font-weight:800;
+  padding:6px 14px;border-radius:999px;
+  transition:all .18s;border:1px solid var(--red-border);
+}
+.tile-card:hover .tile-btn{background:var(--red);color:#FFF;border-color:var(--red)}
 
-.sc-body{display:none;padding:22px 22px 26px;animation:slideIn .25s ease}
-.sc.open .sc-body{display:block}
-@keyframes slideIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+/* ===== FULL-SCREEN SECTION VIEW ===== */
+.section-full-view{display:none;animation:viewFadeIn .28s ease}
+@keyframes viewFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
-/* ===== NOTICE ===== */
+/* Section Top Bar */
+.sec-nav-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:24px;gap:12px;flex-wrap:wrap;
+}
+.back-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--surface);color:var(--red);
+  border:1.5px solid var(--red);
+  padding:10px 20px;border-radius:999px;
+  font-size:.85rem;font-weight:800;cursor:pointer;
+  transition:all .18s;box-shadow:var(--shadow-sm);
+}
+.back-btn:hover{background:var(--red);color:#FFF;transform:translateX(-2px)}
+.sec-breadcrumb{font-size:.84rem;color:var(--ink-3);font-weight:700}
+.sec-breadcrumb strong{color:var(--ink)}
+
+/* Section Full Header */
+.sec-hero-card{
+  background:var(--surface);border:2px solid var(--red);
+  border-radius:var(--radius-lg);padding:28px 32px;
+  margin-bottom:28px;box-shadow:0 8px 30px rgba(250,15,0,.08);
+  display:flex;align-items:center;gap:20px;
+}
+.sec-hero-badge{
+  width:58px;height:58px;border-radius:16px;
+  background:var(--red);color:#FFF;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;font-weight:900;flex-shrink:0;
+  font-family:'Georgia',serif;
+}
+.sec-hero-body{flex:1;min-width:0}
+.sec-hero-tag{font-size:.7rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.sec-hero-title{font-size:1.6rem;font-weight:900;color:var(--ink);letter-spacing:-.02em;margin-bottom:6px;line-height:1.2}
+.sec-hero-desc{font-size:.92rem;color:var(--ink-2);line-height:1.5}
+
+/* Section Content Container */
+.sec-content-box{
+  background:var(--surface);border:1.5px solid var(--border);
+  border-radius:var(--radius-lg);padding:32px;
+  box-shadow:var(--shadow-sm);margin-bottom:28px;
+}
+
+/* Section Bottom Navigation */
+.sec-bottom-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:20px;border-top:1px solid var(--border);
+  gap:12px;flex-wrap:wrap;
+}
+
+/* ===== REUSABLE COMPONENT STYLES ===== */
 .notice{
   background:var(--red-bg);border:1px solid var(--red-border);
   border-left:4px solid var(--red);
-  border-radius:var(--radius-sm);padding:14px 18px;margin-bottom:20px;
+  border-radius:var(--radius-sm);padding:14px 18px;margin-bottom:24px;
 }
-.notice-t{font-size:.85rem;font-weight:800;color:var(--red);margin-bottom:3px}
-.notice-d{font-size:.8rem;color:#7A0000;line-height:1.5}
+.notice-t{font-size:.86rem;font-weight:800;color:var(--red);margin-bottom:3px}
+.notice-d{font-size:.82rem;color:#7A0000;line-height:1.5}
 
-/* ===== ACTION LIST ===== */
-.al{display:flex;flex-direction:column;gap:10px}
+.al{display:flex;flex-direction:column;gap:12px}
 .ai{
   display:flex;align-items:center;justify-content:space-between;
   background:var(--surface-2);border:1.5px solid var(--border);
-  border-radius:var(--radius);padding:14px 18px;gap:14px;
+  border-radius:var(--radius);padding:16px 20px;gap:16px;
   transition:all .18s;
 }
 .ai:hover{border-color:var(--red);background:var(--surface);box-shadow:0 4px 16px rgba(250,15,0,.08)}
-.ai-l{display:flex;align-items:flex-start;gap:10px;flex:1;min-width:0}
-.ai-dot{width:7px;height:7px;border-radius:50%;background:var(--red);flex-shrink:0;margin-top:6px}
-.ai-t{font-size:.9rem;font-weight:700;color:var(--ink);margin-bottom:2px}
-.ai-d{font-size:.77rem;color:var(--ink-3);line-height:1.4}
+.ai-l{display:flex;align-items:flex-start;gap:12px;flex:1;min-width:0}
+.ai-dot{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0;margin-top:6px}
+.ai-t{font-size:.94rem;font-weight:800;color:var(--ink);margin-bottom:2px}
+.ai-d{font-size:.8rem;color:var(--ink-3);line-height:1.45}
 .ai-r{flex-shrink:0}
 
-/* ===== CPD ACCORDION ===== */
-.acc{display:flex;flex-direction:column;gap:10px}
+/* CPD Accordion Full Screen */
+.acc{display:flex;flex-direction:column;gap:12px}
 .aci{
   border:1.5px solid var(--border);border-radius:var(--radius);
   overflow:hidden;transition:border-color .2s;
@@ -193,118 +247,113 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 .aci.open{border-color:var(--red);box-shadow:0 4px 16px rgba(250,15,0,.08)}
 .ach{
   display:flex;align-items:center;justify-content:space-between;
-  padding:14px 18px;cursor:pointer;
+  padding:16px 20px;cursor:pointer;
   background:var(--surface-2);user-select:none;transition:background .18s;
 }
 .aci.open .ach{background:var(--red-bg);border-bottom:1px solid var(--red-border)}
-.ach-l{display:flex;align-items:center;gap:8px;flex-wrap:wrap;flex:1;min-width:0}
+.ach-l{display:flex;align-items:center;gap:10px;flex-wrap:wrap;flex:1;min-width:0}
 .cpd-code{
   background:var(--red);color:#FFF;
-  font-size:.7rem;font-weight:700;
-  padding:3px 10px;border-radius:999px;
+  font-size:.72rem;font-weight:800;
+  padding:3px 12px;border-radius:999px;
   white-space:nowrap;letter-spacing:.02em;flex-shrink:0;
 }
 .cpd-hrs{
-  background:var(--border);color:var(--ink-2);
-  font-size:.7rem;font-weight:700;
-  padding:3px 10px;border-radius:999px;
+  background:var(--surface-3);color:var(--ink-2);
+  font-size:.72rem;font-weight:700;
+  padding:3px 12px;border-radius:999px;
   white-space:nowrap;flex-shrink:0;
 }
-.cpd-title{font-size:.9rem;font-weight:800;color:var(--ink);line-height:1.3}
-.ach-arr{color:var(--ink-3);font-size:.8rem;transition:transform .3s;flex-shrink:0}
+.cpd-title{font-size:.95rem;font-weight:800;color:var(--ink);line-height:1.3}
+.ach-arr{color:var(--ink-3);font-size:.85rem;transition:transform .3s;flex-shrink:0}
 .aci.open .ach-arr{transform:rotate(180deg);color:var(--red)}
 
-.acb{display:none;padding:18px;background:var(--surface)}
+.acb{display:none;padding:22px;background:var(--surface)}
 .aci.open .acb{display:block}
-.cpd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:10px;margin-bottom:14px}
+.cpd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-bottom:16px}
 .cpd-block{
   background:var(--surface-2);
-  border-left:3px solid var(--red);
-  border-radius:var(--radius-sm);padding:12px 14px;
+  border-left:3.5px solid var(--red);
+  border-radius:var(--radius-sm);padding:14px 16px;
 }
-.cpd-lbl{font-size:.65rem;font-weight:800;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
-.cpd-txt{font-size:.83rem;color:var(--ink-2);line-height:1.5}
-.cpd-actions{display:flex;gap:8px;flex-wrap:wrap;padding-top:14px;border-top:1px solid var(--border)}
+.cpd-lbl{font-size:.68rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.cpd-txt{font-size:.85rem;color:var(--ink-2);line-height:1.55}
+.cpd-actions{display:flex;gap:10px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--border)}
 
-/* ===== BUTTONS ===== */
+/* Buttons */
 .btn{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:999px;font-size:.82rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;white-space:nowrap;transition:all .16s;line-height:1}
 .btn-primary{background:var(--red);color:#FFF;box-shadow:0 2px 8px rgba(250,15,0,.25)}
 .btn-primary:hover{background:var(--red-dk);transform:translateY(-1px)}
 .btn-outline{background:transparent;color:var(--red);border:1.5px solid var(--red)}
 .btn-outline:hover{background:var(--red);color:#FFF}
-.btn-ghost{background:var(--surface-3);color:var(--ink-2);border:1.5px solid var(--border)}
+.btn-ghost{background:var(--surface-2);color:var(--ink-2);border:1.5px solid var(--border)}
 .btn-ghost:hover{border-color:var(--red);color:var(--red);background:var(--red-bg)}
 
-/* ===== RESOURCE GRID ===== */
-.rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+/* Resource Grid */
+.rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
 .rc{
   background:var(--surface-2);border:1.5px solid var(--border);
-  border-radius:var(--radius);padding:18px;
-  transition:all .18s;
+  border-radius:var(--radius);padding:22px;
+  transition:all .18s;display:flex;flex-direction:column;justify-content:space-between;
 }
-.rc:hover{border-color:var(--red);background:var(--surface);box-shadow:0 4px 16px rgba(250,15,0,.08);transform:translateY(-2px)}
+.rc:hover{border-color:var(--red);background:var(--surface);box-shadow:0 6px 20px rgba(250,15,0,.1);transform:translateY(-2px)}
 .rc-badge{
   display:inline-block;
   background:var(--red-bg);color:var(--red);
-  font-size:.65rem;font-weight:800;
-  padding:3px 9px;border-radius:999px;
-  margin-bottom:9px;border:1px solid var(--red-border);
+  font-size:.68rem;font-weight:800;
+  padding:3px 10px;border-radius:999px;
+  margin-bottom:10px;border:1px solid var(--red-border);
   text-transform:uppercase;letter-spacing:.04em;
 }
-.rc h4{font-size:.9rem;font-weight:800;color:var(--ink);margin-bottom:5px;line-height:1.3}
-.rc p{font-size:.8rem;color:var(--ink-2);margin-bottom:14px;line-height:1.5}
+.rc h4{font-size:.98rem;font-weight:800;color:var(--ink);margin-bottom:6px;line-height:1.3}
+.rc p{font-size:.83rem;color:var(--ink-2);margin-bottom:16px;line-height:1.55}
 
-/* ===== CERT PATH ===== */
-.cert-path{display:flex;align-items:flex-start;overflow-x:auto;padding:14px 0 18px;gap:4px;scrollbar-width:none}
-.cert-path::-webkit-scrollbar{display:none}
-.cstep{display:flex;flex-direction:column;align-items:center;min-width:140px;padding:0 8px;text-align:center}
+/* Cert Path */
+.cert-path{display:flex;align-items:flex-start;overflow-x:auto;padding:16px 0 22px;gap:6px}
+.cstep{display:flex;flex-direction:column;align-items:center;min-width:160px;padding:0 8px;text-align:center}
 .ccircle{
-  width:52px;height:52px;border-radius:50%;
+  width:56px;height:56px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  font-size:.82rem;font-weight:900;margin-bottom:10px;border:2.5px solid;line-height:1;
+  font-size:.88rem;font-weight:900;margin-bottom:10px;border:2.5px solid;line-height:1;
 }
 .ccircle.done{background:var(--red-bg);border-color:var(--red);color:var(--red)}
 .ccircle.prog{background:var(--gold-bg);border-color:var(--gold);color:var(--gold)}
 .ccircle.lock{background:var(--surface-3);border-color:var(--border);color:var(--ink-3)}
-.cstep h4{font-size:.84rem;font-weight:800;color:var(--ink);margin-bottom:3px}
-.cstep p{font-size:.73rem;color:var(--ink-3);margin-bottom:8px;line-height:1.4}
-.ctag{font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:999px}
+.cstep h4{font-size:.88rem;font-weight:800;color:var(--ink);margin-bottom:3px}
+.cstep p{font-size:.76rem;color:var(--ink-3);margin-bottom:8px;line-height:1.4}
+.ctag{font-size:.7rem;font-weight:800;padding:3px 12px;border-radius:999px}
 .ctag.done{background:var(--red-bg);color:var(--red);border:1px solid var(--red-border)}
 .ctag.prog{background:var(--gold-bg);color:var(--gold)}
 .ctag.lock{background:var(--surface-3);color:var(--ink-3)}
-.carr{font-size:1rem;color:var(--border);padding:0 2px;margin-top:20px;flex-shrink:0}
+.carr{font-size:1.1rem;color:var(--border);padding:0 4px;margin-top:20px;flex-shrink:0}
 
-/* ===== PROGRESS ===== */
-.plist{display:flex;flex-direction:column;gap:13px}
-.pi-lbl{display:flex;justify-content:space-between;font-size:.84rem;font-weight:700;color:var(--ink);margin-bottom:5px}
+/* Progress Bars */
+.plist{display:flex;flex-direction:column;gap:14px}
+.pi-lbl{display:flex;justify-content:space-between;font-size:.86rem;font-weight:700;color:var(--ink);margin-bottom:5px}
 .pi-pct{color:var(--red);font-weight:900}
-.pbar{height:7px;background:var(--border);border-radius:999px;overflow:hidden}
+.pbar{height:8px;background:var(--border);border-radius:999px;overflow:hidden}
 .pfill{height:100%;background:linear-gradient(90deg,var(--red),#FF6040);border-radius:999px}
-
-/* ===== SECTION LABEL ===== */
-.sec-label{font-size:.88rem;font-weight:800;color:var(--ink);margin:20px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.sec-label{font-size:.92rem;font-weight:800;color:var(--ink);margin:20px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
 
 /* ===== FOOTER ===== */
-footer{background:var(--ink);padding:28px;text-align:center;color:rgba(255,255,255,.35);font-size:.82rem}
+footer{background:var(--ink);padding:28px;text-align:center;color:rgba(255,255,255,.38);font-size:.82rem}
 footer p+p{margin-top:5px}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:760px){
   .hdr{padding:0 18px}
-  .hero{padding:44px 18px 40px}
-  .main{padding:28px 16px 60px}
-  .sec-grid{grid-template-columns:1fr}
+  .hero{padding:40px 18px 36px}
+  .main{padding:24px 16px 60px}
+  .tiles-grid{grid-template-columns:1fr}
   .stats-row{width:100%}
-  .stat{flex:1;border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding:12px}
+  .stat{flex:1;border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding:10px}
   .stat:last-child{border-bottom:none}
+  .sec-hero-card{flex-direction:column;align-items:flex-start;padding:20px}
+  .sec-content-box{padding:20px 16px}
   .cert-path{flex-direction:column;align-items:center}
   .carr{transform:rotate(90deg);margin:4px 0}
   .ai{flex-direction:column;align-items:flex-start}
   .ai-r{align-self:flex-end}
-  .guide{flex-direction:column;align-items:flex-start}
-}
-@media(prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
 }
 </style>
 </head>
@@ -313,26 +362,26 @@ footer p+p{margin-top:5px}
 <!-- HEADER -->
 <header class="hdr">
   <div class="hdr-in">
-    <a href="#" class="brand">
+    <div class="brand" onclick="showDashboard()">
       <div class="brand-mark">Ae</div>
       <div class="brand-text">
         <div class="brand-name">Adobe Express for Education</div>
         <div class="brand-sub">Educator Workspace</div>
       </div>
-    </a>
+    </div>
     <div class="hdr-badge">Educator Portal</div>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
+<!-- HERO (Visible on Dashboard) -->
+<section class="hero" id="mainHero">
   <div class="hero-in">
     <div class="hero-tag">
       <span class="hero-tag-dot"></span>
       Educator &amp; Curriculum Hub
     </div>
     <h1>Educator Hub &amp; Curriculum Portal</h1>
-    <p class="hero-sub">Credential administration, CPD professional development (Modules 1&#8211;5), classroom resources, and DCAIS innovation manuals &#8212; all in one place.</p>
+    <p class="hero-sub">Credential administration, CPD professional development (Modules 1&#8211;5), classroom resources, and DCAIS innovation manuals &mdash; click any section to view full screen.</p>
     <div class="stats-row">
       <div class="stat"><span class="stat-n">5</span><span class="stat-l">CPD Modules</span></div>
       <div class="stat"><span class="stat-n">48 hrs</span><span class="stat-l">Accredited</span></div>
@@ -342,276 +391,441 @@ footer p+p{margin-top:5px}
   </div>
 </section>
 
-<!-- MAIN -->
+<!-- MAIN APP AREA -->
 <main class="main">
-  <div class="guide">
-    <span class="guide-icon">&#128218;</span>
-    <p><strong>Select any section to expand it.</strong> All your CPD modules, curriculum materials, and classroom resources are here. Click again to collapse.</p>
+
+  <!-- ==============================================
+       VIEW 1: SECTIONS DASHBOARD TILES
+       ============================================== -->
+  <div id="dashboardView">
+    <div class="guide">
+      <span class="guide-icon">&#128218;</span>
+      <p><strong>Click any section card below</strong> to open its complete workspace in full-screen view.</p>
+    </div>
+
+    <div class="tiles-grid">
+      <!-- Section A -->
+      <div class="tile-card" onclick="openSection('A')">
+        <div>
+          <div class="tile-top">
+            <div class="tile-letter">A</div>
+            <div class="tile-info">
+              <div class="tile-tag">Section A</div>
+              <h2 class="tile-title">Adobe ID &amp; Access</h2>
+              <p class="tile-desc">School login, institutional account creation, single sign-on &amp; IT admin deployment guide.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tile-footer">
+          <span class="tile-hint">5 Resources Available</span>
+          <span class="tile-btn">Open Section &rarr;</span>
+        </div>
+      </div>
+
+      <!-- Section B -->
+      <div class="tile-card" onclick="openSection('B')">
+        <div>
+          <div class="tile-top">
+            <div class="tile-letter">B</div>
+            <div class="tile-info">
+              <div class="tile-tag">Section B</div>
+              <h2 class="tile-title">CPD Modules</h2>
+              <p class="tile-desc">5 accredited professional development modules (CPD-AE 01 to 05) totaling 48 training hours.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tile-footer">
+          <span class="tile-hint">48 Hours Training</span>
+          <span class="tile-btn">Open Section &rarr;</span>
+        </div>
+      </div>
+
+      <!-- Section C -->
+      <div class="tile-card" onclick="openSection('C')">
+        <div>
+          <div class="tile-top">
+            <div class="tile-letter">C</div>
+            <div class="tile-info">
+              <div class="tile-tag">Section C</div>
+              <h2 class="tile-title">DCAIS Curriculum</h2>
+              <p class="tile-desc">Digital Creativity &amp; Innovation Skills framework, pedagogical manuals, and student activity packs.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tile-footer">
+          <span class="tile-hint">Grades 6&ndash;12 Standards</span>
+          <span class="tile-btn">Open Section &rarr;</span>
+        </div>
+      </div>
+
+      <!-- Section D -->
+      <div class="tile-card" onclick="openSection('D')">
+        <div>
+          <div class="tile-top">
+            <div class="tile-letter">D</div>
+            <div class="tile-info">
+              <div class="tile-tag">Section D</div>
+              <h2 class="tile-title">Classroom Resources</h2>
+              <p class="tile-desc">Lesson plan templates, classroom printables, grading rubrics, tutorial videos, and project kits.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tile-footer">
+          <span class="tile-hint">6 Ready-to-Use Kits</span>
+          <span class="tile-btn">Open Section &rarr;</span>
+        </div>
+      </div>
+
+      <!-- Section E -->
+      <div class="tile-card" onclick="openSection('E')">
+        <div>
+          <div class="tile-top">
+            <div class="tile-letter">E</div>
+            <div class="tile-info">
+              <div class="tile-tag">Section E</div>
+              <h2 class="tile-title">Student Progress</h2>
+              <p class="tile-desc">Track activity completion rates, monthly submissions, and portfolio reviews by grade bands.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tile-footer">
+          <span class="tile-hint">Activity Tracking</span>
+          <span class="tile-btn">Open Section &rarr;</span>
+        </div>
+      </div>
+
+      <!-- Section F -->
+      <div class="tile-card" onclick="openSection('F')">
+        <div>
+          <div class="tile-top">
+            <div class="tile-letter">F</div>
+            <div class="tile-info">
+              <div class="tile-tag">Section F</div>
+              <h2 class="tile-title">Community &amp; Support</h2>
+              <p class="tile-desc">Monthly live educator webinars, nationwide community forum, and technical helpdesk.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tile-footer">
+          <span class="tile-hint">500+ Certified Peers</span>
+          <span class="tile-btn">Open Section &rarr;</span>
+        </div>
+      </div>
+
+      <!-- Section G -->
+      <div class="tile-card" onclick="openSection('G')">
+        <div>
+          <div class="tile-top">
+            <div class="tile-letter">G</div>
+            <div class="tile-info">
+              <div class="tile-tag">Section G</div>
+              <h2 class="tile-title">Certification Path</h2>
+              <p class="tile-desc">Your journey to becoming a certified Adobe Educator, claiming digital badges, and tracking credits.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tile-footer">
+          <span class="tile-hint">4 Milestone Badges</span>
+          <span class="tile-btn">Open Section &rarr;</span>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="sec-grid">
 
-    <!-- SECTION A: Adobe ID -->
-    <div class="sc" id="sA">
-      <div class="sc-head" onclick="tog('sA')">
-        <div class="sc-letter">A</div>
-        <div class="sc-info">
-          <div class="sc-tag">Section A</div>
-          <div class="sc-title">Adobe ID &amp; Access</div>
-          <div class="sc-desc">School login, account setup &amp; IT admin guide</div>
-        </div>
-        <div class="sc-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </div>
-      <div class="sc-body">
-        <div class="notice">
-          <div class="notice-t">Institutional Login Required</div>
-          <div class="notice-d">All teachers must use school-assigned Adobe IDs. Contact your IT administrator if you do not have access credentials.</div>
-        </div>
-        <div class="al">
-          <div class="ai">
-            <div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">School Admin Console</div><div class="ai-d">Manage institutional Adobe licenses and all user accounts</div></div></div>
-            <div class="ai-r"><a href="https://adminconsole.adobe.com" target="_blank" class="btn btn-primary">Open &#8599;</a></div>
-          </div>
-          <div class="ai">
-            <div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Create Adobe ID</div><div class="ai-d">Set up a new Adobe account with your school email address</div></div></div>
-            <div class="ai-r"><a href="https://account.adobe.com" target="_blank" class="btn btn-primary">Create &#8599;</a></div>
-          </div>
-          <div class="ai">
-            <div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Password &amp; Security</div><div class="ai-d">Reset password or update two-factor authentication settings</div></div></div>
-            <div class="ai-r"><a href="https://account.adobe.com/security" target="_blank" class="btn btn-ghost">Manage &#8599;</a></div>
-          </div>
-          <div class="ai">
-            <div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">IT Admin Deployment Guide</div><div class="ai-d">Enterprise rollout guide for school IT administrators</div></div></div>
-            <div class="ai-r"><a href="https://helpx.adobe.com/enterprise" target="_blank" class="btn btn-ghost">View &#8599;</a></div>
-          </div>
-          <div class="ai">
-            <div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Single Sign-On (SSO)</div><div class="ai-d">Connect Google Workspace or Microsoft 365 for school login</div></div></div>
-            <div class="ai-r"><a href="https://helpx.adobe.com/enterprise/using/sso.html" target="_blank" class="btn btn-ghost">Setup &#8599;</a></div>
-          </div>
-        </div>
+  <!-- ==============================================
+       VIEW 2: FULL-SCREEN SECTION DETAIL VIEW
+       ============================================== -->
+  <div id="sectionView" class="section-full-view">
+    <!-- Top Bar -->
+    <div class="sec-nav-bar">
+      <button class="back-btn" onclick="showDashboard()">&#8592; Back to All Sections</button>
+      <div class="sec-breadcrumb">Educator Hub / <strong id="crumbName">Section Detail</strong></div>
+    </div>
+
+    <!-- Section Banner -->
+    <div class="sec-hero-card">
+      <div class="sec-hero-badge" id="secBadge">A</div>
+      <div class="sec-hero-body">
+        <div class="sec-hero-tag" id="secTag">SECTION A</div>
+        <h1 class="sec-hero-title" id="secTitle">Section Title</h1>
+        <p class="sec-hero-desc" id="secDesc">Detailed section description.</p>
       </div>
     </div>
 
-    <!-- SECTION B: CPD -->
-    <div class="sc" id="sB">
-      <div class="sc-head" onclick="tog('sB')">
-        <div class="sc-letter">B</div>
-        <div class="sc-info">
-          <div class="sc-tag">Section B</div>
-          <div class="sc-title">CPD Modules</div>
-          <div class="sc-desc">5 accredited professional development modules &#8212; 48 hours total</div>
-        </div>
-        <div class="sc-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </div>
-      <div class="sc-body">
-        <p style="font-size:.84rem;color:var(--ink-3);margin-bottom:16px;">Five progressive modules designed to take educators from foundational to advanced digital creativity pedagogy. Tap any module to expand it.</p>
-        <div class="acc" id="cpdAcc"></div>
-      </div>
+    <!-- Section Full Content -->
+    <div class="sec-content-box" id="secContent">
+      <!-- Dynamic content rendered here -->
     </div>
 
-    <!-- SECTION C: DCAIS -->
-    <div class="sc" id="sC">
-      <div class="sc-head" onclick="tog('sC')">
-        <div class="sc-letter">C</div>
-        <div class="sc-info">
-          <div class="sc-tag">Section C</div>
-          <div class="sc-title">DCAIS Curriculum</div>
-          <div class="sc-desc">Digital Creativity &amp; Innovation Skills framework, Grades 6&#8211;12</div>
-        </div>
-        <div class="sc-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </div>
-      <div class="sc-body">
-        <p style="font-size:.84rem;color:var(--ink-3);margin-bottom:16px;">Comprehensive digital curriculum framework, pedagogical manuals, and modular student activity packages aligned to national education standards.</p>
-        <div class="rg" id="dcaisGrid"></div>
-      </div>
+    <!-- Bottom Navigation -->
+    <div class="sec-bottom-bar">
+      <button class="back-btn" onclick="showDashboard()">&#8592; Back to All Sections</button>
+      <div id="secNextPrev"></div>
     </div>
+  </div>
 
-    <!-- SECTION D: Classroom Resources -->
-    <div class="sc" id="sD">
-      <div class="sc-head" onclick="tog('sD')">
-        <div class="sc-letter">D</div>
-        <div class="sc-info">
-          <div class="sc-tag">Section D</div>
-          <div class="sc-title">Classroom Resources</div>
-          <div class="sc-desc">Templates, rubrics, posters, and project starter kits</div>
-        </div>
-        <div class="sc-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </div>
-      <div class="sc-body">
-        <div class="rg">
-          <div class="rc"><div class="rc-badge">Templates</div><h4>Lesson Plan Templates</h4><p>Pre-designed plans aligned with DCAIS curriculum standards for all grade levels.</p><a href="https://express.adobe.com/templates" target="_blank" class="btn btn-primary">Download &#8599;</a></div>
-          <div class="rc"><div class="rc-badge">Printables</div><h4>Classroom Posters</h4><p>Design thinking posters and Adobe Express quick reference cards, print-ready.</p><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Get Posters &#8599;</a></div>
-          <div class="rc"><div class="rc-badge">Assessment</div><h4>Grading Rubrics</h4><p>Standardised rubrics for evaluating student creative projects across all grade levels.</p><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Rubrics &#8599;</a></div>
-          <div class="rc"><div class="rc-badge">Video</div><h4>Classroom Tutorial Videos</h4><p>Step-by-step instructional videos optimised for classroom smartboard projection.</p><a href="https://express.adobe.com/learn" target="_blank" class="btn btn-primary">Watch &#8599;</a></div>
-          <div class="rc"><div class="rc-badge">Projects</div><h4>Project Starter Kits</h4><p>Complete packs with instructions, templates, and example student outputs.</p><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Get Kits &#8599;</a></div>
-          <div class="rc"><div class="rc-badge">Guide</div><h4>Pedagogy Manual</h4><p>Comprehensive guide on integrating digital creativity into your existing curriculum.</p><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Read &#8599;</a></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION E: Student Progress -->
-    <div class="sc" id="sE">
-      <div class="sc-head" onclick="tog('sE')">
-        <div class="sc-letter">E</div>
-        <div class="sc-info">
-          <div class="sc-tag">Section E</div>
-          <div class="sc-title">Student Progress</div>
-          <div class="sc-desc">Track activity completion and submissions by grade</div>
-        </div>
-        <div class="sc-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </div>
-      <div class="sc-body">
-        <div class="rg" style="margin-bottom:20px">
-          <div class="rc"><div class="rc-badge">Grades 6&#8211;8</div><h4>Middle School Tracker</h4><p>Monitor monthly completion and skill development for Grades 6&#8211;8.</p><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Dashboard &#8599;</a></div>
-          <div class="rc"><div class="rc-badge">Grades 9&#8211;10</div><h4>Secondary Tracker</h4><p>Track advanced project submissions and CPD-aligned activity progress.</p><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Progress &#8599;</a></div>
-          <div class="rc"><div class="rc-badge">Grades 11&#8211;12</div><h4>Senior Portfolio Review</h4><p>Evaluate senior portfolios and assess certification readiness.</p><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Review &#8599;</a></div>
-        </div>
-        <div style="background:var(--surface-2);border-radius:var(--radius);padding:20px;border:1.5px solid var(--border)">
-          <div class="sec-label" style="margin-top:0">Activity Completion This Month</div>
-          <div class="plist">
-            <div><div class="pi-lbl"><span>Flyer Design</span><span class="pi-pct">78%</span></div><div class="pbar"><div class="pfill" style="width:78%"></div></div></div>
-            <div><div class="pi-lbl"><span>Poster Creation</span><span class="pi-pct">65%</span></div><div class="pbar"><div class="pfill" style="width:65%"></div></div></div>
-            <div><div class="pi-lbl"><span>Video Presentation</span><span class="pi-pct">52%</span></div><div class="pbar"><div class="pfill" style="width:52%"></div></div></div>
-            <div><div class="pi-lbl"><span>Digital Portfolio</span><span class="pi-pct">41%</span></div><div class="pbar"><div class="pfill" style="width:41%"></div></div></div>
-            <div><div class="pi-lbl"><span>Social Media Campaign</span><span class="pi-pct">33%</span></div><div class="pbar"><div class="pfill" style="width:33%"></div></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION F: Community -->
-    <div class="sc" id="sF">
-      <div class="sc-head" onclick="tog('sF')">
-        <div class="sc-letter">F</div>
-        <div class="sc-info">
-          <div class="sc-tag">Section F</div>
-          <div class="sc-title">Community &amp; Support</div>
-          <div class="sc-desc">Webinars, educator forums, and technical helpdesk</div>
-        </div>
-        <div class="sc-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </div>
-      <div class="sc-body">
-        <div class="rg">
-          <div class="rc"><div class="rc-badge">Live Events</div><h4>Monthly Educator Webinars</h4><p>Live sessions with Adobe experts. Recordings available after each session.</p><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Register &#8599;</a></div>
-          <div class="rc"><div class="rc-badge">Community</div><h4>Educator Forum</h4><p>Share lesson plans and best practices with 500+ certified Adobe educators nationwide.</p><a href="https://community.adobe.com" target="_blank" class="btn btn-primary">Join Forum &#8599;</a></div>
-          <div class="rc"><div class="rc-badge">Support</div><h4>Technical Helpdesk</h4><p>Support for Adobe Express account issues, installation, and licensing queries.</p><a href="https://helpx.adobe.com" target="_blank" class="btn btn-primary">Get Help &#8599;</a></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION G: Certification -->
-    <div class="sc" id="sG">
-      <div class="sc-head" onclick="tog('sG')">
-        <div class="sc-letter">G</div>
-        <div class="sc-info">
-          <div class="sc-tag">Section G</div>
-          <div class="sc-title">Certification Path</div>
-          <div class="sc-desc">Your journey to becoming a certified Adobe Educator</div>
-        </div>
-        <div class="sc-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </div>
-      <div class="sc-body">
-        <div class="cert-path">
-          <div class="cstep"><div class="ccircle done">1+2</div><h4>Foundation</h4><p>CPD&#8209;AE&#8209;01 &amp; 02</p><span class="ctag done">&#10003; Complete</span></div>
-          <div class="carr">&#8594;</div>
-          <div class="cstep"><div class="ccircle prog">3+4</div><h4>Proficient</h4><p>CPD&#8209;AE&#8209;03 &amp; 04</p><span class="ctag prog">In Progress</span></div>
-          <div class="carr">&#8594;</div>
-          <div class="cstep"><div class="ccircle lock">5</div><h4>Expert</h4><p>CPD&#8209;AE&#8209;05</p><span class="ctag lock">Locked</span></div>
-          <div class="carr">&#8594;</div>
-          <div class="cstep"><div class="ccircle lock">Cert</div><h4>Certified</h4><p>Portfolio + Assessment</p><span class="ctag lock">Locked</span></div>
-        </div>
-        <div class="rg" style="margin-top:20px">
-          <div class="rc"><div class="rc-badge">Digital Badge</div><h4>Claim Your Badge</h4><p>Download and share your Adobe Certified Educator badge on LinkedIn.</p><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Claim &#8599;</a></div>
-          <div class="rc"><div class="rc-badge">Certificate</div><h4>Print Certificate</h4><p>Generate your official Adobe Express Educator certification document.</p><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Generate &#8599;</a></div>
-          <div class="rc"><div class="rc-badge">CPD Points</div><h4>Track Credits</h4><p>View accumulated CPD hours toward your certification renewal.</p><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View &#8599;</a></div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /sec-grid -->
 </main>
 
 <footer>
-  <p>&#169; Adobe Express for Education &#8212; Certified Digital Skills Programme for Schools &amp; Educators</p>
-  <p>This is the Educator Portal. Student resources are on a separate, restricted portal.</p>
+  <p>&#169; Adobe Express for Education &mdash; Certified Digital Skills Programme for Schools &amp; Educators</p>
+  <p>This is the Educator Portal. Student resources are on a separate, dedicated portal.</p>
 </footer>
 
 <script>
-var CPD=[
-  {code:"CPD-AE-01",hrs:"8 hours",title:"Digital Creativity Foundations",obj:"Introduce educators to Adobe Express, basic design principles, and digital creativity integration into classroom teaching.",content:"Adobe Express interface, design basics (colour, typography, layout), creating templates, aligning with national curriculum.",assign:"Create a syllabus cover, class schedule graphic, and one subject-specific educational poster using Adobe Express."},
-  {code:"CPD-AE-02",hrs:"10 hours",title:"Visual Communication &amp; Design",obj:"Develop educators' ability to use visual communication to enhance student engagement and comprehension across subjects.",content:"Advanced typography, colour psychology, infographic design, presentation design, and educational visual material creation.",assign:"Design a complete unit visual kit: title card, 3 infographics, summary poster, and a student-facing instruction sheet."},
-  {code:"CPD-AE-03",hrs:"10 hours",title:"Collaborative Digital Projects",obj:"Enable educators to design and facilitate collaborative creative projects that build teamwork and digital literacy skills.",content:"Project-based learning frameworks, collaborative workflows, feedback and iteration cycles, cross-curricular integration strategies.",assign:"Design a 4-week project-based learning unit with Adobe Express, including collaboration milestones and assessment criteria."},
-  {code:"CPD-AE-04",hrs:"10 hours",title:"Advanced Creative Pedagogy",obj:"Empower educators with advanced techniques for teaching creativity, design thinking, and digital storytelling to diverse learners.",content:"Differentiated instruction through design, video and animation tools, social media literacy, student portfolio curation methods.",assign:"Create a differentiated creative project plan with modified activities for 3 learner levels, with rubrics and exemplar work."},
-  {code:"CPD-AE-05",hrs:"10 hours",title:"Assessment &amp; Certification",obj:"Equip educators to assess creative work meaningfully, run peer-review sessions, and prepare students for digital certification.",content:"Assessment rubric design, portfolio evaluation frameworks, peer-to-peer critique methods, student certification preparation.",assign:"Develop a complete assessment portfolio: 3 rubrics, a peer-review protocol, and a student portfolio evaluation guide."}
-];
-
-var DCAIS=[
-  {badge:"Curriculum",title:"DCAIS Teacher Manual",desc:"Comprehensive pedagogical guide covering all 12 months of the Digital Creativity and Innovation Skills curriculum.",link:"https://express.adobe.com"},
-  {badge:"Activities",title:"Student Activity Packs",desc:"Month-wise structured activity packages with step-by-step instructions, templates, and assessment criteria.",link:"https://express.adobe.com"},
-  {badge:"Framework",title:"Curriculum Framework",desc:"Aligns digital creativity activities with national education standards across subjects, Grades 6&#8211;12.",link:"https://express.adobe.com"},
-  {badge:"Training",title:"School Implementation Guide",desc:"School-level rollout guide covering infrastructure, training schedules, and year-long planning calendars.",link:"https://express.adobe.com"}
-];
-
-function buildCPD(){
-  var el=document.getElementById('cpdAcc');
-  if(!el)return;
-  el.innerHTML=CPD.map(function(m,i){
-    return'<div class="aci" id="cpd'+i+'">'+
-      '<div class="ach" onclick="togAcc(\'cpd'+i+'\')">'+
-        '<div class="ach-l">'+
-          '<span class="cpd-code">'+m.code+'</span>'+
-          '<span class="cpd-hrs">'+m.hrs+'</span>'+
-          '<span class="cpd-title">'+m.title+'</span>'+
-        '</div>'+
-        '<span class="ach-arr">&#9660;</span>'+
-      '</div>'+
-      '<div class="acb">'+
-        '<div class="cpd-grid">'+
-          '<div class="cpd-block"><div class="cpd-lbl">Objective</div><div class="cpd-txt">'+m.obj+'</div></div>'+
-          '<div class="cpd-block"><div class="cpd-lbl">Content</div><div class="cpd-txt">'+m.content+'</div></div>'+
-          '<div class="cpd-block"><div class="cpd-lbl">Assignment</div><div class="cpd-txt">'+m.assign+'</div></div>'+
-        '</div>'+
-        '<div class="cpd-actions">'+
-          '<a href="https://express.adobe.com/learn" target="_blank" class="btn btn-primary">Open Course Material &#8599;</a>'+
-          '<a href="https://express.adobe.com" target="_blank" class="btn btn-ghost">Design in Express &#8599;</a>'+
-          '<a href="https://express.adobe.com" target="_blank" class="btn btn-ghost">Submit Work &#8599;</a>'+
-        '</div>'+
-      '</div>'+
-    '</div>';
-  }).join('');
-}
-
-function buildDCAIS(){
-  var el=document.getElementById('dcaisGrid');
-  if(!el)return;
-  el.innerHTML=DCAIS.map(function(r){
-    return'<div class="rc">'+
-      '<div class="rc-badge">'+r.badge+'</div>'+
-      '<h4>'+r.title+'</h4>'+
-      '<p>'+r.desc+'</p>'+
-      '<a href="'+r.link+'" target="_blank" class="btn btn-primary">Open Resource &#8599;</a>'+
-    '</div>';
-  }).join('');
-}
-
-function tog(id){
-  var card=document.getElementById(id);
-  if(!card)return;
-  var wasOpen=card.classList.contains('open');
-  document.querySelectorAll('.sc').forEach(function(c){c.classList.remove('open');});
-  if(!wasOpen){
-    card.classList.add('open');
-    setTimeout(function(){card.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+/* ===== DATA ===== */
+var SECTIONS_DATA = {
+  'A': {
+    letter: 'A',
+    tag: 'Section A &bull; Institutional Credentials',
+    title: 'Adobe ID &amp; Password Access',
+    desc: 'Ensure seamless institutional access to Adobe Express for Education for your school or institution.',
+    render: function() {
+      return '<div class="notice">' +
+        '<div class="notice-t">Institutional Login Required</div>' +
+        '<div class="notice-d">All teachers must use school-assigned Adobe IDs. Contact your IT administrator if you do not have institutional access credentials.</div>' +
+      '</div>' +
+      '<div class="al">' +
+        '<div class="ai">' +
+          '<div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">School Admin Console</div><div class="ai-d">Manage institutional Adobe licenses, user permissions, and school-wide directory sync.</div></div></div>' +
+          '<div class="ai-r"><a href="https://adminconsole.adobe.com" target="_blank" class="btn btn-primary">Open Console &#8599;</a></div>' +
+        '</div>' +
+        '<div class="ai">' +
+          '<div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Create Adobe ID</div><div class="ai-d">Step-by-step account setup using your designated official school email address.</div></div></div>' +
+          '<div class="ai-r"><a href="https://account.adobe.com" target="_blank" class="btn btn-primary">Create Account &#8599;</a></div>' +
+        '</div>' +
+        '<div class="ai">' +
+          '<div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Password &amp; Security Settings</div><div class="ai-d">Reset credentials, manage two-factor authentication, and update emergency recovery options.</div></div></div>' +
+          '<div class="ai-r"><a href="https://account.adobe.com/security" target="_blank" class="btn btn-ghost">Manage Security &#8599;</a></div>' +
+        '</div>' +
+        '<div class="ai">' +
+          '<div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">IT Admin Deployment Guide</div><div class="ai-d">Enterprise deployment manual for school IT administrators to roll out Adobe Express across computer labs.</div></div></div>' +
+          '<div class="ai-r"><a href="https://helpx.adobe.com/enterprise" target="_blank" class="btn btn-ghost">View Guide &#8599;</a></div>' +
+        '</div>' +
+        '<div class="ai">' +
+          '<div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Single Sign-On (SSO) Integration</div><div class="ai-d">Connect your school\'s Google Workspace or Microsoft 365 identity provider for one-click student and teacher logins.</div></div></div>' +
+          '<div class="ai-r"><a href="https://helpx.adobe.com/enterprise/using/sso.html" target="_blank" class="btn btn-ghost">Setup SSO &#8599;</a></div>' +
+        '</div>' +
+      '</div>';
+    }
+  },
+  'B': {
+    letter: 'B',
+    tag: 'Section B &bull; Professional Development',
+    title: 'CPD Training Modules (48 Hours)',
+    desc: 'Five progressive, accredited modules designed to equip educators with foundational to advanced digital creativity pedagogy. Click any module to view details.',
+    render: function() {
+      var CPD = [
+        {code:"CPD-AE-01",hrs:"8 hours",title:"Digital Creativity Foundations",obj:"Introduce educators to Adobe Express, basic design principles, and digital creativity integration into classroom teaching.",content:"Adobe Express interface, design basics (colour, typography, layout), creating templates, aligning with national curriculum.",assign:"Create a syllabus cover, class schedule graphic, and one subject-specific educational poster using Adobe Express."},
+        {code:"CPD-AE-02",hrs:"10 hours",title:"Visual Communication & Design",obj:"Develop educators' ability to use visual communication to enhance student engagement and comprehension across subjects.",content:"Advanced typography, colour psychology, infographic design, presentation design, and educational visual material creation.",assign:"Design a complete unit visual kit: title card, 3 infographics, summary poster, and a student-facing instruction sheet."},
+        {code:"CPD-AE-03",hrs:"10 hours",title:"Collaborative Digital Projects",obj:"Enable educators to design and facilitate collaborative creative projects that build teamwork and digital literacy skills.",content:"Project-based learning frameworks, collaborative workflows, feedback and iteration cycles, cross-curricular integration strategies.",assign:"Design a 4-week project-based learning unit with Adobe Express, including collaboration milestones and assessment criteria."},
+        {code:"CPD-AE-04",hrs:"10 hours",title:"Advanced Creative Pedagogy",obj:"Empower educators with advanced techniques for teaching creativity, design thinking, and digital storytelling to diverse learners.",content:"Differentiated instruction through design, video and animation tools, social media literacy, student portfolio curation methods.",assign:"Create a differentiated creative project plan with modified activities for 3 learner levels, with rubrics and exemplar work."},
+        {code:"CPD-AE-05",hrs:"10 hours",title:"Assessment & Certification",obj:"Equip educators to assess creative work meaningfully, run peer-review sessions, and prepare students for digital certification.",content:"Assessment rubric design, portfolio evaluation frameworks, peer-to-peer critique methods, student certification preparation.",assign:"Develop a complete assessment portfolio: 3 rubrics, a peer-review protocol, and a student portfolio evaluation guide."}
+      ];
+      return '<div class="acc">' +
+        CPD.map(function(m, i) {
+          return '<div class="aci' + (i === 0 ? ' open' : '') + '" id="cpd' + i + '">' +
+            '<div class="ach" onclick="toggleAcc(\'cpd' + i + '\')">' +
+              '<div class="ach-l">' +
+                '<span class="cpd-code">' + m.code + '</span>' +
+                '<span class="cpd-hrs">' + m.hrs + '</span>' +
+                '<span class="cpd-title">' + m.title + '</span>' +
+              '</div>' +
+              '<span class="ach-arr">&#9660;</span>' +
+            '</div>' +
+            '<div class="acb">' +
+              '<div class="cpd-grid">' +
+                '<div class="cpd-block"><div class="cpd-lbl">Objective</div><div class="cpd-txt">' + m.obj + '</div></div>' +
+                '<div class="cpd-block"><div class="cpd-lbl">Content Covered</div><div class="cpd-txt">' + m.content + '</div></div>' +
+                '<div class="cpd-block"><div class="cpd-lbl">Assignment Task</div><div class="cpd-txt">' + m.assign + '</div></div>' +
+              '</div>' +
+              '<div class="cpd-actions">' +
+                '<a href="https://express.adobe.com/learn" target="_blank" class="btn btn-primary">Open Course Material &#8599;</a>' +
+                '<a href="https://express.adobe.com" target="_blank" class="btn btn-ghost">Design in Express &#8599;</a>' +
+                '<a href="https://express.adobe.com" target="_blank" class="btn btn-ghost">Submit Work &#8599;</a>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+        }).join('') +
+      '</div>';
+    }
+  },
+  'C': {
+    letter: 'C',
+    tag: 'Section C &bull; Curriculum Framework',
+    title: 'DCAIS Curriculum &amp; Student Activity Packages',
+    desc: 'Comprehensive digital curriculum framework, teacher pedagogical manuals, and modular student activity packages aligned to national education standards for Grades 6&ndash;12.',
+    render: function() {
+      var DCAIS = [
+        {badge:"Curriculum Manual",title:"DCAIS Teacher Manual",desc:"Comprehensive pedagogical guide covering all 12 months of the Digital Creativity and Innovation Skills curriculum with lesson rubrics.",link:"https://express.adobe.com"},
+        {badge:"Activity Packs",title:"Student Activity Packages",desc:"Month-wise structured activity packages with step-by-step instructions, templates, and classroom assessment criteria.",link:"https://express.adobe.com"},
+        {badge:"Standards Framework",title:"National Curriculum Framework",desc:"Aligns digital creativity activities with national education standards across STEAM subjects for Grades 6 through 12.",link:"https://express.adobe.com"},
+        {badge:"Rollout Strategy",title:"School Implementation Guide",desc:"School-level rollout blueprint covering lab infrastructure, teacher training schedules, and academic calendar integration.",link:"https://express.adobe.com"}
+      ];
+      return '<div class="rg">' +
+        DCAIS.map(function(r) {
+          return '<div class="rc">' +
+            '<div>' +
+              '<div class="rc-badge">' + r.badge + '</div>' +
+              '<h4>' + r.title + '</h4>' +
+              '<p>' + r.desc + '</p>' +
+            '</div>' +
+            '<a href="' + r.link + '" target="_blank" class="btn btn-primary">Open Resource &#8599;</a>' +
+          '</div>';
+        }).join('') +
+      '</div>';
+    }
+  },
+  'D': {
+    letter: 'D',
+    tag: 'Section D &bull; Classroom Assets',
+    title: 'Classroom Resources &amp; Printables',
+    desc: 'Ready-to-use lesson plans, assessment rubrics, smartboard tutorial videos, and printable design thinking posters.',
+    render: function() {
+      return '<div class="rg">' +
+        '<div class="rc"><div><div class="rc-badge">Templates</div><h4>Lesson Plan Templates</h4><p>Pre-designed lesson plan templates aligned with DCAIS curriculum standards for all grade levels.</p></div><a href="https://express.adobe.com/templates" target="_blank" class="btn btn-primary">Download Templates &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Printables</div><h4>Classroom Posters &amp; Cheatsheets</h4><p>Design thinking posters and Adobe Express quick reference cards, ready to print and display in school computer labs.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Get Posters &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Assessment</div><h4>Standardized Grading Rubrics</h4><p>Comprehensive rubrics for evaluating student creative projects across beginner, intermediate, and advanced levels.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Rubrics &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Video</div><h4>Classroom Tutorial Videos</h4><p>Step-by-step instructional videos optimized for classroom smartboard projection and teacher-led demonstrations.</p></div><a href="https://express.adobe.com/learn" target="_blank" class="btn btn-primary">Watch Videos &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Project Kits</div><h4>Project Starter Kits</h4><p>Complete project packs with instructions, editable templates, and benchmark student exemplar outputs.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Get Starter Kits &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Pedagogy</div><h4>Teacher Integration Manual</h4><p>Detailed guide on seamlessly embedding digital creativity into existing Science, Social Studies, and Language curricula.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Read Guide &#8599;</a></div>' +
+      '</div>';
+    }
+  },
+  'E': {
+    letter: 'E',
+    tag: 'Section E &bull; Student Submissions',
+    title: 'Student Progress &amp; Activity Tracking',
+    desc: 'Monitor monthly activity completion rates, review submissions across grade bands, and evaluate student portfolios.',
+    render: function() {
+      return '<div class="rg" style="margin-bottom:28px">' +
+        '<div class="rc"><div><div class="rc-badge">Grades 6&#8211;8</div><h4>Middle School Tracker</h4><p>Monitor monthly completion rates, portfolio growth, and fundamental digital literacy milestones.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Dashboard &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Grades 9&#8211;10</div><h4>Secondary Tracker</h4><p>Track advanced project submissions, team collaboration initiatives, and CPD-aligned creative activities.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Progress &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Grades 11&#8211;12</div><h4>Senior Portfolio Reviews</h4><p>Evaluate senior portfolios, assess capstone assignments, and verify readiness for Adobe digital certification.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Review Portfolios &#8599;</a></div>' +
+      '</div>' +
+      '<div style="background:var(--surface-2);border-radius:var(--radius);padding:24px;border:1.5px solid var(--border)">' +
+        '<div class="sec-label" style="margin-top:0">Classroom Activity Completion (Academic Year)</div>' +
+        '<div class="plist">' +
+          '<div><div class="pi-lbl"><span>Republic Day Poster &amp; Flyer Design</span><span class="pi-pct">78%</span></div><div class="pbar"><div class="pfill" style="width:78%"></div></div></div>' +
+          '<div><div class="pi-lbl"><span>Cultural Festival Greeting Cards</span><span class="pi-pct">65%</span></div><div class="pbar"><div class="pfill" style="width:65%"></div></div></div>' +
+          '<div><div class="pi-lbl"><span>Environmental Awareness Campaign Video</span><span class="pi-pct">52%</span></div><div class="pbar"><div class="pfill" style="width:52%"></div></div></div>' +
+          '<div><div class="pi-lbl"><span>Digital Student Portfolio Showcase</span><span class="pi-pct">41%</span></div><div class="pbar"><div class="pfill" style="width:41%"></div></div></div>' +
+          '<div><div class="pi-lbl"><span>Social Impact &amp; Community Storytelling</span><span class="pi-pct">33%</span></div><div class="pbar"><div class="pfill" style="width:33%"></div></div></div>' +
+        '</div>' +
+      '</div>';
+    }
+  },
+  'F': {
+    letter: 'F',
+    tag: 'Section F &bull; Teacher Network',
+    title: 'Community, Webinars &amp; Support',
+    desc: 'Connect with a vibrant network of over 500 certified educators, attend monthly live masterclasses, and access dedicated helpdesk assistance.',
+    render: function() {
+      return '<div class="rg">' +
+        '<div class="rc"><div><div class="rc-badge">Live Events</div><h4>Monthly Educator Masterclasses</h4><p>Interactive live webinars with Adobe pedagogical experts. Access recordings and downloadable session decks anytime.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Register for Webinar &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Peer Network</div><h4>National Educator Forum</h4><p>Exchange lesson ideas, curriculum rubrics, and project tips with certified educators from schools across India.</p></div><a href="https://community.adobe.com" target="_blank" class="btn btn-primary">Join Forum &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Technical Help</div><h4>Dedicated School Helpdesk</h4><p>Priority technical assistance for account provisioning, single sign-on configuration, and school lab setups.</p></div><a href="https://helpx.adobe.com" target="_blank" class="btn btn-primary">Contact Support &#8599;</a></div>' +
+      '</div>';
+    }
+  },
+  'G': {
+    letter: 'G',
+    tag: 'Section G &bull; Professional Accreditation',
+    title: 'Certification Path &amp; Digital Badges',
+    desc: 'Earn recognized Adobe Educator credentials, track your accredited CPD hours, and showcase your professional milestones.',
+    render: function() {
+      return '<div class="cert-path">' +
+        '<div class="cstep"><div class="ccircle done">1+2</div><h4>Foundation</h4><p>Complete CPD 01 &amp; 02</p><span class="ctag done">&#10003; Complete</span></div>' +
+        '<div class="carr">&#8594;</div>' +
+        '<div class="cstep"><div class="ccircle prog">3+4</div><h4>Proficient</h4><p>Complete CPD 03 &amp; 04</p><span class="ctag prog">In Progress</span></div>' +
+        '<div class="carr">&#8594;</div>' +
+        '<div class="cstep"><div class="ccircle lock">5</div><h4>Expert</h4><p>Complete CPD 05</p><span class="ctag lock">Locked</span></div>' +
+        '<div class="carr">&#8594;</div>' +
+        '<div class="cstep"><div class="ccircle lock">Cert</div><h4>Adobe Certified</h4><p>Portfolio Review</p><span class="ctag lock">Locked</span></div>' +
+      '</div>' +
+      '<div class="rg" style="margin-top:24px">' +
+        '<div class="rc"><div><div class="rc-badge">Digital Credential</div><h4>Claim Educator Digital Badge</h4><p>Add verified Adobe Certified Educator credentials to your LinkedIn profile and professional resume.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Claim Digital Badge &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Print Certificate</div><h4>Official Certificate of Completion</h4><p>Generate and download your official Ministry &amp; Adobe accredited training certificate in high-resolution PDF format.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Download Certificate &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Credit Tracker</div><h4>Track Annual CPD Credits</h4><p>View verified training transcript hours for institutional appraisal and annual certification renewals.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Credits Transcript &#8599;</a></div>' +
+      '</div>';
+    }
   }
+};
+
+/* ===== NAVIGATION CONTROLLER ===== */
+function openSection(letter) {
+  var data = SECTIONS_DATA[letter];
+  if (!data) return;
+
+  // Update URL hash
+  location.hash = '#section-' + letter;
+
+  // Set Content
+  document.getElementById('crumbName').innerHTML = data.tag;
+  document.getElementById('secBadge').innerHTML = data.letter;
+  document.getElementById('secTag').innerHTML = data.tag;
+  document.getElementById('secTitle').innerHTML = data.title;
+  document.getElementById('secDesc').innerHTML = data.desc;
+  document.getElementById('secContent').innerHTML = data.render();
+
+  // Next / Prev shortcuts
+  var keys = Object.keys(SECTIONS_DATA);
+  var idx = keys.indexOf(letter);
+  var nextPrevHtml = '';
+  if (idx > 0) {
+    nextPrevHtml += '<button class="btn btn-ghost" onclick="openSection(\'' + keys[idx - 1] + '\')">&#8592; Previous Section</button> ';
+  }
+  if (idx < keys.length - 1) {
+    nextPrevHtml += '<button class="btn btn-primary" onclick="openSection(\'' + keys[idx + 1] + '\')">Next Section &#8594;</button>';
+  }
+  document.getElementById('secNextPrev').innerHTML = nextPrevHtml;
+
+  // Toggle Views
+  document.getElementById('dashboardView').style.display = 'none';
+  document.getElementById('mainHero').style.display = 'none';
+  document.getElementById('sectionView').style.display = 'block';
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function togAcc(id){
-  var el=document.getElementById(id);
-  if(el)el.classList.toggle('open');
+function showDashboard() {
+  location.hash = '';
+  document.getElementById('sectionView').style.display = 'none';
+  document.getElementById('dashboardView').style.display = 'block';
+  document.getElementById('mainHero').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-buildCPD();
-buildDCAIS();
+function toggleAcc(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.toggle('open');
+}
+
+// Hash-based router
+window.addEventListener('hashchange', function() {
+  var hash = location.hash;
+  if (hash.indexOf('#section-') === 0) {
+    var letter = hash.replace('#section-', '').toUpperCase();
+    if (SECTIONS_DATA[letter]) {
+      openSection(letter);
+      return;
+    }
+  }
+  showDashboard();
+});
+
+// Initial check on load
+window.addEventListener('DOMContentLoaded', function() {
+  var hash = location.hash;
+  if (hash.indexOf('#section-') === 0) {
+    var letter = hash.replace('#section-', '').toUpperCase();
+    if (SECTIONS_DATA[letter]) {
+      openSection(letter);
+      return;
+    }
+  }
+  showDashboard();
+});
 </script>
 </body>
 </html>

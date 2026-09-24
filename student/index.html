@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Student Creative Studio — Adobe Express for Education</title>
+<title>Student Creative Studio &mdash; Adobe Express for Education</title>
 <meta name="description" content="Your 12-month creative journey with Adobe Express. Pick a challenge, watch, create, and submit.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23FA0F00'/><text y='.9em' font-size='72' x='12' fill='white' font-weight='900'>S</text></svg>">
@@ -11,9 +11,9 @@
 /* ===== RESET ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F5;color:#1C1C1E;line-height:1.5;min-height:100vh;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F5;color:#1C1C1E;line-height:1.5;min-height:100vh}
 
-/* ===== TOKENS ===== */
+/* ===== TOKENS (ADOBE RED & WHITE) ===== */
 :root{
   --red:#FA0F00;--red-dk:#C00A00;--red-bg:#FFF2F1;--red-border:rgba(250,15,0,.18);
   --ink:#1C1C1E;--ink-2:#48484A;--ink-3:#8E8E93;
@@ -28,13 +28,13 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 /* ===== HEADER ===== */
 .hdr{
   position:sticky;top:0;z-index:200;
-  background:rgba(255,255,255,.92);
+  background:rgba(255,255,255,.94);
   backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
   border-bottom:1px solid var(--border);
   padding:0 28px;
 }
-.hdr-in{max-width:1160px;margin:0 auto;height:60px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit}
+.hdr-in{max-width:1160px;margin:0 auto;height:62px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit;cursor:pointer}
 .brand-mark{
   width:38px;height:38px;border-radius:10px;
   background:var(--red);color:#FFF;
@@ -57,7 +57,7 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 .hero{
   background:linear-gradient(150deg,#FA0F00 0%,#8B0000 55%,#3D0000 100%);
   color:#FFF;
-  padding:64px 28px 56px;
+  padding:54px 28px 48px;
   position:relative;overflow:hidden;
 }
 .hero::before{
@@ -72,17 +72,17 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
   color:rgba(255,255,255,.9);
   font-size:.74rem;font-weight:700;
   padding:5px 14px;border-radius:999px;
-  margin-bottom:20px;letter-spacing:.03em;
+  margin-bottom:18px;letter-spacing:.03em;
 }
 .hero-tag-dot{width:6px;height:6px;border-radius:50%;background:#FFD60A}
 .hero h1{
-  font-size:clamp(1.8rem,4.5vw,3.2rem);
-  font-weight:900;letter-spacing:-.035em;line-height:1.15;
-  margin-bottom:14px;max-width:640px;
+  font-size:clamp(1.8rem,4vw,2.8rem);
+  font-weight:900;letter-spacing:-.035em;line-height:1.18;
+  margin-bottom:12px;max-width:680px;
 }
 .hero-sub{
-  font-size:1rem;color:rgba(255,255,255,.78);
-  max-width:520px;line-height:1.65;margin-bottom:36px;
+  font-size:.98rem;color:rgba(255,255,255,.82);
+  max-width:560px;line-height:1.6;margin-bottom:26px;
 }
 .flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .flow-step{
@@ -102,8 +102,8 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 }
 .flow-arr{color:rgba(255,255,255,.45);font-size:.85rem;font-weight:900}
 
-/* ===== MAIN LAYOUT ===== */
-.main{max-width:1160px;margin:0 auto;padding:40px 28px 80px}
+/* ===== MAIN CONTAINER ===== */
+.main{max-width:1160px;margin:0 auto;padding:36px 28px 80px}
 
 /* ===== GUIDE BAR ===== */
 .guide{
@@ -111,211 +111,258 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
   background:var(--surface);border:1px solid var(--border);
   border-left:4px solid var(--red);
   border-radius:var(--radius);
-  padding:14px 20px;margin-bottom:32px;
+  padding:14px 20px;margin-bottom:28px;
   box-shadow:var(--shadow-sm);
 }
 .guide-icon{font-size:1.1rem;flex-shrink:0}
 .guide p{font-size:.88rem;color:var(--ink-2);line-height:1.5}
 .guide strong{color:var(--ink)}
 
-/* ===== SECTION GRID ===== */
-.sec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
-
-/* ===== SECTION CARD ===== */
-.sc{
+/* ===== SECTION TILES DASHBOARD GRID ===== */
+.tiles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+.tile-card{
   background:var(--surface);border:1.5px solid var(--border);
-  border-radius:var(--radius-lg);overflow:hidden;
+  border-radius:var(--radius-lg);padding:24px;
+  cursor:pointer;user-select:none;
+  transition:all .22s cubic-bezier(.16,1,.3,1);
   box-shadow:var(--shadow-sm);
-  transition:border-color .2s,box-shadow .2s;
+  display:flex;flex-direction:column;justify-content:space-between;
+  position:relative;overflow:hidden;
 }
-.sc.open{border-color:var(--red);box-shadow:0 8px 32px rgba(250,15,0,.1)}
-.sc-head{
-  display:flex;align-items:center;gap:14px;
-  padding:20px 22px;cursor:pointer;user-select:none;
-  transition:background .18s;
+.tile-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:var(--red);opacity:0;transition:opacity .2s;
 }
-.sc-head:hover{background:var(--red-bg)}
-.sc.open .sc-head{background:var(--red-bg);border-bottom:1.5px solid var(--red-border)}
-.sc-num{
-  width:44px;height:44px;border-radius:11px;
+.tile-card:hover{
+  border-color:var(--red);transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(250,15,0,.12);
+  background:var(--surface);
+}
+.tile-card:hover::before{opacity:1}
+.tile-top{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
+.tile-num{
+  width:46px;height:46px;border-radius:12px;
   background:var(--surface-3);border:1.5px solid var(--border);
   display:flex;align-items:center;justify-content:center;
-  font-size:.9rem;font-weight:900;color:var(--ink-3);
-  flex-shrink:0;transition:all .2s;
+  font-size:1.05rem;font-weight:900;color:var(--ink-2);
+  flex-shrink:0;transition:all .2s;font-variant-numeric:tabular-nums;
+}
+.tile-card:hover .tile-num{background:var(--red);color:#FFF;border-color:var(--red)}
+.tile-info{flex:1;min-width:0}
+.tile-tag{font-size:.65rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+.tile-title{font-size:1.05rem;font-weight:800;color:var(--ink);line-height:1.3;margin-bottom:4px}
+.tile-desc{font-size:.82rem;color:var(--ink-3);line-height:1.45}
+.tile-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:14px;margin-top:14px;border-top:1px solid var(--border);
+}
+.tile-hint{font-size:.74rem;color:var(--ink-3);font-weight:600}
+.tile-btn{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--red-bg);color:var(--red);
+  font-size:.78rem;font-weight:800;
+  padding:6px 14px;border-radius:999px;
+  transition:all .18s;border:1px solid var(--red-border);
+}
+.tile-card:hover .tile-btn{background:var(--red);color:#FFF;border-color:var(--red)}
+
+/* ===== FULL-SCREEN SECTION VIEW ===== */
+.section-full-view{display:none;animation:viewFadeIn .28s ease}
+@keyframes viewFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* Section Top Bar */
+.sec-nav-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:24px;gap:12px;flex-wrap:wrap;
+}
+.back-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--surface);color:var(--red);
+  border:1.5px solid var(--red);
+  padding:10px 20px;border-radius:999px;
+  font-size:.85rem;font-weight:800;cursor:pointer;
+  transition:all .18s;box-shadow:var(--shadow-sm);
+}
+.back-btn:hover{background:var(--red);color:#FFF;transform:translateX(-2px)}
+.sec-breadcrumb{font-size:.84rem;color:var(--ink-3);font-weight:700}
+.sec-breadcrumb strong{color:var(--ink)}
+
+/* Section Full Header */
+.sec-hero-card{
+  background:var(--surface);border:2px solid var(--red);
+  border-radius:var(--radius-lg);padding:28px 32px;
+  margin-bottom:28px;box-shadow:0 8px 30px rgba(250,15,0,.08);
+  display:flex;align-items:center;gap:20px;
+}
+.sec-hero-badge{
+  width:58px;height:58px;border-radius:16px;
+  background:var(--red);color:#FFF;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.35rem;font-weight:900;flex-shrink:0;
   font-variant-numeric:tabular-nums;
 }
-.sc.open .sc-num,.sc-head:hover .sc-num{background:var(--red);color:#FFF;border-color:var(--red)}
-.sc-info{flex:1;min-width:0}
-.sc-tag{font-size:.64rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}
-.sc-title{font-size:.97rem;font-weight:800;color:var(--ink);line-height:1.3;margin-bottom:2px}
-.sc-desc{font-size:.77rem;color:var(--ink-3);line-height:1.4}
-.sc-toggle{
-  width:28px;height:28px;border-radius:7px;
-  background:var(--surface-3);border:1.5px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;transition:all .3s;
+.sec-hero-body{flex:1;min-width:0}
+.sec-hero-tag{font-size:.7rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.sec-hero-title{font-size:1.6rem;font-weight:900;color:var(--ink);letter-spacing:-.02em;margin-bottom:6px;line-height:1.2}
+.sec-hero-desc{font-size:.92rem;color:var(--ink-2);line-height:1.5}
+
+/* Section Content Container */
+.sec-content-box{
+  background:var(--surface);border:1.5px solid var(--border);
+  border-radius:var(--radius-lg);padding:32px;
+  box-shadow:var(--shadow-sm);margin-bottom:28px;
 }
-.sc.open .sc-toggle{background:var(--red);border-color:var(--red)}
-.sc-toggle svg{transition:transform .35s cubic-bezier(.16,1,.3,1)}
-.sc.open .sc-toggle svg{transform:rotate(180deg)}
-.sc-toggle path{transition:stroke .2s}
-.sc.open .sc-toggle path,.sc-head:hover .sc-toggle path{stroke:#FFF}
-.sc.open .sc-toggle,.sc-head:hover .sc-toggle{background:var(--red);border-color:var(--red)}
 
-.sc-body{display:none;padding:22px 22px 26px;animation:slideIn .25s ease}
-.sc.open .sc-body{display:block}
-@keyframes slideIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+/* Section Bottom Navigation */
+.sec-bottom-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-top:20px;border-top:1px solid var(--border);
+  gap:12px;flex-wrap:wrap;
+}
 
-/* ===== MONTH PILLS ===== */
+/* ===== MONTH PILLS & CARD (FULL WIDTH) ===== */
 .month-pills{
-  display:flex;gap:6px;overflow-x:auto;padding-bottom:12px;margin-bottom:18px;
-  scrollbar-width:none;
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:14px;margin-bottom:22px;
+  scrollbar-width:thin;
 }
-.month-pills::-webkit-scrollbar{display:none}
 .mp{
-  padding:6px 14px;background:var(--surface-3);
+  padding:8px 18px;background:var(--surface-2);
   border:1.5px solid var(--border);border-radius:999px;
-  font-size:.78rem;font-weight:700;color:var(--ink-2);
-  cursor:pointer;white-space:nowrap;transition:all .16s;flex-shrink:0;
+  font-size:.82rem;font-weight:700;color:var(--ink-2);
+  cursor:pointer;white-space:nowrap;transition:all .18s;flex-shrink:0;
 }
 .mp:hover{background:var(--red-bg);border-color:var(--red);color:var(--red)}
 .mp.active{background:var(--red);border-color:var(--red);color:#FFF;box-shadow:0 3px 10px rgba(250,15,0,.28)}
 
-/* ===== MONTH CARD ===== */
 .mcard{
   background:var(--surface-2);
   border:2px solid var(--red);border-radius:var(--radius);
-  padding:22px;
+  padding:28px;box-shadow:0 4px 18px rgba(250,15,0,.08);
 }
-.mcard-row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.mcard-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap}
 .mcard-theme{
   background:var(--red-bg);color:var(--red);
-  font-size:.7rem;font-weight:800;
-  padding:4px 12px;border-radius:999px;
+  font-size:.74rem;font-weight:800;
+  padding:5px 14px;border-radius:999px;
   border:1px solid var(--red-border);
   text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;
 }
 .mcard-dur{
-  font-size:.75rem;font-weight:700;color:var(--ink-3);
-  background:var(--surface);padding:4px 12px;border-radius:999px;
+  font-size:.78rem;font-weight:700;color:var(--ink-3);
+  background:var(--surface);padding:5px 14px;border-radius:999px;
   border:1px solid var(--border);white-space:nowrap;
 }
-.mcard h3{font-size:1.2rem;font-weight:900;color:var(--ink);margin-bottom:8px;line-height:1.3;letter-spacing:-.02em}
-.mcard p{font-size:.87rem;color:var(--ink-2);line-height:1.65;margin-bottom:16px}
-.mcard-skills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
+.mcard h3{font-size:1.35rem;font-weight:900;color:var(--ink);margin-bottom:10px;line-height:1.25;letter-spacing:-.02em}
+.mcard p{font-size:.92rem;color:var(--ink-2);line-height:1.65;margin-bottom:20px}
+.mcard-skills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
 .mskill{
-  background:var(--surface);color:var(--ink-2);
+  background:var(--surface);color:var(--ink);
   border:1px solid var(--border);
-  font-size:.72rem;font-weight:700;
-  padding:3px 10px;border-radius:6px;
+  font-size:.76rem;font-weight:700;
+  padding:4px 12px;border-radius:6px;
 }
-.mcard-actions{display:flex;gap:8px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--border)}
+.mcard-actions{display:flex;gap:10px;flex-wrap:wrap;padding-top:20px;border-top:1px solid var(--border)}
 
 /* ===== BUTTONS ===== */
-.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:999px;font-size:.82rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;white-space:nowrap;transition:all .16s;line-height:1}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;border-radius:999px;font-size:.84rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;white-space:nowrap;transition:all .16s;line-height:1}
 .btn-primary{background:var(--red);color:#FFF;box-shadow:0 2px 8px rgba(250,15,0,.25)}
 .btn-primary:hover{background:var(--red-dk);transform:translateY(-1px)}
 .btn-outline{background:transparent;color:var(--red);border:1.5px solid var(--red)}
 .btn-outline:hover{background:var(--red);color:#FFF}
 .btn-dark{background:var(--ink);color:#FFF}
 .btn-dark:hover{background:#333;transform:translateY(-1px)}
-.btn-ghost{background:var(--surface-3);color:var(--ink-2);border:1.5px solid var(--border)}
+.btn-ghost{background:var(--surface-2);color:var(--ink-2);border:1.5px solid var(--border)}
 .btn-ghost:hover{border-color:var(--red);color:var(--red);background:var(--red-bg)}
 
 /* ===== RESOURCE GRID ===== */
-.rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:12px}
+.rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
 .rc{
   background:var(--surface-2);border:1.5px solid var(--border);
-  border-radius:var(--radius);padding:18px;
-  transition:all .18s;
+  border-radius:var(--radius);padding:22px;
+  transition:all .18s;display:flex;flex-direction:column;justify-content:space-between;
 }
-.rc:hover{border-color:var(--red);background:var(--surface);box-shadow:0 4px 16px rgba(250,15,0,.08);transform:translateY(-2px)}
+.rc:hover{border-color:var(--red);background:var(--surface);box-shadow:0 6px 20px rgba(250,15,0,.1);transform:translateY(-2px)}
 .rc-badge{
   display:inline-block;
   background:var(--red-bg);color:var(--red);
-  font-size:.65rem;font-weight:800;
-  padding:3px 9px;border-radius:999px;
-  margin-bottom:9px;border:1px solid var(--red-border);
+  font-size:.68rem;font-weight:800;
+  padding:3px 10px;border-radius:999px;
+  margin-bottom:10px;border:1px solid var(--red-border);
   text-transform:uppercase;letter-spacing:.04em;
 }
-.rc h4{font-size:.9rem;font-weight:800;color:var(--ink);margin-bottom:5px;line-height:1.3}
-.rc p{font-size:.8rem;color:var(--ink-2);margin-bottom:14px;line-height:1.5}
+.rc h4{font-size:.98rem;font-weight:800;color:var(--ink);margin-bottom:6px;line-height:1.3}
+.rc p{font-size:.83rem;color:var(--ink-2);margin-bottom:16px;line-height:1.55}
 
-/* ===== SKILL BAR ===== */
-.sbar{height:5px;background:var(--border);border-radius:999px;overflow:hidden;margin-bottom:12px}
+/* Skill Bar */
+.sbar{height:6px;background:var(--border);border-radius:999px;overflow:hidden;margin-bottom:14px}
 .sbar-fill{height:100%;background:linear-gradient(90deg,var(--red),#FF6040);border-radius:999px}
 
-/* ===== PORTFOLIO STATS ===== */
-.pstats{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-bottom:20px}
+/* Portfolio Stats */
+.pstats{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:24px}
 .pstat{
-  background:var(--surface);border:1.5px solid var(--border);
-  border-radius:var(--radius);padding:16px 14px;text-align:center;
-}
-.pstat-n{font-size:1.7rem;font-weight:900;color:var(--red);line-height:1.1}
-.pstat-l{font-size:.7rem;font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em;margin-top:4px}
-
-/* ===== ACHIEVEMENTS ===== */
-.ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:10px}
-.ac{
   background:var(--surface-2);border:1.5px solid var(--border);
   border-radius:var(--radius);padding:18px 14px;text-align:center;
+}
+.pstat-n{font-size:1.9rem;font-weight:900;color:var(--red);line-height:1.1}
+.pstat-l{font-size:.72rem;font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em;margin-top:4px}
+
+/* Achievements */
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.ac{
+  background:var(--surface-2);border:1.5px solid var(--border);
+  border-radius:var(--radius);padding:22px 16px;text-align:center;
   transition:all .18s;
 }
 .ac.earned{background:var(--red-bg);border-color:var(--red-border)}
 .ac:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
 .ac-icon{
-  width:40px;height:40px;border-radius:50%;
-  margin:0 auto 10px;
+  width:44px;height:44px;border-radius:50%;
+  margin:0 auto 12px;
   display:flex;align-items:center;justify-content:center;
-  font-size:.9rem;font-weight:900;
+  font-size:1rem;font-weight:900;
 }
 .ac.earned .ac-icon{background:var(--red);color:#FFF}
 .ac.locked .ac-icon{background:var(--border);color:var(--ink-3)}
-.ac h4{font-size:.87rem;font-weight:800;color:var(--ink);margin-bottom:4px}
-.ac p{font-size:.74rem;color:var(--ink-3);line-height:1.4;margin-bottom:10px}
-.ac-tag{font-size:.66rem;font-weight:800;padding:3px 10px;border-radius:999px;text-transform:uppercase}
+.ac h4{font-size:.92rem;font-weight:800;color:var(--ink);margin-bottom:4px}
+.ac p{font-size:.76rem;color:var(--ink-3);line-height:1.45;margin-bottom:12px}
+.ac-tag{font-size:.68rem;font-weight:800;padding:3px 12px;border-radius:999px;text-transform:uppercase}
 .ac.earned .ac-tag{background:var(--red);color:#FFF}
 .ac.locked .ac-tag{background:var(--border);color:var(--ink-3)}
 
-/* ===== TOOLS ===== */
-.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+/* Tools */
+.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}
 .tool{
   display:flex;flex-direction:column;align-items:center;
   background:var(--surface-2);border:1.5px solid var(--border);
-  border-radius:var(--radius);padding:16px 10px;text-align:center;
+  border-radius:var(--radius);padding:20px 12px;text-align:center;
   text-decoration:none;color:inherit;transition:all .18s;
 }
-.tool:hover{border-color:var(--red);background:var(--red-bg);transform:translateY(-2px);box-shadow:0 4px 12px rgba(250,15,0,.1)}
+.tool:hover{border-color:var(--red);background:var(--red-bg);transform:translateY(-2px);box-shadow:0 6px 16px rgba(250,15,0,.1)}
 .tool-ico{
-  width:34px;height:34px;border-radius:8px;
+  width:40px;height:40px;border-radius:10px;
   background:var(--surface);border:1px solid var(--border);
   display:flex;align-items:center;justify-content:center;
-  color:var(--red);font-weight:900;font-size:.82rem;margin-bottom:8px;
+  color:var(--red);font-weight:900;font-size:.9rem;margin-bottom:10px;
 }
-.tool h4{font-size:.79rem;font-weight:800;color:var(--ink);margin-bottom:2px}
-.tool span{font-size:.68rem;color:var(--ink-3)}
+.tool h4{font-size:.85rem;font-weight:800;color:var(--ink);margin-bottom:2px}
+.tool span{font-size:.72rem;color:var(--ink-3)}
 
 /* ===== FOOTER ===== */
-footer{
-  background:var(--ink);padding:28px 28px;text-align:center;
-  color:rgba(255,255,255,.45);font-size:.82rem;
-}
+footer{background:var(--ink);padding:28px;text-align:center;color:rgba(255,255,255,.38);font-size:.82rem}
 footer p+p{margin-top:5px}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:760px){
   .hdr{padding:0 18px}
-  .hero{padding:44px 18px 40px}
-  .main{padding:28px 16px 60px}
+  .hero{padding:40px 18px 36px}
+  .main{padding:24px 16px 60px}
+  .tiles-grid{grid-template-columns:1fr}
   .flow{flex-direction:column;align-items:flex-start}
   .flow-arr{display:none}
-  .sec-grid{grid-template-columns:1fr}
+  .sec-hero-card{flex-direction:column;align-items:flex-start;padding:20px}
+  .sec-content-box{padding:20px 16px}
   .mcard-row{flex-direction:column}
   .mcard-actions{flex-direction:column}
-  .guide{flex-direction:column;align-items:flex-start}
-}
-@media(prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
 }
 </style>
 </head>
@@ -324,26 +371,26 @@ footer p+p{margin-top:5px}
 <!-- HEADER -->
 <header class="hdr">
   <div class="hdr-in">
-    <a href="#" class="brand">
+    <div class="brand" onclick="showDashboard()">
       <div class="brand-mark">Ae</div>
       <div class="brand-text">
         <div class="brand-name">Adobe Express for Education</div>
         <div class="brand-sub">Student Creative Studio</div>
       </div>
-    </a>
+    </div>
     <div class="hdr-badge">Student Portal</div>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
+<!-- HERO (Visible on Dashboard) -->
+<section class="hero" id="mainHero">
   <div class="hero-in">
     <div class="hero-tag">
       <span class="hero-tag-dot"></span>
       12-Month Creative Programme
     </div>
     <h1>Student Creative Activity Dashboard</h1>
-    <p class="hero-sub">Curriculum-aligned design challenges for every month of the year. Pick your month, follow the tutorial, create in Adobe Express, and submit your work.</p>
+    <p class="hero-sub">Curriculum-aligned design challenges for every month of the academic year. Click any section below to enter its full-screen creative workspace.</p>
     <div class="flow">
       <div class="flow-step"><span class="flow-n">1</span>Choose Month</div>
       <span class="flow-arr">&#8594;</span>
@@ -356,235 +403,172 @@ footer p+p{margin-top:5px}
   </div>
 </section>
 
-<!-- MAIN -->
+<!-- MAIN APP AREA -->
 <main class="main">
-  <div class="guide">
-    <span class="guide-icon">&#128161;</span>
-    <p><strong>Tap any section to expand it.</strong> Complete each section in any order. Your progress is always here when you return.</p>
+
+  <!-- ==============================================
+       VIEW 1: SECTIONS DASHBOARD TILES
+       ============================================== -->
+  <div id="dashboardView">
+    <div class="guide">
+      <span class="guide-icon">&#128161;</span>
+      <p><strong>Click any section card below</strong> to open its complete workspace in full-screen view.</p>
+    </div>
+
+    <div class="tiles-grid">
+      <!-- Section 1 -->
+      <div class="tile-card" onclick="openSection('1')">
+        <div>
+          <div class="tile-top">
+            <div class="tile-num">01</div>
+            <div class="tile-info">
+              <div class="tile-tag">Section 1</div>
+              <h2 class="tile-title">12-Month Challenges</h2>
+              <p class="tile-desc">Monthly curriculum design projects with video masterclasses and submission links for January to December.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tile-footer">
+          <span class="tile-hint">12 Aligned Challenges</span>
+          <span class="tile-btn">Open Section &rarr;</span>
+        </div>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="tile-card" onclick="openSection('2')">
+        <div>
+          <div class="tile-top">
+            <div class="tile-num">02</div>
+            <div class="tile-info">
+              <div class="tile-tag">Section 2</div>
+              <h2 class="tile-title">Skill Building Tracks</h2>
+              <p class="tile-desc">Step-by-step tracks for graphic design, animation, video production, social media, and typography.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tile-footer">
+          <span class="tile-hint">5 Guided Tracks</span>
+          <span class="tile-btn">Open Section &rarr;</span>
+        </div>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="tile-card" onclick="openSection('3')">
+        <div>
+          <div class="tile-top">
+            <div class="tile-num">03</div>
+            <div class="tile-info">
+              <div class="tile-tag">Section 3</div>
+              <h2 class="tile-title">My Creative Portfolio</h2>
+              <p class="tile-desc">Track project submission progress, view personal library works, and share portfolio links with teachers.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tile-footer">
+          <span class="tile-hint">Portfolio &amp; Submissions</span>
+          <span class="tile-btn">Open Section &rarr;</span>
+        </div>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="tile-card" onclick="openSection('4')">
+        <div>
+          <div class="tile-top">
+            <div class="tile-num">04</div>
+            <div class="tile-info">
+              <div class="tile-tag">Section 4</div>
+              <h2 class="tile-title">Video Tutorials &amp; Guides</h2>
+              <p class="tile-desc">Curated step-by-step masterclasses created by certified Adobe educators from beginner to advanced.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tile-footer">
+          <span class="tile-hint">5 Video Masterclasses</span>
+          <span class="tile-btn">Open Section &rarr;</span>
+        </div>
+      </div>
+
+      <!-- Section 5 -->
+      <div class="tile-card" onclick="openSection('5')">
+        <div>
+          <div class="tile-top">
+            <div class="tile-num">05</div>
+            <div class="tile-info">
+              <div class="tile-tag">Section 5</div>
+              <h2 class="tile-title">Adobe Express Creative Tools</h2>
+              <p class="tile-desc">Direct 1-click launchers for posters, videos, greeting cards, collages, comics, and AI cutout tools.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tile-footer">
+          <span class="tile-hint">8 Direct Launchers</span>
+          <span class="tile-btn">Open Section &rarr;</span>
+        </div>
+      </div>
+
+      <!-- Section 6 -->
+      <div class="tile-card" onclick="openSection('6')">
+        <div>
+          <div class="tile-top">
+            <div class="tile-num">06</div>
+            <div class="tile-info">
+              <div class="tile-tag">Section 6</div>
+              <h2 class="tile-title">Achievements &amp; Badges</h2>
+              <p class="tile-desc">Milestone badges earned through monthly assignment completion and high-distinction submissions.</p>
+            </div>
+          </div>
+        </div>
+        <div class="tile-footer">
+          <span class="tile-hint">6 Digital Badges</span>
+          <span class="tile-btn">Open Section &rarr;</span>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="sec-grid" id="secGrid">
 
-    <!-- SECTION 1: 12-Month Challenges -->
-    <div class="sc" id="s1">
-      <div class="sc-head" onclick="toggle('s1')">
-        <div class="sc-num">01</div>
-        <div class="sc-info">
-          <div class="sc-tag">Section 1</div>
-          <div class="sc-title">12-Month Creative Challenges</div>
-          <div class="sc-desc">Monthly curriculum projects &#8212; January through December</div>
-        </div>
-        <div class="sc-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </div>
-      <div class="sc-body">
-        <p style="font-size:.84rem;color:var(--ink-3);margin-bottom:14px;">Tap a month below to see the activity brief, tutorial, and submission link.</p>
-        <div class="month-pills" id="pills"></div>
-        <div class="mcard" id="mcard"></div>
+  <!-- ==============================================
+       VIEW 2: FULL-SCREEN SECTION DETAIL VIEW
+       ============================================== -->
+  <div id="sectionView" class="section-full-view">
+    <!-- Top Bar -->
+    <div class="sec-nav-bar">
+      <button class="back-btn" onclick="showDashboard()">&#8592; Back to All Sections</button>
+      <div class="sec-breadcrumb">Student Studio / <strong id="crumbName">Section Detail</strong></div>
+    </div>
+
+    <!-- Section Banner -->
+    <div class="sec-hero-card">
+      <div class="sec-hero-badge" id="secBadge">01</div>
+      <div class="sec-hero-body">
+        <div class="sec-hero-tag" id="secTag">SECTION 1</div>
+        <h1 class="sec-hero-title" id="secTitle">Section Title</h1>
+        <p class="sec-hero-desc" id="secDesc">Detailed section description.</p>
       </div>
     </div>
 
-    <!-- SECTION 2: Skill Tracks -->
-    <div class="sc" id="s2">
-      <div class="sc-head" onclick="toggle('s2')">
-        <div class="sc-num">02</div>
-        <div class="sc-info">
-          <div class="sc-tag">Section 2</div>
-          <div class="sc-title">Skill Building Tracks</div>
-          <div class="sc-desc">Design, video, social media, illustration &amp; typography</div>
-        </div>
-        <div class="sc-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </div>
-      <div class="sc-body">
-        <div class="rg">
-          <div class="rc">
-            <div class="rc-badge">Design</div>
-            <h4>Graphic Design Fundamentals</h4>
-            <p>Master layout, color, and visual balance for posters and digital banners.</p>
-            <div class="sbar"><div class="sbar-fill" style="width:75%"></div></div>
-            <a href="https://express.adobe.com/sp/design/posters" target="_blank" class="btn btn-primary">Start Track &#8599;</a>
-          </div>
-          <div class="rc">
-            <div class="rc-badge">Video</div>
-            <h4>Video &amp; Animation Storytelling</h4>
-            <p>Produce short video stories and presentations with Adobe Express.</p>
-            <div class="sbar"><div class="sbar-fill" style="width:50%"></div></div>
-            <a href="https://express.adobe.com/sp/design/videos" target="_blank" class="btn btn-primary">Start Track &#8599;</a>
-          </div>
-          <div class="rc">
-            <div class="rc-badge">Social Media</div>
-            <h4>Social Media Campaign Creation</h4>
-            <p>Create awareness campaigns and carousel posts for school initiatives.</p>
-            <div class="sbar"><div class="sbar-fill" style="width:35%"></div></div>
-            <a href="https://express.adobe.com/sp/design/social" target="_blank" class="btn btn-primary">Start Track &#8599;</a>
-          </div>
-          <div class="rc">
-            <div class="rc-badge">Illustration</div>
-            <h4>Digital Illustration &amp; Icons</h4>
-            <p>Create digital art and custom vector icons using Express drawing tools.</p>
-            <div class="sbar"><div class="sbar-fill" style="width:20%"></div></div>
-            <a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Start Track &#8599;</a>
-          </div>
-          <div class="rc">
-            <div class="rc-badge">Typography</div>
-            <h4>Creative Lettering &amp; Text Art</h4>
-            <p>Explore expressive typography and generative text effects for projects.</p>
-            <div class="sbar"><div class="sbar-fill" style="width:60%"></div></div>
-            <a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Start Track &#8599;</a>
-          </div>
-        </div>
-      </div>
+    <!-- Section Full Content -->
+    <div class="sec-content-box" id="secContent">
+      <!-- Dynamic content rendered here -->
     </div>
 
-    <!-- SECTION 3: Portfolio -->
-    <div class="sc" id="s3">
-      <div class="sc-head" onclick="toggle('s3')">
-        <div class="sc-num">03</div>
-        <div class="sc-info">
-          <div class="sc-tag">Section 3</div>
-          <div class="sc-title">My Creative Portfolio</div>
-          <div class="sc-desc">Submission history, progress stats, and gallery</div>
-        </div>
-        <div class="sc-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </div>
-      <div class="sc-body">
-        <div class="pstats">
-          <div class="pstat"><div class="pstat-n">9/12</div><div class="pstat-l">Months Done</div></div>
-          <div class="pstat"><div class="pstat-n">83%</div><div class="pstat-l">Submission Rate</div></div>
-          <div class="pstat"><div class="pstat-n">3/6</div><div class="pstat-l">Badges Earned</div></div>
-          <div class="pstat"><div class="pstat-n">14</div><div class="pstat-l">Projects Saved</div></div>
-        </div>
-        <div class="rg">
-          <div class="rc">
-            <div class="rc-badge">Upload</div>
-            <h4>Submit Assignment</h4>
-            <p>Upload your finished Adobe Express project for teacher review.</p>
-            <a href="https://forms.google.com" target="_blank" class="btn btn-primary">Upload &#8599;</a>
-          </div>
-          <div class="rc">
-            <div class="rc-badge">Portfolio</div>
-            <h4>View My Work</h4>
-            <p>Access all your published projects in your personal library.</p>
-            <a href="https://express.adobe.com" target="_blank" class="btn btn-outline">Open Library &#8599;</a>
-          </div>
-          <div class="rc">
-            <div class="rc-badge">Share</div>
-            <h4>Share With Class</h4>
-            <p>Generate view-only links to showcase your work with classmates.</p>
-            <a href="https://express.adobe.com" target="_blank" class="btn btn-outline">Share Work &#8599;</a>
-          </div>
-        </div>
-      </div>
+    <!-- Bottom Navigation -->
+    <div class="sec-bottom-bar">
+      <button class="back-btn" onclick="showDashboard()">&#8592; Back to All Sections</button>
+      <div id="secNextPrev"></div>
     </div>
+  </div>
 
-    <!-- SECTION 4: Tutorials -->
-    <div class="sc" id="s4">
-      <div class="sc-head" onclick="toggle('s4')">
-        <div class="sc-num">04</div>
-        <div class="sc-info">
-          <div class="sc-tag">Section 4</div>
-          <div class="sc-title">Video Tutorials &amp; Guides</div>
-          <div class="sc-desc">Step-by-step masterclasses by certified Adobe educators</div>
-        </div>
-        <div class="sc-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </div>
-      <div class="sc-body">
-        <div class="rg">
-          <div class="rc">
-            <div class="rc-badge">Beginner &bull; 5 min</div>
-            <h4>Getting Started with Adobe Express</h4>
-            <p>Tour the workspace and complete your first design in under 5 minutes.</p>
-            <a href="https://www.youtube.com/results?search_query=adobe+express+beginner+tutorial" target="_blank" class="btn btn-dark">Watch &#8599;</a>
-          </div>
-          <div class="rc">
-            <div class="rc-badge">Intermediate &bull; 8 min</div>
-            <h4>School Event Poster Design</h4>
-            <p>Pick color palettes and create professional school event flyers.</p>
-            <a href="https://www.youtube.com/results?search_query=adobe+express+poster+tutorial" target="_blank" class="btn btn-dark">Watch &#8599;</a>
-          </div>
-          <div class="rc">
-            <div class="rc-badge">Advanced &bull; 12 min</div>
-            <h4>Creating Short Video Stories</h4>
-            <p>Add voiceovers, transitions, and animated text to your class videos.</p>
-            <a href="https://www.youtube.com/results?search_query=adobe+express+video+tutorial" target="_blank" class="btn btn-dark">Watch &#8599;</a>
-          </div>
-          <div class="rc">
-            <div class="rc-badge">Animation &bull; 10 min</div>
-            <h4>Text &amp; Sticker Animation</h4>
-            <p>Animate illustrations and export ready-to-share animated GIFs.</p>
-            <a href="https://www.youtube.com/results?search_query=adobe+express+animation+tutorial" target="_blank" class="btn btn-dark">Watch &#8599;</a>
-          </div>
-          <div class="rc">
-            <div class="rc-badge">Branding &bull; 15 min</div>
-            <h4>Personal Brand &amp; Digital Logo</h4>
-            <p>Design a personal logo badge and color swatch for your student brand.</p>
-            <a href="https://www.youtube.com/results?search_query=adobe+express+logo+tutorial" target="_blank" class="btn btn-dark">Watch &#8599;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION 5: Express Tools -->
-    <div class="sc" id="s5">
-      <div class="sc-head" onclick="toggle('s5')">
-        <div class="sc-num">05</div>
-        <div class="sc-info">
-          <div class="sc-tag">Section 5</div>
-          <div class="sc-title">Adobe Express Creative Tools</div>
-          <div class="sc-desc">One-tap launchers for posters, videos, cards &amp; AI tools</div>
-        </div>
-        <div class="sc-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </div>
-      <div class="sc-body">
-        <p style="font-size:.84rem;color:var(--ink-3);margin-bottom:14px;">Select any tool to launch it directly in Adobe Express.</p>
-        <div class="tools">
-          <a href="https://express.adobe.com/sp/design/posters" target="_blank" class="tool"><div class="tool-ico">P</div><h4>Posters</h4><span>Flyers &amp; Art</span></a>
-          <a href="https://express.adobe.com/sp/design/videos" target="_blank" class="tool"><div class="tool-ico">V</div><h4>Videos</h4><span>Clips &amp; Reels</span></a>
-          <a href="https://express.adobe.com/sp/design/cards" target="_blank" class="tool"><div class="tool-ico">C</div><h4>Cards</h4><span>Greetings</span></a>
-          <a href="https://express.adobe.com/sp/design/collages" target="_blank" class="tool"><div class="tool-ico">G</div><h4>Collages</h4><span>Photo Grids</span></a>
-          <a href="https://express.adobe.com/sp/tools/remove-background" target="_blank" class="tool"><div class="tool-ico">B</div><h4>Remove BG</h4><span>1-Click</span></a>
-          <a href="https://express.adobe.com/sp/design/bookcovers" target="_blank" class="tool"><div class="tool-ico">K</div><h4>Book Covers</h4><span>Novel Layout</span></a>
-          <a href="https://express.adobe.com/sp/design/comics" target="_blank" class="tool"><div class="tool-ico">M</div><h4>Comics</h4><span>4-Panel</span></a>
-          <a href="https://express.adobe.com/sp/design/social" target="_blank" class="tool"><div class="tool-ico">S</div><h4>Social Posts</h4><span>Campaigns</span></a>
-        </div>
-        <div style="margin-top:18px;text-align:center">
-          <a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Open Adobe Express &#8599;</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION 6: Achievements -->
-    <div class="sc" id="s6">
-      <div class="sc-head" onclick="toggle('s6')">
-        <div class="sc-num">06</div>
-        <div class="sc-info">
-          <div class="sc-tag">Section 6</div>
-          <div class="sc-title">Achievements &amp; Badges</div>
-          <div class="sc-desc">Milestones earned through monthly challenge completion</div>
-        </div>
-        <div class="sc-toggle"><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#888" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-      </div>
-      <div class="sc-body">
-        <div class="ach-grid">
-          <div class="ac earned"><div class="ac-icon">&#10003;</div><h4>First Project</h4><p>Completed your first monthly creative challenge.</p><span class="ac-tag">Earned</span></div>
-          <div class="ac earned"><div class="ac-icon">&#10003;</div><h4>3-Month Streak</h4><p>Submitted 3 challenges on schedule.</p><span class="ac-tag">Earned</span></div>
-          <div class="ac earned"><div class="ac-icon">&#10003;</div><h4>Portfolio Builder</h4><p>Published 5+ works to your library.</p><span class="ac-tag">Earned</span></div>
-          <div class="ac locked"><div class="ac-icon">&#128274;</div><h4>Half-Year Creator</h4><p>Complete 6 monthly challenges to unlock.</p><span class="ac-tag">Locked</span></div>
-          <div class="ac locked"><div class="ac-icon">&#128274;</div><h4>Year Champion</h4><p>Complete all 12 monthly challenges.</p><span class="ac-tag">Locked</span></div>
-          <div class="ac locked"><div class="ac-icon">&#128274;</div><h4>Master Creator</h4><p>Earn high distinction across all submissions.</p><span class="ac-tag">Locked</span></div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /sec-grid -->
 </main>
 
 <footer>
-  <p>&#169; Adobe Express for Education &#8212; Certified Digital Skills Programme for Schools</p>
-  <p>This is the Student Portal. Educator resources are on a separate, restricted portal.</p>
+  <p>&#169; Adobe Express for Education &mdash; Certified Digital Skills Programme for Schools</p>
+  <p>This is the Student Portal. Educator resources are on a separate, dedicated portal.</p>
 </footer>
 
 <script>
-var MONTHS=[
+/* ===== 12 MONTH CHALLENGES DATA ===== */
+var MONTHS = [
   {id:"jan",name:"January",theme:"Patriotism & Civic Pride",activity:"Republic Day Poster Design",desc:"Design an inspiring, patriotic poster celebrating the Constitution of India and national diversity. Experiment with India-themed color palettes, typographic hierarchy, and vector emblems.",skills:["Vector Art","Typography","Color Contrast"],dur:"30 mins",tutorial:"https://www.youtube.com/results?search_query=adobe+express+poster+tutorial",create:"https://express.adobe.com/sp/design/posters",submit:"https://forms.google.com"},
   {id:"feb",name:"February",theme:"Festivals & Cultural Heritage",activity:"My Favourite Festival Greeting",desc:"Create a vibrant digital greeting card illustrating traditional folk art, festivities, and cultural harmony using Adobe Express shapes, textures, and personalized greetings.",skills:["Greeting Card Layout","Layering","Pattern Design"],dur:"25 mins",tutorial:"https://www.youtube.com/results?search_query=adobe+express+card+tutorial",create:"https://express.adobe.com/sp/design/cards",submit:"https://forms.google.com"},
   {id:"mar",name:"March",theme:"Inspiration & Leadership",activity:"Women's Day Tribute Story",desc:"Curate an inspiring photo collage celebrating prominent women scientists, leaders, or personal family role models who make a difference in society.",skills:["Photo Collage","Quote Typography","Visual Storytelling"],dur:"35 mins",tutorial:"https://www.youtube.com/results?search_query=adobe+express+collage+tutorial",create:"https://express.adobe.com/sp/design/social",submit:"https://forms.google.com"},
@@ -599,54 +583,207 @@ var MONTHS=[
   {id:"dec",name:"December",theme:"Reflection & Vision",activity:"Year-End Reflection Video",desc:"Create a personal highlight reel reflecting on your creative achievements, skills learned, and goals for the coming year.",skills:["Year-in-Review Video","Timeline Montage","Self-Reflection"],dur:"45 mins",tutorial:"https://www.youtube.com/results?search_query=adobe+express+recap+video+tutorial",create:"https://express.adobe.com/sp/design/videos",submit:"https://forms.google.com"}
 ];
 
-var cur=0;
+var curMonth = 0;
 
-function buildPills(){
-  var el=document.getElementById('pills');
-  if(!el)return;
-  el.innerHTML=MONTHS.map(function(m,i){
-    return'<button class="mp'+(i===cur?' active':'')+'" onclick="setMonth('+i+')">'+m.name+'</button>';
+function renderMonthSectionHtml() {
+  var pillsHtml = MONTHS.map(function(m, i) {
+    return '<button class="mp' + (i === curMonth ? ' active' : '') + '" onclick="selectMonthTab(' + i + ')">' + m.name + '</button>';
   }).join('');
+
+  var m = MONTHS[curMonth];
+  var cardHtml = '<div class="mcard">' +
+    '<div class="mcard-row">' +
+      '<span class="mcard-theme">' + m.name + ' Challenge &bull; ' + m.theme + '</span>' +
+      '<span class="mcard-dur">Estimated Duration: ' + m.dur + '</span>' +
+    '</div>' +
+    '<h3>' + m.activity + '</h3>' +
+    '<p>' + m.desc + '</p>' +
+    '<div class="mcard-skills">' + m.skills.map(function(s){ return '<span class="mskill">' + s + '</span>'; }).join('') + '</div>' +
+    '<div class="mcard-actions">' +
+      '<a href="' + m.tutorial + '" target="_blank" class="btn btn-dark">Watch Video Tutorial &#8599;</a>' +
+      '<a href="' + m.create + '" target="_blank" class="btn btn-primary">Create in Adobe Express &#8599;</a>' +
+      '<a href="' + m.submit + '" target="_blank" class="btn btn-outline">Submit Your Project &#8599;</a>' +
+    '</div>' +
+  '</div>';
+
+  return '<p style="font-size:.88rem;color:var(--ink-2);margin-bottom:14px;">Select any month tab below to load its full activity brief, tutorial, and assignment links:</p>' +
+    '<div class="month-pills">' + pillsHtml + '</div>' +
+    '<div id="activeMonthBox">' + cardHtml + '</div>';
 }
 
-function buildCard(){
-  var el=document.getElementById('mcard');
-  if(!el)return;
-  var m=MONTHS[cur];
-  el.innerHTML=
-    '<div class="mcard-row">'+
-      '<span class="mcard-theme">'+m.name+' &bull; '+m.theme+'</span>'+
-      '<span class="mcard-dur">Est. '+m.dur+'</span>'+
-    '</div>'+
-    '<h3>'+m.activity+'</h3>'+
-    '<p>'+m.desc+'</p>'+
-    '<div class="mcard-skills">'+m.skills.map(function(s){return'<span class="mskill">'+s+'</span>';}).join('')+'</div>'+
-    '<div class="mcard-actions">'+
-      '<a href="'+m.tutorial+'" target="_blank" class="btn btn-dark">Watch Tutorial &#8599;</a>'+
-      '<a href="'+m.create+'" target="_blank" class="btn btn-primary">Open in Express &#8599;</a>'+
-      '<a href="'+m.submit+'" target="_blank" class="btn btn-outline">Submit Work &#8599;</a>'+
-    '</div>';
+function selectMonthTab(i) {
+  curMonth = i;
+  document.getElementById('secContent').innerHTML = renderMonthSectionHtml();
 }
 
-function setMonth(i){
-  cur=i;
-  buildPills();
-  buildCard();
-}
-
-function toggle(id){
-  var card=document.getElementById(id);
-  if(!card)return;
-  var wasOpen=card.classList.contains('open');
-  document.querySelectorAll('.sc').forEach(function(c){c.classList.remove('open');});
-  if(!wasOpen){
-    card.classList.add('open');
-    setTimeout(function(){card.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+/* ===== SECTIONS DATA ===== */
+var STUDENT_SECTIONS_DATA = {
+  '1': {
+    num: '01',
+    tag: 'Section 1 &bull; 12-Month Challenges',
+    title: '12-Month Creative Activity Dashboard',
+    desc: 'Pick your month, watch the guided video tutorial, design directly in Adobe Express, and submit your project for teacher grading.',
+    render: function() {
+      return renderMonthSectionHtml();
+    }
+  },
+  '2': {
+    num: '02',
+    tag: 'Section 2 &bull; Skill Building Tracks',
+    title: 'Structured Skill Building Tracks',
+    desc: 'Master essential digital competencies from graphic design to video storytelling and typography through guided project tracks.',
+    render: function() {
+      return '<div class="rg">' +
+        '<div class="rc"><div><div class="rc-badge">Graphic Design</div><h4>Graphic Design Fundamentals</h4><p>Master layout hierarchy, color harmony, and visual balance for school posters and digital banners.</p><div class="sbar"><div class="sbar-fill" style="width:75%"></div></div></div><a href="https://express.adobe.com/sp/design/posters" target="_blank" class="btn btn-primary">Start Track &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Video &amp; Motion</div><h4>Video &amp; Animation Storytelling</h4><p>Produce compelling short video stories, presentations, and voiceover clips with Adobe Express video tools.</p><div class="sbar"><div class="sbar-fill" style="width:50%"></div></div></div><a href="https://express.adobe.com/sp/design/videos" target="_blank" class="btn btn-primary">Start Track &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Social Campaigns</div><h4>Social Media Campaign Creation</h4><p>Craft awareness campaigns, infographics, and engaging carousel posts for school initiatives.</p><div class="sbar"><div class="sbar-fill" style="width:35%"></div></div></div><a href="https://express.adobe.com/sp/design/social" target="_blank" class="btn btn-primary">Start Track &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Illustration</div><h4>Digital Illustration &amp; Icons</h4><p>Create digital art, stickers, and custom vector icons using Express drawing and generative tools.</p><div class="sbar"><div class="sbar-fill" style="width:20%"></div></div></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Start Track &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Typography</div><h4>Creative Lettering &amp; Text Art</h4><p>Explore expressive typography, generative text effects, and title design for book covers and projects.</p><div class="sbar"><div class="sbar-fill" style="width:60%"></div></div></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Start Track &#8599;</a></div>' +
+      '</div>';
+    }
+  },
+  '3': {
+    num: '03',
+    tag: 'Section 3 &bull; Student Portfolio',
+    title: 'My Creative Portfolio &amp; Submissions',
+    desc: 'Review your submission history across all 12 academic months, manage your published work, and generate sharing links.',
+    render: function() {
+      return '<div class="pstats">' +
+        '<div class="pstat"><div class="pstat-n">9/12</div><div class="pstat-l">Months Completed</div></div>' +
+        '<div class="pstat"><div class="pstat-n">83%</div><div class="pstat-l">Submission Rate</div></div>' +
+        '<div class="pstat"><div class="pstat-n">3/6</div><div class="pstat-l">Badges Earned</div></div>' +
+        '<div class="pstat"><div class="pstat-n">14</div><div class="pstat-l">Projects Saved</div></div>' +
+      '</div>' +
+      '<div class="rg">' +
+        '<div class="rc"><div><div class="rc-badge">Upload</div><h4>Submit Monthly Assignment</h4><p>Upload your finished Adobe Express project link or file for official teacher grading and feedback.</p></div><a href="https://forms.google.com" target="_blank" class="btn btn-primary">Submit Project &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Library</div><h4>View Published Work</h4><p>Browse all your submitted greeting cards, posters, comic strips, and video presentations.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-outline">Open Library &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Share</div><h4>Share With Classmates</h4><p>Generate view-only links to showcase your best creative designs with classmates and family.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-outline">Share Portfolio &#8599;</a></div>' +
+      '</div>';
+    }
+  },
+  '4': {
+    num: '04',
+    tag: 'Section 4 &bull; Video Tutorials',
+    title: 'Video Masterclasses &amp; Step-by-Step Guides',
+    desc: 'Watch comprehensive video tutorials covering fundamental to advanced creative workflows designed for students.',
+    render: function() {
+      return '<div class="rg">' +
+        '<div class="rc"><div><div class="rc-badge">Beginner &bull; 5 min</div><h4>Getting Started with Adobe Express</h4><p>Tour the workspace, discover basic editing tools, and complete your first design in under 5 minutes.</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+beginner+tutorial" target="_blank" class="btn btn-dark">Watch Masterclass &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Intermediate &bull; 8 min</div><h4>School Event Poster Design</h4><p>Learn how to pick color palettes, structure headers, and create professional school event flyers.</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+poster+tutorial" target="_blank" class="btn btn-dark">Watch Masterclass &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Advanced &bull; 12 min</div><h4>Creating Short Video Stories</h4><p>Add voiceovers, soundtrack music, scene transitions, and animated text titles to your class videos.</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+video+tutorial" target="_blank" class="btn btn-dark">Watch Masterclass &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Animation &bull; 10 min</div><h4>Dynamic Text &amp; Sticker Animation</h4><p>Animate static illustrations, add motion dynamics, and export ready-to-share animated GIFs.</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+animation+tutorial" target="_blank" class="btn btn-dark">Watch Masterclass &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Branding &bull; 15 min</div><h4>Personal Brand &amp; Digital Logo</h4><p>Design a personal logo badge, font hierarchy, and color swatch for your personal student brand.</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+logo+tutorial" target="_blank" class="btn btn-dark">Watch Masterclass &#8599;</a></div>' +
+      '</div>';
+    }
+  },
+  '5': {
+    num: '05',
+    tag: 'Section 5 &bull; Express Tools',
+    title: 'Adobe Express Creative Tools Explorer',
+    desc: 'Launch directly into your chosen creative medium with one-click shortcuts to Adobe Express dedicated studios.',
+    render: function() {
+      return '<div class="tools">' +
+        '<a href="https://express.adobe.com/sp/design/posters" target="_blank" class="tool"><div class="tool-ico">P</div><h4>Posters</h4><span>Flyers &amp; Art</span></a>' +
+        '<a href="https://express.adobe.com/sp/design/videos" target="_blank" class="tool"><div class="tool-ico">V</div><h4>Video Editor</h4><span>Clips &amp; Reels</span></a>' +
+        '<a href="https://express.adobe.com/sp/design/cards" target="_blank" class="tool"><div class="tool-ico">C</div><h4>Cards</h4><span>Greetings</span></a>' +
+        '<a href="https://express.adobe.com/sp/design/collages" target="_blank" class="tool"><div class="tool-ico">G</div><h4>Collages</h4><span>Photo Grids</span></a>' +
+        '<a href="https://express.adobe.com/sp/tools/remove-background" target="_blank" class="tool"><div class="tool-ico">B</div><h4>Cutout BG</h4><span>1-Click Clear</span></a>' +
+        '<a href="https://express.adobe.com/sp/design/bookcovers" target="_blank" class="tool"><div class="tool-ico">K</div><h4>Book Covers</h4><span>Novel Layout</span></a>' +
+        '<a href="https://express.adobe.com/sp/design/comics" target="_blank" class="tool"><div class="tool-ico">M</div><h4>Comics</h4><span>4-Panel Strips</span></a>' +
+        '<a href="https://express.adobe.com/sp/design/social" target="_blank" class="tool"><div class="tool-ico">S</div><h4>Social Posts</h4><span>Campaigns</span></a>' +
+      '</div>' +
+      '<div style="margin-top:28px;text-align:center">' +
+        '<a href="https://express.adobe.com" target="_blank" class="btn btn-primary" style="padding:12px 28px;font-size:.9rem;">Open Full Adobe Express Workspace &#8599;</a>' +
+      '</div>';
+    }
+  },
+  '6': {
+    num: '06',
+    tag: 'Section 6 &bull; Milestone Badges',
+    title: 'Achievements &amp; Digital Badges',
+    desc: 'Milestone badges earned through monthly assignment completion and active participation in creative challenges.',
+    render: function() {
+      return '<div class="ach-grid">' +
+        '<div class="ac earned"><div class="ac-icon">&#10003;</div><h4>First Project</h4><p>Completed your first monthly creative challenge.</p><span class="ac-tag">Earned</span></div>' +
+        '<div class="ac earned"><div class="ac-icon">&#10003;</div><h4>3-Month Streak</h4><p>Submitted 3 consecutive challenges on schedule.</p><span class="ac-tag">Earned</span></div>' +
+        '<div class="ac earned"><div class="ac-icon">&#10003;</div><h4>Portfolio Builder</h4><p>Published 5 or more distinct works to your library.</p><span class="ac-tag">Earned</span></div>' +
+        '<div class="ac locked"><div class="ac-icon">&#128274;</div><h4>Half-Year Creator</h4><p>Complete 6 monthly challenges to unlock this badge.</p><span class="ac-tag">Locked</span></div>' +
+        '<div class="ac locked"><div class="ac-icon">&#128274;</div><h4>Year Champion</h4><p>Complete all 12 monthly challenges across the year.</p><span class="ac-tag">Locked</span></div>' +
+        '<div class="ac locked"><div class="ac-icon">&#128274;</div><h4>Master Creator</h4><p>Earn high distinction marks across all submissions.</p><span class="ac-tag">Locked</span></div>' +
+      '</div>';
+    }
   }
+};
+
+/* ===== NAVIGATION CONTROLLER ===== */
+function openSection(num) {
+  var data = STUDENT_SECTIONS_DATA[num];
+  if (!data) return;
+
+  // Update URL hash
+  location.hash = '#section-' + num;
+
+  // Set Content
+  document.getElementById('crumbName').innerHTML = data.tag;
+  document.getElementById('secBadge').innerHTML = data.num;
+  document.getElementById('secTag').innerHTML = data.tag;
+  document.getElementById('secTitle').innerHTML = data.title;
+  document.getElementById('secDesc').innerHTML = data.desc;
+  document.getElementById('secContent').innerHTML = data.render();
+
+  // Next / Prev shortcuts
+  var keys = Object.keys(STUDENT_SECTIONS_DATA);
+  var idx = keys.indexOf(num);
+  var nextPrevHtml = '';
+  if (idx > 0) {
+    nextPrevHtml += '<button class="btn btn-ghost" onclick="openSection(\'' + keys[idx - 1] + '\')">&#8592; Previous Section</button> ';
+  }
+  if (idx < keys.length - 1) {
+    nextPrevHtml += '<button class="btn btn-primary" onclick="openSection(\'' + keys[idx + 1] + '\')">Next Section &#8594;</button>';
+  }
+  document.getElementById('secNextPrev').innerHTML = nextPrevHtml;
+
+  // Toggle Views
+  document.getElementById('dashboardView').style.display = 'none';
+  document.getElementById('mainHero').style.display = 'none';
+  document.getElementById('sectionView').style.display = 'block';
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-buildPills();
-buildCard();
+function showDashboard() {
+  location.hash = '';
+  document.getElementById('sectionView').style.display = 'none';
+  document.getElementById('dashboardView').style.display = 'block';
+  document.getElementById('mainHero').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Hash-based router
+window.addEventListener('hashchange', function() {
+  var hash = location.hash;
+  if (hash.indexOf('#section-') === 0) {
+    var num = hash.replace('#section-', '');
+    if (STUDENT_SECTIONS_DATA[num]) {
+      openSection(num);
+      return;
+    }
+  }
+  showDashboard();
+});
+
+// Initial check on load
+window.addEventListener('DOMContentLoaded', function() {
+  var hash = location.hash;
+  if (hash.indexOf('#section-') === 0) {
+    var num = hash.replace('#section-', '');
+    if (STUDENT_SECTIONS_DATA[num]) {
+      openSection(num);
+      return;
+    }
+  }
+  showDashboard();
+});
 </script>
 </body>
 </html>
