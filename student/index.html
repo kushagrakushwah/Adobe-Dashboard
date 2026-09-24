@@ -3,20 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>Adobe Express for Education - Student Creative Studio</title>
-  <meta name="description" content="Dedicated Student Studio for Adobe Express: 12-month creative curriculum challenges, video tutorials, and project submissions.">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Dedicated Student Studio for Adobe Express: 12-month creative curriculum challenges, video tutorials, and project submissions. 100% Student-Only.">
+  <link rel="stylesheet" href="styles.css?v=20260924_v3">
 </head>
-<body>
+<body class="student-theme">
+
+  <!-- Unmistakable Student Header Banner -->
+  <div class="student-top-banner">
+    <div class="banner-inner">
+      <span class="banner-badge">STUDENT WORKSPACE</span>
+      <span class="banner-text">100% Student-Only Studio • Grades 6–12 Creative Projects • Zero Educator Access</span>
+    </div>
+  </div>
 
   <!-- Dedicated Student Header (Zero Teacher Links) -->
   <header class="student-header">
     <div class="header-inner">
       <div class="brand-group">
-        <div class="adobe-logo">A</div>
+        <div class="student-logo">A</div>
         <div class="brand-text">
           <h1 id="siteTitle">Adobe Express for Education</h1>
-          <p id="tagline">Student Creative Studio</p>
+          <p id="tagline" class="student-tagline">Student Creative Studio</p>
         </div>
       </div>
 
@@ -31,6 +42,7 @@
   <!-- Student Canvas -->
   <main class="student-canvas">
     <div class="hero-box">
+      <div class="student-pill-indicator">GRADES 6–12 CURRICULUM STUDIO</div>
       <h2 id="studentHeading">Student Creative Activity Studio</h2>
       <p id="studentSubheading">12 months of curriculum-aligned creative challenges. Select your month, follow the video tutorial, design in Adobe Express, and submit!</p>
     </div>
@@ -39,8 +51,8 @@
     <div class="flow-bar" id="flowBar"></div>
 
     <!-- Month Selection -->
-    <div style="margin-bottom: 12px;">
-      <span style="font-size: 0.85rem; font-weight: 800; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.05em;">
+    <div class="month-selection-header">
+      <span class="month-selection-label">
         Select Month (Use ← / → keyboard arrows to switch):
       </span>
     </div>
@@ -52,12 +64,12 @@
   </main>
 
   <footer class="student-footer">
-    <p>© Adobe Express for Education • Certified Student Learning Program</p>
+    <p>© Adobe Express for Education • Certified Student Learning Program • 100% Student-Only Environment</p>
   </footer>
 
   <div id="toastAnchor"></div>
 
-  <script src="data.js"></script>
-  <script src="student.js"></script>
+  <script src="data.js?v=20260924_v3"></script>
+  <script src="student.js?v=20260924_v3"></script>
 </body>
 </html>
