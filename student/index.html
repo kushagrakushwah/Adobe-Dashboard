@@ -3,20 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Student Creative Studio &mdash; Adobe Express for Education</title>
-<meta name="description" content="Your 12-month creative journey with Adobe Express. Pick a challenge, watch, create, and submit.">
+<title>Student Creative Studio — Adobe Express for Education</title>
+<meta name="description" content="Your 12-month creative journey with Adobe Express.">
 <meta name="robots" content="noindex">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23FA0F00'/><text y='.9em' font-size='72' x='12' fill='white' font-weight='900'>S</text></svg>">
 <style>
-/* ===== RESET ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
 body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F5;color:#1C1C1E;line-height:1.5;min-height:100vh}
-
-/* ===== TOKENS (ADOBE RED & WHITE) ===== */
 :root{
   --red:#FA0F00;--red-dk:#C00A00;--red-bg:#FFF2F1;--red-border:rgba(250,15,0,.18);
   --ink:#1C1C1E;--ink-2:#48484A;--ink-3:#8E8E93;
@@ -27,246 +24,87 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
   --shadow:0 4px 16px rgba(0,0,0,.09);
   --shadow-lg:0 12px 40px rgba(0,0,0,.12);
 }
-
-/* ===== HEADER ===== */
-.hdr{
-  position:sticky;top:0;z-index:200;
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--border);
-  padding:0 28px;
-}
-.hdr-in{max-width:1160px;margin:0 auto;height:62px;display:flex;align-items:center;justify-content:space-between}
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.94);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:0 28px}
+.hdr-in{max-width:1160px;margin:0 auto;height:62px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit;cursor:pointer}
-.brand-mark{
-  width:38px;height:38px;border-radius:10px;
-  background:var(--red);color:#FFF;
-  font-weight:900;font-size:1rem;
-  display:flex;align-items:center;justify-content:center;
-  letter-spacing:-.02em;flex-shrink:0;
-  font-family:'Georgia',serif;
-}
+.brand-mark{width:38px;height:38px;border-radius:10px;background:var(--red);color:#FFF;font-weight:900;font-size:1rem;display:flex;align-items:center;justify-content:center;letter-spacing:-.02em;flex-shrink:0;font-family:'Georgia',serif}
 .brand-text{line-height:1.2}
 .brand-name{font-size:.88rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
 .brand-sub{font-size:.68rem;font-weight:600;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
-.hdr-badge{
-  background:var(--red);color:#FFF;
-  font-size:.72rem;font-weight:700;
-  padding:5px 14px;border-radius:999px;
-  letter-spacing:.03em;
-}
-
-/* ===== HERO ===== */
-.hero{
-  background:linear-gradient(150deg,#FA0F00 0%,#8B0000 55%,#3D0000 100%);
-  color:#FFF;
-  padding:54px 28px 48px;
-  position:relative;overflow:hidden;
-}
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  pointer-events:none;
-}
-.hero-in{max-width:1160px;margin:0 auto;position:relative}
-.hero-tag{
-  display:inline-flex;align-items:center;gap:7px;
-  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);
-  color:rgba(255,255,255,.9);
-  font-size:.74rem;font-weight:700;
-  padding:5px 14px;border-radius:999px;
-  margin-bottom:18px;letter-spacing:.03em;
-}
+.hdr-right{display:flex;align-items:center;gap:10px}
+.hdr-badge{background:var(--red);color:#FFF;font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:999px;letter-spacing:.03em}
+/* LANGUAGE TOGGLE */
+.lang-toggle{display:flex;align-items:center;gap:0;background:var(--surface-3);border:1.5px solid var(--border);border-radius:999px;padding:3px;cursor:pointer}
+.lang-btn{padding:4px 12px;border-radius:999px;font-size:.72rem;font-weight:800;color:var(--ink-3);transition:all .18s;user-select:none}
+.lang-btn.active{background:var(--red);color:#FFF;box-shadow:0 2px 6px rgba(250,15,0,.25)}
+/* HERO - SMALLER */
+.hero{background:linear-gradient(150deg,#FA0F00 0%,#8B0000 55%,#3D0000 100%);color:#FFF;padding:28px 28px 22px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.hero-in{max-width:1160px;margin:0 auto;position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.hero-left{flex:1;min-width:0}
+.hero-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.9);font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:10px;letter-spacing:.03em}
 .hero-tag-dot{width:6px;height:6px;border-radius:50%;background:#FFD60A}
-.hero h1{
-  font-size:clamp(1.8rem,4vw,2.8rem);
-  font-weight:900;letter-spacing:-.035em;line-height:1.18;
-  margin-bottom:12px;max-width:680px;
-}
-.hero-sub{
-  font-size:.98rem;color:rgba(255,255,255,.82);
-  max-width:560px;line-height:1.6;margin-bottom:26px;
-}
-.flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.flow-step{
-  display:flex;align-items:center;gap:8px;
-  background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.2);
-  padding:7px 15px;border-radius:999px;
-  font-size:.8rem;font-weight:700;color:#FFF;
-  white-space:nowrap;
-}
-.flow-n{
-  width:20px;height:20px;border-radius:50%;
-  background:#FFF;color:var(--red);
-  font-size:.72rem;font-weight:900;
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
-}
-.flow-arr{color:rgba(255,255,255,.45);font-size:.85rem;font-weight:900}
-
-/* ===== MAIN CONTAINER ===== */
-.main{max-width:1160px;margin:0 auto;padding:36px 28px 80px}
-
-/* ===== GUIDE BAR ===== */
-.guide{
-  display:flex;align-items:center;gap:12px;
-  background:var(--surface);border:1px solid var(--border);
-  border-left:4px solid var(--red);
-  border-radius:var(--radius);
-  padding:14px 20px;margin-bottom:28px;
-  box-shadow:var(--shadow-sm);
-}
+.hero h1{font-size:clamp(1.3rem,3vw,1.9rem);font-weight:900;letter-spacing:-.03em;line-height:1.2;margin-bottom:8px;max-width:600px}
+.hero-sub{font-size:.85rem;color:rgba(255,255,255,.82);max-width:520px;line-height:1.5;margin-bottom:14px}
+.flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.flow-step{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:5px 12px;border-radius:999px;font-size:.75rem;font-weight:700;color:#FFF;white-space:nowrap}
+.flow-n{width:18px;height:18px;border-radius:50%;background:#FFF;color:var(--red);font-size:.68rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.flow-arr{color:rgba(255,255,255,.45);font-size:.8rem;font-weight:900}
+/* MAIN */
+.main{max-width:1160px;margin:0 auto;padding:28px 28px 80px}
+/* GUIDE BAR */
+.guide{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--red);border-radius:var(--radius);padding:12px 18px;margin-bottom:22px;box-shadow:var(--shadow-sm)}
 .guide-icon{font-size:1.1rem;flex-shrink:0}
-.guide p{font-size:.88rem;color:var(--ink-2);line-height:1.5}
+.guide p{font-size:.85rem;color:var(--ink-2);line-height:1.5}
 .guide strong{color:var(--ink)}
-
-/* ===== SECTION TILES DASHBOARD GRID ===== */
-.tiles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
-.tile-card{
-  background:var(--surface);border:1.5px solid var(--border);
-  border-radius:var(--radius-lg);padding:24px;
-  cursor:pointer;user-select:none;
-  transition:all .22s cubic-bezier(.16,1,.3,1);
-  box-shadow:var(--shadow-sm);
-  display:flex;flex-direction:column;justify-content:space-between;
-  position:relative;overflow:hidden;
-}
-.tile-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:4px;
-  background:var(--red);opacity:0;transition:opacity .2s;
-}
-.tile-card:hover{
-  border-color:var(--red);transform:translateY(-3px);
-  box-shadow:0 8px 24px rgba(250,15,0,.12);
-  background:var(--surface);
-}
-.tile-card:hover::before{opacity:1}
-.tile-top{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
-.tile-num{
-  width:46px;height:46px;border-radius:12px;
-  background:var(--surface-3);border:1.5px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.05rem;font-weight:900;color:var(--ink-2);
-  flex-shrink:0;transition:all .2s;font-variant-numeric:tabular-nums;
-}
-.tile-card:hover .tile-num{background:var(--red);color:#FFF;border-color:var(--red)}
-.tile-info{flex:1;min-width:0}
-.tile-tag{font-size:.65rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
-.tile-title{font-size:1.05rem;font-weight:800;color:var(--ink);line-height:1.3;margin-bottom:4px}
-.tile-desc{font-size:.82rem;color:var(--ink-3);line-height:1.45}
-.tile-footer{
-  display:flex;align-items:center;justify-content:space-between;
-  padding-top:14px;margin-top:14px;border-top:1px solid var(--border);
-}
-.tile-hint{font-size:.74rem;color:var(--ink-3);font-weight:600}
-.tile-btn{
-  display:inline-flex;align-items:center;gap:5px;
-  background:var(--red-bg);color:var(--red);
-  font-size:.78rem;font-weight:800;
-  padding:6px 14px;border-radius:999px;
-  transition:all .18s;border:1px solid var(--red-border);
-}
+/* TILES GRID */
+.tiles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.tile-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;user-select:none;transition:all .22s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;position:relative}
+.tile-img{width:100%;height:110px;object-fit:cover;display:block;transition:transform .4s ease}
+.tile-card:hover .tile-img{transform:scale(1.04)}
+.tile-img-wrap{overflow:hidden;position:relative;flex-shrink:0}
+.tile-img-ov{position:absolute;bottom:8px;left:10px;background:var(--red);color:#FFF;font-size:1.2rem;width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.tile-body{padding:16px 18px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
+.tile-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(250,15,0,.12)}
+.tile-tag{font-size:.62rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.tile-title{font-size:.98rem;font-weight:800;color:var(--ink);line-height:1.3;margin-bottom:4px}
+.tile-desc{font-size:.78rem;color:var(--ink-3);line-height:1.45;margin-bottom:12px}
+.tile-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border)}
+.tile-hint{font-size:.7rem;color:var(--ink-3);font-weight:600}
+.tile-btn{display:inline-flex;align-items:center;gap:5px;background:var(--red-bg);color:var(--red);font-size:.75rem;font-weight:800;padding:5px 12px;border-radius:999px;transition:all .18s;border:1px solid var(--red-border)}
 .tile-card:hover .tile-btn{background:var(--red);color:#FFF;border-color:var(--red)}
-
-/* ===== FULL-SCREEN SECTION VIEW ===== */
+/* FULL SECTION VIEW */
 .section-full-view{display:none;animation:viewFadeIn .28s ease}
 @keyframes viewFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-
-/* Section Top Bar */
-.sec-nav-bar{
-  display:flex;align-items:center;justify-content:space-between;
-  margin-bottom:24px;gap:12px;flex-wrap:wrap;
-}
-.back-btn{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--surface);color:var(--red);
-  border:1.5px solid var(--red);
-  padding:10px 20px;border-radius:999px;
-  font-size:.85rem;font-weight:800;cursor:pointer;
-  transition:all .18s;box-shadow:var(--shadow-sm);
-}
+.sec-nav-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:12px;flex-wrap:wrap}
+.back-btn{display:inline-flex;align-items:center;gap:8px;background:var(--surface);color:var(--red);border:1.5px solid var(--red);padding:10px 20px;border-radius:999px;font-size:.85rem;font-weight:800;cursor:pointer;transition:all .18s;box-shadow:var(--shadow-sm)}
 .back-btn:hover{background:var(--red);color:#FFF;transform:translateX(-2px)}
 .sec-breadcrumb{font-size:.84rem;color:var(--ink-3);font-weight:700}
 .sec-breadcrumb strong{color:var(--ink)}
-
-/* Section Full Header */
-.sec-hero-card{
-  background:var(--surface);border:2px solid var(--red);
-  border-radius:var(--radius-lg);padding:28px 32px;
-  margin-bottom:28px;box-shadow:0 8px 30px rgba(250,15,0,.08);
-  display:flex;align-items:center;gap:20px;
-}
-.sec-hero-badge{
-  width:58px;height:58px;border-radius:16px;
-  background:var(--red);color:#FFF;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.35rem;font-weight:900;flex-shrink:0;
-  font-variant-numeric:tabular-nums;
-}
+.sec-hero-card{background:var(--surface);border:2px solid var(--red);border-radius:var(--radius-lg);padding:24px 28px;margin-bottom:24px;box-shadow:0 8px 30px rgba(250,15,0,.08);display:flex;align-items:center;gap:18px}
+.sec-hero-badge{width:52px;height:52px;border-radius:14px;background:var(--red);color:#FFF;display:flex;align-items:center;justify-content:center;font-size:1.25rem;font-weight:900;flex-shrink:0}
 .sec-hero-body{flex:1;min-width:0}
-.sec-hero-tag{font-size:.7rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
-.sec-hero-title{font-size:1.6rem;font-weight:900;color:var(--ink);letter-spacing:-.02em;margin-bottom:6px;line-height:1.2}
-.sec-hero-desc{font-size:.92rem;color:var(--ink-2);line-height:1.5}
-
-/* Section Content Container */
-.sec-content-box{
-  background:var(--surface);border:1.5px solid var(--border);
-  border-radius:var(--radius-lg);padding:32px;
-  box-shadow:var(--shadow-sm);margin-bottom:28px;
-}
-
-/* Section Bottom Navigation */
-.sec-bottom-bar{
-  display:flex;align-items:center;justify-content:space-between;
-  padding-top:20px;border-top:1px solid var(--border);
-  gap:12px;flex-wrap:wrap;
-}
-
-/* ===== MONTH PILLS & CARD (FULL WIDTH) ===== */
-.month-pills{
-  display:flex;gap:8px;overflow-x:auto;padding-bottom:14px;margin-bottom:22px;
-  scrollbar-width:thin;
-}
-.mp{
-  padding:8px 18px;background:var(--surface-2);
-  border:1.5px solid var(--border);border-radius:999px;
-  font-size:.82rem;font-weight:700;color:var(--ink-2);
-  cursor:pointer;white-space:nowrap;transition:all .18s;flex-shrink:0;
-}
+.sec-hero-tag{font-size:.68rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.sec-hero-title{font-size:1.5rem;font-weight:900;color:var(--ink);letter-spacing:-.02em;margin-bottom:5px;line-height:1.2}
+.sec-hero-desc{font-size:.88rem;color:var(--ink-2);line-height:1.5}
+.sec-content-box{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow-sm);margin-bottom:24px}
+.sec-bottom-bar{display:flex;align-items:center;justify-content:space-between;padding-top:18px;border-top:1px solid var(--border);gap:12px;flex-wrap:wrap}
+/* MONTH PILLS */
+.month-pills{display:flex;gap:8px;overflow-x:auto;padding-bottom:14px;margin-bottom:20px;scrollbar-width:thin}
+.mp{padding:7px 16px;background:var(--surface-2);border:1.5px solid var(--border);border-radius:999px;font-size:.8rem;font-weight:700;color:var(--ink-2);cursor:pointer;white-space:nowrap;transition:all .18s;flex-shrink:0}
 .mp:hover{background:var(--red-bg);border-color:var(--red);color:var(--red)}
 .mp.active{background:var(--red);border-color:var(--red);color:#FFF;box-shadow:0 3px 10px rgba(250,15,0,.28)}
-
-.mcard{
-  background:var(--surface-2);
-  border:2px solid var(--red);border-radius:var(--radius);
-  padding:28px;box-shadow:0 4px 18px rgba(250,15,0,.08);
-}
-.mcard-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap}
-.mcard-theme{
-  background:var(--red-bg);color:var(--red);
-  font-size:.74rem;font-weight:800;
-  padding:5px 14px;border-radius:999px;
-  border:1px solid var(--red-border);
-  text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;
-}
-.mcard-dur{
-  font-size:.78rem;font-weight:700;color:var(--ink-3);
-  background:var(--surface);padding:5px 14px;border-radius:999px;
-  border:1px solid var(--border);white-space:nowrap;
-}
-.mcard h3{font-size:1.35rem;font-weight:900;color:var(--ink);margin-bottom:10px;line-height:1.25;letter-spacing:-.02em}
-.mcard p{font-size:.92rem;color:var(--ink-2);line-height:1.65;margin-bottom:20px}
-.mcard-skills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
-.mskill{
-  background:var(--surface);color:var(--ink);
-  border:1px solid var(--border);
-  font-size:.76rem;font-weight:700;
-  padding:4px 12px;border-radius:6px;
-}
-.mcard-actions{display:flex;gap:10px;flex-wrap:wrap;padding-top:20px;border-top:1px solid var(--border)}
-
-/* ===== BUTTONS ===== */
+.mcard{background:var(--surface-2);border:2px solid var(--red);border-radius:var(--radius);padding:24px;box-shadow:0 4px 18px rgba(250,15,0,.08)}
+.mcard-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.mcard-theme{background:var(--red-bg);color:var(--red);font-size:.72rem;font-weight:800;padding:4px 12px;border-radius:999px;border:1px solid var(--red-border);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+.mcard-dur{font-size:.76rem;font-weight:700;color:var(--ink-3);background:var(--surface);padding:4px 12px;border-radius:999px;border:1px solid var(--border);white-space:nowrap}
+.mcard h3{font-size:1.25rem;font-weight:900;color:var(--ink);margin-bottom:8px;line-height:1.25;letter-spacing:-.02em}
+.mcard p{font-size:.88rem;color:var(--ink-2);line-height:1.65;margin-bottom:18px}
+.mcard-skills{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px}
+.mskill{background:var(--surface);color:var(--ink);border:1px solid var(--border);font-size:.73rem;font-weight:700;padding:3px 10px;border-radius:6px}
+.mcard-actions{display:flex;gap:10px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--border)}
+/* BUTTONS */
 .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;border-radius:999px;font-size:.84rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;white-space:nowrap;transition:all .16s;line-height:1}
 .btn-primary{background:var(--red);color:#FFF;box-shadow:0 2px 8px rgba(250,15,0,.25)}
 .btn-primary:hover{background:var(--red-dk);transform:translateY(-1px)}
@@ -276,94 +114,70 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 .btn-dark:hover{background:#333;transform:translateY(-1px)}
 .btn-ghost{background:var(--surface-2);color:var(--ink-2);border:1.5px solid var(--border)}
 .btn-ghost:hover{border-color:var(--red);color:var(--red);background:var(--red-bg)}
-
-/* ===== RESOURCE GRID ===== */
+.btn-empty{background:var(--surface-3);color:var(--ink-3);border:1.5px dashed var(--border);cursor:not-allowed}
+/* RESOURCE GRID */
 .rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-.rc{
-  background:var(--surface-2);border:1.5px solid var(--border);
-  border-radius:var(--radius);padding:22px;
-  transition:all .18s;display:flex;flex-direction:column;justify-content:space-between;
-}
+.rc{background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px;transition:all .18s;display:flex;flex-direction:column;justify-content:space-between}
 .rc:hover{border-color:var(--red);background:var(--surface);box-shadow:0 6px 20px rgba(250,15,0,.1);transform:translateY(-2px)}
-.rc-badge{
-  display:inline-block;
-  background:var(--red-bg);color:var(--red);
-  font-size:.68rem;font-weight:800;
-  padding:3px 10px;border-radius:999px;
-  margin-bottom:10px;border:1px solid var(--red-border);
-  text-transform:uppercase;letter-spacing:.04em;
-}
-.rc h4{font-size:.98rem;font-weight:800;color:var(--ink);margin-bottom:6px;line-height:1.3}
-.rc p{font-size:.83rem;color:var(--ink-2);margin-bottom:16px;line-height:1.55}
-
+.rc-badge{display:inline-block;background:var(--red-bg);color:var(--red);font-size:.66rem;font-weight:800;padding:3px 10px;border-radius:999px;margin-bottom:10px;border:1px solid var(--red-border);text-transform:uppercase;letter-spacing:.04em}
+.rc h4{font-size:.96rem;font-weight:800;color:var(--ink);margin-bottom:6px;line-height:1.3}
+.rc p{font-size:.82rem;color:var(--ink-2);margin-bottom:14px;line-height:1.55}
+.rc img.rc-thumb{width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:12px}
+/* DCAIS SECTION */
+.dcais-grade-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.dcais-tab{padding:7px 18px;background:var(--surface-2);border:1.5px solid var(--border);border-radius:999px;font-size:.8rem;font-weight:700;color:var(--ink-2);cursor:pointer;transition:all .18s}
+.dcais-tab:hover{background:var(--red-bg);border-color:var(--red);color:var(--red)}
+.dcais-tab.active{background:var(--red);border-color:var(--red);color:#FFF;box-shadow:0 2px 8px rgba(250,15,0,.22)}
+.dcais-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:20px}
+.dcais-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all .22s;box-shadow:var(--shadow-sm)}
+.dcais-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 22px rgba(250,15,0,.12)}
+.dcais-card-img{width:100%;height:120px;object-fit:cover;display:block}
+.dcais-card-body{padding:16px}
+.dcais-card-badge{display:inline-block;background:var(--red-bg);color:var(--red);font-size:.66rem;font-weight:800;padding:3px 10px;border-radius:999px;margin-bottom:8px;border:1px solid var(--red-border);text-transform:uppercase;letter-spacing:.04em}
+.dcais-card-title{font-size:.98rem;font-weight:800;color:var(--ink);margin-bottom:6px;line-height:1.3}
+.dcais-card-desc{font-size:.78rem;color:var(--ink-2);line-height:1.5;margin-bottom:14px}
+.dcais-card-actions{display:flex;gap:8px;flex-wrap:wrap}
 /* Skill Bar */
 .sbar{height:6px;background:var(--border);border-radius:999px;overflow:hidden;margin-bottom:14px}
 .sbar-fill{height:100%;background:linear-gradient(90deg,var(--red),#FF6040);border-radius:999px}
-
 /* Portfolio Stats */
 .pstats{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:24px}
-.pstat{
-  background:var(--surface-2);border:1.5px solid var(--border);
-  border-radius:var(--radius);padding:18px 14px;text-align:center;
-}
+.pstat{background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:16px 14px;text-align:center}
 .pstat-n{font-size:1.9rem;font-weight:900;color:var(--red);line-height:1.1}
-.pstat-l{font-size:.72rem;font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em;margin-top:4px}
-
+.pstat-l{font-size:.7rem;font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em;margin-top:4px}
 /* Achievements */
-.ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
-.ac{
-  background:var(--surface-2);border:1.5px solid var(--border);
-  border-radius:var(--radius);padding:22px 16px;text-align:center;
-  transition:all .18s;
-}
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.ac{background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:20px 16px;text-align:center;transition:all .18s}
 .ac.earned{background:var(--red-bg);border-color:var(--red-border)}
 .ac:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.ac-icon{
-  width:44px;height:44px;border-radius:50%;
-  margin:0 auto 12px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1rem;font-weight:900;
-}
+.ac-icon{width:44px;height:44px;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:900}
 .ac.earned .ac-icon{background:var(--red);color:#FFF}
 .ac.locked .ac-icon{background:var(--border);color:var(--ink-3)}
-.ac h4{font-size:.92rem;font-weight:800;color:var(--ink);margin-bottom:4px}
-.ac p{font-size:.76rem;color:var(--ink-3);line-height:1.45;margin-bottom:12px}
-.ac-tag{font-size:.68rem;font-weight:800;padding:3px 12px;border-radius:999px;text-transform:uppercase}
+.ac h4{font-size:.9rem;font-weight:800;color:var(--ink);margin-bottom:4px}
+.ac p{font-size:.74rem;color:var(--ink-3);line-height:1.45;margin-bottom:10px}
+.ac-tag{font-size:.66rem;font-weight:800;padding:3px 12px;border-radius:999px;text-transform:uppercase}
 .ac.earned .ac-tag{background:var(--red);color:#FFF}
 .ac.locked .ac-tag{background:var(--border);color:var(--ink-3)}
-
 /* Tools */
-.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:14px}
-.tool{
-  display:flex;flex-direction:column;align-items:center;
-  background:var(--surface-2);border:1.5px solid var(--border);
-  border-radius:var(--radius);padding:20px 12px;text-align:center;
-  text-decoration:none;color:inherit;transition:all .18s;
-}
+.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
+.tool{display:flex;flex-direction:column;align-items:center;background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:18px 10px;text-align:center;text-decoration:none;color:inherit;transition:all .18s}
 .tool:hover{border-color:var(--red);background:var(--red-bg);transform:translateY(-2px);box-shadow:0 6px 16px rgba(250,15,0,.1)}
-.tool-ico{
-  width:40px;height:40px;border-radius:10px;
-  background:var(--surface);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--red);font-weight:900;font-size:.9rem;margin-bottom:10px;
-}
-.tool h4{font-size:.85rem;font-weight:800;color:var(--ink);margin-bottom:2px}
-.tool span{font-size:.72rem;color:var(--ink-3)}
-
-/* ===== FOOTER ===== */
-footer{background:var(--ink);padding:28px;text-align:center;color:rgba(255,255,255,.38);font-size:.82rem}
+.tool-ico{width:38px;height:38px;border-radius:10px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--red);font-weight:900;font-size:.88rem;margin-bottom:8px}
+.tool h4{font-size:.82rem;font-weight:800;color:var(--ink);margin-bottom:2px}
+.tool span{font-size:.7rem;color:var(--ink-3)}
+/* FOOTER */
+footer{background:var(--ink);padding:24px;text-align:center;color:rgba(255,255,255,.38);font-size:.82rem}
 footer p+p{margin-top:5px}
-
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
 @media(max-width:760px){
-  .hdr{padding:0 18px}
-  .hero{padding:40px 18px 36px}
-  .main{padding:24px 16px 60px}
+  .hdr{padding:0 16px}
+  .hero{padding:20px 16px 16px}
+  .main{padding:20px 14px 60px}
   .tiles-grid{grid-template-columns:1fr}
   .flow{flex-direction:column;align-items:flex-start}
   .flow-arr{display:none}
-  .sec-hero-card{flex-direction:column;align-items:flex-start;padding:20px}
-  .sec-content-box{padding:20px 16px}
+  .sec-hero-card{flex-direction:column;align-items:flex-start;padding:18px}
+  .sec-content-box{padding:18px 14px}
   .mcard-row{flex-direction:column}
   .mcard-actions{flex-direction:column}
 }
@@ -378,30 +192,39 @@ footer p+p{margin-top:5px}
       <div class="brand-mark">Ae</div>
       <div class="brand-text">
         <div class="brand-name">Adobe Express for Education</div>
-        <div class="brand-sub">Student Creative Studio</div>
+        <div class="brand-sub" id="hdrSubLabel">Student Creative Studio</div>
       </div>
     </div>
-    <div class="hdr-badge">Student Portal</div>
+    <div class="hdr-right">
+      <!-- Language Toggle -->
+      <div class="lang-toggle" onclick="toggleLang()" title="Switch Language / भाषा बदलें">
+        <div class="lang-btn active" id="langBtnEN">EN</div>
+        <div class="lang-btn" id="langBtnHI">हिं</div>
+      </div>
+      <div class="hdr-badge" id="hdrBadge">Student Portal</div>
+    </div>
   </div>
 </header>
 
 <!-- HERO (Visible on Dashboard) -->
 <section class="hero" id="mainHero">
   <div class="hero-in">
-    <div class="hero-tag">
-      <span class="hero-tag-dot"></span>
-      12-Month Creative Programme
-    </div>
-    <h1>Student Creative Activity Dashboard</h1>
-    <p class="hero-sub">Curriculum-aligned design challenges for every month of the academic year. Click any section below to enter its full-screen creative workspace.</p>
-    <div class="flow">
-      <div class="flow-step"><span class="flow-n">1</span>Choose Month</div>
-      <span class="flow-arr">&#8594;</span>
-      <div class="flow-step"><span class="flow-n">2</span>Watch Tutorial</div>
-      <span class="flow-arr">&#8594;</span>
-      <div class="flow-step"><span class="flow-n">3</span>Create in Express</div>
-      <span class="flow-arr">&#8594;</span>
-      <div class="flow-step"><span class="flow-n">4</span>Submit Work</div>
+    <div class="hero-left">
+      <div class="hero-tag">
+        <span class="hero-tag-dot"></span>
+        <span id="heroTagText">🎨 Creative Studio — For Students</span>
+      </div>
+      <h1 id="heroTitle">Make Cool Art Every Month! 🎉</h1>
+      <p class="hero-sub" id="heroSub">Pick your project, watch a short video, create in Adobe Express, and show your teacher. It's that easy!</p>
+      <div class="flow">
+        <div class="flow-step"><span class="flow-n">1</span><span id="flow1">Pick Month</span></div>
+        <span class="flow-arr">→</span>
+        <div class="flow-step"><span class="flow-n">2</span><span id="flow2">Watch Video</span></div>
+        <span class="flow-arr">→</span>
+        <div class="flow-step"><span class="flow-n">3</span><span id="flow3">Make Art</span></div>
+        <span class="flow-arr">→</span>
+        <div class="flow-step"><span class="flow-n">4</span><span id="flow4">Submit!</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -409,155 +232,167 @@ footer p+p{margin-top:5px}
 <!-- MAIN APP AREA -->
 <main class="main">
 
-  <!-- ==============================================
-       VIEW 1: SECTIONS DASHBOARD TILES
-       ============================================== -->
+  <!-- VIEW 1: SECTIONS DASHBOARD TILES -->
   <div id="dashboardView">
     <div class="guide">
-      <span class="guide-icon">&#128161;</span>
-      <p><strong>Click any section card below</strong> to open its complete workspace in full-screen view.</p>
+      <span class="guide-icon">💡</span>
+      <p id="guideText"><strong>Tap any box below</strong> to open it and start your creative work!</p>
     </div>
 
     <div class="tiles-grid">
       <!-- Section 1 -->
       <div class="tile-card" onclick="openSection('1')">
-        <div>
-          <div class="tile-top">
-            <div class="tile-num">01</div>
-            <div class="tile-info">
-              <div class="tile-tag">Section 1</div>
-              <h2 class="tile-title">12-Month Challenges</h2>
-              <p class="tile-desc">Monthly curriculum design projects with video masterclasses and submission links for January to December.</p>
-            </div>
-          </div>
+        <div class="tile-img-wrap">
+          <img class="tile-img" src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=220&fit=crop&q=80" alt="Monthly Activities" crossorigin="anonymous">
+          <div class="tile-img-ov">📅</div>
         </div>
-        <div class="tile-footer">
-          <span class="tile-hint">12 Aligned Challenges</span>
-          <span class="tile-btn">Open Section &rarr;</span>
+        <div class="tile-body">
+          <div>
+            <div class="tile-tag" id="s1-tag">Section 1</div>
+            <h2 class="tile-title" id="s1-title">Monthly Creative Activities</h2>
+            <p class="tile-desc" id="s1-desc">One fun art project for every month — January to December. Watch, make, submit!</p>
+          </div>
+          <div class="tile-footer">
+            <span class="tile-hint" id="s1-hint">12 Fun Challenges</span>
+            <span class="tile-btn" id="s1-btn">Open →</span>
+          </div>
         </div>
       </div>
 
       <!-- Section 2 -->
       <div class="tile-card" onclick="openSection('2')">
-        <div>
-          <div class="tile-top">
-            <div class="tile-num">02</div>
-            <div class="tile-info">
-              <div class="tile-tag">Section 2</div>
-              <h2 class="tile-title">Skill Building Tracks</h2>
-              <p class="tile-desc">Step-by-step tracks for graphic design, animation, video production, social media, and typography.</p>
-            </div>
-          </div>
+        <div class="tile-img-wrap">
+          <img class="tile-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=220&fit=crop&q=80" alt="Skill Tracks" crossorigin="anonymous">
+          <div class="tile-img-ov">🎯</div>
         </div>
-        <div class="tile-footer">
-          <span class="tile-hint">5 Guided Tracks</span>
-          <span class="tile-btn">Open Section &rarr;</span>
+        <div class="tile-body">
+          <div>
+            <div class="tile-tag" id="s2-tag">Section 2</div>
+            <h2 class="tile-title" id="s2-title">Skill Building Tracks</h2>
+            <p class="tile-desc" id="s2-desc">Learn step-by-step: design posters, make videos, create social posts, and more!</p>
+          </div>
+          <div class="tile-footer">
+            <span class="tile-hint" id="s2-hint">5 Guided Tracks</span>
+            <span class="tile-btn" id="s2-btn">Open →</span>
+          </div>
         </div>
       </div>
 
       <!-- Section 3 -->
       <div class="tile-card" onclick="openSection('3')">
-        <div>
-          <div class="tile-top">
-            <div class="tile-num">03</div>
-            <div class="tile-info">
-              <div class="tile-tag">Section 3</div>
-              <h2 class="tile-title">My Creative Portfolio</h2>
-              <p class="tile-desc">Track project submission progress, view personal library works, and share portfolio links with teachers.</p>
-            </div>
-          </div>
+        <div class="tile-img-wrap">
+          <img class="tile-img" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=220&fit=crop&q=80" alt="Portfolio" crossorigin="anonymous">
+          <div class="tile-img-ov">🖼️</div>
         </div>
-        <div class="tile-footer">
-          <span class="tile-hint">Portfolio &amp; Submissions</span>
-          <span class="tile-btn">Open Section &rarr;</span>
+        <div class="tile-body">
+          <div>
+            <div class="tile-tag" id="s3-tag">Section 3</div>
+            <h2 class="tile-title" id="s3-title">My Creative Portfolio</h2>
+            <p class="tile-desc" id="s3-desc">See all the art you have made! Submit your work and share it with your teacher.</p>
+          </div>
+          <div class="tile-footer">
+            <span class="tile-hint" id="s3-hint">Portfolio &amp; Submissions</span>
+            <span class="tile-btn" id="s3-btn">Open →</span>
+          </div>
         </div>
       </div>
 
       <!-- Section 4 -->
       <div class="tile-card" onclick="openSection('4')">
-        <div>
-          <div class="tile-top">
-            <div class="tile-num">04</div>
-            <div class="tile-info">
-              <div class="tile-tag">Section 4</div>
-              <h2 class="tile-title">Video Tutorials &amp; Guides</h2>
-              <p class="tile-desc">Curated step-by-step masterclasses created by certified Adobe educators from beginner to advanced.</p>
-            </div>
-          </div>
+        <div class="tile-img-wrap">
+          <img class="tile-img" src="https://images.unsplash.com/photo-1581726690015-c9861fa5057f?w=600&h=220&fit=crop&q=80" alt="Tutorials" crossorigin="anonymous">
+          <div class="tile-img-ov">🎬</div>
         </div>
-        <div class="tile-footer">
-          <span class="tile-hint">5 Video Masterclasses</span>
-          <span class="tile-btn">Open Section &rarr;</span>
+        <div class="tile-body">
+          <div>
+            <div class="tile-tag" id="s4-tag">Section 4</div>
+            <h2 class="tile-title" id="s4-title">How-To Videos</h2>
+            <p class="tile-desc" id="s4-desc">Short videos that show you exactly how to use Adobe Express tools. Easy to follow!</p>
+          </div>
+          <div class="tile-footer">
+            <span class="tile-hint" id="s4-hint">5 Video Masterclasses</span>
+            <span class="tile-btn" id="s4-btn">Open →</span>
+          </div>
         </div>
       </div>
 
       <!-- Section 5 -->
       <div class="tile-card" onclick="openSection('5')">
-        <div>
-          <div class="tile-top">
-            <div class="tile-num">05</div>
-            <div class="tile-info">
-              <div class="tile-tag">Section 5</div>
-              <h2 class="tile-title">Adobe Express Creative Tools</h2>
-              <p class="tile-desc">Direct 1-click launchers for posters, videos, greeting cards, collages, comics, and AI cutout tools.</p>
-            </div>
-          </div>
+        <div class="tile-img-wrap">
+          <img class="tile-img" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=220&fit=crop&q=80" alt="Creative Tools" crossorigin="anonymous">
+          <div class="tile-img-ov">🛠️</div>
         </div>
-        <div class="tile-footer">
-          <span class="tile-hint">8 Direct Launchers</span>
-          <span class="tile-btn">Open Section &rarr;</span>
+        <div class="tile-body">
+          <div>
+            <div class="tile-tag" id="s5-tag">Section 5</div>
+            <h2 class="tile-title" id="s5-title">Creative Tools</h2>
+            <p class="tile-desc" id="s5-desc">Jump straight into making! Open posters, videos, cards, collages and more in Adobe Express.</p>
+          </div>
+          <div class="tile-footer">
+            <span class="tile-hint" id="s5-hint">8 Quick Launch Tools</span>
+            <span class="tile-btn" id="s5-btn">Open →</span>
+          </div>
         </div>
       </div>
 
       <!-- Section 6 -->
       <div class="tile-card" onclick="openSection('6')">
-        <div>
-          <div class="tile-top">
-            <div class="tile-num">06</div>
-            <div class="tile-info">
-              <div class="tile-tag">Section 6</div>
-              <h2 class="tile-title">Achievements &amp; Badges</h2>
-              <p class="tile-desc">Milestone badges earned through monthly assignment completion and high-distinction submissions.</p>
-            </div>
+        <div class="tile-img-wrap">
+          <img class="tile-img" src="https://images.unsplash.com/photo-1567168539-48e3d0f52698?w=600&h=220&fit=crop&q=80" alt="Achievements" crossorigin="anonymous">
+          <div class="tile-img-ov">🏆</div>
+        </div>
+        <div class="tile-body">
+          <div>
+            <div class="tile-tag" id="s6-tag">Section 6</div>
+            <h2 class="tile-title" id="s6-title">My Badges &amp; Awards</h2>
+            <p class="tile-desc" id="s6-desc">See what badges you have won! Keep doing projects to unlock more cool rewards.</p>
+          </div>
+          <div class="tile-footer">
+            <span class="tile-hint" id="s6-hint">6 Milestone Badges</span>
+            <span class="tile-btn" id="s6-btn">Open →</span>
           </div>
         </div>
-        <div class="tile-footer">
-          <span class="tile-hint">6 Digital Badges</span>
-          <span class="tile-btn">Open Section &rarr;</span>
+      </div>
+
+      <!-- Section 7: DCAIS -->
+      <div class="tile-card" onclick="openSection('7')">
+        <div class="tile-img-wrap">
+          <img class="tile-img" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=220&fit=crop&q=80" alt="DCAIS Activities" crossorigin="anonymous">
+          <div class="tile-img-ov">🌟</div>
+        </div>
+        <div class="tile-body">
+          <div>
+            <div class="tile-tag" id="s7-tag">Section 7 • DCAIS</div>
+            <h2 class="tile-title" id="s7-title">DCAIS Activities</h2>
+            <p class="tile-desc" id="s7-desc">Special digital skills activities — make posters, videos, images and earn your DCAIS certificate!</p>
+          </div>
+          <div class="tile-footer">
+            <span class="tile-hint" id="s7-hint">Grades 6–10 Activities</span>
+            <span class="tile-btn" id="s7-btn">Open →</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-
-  <!-- ==============================================
-       VIEW 2: FULL-SCREEN SECTION DETAIL VIEW
-       ============================================== -->
+  <!-- VIEW 2: FULL SECTION VIEW -->
   <div id="sectionView" class="section-full-view">
-    <!-- Top Bar -->
     <div class="sec-nav-bar">
-      <button class="back-btn" onclick="showDashboard()">&#8592; Back to All Sections</button>
-      <div class="sec-breadcrumb">Student Studio / <strong id="crumbName">Section Detail</strong></div>
+      <button class="back-btn" onclick="showDashboard()">← <span id="backBtnLabel">Back to Sections</span></button>
+      <div class="sec-breadcrumb">Home / <strong id="crumbName">Section</strong></div>
     </div>
-
-    <!-- Section Banner -->
     <div class="sec-hero-card">
       <div class="sec-hero-badge" id="secBadge">01</div>
       <div class="sec-hero-body">
-        <div class="sec-hero-tag" id="secTag">SECTION 1</div>
-        <h1 class="sec-hero-title" id="secTitle">Section Title</h1>
-        <p class="sec-hero-desc" id="secDesc">Detailed section description.</p>
+        <div class="sec-hero-tag" id="secTag">Section</div>
+        <div class="sec-hero-title" id="secTitle">Title</div>
+        <div class="sec-hero-desc" id="secDesc">Description</div>
       </div>
     </div>
-
-    <!-- Section Full Content -->
-    <div class="sec-content-box" id="secContent">
-      <!-- Dynamic content rendered here -->
+    <div class="sec-content-box">
+      <div id="secContent"></div>
     </div>
-
-    <!-- Bottom Navigation -->
     <div class="sec-bottom-bar">
-      <button class="back-btn" onclick="showDashboard()">&#8592; Back to All Sections</button>
       <div id="secNextPrev"></div>
     </div>
   </div>
@@ -565,51 +400,113 @@ footer p+p{margin-top:5px}
 </main>
 
 <footer>
-  <p>&#169; Adobe Express for Education &mdash; Certified Digital Skills Programme for Schools</p>
-  <p>This is the Student Portal. Educator resources are on a separate, dedicated portal.</p>
+  <p>Adobe Express for Education — Student Creative Studio</p>
+  <p>© Adobe Inc. All rights reserved.</p>
 </footer>
 
 <script>
-/* ===== 12 MONTH CHALLENGES DATA ===== */
+/* ===== LANGUAGE SYSTEM ===== */
+var currentLang = 'en';
+
+var LANG = {
+  en: {
+    hdrSub: 'Student Creative Studio',
+    hdrBadge: 'Student Portal',
+    heroTag: '🎨 Creative Studio — For Students',
+    heroTitle: 'Make Cool Art Every Month! 🎉',
+    heroSub: "Pick your project, watch a short video, create in Adobe Express, and show your teacher. It's that easy!",
+    flow1:'Pick Month', flow2:'Watch Video', flow3:'Make Art', flow4:'Submit!',
+    guideText: '<strong>Tap any box below</strong> to open it and start your creative work!',
+    backBtn: 'Back to Sections',
+    s1tag:'Section 1', s1title:'Monthly Creative Activities', s1desc:'One fun art project for every month — January to December. Watch, make, submit!', s1hint:'12 Fun Challenges', s1btn:'Open →',
+    s2tag:'Section 2', s2title:'Skill Building Tracks', s2desc:'Learn step-by-step: design posters, make videos, create social posts, and more!', s2hint:'5 Guided Tracks', s2btn:'Open →',
+    s3tag:'Section 3', s3title:'My Creative Portfolio', s3desc:'See all the art you have made! Submit your work and share it with your teacher.', s3hint:'Portfolio & Submissions', s3btn:'Open →',
+    s4tag:'Section 4', s4title:'How-To Videos', s4desc:'Short videos that show you exactly how to use Adobe Express tools. Easy to follow!', s4hint:'5 Video Masterclasses', s4btn:'Open →',
+    s5tag:'Section 5', s5title:'Creative Tools', s5desc:'Jump straight into making! Open posters, videos, cards, collages and more in Adobe Express.', s5hint:'8 Quick Launch Tools', s5btn:'Open →',
+    s6tag:'Section 6', s6title:'My Badges & Awards', s6desc:'See what badges you have won! Keep doing projects to unlock more cool rewards.', s6hint:'6 Milestone Badges', s6btn:'Open →',
+    s7tag:'Section 7 • DCAIS', s7title:'DCAIS Activities', s7desc:'Special digital skills activities — make posters, videos, images and earn your DCAIS certificate!', s7hint:'Grades 6–10 Activities', s7btn:'Open →'
+  },
+  hi: {
+    hdrSub: 'छात्र क्रिएटिव स्टूडियो',
+    hdrBadge: 'छात्र पोर्टल',
+    heroTag: '🎨 क्रिएटिव स्टूडियो — छात्रों के लिए',
+    heroTitle: 'हर महीने मज़ेदार आर्ट बनाओ! 🎉',
+    heroSub: 'अपना प्रोजेक्ट चुनो, छोटा वीडियो देखो, Adobe Express में बनाओ, और टीचर को दिखाओ। बस इतना ही!',
+    flow1:'महीना चुनो', flow2:'वीडियो देखो', flow3:'आर्ट बनाओ', flow4:'जमा करो!',
+    guideText: '<strong>नीचे किसी भी बॉक्स पर टैप करो</strong> और अपना क्रिएटिव काम शुरू करो!',
+    backBtn: 'वापस जाओ',
+    s1tag:'सेक्शन 1', s1title:'मासिक क्रिएटिव एक्टिविटी', s1desc:'हर महीने एक मज़ेदार आर्ट प्रोजेक्ट — जनवरी से दिसंबर तक।', s1hint:'12 मज़ेदार चैलेंज', s1btn:'खोलो →',
+    s2tag:'सेक्शन 2', s2title:'स्किल ट्रैक्स', s2desc:'पोस्टर बनाओ, वीडियो बनाओ, सोशल पोस्ट बनाओ — कदम दर कदम सीखो!', s2hint:'5 गाइडेड ट्रैक्स', s2btn:'खोलो →',
+    s3tag:'सेक्शन 3', s3title:'मेरा क्रिएटिव पोर्टफोलियो', s3desc:'अपनी सारी बनाई हुई कलाकृतियाँ देखो! अपना काम जमा करो और टीचर को दिखाओ।', s3hint:'पोर्टफोलियो और सबमिशन', s3btn:'खोलो →',
+    s4tag:'सेक्शन 4', s4title:'कैसे करें वीडियो', s4desc:'छोटे वीडियो जो दिखाते हैं Adobe Express के टूल्स कैसे इस्तेमाल करें।', s4hint:'5 वीडियो मास्टरक्लास', s4btn:'खोलो →',
+    s5tag:'सेक्शन 5', s5title:'क्रिएटिव टूल्स', s5desc:'सीधे बनाना शुरू करो! पोस्टर, वीडियो, कार्ड्स और बहुत कुछ Adobe Express में बनाओ।', s5hint:'8 त्वरित लॉन्च टूल्स', s5btn:'खोलो →',
+    s6tag:'सेक्शन 6', s6title:'मेरे बैज और पुरस्कार', s6desc:'देखो तुमने कौन से बैज जीते हैं! और ज़्यादा प्रोजेक्ट करो, और पुरस्कार पाओ।', s6hint:'6 मील के पत्थर के बैज', s6btn:'खोलो →',
+    s7tag:'सेक्शन 7 • DCAIS', s7title:'DCAIS एक्टिविटीज़', s7desc:'विशेष डिजिटल स्किल्स एक्टिविटीज़ — पोस्टर, वीडियो, इमेज बनाओ और DCAIS सर्टिफिकेट पाओ!', s7hint:'कक्षा 6–10 एक्टिविटीज़', s7btn:'खोलो →'
+  }
+};
+
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'hi' : 'en';
+  document.getElementById('langBtnEN').classList.toggle('active', currentLang === 'en');
+  document.getElementById('langBtnHI').classList.toggle('active', currentLang === 'hi');
+  applyLang();
+}
+
+function applyLang() {
+  var L = LANG[currentLang];
+  var set = function(id, val) { var e = document.getElementById(id); if(e) e.innerHTML = val; };
+  set('hdrSubLabel', L.hdrSub); set('hdrBadge', L.hdrBadge);
+  set('heroTagText', L.heroTag); set('heroTitle', L.heroTitle); set('heroSub', L.heroSub);
+  set('flow1', L.flow1); set('flow2', L.flow2); set('flow3', L.flow3); set('flow4', L.flow4);
+  set('guideText', L.guideText);
+  set('backBtnLabel', L.backBtn);
+  set('s1-tag', L.s1tag); set('s1-title', L.s1title); set('s1-desc', L.s1desc); set('s1-hint', L.s1hint); set('s1-btn', L.s1btn);
+  set('s2-tag', L.s2tag); set('s2-title', L.s2title); set('s2-desc', L.s2desc); set('s2-hint', L.s2hint); set('s2-btn', L.s2btn);
+  set('s3-tag', L.s3tag); set('s3-title', L.s3title); set('s3-desc', L.s3desc); set('s3-hint', L.s3hint); set('s3-btn', L.s3btn);
+  set('s4-tag', L.s4tag); set('s4-title', L.s4title); set('s4-desc', L.s4desc); set('s4-hint', L.s4hint); set('s4-btn', L.s4btn);
+  set('s5-tag', L.s5tag); set('s5-title', L.s5title); set('s5-desc', L.s5desc); set('s5-hint', L.s5hint); set('s5-btn', L.s5btn);
+  set('s6-tag', L.s6tag); set('s6-title', L.s6title); set('s6-desc', L.s6desc); set('s6-hint', L.s6hint); set('s6-btn', L.s6btn);
+  set('s7-tag', L.s7tag); set('s7-title', L.s7title); set('s7-desc', L.s7desc); set('s7-hint', L.s7hint); set('s7-btn', L.s7btn);
+}
+
+/* ===== MONTH DATA ===== */
+var curMonth = 0;
 var MONTHS = [
-  {id:"jan",name:"January",theme:"Patriotism & Civic Pride",activity:"Republic Day Poster Design",desc:"Design an inspiring, patriotic poster celebrating the Constitution of India and national diversity. Experiment with India-themed color palettes, typographic hierarchy, and vector emblems.",skills:["Vector Art","Typography","Color Contrast"],dur:"30 mins",tutorial:"https://www.youtube.com/results?search_query=adobe+express+poster+tutorial",create:"https://express.adobe.com/sp/design/posters",submit:"https://forms.google.com"},
-  {id:"feb",name:"February",theme:"Festivals & Cultural Heritage",activity:"My Favourite Festival Greeting",desc:"Create a vibrant digital greeting card illustrating traditional folk art, festivities, and cultural harmony using Adobe Express shapes, textures, and personalized greetings.",skills:["Greeting Card Layout","Layering","Pattern Design"],dur:"25 mins",tutorial:"https://www.youtube.com/results?search_query=adobe+express+card+tutorial",create:"https://express.adobe.com/sp/design/cards",submit:"https://forms.google.com"},
-  {id:"mar",name:"March",theme:"Inspiration & Leadership",activity:"Women's Day Tribute Story",desc:"Curate an inspiring photo collage celebrating prominent women scientists, leaders, or personal family role models who make a difference in society.",skills:["Photo Collage","Quote Typography","Visual Storytelling"],dur:"35 mins",tutorial:"https://www.youtube.com/results?search_query=adobe+express+collage+tutorial",create:"https://express.adobe.com/sp/design/social",submit:"https://forms.google.com"},
-  {id:"apr",name:"April",theme:"Environmental Sustainability",activity:"Earth Day Awareness Poster",desc:"Produce an impactful environmental awareness poster focusing on climate action, reforestation, or water conservation using high-impact visual statistics and infographics.",skills:["Infographics","Visual Hierarchy","Data Representation"],dur:"30 mins",tutorial:"https://www.youtube.com/results?search_query=adobe+express+infographic+tutorial",create:"https://express.adobe.com/sp/design/posters",submit:"https://forms.google.com"},
-  {id:"may",name:"May",theme:"Memories & Storytelling",activity:"Summer Vacation Scrapbook",desc:"Document summer hobbies, book reviews, or travel memories in an artistic digital photo album with creative frame borders, sticker art, and handwritten-style captions.",skills:["Photo Album Layout","Sticker Art","Personal Curation"],dur:"40 mins",tutorial:"https://www.youtube.com/results?search_query=adobe+express+scrapbook+tutorial",create:"https://express.adobe.com/sp/design/photo",submit:"https://forms.google.com"},
-  {id:"jun",name:"June",theme:"Climate Action & Media",activity:"Environment Day Campaign Video",desc:"Create a 30-to-60-second video campaign encouraging eco-friendly school practices with scene voiceovers, kinetic text transitions, and background music.",skills:["Video Editing","Audio Voiceover","Kinetic Typography"],dur:"45 mins",tutorial:"https://www.youtube.com/results?search_query=adobe+express+video+tutorial",create:"https://express.adobe.com/sp/design/videos",submit:"https://forms.google.com"},
-  {id:"jul",name:"July",theme:"Literature & Art",activity:"My Favourite Book Cover, Redesigned",desc:"Reimagine the front and back cover of your favourite novel with modern typography, bold illustrations, and an intriguing synopsis layout that catches the reader's eye.",skills:["Cover Layout","Title Typography","Genre Stylization"],dur:"35 mins",tutorial:"https://www.youtube.com/results?search_query=adobe+express+book+cover+tutorial",create:"https://express.adobe.com/sp/design/bookcovers",submit:"https://forms.google.com"},
-  {id:"aug",name:"August",theme:"Freedom & Unity",activity:"Independence Day Digital Collage",desc:"Celebrate the spirit of freedom and unity with historic imagery, tri-color design elements, and quotes from national freedom fighters and visionaries.",skills:["Historic Photo Collage","Tri-Color Palettes","Quote Framing"],dur:"30 mins",tutorial:"https://www.youtube.com/results?search_query=adobe+express+collage+tutorial",create:"https://express.adobe.com/sp/design/collages",submit:"https://forms.google.com"},
-  {id:"sep",name:"September",theme:"Gratitude & Respect",activity:"Teachers' Day Thank-You Card",desc:"Design a heartwarming, custom digital card to express gratitude to your teachers and mentors with customized illustrations and memorable class photos.",skills:["Card Design","Gratitude Typography","Photo Framing"],dur:"25 mins",tutorial:"https://www.youtube.com/results?search_query=adobe+express+greeting+card+tutorial",create:"https://express.adobe.com/sp/design/cards",submit:"https://forms.google.com"},
-  {id:"oct",name:"October",theme:"Peace & Values",activity:"Gandhi Jayanti Peace Poster",desc:"Illustrate messages of truth, non-violence, and cleanliness inspired by Mahatma Gandhi using minimalist aesthetic design and bold typography.",skills:["Minimalist Layout","Symbolic Art","Thoughtful Quotes"],dur:"30 mins",tutorial:"https://www.youtube.com/results?search_query=adobe+express+poster+tutorial",create:"https://express.adobe.com/sp/design/posters",submit:"https://forms.google.com"},
-  {id:"nov",name:"November",theme:"Creativity & Humor",activity:"Children's Day Comic Strip",desc:"Craft an entertaining 4-panel comic strip depicting childhood adventures and school life humor with speech bubbles and expressive avatars.",skills:["Panel Layout","Character Illustration","Dialogue Bubbles"],dur:"40 mins",tutorial:"https://www.youtube.com/results?search_query=adobe+express+comic+strip+tutorial",create:"https://express.adobe.com/sp/design/comics",submit:"https://forms.google.com"},
-  {id:"dec",name:"December",theme:"Reflection & Vision",activity:"Year-End Reflection Video",desc:"Create a personal highlight reel reflecting on your creative achievements, skills learned, and goals for the coming year.",skills:["Year-in-Review Video","Timeline Montage","Self-Reflection"],dur:"45 mins",tutorial:"https://www.youtube.com/results?search_query=adobe+express+recap+video+tutorial",create:"https://express.adobe.com/sp/design/videos",submit:"https://forms.google.com"}
+  {name:'January', theme:'Republic Day', activity:'Republic Day Poster', desc:'Make a colourful poster to celebrate Republic Day! Use bright red, white, and blue colours. Add the Indian flag and a patriotic message.', dur:'45 min', skills:['Poster Design','Colour','Typography'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+poster+tutorial', create:'https://express.adobe.com/sp/design/posters', submit:'#'},
+  {name:'February', theme:'Valentines / Friendship', activity:'Friendship Greeting Card', desc:'Make a lovely card for your best friend or family. Use hearts, nice colours, and a sweet message inside!', dur:'40 min', skills:['Card Design','Colour Theory','Typography'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+card+tutorial', create:'https://express.adobe.com/sp/design/cards', submit:'#'},
+  {name:'March', theme:'Holi / Spring', activity:'Holi Fest Flyer', desc:'Create a fun, colourful flyer for the Holi festival! Use lots of colours — pink, green, yellow — and write where and when your school Holi event is.', dur:'45 min', skills:['Flyer Design','Vibrant Colours','Layout'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+flyer+tutorial', create:'https://express.adobe.com/sp/design/flyers', submit:'#'},
+  {name:'April', theme:'Earth Day', activity:'Save the Earth Poster', desc:'Make a poster that tells people how to save the Earth. Draw trees, water, or animals and write a message like "Plant More Trees!"', dur:'50 min', skills:['Social Awareness','Poster Design','Illustration'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+poster+earth+day', create:'https://express.adobe.com/sp/design/posters', submit:'#'},
+  {name:'May', theme:'Mother\'s Day', activity:'Mother\'s Day Card &amp; Video', desc:'Create a special card OR a short video message for your mom. Tell her why she is amazing! Share it with your family.', dur:'50 min', skills:['Card Design','Video','Personal Message'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+mothers+day', create:'https://express.adobe.com/sp/design/cards', submit:'#'},
+  {name:'June', theme:'Yoga / Health', activity:'International Yoga Day Post', desc:'Make a social media post or poster about Yoga. Show a yoga pose or write about how yoga keeps us healthy.', dur:'40 min', skills:['Health Awareness','Social Post Design','Layout'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+social+post', create:'https://express.adobe.com/sp/design/social', submit:'#'},
+  {name:'July', theme:'Independence Month', activity:'Freedom Comic Strip', desc:'Create a 4-panel comic strip about India\'s freedom fighters. Use speech bubbles and bright illustrations.', dur:'60 min', skills:['Comic Design','Storytelling','Illustration'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+comic+strip', create:'https://express.adobe.com/sp/design/comics', submit:'#'},
+  {name:'August', theme:'Independence Day', activity:'Independence Day Celebration Video', desc:'Make a short video (30-60 sec) to celebrate India\'s Independence Day! Add photos, patriotic music, and your voice message.', dur:'60 min', skills:['Video Editing','Narration','Music'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+video+tutorial', create:'https://express.adobe.com/sp/design/videos', submit:'#'},
+  {name:'September', theme:'Teacher\'s Day', activity:'Thank You Teacher Card', desc:'Design a beautiful card to thank your favourite teacher! Add their name, a nice photo or illustration, and a message from your heart.', dur:'45 min', skills:['Card Design','Personal Message','Typography'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+card', create:'https://express.adobe.com/sp/design/cards', submit:'#'},
+  {name:'October', theme:'Diwali / Festive', activity:'Diwali Greeting &amp; Rangoli Design', desc:'Create a Diwali greeting card with a beautiful digital rangoli design. Use gold, red, and orange colours. Wish everyone "Happy Diwali!"', dur:'55 min', skills:['Festival Design','Colour','Cultural Art'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+diwali+poster', create:'https://express.adobe.com/sp/design/cards', submit:'#'},
+  {name:'November', theme:'My School', activity:'School Brochure or Magazine Page', desc:'Create a 1-page mini magazine or brochure about your school. Include school events, cool facts, and photos or illustrations!', dur:'55 min', skills:['Layout Design','Content Writing','Brochure'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+brochure+tutorial', create:'https://express.adobe.com/sp/design/flyers', submit:'#'},
+  {name:'December', theme:'Year in Review', activity:'My Creative Year Portfolio', desc:'Look back at all 11 projects you made this year! Create a collage or presentation showing your 3 favourite works. You have come so far!', dur:'60 min', skills:['Portfolio Design','Reflection','Collage'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+portfolio', create:'https://express.adobe.com/sp/design/collages', submit:'#'}
 ];
 
-var curMonth = 0;
-
 function renderMonthSectionHtml() {
-  var pillsHtml = MONTHS.map(function(m, i) {
-    return '<button class="mp' + (i === curMonth ? ' active' : '') + '" onclick="selectMonthTab(' + i + ')">' + m.name + '</button>';
-  }).join('');
-
   var m = MONTHS[curMonth];
-  var cardHtml = '<div class="mcard">' +
-    '<div class="mcard-row">' +
-      '<span class="mcard-theme">' + m.name + ' Challenge &bull; ' + m.theme + '</span>' +
-      '<span class="mcard-dur">Estimated Duration: ' + m.dur + '</span>' +
-    '</div>' +
-    '<h3>' + m.activity + '</h3>' +
-    '<p>' + m.desc + '</p>' +
-    '<div class="mcard-skills">' + m.skills.map(function(s){ return '<span class="mskill">' + s + '</span>'; }).join('') + '</div>' +
-    '<div class="mcard-actions">' +
-      '<a href="' + m.tutorial + '" target="_blank" class="btn btn-dark">Watch Video Tutorial &#8599;</a>' +
-      '<a href="' + m.create + '" target="_blank" class="btn btn-primary">Create in Adobe Express &#8599;</a>' +
-      '<a href="' + m.submit + '" target="_blank" class="btn btn-outline">Submit Your Project &#8599;</a>' +
-    '</div>' +
-  '</div>';
-
-  return '<p style="font-size:.88rem;color:var(--ink-2);margin-bottom:14px;">Select any month tab below to load its full activity brief, tutorial, and assignment links:</p>' +
+  var pillsHtml = MONTHS.map(function(mo, i) {
+    return '<button class="mp' + (i === curMonth ? ' active' : '') + '" onclick="selectMonthTab(' + i + ')">' + mo.name + '</button>';
+  }).join('');
+  var cardHtml =
+    '<div class="mcard">' +
+      '<div class="mcard-row">' +
+        '<span class="mcard-theme">' + m.theme + '</span>' +
+        '<span class="mcard-dur">⏱ ' + m.dur + '</span>' +
+      '</div>' +
+      '<h3>✨ ' + m.activity + '</h3>' +
+      '<p>' + m.desc + '</p>' +
+      '<div class="mcard-skills">' + m.skills.map(function(s){return '<span class="mskill">' + s + '</span>';}).join('') + '</div>' +
+      '<div class="mcard-actions">' +
+        '<a href="' + m.tutorial + '" target="_blank" class="btn btn-dark">▶ Watch Tutorial ↗</a>' +
+        '<a href="' + m.create + '" target="_blank" class="btn btn-primary">🎨 Create in Adobe Express ↗</a>' +
+        '<a href="' + m.submit + '" class="btn btn-outline">📤 Submit My Work</a>' +
+      '</div>' +
+    '</div>';
+  return '<p style="font-size:.85rem;color:var(--ink-2);margin-bottom:14px;">Tap a month to see your activity:</p>' +
     '<div class="month-pills">' + pillsHtml + '</div>' +
     '<div id="activeMonthBox">' + cardHtml + '</div>';
 }
@@ -619,139 +516,198 @@ function selectMonthTab(i) {
   document.getElementById('secContent').innerHTML = renderMonthSectionHtml();
 }
 
+/* ===== DCAIS DATA ===== */
+var DCAIS_ACTIVITIES = {
+  6: [
+    {badge:'Class 6 • Design', title:'My Dream Poster', desc:'Design a poster about your dream job or dream place. Use big, colourful text and a nice background image.', img:'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/posters'},
+    {badge:'Class 6 • Flyer', title:'School Event Flyer', desc:'Make a flyer for a real or imaginary school event. Include time, place, and a fun design!', img:'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/flyers'},
+    {badge:'Class 6 • Card', title:'Festival Greeting Card', desc:'Create a greeting card for your favourite festival. Add a special message inside for your family!', img:'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/cards'}
+  ],
+  7: [
+    {badge:'Class 7 • Social', title:'Awareness Social Post', desc:'Create an Instagram-style post about saving water, planting trees, or any topic you care about.', img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/social'},
+    {badge:'Class 7 • Story', title:'My Story Comic Strip', desc:'Tell a 4-panel comic story about an adventure. Use speech bubbles and fun drawings!', img:'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/comics'},
+    {badge:'Class 7 • Video', title:'1-Minute Talent Video', desc:'Record a short 1-minute video showing your talent — singing, dancing, science trick or anything cool!', img:'https://images.unsplash.com/photo-1581726690015-c9861fa5057f?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/videos'}
+  ],
+  8: [
+    {badge:'Class 8 • Brand', title:'Personal Brand Logo', desc:'Design your own personal logo and brand name. Make it unique — use colours that match your personality!', img:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com'},
+    {badge:'Class 8 • Campaign', title:'Social Good Campaign', desc:'Create a 3-post social media campaign about a problem you want to solve in your school or neighbourhood.', img:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/social'},
+    {badge:'Class 8 • Brochure', title:'Travel or Culture Brochure', desc:'Make a travel brochure for your city or your favourite cultural festival. Use maps, photos, and text!', img:'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/flyers'}
+  ],
+  9: [
+    {badge:'Class 9 • Film', title:'Short Documentary', desc:'Make a short 2-minute documentary film about something important to you — your city, a local hero, or a social issue.', img:'https://images.unsplash.com/photo-1574717024453-354056afd6fc?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/videos'},
+    {badge:'Class 9 • Info', title:'Infographic Poster', desc:'Create an infographic poster that explains a science or history topic clearly using charts, icons, and simple words.', img:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/posters'},
+    {badge:'Class 9 • Digital Art', title:'Digital Collage Art', desc:'Create a digital collage mixing photos, textures and colours to express an emotion or tell a story without words.', img:'https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/collages'}
+  ],
+  10: [
+    {badge:'Class 10 • Portfolio', title:'Personal Digital Portfolio', desc:'Build your complete digital portfolio showcasing your best 5 creative works from Grades 6–9. This is your DCAIS achievement record!', img:'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com'},
+    {badge:'Class 10 • Pitch', title:'Startup Pitch Deck', desc:'Design a beautiful 5-slide presentation pitching your own imaginary business idea. Include logo, product, and why people should care!', img:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com'},
+    {badge:'Class 10 • Campaign', title:'Full Social Campaign', desc:'Create a complete 5-post social media campaign with a hashtag, colour scheme, and consistent design for a cause you believe in.', img:'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/social'}
+  ]
+};
+
+var currentDcaisGrade = 6;
+
+function renderDcaisSection() {
+  var activities = DCAIS_ACTIVITIES[currentDcaisGrade];
+  var tabsHtml = [6,7,8,9,10].map(function(g) {
+    return '<button class="dcais-tab' + (g === currentDcaisGrade ? ' active' : '') + '" onclick="setDcaisGrade(' + g + ')">' +
+      (currentLang === 'hi' ? 'कक्षा ' : 'Class ') + g + '</button>';
+  }).join('');
+  var cardsHtml = activities.map(function(a) {
+    return '<div class="dcais-card">' +
+      '<img src="' + a.img + '" alt="" class="dcais-card-img" crossorigin="anonymous">' +
+      '<div class="dcais-card-body">' +
+        '<div class="dcais-card-badge">' + a.badge + '</div>' +
+        '<div class="dcais-card-title">' + a.title + '</div>' +
+        '<div class="dcais-card-desc">' + a.desc + '</div>' +
+        '<div class="dcais-card-actions">' +
+          '<a href="' + a.link + '" target="_blank" class="btn btn-primary" style="font-size:.78rem;padding:8px 16px;">🎨 Open in Adobe Express ↗</a>' +
+          '<button class="btn btn-empty" style="font-size:.78rem;padding:8px 16px;" title="Submission link coming soon" onclick="return false;">📤 Submit Work</button>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+  return '<div style="background:var(--red-bg);border:1px solid var(--red-border);border-radius:var(--radius);padding:14px 18px;margin-bottom:20px;">' +
+    '<p style="font-size:.85rem;color:var(--ink-2);">🌟 <strong>What is DCAIS?</strong> Digital Creativity and AI Skills — a special programme where you do fun creative activities and earn a certificate! Do at least <strong>1 activity per month</strong> to qualify.</p>' +
+  '</div>' +
+  '<p style="font-size:.85rem;color:var(--ink-2);margin-bottom:12px;">Select your class / अपनी कक्षा चुनें:</p>' +
+  '<div class="dcais-grade-tabs">' + tabsHtml + '</div>' +
+  '<div class="dcais-grid" id="dcaisCardsGrid">' + cardsHtml + '</div>' +
+  '<div style="background:var(--surface-2);border:1.5px dashed var(--border);border-radius:var(--radius);padding:16px;text-align:center;margin-top:4px;">' +
+    '<p style="font-size:.82rem;color:var(--ink-3);">📌 Submission links will be added by your teacher soon. The <strong>Submit Work</strong> buttons will become active!</p>' +
+  '</div>';
+}
+
+function setDcaisGrade(g) {
+  currentDcaisGrade = g;
+  document.getElementById('secContent').innerHTML = renderDcaisSection();
+}
+
 /* ===== SECTIONS DATA ===== */
 var STUDENT_SECTIONS_DATA = {
   '1': {
-    num: '01',
-    tag: 'Section 1 &bull; 12-Month Challenges',
-    title: '12-Month Creative Activity Dashboard',
-    desc: 'Pick your month, watch the guided video tutorial, design directly in Adobe Express, and submit your project for teacher grading.',
-    render: function() {
-      return renderMonthSectionHtml();
-    }
+    num: '📅',
+    tag: 'Section 1 • Monthly Activities',
+    title: 'Monthly Creative Activities',
+    desc: 'Pick your month, watch the tutorial video, make your art in Adobe Express, and submit it!',
+    render: function() { return renderMonthSectionHtml(); }
   },
   '2': {
-    num: '02',
-    tag: 'Section 2 &bull; Skill Building Tracks',
-    title: 'Structured Skill Building Tracks',
-    desc: 'Master essential digital competencies from graphic design to video storytelling and typography through guided project tracks.',
+    num: '🎯',
+    tag: 'Section 2 • Skill Tracks',
+    title: 'Skill Building Tracks',
+    desc: 'Learn specific creative skills step by step. Start simple and level up every week!',
     render: function() {
       return '<div class="rg">' +
-        '<div class="rc"><div><div class="rc-badge">Graphic Design</div><h4>Graphic Design Fundamentals</h4><p>Master layout hierarchy, color harmony, and visual balance for school posters and digital banners.</p><div class="sbar"><div class="sbar-fill" style="width:75%"></div></div></div><a href="https://express.adobe.com/sp/design/posters" target="_blank" class="btn btn-primary">Start Track &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Video &amp; Motion</div><h4>Video &amp; Animation Storytelling</h4><p>Produce compelling short video stories, presentations, and voiceover clips with Adobe Express video tools.</p><div class="sbar"><div class="sbar-fill" style="width:50%"></div></div></div><a href="https://express.adobe.com/sp/design/videos" target="_blank" class="btn btn-primary">Start Track &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Social Campaigns</div><h4>Social Media Campaign Creation</h4><p>Craft awareness campaigns, infographics, and engaging carousel posts for school initiatives.</p><div class="sbar"><div class="sbar-fill" style="width:35%"></div></div></div><a href="https://express.adobe.com/sp/design/social" target="_blank" class="btn btn-primary">Start Track &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Illustration</div><h4>Digital Illustration &amp; Icons</h4><p>Create digital art, stickers, and custom vector icons using Express drawing and generative tools.</p><div class="sbar"><div class="sbar-fill" style="width:20%"></div></div></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Start Track &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Typography</div><h4>Creative Lettering &amp; Text Art</h4><p>Explore expressive typography, generative text effects, and title design for book covers and projects.</p><div class="sbar"><div class="sbar-fill" style="width:60%"></div></div></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Start Track &#8599;</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Design</div><h4>Poster &amp; Flyer Design</h4><p>Learn how to pick colours, use big text, and make eye-catching posters for school events!</p><div class="sbar"><div class="sbar-fill" style="width:75%"></div></div></div><a href="https://express.adobe.com/sp/design/posters" target="_blank" class="btn btn-primary">Start →</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1574717024453-354056afd6fc?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Video</div><h4>Make Fun Videos</h4><p>Make short video clips, add music and voice, and share your story with the world!</p><div class="sbar"><div class="sbar-fill" style="width:50%"></div></div></div><a href="https://express.adobe.com/sp/design/videos" target="_blank" class="btn btn-primary">Start →</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Social</div><h4>Social Media Posts</h4><p>Design cool Instagram posts and stories. Make your message look amazing!</p><div class="sbar"><div class="sbar-fill" style="width:35%"></div></div></div><a href="https://express.adobe.com/sp/design/social" target="_blank" class="btn btn-primary">Start →</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Typography</div><h4>Cool Text &amp; Lettering</h4><p>Make words look beautiful! Try different fonts, sizes, and text effects.</p><div class="sbar"><div class="sbar-fill" style="width:60%"></div></div></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Start →</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Illustration</div><h4>Digital Drawing &amp; Art</h4><p>Create your own digital drawings, stickers, and original artwork using Adobe tools.</p><div class="sbar"><div class="sbar-fill" style="width:20%"></div></div></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Start →</a></div>' +
       '</div>';
     }
   },
   '3': {
-    num: '03',
-    tag: 'Section 3 &bull; Student Portfolio',
-    title: 'My Creative Portfolio &amp; Submissions',
-    desc: 'Review your submission history across all 12 academic months, manage your published work, and generate sharing links.',
+    num: '🖼️',
+    tag: 'Section 3 • My Portfolio',
+    title: 'My Creative Portfolio',
+    desc: 'All your art in one place! See how much you have made and share it with your teacher.',
     render: function() {
       return '<div class="pstats">' +
-        '<div class="pstat"><div class="pstat-n">9/12</div><div class="pstat-l">Months Completed</div></div>' +
-        '<div class="pstat"><div class="pstat-n">83%</div><div class="pstat-l">Submission Rate</div></div>' +
-        '<div class="pstat"><div class="pstat-n">3/6</div><div class="pstat-l">Badges Earned</div></div>' +
+        '<div class="pstat"><div class="pstat-n">9/12</div><div class="pstat-l">Months Done</div></div>' +
+        '<div class="pstat"><div class="pstat-n">83%</div><div class="pstat-l">Work Submitted</div></div>' +
+        '<div class="pstat"><div class="pstat-n">3/6</div><div class="pstat-l">Badges Won</div></div>' +
         '<div class="pstat"><div class="pstat-n">14</div><div class="pstat-l">Projects Saved</div></div>' +
       '</div>' +
       '<div class="rg">' +
-        '<div class="rc"><div><div class="rc-badge">Upload</div><h4>Submit Monthly Assignment</h4><p>Upload your finished Adobe Express project link or file for official teacher grading and feedback.</p></div><a href="https://forms.google.com" target="_blank" class="btn btn-primary">Submit Project &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Library</div><h4>View Published Work</h4><p>Browse all your submitted greeting cards, posters, comic strips, and video presentations.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-outline">Open Library &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Share</div><h4>Share With Classmates</h4><p>Generate view-only links to showcase your best creative designs with classmates and family.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-outline">Share Portfolio &#8599;</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Submit</div><h4>Send My Project</h4><p>Upload your finished Adobe Express project link or file for your teacher to see and grade.</p></div><a href="https://forms.google.com" target="_blank" class="btn btn-primary">Submit Project →</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Library</div><h4>See All My Work</h4><p>Browse all the posters, cards, and videos you have made this year!</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-outline">Open Library →</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Share</div><h4>Share With Friends</h4><p>Get a link to show your best art to your friends and family. They will love it!</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-outline">Share →</a></div>' +
       '</div>';
     }
   },
   '4': {
-    num: '04',
-    tag: 'Section 4 &bull; Video Tutorials',
-    title: 'Video Masterclasses &amp; Step-by-Step Guides',
-    desc: 'Watch comprehensive video tutorials covering fundamental to advanced creative workflows designed for students.',
+    num: '🎬',
+    tag: 'Section 4 • Video Tutorials',
+    title: 'How-To Videos',
+    desc: 'Watch short videos to learn how to use Adobe Express. Follow along and make something amazing!',
     render: function() {
       return '<div class="rg">' +
-        '<div class="rc"><div><div class="rc-badge">Beginner &bull; 5 min</div><h4>Getting Started with Adobe Express</h4><p>Tour the workspace, discover basic editing tools, and complete your first design in under 5 minutes.</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+beginner+tutorial" target="_blank" class="btn btn-dark">Watch Masterclass &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Intermediate &bull; 8 min</div><h4>School Event Poster Design</h4><p>Learn how to pick color palettes, structure headers, and create professional school event flyers.</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+poster+tutorial" target="_blank" class="btn btn-dark">Watch Masterclass &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Advanced &bull; 12 min</div><h4>Creating Short Video Stories</h4><p>Add voiceovers, soundtrack music, scene transitions, and animated text titles to your class videos.</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+video+tutorial" target="_blank" class="btn btn-dark">Watch Masterclass &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Animation &bull; 10 min</div><h4>Dynamic Text &amp; Sticker Animation</h4><p>Animate static illustrations, add motion dynamics, and export ready-to-share animated GIFs.</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+animation+tutorial" target="_blank" class="btn btn-dark">Watch Masterclass &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Branding &bull; 15 min</div><h4>Personal Brand &amp; Digital Logo</h4><p>Design a personal logo badge, font hierarchy, and color swatch for your personal student brand.</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+logo+tutorial" target="_blank" class="btn btn-dark">Watch Masterclass &#8599;</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1581726690015-c9861fa5057f?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Beginner • 5 min</div><h4>First Steps in Adobe Express</h4><p>Tour the workspace, find the basic tools, and make your first design in 5 minutes!</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+beginner+tutorial" target="_blank" class="btn btn-dark">▶ Watch →</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Easy • 8 min</div><h4>Make a School Poster</h4><p>Learn how to pick colours and make a beautiful poster for your school notice board!</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+poster+tutorial" target="_blank" class="btn btn-dark">▶ Watch →</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1574717024453-354056afd6fc?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Medium • 12 min</div><h4>Make a Short Video</h4><p>Add music, your voice, and animated text to make a really cool short video!</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+video+tutorial" target="_blank" class="btn btn-dark">▶ Watch →</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Fun • 10 min</div><h4>Animated Stickers &amp; Text</h4><p>Make things move! Add cool animations to your designs and share as GIFs.</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+animation+tutorial" target="_blank" class="btn btn-dark">▶ Watch →</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Advanced • 15 min</div><h4>Design Your Own Logo</h4><p>Create a personal logo and brand mark. Make it look like a real company or brand!</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+logo+tutorial" target="_blank" class="btn btn-dark">▶ Watch →</a></div>' +
       '</div>';
     }
   },
   '5': {
-    num: '05',
-    tag: 'Section 5 &bull; Express Tools',
-    title: 'Adobe Express Creative Tools Explorer',
-    desc: 'Launch directly into your chosen creative medium with one-click shortcuts to Adobe Express dedicated studios.',
+    num: '🛠️',
+    tag: 'Section 5 • Creative Tools',
+    title: 'Jump In and Create!',
+    desc: 'Tap any tool to start making right now. No need to wait — just pick and create!',
     render: function() {
       return '<div class="tools">' +
-        '<a href="https://express.adobe.com/sp/design/posters" target="_blank" class="tool"><div class="tool-ico">P</div><h4>Posters</h4><span>Flyers &amp; Art</span></a>' +
-        '<a href="https://express.adobe.com/sp/design/videos" target="_blank" class="tool"><div class="tool-ico">V</div><h4>Video Editor</h4><span>Clips &amp; Reels</span></a>' +
-        '<a href="https://express.adobe.com/sp/design/cards" target="_blank" class="tool"><div class="tool-ico">C</div><h4>Cards</h4><span>Greetings</span></a>' +
-        '<a href="https://express.adobe.com/sp/design/collages" target="_blank" class="tool"><div class="tool-ico">G</div><h4>Collages</h4><span>Photo Grids</span></a>' +
-        '<a href="https://express.adobe.com/sp/tools/remove-background" target="_blank" class="tool"><div class="tool-ico">B</div><h4>Cutout BG</h4><span>1-Click Clear</span></a>' +
-        '<a href="https://express.adobe.com/sp/design/bookcovers" target="_blank" class="tool"><div class="tool-ico">K</div><h4>Book Covers</h4><span>Novel Layout</span></a>' +
-        '<a href="https://express.adobe.com/sp/design/comics" target="_blank" class="tool"><div class="tool-ico">M</div><h4>Comics</h4><span>4-Panel Strips</span></a>' +
-        '<a href="https://express.adobe.com/sp/design/social" target="_blank" class="tool"><div class="tool-ico">S</div><h4>Social Posts</h4><span>Campaigns</span></a>' +
+        '<a href="https://express.adobe.com/sp/design/posters" target="_blank" class="tool"><div class="tool-ico">🪧</div><h4>Posters</h4><span>Flyers &amp; Art</span></a>' +
+        '<a href="https://express.adobe.com/sp/design/videos" target="_blank" class="tool"><div class="tool-ico">📹</div><h4>Videos</h4><span>Clips &amp; Reels</span></a>' +
+        '<a href="https://express.adobe.com/sp/design/cards" target="_blank" class="tool"><div class="tool-ico">💌</div><h4>Cards</h4><span>Greetings</span></a>' +
+        '<a href="https://express.adobe.com/sp/design/collages" target="_blank" class="tool"><div class="tool-ico">🖼️</div><h4>Collages</h4><span>Photo Grids</span></a>' +
+        '<a href="https://express.adobe.com/sp/tools/remove-background" target="_blank" class="tool"><div class="tool-ico">✂️</div><h4>Remove BG</h4><span>1-Click Clear</span></a>' +
+        '<a href="https://express.adobe.com/sp/design/bookcovers" target="_blank" class="tool"><div class="tool-ico">📚</div><h4>Book Covers</h4><span>Novel Layout</span></a>' +
+        '<a href="https://express.adobe.com/sp/design/comics" target="_blank" class="tool"><div class="tool-ico">🦸</div><h4>Comics</h4><span>4-Panel Strips</span></a>' +
+        '<a href="https://express.adobe.com/sp/design/social" target="_blank" class="tool"><div class="tool-ico">📱</div><h4>Social Posts</h4><span>Campaigns</span></a>' +
       '</div>' +
-      '<div style="margin-top:28px;text-align:center">' +
-        '<a href="https://express.adobe.com" target="_blank" class="btn btn-primary" style="padding:12px 28px;font-size:.9rem;">Open Full Adobe Express Workspace &#8599;</a>' +
+      '<div style="margin-top:24px;text-align:center">' +
+        '<a href="https://express.adobe.com" target="_blank" class="btn btn-primary" style="padding:12px 28px;font-size:.9rem;">🚀 Open Full Adobe Express ↗</a>' +
       '</div>';
     }
   },
   '6': {
-    num: '06',
-    tag: 'Section 6 &bull; Milestone Badges',
-    title: 'Achievements &amp; Digital Badges',
-    desc: 'Milestone badges earned through monthly assignment completion and active participation in creative challenges.',
+    num: '🏆',
+    tag: 'Section 6 • My Badges',
+    title: 'My Badges &amp; Awards',
+    desc: 'You earn badges by completing projects! Keep going to unlock more cool awards.',
     render: function() {
       return '<div class="ach-grid">' +
-        '<div class="ac earned"><div class="ac-icon">&#10003;</div><h4>First Project</h4><p>Completed your first monthly creative challenge.</p><span class="ac-tag">Earned</span></div>' +
-        '<div class="ac earned"><div class="ac-icon">&#10003;</div><h4>3-Month Streak</h4><p>Submitted 3 consecutive challenges on schedule.</p><span class="ac-tag">Earned</span></div>' +
-        '<div class="ac earned"><div class="ac-icon">&#10003;</div><h4>Portfolio Builder</h4><p>Published 5 or more distinct works to your library.</p><span class="ac-tag">Earned</span></div>' +
-        '<div class="ac locked"><div class="ac-icon">&#128274;</div><h4>Half-Year Creator</h4><p>Complete 6 monthly challenges to unlock this badge.</p><span class="ac-tag">Locked</span></div>' +
-        '<div class="ac locked"><div class="ac-icon">&#128274;</div><h4>Year Champion</h4><p>Complete all 12 monthly challenges across the year.</p><span class="ac-tag">Locked</span></div>' +
-        '<div class="ac locked"><div class="ac-icon">&#128274;</div><h4>Master Creator</h4><p>Earn high distinction marks across all submissions.</p><span class="ac-tag">Locked</span></div>' +
+        '<div class="ac earned"><div class="ac-icon">✓</div><h4>First Project Done!</h4><p>You finished your very first creative challenge. Amazing start!</p><span class="ac-tag">Earned ✓</span></div>' +
+        '<div class="ac earned"><div class="ac-icon">🔥</div><h4>3-Month Streak</h4><p>You submitted 3 months in a row! Great job keeping up!</p><span class="ac-tag">Earned ✓</span></div>' +
+        '<div class="ac earned"><div class="ac-icon">📁</div><h4>Portfolio Builder</h4><p>You saved 5 or more works to your portfolio. Well done!</p><span class="ac-tag">Earned ✓</span></div>' +
+        '<div class="ac locked"><div class="ac-icon">🔒</div><h4>Half-Year Creator</h4><p>Do 6 monthly projects to unlock this badge!</p><span class="ac-tag">Locked</span></div>' +
+        '<div class="ac locked"><div class="ac-icon">🔒</div><h4>Year Champion</h4><p>Complete all 12 monthly challenges to win this badge!</p><span class="ac-tag">Locked</span></div>' +
+        '<div class="ac locked"><div class="ac-icon">🔒</div><h4>Master Creator</h4><p>Get top marks across all your submissions to unlock this!</p><span class="ac-tag">Locked</span></div>' +
       '</div>';
     }
+  },
+  '7': {
+    num: '🌟',
+    tag: 'Section 7 • DCAIS Activities',
+    title: 'DCAIS Activities — Earn Your Certificate!',
+    desc: 'Do these special activities to earn your DCAIS digital skills certificate. Do at least 1 activity every month!',
+    render: function() { return renderDcaisSection(); }
   }
 };
 
-/* ===== NAVIGATION CONTROLLER ===== */
+/* ===== NAVIGATION ===== */
 function openSection(num) {
   var data = STUDENT_SECTIONS_DATA[num];
   if (!data) return;
-
-  // Update URL hash
   location.hash = '#section-' + num;
-
-  // Set Content
   document.getElementById('crumbName').innerHTML = data.tag;
   document.getElementById('secBadge').innerHTML = data.num;
   document.getElementById('secTag').innerHTML = data.tag;
   document.getElementById('secTitle').innerHTML = data.title;
   document.getElementById('secDesc').innerHTML = data.desc;
   document.getElementById('secContent').innerHTML = data.render();
-
-  // Next / Prev shortcuts
   var keys = Object.keys(STUDENT_SECTIONS_DATA);
   var idx = keys.indexOf(num);
   var nextPrevHtml = '';
-  if (idx > 0) {
-    nextPrevHtml += '<button class="btn btn-ghost" onclick="openSection(\'' + keys[idx - 1] + '\')">&#8592; Previous Section</button> ';
-  }
-  if (idx < keys.length - 1) {
-    nextPrevHtml += '<button class="btn btn-primary" onclick="openSection(\'' + keys[idx + 1] + '\')">Next Section &#8594;</button>';
-  }
+  if (idx > 0) nextPrevHtml += '<button class="btn btn-ghost" onclick="openSection(\'' + keys[idx-1] + '\')">← Prev Section</button> ';
+  if (idx < keys.length-1) nextPrevHtml += '<button class="btn btn-primary" onclick="openSection(\'' + keys[idx+1] + '\')">Next Section →</button>';
   document.getElementById('secNextPrev').innerHTML = nextPrevHtml;
-
-  // Toggle Views
   document.getElementById('dashboardView').style.display = 'none';
   document.getElementById('mainHero').style.display = 'none';
   document.getElementById('sectionView').style.display = 'block';
-
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
 function showDashboard() {
@@ -759,35 +715,27 @@ function showDashboard() {
   document.getElementById('sectionView').style.display = 'none';
   document.getElementById('dashboardView').style.display = 'block';
   document.getElementById('mainHero').style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// Hash-based router
 window.addEventListener('hashchange', function() {
   var hash = location.hash;
   if (hash.indexOf('#section-') === 0) {
-    var num = hash.replace('#section-', '');
-    if (STUDENT_SECTIONS_DATA[num]) {
-      openSection(num);
-      return;
-    }
+    var num = hash.replace('#section-','');
+    if (STUDENT_SECTIONS_DATA[num]) { openSection(num); return; }
   }
   showDashboard();
 });
 
-// Initial check on load
 window.addEventListener('DOMContentLoaded', function() {
   var hash = location.hash;
   if (hash.indexOf('#section-') === 0) {
-    var num = hash.replace('#section-', '');
-    if (STUDENT_SECTIONS_DATA[num]) {
-      openSection(num);
-      return;
-    }
+    var num = hash.replace('#section-','');
+    if (STUDENT_SECTIONS_DATA[num]) { openSection(num); return; }
   }
   showDashboard();
+  applyLang();
 });
 </script>
 </body>
 </html>
-
