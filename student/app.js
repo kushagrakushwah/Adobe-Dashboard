@@ -513,3 +513,25 @@ window.addEventListener('DOMContentLoaded', function() {
   showDashboard();
   applyLang();
 });
+
+
+// Explicit global bindings
+window.openSection = openSection;
+window.showDashboard = showDashboard;
+window.toggleLang = toggleLang;
+window.selectMonthTab = selectMonthTab;
+window.selectAimGrade = selectAimGrade;
+window.searchAimActivities = searchAimActivities;
+
+// Event delegation fallback
+document.addEventListener('click', function(e) {
+  var card = e.target.closest('.tile-card');
+  if (card) {
+    var sec = card.getAttribute('data-section');
+    if (sec && typeof window.openSection === 'function') {
+      window.openSection(sec);
+    }
+  }
+});
+
+console.log('Student Creative Studio initialized successfully.');

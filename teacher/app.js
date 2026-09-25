@@ -426,3 +426,24 @@ window.addEventListener('DOMContentLoaded', function() {
   showDashboard();
   applyLang();
 });
+
+
+// Explicit global bindings
+window.openSection = openSection;
+window.showDashboard = showDashboard;
+window.toggleLang = toggleLang;
+window.selectTeacherGrade = selectTeacherGrade;
+window.searchTeacherActivities = searchTeacherActivities;
+
+// Event delegation fallback
+document.addEventListener('click', function(e) {
+  var card = e.target.closest('.tile-card');
+  if (card) {
+    var sec = card.getAttribute('data-section');
+    if (sec && typeof window.openSection === 'function') {
+      window.openSection(sec);
+    }
+  }
+});
+
+console.log('Teacher Educator Hub initialized successfully.');
