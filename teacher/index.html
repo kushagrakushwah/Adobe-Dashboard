@@ -10,6 +10,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23FA0F00'/><text y='.9em' font-size='72' x='12' fill='white' font-weight='900'>T</text></svg>">
+<script src="dcais-data.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
@@ -38,20 +39,20 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 .lang-toggle{display:flex;align-items:center;background:var(--surface-3);border:1.5px solid var(--border);border-radius:999px;padding:3px;cursor:pointer}
 .lang-btn{padding:4px 12px;border-radius:999px;font-size:.72rem;font-weight:800;color:var(--ink-3);transition:all .18s;user-select:none}
 .lang-btn.active{background:var(--red);color:#FFF;box-shadow:0 2px 6px rgba(250,15,0,.25)}
-/* HERO - SMALLER */
-.hero{background:linear-gradient(150deg,#FA0F00 0%,#8B0000 55%,#3D0000 100%);color:#FFF;padding:28px 28px 22px;position:relative;overflow:hidden}
+/* HERO - COMPACT */
+.hero{background:linear-gradient(150deg,#FA0F00 0%,#8B0000 55%,#3D0000 100%);color:#FFF;padding:26px 28px 20px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
 .hero-in{max-width:1160px;margin:0 auto;position:relative}
-.hero-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.9);font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:10px;letter-spacing:.03em}
+.hero-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.9);font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:8px;letter-spacing:.03em}
 .hero-tag-dot{width:6px;height:6px;border-radius:50%;background:#FFD60A}
-.hero h1{font-size:clamp(1.3rem,3vw,1.9rem);font-weight:900;letter-spacing:-.035em;line-height:1.2;margin-bottom:8px;max-width:680px}
-.hero-sub{font-size:.88rem;color:rgba(255,255,255,.82);max-width:560px;line-height:1.5;margin-bottom:14px}
+.hero h1{font-size:clamp(1.3rem,2.8vw,1.85rem);font-weight:900;letter-spacing:-.035em;line-height:1.2;margin-bottom:6px;max-width:680px}
+.hero-sub{font-size:.84rem;color:rgba(255,255,255,.84);max-width:560px;line-height:1.5;margin-bottom:12px}
 .flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-.flow-step{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:5px 12px;border-radius:999px;font-size:.78rem;font-weight:700;color:#FFF;white-space:nowrap}
+.flow-step{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:5px 12px;border-radius:999px;font-size:.76rem;font-weight:700;color:#FFF;white-space:nowrap}
 .flow-n{width:18px;height:18px;border-radius:50%;background:#FFF;color:var(--red);font-size:.68rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .flow-arr{color:rgba(255,255,255,.45);font-size:.8rem;font-weight:900}
 /* MAIN */
-.main{max-width:1160px;margin:0 auto;padding:28px 28px 80px}
+.main{max-width:1160px;margin:0 auto;padding:26px 28px 80px}
 /* GUIDE BAR */
 .guide{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--red);border-radius:var(--radius);padding:12px 18px;margin-bottom:22px;box-shadow:var(--shadow-sm)}
 .guide-icon{font-size:1.1rem;flex-shrink:0}
@@ -60,10 +61,10 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 /* TILES */
 .tiles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
 .tile-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;user-select:none;transition:all .22s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;position:relative}
-.tile-img-wrap{overflow:hidden;position:relative;flex-shrink:0}
-.tile-img{width:100%;height:100px;object-fit:cover;display:block;transition:transform .4s ease}
-.tile-card:hover .tile-img{transform:scale(1.04)}
-.tile-img-ov{position:absolute;bottom:8px;left:10px;background:var(--red);color:#FFF;font-size:1.1rem;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.tile-img-wrap{overflow:hidden;position:relative;flex-shrink:0;height:115px}
+.tile-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+.tile-card:hover .tile-img{transform:scale(1.05)}
+.tile-img-ov{position:absolute;bottom:8px;left:10px;background:var(--red);color:#FFF;font-size:1.2rem;width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
 .tile-body{padding:16px 18px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
 .tile-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(250,15,0,.12)}
 .tile-tag{font-size:.62rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
@@ -76,21 +77,21 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 /* SECTION VIEW */
 .section-full-view{display:none;animation:viewFadeIn .28s ease}
 @keyframes viewFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.sec-nav-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:12px;flex-wrap:wrap}
-.back-btn{display:inline-flex;align-items:center;gap:8px;background:var(--surface);color:var(--red);border:1.5px solid var(--red);padding:10px 20px;border-radius:999px;font-size:.85rem;font-weight:800;cursor:pointer;transition:all .18s;box-shadow:var(--shadow-sm)}
+.sec-nav-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;gap:12px;flex-wrap:wrap}
+.back-btn{display:inline-flex;align-items:center;gap:8px;background:var(--surface);color:var(--red);border:1.5px solid var(--red);padding:9px 18px;border-radius:999px;font-size:.84rem;font-weight:800;cursor:pointer;transition:all .18s;box-shadow:var(--shadow-sm)}
 .back-btn:hover{background:var(--red);color:#FFF;transform:translateX(-2px)}
 .sec-breadcrumb{font-size:.84rem;color:var(--ink-3);font-weight:700}
 .sec-breadcrumb strong{color:var(--ink)}
-.sec-hero-card{background:var(--surface);border:2px solid var(--red);border-radius:var(--radius-lg);padding:24px 28px;margin-bottom:24px;box-shadow:0 8px 30px rgba(250,15,0,.08);display:flex;align-items:center;gap:18px}
-.sec-hero-badge{width:52px;height:52px;border-radius:14px;background:var(--red);color:#FFF;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;flex-shrink:0}
+.sec-hero-card{background:var(--surface);border:2px solid var(--red);border-radius:var(--radius-lg);padding:22px 26px;margin-bottom:22px;box-shadow:0 8px 30px rgba(250,15,0,.08);display:flex;align-items:center;gap:18px}
+.sec-hero-badge{width:50px;height:50px;border-radius:14px;background:var(--red);color:#FFF;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:900;flex-shrink:0}
 .sec-hero-body{flex:1;min-width:0}
-.sec-hero-tag{font-size:.68rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
-.sec-hero-title{font-size:1.5rem;font-weight:900;color:var(--ink);letter-spacing:-.02em;margin-bottom:5px;line-height:1.2}
-.sec-hero-desc{font-size:.88rem;color:var(--ink-2);line-height:1.5}
-.sec-content-box{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow-sm);margin-bottom:24px}
-.sec-bottom-bar{display:flex;align-items:center;justify-content:space-between;padding-top:18px;border-top:1px solid var(--border);gap:12px;flex-wrap:wrap}
+.sec-hero-tag{font-size:.68rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+.sec-hero-title{font-size:1.45rem;font-weight:900;color:var(--ink);letter-spacing:-.02em;margin-bottom:4px;line-height:1.2}
+.sec-hero-desc{font-size:.86rem;color:var(--ink-2);line-height:1.5}
+.sec-content-box{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:26px;box-shadow:var(--shadow-sm);margin-bottom:22px}
+.sec-bottom-bar{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--border);gap:12px;flex-wrap:wrap}
 /* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;border-radius:999px;font-size:.84rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;white-space:nowrap;transition:all .16s;line-height:1}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:999px;font-size:.82rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;white-space:nowrap;transition:all .16s;line-height:1}
 .btn-primary{background:var(--red);color:#FFF;box-shadow:0 2px 8px rgba(250,15,0,.25)}
 .btn-primary:hover{background:var(--red-dk);transform:translateY(-1px)}
 .btn-outline{background:transparent;color:var(--red);border:1.5px solid var(--red)}
@@ -101,10 +102,10 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 .btn-ghost:hover{border-color:var(--red);color:var(--red);background:var(--red-bg)}
 /* RESOURCE GRID */
 .rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-.rc{background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px;transition:all .18s;display:flex;flex-direction:column;justify-content:space-between}
+.rc{background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:20px;transition:all .18s;display:flex;flex-direction:column;justify-content:space-between}
 .rc:hover{border-color:var(--red);background:var(--surface);box-shadow:0 6px 20px rgba(250,15,0,.1);transform:translateY(-2px)}
 .rc-badge{display:inline-block;background:var(--red-bg);color:var(--red);font-size:.66rem;font-weight:800;padding:3px 10px;border-radius:999px;margin-bottom:10px;border:1px solid var(--red-border);text-transform:uppercase;letter-spacing:.04em}
-.rc h4{font-size:.96rem;font-weight:800;color:var(--ink);margin-bottom:6px;line-height:1.3}
+.rc h4{font-size:.95rem;font-weight:800;color:var(--ink);margin-bottom:6px;line-height:1.3}
 .rc p{font-size:.82rem;color:var(--ink-2);margin-bottom:14px;line-height:1.55}
 /* Action List */
 .al{display:flex;flex-direction:column;gap:12px}
@@ -149,19 +150,35 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 .cpd-step-n{width:44px;height:44px;border-radius:50%;background:var(--red);color:#FFF;font-size:1.1rem;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(250,15,0,.3)}
 .cpd-step-l{font-size:.76rem;font-weight:700;color:var(--ink-2);text-align:center;max-width:80px;line-height:1.3}
 .cpd-connector{flex:1;height:3px;background:linear-gradient(90deg,var(--red),rgba(250,15,0,.25));min-width:24px}
-/* DCAIS Monitor */
-.dcais-monitor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:20px}
-.dcais-monitor-card{background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all .22s}
-.dcais-monitor-card:hover{border-color:var(--red);box-shadow:0 6px 20px rgba(250,15,0,.1);transform:translateY(-2px)}
-.dcais-mc-img{width:100%;height:90px;object-fit:cover}
-.dcais-mc-body{padding:14px}
-.dcais-mc-grade{display:inline-block;background:var(--red-bg);color:var(--red);font-size:.66rem;font-weight:800;padding:2px 8px;border-radius:999px;border:1px solid var(--red-border);text-transform:uppercase;margin-bottom:6px}
-.dcais-mc-title{font-size:.92rem;font-weight:800;color:var(--ink);margin-bottom:4px;line-height:1.3}
-.dcais-mc-desc{font-size:.76rem;color:var(--ink-2);line-height:1.5;margin-bottom:12px}
-.dcais-mc-footer{display:flex;align-items:center;justify-content:space-between}
-.dcais-mc-stat{font-size:.72rem;color:var(--ink-3);font-weight:600}
-.dcais-mc-btn{font-size:.72rem;font-weight:800;color:var(--red);background:var(--red-bg);border:1px solid var(--red-border);padding:4px 10px;border-radius:999px;text-decoration:none;transition:all .16s}
-.dcais-mc-btn:hover{background:var(--red);color:#FFF}
+
+/* DCAIS MONITOR STYLES */
+.aim-top-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:12px 16px;margin-bottom:18px;flex-wrap:wrap}
+.aim-back-grade{display:inline-flex;align-items:center;gap:6px;background:var(--surface);color:var(--ink-2);border:1.5px solid var(--border);padding:6px 14px;border-radius:999px;font-size:.78rem;font-weight:800;cursor:pointer;transition:all .18s}
+.aim-back-grade:hover{border-color:var(--red);color:var(--red)}
+.aim-search{flex:1;min-width:200px;max-width:340px;position:relative}
+.aim-search input{width:100%;padding:7px 14px 7px 32px;border:1.5px solid var(--border);border-radius:999px;font-size:.8rem;outline:none;font-family:inherit}
+.aim-search input:focus{border-color:var(--red)}
+.aim-search::before{content:'🔍';position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:.78rem;opacity:.5}
+
+.aim-grade-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:24px}
+.aim-gc{background:var(--surface);border:2px solid var(--border);border-radius:var(--radius-lg);padding:22px 18px;text-align:center;cursor:pointer;user-select:none;transition:all .22s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;align-items:center}
+.aim-gc:hover{border-color:var(--red);transform:translateY(-4px);box-shadow:0 8px 24px rgba(250,15,0,.15)}
+.aim-gc.active{border-color:var(--red);background:#FFF8F7;box-shadow:0 8px 24px rgba(250,15,0,.18)}
+.aim-gc-icon{width:52px;height:52px;border-radius:50%;background:#FFF0F0;border:1.5px solid rgba(250,15,0,.2);display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:12px;transition:all .2s}
+.aim-gc:hover .aim-gc-icon{background:var(--red);color:#FFF}
+.aim-gc h3{font-size:1.2rem;font-weight:900;color:var(--ink);margin-bottom:3px}
+.aim-gc-cnt{font-size:.78rem;color:var(--ink-3);font-weight:700;margin-bottom:12px}
+.aim-gc-btn{font-size:.76rem;font-weight:800;color:var(--red);display:inline-flex;align-items:center;gap:4px;border-top:1px solid var(--border);padding-top:10px;width:100%;justify-content:center}
+
+.aim-act-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.aim-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;justify-content:space-between;transition:all .22s;box-shadow:var(--shadow-sm)}
+.aim-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(250,15,0,.12)}
+.aim-badge{display:inline-block;background:var(--red-bg);color:var(--red);font-size:.65rem;font-weight:800;padding:3px 10px;border-radius:999px;border:1px solid var(--red-border);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+.aim-title{font-size:.96rem;font-weight:800;color:var(--ink);margin-bottom:6px;line-height:1.35}
+.aim-skills{font-size:.76rem;color:var(--red-dk);font-weight:700;margin-bottom:8px;line-height:1.4}
+.aim-instr{font-size:.78rem;color:var(--ink-2);line-height:1.5;margin-bottom:14px;flex:1}
+.aim-actions{display:flex;flex-direction:column;gap:7px;padding-top:12px;border-top:1px solid var(--border)}
+
 /* FOOTER */
 footer{background:var(--ink);padding:24px;text-align:center;color:rgba(255,255,255,.38);font-size:.82rem}
 footer p+p{margin-top:5px}
@@ -178,6 +195,8 @@ footer p+p{margin-top:5px}
   .ai-r{align-self:flex-end}
   .cpd-steps{flex-direction:column;align-items:flex-start}
   .cpd-connector{width:3px;height:20px;background:var(--red);min-width:unset;margin:0 0 0 21px}
+  .aim-top-nav{flex-direction:column;align-items:stretch}
+  .aim-search{max-width:100%}
 }
 </style>
 </head>
@@ -281,12 +300,12 @@ footer p+p{margin-top:5px}
         </div>
         <div class="tile-body">
           <div>
-            <div class="tile-tag" id="sC-tag">Section C &bull; DCAIS</div>
-            <h2 class="tile-title" id="sC-title">Student DCAIS Monitor</h2>
-            <p class="tile-desc" id="sC-desc">See exactly what DCAIS activities your students are doing grade-wise. Monitor progress and submissions.</p>
+            <div class="tile-tag" id="sC-tag">Section C • DCAIS</div>
+            <h2 class="tile-title" id="sC-title">Student DCAIS Monitor (AIM)</h2>
+            <p class="tile-desc" id="sC-desc">Monitor what DCAIS activities your students are doing across Grades 3–8. Inspect curriculum instructions and templates.</p>
           </div>
           <div class="tile-footer">
-            <span class="tile-hint" id="sC-hint">Grades 6–10 Activity View</span>
+            <span class="tile-hint" id="sC-hint">Grades 3–8 Full Monitor</span>
             <span class="tile-btn" id="sC-btn">Open &rarr;</span>
           </div>
         </div>
@@ -349,10 +368,10 @@ footer p+p{margin-top:5px}
         </div>
       </div>
 
-      <!-- Section G -->
+      <!-- Section G: Certification Path (Fixed Image!) -->
       <div class="tile-card" onclick="openSection('G')">
         <div class="tile-img-wrap">
-          <img class="tile-img" src="https://images.unsplash.com/photo-1567168539-48e3d0f52698?w=600&h=200&fit=crop&q=80" alt="Certification" crossorigin="anonymous">
+          <img class="tile-img" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=200&fit=crop&q=80" alt="Certification" crossorigin="anonymous">
           <div class="tile-img-ov">🏆</div>
         </div>
         <div class="tile-body">
@@ -407,32 +426,32 @@ var LANG = {
   en: {
     hdrSub:'Educator Workspace', hdrBadge:'Educator Portal',
     heroTag:'Educator &amp; Curriculum Hub', heroTitle:'Educator Hub &amp; Curriculum Portal',
-    heroSub:'Manage school access, CPD training, student DCAIS monitoring, classroom resources, and certification \u2014 all in one place.',
+    heroSub:'Manage school access, CPD training, student DCAIS monitoring, classroom resources, and certification — all in one place.',
     flow1:'School Access', flow2:'CPD Training', flow3:'DCAIS Monitor', flow4:'Certification',
     guideText:'<strong>Click any section card below</strong> to open its complete workspace in full-screen view.',
     backBtn:'Back to Sections',
     sAtag:'Section A', sAtitle:'Adobe ID &amp; Access', sAdesc:'School login, institutional account creation, single sign-on &amp; IT admin deployment guide.', sAhint:'5 Institutional Tools', sAbtn:'Open &rarr;',
     sBtag:'Section B', sBtitle:'CPD Modules', sBdesc:'5 accredited professional development modules (CPD-AE 01 to 05) totaling 48 training hours.', sBhint:'48 Hours Training', sBbtn:'Open &rarr;',
-    sCtag:'Section C \u2022 DCAIS', sCtitle:'Student DCAIS Monitor', sCdesc:'See exactly what DCAIS activities your students are doing grade-wise. Monitor progress and submissions.', sChint:'Grades 6\u201310 Activity View', sCbtn:'Open &rarr;',
+    sCtag:'Section C • DCAIS', sCtitle:'Student DCAIS Monitor (AIM)', sCdesc:'Monitor what DCAIS activities your students are doing across Grades 3–8. Inspect curriculum instructions and templates.', sChint:'Grades 3–8 Full Monitor', sCbtn:'Open &rarr;',
     sDtag:'Section D', sDtitle:'Classroom Resources', sDdesc:'Lesson plan templates, classroom printables, grading rubrics, tutorial videos, and project kits.', sDhint:'6 Resource Packs', sDbtn:'Open &rarr;',
     sEtag:'Section E', sEtitle:'Student Progress Tracker', sEdesc:'Monitor monthly activity completion rates, review submissions across grade bands, and evaluate portfolios.', sEhint:'Grade-wise Analytics', sEbtn:'Open &rarr;',
     sFtag:'Section F', sFtitle:'Community &amp; Support', sFdesc:'Connect with educators, attend live webinars, join the national forum, and get technical help.', sFhint:'500+ Educators Network', sFbtn:'Open &rarr;',
     sGtag:'Section G', sGtitle:'Certification Path', sGdesc:'Earn your Adobe Certified Educator credential. Track CPD hours and claim your digital badge.', sGhint:'4 Certification Levels', sGbtn:'Open &rarr;'
   },
   hi: {
-    hdrSub:'\u0936\u093f\u0915\u094d\u0937\u0915 \u0915\u093e\u0930\u094d\u092f\u0915\u094d\u0937\u0947\u0924\u094d\u0930', hdrBadge:'\u0936\u093f\u0915\u094d\u0937\u0915 \u092a\u094b\u0930\u094d\u091f\u0932',
-    heroTag:'\u0936\u093f\u0915\u094d\u0937\u0915 \u092a\u0948\u0928\u0932', heroTitle:'\u0936\u093f\u0915\u094d\u0937\u0915 \u0939\u092c \u0914\u0930 \u092a\u093e\u0920\u094d\u092f\u0915\u094d\u0930\u092e \u0935\u093f\u092d\u093e\u0917',
-    heroSub:'\u0938\u094d\u0915\u0942\u0932 \u090f\u0915\u094d\u0938\u0947\u0938, CPD \u092a\u094d\u0930\u0936\u093f\u0915\u094d\u0937\u0923, DCAIS \u092e\u0949\u0928\u093f\u091f\u0930\u093f\u0902\u0917, \u0915\u0915\u094d\u0937\u093e \u0938\u0902\u0938\u093e\u0927\u0928 \u0914\u0930 \u092a\u094d\u0930\u092e\u093e\u0923\u0940\u0915\u0930\u0923 \u0938\u092c \u090f\u0915 \u091c\u0917\u0939 \u092a\u0930\u0964',
-    flow1:'\u0938\u094d\u0915\u0942\u0932 \u090f\u0915\u094d\u0938\u0947\u0938', flow2:'CPD \u092a\u094d\u0930\u0936\u093f\u0915\u094d\u0937\u0923', flow3:'DCAIS \u092e\u0949\u0928\u093f\u091f\u0930', flow4:'\u092a\u094d\u0930\u092e\u093e\u0923\u0940\u0915\u0930\u0923',
-    guideText:'<strong>\u0928\u0940\u091a\u0947 \u0915\u093f\u0938\u0940 \u092d\u0940 \u0938\u0947\u0915\u094d\u0936\u0928 \u0915\u093e\u0930\u094d\u0921 \u092a\u0930 \u0915\u094d\u0932\u093f\u0915 \u0915\u0930\u0947\u0902</strong> \u0914\u0930 \u0909\u0938\u0947 \u092a\u0942\u0930\u0940 \u0938\u094d\u0915\u094d\u0930\u0940\u0928 \u092a\u0930 \u0916\u094b\u0932\u0947\u0902\u0964',
-    backBtn:'\u0935\u093e\u092a\u0938 \u091c\u093e\u090f\u0902',
-    sAtag:'\u0938\u0947\u0915\u094d\u0936\u0928 A', sAtitle:'Adobe ID \u0914\u0930 \u090f\u0915\u094d\u0938\u0947\u0938', sAdesc:'\u0938\u094d\u0915\u0942\u0932 \u0932\u0949\u0917\u093f\u0928, \u0938\u0902\u0938\u094d\u0925\u093e\u0917\u0924 \u0916\u093e\u0924\u093e \u0928\u093f\u0930\u094d\u092e\u093e\u0923, SSO \u0914\u0930 IT \u0924\u0948\u0928\u093e\u0924\u0940 \u0917\u093e\u0907\u0921\u0964', sAhint:'5 \u0938\u0902\u0938\u094d\u0925\u093e\u0917\u0924 \u091f\u0942\u0932\u094d\u0938', sAbtn:'\u0916\u094b\u0932\u0947\u0902 &rarr;',
-    sBtag:'\u0938\u0947\u0915\u094d\u0936\u0928 B', sBtitle:'CPD \u092e\u0949\u0921\u094d\u092f\u0942\u0932', sBdesc:'5 \u092e\u093e\u0928\u094d\u092f\u0924\u093e \u092a\u094d\u0930\u093e\u092a\u094d\u0924 \u092a\u094d\u0930\u0936\u093f\u0915\u094d\u0937\u0923 \u092e\u0949\u0921\u094d\u092f\u0942\u0932 \u2014 CPD-AE 01 \u0938\u0947 05 \u2014 \u0915\u0941\u0932 48 \u0918\u0902\u091f\u0947\u0964', sBhint:'48 \u0918\u0902\u091f\u0947 \u092a\u094d\u0930\u0936\u093f\u0915\u094d\u0937\u0923', sBbtn:'\u0916\u094b\u0932\u0947\u0902 &rarr;',
-    sCtag:'\u0938\u0947\u0915\u094d\u0936\u0928 C \u2022 DCAIS', sCtitle:'\u091b\u093e\u0924\u094d\u0930 DCAIS \u092e\u0949\u0928\u093f\u091f\u0930', sCdesc:'\u0926\u0947\u0916\u0947\u0902 \u0906\u092a\u0915\u0947 \u091b\u093e\u0924\u094d\u0930 \u0915\u094c\u0928 \u0938\u0940 DCAIS \u090f\u0915\u094d\u091f\u093f\u0935\u093f\u091f\u0940 \u0915\u0930 \u0930\u0939\u0947 \u0939\u0948\u0902\u0964', sChint:'\u0915\u0915\u094d\u0937\u093e 6-10 \u0917\u0924\u093f\u0935\u093f\u0927\u093f \u0926\u0943\u0936\u094d\u092f', sCbtn:'\u0916\u094b\u0932\u0947\u0902 &rarr;',
-    sDtag:'\u0938\u0947\u0915\u094d\u0936\u0928 D', sDtitle:'\u0915\u0915\u094d\u0937\u093e \u0938\u0902\u0938\u093e\u0927\u0928', sDdesc:'\u092a\u093e\u0920 \u092f\u094b\u091c\u0928\u093e \u0915\u094d\u0924\u0940', sDhint:'6 \u0938\u0902\u0938\u093e\u0927\u0928 \u092a\u0948\u0915', sDbtn:'\u0916\u094b\u0932\u0947\u0902 &rarr;',
-    sEtag:'\u0938\u0947\u0915\u094d\u0936\u0928 E', sEtitle:'\u091b\u093e\u0924\u094d\u0930 \u092a\u094d\u0930\u0917\u0924\u093f \u091f\u094d\u0930\u0948\u0915\u0930', sEdesc:'\u092e\u093e\u0938\u093f\u0915 \u0917\u0924\u093f\u0935\u093f\u0927\u093f \u0938\u092e\u093e\u092a\u094d\u0924\u093f \u0926\u0930 \u0926\u0947\u0916\u0947\u0902 \u0914\u0930 \u091b\u093e\u0924\u094d\u0930 \u092a\u094b\u0930\u094d\u091f\u092b\u094b\u0932\u093f\u092f\u094b \u0915\u093e \u092e\u0942\u0932\u094d\u092f\u093e\u0902\u0915\u0928 \u0915\u0930\u0947\u0902\u0964', sEhint:'\u0915\u0915\u094d\u0937\u093e\u0935\u093e\u0930 \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923', sEbtn:'\u0916\u094b\u0932\u0947\u0902 &rarr;',
-    sFtag:'\u0938\u0947\u0915\u094d\u0936\u0928 F', sFtitle:'\u0938\u092e\u0941\u0926\u093e\u092f \u0914\u0930 \u0938\u0939\u093e\u092f\u0924\u093e', sFdesc:'\u0936\u093f\u0915\u094d\u0937\u0915\u094b\u0902 \u0938\u0947 \u091c\u0941\u095c\u0947\u0902, \u0932\u093e\u0907\u0935 \u0935\u0947\u092c\u093f\u0928\u093e\u0930 \u092e\u0947\u0902 \u092d\u093e\u0917 \u0932\u0947\u0902 \u0914\u0930 \u0924\u0915\u0928\u0940\u0915\u0940 \u0938\u0939\u093e\u092f\u0924\u093e \u092a\u093e\u090f\u0902\u0964', sFhint:'500+ \u0936\u093f\u0915\u094d\u0937\u0915 \u0928\u0947\u091f\u0935\u0930\u094d\u0915', sFbtn:'\u0916\u094b\u0932\u0947\u0902 &rarr;',
-    sGtag:'\u0938\u0947\u0915\u094d\u0936\u0928 G', sGtitle:'\u092a\u094d\u0930\u092e\u093e\u0923\u0940\u0915\u0930\u0923 \u092a\u0925', sGdesc:'Adobe \u0938\u0930\u094d\u091f\u093f\u092b\u093c\u093e\u0908\u0921 \u0936\u093f\u0915\u094d\u0937\u0915 \u092c\u0928\u0947\u0902\u0964 CPD \u0918\u0902\u091f\u0947 \u091f\u094d\u0930\u0948\u0915 \u0915\u0930\u0947\u0902 \u0914\u0930 \u0921\u093f\u091c\u093f\u091f\u0932 \u092c\u0948\u091c \u0915\u094d\u0932\u0947\u092e \u0915\u0930\u0947\u0902\u0964', sGhint:'4 \u0938\u094d\u0924\u0930\u0940\u092f \u092a\u094d\u0930\u092e\u093e\u0923\u0940\u0915\u0930\u0923', sGbtn:'\u0916\u094b\u0932\u0947\u0902 &rarr;'
+    hdrSub:'शिक्षक कार्यक्षेत्र', hdrBadge:'शिक्षक पोर्टल',
+    heroTag:'शिक्षक पैनल', heroTitle:'शिक्षक हब और पाठ्यक्रम विभाग',
+    heroSub:'स्कूल एक्सेस, CPD प्रशिक्षण, DCAIS मॉनिटरिंग, कक्षा संसाधन और प्रमाणीकरण सब एक जगह पर।',
+    flow1:'स्कूल एक्सेस', flow2:'CPD प्रशिक्षण', flow3:'DCAIS मॉनिटर', flow4:'प्रमाणीकरण',
+    guideText:'<strong>नीचे किसी भी सेक्शन कार्ड पर क्लिक करें</strong> और उसे पूरी स्क्रीन पर खोलें।',
+    backBtn:'वापस जाएं',
+    sAtag:'सेक्शन A', sAtitle:'Adobe ID और एक्सेस', sAdesc:'स्कूल लॉगिन, संस्थागत खाता निर्माण, SSO और IT तैनाती गाइड।', sAhint:'5 संस्थागत टूल्स', sAbtn:'खोलें &rarr;',
+    sBtag:'सेक्शन B', sBtitle:'CPD मॉड्यूल', sBdesc:'5 मान्यता प्राप्त प्रशिक्षण मॉड्यूल — CPD-AE 01 से 05 — कुल 48 घंटे।', sBhint:'48 घंटे प्रशिक्षण', sBbtn:'खोलें &rarr;',
+    sCtag:'सेक्शन C • DCAIS', sCtitle:'छात्र DCAIS मॉनिटर (AIM)', sCdesc:'देखें कक्षा 3 से 8 तक आपके छात्र कौन सी DCAIS गतिविधियाँ कर रहे हैं।', sChint:'कक्षा 3–8 पूर्ण मॉनिटर', sCbtn:'खोलें &rarr;',
+    sDtag:'सेक्शन D', sDtitle:'कक्षा संसाधन', sDdesc:'पाठ योजना टेम्पलेट, क्लासरूम प्रिंटेबल्स, ग्रेडिंग रूब्रिक्स और वीडियो।', sDhint:'6 संसाधन पैक', sDbtn:'खोलें &rarr;',
+    sEtag:'सेक्शन E', sEtitle:'छात्र प्रगति ट्रैकर', sEdesc:'मासिक गतिविधि समाप्ति दर देखें और छात्र पोर्टफोलियो का मूल्यांकन करें।', sEhint:'कक्षावार विश्लेषण', sEbtn:'खोलें &rarr;',
+    sFtag:'सेक्शन F', sFtitle:'समुदाय और सहायता', sFdesc:'शिक्षकों से जुड़ें, लाइव वेबिनार में भाग लें और तकनीकी सहायता पाएं।', sFhint:'500+ शिक्षक नेटवर्क', sFbtn:'खोलें &rarr;',
+    sGtag:'सेक्शन G', sGtitle:'प्रमाणीकरण पथ', sGdesc:'Adobe सर्टिफाइड शिक्षक बनें। CPD घंटे ट्रैक करें और डिजिटल बैज क्लेम करें।', sGhint:'4 स्तरीय प्रमाणीकरण', sGbtn:'खोलें &rarr;'
   }
 };
 
@@ -441,6 +460,9 @@ function toggleLang() {
   document.getElementById('langBtnEN').classList.toggle('active', currentLang === 'en');
   document.getElementById('langBtnHI').classList.toggle('active', currentLang === 'hi');
   applyLang();
+  if (location.hash === '#section-C') {
+    document.getElementById('secContent').innerHTML = renderDcaisMonitor();
+  }
 }
 
 function applyLang() {
@@ -475,7 +497,7 @@ function renderCpdSectionHtml() {
   }).join('');
   var cardsHtml = CPD_MODULES.map(function(m) {
     return '<div class="rc">' +
-      '<div><div class="rc-badge">' + m.code + ' &bull; ' + m.duration + '</div><h4>' + m.title + '</h4><p>' + m.desc + '</p>' +
+      '<div><div class="rc-badge">' + m.code + ' • ' + m.duration + '</div><h4>' + m.title + '</h4><p>' + m.desc + '</p>' +
       '<ul style="font-size:.78rem;color:var(--ink-2);padding-left:18px;margin-bottom:14px;">' +
       m.outcomes.map(function(o){return '<li style="margin-bottom:3px;">' + o + '</li>';}).join('') +
       '</ul></div>' +
@@ -485,86 +507,159 @@ function renderCpdSectionHtml() {
   return '<div class="cpd-steps">' + stepsHtml + '</div><div class="rg">' + cardsHtml + '</div>';
 }
 
-/* ===== DCAIS STUDENT MONITOR DATA ===== */
-var DCAIS_STUDENT_ACTIVITIES = {
-  6: [
-    {title:'My Dream Poster', badge:'Class 6 \u2022 Design', desc:'Students design a poster about their dream job or place using colour and big text.', img:'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=180&fit=crop&q=80', submissions:'23/35'},
-    {title:'School Event Flyer', badge:'Class 6 \u2022 Flyer', desc:'Students make a flyer for a real or imaginary school event with time, place, and design.', img:'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=180&fit=crop&q=80', submissions:'18/35'},
-    {title:'Festival Greeting Card', badge:'Class 6 \u2022 Card', desc:'Students create a festival greeting card with a special message for family.', img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=180&fit=crop&q=80', submissions:'28/35'}
-  ],
-  7: [
-    {title:'Awareness Social Post', badge:'Class 7 \u2022 Social', desc:'Students create an Instagram-style awareness post on saving water or other social topics.', img:'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=180&fit=crop&q=80', submissions:'20/32'},
-    {title:'My Story Comic Strip', badge:'Class 7 \u2022 Story', desc:'Students tell a 4-panel comic story about an adventure with speech bubbles.', img:'https://images.unsplash.com/photo-1574717024453-354056afd6fc?w=400&h=180&fit=crop&q=80', submissions:'15/32'},
-    {title:'1-Minute Talent Video', badge:'Class 7 \u2022 Video', desc:'Students record a short video showing their talent \u2014 singing, science trick, or skill.', img:'https://images.unsplash.com/photo-1581726690015-c9861fa5057f?w=400&h=180&fit=crop&q=80', submissions:'12/32'}
-  ],
-  8: [
-    {title:'Personal Brand Logo', badge:'Class 8 \u2022 Brand', desc:'Students design their own personal logo using colours that match their personality.', img:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=180&fit=crop&q=80', submissions:'19/30'},
-    {title:'Social Good Campaign', badge:'Class 8 \u2022 Campaign', desc:'Students create a 3-post social media campaign about a local problem they want to solve.', img:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=180&fit=crop&q=80', submissions:'14/30'},
-    {title:'Travel Brochure', badge:'Class 8 \u2022 Brochure', desc:'Students make a travel brochure for their city or a cultural festival they love.', img:'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=180&fit=crop&q=80', submissions:'22/30'}
-  ],
-  9: [
-    {title:'Short Documentary', badge:'Class 9 \u2022 Film', desc:'Students produce a 2-minute documentary about something important to them.', img:'https://images.unsplash.com/photo-1574717024453-354056afd6fc?w=400&h=180&fit=crop&q=80', submissions:'11/28'},
-    {title:'Infographic Poster', badge:'Class 9 \u2022 Info', desc:'Students create an infographic explaining a science or history topic using charts and icons.', img:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=180&fit=crop&q=80', submissions:'17/28'},
-    {title:'Digital Collage Art', badge:'Class 9 \u2022 Digital Art', desc:'Students create a digital collage mixing photos and textures to express an emotion.', img:'https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?w=400&h=180&fit=crop&q=80', submissions:'9/28'}
-  ],
-  10: [
-    {title:'Personal Digital Portfolio', badge:'Class 10 \u2022 Portfolio', desc:'Students build a complete portfolio showcasing their best 5 works from Grades 6\u20139.', img:'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=180&fit=crop&q=80', submissions:'8/25'},
-    {title:'Startup Pitch Deck', badge:'Class 10 \u2022 Pitch', desc:'Students design a 5-slide pitch deck for their own imaginary business idea.', img:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=180&fit=crop&q=80', submissions:'10/25'},
-    {title:'Full Social Campaign', badge:'Class 10 \u2022 Campaign', desc:'Students create a complete 5-post social campaign with consistent design for a cause.', img:'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=180&fit=crop&q=80', submissions:'7/25'}
-  ]
-};
-
-var currentMonitorGrade = 6;
+/* ===== DCAIS STUDENT MONITOR CONTROLLER ===== */
+var teacherMonitorGrade = null; // null = show grades, or '3','4','5','6','7','8','kb'
+var teacherSearchQuery = '';
 
 function renderDcaisMonitor() {
-  var activities = DCAIS_STUDENT_ACTIVITIES[currentMonitorGrade];
-  var tabsHtml = [6,7,8,9,10].map(function(g) {
-    return '<button class="dcais-tab' + (g === currentMonitorGrade ? ' active' : '') + '" onclick="setMonitorGrade(' + g + ')" style="' +
-      'padding:7px 18px;background:' + (g === currentMonitorGrade ? 'var(--red)' : 'var(--surface-2)') + ';' +
-      'border:1.5px solid ' + (g === currentMonitorGrade ? 'var(--red)' : 'var(--border)') + ';' +
-      'border-radius:999px;font-size:.8rem;font-weight:700;' +
-      'color:' + (g === currentMonitorGrade ? '#FFF' : 'var(--ink-2)') + ';' +
-      'cursor:pointer;transition:all .18s;">Class ' + g + '</button>';
-  }).join('');
-  var studentPortalBtn = '<div style="margin-bottom:20px;">' +
-    '<a href="https://kushagrakushwah.github.io/Adobe-Dashboard/student/#section-7" target="_blank" class="btn btn-dark">\ud83d\udd17 View Student DCAIS Portal \u2197</a>' +
-    '<span style="font-size:.78rem;color:var(--ink-3);margin-left:12px;">Opens what students see on their portal</span>' +
-  '</div>';
-  var infoBox = '<div style="background:var(--red-bg);border:1px solid var(--red-border);border-radius:var(--radius);padding:14px 18px;margin-bottom:20px;">' +
-    '<p style="font-size:.85rem;color:var(--ink-2);">\ud83d\udccc <strong>Teacher Note:</strong> The activities below mirror exactly what students see in their DCAIS section. The <em>Submit Work</em> button in the student portal is currently a placeholder \u2014 you can add submission links later. Student submission counts shown here are sample data.</p>' +
-  '</div>';
-  var cardsHtml = '<div class="dcais-monitor-grid">' +
-    activities.map(function(a) {
-      return '<div class="dcais-monitor-card">' +
-        '<img src="' + a.img + '" alt="" class="dcais-mc-img" crossorigin="anonymous">' +
-        '<div class="dcais-mc-body">' +
-          '<div class="dcais-mc-grade">' + a.badge + '</div>' +
-          '<div class="dcais-mc-title">' + a.title + '</div>' +
-          '<div class="dcais-mc-desc">' + a.desc + '</div>' +
-          '<div class="dcais-mc-footer">' +
-            '<span class="dcais-mc-stat">\ud83d\udcca ' + a.submissions + ' submitted</span>' +
-            '<a href="https://kushagrakushwah.github.io/Adobe-Dashboard/student/#section-7" target="_blank" class="dcais-mc-btn">View in Student Portal \u2197</a>' +
-          '</div>' +
-        '</div>' +
+  var isHi = currentLang === 'hi';
+
+  // Navigation button linking directly to student portal
+  var portalLinkBanner =
+    '<div style="display:flex;align-items:center;justify-content:space-between;background:var(--red-bg);border:1.5px solid var(--red-border);border-radius:var(--radius);padding:16px 20px;margin-bottom:22px;flex-wrap:wrap;gap:12px;">' +
+      '<div>' +
+        '<div style="font-weight:900;color:var(--red);font-size:.98rem;margin-bottom:3px;">🔗 ' +
+          (isHi ? 'छात्र पोर्टल में DCAIS सेक्शन देखें' : 'View Student DCAIS Section Live') + '</div>' +
+        '<div style="font-size:.82rem;color:var(--ink-2);">' +
+          (isHi ? 'देखें कि छात्र अपनी स्क्रीन पर क्या देख रहे हैं। गतिविधियाँ टेस्ट करने के लिए क्लिक करें।' :
+                  'Navigate to the student portal to inspect exactly what students see and test the creative workflow.') + '</div>' +
+      '</div>' +
+      '<a href="https://kushagrakushwah.github.io/Adobe-Dashboard/student/#section-7" target="_blank" class="btn btn-primary" style="padding:10px 22px;font-size:.85rem;">' +
+        (isHi ? 'छात्र DCAIS स्टूडियो खोलें ↗' : 'Open Student DCAIS Studio ↗') + '</a>' +
+    '</div>';
+
+  if (!teacherMonitorGrade) {
+    var gradeCards = [
+      { id: '3', nameEn: 'Grade 3', nameHi: 'कक्षा 3', count: '32 activities', countHi: '32 गतिविधियाँ' },
+      { id: '4', nameEn: 'Grade 4', nameHi: 'कक्षा 4', count: '32 activities', countHi: '32 गतिविधियाँ' },
+      { id: '5', nameEn: 'Grade 5', nameHi: 'कक्षा 5', count: '32 activities', countHi: '32 गतिविधियाँ' },
+      { id: '6', nameEn: 'Grade 6', nameHi: 'कक्षा 6', count: '18 activities', countHi: '18 गतिविधियाँ' },
+      { id: '7', nameEn: 'Grade 7', nameHi: 'कक्षा 7', count: '18 activities', countHi: '18 गतिविधियाँ' },
+      { id: '8', nameEn: 'Grade 8', nameHi: 'कक्षा 8', count: '18 activities', countHi: '18 गतिविधियाँ' },
+      { id: 'kb', nameEn: 'Kaushal Bodh', nameHi: 'कौशल बोध', count: '18 projects', countHi: '18 प्रोजेक्ट्स' }
+    ];
+
+    var cardsGrid = '<div style="margin-bottom:14px;"><h3 style="font-size:1.15rem;font-weight:900;color:var(--ink);">' +
+      (isHi ? 'कक्षावार पाठ्यक्रम चुनें:' : 'Select Grade to Inspect Activities:') + '</h3></div>' +
+      '<div class="aim-grade-cards">' +
+      gradeCards.map(function(g) {
+        return '<div class="aim-gc" onclick="selectTeacherGrade('' + g.id + '')">' +
+          '<div class="aim-gc-icon">🔭</div>' +
+          '<h3>' + (isHi ? g.nameHi : g.nameEn) + '</h3>' +
+          '<div class="aim-gc-cnt">' + (isHi ? g.countHi : g.count) + '</div>' +
+          '<div class="aim-gc-btn">' + (isHi ? 'गतिविधियां देखें →' : 'Inspect Grade →') + '</div>' +
+        '</div>';
+      }).join('') +
       '</div>';
-    }).join('') +
-  '</div>';
-  return studentPortalBtn + infoBox +
-    '<p style="font-size:.85rem;color:var(--ink-2);margin-bottom:12px;">Filter by class to see what activities students are working on:</p>' +
-    '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;">' + tabsHtml + '</div>' +
-    cardsHtml;
+
+    return portalLinkBanner + cardsGrid;
+  }
+
+  // A grade is selected: show activities list!
+  var activities = [];
+  var gradeLabel = '';
+
+  if (teacherMonitorGrade === 'kb') {
+    gradeLabel = isHi ? 'कौशल बोध प्रोजेक्ट्स' : 'Kaushal Bodh Curriculum';
+    var kbData = window.DCAIS_DATA ? window.DCAIS_DATA.kaushalBodh : {};
+    ['grade 6','grade 7','grade 8'].forEach(function(gk) {
+      if (kbData[gk]) {
+        kbData[gk].forEach(function(item) {
+          activities.push({
+            name: item.projectName,
+            skills: item.formOfWork + ' • ' + (item.expressActivity || 'Creative Project'),
+            instructions: item.finalDeliverable || item.adobeIntegration || item.keyActivities,
+            link: item.templateLink || 'https://express.adobe.com',
+            journalLink: item.learningJournalLink,
+            book: ''
+          });
+        });
+      }
+    });
+  } else {
+    gradeLabel = isHi ? ('कक्षा ' + teacherMonitorGrade) : ('Grade ' + teacherMonitorGrade);
+    var key = 'Grade ' + teacherMonitorGrade;
+    if (isHi && (teacherMonitorGrade === '6' || teacherMonitorGrade === '7' || teacherMonitorGrade === '8')) {
+      key = 'Grade ' + teacherMonitorGrade + ' (Hindi)';
+    }
+    activities = (window.DCAIS_DATA && window.DCAIS_DATA.aimActivities && window.DCAIS_DATA.aimActivities[key]) || [];
+  }
+
+  // Filter by search query if any
+  if (teacherSearchQuery) {
+    var q = teacherSearchQuery.toLowerCase();
+    activities = activities.filter(function(a) {
+      return (a.name && a.name.toLowerCase().includes(q)) ||
+             (a.skills && a.skills.toLowerCase().includes(q)) ||
+             (a.instructions && a.instructions.toLowerCase().includes(q));
+    });
+  }
+
+  var navHtml =
+    '<div class="aim-top-nav">' +
+      '<div style="display:flex;align-items:center;gap:10px;">' +
+        '<button class="aim-back-grade" onclick="selectTeacherGrade(null)">← ' + (isHi ? 'सभी कक्षाएं' : 'All Grades') + '</button>' +
+        '<span style="font-size:.92rem;font-weight:900;color:var(--ink);">' + gradeLabel + ' (' + activities.length + ' ' + (isHi ? 'गतिविधियां' : 'activities') + ')</span>' +
+      '</div>' +
+      '<div class="aim-search">' +
+        '<input type="text" placeholder="' + (isHi ? 'गतिविधि खोजें...' : 'Search activity...') + '" value="' + teacherSearchQuery + '" oninput="searchTeacherActivities(this.value)">' +
+      '</div>' +
+    '</div>';
+
+  var actGridHtml = '';
+  if (activities.length === 0) {
+    actGridHtml = '<div style="background:var(--surface-2);border-radius:var(--radius);padding:32px;text-align:center;color:var(--ink-3);">' +
+      '<h3>' + (isHi ? 'कोई गतिविधि नहीं मिली' : 'No activities found') + '</h3>' +
+    '</div>';
+  } else {
+    actGridHtml = '<div class="aim-act-grid">' +
+      activities.map(function(act, idx) {
+        var numBadge = (isHi ? 'गतिविधि ' : 'Activity ') + (act.col || (idx + 1));
+        var templateBtn = act.link ?
+          '<a href="' + act.link + '" target="_blank" class="btn btn-primary" style="font-size:.76rem;padding:7px 14px;">🎨 ' + (isHi ? 'टेम्पलेट का पूर्वावलोकन ↗' : 'Preview Template ↗') + '</a>' :
+          '<a href="https://express.adobe.com" target="_blank" class="btn btn-primary" style="font-size:.76rem;padding:7px 14px;">🎨 ' + (isHi ? 'Express खोलें ↗' : 'Open in Express ↗') + '</a>';
+        
+        var bookBtn = act.book ?
+          '<a href="' + act.book + '" target="_blank" class="btn btn-ghost" style="font-size:.74rem;padding:6px 12px;">📖 ' + (isHi ? 'पुस्तक का स्क्रीनशॉट ↗' : 'Book Screenshot ↗') + '</a>' : '';
+
+        var studentViewBtn = '<a href="https://kushagrakushwah.github.io/Adobe-Dashboard/student/#section-7" target="_blank" class="btn btn-dark" style="font-size:.74rem;padding:6px 12px;">🔗 ' + (isHi ? 'छात्र पोर्टल में देखें ↗' : 'View in Student Portal ↗') + '</a>';
+
+        return '<div class="aim-card">' +
+          '<div>' +
+            '<div class="aim-badge">' + numBadge + '</div>' +
+            '<h4 class="aim-title">' + act.name + '</h4>' +
+            (act.skills ? '<div class="aim-skills">⚡ ' + act.skills + '</div>' : '') +
+            (act.instructions ? '<div class="aim-instr">' + act.instructions + '</div>' : '') +
+          '</div>' +
+          '<div class="aim-actions">' +
+            templateBtn +
+            bookBtn +
+            studentViewBtn +
+          '</div>' +
+        '</div>';
+      }).join('') +
+    '</div>';
+  }
+
+  return portalLinkBanner + navHtml + actGridHtml;
 }
 
-function setMonitorGrade(g) {
-  currentMonitorGrade = g;
+function selectTeacherGrade(g) {
+  teacherMonitorGrade = g;
+  teacherSearchQuery = '';
+  document.getElementById('secContent').innerHTML = renderDcaisMonitor();
+}
+
+function searchTeacherActivities(q) {
+  teacherSearchQuery = q;
   document.getElementById('secContent').innerHTML = renderDcaisMonitor();
 }
 
 /* ===== SECTIONS DATA ===== */
 var TEACHER_SECTIONS_DATA = {
   'A': {
-    letter: '\ud83d\udd11',
-    tag: 'Section A \u2022 Institutional Access',
+    letter: '🔑',
+    tag: 'Section A • Institutional Access',
     title: 'Adobe ID &amp; Password Access Management',
     desc: 'Ensure seamless institutional access to Adobe Express for Education for your school or institution.',
     render: function() {
@@ -574,27 +669,27 @@ var TEACHER_SECTIONS_DATA = {
         '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Create Adobe ID</div><div class="ai-d">Step-by-step account setup using your designated official school email address.</div></div></div><div class="ai-r"><a href="https://account.adobe.com" target="_blank" class="btn btn-primary">Create Account &#8599;</a></div></div>' +
         '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Password &amp; Security Settings</div><div class="ai-d">Reset credentials, manage two-factor authentication, and update recovery options.</div></div></div><div class="ai-r"><a href="https://account.adobe.com/security" target="_blank" class="btn btn-ghost">Manage Security &#8599;</a></div></div>' +
         '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">IT Admin Deployment Guide</div><div class="ai-d">Enterprise deployment manual for school IT administrators to roll out Adobe Express across computer labs.</div></div></div><div class="ai-r"><a href="https://helpx.adobe.com/enterprise" target="_blank" class="btn btn-ghost">View Guide &#8599;</a></div></div>' +
-        '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Single Sign-On (SSO) Integration</div><div class="ai-d">Connect your school\'s Google Workspace or Microsoft 365 for one-click logins.</div></div></div><div class="ai-r"><a href="https://helpx.adobe.com/enterprise/using/sso.html" target="_blank" class="btn btn-ghost">Setup SSO &#8599;</a></div></div>' +
+        '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Single Sign-On (SSO) Integration</div><div class="ai-d">Connect your school's Google Workspace or Microsoft 365 for one-click logins.</div></div></div><div class="ai-r"><a href="https://helpx.adobe.com/enterprise/using/sso.html" target="_blank" class="btn btn-ghost">Setup SSO &#8599;</a></div></div>' +
       '</div>';
     }
   },
   'B': {
-    letter: '\ud83d\udcda',
-    tag: 'Section B \u2022 Professional Development',
+    letter: '📚',
+    tag: 'Section B • Professional Development',
     title: 'CPD Training Modules (48 Hours)',
     desc: 'Five progressive accredited modules designed to equip educators with foundational to advanced digital creativity pedagogy.',
     render: function() { return renderCpdSectionHtml(); }
   },
   'C': {
-    letter: '\ud83d\udd2d',
-    tag: 'Section C \u2022 DCAIS Student Monitor',
-    title: 'Student DCAIS Activities Monitor',
-    desc: 'See exactly what DCAIS activities your students are working on in the Student Portal. Monitor grade-wise activity progress and submissions.',
+    letter: '🔭',
+    tag: 'Section C • Student DCAIS Monitor',
+    title: 'Student DCAIS Activities Monitor (AIM)',
+    desc: 'Explore the full DCAIS activity catalog (Grades 3–8) exactly as presented to students. Inspect templates, tasks, and test student activities.',
     render: function() { return renderDcaisMonitor(); }
   },
   'D': {
-    letter: '\ud83d\udcdd',
-    tag: 'Section D \u2022 Classroom Assets',
+    letter: '📝',
+    tag: 'Section D • Classroom Assets',
     title: 'Classroom Resources &amp; Printables',
     desc: 'Ready-to-use lesson plans, assessment rubrics, smartboard tutorial videos, and printable design thinking posters.',
     render: function() {
@@ -609,8 +704,8 @@ var TEACHER_SECTIONS_DATA = {
     }
   },
   'E': {
-    letter: '\ud83d\udcca',
-    tag: 'Section E \u2022 Student Submissions',
+    letter: '📊',
+    tag: 'Section E • Student Submissions',
     title: 'Student Progress &amp; Activity Tracking',
     desc: 'Monitor monthly activity completion rates, review submissions across grade bands, and evaluate student portfolios.',
     render: function() {
@@ -621,9 +716,9 @@ var TEACHER_SECTIONS_DATA = {
         '<div class="pstat"><div class="pstat-n">12+</div><div class="pstat-l">Curriculum Units</div></div>' +
       '</div>' +
       '<div class="rg" style="margin-bottom:28px">' +
-        '<div class="rc"><div><div class="rc-badge">Grades 6&ndash;8</div><h4>Middle School Tracker</h4><p>Monitor monthly completion rates, portfolio growth, and fundamental digital literacy milestones.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Dashboard &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Grades 9&ndash;10</div><h4>Secondary Tracker</h4><p>Track advanced project submissions, team collaboration, and CPD-aligned creative activities.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Progress &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Grades 11&ndash;12</div><h4>Senior Portfolio Reviews</h4><p>Evaluate senior portfolios, assess capstone assignments, and verify readiness for Adobe certification.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Review Portfolios &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Grades 6–8</div><h4>Middle School Tracker</h4><p>Monitor monthly completion rates, portfolio growth, and fundamental digital literacy milestones.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Dashboard &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Grades 9–10</div><h4>Secondary Tracker</h4><p>Track advanced project submissions, team collaboration, and CPD-aligned creative activities.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Progress &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Grades 11–12</div><h4>Senior Portfolio Reviews</h4><p>Evaluate senior portfolios, assess capstone assignments, and verify readiness for Adobe certification.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Review Portfolios &#8599;</a></div>' +
       '</div>' +
       '<div style="background:var(--surface-2);border-radius:var(--radius);padding:24px;border:1.5px solid var(--border)">' +
         '<div class="sec-label" style="margin-top:0;">Classroom Activity Completion (Academic Year)</div>' +
@@ -638,8 +733,8 @@ var TEACHER_SECTIONS_DATA = {
     }
   },
   'F': {
-    letter: '\ud83e\udd1d',
-    tag: 'Section F \u2022 Teacher Network',
+    letter: '🤝',
+    tag: 'Section F • Teacher Network',
     title: 'Community, Webinars &amp; Support',
     desc: 'Connect with 500+ certified educators, attend monthly live masterclasses, and access dedicated helpdesk assistance.',
     render: function() {
@@ -651,8 +746,8 @@ var TEACHER_SECTIONS_DATA = {
     }
   },
   'G': {
-    letter: '\ud83c\udfc6',
-    tag: 'Section G \u2022 Professional Accreditation',
+    letter: '🏆',
+    tag: 'Section G • Professional Accreditation',
     title: 'Certification Path &amp; Digital Badges',
     desc: 'Earn recognized Adobe Educator credentials, track your accredited CPD hours, and showcase your professional milestones.',
     render: function() {
@@ -671,7 +766,7 @@ var TEACHER_SECTIONS_DATA = {
   }
 };
 
-/* ===== NAVIGATION ===== */
+/* ===== NAVIGATION CONTROLLER ===== */
 function openSection(letter) {
   var data = TEACHER_SECTIONS_DATA[letter];
   if (!data) return;
@@ -685,8 +780,8 @@ function openSection(letter) {
   var keys = Object.keys(TEACHER_SECTIONS_DATA);
   var idx = keys.indexOf(letter);
   var nextPrevHtml = '';
-  if (idx > 0) nextPrevHtml += '<button class="btn btn-ghost" onclick="openSection(\'' + keys[idx-1] + '\')">&#8592; Prev Section</button> ';
-  if (idx < keys.length-1) nextPrevHtml += '<button class="btn btn-primary" onclick="openSection(\'' + keys[idx+1] + '\')">Next Section &#8594;</button>';
+  if (idx > 0) nextPrevHtml += '<button class="btn btn-ghost" onclick="openSection('' + keys[idx-1] + '')">&#8592; Prev Section</button> ';
+  if (idx < keys.length-1) nextPrevHtml += '<button class="btn btn-primary" onclick="openSection('' + keys[idx+1] + '')">Next Section &#8594;</button>';
   document.getElementById('secNextPrev').innerHTML = nextPrevHtml;
   document.getElementById('dashboardView').style.display = 'none';
   document.getElementById('mainHero').style.display = 'none';

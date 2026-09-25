@@ -10,6 +10,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23FA0F00'/><text y='.9em' font-size='72' x='12' fill='white' font-weight='900'>S</text></svg>">
+<script src="dcais-data.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
@@ -38,21 +39,21 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 .lang-toggle{display:flex;align-items:center;gap:0;background:var(--surface-3);border:1.5px solid var(--border);border-radius:999px;padding:3px;cursor:pointer}
 .lang-btn{padding:4px 12px;border-radius:999px;font-size:.72rem;font-weight:800;color:var(--ink-3);transition:all .18s;user-select:none}
 .lang-btn.active{background:var(--red);color:#FFF;box-shadow:0 2px 6px rgba(250,15,0,.25)}
-/* HERO - SMALLER */
-.hero{background:linear-gradient(150deg,#FA0F00 0%,#8B0000 55%,#3D0000 100%);color:#FFF;padding:28px 28px 22px;position:relative;overflow:hidden}
+/* HERO - COMPACT */
+.hero{background:linear-gradient(150deg,#FA0F00 0%,#8B0000 55%,#3D0000 100%);color:#FFF;padding:26px 28px 20px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
-.hero-in{max-width:1160px;margin:0 auto;position:relative;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.hero-in{max-width:1160px;margin:0 auto;position:relative;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
 .hero-left{flex:1;min-width:0}
-.hero-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.9);font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:10px;letter-spacing:.03em}
+.hero-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.9);font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:8px;letter-spacing:.03em}
 .hero-tag-dot{width:6px;height:6px;border-radius:50%;background:#FFD60A}
-.hero h1{font-size:clamp(1.3rem,3vw,1.9rem);font-weight:900;letter-spacing:-.03em;line-height:1.2;margin-bottom:8px;max-width:600px}
-.hero-sub{font-size:.85rem;color:rgba(255,255,255,.82);max-width:520px;line-height:1.5;margin-bottom:14px}
+.hero h1{font-size:clamp(1.3rem,2.8vw,1.85rem);font-weight:900;letter-spacing:-.03em;line-height:1.2;margin-bottom:6px;max-width:620px}
+.hero-sub{font-size:.84rem;color:rgba(255,255,255,.84);max-width:540px;line-height:1.5;margin-bottom:12px}
 .flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
 .flow-step{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:5px 12px;border-radius:999px;font-size:.75rem;font-weight:700;color:#FFF;white-space:nowrap}
 .flow-n{width:18px;height:18px;border-radius:50%;background:#FFF;color:var(--red);font-size:.68rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .flow-arr{color:rgba(255,255,255,.45);font-size:.8rem;font-weight:900}
 /* MAIN */
-.main{max-width:1160px;margin:0 auto;padding:28px 28px 80px}
+.main{max-width:1160px;margin:0 auto;padding:26px 28px 80px}
 /* GUIDE BAR */
 .guide{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--red);border-radius:var(--radius);padding:12px 18px;margin-bottom:22px;box-shadow:var(--shadow-sm)}
 .guide-icon{font-size:1.1rem;flex-shrink:0}
@@ -61,10 +62,10 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 /* TILES GRID */
 .tiles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
 .tile-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;user-select:none;transition:all .22s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;position:relative}
-.tile-img{width:100%;height:110px;object-fit:cover;display:block;transition:transform .4s ease}
-.tile-card:hover .tile-img{transform:scale(1.04)}
-.tile-img-wrap{overflow:hidden;position:relative;flex-shrink:0}
-.tile-img-ov{position:absolute;bottom:8px;left:10px;background:var(--red);color:#FFF;font-size:1.2rem;width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.tile-img-wrap{overflow:hidden;position:relative;flex-shrink:0;height:115px}
+.tile-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+.tile-card:hover .tile-img{transform:scale(1.05)}
+.tile-img-ov{position:absolute;bottom:8px;left:10px;background:var(--red);color:#FFF;font-size:1.2rem;width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
 .tile-body{padding:16px 18px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
 .tile-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(250,15,0,.12)}
 .tile-tag{font-size:.62rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
@@ -77,35 +78,35 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 /* FULL SECTION VIEW */
 .section-full-view{display:none;animation:viewFadeIn .28s ease}
 @keyframes viewFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.sec-nav-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:12px;flex-wrap:wrap}
-.back-btn{display:inline-flex;align-items:center;gap:8px;background:var(--surface);color:var(--red);border:1.5px solid var(--red);padding:10px 20px;border-radius:999px;font-size:.85rem;font-weight:800;cursor:pointer;transition:all .18s;box-shadow:var(--shadow-sm)}
+.sec-nav-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;gap:12px;flex-wrap:wrap}
+.back-btn{display:inline-flex;align-items:center;gap:8px;background:var(--surface);color:var(--red);border:1.5px solid var(--red);padding:9px 18px;border-radius:999px;font-size:.84rem;font-weight:800;cursor:pointer;transition:all .18s;box-shadow:var(--shadow-sm)}
 .back-btn:hover{background:var(--red);color:#FFF;transform:translateX(-2px)}
 .sec-breadcrumb{font-size:.84rem;color:var(--ink-3);font-weight:700}
 .sec-breadcrumb strong{color:var(--ink)}
-.sec-hero-card{background:var(--surface);border:2px solid var(--red);border-radius:var(--radius-lg);padding:24px 28px;margin-bottom:24px;box-shadow:0 8px 30px rgba(250,15,0,.08);display:flex;align-items:center;gap:18px}
-.sec-hero-badge{width:52px;height:52px;border-radius:14px;background:var(--red);color:#FFF;display:flex;align-items:center;justify-content:center;font-size:1.25rem;font-weight:900;flex-shrink:0}
+.sec-hero-card{background:var(--surface);border:2px solid var(--red);border-radius:var(--radius-lg);padding:22px 26px;margin-bottom:22px;box-shadow:0 8px 30px rgba(250,15,0,.08);display:flex;align-items:center;gap:18px}
+.sec-hero-badge{width:50px;height:50px;border-radius:14px;background:var(--red);color:#FFF;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:900;flex-shrink:0}
 .sec-hero-body{flex:1;min-width:0}
-.sec-hero-tag{font-size:.68rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
-.sec-hero-title{font-size:1.5rem;font-weight:900;color:var(--ink);letter-spacing:-.02em;margin-bottom:5px;line-height:1.2}
-.sec-hero-desc{font-size:.88rem;color:var(--ink-2);line-height:1.5}
-.sec-content-box{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow-sm);margin-bottom:24px}
-.sec-bottom-bar{display:flex;align-items:center;justify-content:space-between;padding-top:18px;border-top:1px solid var(--border);gap:12px;flex-wrap:wrap}
+.sec-hero-tag{font-size:.68rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
+.sec-hero-title{font-size:1.45rem;font-weight:900;color:var(--ink);letter-spacing:-.02em;margin-bottom:4px;line-height:1.2}
+.sec-hero-desc{font-size:.86rem;color:var(--ink-2);line-height:1.5}
+.sec-content-box{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:26px;box-shadow:var(--shadow-sm);margin-bottom:22px}
+.sec-bottom-bar{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--border);gap:12px;flex-wrap:wrap}
 /* MONTH PILLS */
-.month-pills{display:flex;gap:8px;overflow-x:auto;padding-bottom:14px;margin-bottom:20px;scrollbar-width:thin}
+.month-pills{display:flex;gap:8px;overflow-x:auto;padding-bottom:12px;margin-bottom:18px;scrollbar-width:thin}
 .mp{padding:7px 16px;background:var(--surface-2);border:1.5px solid var(--border);border-radius:999px;font-size:.8rem;font-weight:700;color:var(--ink-2);cursor:pointer;white-space:nowrap;transition:all .18s;flex-shrink:0}
 .mp:hover{background:var(--red-bg);border-color:var(--red);color:var(--red)}
 .mp.active{background:var(--red);border-color:var(--red);color:#FFF;box-shadow:0 3px 10px rgba(250,15,0,.28)}
-.mcard{background:var(--surface-2);border:2px solid var(--red);border-radius:var(--radius);padding:24px;box-shadow:0 4px 18px rgba(250,15,0,.08)}
-.mcard-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.mcard{background:var(--surface-2);border:2px solid var(--red);border-radius:var(--radius);padding:22px;box-shadow:0 4px 18px rgba(250,15,0,.08)}
+.mcard-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px;flex-wrap:wrap}
 .mcard-theme{background:var(--red-bg);color:var(--red);font-size:.72rem;font-weight:800;padding:4px 12px;border-radius:999px;border:1px solid var(--red-border);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
 .mcard-dur{font-size:.76rem;font-weight:700;color:var(--ink-3);background:var(--surface);padding:4px 12px;border-radius:999px;border:1px solid var(--border);white-space:nowrap}
 .mcard h3{font-size:1.25rem;font-weight:900;color:var(--ink);margin-bottom:8px;line-height:1.25;letter-spacing:-.02em}
-.mcard p{font-size:.88rem;color:var(--ink-2);line-height:1.65;margin-bottom:18px}
-.mcard-skills{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:20px}
+.mcard p{font-size:.86rem;color:var(--ink-2);line-height:1.65;margin-bottom:16px}
+.mcard-skills{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}
 .mskill{background:var(--surface);color:var(--ink);border:1px solid var(--border);font-size:.73rem;font-weight:700;padding:3px 10px;border-radius:6px}
 .mcard-actions{display:flex;gap:10px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--border)}
 /* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;border-radius:999px;font-size:.84rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;white-space:nowrap;transition:all .16s;line-height:1}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:999px;font-size:.82rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;white-space:nowrap;transition:all .16s;line-height:1}
 .btn-primary{background:var(--red);color:#FFF;box-shadow:0 2px 8px rgba(250,15,0,.25)}
 .btn-primary:hover{background:var(--red-dk);transform:translateY(-1px)}
 .btn-outline{background:transparent;color:var(--red);border:1.5px solid var(--red)}
@@ -117,26 +118,47 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 .btn-empty{background:var(--surface-3);color:var(--ink-3);border:1.5px dashed var(--border);cursor:not-allowed}
 /* RESOURCE GRID */
 .rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-.rc{background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px;transition:all .18s;display:flex;flex-direction:column;justify-content:space-between}
+.rc{background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:20px;transition:all .18s;display:flex;flex-direction:column;justify-content:space-between}
 .rc:hover{border-color:var(--red);background:var(--surface);box-shadow:0 6px 20px rgba(250,15,0,.1);transform:translateY(-2px)}
 .rc-badge{display:inline-block;background:var(--red-bg);color:var(--red);font-size:.66rem;font-weight:800;padding:3px 10px;border-radius:999px;margin-bottom:10px;border:1px solid var(--red-border);text-transform:uppercase;letter-spacing:.04em}
-.rc h4{font-size:.96rem;font-weight:800;color:var(--ink);margin-bottom:6px;line-height:1.3}
+.rc h4{font-size:.95rem;font-weight:800;color:var(--ink);margin-bottom:6px;line-height:1.3}
 .rc p{font-size:.82rem;color:var(--ink-2);margin-bottom:14px;line-height:1.55}
 .rc img.rc-thumb{width:100%;height:100px;object-fit:cover;border-radius:8px;margin-bottom:12px}
-/* DCAIS SECTION */
-.dcais-grade-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
-.dcais-tab{padding:7px 18px;background:var(--surface-2);border:1.5px solid var(--border);border-radius:999px;font-size:.8rem;font-weight:700;color:var(--ink-2);cursor:pointer;transition:all .18s}
-.dcais-tab:hover{background:var(--red-bg);border-color:var(--red);color:var(--red)}
-.dcais-tab.active{background:var(--red);border-color:var(--red);color:#FFF;box-shadow:0 2px 8px rgba(250,15,0,.22)}
-.dcais-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:20px}
-.dcais-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all .22s;box-shadow:var(--shadow-sm)}
-.dcais-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 22px rgba(250,15,0,.12)}
-.dcais-card-img{width:100%;height:120px;object-fit:cover;display:block}
-.dcais-card-body{padding:16px}
-.dcais-card-badge{display:inline-block;background:var(--red-bg);color:var(--red);font-size:.66rem;font-weight:800;padding:3px 10px;border-radius:999px;margin-bottom:8px;border:1px solid var(--red-border);text-transform:uppercase;letter-spacing:.04em}
-.dcais-card-title{font-size:.98rem;font-weight:800;color:var(--ink);margin-bottom:6px;line-height:1.3}
-.dcais-card-desc{font-size:.78rem;color:var(--ink-2);line-height:1.5;margin-bottom:14px}
-.dcais-card-actions{display:flex;gap:8px;flex-wrap:wrap}
+
+/* DCAIS AIM ADVANCED STYLES */
+.aim-tip-box{display:flex;align-items:flex-start;gap:12px;background:#FFF6E5;border:1.5px solid #FFE0B2;border-left:5px solid #FF9800;border-radius:var(--radius);padding:14px 18px;margin-bottom:22px}
+.aim-tip-ico{font-size:1.8rem;line-height:1;flex-shrink:0}
+.aim-tip-txt{font-size:.84rem;color:#5D4037;line-height:1.5}
+.aim-tip-txt strong{color:#E65100}
+
+.aim-grade-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:24px}
+.aim-gc{background:var(--surface);border:2px solid var(--border);border-radius:var(--radius-lg);padding:22px 18px;text-align:center;cursor:pointer;user-select:none;transition:all .22s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;align-items:center;position:relative}
+.aim-gc:hover{border-color:var(--red);transform:translateY(-4px);box-shadow:0 8px 24px rgba(250,15,0,.15)}
+.aim-gc.active{border-color:var(--red);background:#FFF8F7;box-shadow:0 8px 24px rgba(250,15,0,.18)}
+.aim-gc-icon{width:52px;height:52px;border-radius:50%;background:#FFF0F0;border:1.5px solid rgba(250,15,0,.2);display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:12px;transition:all .2s}
+.aim-gc:hover .aim-gc-icon{background:var(--red);color:#FFF}
+.aim-gc h3{font-size:1.2rem;font-weight:900;color:var(--ink);margin-bottom:3px}
+.aim-gc-cnt{font-size:.78rem;color:var(--ink-3);font-weight:700;margin-bottom:12px}
+.aim-gc-btn{font-size:.76rem;font-weight:800;color:var(--red);display:inline-flex;align-items:center;gap:4px;border-top:1px solid var(--border);padding-top:10px;width:100%;justify-content:center}
+.aim-gc:hover .aim-gc-btn{color:var(--red-dk)}
+
+.aim-top-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:12px 16px;margin-bottom:18px;flex-wrap:wrap}
+.aim-back-grade{display:inline-flex;align-items:center;gap:6px;background:var(--surface);color:var(--ink-2);border:1.5px solid var(--border);padding:6px 14px;border-radius:999px;font-size:.78rem;font-weight:800;cursor:pointer;transition:all .18s}
+.aim-back-grade:hover{border-color:var(--red);color:var(--red)}
+.aim-search{flex:1;min-width:200px;max-width:340px;position:relative}
+.aim-search input{width:100%;padding:7px 14px 7px 32px;border:1.5px solid var(--border);border-radius:999px;font-size:.8rem;outline:none;font-family:inherit}
+.aim-search input:focus{border-color:var(--red)}
+.aim-search::before{content:'🔍';position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:.78rem;opacity:.5}
+
+.aim-act-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.aim-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;justify-content:space-between;transition:all .22s;box-shadow:var(--shadow-sm);position:relative}
+.aim-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(250,15,0,.12)}
+.aim-badge{display:inline-block;background:var(--red-bg);color:var(--red);font-size:.65rem;font-weight:800;padding:3px 10px;border-radius:999px;border:1px solid var(--red-border);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+.aim-title{font-size:.96rem;font-weight:800;color:var(--ink);margin-bottom:6px;line-height:1.35}
+.aim-skills{font-size:.76rem;color:var(--red-dk);font-weight:700;margin-bottom:8px;line-height:1.4}
+.aim-instr{font-size:.78rem;color:var(--ink-2);line-height:1.5;margin-bottom:14px;flex:1}
+.aim-actions{display:flex;flex-direction:column;gap:7px;padding-top:12px;border-top:1px solid var(--border)}
+
 /* Skill Bar */
 .sbar{height:6px;background:var(--border);border-radius:999px;overflow:hidden;margin-bottom:14px}
 .sbar-fill{height:100%;background:linear-gradient(90deg,var(--red),#FF6040);border-radius:999px}
@@ -180,6 +202,8 @@ footer p+p{margin-top:5px}
   .sec-content-box{padding:18px 14px}
   .mcard-row{flex-direction:column}
   .mcard-actions{flex-direction:column}
+  .aim-top-nav{flex-direction:column;align-items:stretch}
+  .aim-search{max-width:100%}
 }
 </style>
 </head>
@@ -206,7 +230,7 @@ footer p+p{margin-top:5px}
   </div>
 </header>
 
-<!-- HERO (Visible on Dashboard) -->
+<!-- HERO - SMALLER -->
 <section class="hero" id="mainHero">
   <div class="hero-in">
     <div class="hero-left">
@@ -335,10 +359,10 @@ footer p+p{margin-top:5px}
         </div>
       </div>
 
-      <!-- Section 6 -->
+      <!-- Section 6: Badges & Awards (Fixed Image!) -->
       <div class="tile-card" onclick="openSection('6')">
         <div class="tile-img-wrap">
-          <img class="tile-img" src="https://images.unsplash.com/photo-1567168539-48e3d0f52698?w=600&h=220&fit=crop&q=80" alt="Achievements" crossorigin="anonymous">
+          <img class="tile-img" src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=600&h=220&fit=crop&q=80" alt="Achievements" crossorigin="anonymous">
           <div class="tile-img-ov">🏆</div>
         </div>
         <div class="tile-body">
@@ -354,7 +378,7 @@ footer p+p{margin-top:5px}
         </div>
       </div>
 
-      <!-- Section 7: DCAIS -->
+      <!-- Section 7: Full DCAIS / AIM Activities -->
       <div class="tile-card" onclick="openSection('7')">
         <div class="tile-img-wrap">
           <img class="tile-img" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=220&fit=crop&q=80" alt="DCAIS Activities" crossorigin="anonymous">
@@ -363,11 +387,11 @@ footer p+p{margin-top:5px}
         <div class="tile-body">
           <div>
             <div class="tile-tag" id="s7-tag">Section 7 • DCAIS</div>
-            <h2 class="tile-title" id="s7-title">DCAIS Activities</h2>
-            <p class="tile-desc" id="s7-desc">Special digital skills activities — make posters, videos, images and earn your DCAIS certificate!</p>
+            <h2 class="tile-title" id="s7-title">DCAIS Activities (AIM)</h2>
+            <p class="tile-desc" id="s7-desc">Complete curriculum for Grades 3–8 from AIM. Select your grade, make posters, videos and earn your DCAIS certificate!</p>
           </div>
           <div class="tile-footer">
-            <span class="tile-hint" id="s7-hint">Grades 6–10 Activities</span>
+            <span class="tile-hint" id="s7-hint">150+ Activities • Grades 3–8</span>
             <span class="tile-btn" id="s7-btn">Open →</span>
           </div>
         </div>
@@ -424,7 +448,7 @@ var LANG = {
     s4tag:'Section 4', s4title:'How-To Videos', s4desc:'Short videos that show you exactly how to use Adobe Express tools. Easy to follow!', s4hint:'5 Video Masterclasses', s4btn:'Open →',
     s5tag:'Section 5', s5title:'Creative Tools', s5desc:'Jump straight into making! Open posters, videos, cards, collages and more in Adobe Express.', s5hint:'8 Quick Launch Tools', s5btn:'Open →',
     s6tag:'Section 6', s6title:'My Badges & Awards', s6desc:'See what badges you have won! Keep doing projects to unlock more cool rewards.', s6hint:'6 Milestone Badges', s6btn:'Open →',
-    s7tag:'Section 7 • DCAIS', s7title:'DCAIS Activities', s7desc:'Special digital skills activities — make posters, videos, images and earn your DCAIS certificate!', s7hint:'Grades 6–10 Activities', s7btn:'Open →'
+    s7tag:'Section 7 • DCAIS', s7title:'DCAIS Activities (AIM)', s7desc:'Complete curriculum for Grades 3–8 from AIM. Select your grade, make posters, videos and earn your DCAIS certificate!', s7hint:'150+ Activities • Grades 3–8', s7btn:'Open →'
   },
   hi: {
     hdrSub: 'छात्र क्रिएटिव स्टूडियो',
@@ -441,7 +465,7 @@ var LANG = {
     s4tag:'सेक्शन 4', s4title:'कैसे करें वीडियो', s4desc:'छोटे वीडियो जो दिखाते हैं Adobe Express के टूल्स कैसे इस्तेमाल करें।', s4hint:'5 वीडियो मास्टरक्लास', s4btn:'खोलो →',
     s5tag:'सेक्शन 5', s5title:'क्रिएटिव टूल्स', s5desc:'सीधे बनाना शुरू करो! पोस्टर, वीडियो, कार्ड्स और बहुत कुछ Adobe Express में बनाओ।', s5hint:'8 त्वरित लॉन्च टूल्स', s5btn:'खोलो →',
     s6tag:'सेक्शन 6', s6title:'मेरे बैज और पुरस्कार', s6desc:'देखो तुमने कौन से बैज जीते हैं! और ज़्यादा प्रोजेक्ट करो, और पुरस्कार पाओ।', s6hint:'6 मील के पत्थर के बैज', s6btn:'खोलो →',
-    s7tag:'सेक्शन 7 • DCAIS', s7title:'DCAIS एक्टिविटीज़', s7desc:'विशेष डिजिटल स्किल्स एक्टिविटीज़ — पोस्टर, वीडियो, इमेज बनाओ और DCAIS सर्टिफिकेट पाओ!', s7hint:'कक्षा 6–10 एक्टिविटीज़', s7btn:'खोलो →'
+    s7tag:'सेक्शन 7 • DCAIS', s7title:'DCAIS एक्टिविटीज़ (AIM)', s7desc:'AIM पाठ्यक्रम कक्षा 3 से 8 तक। अपनी कक्षा चुनें, पोस्टर, वीडियो बनाएं और DCAIS प्रमाणपत्र प्राप्त करें!', s7hint:'150+ गतिविधियाँ • कक्षा 3–8', s7btn:'खोलो →'
   }
 };
 
@@ -450,6 +474,10 @@ function toggleLang() {
   document.getElementById('langBtnEN').classList.toggle('active', currentLang === 'en');
   document.getElementById('langBtnHI').classList.toggle('active', currentLang === 'hi');
   applyLang();
+  // If in section 7, re-render to apply language
+  if (location.hash === '#section-7') {
+    document.getElementById('secContent').innerHTML = renderDcaisSection();
+  }
 }
 
 function applyLang() {
@@ -476,11 +504,11 @@ var MONTHS = [
   {name:'February', theme:'Valentines / Friendship', activity:'Friendship Greeting Card', desc:'Make a lovely card for your best friend or family. Use hearts, nice colours, and a sweet message inside!', dur:'40 min', skills:['Card Design','Colour Theory','Typography'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+card+tutorial', create:'https://express.adobe.com/sp/design/cards', submit:'#'},
   {name:'March', theme:'Holi / Spring', activity:'Holi Fest Flyer', desc:'Create a fun, colourful flyer for the Holi festival! Use lots of colours — pink, green, yellow — and write where and when your school Holi event is.', dur:'45 min', skills:['Flyer Design','Vibrant Colours','Layout'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+flyer+tutorial', create:'https://express.adobe.com/sp/design/flyers', submit:'#'},
   {name:'April', theme:'Earth Day', activity:'Save the Earth Poster', desc:'Make a poster that tells people how to save the Earth. Draw trees, water, or animals and write a message like "Plant More Trees!"', dur:'50 min', skills:['Social Awareness','Poster Design','Illustration'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+poster+earth+day', create:'https://express.adobe.com/sp/design/posters', submit:'#'},
-  {name:'May', theme:'Mother\'s Day', activity:'Mother\'s Day Card &amp; Video', desc:'Create a special card OR a short video message for your mom. Tell her why she is amazing! Share it with your family.', dur:'50 min', skills:['Card Design','Video','Personal Message'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+mothers+day', create:'https://express.adobe.com/sp/design/cards', submit:'#'},
+  {name:'May', theme:'Mother's Day', activity:'Mother's Day Card &amp; Video', desc:'Create a special card OR a short video message for your mom. Tell her why she is amazing! Share it with your family.', dur:'50 min', skills:['Card Design','Video','Personal Message'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+mothers+day', create:'https://express.adobe.com/sp/design/cards', submit:'#'},
   {name:'June', theme:'Yoga / Health', activity:'International Yoga Day Post', desc:'Make a social media post or poster about Yoga. Show a yoga pose or write about how yoga keeps us healthy.', dur:'40 min', skills:['Health Awareness','Social Post Design','Layout'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+social+post', create:'https://express.adobe.com/sp/design/social', submit:'#'},
-  {name:'July', theme:'Independence Month', activity:'Freedom Comic Strip', desc:'Create a 4-panel comic strip about India\'s freedom fighters. Use speech bubbles and bright illustrations.', dur:'60 min', skills:['Comic Design','Storytelling','Illustration'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+comic+strip', create:'https://express.adobe.com/sp/design/comics', submit:'#'},
-  {name:'August', theme:'Independence Day', activity:'Independence Day Celebration Video', desc:'Make a short video (30-60 sec) to celebrate India\'s Independence Day! Add photos, patriotic music, and your voice message.', dur:'60 min', skills:['Video Editing','Narration','Music'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+video+tutorial', create:'https://express.adobe.com/sp/design/videos', submit:'#'},
-  {name:'September', theme:'Teacher\'s Day', activity:'Thank You Teacher Card', desc:'Design a beautiful card to thank your favourite teacher! Add their name, a nice photo or illustration, and a message from your heart.', dur:'45 min', skills:['Card Design','Personal Message','Typography'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+card', create:'https://express.adobe.com/sp/design/cards', submit:'#'},
+  {name:'July', theme:'Independence Month', activity:'Freedom Comic Strip', desc:'Create a 4-panel comic strip about India's freedom fighters. Use speech bubbles and bright illustrations.', dur:'60 min', skills:['Comic Design','Storytelling','Illustration'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+comic+strip', create:'https://express.adobe.com/sp/design/comics', submit:'#'},
+  {name:'August', theme:'Independence Day', activity:'Independence Day Celebration Video', desc:'Make a short video (30-60 sec) to celebrate India's Independence Day! Add photos, patriotic music, and your voice message.', dur:'60 min', skills:['Video Editing','Narration','Music'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+video+tutorial', create:'https://express.adobe.com/sp/design/videos', submit:'#'},
+  {name:'September', theme:'Teacher's Day', activity:'Thank You Teacher Card', desc:'Design a beautiful card to thank your favourite teacher! Add their name, a nice photo or illustration, and a message from your heart.', dur:'45 min', skills:['Card Design','Personal Message','Typography'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+card', create:'https://express.adobe.com/sp/design/cards', submit:'#'},
   {name:'October', theme:'Diwali / Festive', activity:'Diwali Greeting &amp; Rangoli Design', desc:'Create a Diwali greeting card with a beautiful digital rangoli design. Use gold, red, and orange colours. Wish everyone "Happy Diwali!"', dur:'55 min', skills:['Festival Design','Colour','Cultural Art'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+diwali+poster', create:'https://express.adobe.com/sp/design/cards', submit:'#'},
   {name:'November', theme:'My School', activity:'School Brochure or Magazine Page', desc:'Create a 1-page mini magazine or brochure about your school. Include school events, cool facts, and photos or illustrations!', dur:'55 min', skills:['Layout Design','Content Writing','Brochure'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+brochure+tutorial', create:'https://express.adobe.com/sp/design/flyers', submit:'#'},
   {name:'December', theme:'Year in Review', activity:'My Creative Year Portfolio', desc:'Look back at all 11 projects you made this year! Create a collage or presentation showing your 3 favourite works. You have come so far!', dur:'60 min', skills:['Portfolio Design','Reflection','Collage'], tutorial:'https://www.youtube.com/results?search_query=adobe+express+portfolio', create:'https://express.adobe.com/sp/design/collages', submit:'#'}
@@ -516,70 +544,162 @@ function selectMonthTab(i) {
   document.getElementById('secContent').innerHTML = renderMonthSectionHtml();
 }
 
-/* ===== DCAIS DATA ===== */
-var DCAIS_ACTIVITIES = {
-  6: [
-    {badge:'Class 6 • Design', title:'My Dream Poster', desc:'Design a poster about your dream job or dream place. Use big, colourful text and a nice background image.', img:'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/posters'},
-    {badge:'Class 6 • Flyer', title:'School Event Flyer', desc:'Make a flyer for a real or imaginary school event. Include time, place, and a fun design!', img:'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/flyers'},
-    {badge:'Class 6 • Card', title:'Festival Greeting Card', desc:'Create a greeting card for your favourite festival. Add a special message inside for your family!', img:'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/cards'}
-  ],
-  7: [
-    {badge:'Class 7 • Social', title:'Awareness Social Post', desc:'Create an Instagram-style post about saving water, planting trees, or any topic you care about.', img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/social'},
-    {badge:'Class 7 • Story', title:'My Story Comic Strip', desc:'Tell a 4-panel comic story about an adventure. Use speech bubbles and fun drawings!', img:'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/comics'},
-    {badge:'Class 7 • Video', title:'1-Minute Talent Video', desc:'Record a short 1-minute video showing your talent — singing, dancing, science trick or anything cool!', img:'https://images.unsplash.com/photo-1581726690015-c9861fa5057f?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/videos'}
-  ],
-  8: [
-    {badge:'Class 8 • Brand', title:'Personal Brand Logo', desc:'Design your own personal logo and brand name. Make it unique — use colours that match your personality!', img:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com'},
-    {badge:'Class 8 • Campaign', title:'Social Good Campaign', desc:'Create a 3-post social media campaign about a problem you want to solve in your school or neighbourhood.', img:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/social'},
-    {badge:'Class 8 • Brochure', title:'Travel or Culture Brochure', desc:'Make a travel brochure for your city or your favourite cultural festival. Use maps, photos, and text!', img:'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/flyers'}
-  ],
-  9: [
-    {badge:'Class 9 • Film', title:'Short Documentary', desc:'Make a short 2-minute documentary film about something important to you — your city, a local hero, or a social issue.', img:'https://images.unsplash.com/photo-1574717024453-354056afd6fc?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/videos'},
-    {badge:'Class 9 • Info', title:'Infographic Poster', desc:'Create an infographic poster that explains a science or history topic clearly using charts, icons, and simple words.', img:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/posters'},
-    {badge:'Class 9 • Digital Art', title:'Digital Collage Art', desc:'Create a digital collage mixing photos, textures and colours to express an emotion or tell a story without words.', img:'https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/collages'}
-  ],
-  10: [
-    {badge:'Class 10 • Portfolio', title:'Personal Digital Portfolio', desc:'Build your complete digital portfolio showcasing your best 5 creative works from Grades 6–9. This is your DCAIS achievement record!', img:'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com'},
-    {badge:'Class 10 • Pitch', title:'Startup Pitch Deck', desc:'Design a beautiful 5-slide presentation pitching your own imaginary business idea. Include logo, product, and why people should care!', img:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com'},
-    {badge:'Class 10 • Campaign', title:'Full Social Campaign', desc:'Create a complete 5-post social media campaign with a hashtag, colour scheme, and consistent design for a cause you believe in.', img:'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=220&fit=crop&q=80', link:'https://express.adobe.com/sp/design/social'}
-  ]
-};
-
-var currentDcaisGrade = 6;
+/* ===== FULL DCAIS (AIM) CONTROLLER ===== */
+var selectedAimGrade = null; // null = show grade selection cards, or '3','4','5','6','7','8','kb'
+var aimSearchQuery = '';
 
 function renderDcaisSection() {
-  var activities = DCAIS_ACTIVITIES[currentDcaisGrade];
-  var tabsHtml = [6,7,8,9,10].map(function(g) {
-    return '<button class="dcais-tab' + (g === currentDcaisGrade ? ' active' : '') + '" onclick="setDcaisGrade(' + g + ')">' +
-      (currentLang === 'hi' ? 'कक्षा ' : 'Class ') + g + '</button>';
-  }).join('');
-  var cardsHtml = activities.map(function(a) {
-    return '<div class="dcais-card">' +
-      '<img src="' + a.img + '" alt="" class="dcais-card-img" crossorigin="anonymous">' +
-      '<div class="dcais-card-body">' +
-        '<div class="dcais-card-badge">' + a.badge + '</div>' +
-        '<div class="dcais-card-title">' + a.title + '</div>' +
-        '<div class="dcais-card-desc">' + a.desc + '</div>' +
-        '<div class="dcais-card-actions">' +
-          '<a href="' + a.link + '" target="_blank" class="btn btn-primary" style="font-size:.78rem;padding:8px 16px;">🎨 Open in Adobe Express ↗</a>' +
-          '<button class="btn btn-empty" style="font-size:.78rem;padding:8px 16px;" title="Submission link coming soon" onclick="return false;">📤 Submit Work</button>' +
-        '</div>' +
+  var isHi = currentLang === 'hi';
+  
+  // Tip box at top
+  var tipHtml =
+    '<div class="aim-tip-box">' +
+      '<div class="aim-tip-ico">🐼</div>' +
+      '<div class="aim-tip-txt">' +
+        '<strong>' + (isHi ? 'DCAIS रचनात्मक टिप:' : 'AIM Creative Tip:') + '</strong> ' +
+        (isHi ? 'अपनी कक्षा चुनें और वह गतिविधि चुनें जो आपको पसंद हो! प्रमाण पत्र प्राप्त करने के लिए प्रति माह कम से कम एक गतिविधि अवश्य पूरी करें।' :
+                'Pick your grade and select an activity that interests you! All students are advised to finish a minimum of one activity per month to earn the DCAIS certificate.') +
       '</div>' +
     '</div>';
-  }).join('');
-  return '<div style="background:var(--red-bg);border:1px solid var(--red-border);border-radius:var(--radius);padding:14px 18px;margin-bottom:20px;">' +
-    '<p style="font-size:.85rem;color:var(--ink-2);">🌟 <strong>What is DCAIS?</strong> Digital Creativity and AI Skills — a special programme where you do fun creative activities and earn a certificate! Do at least <strong>1 activity per month</strong> to qualify.</p>' +
-  '</div>' +
-  '<p style="font-size:.85rem;color:var(--ink-2);margin-bottom:12px;">Select your class / अपनी कक्षा चुनें:</p>' +
-  '<div class="dcais-grade-tabs">' + tabsHtml + '</div>' +
-  '<div class="dcais-grid" id="dcaisCardsGrid">' + cardsHtml + '</div>' +
-  '<div style="background:var(--surface-2);border:1.5px dashed var(--border);border-radius:var(--radius);padding:16px;text-align:center;margin-top:4px;">' +
-    '<p style="font-size:.82rem;color:var(--ink-3);">📌 Submission links will be added by your teacher soon. The <strong>Submit Work</strong> buttons will become active!</p>' +
-  '</div>';
+
+  // If no grade selected, show Grade Selection Cards Grid (matches AIM website)
+  if (!selectedAimGrade) {
+    var gradeCards = [
+      { id: '3', nameEn: 'Grade 3', nameHi: 'कक्षा 3', count: '32 activities', countHi: '32 गतिविधियाँ' },
+      { id: '4', nameEn: 'Grade 4', nameHi: 'कक्षा 4', count: '32 activities', countHi: '32 गतिविधियाँ' },
+      { id: '5', nameEn: 'Grade 5', nameHi: 'कक्षा 5', count: '32 activities', countHi: '32 गतिविधियाँ' },
+      { id: '6', nameEn: 'Grade 6', nameHi: 'कक्षा 6', count: '18 activities', countHi: '18 गतिविधियाँ' },
+      { id: '7', nameEn: 'Grade 7', nameHi: 'कक्षा 7', count: '18 activities', countHi: '18 गतिविधियाँ' },
+      { id: '8', nameEn: 'Grade 8', nameHi: 'कक्षा 8', count: '18 activities', countHi: '18 गतिविधियाँ' },
+      { id: 'kb', nameEn: 'Kaushal Bodh', nameHi: 'कौशल बोध', count: '18 projects', countHi: '18 प्रोजेक्ट्स' }
+    ];
+
+    var cardsGridHtml = '<div style="margin-bottom:14px;"><h3 style="font-size:1.2rem;font-weight:900;color:var(--ink);">' +
+      (isHi ? 'अपनी कक्षा चुनें:' : 'Select Your Grade') + '</h3></div>' +
+      '<div class="aim-grade-cards">' +
+      gradeCards.map(function(g) {
+        return '<div class="aim-gc" onclick="selectAimGrade('' + g.id + '')">' +
+          '<div class="aim-gc-icon">🎓</div>' +
+          '<h3>' + (isHi ? g.nameHi : g.nameEn) + '</h3>' +
+          '<div class="aim-gc-cnt">' + (isHi ? g.countHi : g.count) + '</div>' +
+          '<div class="aim-gc-btn">' + (isHi ? 'कक्षा खोलें →' : 'Explore Grade →') + '</div>' +
+        '</div>';
+      }).join('') +
+      '</div>';
+
+    return tipHtml + cardsGridHtml;
+  }
+
+  // A grade is selected: show activities list!
+  var activities = [];
+  var gradeLabel = '';
+
+  if (selectedAimGrade === 'kb') {
+    gradeLabel = isHi ? 'कौशल बोध प्रोजेक्ट्स' : 'Kaushal Bodh Projects';
+    // Combine kb projects
+    var kbData = window.DCAIS_DATA ? window.DCAIS_DATA.kaushalBodh : {};
+    ['grade 6','grade 7','grade 8'].forEach(function(gk) {
+      if (kbData[gk]) {
+        kbData[gk].forEach(function(item) {
+          activities.push({
+            name: item.projectName,
+            skills: item.formOfWork + ' • ' + (item.expressActivity || 'Creative Project'),
+            instructions: item.finalDeliverable || item.adobeIntegration || item.keyActivities,
+            link: item.templateLink || 'https://express.adobe.com',
+            journalLink: item.learningJournalLink,
+            book: ''
+          });
+        });
+      }
+    });
+  } else {
+    gradeLabel = isHi ? ('कक्षा ' + selectedAimGrade) : ('Grade ' + selectedAimGrade);
+    var key = 'Grade ' + selectedAimGrade;
+    if (isHi && (selectedAimGrade === '6' || selectedAimGrade === '7' || selectedAimGrade === '8')) {
+      key = 'Grade ' + selectedAimGrade + ' (Hindi)';
+    }
+    activities = (window.DCAIS_DATA && window.DCAIS_DATA.aimActivities && window.DCAIS_DATA.aimActivities[key]) || [];
+  }
+
+  // Filter by search query if any
+  if (aimSearchQuery) {
+    var q = aimSearchQuery.toLowerCase();
+    activities = activities.filter(function(a) {
+      return (a.name && a.name.toLowerCase().includes(q)) ||
+             (a.skills && a.skills.toLowerCase().includes(q)) ||
+             (a.instructions && a.instructions.toLowerCase().includes(q));
+    });
+  }
+
+  // Top nav bar with Back to Grades, Title, and Search Input
+  var navHtml =
+    '<div class="aim-top-nav">' +
+      '<div style="display:flex;align-items:center;gap:10px;">' +
+        '<button class="aim-back-grade" onclick="selectAimGrade(null)">← ' + (isHi ? 'सभी कक्षाएं' : 'All Grades') + '</button>' +
+        '<span style="font-size:.92rem;font-weight:900;color:var(--ink);">' + gradeLabel + ' (' + activities.length + ' ' + (isHi ? 'गतिविधियां' : 'activities') + ')</span>' +
+      '</div>' +
+      '<div class="aim-search">' +
+        '<input type="text" placeholder="' + (isHi ? 'गतिविधि खोजें...' : 'Search activity...') + '" value="' + aimSearchQuery + '" oninput="searchAimActivities(this.value)">' +
+      '</div>' +
+    '</div>';
+
+  // Activities Grid
+  var actGridHtml = '';
+  if (activities.length === 0) {
+    actGridHtml = '<div style="background:var(--surface-2);border-radius:var(--radius);padding:32px;text-align:center;color:var(--ink-3);">' +
+      '<h3>' + (isHi ? 'कोई गतिविधि नहीं मिली' : 'No activities found') + '</h3>' +
+      '<p style="font-size:.85rem;margin-top:6px;">' + (isHi ? 'कृपया अपना खोज शब्द बदलें।' : 'Try clearing your search query.') + '</p>' +
+    '</div>';
+  } else {
+    actGridHtml = '<div class="aim-act-grid">' +
+      activities.map(function(act, idx) {
+        var numBadge = (isHi ? 'गतिविधि ' : 'Activity ') + (act.col || (idx + 1));
+        var templateBtn = act.link ?
+          '<a href="' + act.link + '" target="_blank" class="btn btn-primary" style="font-size:.76rem;padding:7px 14px;">🎨 ' + (isHi ? 'टेम्पलेट खोलें ↗' : 'Open Template ↗') + '</a>' :
+          '<a href="https://express.adobe.com" target="_blank" class="btn btn-primary" style="font-size:.76rem;padding:7px 14px;">🎨 ' + (isHi ? 'Express खोलें ↗' : 'Open in Express ↗') + '</a>';
+        
+        var bookBtn = act.book ?
+          '<a href="' + act.book + '" target="_blank" class="btn btn-ghost" style="font-size:.74rem;padding:6px 12px;">📖 ' + (isHi ? 'पुस्तक का स्क्रीनशॉट ↗' : 'Book Screenshot ↗') + '</a>' : '';
+
+        var submitBtn = '<button class="btn btn-empty" style="font-size:.74rem;padding:6px 12px;" onclick="return false;" title="Teacher will provide the submission link soon">📤 ' + (isHi ? 'प्रोजेक्ट जमा करें' : 'Submit Activity Link') + '</button>';
+
+        return '<div class="aim-card">' +
+          '<div>' +
+            '<div class="aim-badge">' + numBadge + '</div>' +
+            '<h4 class="aim-title">' + act.name + '</h4>' +
+            (act.skills ? '<div class="aim-skills">⚡ ' + act.skills + '</div>' : '') +
+            (act.instructions ? '<div class="aim-instr">' + act.instructions + '</div>' : '') +
+          '</div>' +
+          '<div class="aim-actions">' +
+            templateBtn +
+            bookBtn +
+            submitBtn +
+          '</div>' +
+        '</div>';
+      }).join('') +
+    '</div>';
+  }
+
+  // Teacher Notice Banner for Submission Link
+  var subNotice =
+    '<div style="background:var(--surface-2);border:1.5px dashed var(--border);border-radius:var(--radius);padding:14px;text-align:center;margin-top:20px;">' +
+      '<p style="font-size:.8rem;color:var(--ink-3);">📌 ' +
+      (isHi ? 'सबमिशन लिंक आपके शिक्षक द्वारा बाद में अपलोड किया जाएगा। <strong>प्रोजेक्ट जमा करें</strong> बटन जल्द सक्रिय होगा।' :
+              'Submission link will be uploaded by your teacher later. The <strong>Submit Activity Link</strong> buttons will become active then.') +
+      '</p>' +
+    '</div>';
+
+  return tipHtml + navHtml + actGridHtml + subNotice;
 }
 
-function setDcaisGrade(g) {
-  currentDcaisGrade = g;
+function selectAimGrade(g) {
+  selectedAimGrade = g;
+  aimSearchQuery = '';
+  document.getElementById('secContent').innerHTML = renderDcaisSection();
+}
+
+function searchAimActivities(q) {
+  aimSearchQuery = q;
   document.getElementById('secContent').innerHTML = renderDcaisSection();
 }
 
@@ -600,7 +720,7 @@ var STUDENT_SECTIONS_DATA = {
     render: function() {
       return '<div class="rg">' +
         '<div class="rc"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Design</div><h4>Poster &amp; Flyer Design</h4><p>Learn how to pick colours, use big text, and make eye-catching posters for school events!</p><div class="sbar"><div class="sbar-fill" style="width:75%"></div></div></div><a href="https://express.adobe.com/sp/design/posters" target="_blank" class="btn btn-primary">Start →</a></div>' +
-        '<div class="rc"><img src="https://images.unsplash.com/photo-1574717024453-354056afd6fc?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Video</div><h4>Make Fun Videos</h4><p>Make short video clips, add music and voice, and share your story with the world!</p><div class="sbar"><div class="sbar-fill" style="width:50%"></div></div></div><a href="https://express.adobe.com/sp/design/videos" target="_blank" class="btn btn-primary">Start →</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Video</div><h4>Make Fun Videos</h4><p>Make short video clips, add music and voice, and share your story with the world!</p><div class="sbar"><div class="sbar-fill" style="width:50%"></div></div></div><a href="https://express.adobe.com/sp/design/videos" target="_blank" class="btn btn-primary">Start →</a></div>' +
         '<div class="rc"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Social</div><h4>Social Media Posts</h4><p>Design cool Instagram posts and stories. Make your message look amazing!</p><div class="sbar"><div class="sbar-fill" style="width:35%"></div></div></div><a href="https://express.adobe.com/sp/design/social" target="_blank" class="btn btn-primary">Start →</a></div>' +
         '<div class="rc"><img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Typography</div><h4>Cool Text &amp; Lettering</h4><p>Make words look beautiful! Try different fonts, sizes, and text effects.</p><div class="sbar"><div class="sbar-fill" style="width:60%"></div></div></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Start →</a></div>' +
         '<div class="rc"><img src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Illustration</div><h4>Digital Drawing &amp; Art</h4><p>Create your own digital drawings, stickers, and original artwork using Adobe tools.</p><div class="sbar"><div class="sbar-fill" style="width:20%"></div></div></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Start →</a></div>' +
@@ -635,7 +755,7 @@ var STUDENT_SECTIONS_DATA = {
       return '<div class="rg">' +
         '<div class="rc"><img src="https://images.unsplash.com/photo-1581726690015-c9861fa5057f?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Beginner • 5 min</div><h4>First Steps in Adobe Express</h4><p>Tour the workspace, find the basic tools, and make your first design in 5 minutes!</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+beginner+tutorial" target="_blank" class="btn btn-dark">▶ Watch →</a></div>' +
         '<div class="rc"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Easy • 8 min</div><h4>Make a School Poster</h4><p>Learn how to pick colours and make a beautiful poster for your school notice board!</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+poster+tutorial" target="_blank" class="btn btn-dark">▶ Watch →</a></div>' +
-        '<div class="rc"><img src="https://images.unsplash.com/photo-1574717024453-354056afd6fc?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Medium • 12 min</div><h4>Make a Short Video</h4><p>Add music, your voice, and animated text to make a really cool short video!</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+video+tutorial" target="_blank" class="btn btn-dark">▶ Watch →</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Medium • 12 min</div><h4>Make a Short Video</h4><p>Add music, your voice, and animated text to make a really cool short video!</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+video+tutorial" target="_blank" class="btn btn-dark">▶ Watch →</a></div>' +
         '<div class="rc"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Fun • 10 min</div><h4>Animated Stickers &amp; Text</h4><p>Make things move! Add cool animations to your designs and share as GIFs.</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+animation+tutorial" target="_blank" class="btn btn-dark">▶ Watch →</a></div>' +
         '<div class="rc"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Advanced • 15 min</div><h4>Design Your Own Logo</h4><p>Create a personal logo and brand mark. Make it look like a real company or brand!</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+logo+tutorial" target="_blank" class="btn btn-dark">▶ Watch →</a></div>' +
       '</div>';
@@ -681,13 +801,13 @@ var STUDENT_SECTIONS_DATA = {
   '7': {
     num: '🌟',
     tag: 'Section 7 • DCAIS Activities',
-    title: 'DCAIS Activities — Earn Your Certificate!',
-    desc: 'Do these special activities to earn your DCAIS digital skills certificate. Do at least 1 activity every month!',
+    title: 'DCAIS Activities (AIM Curriculum)',
+    desc: 'Complete curriculum for Grades 3–8 from AIM. Select your grade, complete activities, and earn your DCAIS certificate!',
     render: function() { return renderDcaisSection(); }
   }
 };
 
-/* ===== NAVIGATION ===== */
+/* ===== NAVIGATION CONTROLLER ===== */
 function openSection(num) {
   var data = STUDENT_SECTIONS_DATA[num];
   if (!data) return;
@@ -701,8 +821,8 @@ function openSection(num) {
   var keys = Object.keys(STUDENT_SECTIONS_DATA);
   var idx = keys.indexOf(num);
   var nextPrevHtml = '';
-  if (idx > 0) nextPrevHtml += '<button class="btn btn-ghost" onclick="openSection(\'' + keys[idx-1] + '\')">← Prev Section</button> ';
-  if (idx < keys.length-1) nextPrevHtml += '<button class="btn btn-primary" onclick="openSection(\'' + keys[idx+1] + '\')">Next Section →</button>';
+  if (idx > 0) nextPrevHtml += '<button class="btn btn-ghost" onclick="openSection('' + keys[idx-1] + '')">← Prev Section</button> ';
+  if (idx < keys.length-1) nextPrevHtml += '<button class="btn btn-primary" onclick="openSection('' + keys[idx+1] + '')">Next Section →</button>';
   document.getElementById('secNextPrev').innerHTML = nextPrevHtml;
   document.getElementById('dashboardView').style.display = 'none';
   document.getElementById('mainHero').style.display = 'none';
