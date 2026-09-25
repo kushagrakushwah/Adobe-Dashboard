@@ -168,6 +168,17 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 .aim-gc h3{font-size:1.2rem;font-weight:900;color:var(--ink);margin-bottom:3px}
 .aim-gc-cnt{font-size:.78rem;color:var(--ink-3);font-weight:700;margin-bottom:12px}
 .aim-gc-btn{font-size:.76rem;font-weight:800;color:var(--red);display:inline-flex;align-items:center;gap:4px;border-top:1px solid var(--border);padding-top:10px;width:100%;justify-content:center}
+.aim-gc-hindi{background:#FFF;border:2px solid #FAD2DB;border-radius:var(--radius-lg);padding:24px 18px;text-align:center;cursor:pointer;user-select:none;transition:all .22s cubic-bezier(.16,1,.3,1);box-shadow:0 4px 14px rgba(220,53,69,.08);display:flex;flex-direction:column;align-items:center;position:relative}
+.aim-gc-hindi:hover{border-color:var(--red);transform:translateY(-4px);box-shadow:0 8px 24px rgba(250,15,0,.18)}
+.aim-gc-hindi-icon{width:56px;height:56px;border-radius:50%;background:#FDE8ED;display:flex;align-items:center;justify-content:center;font-size:1.6rem;color:#E0245E;margin-bottom:12px;box-shadow:0 2px 8px rgba(224,36,94,.12)}
+.aim-gc-hindi h3{font-size:1.12rem;font-weight:900;color:var(--ink);margin-bottom:4px;line-height:1.25}
+.aim-gc-hindi-cnt{font-size:.78rem;color:var(--ink-3);font-weight:700;margin-bottom:12px}
+.aim-gc-hindi-btn{background:var(--red);color:#FFF;font-size:.82rem;font-weight:800;padding:8px 30px;border-radius:999px;border:none;cursor:pointer;box-shadow:0 3px 10px rgba(250,15,0,.3);transition:all .18s;margin-top:auto}
+.aim-gc-hindi:hover .aim-gc-hindi-btn{background:var(--red-dk);transform:scale(1.03)}
+.aim-sub-filters{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.aim-sub-btn{padding:5px 14px;border-radius:999px;font-size:.76rem;font-weight:800;border:1.5px solid var(--border);background:var(--surface);color:var(--ink-2);cursor:pointer;transition:all .18s}
+.aim-sub-btn:hover{border-color:var(--red);color:var(--red)}
+.aim-sub-btn.active{background:var(--red);border-color:var(--red);color:#FFF;box-shadow:0 2px 6px rgba(250,15,0,.25)}
 
 .aim-act-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
 .aim-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;justify-content:space-between;transition:all .22s;box-shadow:var(--shadow-sm)}
@@ -2432,6 +2443,7 @@ function renderCpdSectionHtml() {
 
 /* ===== DCAIS STUDENT MONITOR CONTROLLER ===== */
 var teacherMonitorGrade = null;
+var teacherHindiGradeFilter = 'all';
 var teacherSearchQuery = '';
 
 function renderDcaisMonitor() {
@@ -2452,21 +2464,30 @@ function renderDcaisMonitor() {
 
   if (!teacherMonitorGrade) {
     var gradeCards = [
-      { id: '3', nameEn: 'Grade 3', nameHi: 'कक्षा 3', count: '32 activities', countHi: '32 गतिविधियाँ' },
-      { id: '4', nameEn: 'Grade 4', nameHi: 'कक्षा 4', count: '32 activities', countHi: '32 गतिविधियाँ' },
-      { id: '5', nameEn: 'Grade 5', nameHi: 'कक्षा 5', count: '32 activities', countHi: '32 गतिविधियाँ' },
-      { id: '6', nameEn: 'Grade 6', nameHi: 'कक्षा 6', count: '18 activities', countHi: '18 गतिविधियाँ' },
-      { id: '7', nameEn: 'Grade 7', nameHi: 'कक्षा 7', count: '18 activities', countHi: '18 गतिविधियाँ' },
-      { id: '8', nameEn: 'Grade 8', nameHi: 'कक्षा 8', count: '18 activities', countHi: '18 गतिविधियाँ' },
-      { id: 'kb', nameEn: 'Kaushal Bodh', nameHi: 'कौशल बोध', count: '18 projects', countHi: '18 प्रोजेक्ट्स' }
+      { id: '3', nameEn: 'Grade 3', nameHi: 'कक्षा 3', count: '32 activities', countHi: '32 गतिविधियाँ', icon: '🎓' },
+      { id: '4', nameEn: 'Grade 4', nameHi: 'कक्षा 4', count: '32 activities', countHi: '32 गतिविधियाँ', icon: '🎓' },
+      { id: '5', nameEn: 'Grade 5', nameHi: 'कक्षा 5', count: '32 activities', countHi: '32 गतिविधियाँ', icon: '🎓' },
+      { id: '6', nameEn: 'Grade 6', nameHi: 'कक्षा 6', count: '18 activities', countHi: '18 गतिविधियाँ', icon: '🎓' },
+      { id: '7', nameEn: 'Grade 7', nameHi: 'कक्षा 7', count: '18 activities', countHi: '18 गतिविधियाँ', icon: '🎓' },
+      { id: '8', nameEn: 'Grade 8', nameHi: 'कक्षा 8', count: '18 activities', countHi: '18 गतिविधियाँ', icon: '🎓' },
+      { id: 'hindi', isHindiTrack: true, nameEn: 'DCAIS Activities / Hindi', nameHi: 'DCAIS गतिविधियाँ / हिंदी', count: '54 activities • Grades 6–8', countHi: '54 गतिविधियाँ • कक्षा 6–8', icon: '✏️' },
+      { id: 'kb', nameEn: 'Kaushal Bodh', nameHi: 'कौशल बोध', count: '18 projects', countHi: '18 प्रोजेक्ट्स', icon: '🛠️' }
     ];
 
     var cardsGrid = '<div style="margin-bottom:14px;"><h3 style="font-size:1.15rem;font-weight:900;color:var(--ink);">' +
-      (isHi ? 'कक्षावार पाठ्यक्रम चुनें:' : 'Select Grade to Inspect Activities:') + '</h3></div>' +
+      (isHi ? 'कक्षा या पाठ्यक्रम चुनें:' : 'Select Grade or Curriculum Track to Inspect Activities:') + '</h3></div>' +
       '<div class="aim-grade-cards">' +
       gradeCards.map(function(g) {
+        if (g.isHindiTrack) {
+          return '<div class="aim-gc-hindi" onclick="selectTeacherGrade(&quot;hindi&quot;)">' +
+            '<div class="aim-gc-hindi-icon">✏️</div>' +
+            '<h3>' + (isHi ? g.nameHi : g.nameEn) + '</h3>' +
+            '<div class="aim-gc-hindi-cnt">' + (isHi ? g.countHi : g.count) + '</div>' +
+            '<button class="aim-gc-hindi-btn">' + (isHi ? 'शुरू करें' : 'Start') + '</button>' +
+          '</div>';
+        }
         return '<div class="aim-gc" onclick="selectTeacherGrade(&quot;' + g.id + '&quot;)">' +
-          '<div class="aim-gc-icon">🔭</div>' +
+          '<div class="aim-gc-icon">' + g.icon + '</div>' +
           '<h3>' + (isHi ? g.nameHi : g.nameEn) + '</h3>' +
           '<div class="aim-gc-cnt">' + (isHi ? g.countHi : g.count) + '</div>' +
           '<div class="aim-gc-btn">' + (isHi ? 'गतिविधियां देखें →' : 'Inspect Grade →') + '</div>' +
@@ -2497,6 +2518,21 @@ function renderDcaisMonitor() {
         });
       }
     });
+  } else if (teacherMonitorGrade === 'hindi') {
+    gradeLabel = isHi ? 'DCAIS गतिविधियाँ / हिंदी' : 'DCAIS Activities / Hindi';
+    var th6 = (window.DCAIS_DATA && window.DCAIS_DATA.aimActivities && window.DCAIS_DATA.aimActivities['Grade 6 (Hindi)']) || [];
+    var th7 = (window.DCAIS_DATA && window.DCAIS_DATA.aimActivities && window.DCAIS_DATA.aimActivities['Grade 7 (Hindi)']) || [];
+    var th8 = (window.DCAIS_DATA && window.DCAIS_DATA.aimActivities && window.DCAIS_DATA.aimActivities['Grade 8 (Hindi)']) || [];
+
+    if (teacherHindiGradeFilter === '6') {
+      activities = th6.slice();
+    } else if (teacherHindiGradeFilter === '7') {
+      activities = th7.slice();
+    } else if (teacherHindiGradeFilter === '8') {
+      activities = th8.slice();
+    } else {
+      activities = [].concat(th6, th7, th8);
+    }
   } else {
     gradeLabel = isHi ? ('कक्षा ' + teacherMonitorGrade) : ('Grade ' + teacherMonitorGrade);
     var key = 'Grade ' + teacherMonitorGrade;
@@ -2515,11 +2551,23 @@ function renderDcaisMonitor() {
     });
   }
 
+  var subFilterHtml = '';
+  if (teacherMonitorGrade === 'hindi') {
+    subFilterHtml =
+      '<div class="aim-sub-filters">' +
+        '<button class="aim-sub-btn' + (teacherHindiGradeFilter === 'all' ? ' active' : '') + '" onclick="filterTeacherHindiGrade(&quot;all&quot;)">' + (isHi ? 'सभी हिंदी (54)' : 'All Hindi (54)') + '</button>' +
+        '<button class="aim-sub-btn' + (teacherHindiGradeFilter === '6' ? ' active' : '') + '" onclick="filterTeacherHindiGrade(&quot;6&quot;)">' + (isHi ? 'कक्षा 6 (18)' : 'Grade 6 (18)') + '</button>' +
+        '<button class="aim-sub-btn' + (teacherHindiGradeFilter === '7' ? ' active' : '') + '" onclick="filterTeacherHindiGrade(&quot;7&quot;)">' + (isHi ? 'कक्षा 7 (18)' : 'Grade 7 (18)') + '</button>' +
+        '<button class="aim-sub-btn' + (teacherHindiGradeFilter === '8' ? ' active' : '') + '" onclick="filterTeacherHindiGrade(&quot;8&quot;)">' + (isHi ? 'कक्षा 8 (18)' : 'Grade 8 (18)') + '</button>' +
+      '</div>';
+  }
+
   var navHtml =
     '<div class="aim-top-nav">' +
-      '<div style="display:flex;align-items:center;gap:10px;">' +
-        '<button class="aim-back-grade" onclick="selectTeacherGrade(null)">← ' + (isHi ? 'सभी कक्षाएं' : 'All Grades') + '</button>' +
+      '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">' +
+        '<button class="aim-back-grade" onclick="selectTeacherGrade(null)">← ' + (isHi ? 'सभी पाठ्यक्रम' : 'All Tracks') + '</button>' +
         '<span style="font-size:.92rem;font-weight:900;color:var(--ink);">' + gradeLabel + ' (' + activities.length + ' ' + (isHi ? 'गतिविधियां' : 'activities') + ')</span>' +
+        subFilterHtml +
       '</div>' +
       '<div class="aim-search">' +
         '<input type="text" placeholder="' + (isHi ? 'गतिविधि खोजें...' : 'Search activity...') + '" value="' + teacherSearchQuery + '" oninput="searchTeacherActivities(this.value)">' +
@@ -2566,7 +2614,13 @@ function renderDcaisMonitor() {
 
 function selectTeacherGrade(g) {
   teacherMonitorGrade = g;
+  teacherHindiGradeFilter = 'all';
   teacherSearchQuery = '';
+  document.getElementById('secContent').innerHTML = renderDcaisMonitor();
+}
+
+function filterTeacherHindiGrade(f) {
+  teacherHindiGradeFilter = f;
   document.getElementById('secContent').innerHTML = renderDcaisMonitor();
 }
 
@@ -2785,6 +2839,7 @@ window.openSection = openSection;
 window.showDashboard = showDashboard;
 window.toggleLang = toggleLang;
 window.selectTeacherGrade = selectTeacherGrade;
+window.filterTeacherHindiGrade = filterTeacherHindiGrade;
 window.searchTeacherActivities = searchTeacherActivities;
 
 // Programmatic event delegation fallback
