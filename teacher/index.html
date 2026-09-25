@@ -47,8 +47,12 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 .hero h1{font-size:clamp(1.3rem,2.8vw,1.85rem);font-weight:900;letter-spacing:-.035em;line-height:1.2;margin-bottom:6px;max-width:680px}
 .hero-sub{font-size:.84rem;color:rgba(255,255,255,.84);max-width:560px;line-height:1.5;margin-bottom:12px}
 .flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-.flow-step{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:5px 12px;border-radius:999px;font-size:.76rem;font-weight:700;color:#FFF;white-space:nowrap}
-.flow-n{width:18px;height:18px;border-radius:50%;background:#FFF;color:var(--red);font-size:.68rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.flow-step{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:5px 13px;border-radius:999px;font-size:.76rem;font-weight:700;color:#FFF;white-space:nowrap;cursor:pointer;user-select:none;transition:all .2s cubic-bezier(.16,1,.3,1)}
+.flow-step:hover{background:rgba(255,255,255,.28);border-color:rgba(255,255,255,.6);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.flow-step:hover .flow-n{transform:scale(1.1);box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.flow-step:active{transform:translateY(0);background:rgba(255,255,255,.38)}
+.flow-step:focus-visible{outline:2px solid #FFF;outline-offset:2px}
+.flow-n{width:18px;height:18px;border-radius:50%;background:#FFF;color:var(--red);font-size:.68rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .2s ease}
 .flow-arr{color:rgba(255,255,255,.45);font-size:.8rem;font-weight:900}
 /* MAIN */
 .main{max-width:1160px;margin:0 auto;padding:26px 28px 80px}
@@ -242,13 +246,13 @@ footer p+p{margin-top:5px}
     <h1 id="heroTitle">Educator Hub &amp; Curriculum Portal</h1>
     <p class="hero-sub" id="heroSub">Manage school access, CPD training, student DCAIS monitoring, classroom resources, and certification — all in one place.</p>
     <div class="flow">
-      <div class="flow-step"><span class="flow-n">1</span><span id="flow1">School Access</span></div>
+      <div class="flow-step" data-flow-section="A" onclick="openSection('A')" role="button" tabindex="0" title="Go to Section A: Adobe ID &amp; Access"><span class="flow-n">1</span><span id="flow1">School Access</span></div>
       <span class="flow-arr">→</span>
-      <div class="flow-step"><span class="flow-n">2</span><span id="flow2">CPD Training</span></div>
+      <div class="flow-step" data-flow-section="B" onclick="openSection('B')" role="button" tabindex="0" title="Go to Section B: CPD Continuous Professional Development"><span class="flow-n">2</span><span id="flow2">CPD Training</span></div>
       <span class="flow-arr">→</span>
-      <div class="flow-step"><span class="flow-n">3</span><span id="flow3">DCAIS Monitor</span></div>
+      <div class="flow-step" data-flow-section="C" onclick="openSection('C')" role="button" tabindex="0" title="Go to Section C: Student DCAIS Monitor"><span class="flow-n">3</span><span id="flow3">DCAIS Monitor</span></div>
       <span class="flow-arr">→</span>
-      <div class="flow-step"><span class="flow-n">4</span><span id="flow4">Certification</span></div>
+      <div class="flow-step" data-flow-section="G" onclick="openSection('G')" role="button" tabindex="0" title="Go to Section G: Certification Path &amp; Digital Badges"><span class="flow-n">4</span><span id="flow4">Certification</span></div>
     </div>
   </div>
 </section>
@@ -2820,20 +2824,6 @@ window.toggleLang = toggleLang;
 window.selectTeacherGrade = selectTeacherGrade;
 window.searchTeacherActivities = searchTeacherActivities;
 
-// Event delegation fallback
-document.addEventListener('click', function(e) {
-  var card = e.target.closest('.tile-card');
-  if (card) {
-    var sec = card.getAttribute('data-section');
-    if (sec && typeof window.openSection === 'function') {
-      window.openSection(sec);
-    }
-  }
-});
-
-console.log('Teacher Educator Hub initialized successfully.');
-
-
 // Explicit global attachment
 window.openSection = openSection;
 window.showDashboard = showDashboard;
@@ -2842,13 +2832,36 @@ window.selectTeacherGrade = selectTeacherGrade;
 window.filterTeacherHindiGrade = filterTeacherHindiGrade;
 window.searchTeacherActivities = searchTeacherActivities;
 
-// Programmatic event delegation fallback
+// Event delegation for cards and hero flow pills
 document.addEventListener('click', function(e) {
   var card = e.target.closest('.tile-card');
   if (card) {
     var sec = card.getAttribute('data-section');
     if (sec && typeof window.openSection === 'function') {
       window.openSection(sec);
+    }
+    return;
+  }
+  var flowStep = e.target.closest('.flow-step');
+  if (flowStep) {
+    var flowSec = flowStep.getAttribute('data-flow-section');
+    if (flowSec && typeof window.openSection === 'function') {
+      window.openSection(flowSec);
+    }
+    return;
+  }
+});
+
+// Keyboard support for accessible flow pills
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    var flowStep = e.target.closest('.flow-step');
+    if (flowStep) {
+      e.preventDefault();
+      var flowSec = flowStep.getAttribute('data-flow-section');
+      if (flowSec && typeof window.openSection === 'function') {
+        window.openSection(flowSec);
+      }
     }
   }
 });
