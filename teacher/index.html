@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Educator Hub &mdash; Adobe Express for Education</title>
+<title>Educator Hub — Adobe Express for Education</title>
 <meta name="description" content="Educator workspace for CPD professional development, DCAIS curriculum, classroom resources, and Adobe certification.">
 <meta name="robots" content="noindex">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -11,12 +11,9 @@
 <meta http-equiv="Expires" content="0">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23FA0F00'/><text y='.9em' font-size='72' x='12' fill='white' font-weight='900'>T</text></svg>">
 <style>
-/* ===== RESET ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
 body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F5;color:#1C1C1E;line-height:1.5;min-height:100vh}
-
-/* ===== TOKENS (ADOBE RED & WHITE) ===== */
 :root{
   --red:#FA0F00;--red-dk:#C00A00;--red-bg:#FFF2F1;--red-border:rgba(250,15,0,.18);
   --ink:#1C1C1E;--ink-2:#48484A;--ink-3:#8E8E93;
@@ -27,248 +24,72 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
   --shadow:0 4px 16px rgba(0,0,0,.09);
   --shadow-lg:0 12px 40px rgba(0,0,0,.12);
 }
-
-/* ===== HEADER ===== */
-.hdr{
-  position:sticky;top:0;z-index:200;
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--border);
-  padding:0 28px;
-}
-.hdr-in{max-width:1160px;margin:0 auto;height:62px;display:flex;align-items:center;justify-content:space-between}
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.94);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:0 28px}
+.hdr-in{max-width:1160px;margin:0 auto;height:62px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit;cursor:pointer}
-.brand-mark{
-  width:38px;height:38px;border-radius:10px;
-  background:var(--red);color:#FFF;
-  font-weight:900;font-size:1rem;
-  display:flex;align-items:center;justify-content:center;
-  letter-spacing:-.02em;flex-shrink:0;
-  font-family:'Georgia',serif;
-}
+.brand-mark{width:38px;height:38px;border-radius:10px;background:var(--red);color:#FFF;font-weight:900;font-size:1rem;display:flex;align-items:center;justify-content:center;letter-spacing:-.02em;flex-shrink:0;font-family:'Georgia',serif}
 .brand-text{line-height:1.2}
 .brand-name{font-size:.88rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
 .brand-sub{font-size:.68rem;font-weight:600;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
-.hdr-badge{
-  background:var(--red);color:#FFF;
-  font-size:.72rem;font-weight:700;
-  padding:5px 14px;border-radius:999px;
-  letter-spacing:.03em;
-}
-
-/* ===== HERO ===== */
-.hero{
-  background:linear-gradient(150deg,#FA0F00 0%,#8B0000 55%,#3D0000 100%);
-  color:#FFF;
-  padding:54px 28px 48px;
-  position:relative;overflow:hidden;
-}
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  pointer-events:none;
-}
+.hdr-right{display:flex;align-items:center;gap:10px}
+.hdr-badge{background:var(--red);color:#FFF;font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:999px;letter-spacing:.03em}
+/* LANG TOGGLE */
+.lang-toggle{display:flex;align-items:center;background:var(--surface-3);border:1.5px solid var(--border);border-radius:999px;padding:3px;cursor:pointer}
+.lang-btn{padding:4px 12px;border-radius:999px;font-size:.72rem;font-weight:800;color:var(--ink-3);transition:all .18s;user-select:none}
+.lang-btn.active{background:var(--red);color:#FFF;box-shadow:0 2px 6px rgba(250,15,0,.25)}
+/* HERO - SMALLER */
+.hero{background:linear-gradient(150deg,#FA0F00 0%,#8B0000 55%,#3D0000 100%);color:#FFF;padding:28px 28px 22px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FFFFFF' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
 .hero-in{max-width:1160px;margin:0 auto;position:relative}
-.hero-tag{
-  display:inline-flex;align-items:center;gap:7px;
-  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);
-  color:rgba(255,255,255,.9);
-  font-size:.74rem;font-weight:700;
-  padding:5px 14px;border-radius:999px;
-  margin-bottom:18px;letter-spacing:.03em;
-}
+.hero-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.9);font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:999px;margin-bottom:10px;letter-spacing:.03em}
 .hero-tag-dot{width:6px;height:6px;border-radius:50%;background:#FFD60A}
-.hero h1{
-  font-size:clamp(1.8rem,4vw,2.8rem);
-  font-weight:900;letter-spacing:-.035em;line-height:1.18;
-  margin-bottom:12px;max-width:680px;
-}
-.hero-sub{
-  font-size:.98rem;color:rgba(255,255,255,.82);
-  max-width:560px;line-height:1.6;margin-bottom:26px;
-}
-.flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.flow-step{
-  display:flex;align-items:center;gap:8px;
-  background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.2);
-  padding:7px 15px;border-radius:999px;
-  font-size:.8rem;font-weight:700;color:#FFF;
-  white-space:nowrap;
-}
-.flow-n{
-  width:20px;height:20px;border-radius:50%;
-  background:#FFF;color:var(--red);
-  font-size:.72rem;font-weight:900;
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
-}
-.flow-arr{color:rgba(255,255,255,.45);font-size:.85rem;font-weight:900}
-
-/* ===== MAIN CONTAINER ===== */
-.main{max-width:1160px;margin:0 auto;padding:36px 28px 80px}
-
-/* ===== GUIDE BAR ===== */
-.guide{
-  display:flex;align-items:center;gap:12px;
-  background:var(--surface);border:1px solid var(--border);
-  border-left:4px solid var(--red);
-  border-radius:var(--radius);
-  padding:14px 20px;margin-bottom:28px;
-  box-shadow:var(--shadow-sm);
-}
+.hero h1{font-size:clamp(1.3rem,3vw,1.9rem);font-weight:900;letter-spacing:-.035em;line-height:1.2;margin-bottom:8px;max-width:680px}
+.hero-sub{font-size:.88rem;color:rgba(255,255,255,.82);max-width:560px;line-height:1.5;margin-bottom:14px}
+.flow{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.flow-step{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:5px 12px;border-radius:999px;font-size:.78rem;font-weight:700;color:#FFF;white-space:nowrap}
+.flow-n{width:18px;height:18px;border-radius:50%;background:#FFF;color:var(--red);font-size:.68rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.flow-arr{color:rgba(255,255,255,.45);font-size:.8rem;font-weight:900}
+/* MAIN */
+.main{max-width:1160px;margin:0 auto;padding:28px 28px 80px}
+/* GUIDE BAR */
+.guide{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--red);border-radius:var(--radius);padding:12px 18px;margin-bottom:22px;box-shadow:var(--shadow-sm)}
 .guide-icon{font-size:1.1rem;flex-shrink:0}
-.guide p{font-size:.88rem;color:var(--ink-2);line-height:1.5}
+.guide p{font-size:.85rem;color:var(--ink-2);line-height:1.5}
 .guide strong{color:var(--ink)}
-
-/* ===== SECTION TILES DASHBOARD GRID ===== */
-.tiles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
-.tile-card{
-  background:var(--surface);border:1.5px solid var(--border);
-  border-radius:var(--radius-lg);padding:24px;
-  cursor:pointer;user-select:none;
-  transition:all .22s cubic-bezier(.16,1,.3,1);
-  box-shadow:var(--shadow-sm);
-  display:flex;flex-direction:column;justify-content:space-between;
-  position:relative;overflow:hidden;
-}
-.tile-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:4px;
-  background:var(--red);opacity:0;transition:opacity .2s;
-}
-.tile-card:hover{
-  border-color:var(--red);transform:translateY(-3px);
-  box-shadow:0 8px 24px rgba(250,15,0,.12);
-  background:var(--surface);
-}
-.tile-card:hover::before{opacity:1}
-.tile-top{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px}
-.tile-num{
-  width:46px;height:46px;border-radius:12px;
-  background:var(--surface-3);border:1.5px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.05rem;font-weight:900;color:var(--ink-2);
-  flex-shrink:0;transition:all .2s;font-variant-numeric:tabular-nums;
-}
-.tile-card:hover .tile-num{background:var(--red);color:#FFF;border-color:var(--red)}
-.tile-info{flex:1;min-width:0}
-.tile-tag{font-size:.65rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
-.tile-title{font-size:1.05rem;font-weight:800;color:var(--ink);line-height:1.3;margin-bottom:4px}
-.tile-desc{font-size:.82rem;color:var(--ink-3);line-height:1.45}
-.tile-footer{
-  display:flex;align-items:center;justify-content:space-between;
-  padding-top:14px;margin-top:14px;border-top:1px solid var(--border);
-}
-.tile-hint{font-size:.74rem;color:var(--ink-3);font-weight:600}
-.tile-btn{
-  display:inline-flex;align-items:center;gap:5px;
-  background:var(--red-bg);color:var(--red);
-  font-size:.78rem;font-weight:800;
-  padding:6px 14px;border-radius:999px;
-  transition:all .18s;border:1px solid var(--red-border);
-}
+/* TILES */
+.tiles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.tile-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;user-select:none;transition:all .22s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;position:relative}
+.tile-img-wrap{overflow:hidden;position:relative;flex-shrink:0}
+.tile-img{width:100%;height:100px;object-fit:cover;display:block;transition:transform .4s ease}
+.tile-card:hover .tile-img{transform:scale(1.04)}
+.tile-img-ov{position:absolute;bottom:8px;left:10px;background:var(--red);color:#FFF;font-size:1.1rem;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.tile-body{padding:16px 18px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
+.tile-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(250,15,0,.12)}
+.tile-tag{font-size:.62rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.tile-title{font-size:.98rem;font-weight:800;color:var(--ink);line-height:1.3;margin-bottom:4px}
+.tile-desc{font-size:.78rem;color:var(--ink-3);line-height:1.45;margin-bottom:12px}
+.tile-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border)}
+.tile-hint{font-size:.7rem;color:var(--ink-3);font-weight:600}
+.tile-btn{display:inline-flex;align-items:center;gap:5px;background:var(--red-bg);color:var(--red);font-size:.75rem;font-weight:800;padding:5px 12px;border-radius:999px;transition:all .18s;border:1px solid var(--red-border)}
 .tile-card:hover .tile-btn{background:var(--red);color:#FFF;border-color:var(--red)}
-
-/* ===== FULL-SCREEN SECTION VIEW ===== */
+/* SECTION VIEW */
 .section-full-view{display:none;animation:viewFadeIn .28s ease}
 @keyframes viewFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-
-/* Section Top Bar */
-.sec-nav-bar{
-  display:flex;align-items:center;justify-content:space-between;
-  margin-bottom:24px;gap:12px;flex-wrap:wrap;
-}
-.back-btn{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--surface);color:var(--red);
-  border:1.5px solid var(--red);
-  padding:10px 20px;border-radius:999px;
-  font-size:.85rem;font-weight:800;cursor:pointer;
-  transition:all .18s;box-shadow:var(--shadow-sm);
-}
+.sec-nav-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:12px;flex-wrap:wrap}
+.back-btn{display:inline-flex;align-items:center;gap:8px;background:var(--surface);color:var(--red);border:1.5px solid var(--red);padding:10px 20px;border-radius:999px;font-size:.85rem;font-weight:800;cursor:pointer;transition:all .18s;box-shadow:var(--shadow-sm)}
 .back-btn:hover{background:var(--red);color:#FFF;transform:translateX(-2px)}
 .sec-breadcrumb{font-size:.84rem;color:var(--ink-3);font-weight:700}
 .sec-breadcrumb strong{color:var(--ink)}
-
-/* Section Full Header */
-.sec-hero-card{
-  background:var(--surface);border:2px solid var(--red);
-  border-radius:var(--radius-lg);padding:28px 32px;
-  margin-bottom:28px;box-shadow:0 8px 30px rgba(250,15,0,.08);
-  display:flex;align-items:center;gap:20px;
-}
-.sec-hero-badge{
-  width:58px;height:58px;border-radius:16px;
-  background:var(--red);color:#FFF;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.35rem;font-weight:900;flex-shrink:0;
-  font-variant-numeric:tabular-nums;
-}
+.sec-hero-card{background:var(--surface);border:2px solid var(--red);border-radius:var(--radius-lg);padding:24px 28px;margin-bottom:24px;box-shadow:0 8px 30px rgba(250,15,0,.08);display:flex;align-items:center;gap:18px}
+.sec-hero-badge{width:52px;height:52px;border-radius:14px;background:var(--red);color:#FFF;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;flex-shrink:0}
 .sec-hero-body{flex:1;min-width:0}
-.sec-hero-tag{font-size:.7rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
-.sec-hero-title{font-size:1.6rem;font-weight:900;color:var(--ink);letter-spacing:-.02em;margin-bottom:6px;line-height:1.2}
-.sec-hero-desc{font-size:.92rem;color:var(--ink-2);line-height:1.5}
-
-/* Section Content Container */
-.sec-content-box{
-  background:var(--surface);border:1.5px solid var(--border);
-  border-radius:var(--radius-lg);padding:32px;
-  box-shadow:var(--shadow-sm);margin-bottom:28px;
-}
-
-/* Section Bottom Navigation */
-.sec-bottom-bar{
-  display:flex;align-items:center;justify-content:space-between;
-  padding-top:20px;border-top:1px solid var(--border);
-  gap:12px;flex-wrap:wrap;
-}
-
-/* ===== CPD TABS & SHOWCASE CARD (FULL WIDTH) ===== */
-.module-pills{
-  display:flex;gap:8px;overflow-x:auto;padding-bottom:14px;margin-bottom:22px;
-  scrollbar-width:thin;
-}
-.mp{
-  padding:8px 18px;background:var(--surface-2);
-  border:1.5px solid var(--border);border-radius:999px;
-  font-size:.82rem;font-weight:700;color:var(--ink-2);
-  cursor:pointer;white-space:nowrap;transition:all .18s;flex-shrink:0;
-}
-.mp:hover{background:var(--red-bg);border-color:var(--red);color:var(--red)}
-.mp.active{background:var(--red);border-color:var(--red);color:#FFF;box-shadow:0 3px 10px rgba(250,15,0,.28)}
-
-.mcard{
-  background:var(--surface-2);
-  border:2px solid var(--red);border-radius:var(--radius);
-  padding:28px;box-shadow:0 4px 18px rgba(250,15,0,.08);
-}
-.mcard-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:14px;flex-wrap:wrap}
-.mcard-theme{
-  background:var(--red-bg);color:var(--red);
-  font-size:.74rem;font-weight:800;
-  padding:5px 14px;border-radius:999px;
-  border:1px solid var(--red-border);
-  text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;
-}
-.mcard-dur{
-  font-size:.78rem;font-weight:700;color:var(--ink-3);
-  background:var(--surface);padding:5px 14px;border-radius:999px;
-  border:1px solid var(--border);white-space:nowrap;
-}
-.mcard h3{font-size:1.35rem;font-weight:900;color:var(--ink);margin-bottom:10px;line-height:1.25;letter-spacing:-.02em}
-.mcard p{font-size:.92rem;color:var(--ink-2);line-height:1.65;margin-bottom:20px}
-
-.cpd-detail-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-bottom:20px}
-.cpd-box{
-  background:var(--surface);border-left:3.5px solid var(--red);
-  border-radius:var(--radius-sm);padding:14px 16px;border:1px solid var(--border);border-left-width:3.5px;
-}
-.cpd-box-lbl{font-size:.68rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
-.cpd-box-txt{font-size:.85rem;color:var(--ink-2);line-height:1.55}
-
-.mcard-actions{display:flex;gap:10px;flex-wrap:wrap;padding-top:20px;border-top:1px solid var(--border)}
-
-/* ===== BUTTONS ===== */
+.sec-hero-tag{font-size:.68rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.sec-hero-title{font-size:1.5rem;font-weight:900;color:var(--ink);letter-spacing:-.02em;margin-bottom:5px;line-height:1.2}
+.sec-hero-desc{font-size:.88rem;color:var(--ink-2);line-height:1.5}
+.sec-content-box{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow-sm);margin-bottom:24px}
+.sec-bottom-bar{display:flex;align-items:center;justify-content:space-between;padding-top:18px;border-top:1px solid var(--border);gap:12px;flex-wrap:wrap}
+/* BUTTONS */
 .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;border-radius:999px;font-size:.84rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;white-space:nowrap;transition:all .16s;line-height:1}
 .btn-primary{background:var(--red);color:#FFF;box-shadow:0 2px 8px rgba(250,15,0,.25)}
 .btn-primary:hover{background:var(--red-dk);transform:translateY(-1px)}
@@ -278,108 +99,85 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 .btn-dark:hover{background:#333;transform:translateY(-1px)}
 .btn-ghost{background:var(--surface-2);color:var(--ink-2);border:1.5px solid var(--border)}
 .btn-ghost:hover{border-color:var(--red);color:var(--red);background:var(--red-bg)}
-
-/* ===== RESOURCE GRID ===== */
+/* RESOURCE GRID */
 .rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
-.rc{
-  background:var(--surface-2);border:1.5px solid var(--border);
-  border-radius:var(--radius);padding:22px;
-  transition:all .18s;display:flex;flex-direction:column;justify-content:space-between;
-}
+.rc{background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px;transition:all .18s;display:flex;flex-direction:column;justify-content:space-between}
 .rc:hover{border-color:var(--red);background:var(--surface);box-shadow:0 6px 20px rgba(250,15,0,.1);transform:translateY(-2px)}
-.rc-badge{
-  display:inline-block;
-  background:var(--red-bg);color:var(--red);
-  font-size:.68rem;font-weight:800;
-  padding:3px 10px;border-radius:999px;
-  margin-bottom:10px;border:1px solid var(--red-border);
-  text-transform:uppercase;letter-spacing:.04em;
-}
-.rc h4{font-size:.98rem;font-weight:800;color:var(--ink);margin-bottom:6px;line-height:1.3}
-.rc p{font-size:.83rem;color:var(--ink-2);margin-bottom:16px;line-height:1.55}
-
+.rc-badge{display:inline-block;background:var(--red-bg);color:var(--red);font-size:.66rem;font-weight:800;padding:3px 10px;border-radius:999px;margin-bottom:10px;border:1px solid var(--red-border);text-transform:uppercase;letter-spacing:.04em}
+.rc h4{font-size:.96rem;font-weight:800;color:var(--ink);margin-bottom:6px;line-height:1.3}
+.rc p{font-size:.82rem;color:var(--ink-2);margin-bottom:14px;line-height:1.55}
 /* Action List */
 .al{display:flex;flex-direction:column;gap:12px}
-.ai{
-  display:flex;align-items:center;justify-content:space-between;
-  background:var(--surface-2);border:1.5px solid var(--border);
-  border-radius:var(--radius);padding:18px 22px;gap:16px;
-  transition:all .18s;
-}
-.ai:hover{border-color:var(--red);background:var(--surface);box-shadow:0 4px 16px rgba(250,15,0,.08)}
+.ai{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:16px 18px;transition:all .18s}
+.ai:hover{border-color:var(--red);background:var(--surface);box-shadow:0 4px 12px rgba(250,15,0,.08)}
 .ai-l{display:flex;align-items:flex-start;gap:12px;flex:1;min-width:0}
 .ai-dot{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0;margin-top:6px}
-.ai-t{font-size:.95rem;font-weight:800;color:var(--ink);margin-bottom:3px}
-.ai-d{font-size:.82rem;color:var(--ink-3);line-height:1.45}
+.ai-t{font-size:.92rem;font-weight:800;color:var(--ink);margin-bottom:3px}
+.ai-d{font-size:.8rem;color:var(--ink-2);line-height:1.5}
 .ai-r{flex-shrink:0}
-
 /* Notice */
-.notice{
-  background:var(--red-bg);border:1px solid var(--red-border);
-  border-left:4px solid var(--red);
-  border-radius:var(--radius-sm);padding:16px 20px;margin-bottom:24px;
-}
-.notice-t{font-size:.88rem;font-weight:800;color:var(--red);margin-bottom:3px}
-.notice-d{font-size:.83rem;color:#7A0000;line-height:1.5}
-
-/* Stats */
+.notice{background:var(--red-bg);border:1px solid var(--red-border);border-radius:var(--radius);padding:16px 18px;margin-bottom:20px}
+.notice-t{font-size:.88rem;font-weight:800;color:var(--red);margin-bottom:4px}
+.notice-d{font-size:.82rem;color:var(--ink-2);line-height:1.5}
+/* Progress bars */
 .pstats{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:24px}
-.pstat{
-  background:var(--surface-2);border:1.5px solid var(--border);
-  border-radius:var(--radius);padding:18px 14px;text-align:center;
-}
+.pstat{background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:16px 14px;text-align:center}
 .pstat-n{font-size:1.9rem;font-weight:900;color:var(--red);line-height:1.1}
-.pstat-l{font-size:.72rem;font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em;margin-top:4px}
-
-/* Progress Bars */
-.plist{display:flex;flex-direction:column;gap:14px}
-.pi-lbl{display:flex;justify-content:space-between;font-size:.86rem;font-weight:700;color:var(--ink);margin-bottom:5px}
+.pstat-l{font-size:.7rem;font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em;margin-top:4px}
+.sec-label{font-size:.72rem;font-weight:800;color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em;margin-top:20px;margin-bottom:10px}
+.plist{display:flex;flex-direction:column;gap:12px}
+.pi-lbl{display:flex;justify-content:space-between;font-size:.84rem;font-weight:700;color:var(--ink);margin-bottom:5px}
 .pi-pct{color:var(--red);font-weight:900}
 .pbar{height:8px;background:var(--border);border-radius:999px;overflow:hidden}
 .pfill{height:100%;background:linear-gradient(90deg,var(--red),#FF6040);border-radius:999px}
-.sec-label{font-size:.92rem;font-weight:800;color:var(--ink);margin:20px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border)}
-
 /* Achievements */
-.ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
-.ac{
-  background:var(--surface-2);border:1.5px solid var(--border);
-  border-radius:var(--radius);padding:22px 16px;text-align:center;
-  transition:all .18s;
-}
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.ac{background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:20px 16px;text-align:center;transition:all .18s}
 .ac.earned{background:var(--red-bg);border-color:var(--red-border)}
 .ac:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
-.ac-icon{
-  width:44px;height:44px;border-radius:50%;
-  margin:0 auto 12px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1rem;font-weight:900;
-}
+.ac-icon{width:44px;height:44px;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:900}
 .ac.earned .ac-icon{background:var(--red);color:#FFF}
 .ac.locked .ac-icon{background:var(--border);color:var(--ink-3)}
-.ac h4{font-size:.92rem;font-weight:800;color:var(--ink);margin-bottom:4px}
-.ac p{font-size:.76rem;color:var(--ink-3);line-height:1.45;margin-bottom:12px}
-.ac-tag{font-size:.68rem;font-weight:800;padding:3px 12px;border-radius:999px;text-transform:uppercase}
+.ac h4{font-size:.9rem;font-weight:800;color:var(--ink);margin-bottom:4px}
+.ac p{font-size:.74rem;color:var(--ink-3);line-height:1.45;margin-bottom:10px}
+.ac-tag{font-size:.66rem;font-weight:800;padding:3px 12px;border-radius:999px;text-transform:uppercase}
 .ac.earned .ac-tag{background:var(--red);color:#FFF}
 .ac.locked .ac-tag{background:var(--border);color:var(--ink-3)}
-
-/* ===== FOOTER ===== */
-footer{background:var(--ink);padding:28px;text-align:center;color:rgba(255,255,255,.38);font-size:.82rem}
+/* CPD stepper */
+.cpd-steps{display:flex;align-items:center;gap:0;overflow-x:auto;padding:20px 0;margin-bottom:24px}
+.cpd-step{display:flex;flex-direction:column;align-items:center;gap:6px;padding:0 14px;flex-shrink:0}
+.cpd-step-n{width:44px;height:44px;border-radius:50%;background:var(--red);color:#FFF;font-size:1.1rem;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(250,15,0,.3)}
+.cpd-step-l{font-size:.76rem;font-weight:700;color:var(--ink-2);text-align:center;max-width:80px;line-height:1.3}
+.cpd-connector{flex:1;height:3px;background:linear-gradient(90deg,var(--red),rgba(250,15,0,.25));min-width:24px}
+/* DCAIS Monitor */
+.dcais-monitor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:20px}
+.dcais-monitor-card{background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all .22s}
+.dcais-monitor-card:hover{border-color:var(--red);box-shadow:0 6px 20px rgba(250,15,0,.1);transform:translateY(-2px)}
+.dcais-mc-img{width:100%;height:90px;object-fit:cover}
+.dcais-mc-body{padding:14px}
+.dcais-mc-grade{display:inline-block;background:var(--red-bg);color:var(--red);font-size:.66rem;font-weight:800;padding:2px 8px;border-radius:999px;border:1px solid var(--red-border);text-transform:uppercase;margin-bottom:6px}
+.dcais-mc-title{font-size:.92rem;font-weight:800;color:var(--ink);margin-bottom:4px;line-height:1.3}
+.dcais-mc-desc{font-size:.76rem;color:var(--ink-2);line-height:1.5;margin-bottom:12px}
+.dcais-mc-footer{display:flex;align-items:center;justify-content:space-between}
+.dcais-mc-stat{font-size:.72rem;color:var(--ink-3);font-weight:600}
+.dcais-mc-btn{font-size:.72rem;font-weight:800;color:var(--red);background:var(--red-bg);border:1px solid var(--red-border);padding:4px 10px;border-radius:999px;text-decoration:none;transition:all .16s}
+.dcais-mc-btn:hover{background:var(--red);color:#FFF}
+/* FOOTER */
+footer{background:var(--ink);padding:24px;text-align:center;color:rgba(255,255,255,.38);font-size:.82rem}
 footer p+p{margin-top:5px}
-
-/* ===== RESPONSIVE ===== */
 @media(max-width:760px){
-  .hdr{padding:0 18px}
-  .hero{padding:40px 18px 36px}
-  .main{padding:24px 16px 60px}
+  .hdr{padding:0 16px}
+  .hero{padding:20px 16px 16px}
+  .main{padding:20px 14px 60px}
   .tiles-grid{grid-template-columns:1fr}
   .flow{flex-direction:column;align-items:flex-start}
   .flow-arr{display:none}
-  .sec-hero-card{flex-direction:column;align-items:flex-start;padding:20px}
-  .sec-content-box{padding:20px 16px}
-  .mcard-row{flex-direction:column}
-  .mcard-actions{flex-direction:column}
+  .sec-hero-card{flex-direction:column;align-items:flex-start;padding:18px}
+  .sec-content-box{padding:18px 14px}
   .ai{flex-direction:column;align-items:flex-start}
   .ai-r{align-self:flex-end}
+  .cpd-steps{flex-direction:column;align-items:flex-start}
+  .cpd-connector{width:3px;height:20px;background:var(--red);min-width:unset;margin:0 0 0 21px}
 }
 </style>
 </head>
@@ -392,204 +190,205 @@ footer p+p{margin-top:5px}
       <div class="brand-mark">Ae</div>
       <div class="brand-text">
         <div class="brand-name">Adobe Express for Education</div>
-        <div class="brand-sub">Educator Workspace</div>
+        <div class="brand-sub" id="hdrSubLabel">Educator Workspace</div>
       </div>
     </div>
-    <div class="hdr-badge">Educator Portal</div>
+    <div class="hdr-right">
+      <div class="lang-toggle" onclick="toggleLang()" title="Switch Language">
+        <div class="lang-btn active" id="langBtnEN">EN</div>
+        <div class="lang-btn" id="langBtnHI">हिं</div>
+      </div>
+      <div class="hdr-badge" id="hdrBadge">Educator Portal</div>
+    </div>
   </div>
 </header>
 
-<!-- HERO (Visible on Dashboard) -->
+<!-- HERO - SMALLER -->
 <section class="hero" id="mainHero">
   <div class="hero-in">
     <div class="hero-tag">
       <span class="hero-tag-dot"></span>
-      Educator &amp; Curriculum Hub
+      <span id="heroTagText">Educator &amp; Curriculum Hub</span>
     </div>
-    <h1>Educator Hub &amp; Curriculum Portal</h1>
-    <p class="hero-sub">Credential administration, CPD professional development (Modules 1&#8211;5), classroom resources, and DCAIS innovation manuals &mdash; click any section below to enter its full-screen workspace.</p>
+    <h1 id="heroTitle">Educator Hub &amp; Curriculum Portal</h1>
+    <p class="hero-sub" id="heroSub">Manage school access, CPD training, student DCAIS monitoring, classroom resources, and certification — all in one place.</p>
     <div class="flow">
-      <div class="flow-step"><span class="flow-n">1</span>School Access</div>
-      <span class="flow-arr">&#8594;</span>
-      <div class="flow-step"><span class="flow-n">2</span>CPD Training</div>
-      <span class="flow-arr">&#8594;</span>
-      <div class="flow-step"><span class="flow-n">3</span>Curriculum Units</div>
-      <span class="flow-arr">&#8594;</span>
-      <div class="flow-step"><span class="flow-n">4</span>Certification</div>
+      <div class="flow-step"><span class="flow-n">1</span><span id="flow1">School Access</span></div>
+      <span class="flow-arr">→</span>
+      <div class="flow-step"><span class="flow-n">2</span><span id="flow2">CPD Training</span></div>
+      <span class="flow-arr">→</span>
+      <div class="flow-step"><span class="flow-n">3</span><span id="flow3">DCAIS Monitor</span></div>
+      <span class="flow-arr">→</span>
+      <div class="flow-step"><span class="flow-n">4</span><span id="flow4">Certification</span></div>
     </div>
   </div>
 </section>
 
-<!-- MAIN APP AREA -->
 <main class="main">
 
-  <!-- ==============================================
-       VIEW 1: SECTIONS DASHBOARD TILES
-       ============================================== -->
+  <!-- VIEW 1: SECTIONS TILES -->
   <div id="dashboardView">
     <div class="guide">
-      <span class="guide-icon">&#128218;</span>
-      <p><strong>Click any section card below</strong> to open its complete workspace in full-screen view.</p>
+      <span class="guide-icon">📚</span>
+      <p id="guideText"><strong>Click any section card below</strong> to open its complete workspace in full-screen view.</p>
     </div>
 
     <div class="tiles-grid">
+
       <!-- Section A -->
       <div class="tile-card" onclick="openSection('A')">
-        <div>
-          <div class="tile-top">
-            <div class="tile-num">A</div>
-            <div class="tile-info">
-              <div class="tile-tag">Section A</div>
-              <h2 class="tile-title">Adobe ID &amp; Access</h2>
-              <p class="tile-desc">School login, institutional account creation, single sign-on &amp; IT admin deployment guide.</p>
-            </div>
-          </div>
+        <div class="tile-img-wrap">
+          <img class="tile-img" src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&h=200&fit=crop&q=80" alt="Adobe ID" crossorigin="anonymous">
+          <div class="tile-img-ov">🔑</div>
         </div>
-        <div class="tile-footer">
-          <span class="tile-hint">5 Institutional Tools</span>
-          <span class="tile-btn">Open Section &rarr;</span>
+        <div class="tile-body">
+          <div>
+            <div class="tile-tag" id="sA-tag">Section A</div>
+            <h2 class="tile-title" id="sA-title">Adobe ID &amp; Access</h2>
+            <p class="tile-desc" id="sA-desc">School login, institutional account creation, single sign-on &amp; IT admin deployment guide.</p>
+          </div>
+          <div class="tile-footer">
+            <span class="tile-hint" id="sA-hint">5 Institutional Tools</span>
+            <span class="tile-btn" id="sA-btn">Open &rarr;</span>
+          </div>
         </div>
       </div>
 
       <!-- Section B -->
       <div class="tile-card" onclick="openSection('B')">
-        <div>
-          <div class="tile-top">
-            <div class="tile-num">B</div>
-            <div class="tile-info">
-              <div class="tile-tag">Section B</div>
-              <h2 class="tile-title">CPD Modules</h2>
-              <p class="tile-desc">5 accredited professional development modules (CPD-AE 01 to 05) totaling 48 training hours.</p>
-            </div>
-          </div>
+        <div class="tile-img-wrap">
+          <img class="tile-img" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=200&fit=crop&q=80" alt="CPD" crossorigin="anonymous">
+          <div class="tile-img-ov">📚</div>
         </div>
-        <div class="tile-footer">
-          <span class="tile-hint">48 Hours Training</span>
-          <span class="tile-btn">Open Section &rarr;</span>
+        <div class="tile-body">
+          <div>
+            <div class="tile-tag" id="sB-tag">Section B</div>
+            <h2 class="tile-title" id="sB-title">CPD Modules</h2>
+            <p class="tile-desc" id="sB-desc">5 accredited professional development modules (CPD-AE 01 to 05) totaling 48 training hours.</p>
+          </div>
+          <div class="tile-footer">
+            <span class="tile-hint" id="sB-hint">48 Hours Training</span>
+            <span class="tile-btn" id="sB-btn">Open &rarr;</span>
+          </div>
         </div>
       </div>
 
-      <!-- Section C -->
+      <!-- Section C: DCAIS Student Monitor -->
       <div class="tile-card" onclick="openSection('C')">
-        <div>
-          <div class="tile-top">
-            <div class="tile-num">C</div>
-            <div class="tile-info">
-              <div class="tile-tag">Section C</div>
-              <h2 class="tile-title">DCAIS Curriculum</h2>
-              <p class="tile-desc">Digital Creativity &amp; Innovation Skills framework, pedagogical manuals, and student activity packs.</p>
-            </div>
-          </div>
+        <div class="tile-img-wrap">
+          <img class="tile-img" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=200&fit=crop&q=80" alt="DCAIS" crossorigin="anonymous">
+          <div class="tile-img-ov">🔭</div>
         </div>
-        <div class="tile-footer">
-          <span class="tile-hint">Grades 6&ndash;12 Standards</span>
-          <span class="tile-btn">Open Section &rarr;</span>
+        <div class="tile-body">
+          <div>
+            <div class="tile-tag" id="sC-tag">Section C &bull; DCAIS</div>
+            <h2 class="tile-title" id="sC-title">Student DCAIS Monitor</h2>
+            <p class="tile-desc" id="sC-desc">See exactly what DCAIS activities your students are doing grade-wise. Monitor progress and submissions.</p>
+          </div>
+          <div class="tile-footer">
+            <span class="tile-hint" id="sC-hint">Grades 6–10 Activity View</span>
+            <span class="tile-btn" id="sC-btn">Open &rarr;</span>
+          </div>
         </div>
       </div>
 
       <!-- Section D -->
       <div class="tile-card" onclick="openSection('D')">
-        <div>
-          <div class="tile-top">
-            <div class="tile-num">D</div>
-            <div class="tile-info">
-              <div class="tile-tag">Section D</div>
-              <h2 class="tile-title">Classroom Resources</h2>
-              <p class="tile-desc">Lesson plan templates, classroom printables, grading rubrics, tutorial videos, and project kits.</p>
-            </div>
-          </div>
+        <div class="tile-img-wrap">
+          <img class="tile-img" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=600&h=200&fit=crop&q=80" alt="Classroom" crossorigin="anonymous">
+          <div class="tile-img-ov">📝</div>
         </div>
-        <div class="tile-footer">
-          <span class="tile-hint">6 Ready-to-Use Kits</span>
-          <span class="tile-btn">Open Section &rarr;</span>
+        <div class="tile-body">
+          <div>
+            <div class="tile-tag" id="sD-tag">Section D</div>
+            <h2 class="tile-title" id="sD-title">Classroom Resources</h2>
+            <p class="tile-desc" id="sD-desc">Lesson plan templates, classroom printables, grading rubrics, tutorial videos, and project kits.</p>
+          </div>
+          <div class="tile-footer">
+            <span class="tile-hint" id="sD-hint">6 Resource Packs</span>
+            <span class="tile-btn" id="sD-btn">Open &rarr;</span>
+          </div>
         </div>
       </div>
 
       <!-- Section E -->
       <div class="tile-card" onclick="openSection('E')">
-        <div>
-          <div class="tile-top">
-            <div class="tile-num">E</div>
-            <div class="tile-info">
-              <div class="tile-tag">Section E</div>
-              <h2 class="tile-title">Student Progress</h2>
-              <p class="tile-desc">Track activity completion rates, monthly submissions, and portfolio reviews by grade bands.</p>
-            </div>
-          </div>
+        <div class="tile-img-wrap">
+          <img class="tile-img" src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=600&h=200&fit=crop&q=80" alt="Progress" crossorigin="anonymous">
+          <div class="tile-img-ov">📊</div>
         </div>
-        <div class="tile-footer">
-          <span class="tile-hint">Activity Tracking</span>
-          <span class="tile-btn">Open Section &rarr;</span>
+        <div class="tile-body">
+          <div>
+            <div class="tile-tag" id="sE-tag">Section E</div>
+            <h2 class="tile-title" id="sE-title">Student Progress Tracker</h2>
+            <p class="tile-desc" id="sE-desc">Monitor monthly activity completion rates, review submissions across grade bands, and evaluate portfolios.</p>
+          </div>
+          <div class="tile-footer">
+            <span class="tile-hint" id="sE-hint">Grade-wise Analytics</span>
+            <span class="tile-btn" id="sE-btn">Open &rarr;</span>
+          </div>
         </div>
       </div>
 
       <!-- Section F -->
       <div class="tile-card" onclick="openSection('F')">
-        <div>
-          <div class="tile-top">
-            <div class="tile-num">F</div>
-            <div class="tile-info">
-              <div class="tile-tag">Section F</div>
-              <h2 class="tile-title">Community &amp; Support</h2>
-              <p class="tile-desc">Monthly live educator webinars, nationwide community forum, and technical helpdesk.</p>
-            </div>
-          </div>
+        <div class="tile-img-wrap">
+          <img class="tile-img" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=200&fit=crop&q=80" alt="Community" crossorigin="anonymous">
+          <div class="tile-img-ov">🤝</div>
         </div>
-        <div class="tile-footer">
-          <span class="tile-hint">500+ Certified Peers</span>
-          <span class="tile-btn">Open Section &rarr;</span>
+        <div class="tile-body">
+          <div>
+            <div class="tile-tag" id="sF-tag">Section F</div>
+            <h2 class="tile-title" id="sF-title">Community &amp; Support</h2>
+            <p class="tile-desc" id="sF-desc">Connect with educators, attend live webinars, join the national forum, and get technical help.</p>
+          </div>
+          <div class="tile-footer">
+            <span class="tile-hint" id="sF-hint">500+ Educators Network</span>
+            <span class="tile-btn" id="sF-btn">Open &rarr;</span>
+          </div>
         </div>
       </div>
 
       <!-- Section G -->
       <div class="tile-card" onclick="openSection('G')">
-        <div>
-          <div class="tile-top">
-            <div class="tile-num">G</div>
-            <div class="tile-info">
-              <div class="tile-tag">Section G</div>
-              <h2 class="tile-title">Certification Path</h2>
-              <p class="tile-desc">Your journey to becoming a certified Adobe Educator, claiming digital badges, and tracking credits.</p>
-            </div>
+        <div class="tile-img-wrap">
+          <img class="tile-img" src="https://images.unsplash.com/photo-1567168539-48e3d0f52698?w=600&h=200&fit=crop&q=80" alt="Certification" crossorigin="anonymous">
+          <div class="tile-img-ov">🏆</div>
+        </div>
+        <div class="tile-body">
+          <div>
+            <div class="tile-tag" id="sG-tag">Section G</div>
+            <h2 class="tile-title" id="sG-title">Certification Path</h2>
+            <p class="tile-desc" id="sG-desc">Earn your Adobe Certified Educator credential. Track CPD hours and claim your digital badge.</p>
+          </div>
+          <div class="tile-footer">
+            <span class="tile-hint" id="sG-hint">4 Certification Levels</span>
+            <span class="tile-btn" id="sG-btn">Open &rarr;</span>
           </div>
         </div>
-        <div class="tile-footer">
-          <span class="tile-hint">4 Milestone Badges</span>
-          <span class="tile-btn">Open Section &rarr;</span>
-        </div>
       </div>
+
     </div>
   </div>
 
-
-  <!-- ==============================================
-       VIEW 2: FULL-SCREEN SECTION DETAIL VIEW
-       ============================================== -->
+  <!-- VIEW 2: FULL SECTION VIEW -->
   <div id="sectionView" class="section-full-view">
-    <!-- Top Bar -->
     <div class="sec-nav-bar">
-      <button class="back-btn" onclick="showDashboard()">&#8592; Back to All Sections</button>
-      <div class="sec-breadcrumb">Educator Hub / <strong id="crumbName">Section Detail</strong></div>
+      <button class="back-btn" onclick="showDashboard()">&larr; <span id="backBtnLabel">Back to Sections</span></button>
+      <div class="sec-breadcrumb">Home / <strong id="crumbName">Section</strong></div>
     </div>
-
-    <!-- Section Banner -->
     <div class="sec-hero-card">
       <div class="sec-hero-badge" id="secBadge">A</div>
       <div class="sec-hero-body">
-        <div class="sec-hero-tag" id="secTag">SECTION A</div>
-        <h1 class="sec-hero-title" id="secTitle">Section Title</h1>
-        <p class="sec-hero-desc" id="secDesc">Detailed section description.</p>
+        <div class="sec-hero-tag" id="secTag">Section</div>
+        <div class="sec-hero-title" id="secTitle">Title</div>
+        <div class="sec-hero-desc" id="secDesc">Description</div>
       </div>
     </div>
-
-    <!-- Section Full Content -->
-    <div class="sec-content-box" id="secContent">
-      <!-- Dynamic content rendered here -->
+    <div class="sec-content-box">
+      <div id="secContent"></div>
     </div>
-
-    <!-- Bottom Navigation -->
     <div class="sec-bottom-bar">
-      <button class="back-btn" onclick="showDashboard()">&#8592; Back to All Sections</button>
       <div id="secNextPrev"></div>
     </div>
   </div>
@@ -597,162 +396,237 @@ footer p+p{margin-top:5px}
 </main>
 
 <footer>
-  <p>&#169; Adobe Express for Education &mdash; Certified Digital Skills Programme for Schools &amp; Educators</p>
-  <p>This is the Educator Portal. Student resources are on a separate, dedicated portal.</p>
+  <p>Adobe Express for Education &mdash; Educator &amp; Curriculum Hub</p>
+  <p>&copy; Adobe Inc. All rights reserved.</p>
 </footer>
 
 <script>
-/* ===== CPD MODULES DATA ===== */
-var CPD_MODULES = [
-  {code:"CPD-AE-01",hrs:"8 hours",title:"Digital Creativity Foundations",obj:"Introduce educators to Adobe Express, basic design principles, and digital creativity integration into classroom teaching.",content:"Adobe Express interface, design basics (colour, typography, layout), creating templates, aligning with national curriculum.",assign:"Create a syllabus cover, class schedule graphic, and one subject-specific educational poster using Adobe Express."},
-  {code:"CPD-AE-02",hrs:"10 hours",title:"Visual Communication & Design",obj:"Develop educators' ability to use visual communication to enhance student engagement and comprehension across subjects.",content:"Advanced typography, colour psychology, infographic design, presentation design, and educational visual material creation.",assign:"Design a complete unit visual kit: title card, 3 infographics, summary poster, and a student-facing instruction sheet."},
-  {code:"CPD-AE-03",hrs:"10 hours",title:"Collaborative Digital Projects",obj:"Enable educators to design and facilitate collaborative creative projects that build teamwork and digital literacy skills.",content:"Project-based learning frameworks, collaborative workflows, feedback and iteration cycles, cross-curricular integration strategies.",assign:"Design a 4-week project-based learning unit with Adobe Express, including collaboration milestones and assessment criteria."},
-  {code:"CPD-AE-04",hrs:"10 hours",title:"Advanced Creative Pedagogy",obj:"Empower educators with advanced techniques for teaching creativity, design thinking, and digital storytelling to diverse learners.",content:"Differentiated instruction through design, video and animation tools, social media literacy, student portfolio curation methods.",assign:"Create a differentiated creative project plan with modified activities for 3 learner levels, with rubrics and exemplar work."},
-  {code:"CPD-AE-05",hrs:"10 hours",title:"Assessment & Certification",obj:"Equip educators to assess creative work meaningfully, run peer-review sessions, and prepare students for digital certification.",content:"Assessment rubric design, portfolio evaluation frameworks, peer-to-peer critique methods, student certification preparation.",assign:"Develop a complete assessment portfolio: 3 rubrics, a peer-review protocol, and a student portfolio evaluation guide."}
-];
+/* ===== LANGUAGE SYSTEM ===== */
+var currentLang = 'en';
+var LANG = {
+  en: {
+    hdrSub:'Educator Workspace', hdrBadge:'Educator Portal',
+    heroTag:'Educator &amp; Curriculum Hub', heroTitle:'Educator Hub &amp; Curriculum Portal',
+    heroSub:'Manage school access, CPD training, student DCAIS monitoring, classroom resources, and certification \u2014 all in one place.',
+    flow1:'School Access', flow2:'CPD Training', flow3:'DCAIS Monitor', flow4:'Certification',
+    guideText:'<strong>Click any section card below</strong> to open its complete workspace in full-screen view.',
+    backBtn:'Back to Sections',
+    sAtag:'Section A', sAtitle:'Adobe ID &amp; Access', sAdesc:'School login, institutional account creation, single sign-on &amp; IT admin deployment guide.', sAhint:'5 Institutional Tools', sAbtn:'Open &rarr;',
+    sBtag:'Section B', sBtitle:'CPD Modules', sBdesc:'5 accredited professional development modules (CPD-AE 01 to 05) totaling 48 training hours.', sBhint:'48 Hours Training', sBbtn:'Open &rarr;',
+    sCtag:'Section C \u2022 DCAIS', sCtitle:'Student DCAIS Monitor', sCdesc:'See exactly what DCAIS activities your students are doing grade-wise. Monitor progress and submissions.', sChint:'Grades 6\u201310 Activity View', sCbtn:'Open &rarr;',
+    sDtag:'Section D', sDtitle:'Classroom Resources', sDdesc:'Lesson plan templates, classroom printables, grading rubrics, tutorial videos, and project kits.', sDhint:'6 Resource Packs', sDbtn:'Open &rarr;',
+    sEtag:'Section E', sEtitle:'Student Progress Tracker', sEdesc:'Monitor monthly activity completion rates, review submissions across grade bands, and evaluate portfolios.', sEhint:'Grade-wise Analytics', sEbtn:'Open &rarr;',
+    sFtag:'Section F', sFtitle:'Community &amp; Support', sFdesc:'Connect with educators, attend live webinars, join the national forum, and get technical help.', sFhint:'500+ Educators Network', sFbtn:'Open &rarr;',
+    sGtag:'Section G', sGtitle:'Certification Path', sGdesc:'Earn your Adobe Certified Educator credential. Track CPD hours and claim your digital badge.', sGhint:'4 Certification Levels', sGbtn:'Open &rarr;'
+  },
+  hi: {
+    hdrSub:'\u0936\u093f\u0915\u094d\u0937\u0915 \u0915\u093e\u0930\u094d\u092f\u0915\u094d\u0937\u0947\u0924\u094d\u0930', hdrBadge:'\u0936\u093f\u0915\u094d\u0937\u0915 \u092a\u094b\u0930\u094d\u091f\u0932',
+    heroTag:'\u0936\u093f\u0915\u094d\u0937\u0915 \u092a\u0948\u0928\u0932', heroTitle:'\u0936\u093f\u0915\u094d\u0937\u0915 \u0939\u092c \u0914\u0930 \u092a\u093e\u0920\u094d\u092f\u0915\u094d\u0930\u092e \u0935\u093f\u092d\u093e\u0917',
+    heroSub:'\u0938\u094d\u0915\u0942\u0932 \u090f\u0915\u094d\u0938\u0947\u0938, CPD \u092a\u094d\u0930\u0936\u093f\u0915\u094d\u0937\u0923, DCAIS \u092e\u0949\u0928\u093f\u091f\u0930\u093f\u0902\u0917, \u0915\u0915\u094d\u0937\u093e \u0938\u0902\u0938\u093e\u0927\u0928 \u0914\u0930 \u092a\u094d\u0930\u092e\u093e\u0923\u0940\u0915\u0930\u0923 \u0938\u092c \u090f\u0915 \u091c\u0917\u0939 \u092a\u0930\u0964',
+    flow1:'\u0938\u094d\u0915\u0942\u0932 \u090f\u0915\u094d\u0938\u0947\u0938', flow2:'CPD \u092a\u094d\u0930\u0936\u093f\u0915\u094d\u0937\u0923', flow3:'DCAIS \u092e\u0949\u0928\u093f\u091f\u0930', flow4:'\u092a\u094d\u0930\u092e\u093e\u0923\u0940\u0915\u0930\u0923',
+    guideText:'<strong>\u0928\u0940\u091a\u0947 \u0915\u093f\u0938\u0940 \u092d\u0940 \u0938\u0947\u0915\u094d\u0936\u0928 \u0915\u093e\u0930\u094d\u0921 \u092a\u0930 \u0915\u094d\u0932\u093f\u0915 \u0915\u0930\u0947\u0902</strong> \u0914\u0930 \u0909\u0938\u0947 \u092a\u0942\u0930\u0940 \u0938\u094d\u0915\u094d\u0930\u0940\u0928 \u092a\u0930 \u0916\u094b\u0932\u0947\u0902\u0964',
+    backBtn:'\u0935\u093e\u092a\u0938 \u091c\u093e\u090f\u0902',
+    sAtag:'\u0938\u0947\u0915\u094d\u0936\u0928 A', sAtitle:'Adobe ID \u0914\u0930 \u090f\u0915\u094d\u0938\u0947\u0938', sAdesc:'\u0938\u094d\u0915\u0942\u0932 \u0932\u0949\u0917\u093f\u0928, \u0938\u0902\u0938\u094d\u0925\u093e\u0917\u0924 \u0916\u093e\u0924\u093e \u0928\u093f\u0930\u094d\u092e\u093e\u0923, SSO \u0914\u0930 IT \u0924\u0948\u0928\u093e\u0924\u0940 \u0917\u093e\u0907\u0921\u0964', sAhint:'5 \u0938\u0902\u0938\u094d\u0925\u093e\u0917\u0924 \u091f\u0942\u0932\u094d\u0938', sAbtn:'\u0916\u094b\u0932\u0947\u0902 &rarr;',
+    sBtag:'\u0938\u0947\u0915\u094d\u0936\u0928 B', sBtitle:'CPD \u092e\u0949\u0921\u094d\u092f\u0942\u0932', sBdesc:'5 \u092e\u093e\u0928\u094d\u092f\u0924\u093e \u092a\u094d\u0930\u093e\u092a\u094d\u0924 \u092a\u094d\u0930\u0936\u093f\u0915\u094d\u0937\u0923 \u092e\u0949\u0921\u094d\u092f\u0942\u0932 \u2014 CPD-AE 01 \u0938\u0947 05 \u2014 \u0915\u0941\u0932 48 \u0918\u0902\u091f\u0947\u0964', sBhint:'48 \u0918\u0902\u091f\u0947 \u092a\u094d\u0930\u0936\u093f\u0915\u094d\u0937\u0923', sBbtn:'\u0916\u094b\u0932\u0947\u0902 &rarr;',
+    sCtag:'\u0938\u0947\u0915\u094d\u0936\u0928 C \u2022 DCAIS', sCtitle:'\u091b\u093e\u0924\u094d\u0930 DCAIS \u092e\u0949\u0928\u093f\u091f\u0930', sCdesc:'\u0926\u0947\u0916\u0947\u0902 \u0906\u092a\u0915\u0947 \u091b\u093e\u0924\u094d\u0930 \u0915\u094c\u0928 \u0938\u0940 DCAIS \u090f\u0915\u094d\u091f\u093f\u0935\u093f\u091f\u0940 \u0915\u0930 \u0930\u0939\u0947 \u0939\u0948\u0902\u0964', sChint:'\u0915\u0915\u094d\u0937\u093e 6-10 \u0917\u0924\u093f\u0935\u093f\u0927\u093f \u0926\u0943\u0936\u094d\u092f', sCbtn:'\u0916\u094b\u0932\u0947\u0902 &rarr;',
+    sDtag:'\u0938\u0947\u0915\u094d\u0936\u0928 D', sDtitle:'\u0915\u0915\u094d\u0937\u093e \u0938\u0902\u0938\u093e\u0927\u0928', sDdesc:'\u092a\u093e\u0920 \u092f\u094b\u091c\u0928\u093e \u0915\u094d\u0924\u0940', sDhint:'6 \u0938\u0902\u0938\u093e\u0927\u0928 \u092a\u0948\u0915', sDbtn:'\u0916\u094b\u0932\u0947\u0902 &rarr;',
+    sEtag:'\u0938\u0947\u0915\u094d\u0936\u0928 E', sEtitle:'\u091b\u093e\u0924\u094d\u0930 \u092a\u094d\u0930\u0917\u0924\u093f \u091f\u094d\u0930\u0948\u0915\u0930', sEdesc:'\u092e\u093e\u0938\u093f\u0915 \u0917\u0924\u093f\u0935\u093f\u0927\u093f \u0938\u092e\u093e\u092a\u094d\u0924\u093f \u0926\u0930 \u0926\u0947\u0916\u0947\u0902 \u0914\u0930 \u091b\u093e\u0924\u094d\u0930 \u092a\u094b\u0930\u094d\u091f\u092b\u094b\u0932\u093f\u092f\u094b \u0915\u093e \u092e\u0942\u0932\u094d\u092f\u093e\u0902\u0915\u0928 \u0915\u0930\u0947\u0902\u0964', sEhint:'\u0915\u0915\u094d\u0937\u093e\u0935\u093e\u0930 \u0935\u093f\u0936\u094d\u0932\u0947\u0937\u0923', sEbtn:'\u0916\u094b\u0932\u0947\u0902 &rarr;',
+    sFtag:'\u0938\u0947\u0915\u094d\u0936\u0928 F', sFtitle:'\u0938\u092e\u0941\u0926\u093e\u092f \u0914\u0930 \u0938\u0939\u093e\u092f\u0924\u093e', sFdesc:'\u0936\u093f\u0915\u094d\u0937\u0915\u094b\u0902 \u0938\u0947 \u091c\u0941\u095c\u0947\u0902, \u0932\u093e\u0907\u0935 \u0935\u0947\u092c\u093f\u0928\u093e\u0930 \u092e\u0947\u0902 \u092d\u093e\u0917 \u0932\u0947\u0902 \u0914\u0930 \u0924\u0915\u0928\u0940\u0915\u0940 \u0938\u0939\u093e\u092f\u0924\u093e \u092a\u093e\u090f\u0902\u0964', sFhint:'500+ \u0936\u093f\u0915\u094d\u0937\u0915 \u0928\u0947\u091f\u0935\u0930\u094d\u0915', sFbtn:'\u0916\u094b\u0932\u0947\u0902 &rarr;',
+    sGtag:'\u0938\u0947\u0915\u094d\u0936\u0928 G', sGtitle:'\u092a\u094d\u0930\u092e\u093e\u0923\u0940\u0915\u0930\u0923 \u092a\u0925', sGdesc:'Adobe \u0938\u0930\u094d\u091f\u093f\u092b\u093c\u093e\u0908\u0921 \u0936\u093f\u0915\u094d\u0937\u0915 \u092c\u0928\u0947\u0902\u0964 CPD \u0918\u0902\u091f\u0947 \u091f\u094d\u0930\u0948\u0915 \u0915\u0930\u0947\u0902 \u0914\u0930 \u0921\u093f\u091c\u093f\u091f\u0932 \u092c\u0948\u091c \u0915\u094d\u0932\u0947\u092e \u0915\u0930\u0947\u0902\u0964', sGhint:'4 \u0938\u094d\u0924\u0930\u0940\u092f \u092a\u094d\u0930\u092e\u093e\u0923\u0940\u0915\u0930\u0923', sGbtn:'\u0916\u094b\u0932\u0947\u0902 &rarr;'
+  }
+};
 
-var curCpd = 0;
-
-function renderCpdSectionHtml() {
-  var pillsHtml = CPD_MODULES.map(function(m, i) {
-    return '<button class="mp' + (i === curCpd ? ' active' : '') + '" onclick="selectCpdTab(' + i + ')">' + m.code + ' (' + m.hrs + ')</button>';
-  }).join('');
-
-  var m = CPD_MODULES[curCpd];
-  var cardHtml = '<div class="mcard">' +
-    '<div class="mcard-row">' +
-      '<span class="mcard-theme">' + m.code + ' &bull; ACCREDITED TRAINING</span>' +
-      '<span class="mcard-dur">Estimated Duration: ' + m.hrs + '</span>' +
-    '</div>' +
-    '<h3>' + m.title + '</h3>' +
-    '<div class="cpd-detail-grid">' +
-      '<div class="cpd-box"><div class="cpd-box-lbl">Pedagogical Objective</div><div class="cpd-box-txt">' + m.obj + '</div></div>' +
-      '<div class="cpd-box"><div class="cpd-box-lbl">Curriculum Content</div><div class="cpd-box-txt">' + m.content + '</div></div>' +
-      '<div class="cpd-box"><div class="cpd-box-lbl">Assignment &amp; Deliverables</div><div class="cpd-box-txt">' + m.assign + '</div></div>' +
-    '</div>' +
-    '<div class="mcard-actions">' +
-      '<a href="https://express.adobe.com/learn" target="_blank" class="btn btn-primary">Open Course Material &#8599;</a>' +
-      '<a href="https://express.adobe.com" target="_blank" class="btn btn-dark">Design in Adobe Express &#8599;</a>' +
-      '<a href="https://express.adobe.com" target="_blank" class="btn btn-outline">Submit Module Portfolio &#8599;</a>' +
-    '</div>' +
-  '</div>';
-
-  return '<p style="font-size:.88rem;color:var(--ink-2);margin-bottom:14px;">Select any CPD module tab below to view its complete objectives, curriculum content, and submission links:</p>' +
-    '<div class="module-pills">' + pillsHtml + '</div>' +
-    '<div id="activeCpdBox">' + cardHtml + '</div>';
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'hi' : 'en';
+  document.getElementById('langBtnEN').classList.toggle('active', currentLang === 'en');
+  document.getElementById('langBtnHI').classList.toggle('active', currentLang === 'hi');
+  applyLang();
 }
 
-function selectCpdTab(i) {
-  curCpd = i;
-  document.getElementById('secContent').innerHTML = renderCpdSectionHtml();
+function applyLang() {
+  var L = LANG[currentLang];
+  var set = function(id, val) { var e = document.getElementById(id); if(e) e.innerHTML = val; };
+  set('hdrSubLabel',L.hdrSub); set('hdrBadge',L.hdrBadge);
+  set('heroTagText',L.heroTag); set('heroTitle',L.heroTitle); set('heroSub',L.heroSub);
+  set('flow1',L.flow1); set('flow2',L.flow2); set('flow3',L.flow3); set('flow4',L.flow4);
+  set('guideText',L.guideText); set('backBtnLabel',L.backBtn);
+  set('sA-tag',L.sAtag); set('sA-title',L.sAtitle); set('sA-desc',L.sAdesc); set('sA-hint',L.sAhint); set('sA-btn',L.sAbtn);
+  set('sB-tag',L.sBtag); set('sB-title',L.sBtitle); set('sB-desc',L.sBdesc); set('sB-hint',L.sBhint); set('sB-btn',L.sBbtn);
+  set('sC-tag',L.sCtag); set('sC-title',L.sCtitle); set('sC-desc',L.sCdesc); set('sC-hint',L.sChint); set('sC-btn',L.sCbtn);
+  set('sD-tag',L.sDtag); set('sD-title',L.sDtitle); set('sD-desc',L.sDdesc); set('sD-hint',L.sDhint); set('sD-btn',L.sDbtn);
+  set('sE-tag',L.sEtag); set('sE-title',L.sEtitle); set('sE-desc',L.sEdesc); set('sE-hint',L.sEhint); set('sE-btn',L.sEbtn);
+  set('sF-tag',L.sFtag); set('sF-title',L.sFtitle); set('sF-desc',L.sFdesc); set('sF-hint',L.sFhint); set('sF-btn',L.sFbtn);
+  set('sG-tag',L.sGtag); set('sG-title',L.sGtitle); set('sG-desc',L.sGdesc); set('sG-hint',L.sGhint); set('sG-btn',L.sGbtn);
+}
+
+/* ===== CPD DATA ===== */
+var CPD_MODULES = [
+  {code:'CPD-AE-01',title:'Digital Creativity Foundations',duration:'10 hrs',level:'Foundation',desc:'Introduction to Adobe Express, digital design principles, and foundational visual literacy for classroom application.',outcomes:['Basic design workflow','Colour & Typography fundamentals','Creating your first classroom project']},
+  {code:'CPD-AE-02',title:'Visual Communication & Design',duration:'10 hrs',level:'Foundation',desc:'Deep dive into layout design, visual hierarchy, infographics, and presenting complex ideas through visual storytelling.',outcomes:['Layout hierarchy mastery','Infographic creation','Visual storytelling rubric']},
+  {code:'CPD-AE-03',title:'Collaborative Digital Projects',duration:'10 hrs',level:'Intermediate',desc:'Design cross-curricular, collaborative group projects for students. Manage team workflows in Adobe Express.',outcomes:['Group project frameworks','Assessment rubrics','Cross-curricular integration']},
+  {code:'CPD-AE-04',title:'Video & Animation for Education',duration:'8 hrs',level:'Intermediate',desc:'Produce educational video content, animated explainers, and multimedia classroom materials using Adobe Express video tools.',outcomes:['Educational video production','Animation principles','Classroom multimedia creation']},
+  {code:'CPD-AE-05',title:'Advanced Pedagogy & Certification Prep',duration:'10 hrs',level:'Mastery',desc:'Develop comprehensive DCAIS curriculum units, prepare your certification portfolio, and train fellow educators.',outcomes:['Full curriculum design','Peer training methodology','Adobe Educator portfolio preparation']}
+];
+
+function renderCpdSectionHtml() {
+  var stepsHtml = CPD_MODULES.map(function(m, i) {
+    return (i > 0 ? '<div class="cpd-connector"></div>' : '') +
+      '<div class="cpd-step"><div class="cpd-step-n">' + (i+1) + '</div><div class="cpd-step-l">' + m.level + '</div></div>';
+  }).join('');
+  var cardsHtml = CPD_MODULES.map(function(m) {
+    return '<div class="rc">' +
+      '<div><div class="rc-badge">' + m.code + ' &bull; ' + m.duration + '</div><h4>' + m.title + '</h4><p>' + m.desc + '</p>' +
+      '<ul style="font-size:.78rem;color:var(--ink-2);padding-left:18px;margin-bottom:14px;">' +
+      m.outcomes.map(function(o){return '<li style="margin-bottom:3px;">' + o + '</li>';}).join('') +
+      '</ul></div>' +
+      '<a href="https://express.adobe.com/learn" target="_blank" class="btn btn-primary">Start Module &#8599;</a>' +
+    '</div>';
+  }).join('');
+  return '<div class="cpd-steps">' + stepsHtml + '</div><div class="rg">' + cardsHtml + '</div>';
+}
+
+/* ===== DCAIS STUDENT MONITOR DATA ===== */
+var DCAIS_STUDENT_ACTIVITIES = {
+  6: [
+    {title:'My Dream Poster', badge:'Class 6 \u2022 Design', desc:'Students design a poster about their dream job or place using colour and big text.', img:'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=180&fit=crop&q=80', submissions:'23/35'},
+    {title:'School Event Flyer', badge:'Class 6 \u2022 Flyer', desc:'Students make a flyer for a real or imaginary school event with time, place, and design.', img:'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=180&fit=crop&q=80', submissions:'18/35'},
+    {title:'Festival Greeting Card', badge:'Class 6 \u2022 Card', desc:'Students create a festival greeting card with a special message for family.', img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=180&fit=crop&q=80', submissions:'28/35'}
+  ],
+  7: [
+    {title:'Awareness Social Post', badge:'Class 7 \u2022 Social', desc:'Students create an Instagram-style awareness post on saving water or other social topics.', img:'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=180&fit=crop&q=80', submissions:'20/32'},
+    {title:'My Story Comic Strip', badge:'Class 7 \u2022 Story', desc:'Students tell a 4-panel comic story about an adventure with speech bubbles.', img:'https://images.unsplash.com/photo-1574717024453-354056afd6fc?w=400&h=180&fit=crop&q=80', submissions:'15/32'},
+    {title:'1-Minute Talent Video', badge:'Class 7 \u2022 Video', desc:'Students record a short video showing their talent \u2014 singing, science trick, or skill.', img:'https://images.unsplash.com/photo-1581726690015-c9861fa5057f?w=400&h=180&fit=crop&q=80', submissions:'12/32'}
+  ],
+  8: [
+    {title:'Personal Brand Logo', badge:'Class 8 \u2022 Brand', desc:'Students design their own personal logo using colours that match their personality.', img:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=180&fit=crop&q=80', submissions:'19/30'},
+    {title:'Social Good Campaign', badge:'Class 8 \u2022 Campaign', desc:'Students create a 3-post social media campaign about a local problem they want to solve.', img:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=180&fit=crop&q=80', submissions:'14/30'},
+    {title:'Travel Brochure', badge:'Class 8 \u2022 Brochure', desc:'Students make a travel brochure for their city or a cultural festival they love.', img:'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400&h=180&fit=crop&q=80', submissions:'22/30'}
+  ],
+  9: [
+    {title:'Short Documentary', badge:'Class 9 \u2022 Film', desc:'Students produce a 2-minute documentary about something important to them.', img:'https://images.unsplash.com/photo-1574717024453-354056afd6fc?w=400&h=180&fit=crop&q=80', submissions:'11/28'},
+    {title:'Infographic Poster', badge:'Class 9 \u2022 Info', desc:'Students create an infographic explaining a science or history topic using charts and icons.', img:'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=180&fit=crop&q=80', submissions:'17/28'},
+    {title:'Digital Collage Art', badge:'Class 9 \u2022 Digital Art', desc:'Students create a digital collage mixing photos and textures to express an emotion.', img:'https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?w=400&h=180&fit=crop&q=80', submissions:'9/28'}
+  ],
+  10: [
+    {title:'Personal Digital Portfolio', badge:'Class 10 \u2022 Portfolio', desc:'Students build a complete portfolio showcasing their best 5 works from Grades 6\u20139.', img:'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=180&fit=crop&q=80', submissions:'8/25'},
+    {title:'Startup Pitch Deck', badge:'Class 10 \u2022 Pitch', desc:'Students design a 5-slide pitch deck for their own imaginary business idea.', img:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=180&fit=crop&q=80', submissions:'10/25'},
+    {title:'Full Social Campaign', badge:'Class 10 \u2022 Campaign', desc:'Students create a complete 5-post social campaign with consistent design for a cause.', img:'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=180&fit=crop&q=80', submissions:'7/25'}
+  ]
+};
+
+var currentMonitorGrade = 6;
+
+function renderDcaisMonitor() {
+  var activities = DCAIS_STUDENT_ACTIVITIES[currentMonitorGrade];
+  var tabsHtml = [6,7,8,9,10].map(function(g) {
+    return '<button class="dcais-tab' + (g === currentMonitorGrade ? ' active' : '') + '" onclick="setMonitorGrade(' + g + ')" style="' +
+      'padding:7px 18px;background:' + (g === currentMonitorGrade ? 'var(--red)' : 'var(--surface-2)') + ';' +
+      'border:1.5px solid ' + (g === currentMonitorGrade ? 'var(--red)' : 'var(--border)') + ';' +
+      'border-radius:999px;font-size:.8rem;font-weight:700;' +
+      'color:' + (g === currentMonitorGrade ? '#FFF' : 'var(--ink-2)') + ';' +
+      'cursor:pointer;transition:all .18s;">Class ' + g + '</button>';
+  }).join('');
+  var studentPortalBtn = '<div style="margin-bottom:20px;">' +
+    '<a href="https://kushagrakushwah.github.io/Adobe-Dashboard/student/#section-7" target="_blank" class="btn btn-dark">\ud83d\udd17 View Student DCAIS Portal \u2197</a>' +
+    '<span style="font-size:.78rem;color:var(--ink-3);margin-left:12px;">Opens what students see on their portal</span>' +
+  '</div>';
+  var infoBox = '<div style="background:var(--red-bg);border:1px solid var(--red-border);border-radius:var(--radius);padding:14px 18px;margin-bottom:20px;">' +
+    '<p style="font-size:.85rem;color:var(--ink-2);">\ud83d\udccc <strong>Teacher Note:</strong> The activities below mirror exactly what students see in their DCAIS section. The <em>Submit Work</em> button in the student portal is currently a placeholder \u2014 you can add submission links later. Student submission counts shown here are sample data.</p>' +
+  '</div>';
+  var cardsHtml = '<div class="dcais-monitor-grid">' +
+    activities.map(function(a) {
+      return '<div class="dcais-monitor-card">' +
+        '<img src="' + a.img + '" alt="" class="dcais-mc-img" crossorigin="anonymous">' +
+        '<div class="dcais-mc-body">' +
+          '<div class="dcais-mc-grade">' + a.badge + '</div>' +
+          '<div class="dcais-mc-title">' + a.title + '</div>' +
+          '<div class="dcais-mc-desc">' + a.desc + '</div>' +
+          '<div class="dcais-mc-footer">' +
+            '<span class="dcais-mc-stat">\ud83d\udcca ' + a.submissions + ' submitted</span>' +
+            '<a href="https://kushagrakushwah.github.io/Adobe-Dashboard/student/#section-7" target="_blank" class="dcais-mc-btn">View in Student Portal \u2197</a>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    }).join('') +
+  '</div>';
+  return studentPortalBtn + infoBox +
+    '<p style="font-size:.85rem;color:var(--ink-2);margin-bottom:12px;">Filter by class to see what activities students are working on:</p>' +
+    '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;">' + tabsHtml + '</div>' +
+    cardsHtml;
+}
+
+function setMonitorGrade(g) {
+  currentMonitorGrade = g;
+  document.getElementById('secContent').innerHTML = renderDcaisMonitor();
 }
 
 /* ===== SECTIONS DATA ===== */
 var TEACHER_SECTIONS_DATA = {
   'A': {
-    letter: 'A',
-    tag: 'Section A &bull; Institutional Access',
+    letter: '\ud83d\udd11',
+    tag: 'Section A \u2022 Institutional Access',
     title: 'Adobe ID &amp; Password Access Management',
     desc: 'Ensure seamless institutional access to Adobe Express for Education for your school or institution.',
     render: function() {
-      return '<div class="notice">' +
-        '<div class="notice-t">Institutional Login Required</div>' +
-        '<div class="notice-d">All teachers must use school-assigned Adobe IDs. Contact your IT administrator if you do not have institutional access credentials.</div>' +
-      '</div>' +
+      return '<div class="notice"><div class="notice-t">Institutional Login Required</div><div class="notice-d">All teachers must use school-assigned Adobe IDs. Contact your IT administrator if you do not have institutional access credentials.</div></div>' +
       '<div class="al">' +
-        '<div class="ai">' +
-          '<div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">School Admin Console</div><div class="ai-d">Manage institutional Adobe licenses, user permissions, and school-wide directory sync.</div></div></div>' +
-          '<div class="ai-r"><a href="https://adminconsole.adobe.com" target="_blank" class="btn btn-primary">Open Console &#8599;</a></div>' +
-        '</div>' +
-        '<div class="ai">' +
-          '<div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Create Adobe ID</div><div class="ai-d">Step-by-step account setup using your designated official school email address.</div></div></div>' +
-          '<div class="ai-r"><a href="https://account.adobe.com" target="_blank" class="btn btn-primary">Create Account &#8599;</a></div>' +
-        '</div>' +
-        '<div class="ai">' +
-          '<div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Password &amp; Security Settings</div><div class="ai-d">Reset credentials, manage two-factor authentication, and update emergency recovery options.</div></div></div>' +
-          '<div class="ai-r"><a href="https://account.adobe.com/security" target="_blank" class="btn btn-ghost">Manage Security &#8599;</a></div>' +
-        '</div>' +
-        '<div class="ai">' +
-          '<div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">IT Admin Deployment Guide</div><div class="ai-d">Enterprise deployment manual for school IT administrators to roll out Adobe Express across computer labs.</div></div></div>' +
-          '<div class="ai-r"><a href="https://helpx.adobe.com/enterprise" target="_blank" class="btn btn-ghost">View Guide &#8599;</a></div>' +
-        '</div>' +
-        '<div class="ai">' +
-          '<div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Single Sign-On (SSO) Integration</div><div class="ai-d">Connect your school\'s Google Workspace or Microsoft 365 identity provider for one-click student and teacher logins.</div></div></div>' +
-          '<div class="ai-r"><a href="https://helpx.adobe.com/enterprise/using/sso.html" target="_blank" class="btn btn-ghost">Setup SSO &#8599;</a></div>' +
-        '</div>' +
+        '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">School Admin Console</div><div class="ai-d">Manage institutional Adobe licenses, user permissions, and school-wide directory sync.</div></div></div><div class="ai-r"><a href="https://adminconsole.adobe.com" target="_blank" class="btn btn-primary">Open Console &#8599;</a></div></div>' +
+        '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Create Adobe ID</div><div class="ai-d">Step-by-step account setup using your designated official school email address.</div></div></div><div class="ai-r"><a href="https://account.adobe.com" target="_blank" class="btn btn-primary">Create Account &#8599;</a></div></div>' +
+        '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Password &amp; Security Settings</div><div class="ai-d">Reset credentials, manage two-factor authentication, and update recovery options.</div></div></div><div class="ai-r"><a href="https://account.adobe.com/security" target="_blank" class="btn btn-ghost">Manage Security &#8599;</a></div></div>' +
+        '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">IT Admin Deployment Guide</div><div class="ai-d">Enterprise deployment manual for school IT administrators to roll out Adobe Express across computer labs.</div></div></div><div class="ai-r"><a href="https://helpx.adobe.com/enterprise" target="_blank" class="btn btn-ghost">View Guide &#8599;</a></div></div>' +
+        '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Single Sign-On (SSO) Integration</div><div class="ai-d">Connect your school\'s Google Workspace or Microsoft 365 for one-click logins.</div></div></div><div class="ai-r"><a href="https://helpx.adobe.com/enterprise/using/sso.html" target="_blank" class="btn btn-ghost">Setup SSO &#8599;</a></div></div>' +
       '</div>';
     }
   },
   'B': {
-    letter: 'B',
-    tag: 'Section B &bull; Professional Development',
+    letter: '\ud83d\udcda',
+    tag: 'Section B \u2022 Professional Development',
     title: 'CPD Training Modules (48 Hours)',
-    desc: 'Five progressive, accredited modules designed to equip educators with foundational to advanced digital creativity pedagogy.',
-    render: function() {
-      return renderCpdSectionHtml();
-    }
+    desc: 'Five progressive accredited modules designed to equip educators with foundational to advanced digital creativity pedagogy.',
+    render: function() { return renderCpdSectionHtml(); }
   },
   'C': {
-    letter: 'C',
-    tag: 'Section C &bull; Curriculum Framework',
-    title: 'DCAIS Curriculum &amp; Student Activity Packages',
-    desc: 'Comprehensive digital curriculum framework, teacher pedagogical manuals, and modular student activity packages aligned to national education standards for Grades 6&ndash;12.',
-    render: function() {
-      var DCAIS = [
-        {badge:"Curriculum Manual",title:"DCAIS Teacher Manual",desc:"Comprehensive pedagogical guide covering all 12 months of the Digital Creativity and Innovation Skills curriculum with lesson rubrics.",link:"https://express.adobe.com"},
-        {badge:"Activity Packs",title:"Student Activity Packages",desc:"Month-wise structured activity packages with step-by-step instructions, templates, and classroom assessment criteria.",link:"https://express.adobe.com"},
-        {badge:"Standards Framework",title:"National Curriculum Framework",desc:"Aligns digital creativity activities with national education standards across STEAM subjects for Grades 6 through 12.",link:"https://express.adobe.com"},
-        {badge:"Rollout Strategy",title:"School Implementation Guide",desc:"School-level rollout blueprint covering lab infrastructure, teacher training schedules, and academic calendar integration.",link:"https://express.adobe.com"}
-      ];
-      return '<div class="rg">' +
-        DCAIS.map(function(r) {
-          return '<div class="rc">' +
-            '<div>' +
-              '<div class="rc-badge">' + r.badge + '</div>' +
-              '<h4>' + r.title + '</h4>' +
-              '<p>' + r.desc + '</p>' +
-            '</div>' +
-            '<a href="' + r.link + '" target="_blank" class="btn btn-primary">Open Resource &#8599;</a>' +
-          '</div>';
-        }).join('') +
-      '</div>';
-    }
+    letter: '\ud83d\udd2d',
+    tag: 'Section C \u2022 DCAIS Student Monitor',
+    title: 'Student DCAIS Activities Monitor',
+    desc: 'See exactly what DCAIS activities your students are working on in the Student Portal. Monitor grade-wise activity progress and submissions.',
+    render: function() { return renderDcaisMonitor(); }
   },
   'D': {
-    letter: 'D',
-    tag: 'Section D &bull; Classroom Assets',
+    letter: '\ud83d\udcdd',
+    tag: 'Section D \u2022 Classroom Assets',
     title: 'Classroom Resources &amp; Printables',
     desc: 'Ready-to-use lesson plans, assessment rubrics, smartboard tutorial videos, and printable design thinking posters.',
     render: function() {
       return '<div class="rg">' +
         '<div class="rc"><div><div class="rc-badge">Templates</div><h4>Lesson Plan Templates</h4><p>Pre-designed lesson plan templates aligned with DCAIS curriculum standards for all grade levels.</p></div><a href="https://express.adobe.com/templates" target="_blank" class="btn btn-primary">Download Templates &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Printables</div><h4>Classroom Posters &amp; Cheatsheets</h4><p>Design thinking posters and Adobe Express quick reference cards, ready to print and display in school computer labs.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Get Posters &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Printables</div><h4>Classroom Posters &amp; Cheatsheets</h4><p>Design thinking posters and Adobe Express quick reference cards, ready to print for school computer labs.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Get Posters &#8599;</a></div>' +
         '<div class="rc"><div><div class="rc-badge">Assessment</div><h4>Standardized Grading Rubrics</h4><p>Comprehensive rubrics for evaluating student creative projects across beginner, intermediate, and advanced levels.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Rubrics &#8599;</a></div>' +
         '<div class="rc"><div><div class="rc-badge">Video</div><h4>Classroom Tutorial Videos</h4><p>Step-by-step instructional videos optimized for classroom smartboard projection and teacher-led demonstrations.</p></div><a href="https://express.adobe.com/learn" target="_blank" class="btn btn-primary">Watch Videos &#8599;</a></div>' +
         '<div class="rc"><div><div class="rc-badge">Project Kits</div><h4>Project Starter Kits</h4><p>Complete project packs with instructions, editable templates, and benchmark student exemplar outputs.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Get Starter Kits &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Pedagogy</div><h4>Teacher Integration Manual</h4><p>Detailed guide on seamlessly embedding digital creativity into existing Science, Social Studies, and Language curricula.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Read Guide &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Pedagogy</div><h4>Teacher Integration Manual</h4><p>Guide on embedding digital creativity into existing Science, Social Studies, and Language curricula.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Read Guide &#8599;</a></div>' +
       '</div>';
     }
   },
   'E': {
-    letter: 'E',
-    tag: 'Section E &bull; Student Submissions',
+    letter: '\ud83d\udcca',
+    tag: 'Section E \u2022 Student Submissions',
     title: 'Student Progress &amp; Activity Tracking',
     desc: 'Monitor monthly activity completion rates, review submissions across grade bands, and evaluate student portfolios.',
     render: function() {
       return '<div class="pstats">' +
         '<div class="pstat"><div class="pstat-n">500+</div><div class="pstat-l">Certified Teachers</div></div>' +
-        '<div class="pstat"><div class="pstat-n">78%</div><div class="pstat-l">Average Completion</div></div>' +
+        '<div class="pstat"><div class="pstat-n">78%</div><div class="pstat-l">Avg Completion</div></div>' +
         '<div class="pstat"><div class="pstat-n">48 hrs</div><div class="pstat-l">Accredited Training</div></div>' +
         '<div class="pstat"><div class="pstat-n">12+</div><div class="pstat-l">Curriculum Units</div></div>' +
       '</div>' +
       '<div class="rg" style="margin-bottom:28px">' +
-        '<div class="rc"><div><div class="rc-badge">Grades 6&#8211;8</div><h4>Middle School Tracker</h4><p>Monitor monthly completion rates, portfolio growth, and fundamental digital literacy milestones.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Dashboard &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Grades 9&#8211;10</div><h4>Secondary Tracker</h4><p>Track advanced project submissions, team collaboration initiatives, and CPD-aligned creative activities.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Progress &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Grades 11&#8211;12</div><h4>Senior Portfolio Reviews</h4><p>Evaluate senior portfolios, assess capstone assignments, and verify readiness for Adobe digital certification.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Review Portfolios &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Grades 6&ndash;8</div><h4>Middle School Tracker</h4><p>Monitor monthly completion rates, portfolio growth, and fundamental digital literacy milestones.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Dashboard &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Grades 9&ndash;10</div><h4>Secondary Tracker</h4><p>Track advanced project submissions, team collaboration, and CPD-aligned creative activities.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Progress &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Grades 11&ndash;12</div><h4>Senior Portfolio Reviews</h4><p>Evaluate senior portfolios, assess capstone assignments, and verify readiness for Adobe certification.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Review Portfolios &#8599;</a></div>' +
       '</div>' +
       '<div style="background:var(--surface-2);border-radius:var(--radius);padding:24px;border:1.5px solid var(--border)">' +
-        '<div class="sec-label" style="margin-top:0">Classroom Activity Completion (Academic Year)</div>' +
+        '<div class="sec-label" style="margin-top:0;">Classroom Activity Completion (Academic Year)</div>' +
         '<div class="plist">' +
           '<div><div class="pi-lbl"><span>Republic Day Poster &amp; Flyer Design</span><span class="pi-pct">78%</span></div><div class="pbar"><div class="pfill" style="width:78%"></div></div></div>' +
           '<div><div class="pi-lbl"><span>Cultural Festival Greeting Cards</span><span class="pi-pct">65%</span></div><div class="pbar"><div class="pfill" style="width:65%"></div></div></div>' +
@@ -764,73 +638,60 @@ var TEACHER_SECTIONS_DATA = {
     }
   },
   'F': {
-    letter: 'F',
-    tag: 'Section F &bull; Teacher Network',
+    letter: '\ud83e\udd1d',
+    tag: 'Section F \u2022 Teacher Network',
     title: 'Community, Webinars &amp; Support',
-    desc: 'Connect with a vibrant network of over 500 certified educators, attend monthly live masterclasses, and access dedicated helpdesk assistance.',
+    desc: 'Connect with 500+ certified educators, attend monthly live masterclasses, and access dedicated helpdesk assistance.',
     render: function() {
       return '<div class="rg">' +
-        '<div class="rc"><div><div class="rc-badge">Live Events</div><h4>Monthly Educator Masterclasses</h4><p>Interactive live webinars with Adobe pedagogical experts. Access recordings and downloadable session decks anytime.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Register for Webinar &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Live Events</div><h4>Monthly Educator Masterclasses</h4><p>Interactive live webinars with Adobe pedagogical experts. Access recordings and session decks anytime.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Register for Webinar &#8599;</a></div>' +
         '<div class="rc"><div><div class="rc-badge">Peer Network</div><h4>National Educator Forum</h4><p>Exchange lesson ideas, curriculum rubrics, and project tips with certified educators from schools across India.</p></div><a href="https://community.adobe.com" target="_blank" class="btn btn-primary">Join Forum &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Technical Help</div><h4>Dedicated School Helpdesk</h4><p>Priority technical assistance for account provisioning, single sign-on configuration, and school lab setups.</p></div><a href="https://helpx.adobe.com" target="_blank" class="btn btn-primary">Contact Support &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Technical Help</div><h4>Dedicated School Helpdesk</h4><p>Priority technical assistance for account provisioning, SSO configuration, and school lab setups.</p></div><a href="https://helpx.adobe.com" target="_blank" class="btn btn-primary">Contact Support &#8599;</a></div>' +
       '</div>';
     }
   },
   'G': {
-    letter: 'G',
-    tag: 'Section G &bull; Professional Accreditation',
+    letter: '\ud83c\udfc6',
+    tag: 'Section G \u2022 Professional Accreditation',
     title: 'Certification Path &amp; Digital Badges',
     desc: 'Earn recognized Adobe Educator credentials, track your accredited CPD hours, and showcase your professional milestones.',
     render: function() {
       return '<div class="ach-grid">' +
-        '<div class="ac earned"><div class="ac-icon">&#10003;</div><h4>Foundation Educator</h4><p>Completed CPD Modules 01 &amp; 02 (18 hours).</p><span class="ac-tag earned">Eligible</span></div>' +
-        '<div class="ac earned"><div class="ac-icon">&#9654;</div><h4>Proficient Educator</h4><p>Completing CPD Modules 03 &amp; 04 (20 hours).</p><span class="ac-tag earned">In Progress</span></div>' +
-        '<div class="ac locked"><div class="ac-icon">&#128274;</div><h4>Expert Educator</h4><p>Complete CPD Module 05 (10 hours).</p><span class="ac-tag locked">Locked</span></div>' +
-        '<div class="ac locked"><div class="ac-icon">&#128274;</div><h4>Adobe Certified Educator</h4><p>Portfolio submission &amp; peer assessment review.</p><span class="ac-tag locked">Locked</span></div>' +
+        '<div class="ac earned"><div class="ac-icon">&#10003;</div><h4>Foundation Educator</h4><p>Completed CPD Modules 01 &amp; 02 (18 hours).</p><span class="ac-tag">Eligible</span></div>' +
+        '<div class="ac earned"><div class="ac-icon">&#9654;</div><h4>Proficient Educator</h4><p>Completing CPD Modules 03 &amp; 04 (20 hours).</p><span class="ac-tag">In Progress</span></div>' +
+        '<div class="ac locked"><div class="ac-icon">&#128274;</div><h4>Expert Educator</h4><p>Complete CPD Module 05 (10 hours).</p><span class="ac-tag">Locked</span></div>' +
+        '<div class="ac locked"><div class="ac-icon">&#128274;</div><h4>Adobe Certified Educator</h4><p>Portfolio submission &amp; peer assessment review.</p><span class="ac-tag">Locked</span></div>' +
       '</div>' +
       '<div class="rg" style="margin-top:24px">' +
         '<div class="rc"><div><div class="rc-badge">Digital Credential</div><h4>Claim Educator Digital Badge</h4><p>Add verified Adobe Certified Educator credentials to your LinkedIn profile and professional resume.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Claim Digital Badge &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Print Certificate</div><h4>Official Certificate of Completion</h4><p>Generate and download your official Ministry &amp; Adobe accredited training certificate in high-resolution PDF format.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Download Certificate &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Credit Tracker</div><h4>Track Annual CPD Credits</h4><p>View verified training transcript hours for institutional appraisal and annual certification renewals.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Credits Transcript &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Print Certificate</div><h4>Official Certificate of Completion</h4><p>Generate and download your official Ministry &amp; Adobe accredited training certificate in PDF format.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Download Certificate &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Credit Tracker</div><h4>Track Annual CPD Credits</h4><p>View verified training transcript hours for institutional appraisal and annual certification renewals.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Credits &#8599;</a></div>' +
       '</div>';
     }
   }
 };
 
-/* ===== NAVIGATION CONTROLLER ===== */
+/* ===== NAVIGATION ===== */
 function openSection(letter) {
   var data = TEACHER_SECTIONS_DATA[letter];
   if (!data) return;
-
-  // Update URL hash
   location.hash = '#section-' + letter;
-
-  // Set Content
   document.getElementById('crumbName').innerHTML = data.tag;
   document.getElementById('secBadge').innerHTML = data.letter;
   document.getElementById('secTag').innerHTML = data.tag;
   document.getElementById('secTitle').innerHTML = data.title;
   document.getElementById('secDesc').innerHTML = data.desc;
   document.getElementById('secContent').innerHTML = data.render();
-
-  // Next / Prev shortcuts
   var keys = Object.keys(TEACHER_SECTIONS_DATA);
   var idx = keys.indexOf(letter);
   var nextPrevHtml = '';
-  if (idx > 0) {
-    nextPrevHtml += '<button class="btn btn-ghost" onclick="openSection(\'' + keys[idx - 1] + '\')">&#8592; Previous Section</button> ';
-  }
-  if (idx < keys.length - 1) {
-    nextPrevHtml += '<button class="btn btn-primary" onclick="openSection(\'' + keys[idx + 1] + '\')">Next Section &#8594;</button>';
-  }
+  if (idx > 0) nextPrevHtml += '<button class="btn btn-ghost" onclick="openSection(\'' + keys[idx-1] + '\')">&#8592; Prev Section</button> ';
+  if (idx < keys.length-1) nextPrevHtml += '<button class="btn btn-primary" onclick="openSection(\'' + keys[idx+1] + '\')">Next Section &#8594;</button>';
   document.getElementById('secNextPrev').innerHTML = nextPrevHtml;
-
-  // Toggle Views
   document.getElementById('dashboardView').style.display = 'none';
   document.getElementById('mainHero').style.display = 'none';
   document.getElementById('sectionView').style.display = 'block';
-
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
 function showDashboard() {
@@ -838,35 +699,27 @@ function showDashboard() {
   document.getElementById('sectionView').style.display = 'none';
   document.getElementById('dashboardView').style.display = 'block';
   document.getElementById('mainHero').style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// Hash-based router
 window.addEventListener('hashchange', function() {
   var hash = location.hash;
   if (hash.indexOf('#section-') === 0) {
     var letter = hash.replace('#section-', '').toUpperCase();
-    if (TEACHER_SECTIONS_DATA[letter]) {
-      openSection(letter);
-      return;
-    }
+    if (TEACHER_SECTIONS_DATA[letter]) { openSection(letter); return; }
   }
   showDashboard();
 });
 
-// Initial check on load
 window.addEventListener('DOMContentLoaded', function() {
   var hash = location.hash;
   if (hash.indexOf('#section-') === 0) {
     var letter = hash.replace('#section-', '').toUpperCase();
-    if (TEACHER_SECTIONS_DATA[letter]) {
-      openSection(letter);
-      return;
-    }
+    if (TEACHER_SECTIONS_DATA[letter]) { openSection(letter); return; }
   }
   showDashboard();
+  applyLang();
 });
 </script>
 </body>
 </html>
-
