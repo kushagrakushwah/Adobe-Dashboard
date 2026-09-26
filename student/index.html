@@ -257,11 +257,13 @@ footer p+p{margin-top:5px}
       <div class="flow">
         <div class="flow-step" data-flow-section="1" onclick="openSection('1')" role="button" tabindex="0" title="Go to Section 1: 12-Month Creative Activities"><span class="flow-n">1</span><span id="flow1">Pick Month</span></div>
         <span class="flow-arr">→</span>
-        <div class="flow-step" data-flow-section="5" onclick="openSection('5')" role="button" tabindex="0" title="Go to Section 5: How-To Videos"><span class="flow-n">2</span><span id="flow2">Watch Video</span></div>
+        <div class="flow-step" data-flow-section="3" onclick="openSection('3')" role="button" tabindex="0" title="Go to Section 3: DCAIS Activities (AIM)"><span class="flow-n">2</span><span id="flow2">DCAIS Activities</span></div>
+        <!-- Commented out flow steps for sections 5, 6, 4 as not needed now
         <span class="flow-arr">→</span>
-        <div class="flow-step" data-flow-section="6" onclick="openSection('6')" role="button" tabindex="0" title="Go to Section 6: Creative Tools"><span class="flow-n">3</span><span id="flow3">Make Art</span></div>
+        <div class="flow-step" data-flow-section="6" onclick="openSection('6')"><span class="flow-n">3</span><span id="flow3">Make Art</span></div>
         <span class="flow-arr">→</span>
-        <div class="flow-step" data-flow-section="4" onclick="openSection('4')" role="button" tabindex="0" title="Go to Section 4: My Creative Portfolio"><span class="flow-n">4</span><span id="flow4">Submit!</span></div>
+        <div class="flow-step" data-flow-section="4" onclick="openSection('4')"><span class="flow-n">4</span><span id="flow4">Submit!</span></div>
+        -->
       </div>
     </div>
   </div>
@@ -297,7 +299,7 @@ footer p+p{margin-top:5px}
         </div>
       </div>
 
-      <!-- Section 2 -->
+      <!-- Section 2 [Commented out as not needed now]
       <div class="tile-card" data-section="2" onclick="openSection('2')">
         <div class="tile-img-wrap">
           <img class="tile-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=220&fit=crop&q=80" alt="Skill Tracks" crossorigin="anonymous">
@@ -315,6 +317,7 @@ footer p+p{margin-top:5px}
           </div>
         </div>
       </div>
+      -->
 
       <!-- Section 3: Full DCAIS / AIM Activities -->
       <div class="tile-card" data-section="3" onclick="openSection('3')">
@@ -335,7 +338,7 @@ footer p+p{margin-top:5px}
         </div>
       </div>
 
-      <!-- Section 4 -->
+      <!-- Sections 4, 5, 6, 7 [Commented out as not needed now]
       <div class="tile-card" data-section="4" onclick="openSection('4')">
         <div class="tile-img-wrap">
           <img class="tile-img" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=220&fit=crop&q=80" alt="Portfolio" crossorigin="anonymous">
@@ -354,7 +357,6 @@ footer p+p{margin-top:5px}
         </div>
       </div>
 
-      <!-- Section 5 -->
       <div class="tile-card" data-section="5" onclick="openSection('5')">
         <div class="tile-img-wrap">
           <img class="tile-img" src="https://images.unsplash.com/photo-1581726690015-c9861fa5057f?w=600&h=220&fit=crop&q=80" alt="Tutorials" crossorigin="anonymous">
@@ -373,7 +375,6 @@ footer p+p{margin-top:5px}
         </div>
       </div>
 
-      <!-- Section 6 -->
       <div class="tile-card" data-section="6" onclick="openSection('6')">
         <div class="tile-img-wrap">
           <img class="tile-img" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=220&fit=crop&q=80" alt="Creative Tools" crossorigin="anonymous">
@@ -392,7 +393,6 @@ footer p+p{margin-top:5px}
         </div>
       </div>
 
-      <!-- Section 7: Badges & Awards -->
       <div class="tile-card" data-section="7" onclick="openSection('7')">
         <div class="tile-img-wrap">
           <img class="tile-img" src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=600&h=220&fit=crop&q=80" alt="Achievements" crossorigin="anonymous">
@@ -410,6 +410,7 @@ footer p+p{margin-top:5px}
           </div>
         </div>
       </div>
+      -->
     </div>
   </div>
 
@@ -417,7 +418,7 @@ footer p+p{margin-top:5px}
   <div id="sectionView" class="section-full-view">
     <div class="sec-nav-bar">
       <button class="back-btn" onclick="showDashboard()">← <span id="backBtnLabel">Back to Sections</span></button>
-      <div class="sec-breadcrumb">Home / <strong id="crumbName">Section</strong></div>
+      <div class="sec-breadcrumb"><span id="crumbHome">Home</span> / <strong id="crumbName">Section</strong></div>
     </div>
     <div class="sec-hero-card">
       <div class="sec-hero-badge" id="secBadge">01</div>
@@ -2456,6 +2457,8 @@ var LANG = {
   }
 };
 
+var currentOpenSection = null;
+
 function toggleLang() {
   currentLang = (currentLang === 'en') ? 'hi' : 'en';
   var bEn = document.getElementById('langBtnEN');
@@ -2463,9 +2466,8 @@ function toggleLang() {
   if (bEn) bEn.classList.toggle('active', currentLang === 'en');
   if (bHi) bHi.classList.toggle('active', currentLang === 'hi');
   applyLang();
-  if (location.hash === '#section-3') {
-    var c = document.getElementById('secContent');
-    if (c) c.innerHTML = renderDcaisSection();
+  if (currentOpenSection) {
+    openSection(currentOpenSection, true);
   }
 }
 
@@ -2486,6 +2488,7 @@ function applyLang() {
   set('flow4', L.flow4);
   set('guideText', L.guideText);
   set('backBtnLabel', L.backBtn);
+  set('crumbHome', currentLang === 'hi' ? 'होम' : 'Home');
   set('s1-tag', L.s1tag); set('s1-title', L.s1title); set('s1-desc', L.s1desc); set('s1-hint', L.s1hint); set('s1-btn', L.s1btn);
   set('s2-tag', L.s2tag); set('s2-title', L.s2title); set('s2-desc', L.s2desc); set('s2-hint', L.s2hint); set('s2-btn', L.s2btn);
   set('s3-tag', L.s3tag); set('s3-title', L.s3title); set('s3-desc', L.s3desc); set('s3-hint', L.s3hint); set('s3-btn', L.s3btn);
@@ -2498,41 +2501,48 @@ function applyLang() {
 /* ===== MONTH DATA ===== */
 var curMonth = 0;
 var MONTHS = [
-  { name: 'January', theme: 'Republic Day', activity: 'Republic Day Poster', desc: 'Make a colourful poster to celebrate Republic Day! Use bright red, white, and blue colours. Add the Indian flag and a patriotic message.', dur: '45 min', skills: ['Poster Design','Colour','Typography'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+poster+tutorial', create: 'https://express.adobe.com/sp/design/posters', submit: '#' },
-  { name: 'February', theme: 'Friendship Day', activity: 'Friendship Greeting Card', desc: 'Make a lovely card for your best friend or family. Use hearts, nice colours, and a sweet message inside!', dur: '40 min', skills: ['Card Design','Colour Theory','Typography'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+card+tutorial', create: 'https://express.adobe.com/sp/design/cards', submit: '#' },
-  { name: 'March', theme: 'Holi Festival', activity: 'Holi Fest Flyer', desc: 'Create a fun, colourful flyer for the Holi festival! Use lots of colours — pink, green, yellow — and write where and when your school Holi event is.', dur: '45 min', skills: ['Flyer Design','Vibrant Colours','Layout'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+flyer+tutorial', create: 'https://express.adobe.com/sp/design/flyers', submit: '#' },
-  { name: 'April', theme: 'Earth Day', activity: 'Save the Earth Poster', desc: 'Make a poster that tells people how to save the Earth. Draw trees, water, or animals and write a message like "Plant More Trees!"', dur: '50 min', skills: ['Social Awareness','Poster Design','Illustration'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+poster+earth+day', create: 'https://express.adobe.com/sp/design/posters', submit: '#' },
-  { name: 'May', theme: 'Mothers Day', activity: 'Mothers Day Card & Video', desc: 'Create a special card OR a short video message for your mom. Tell her why she is amazing! Share it with your family.', dur: '50 min', skills: ['Card Design','Video','Personal Message'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+mothers+day', create: 'https://express.adobe.com/sp/design/cards', submit: '#' },
-  { name: 'June', theme: 'Yoga & Health', activity: 'International Yoga Day Post', desc: 'Make a social media post or poster about Yoga. Show a yoga pose or write about how yoga keeps us healthy.', dur: '40 min', skills: ['Health Awareness','Social Post Design','Layout'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+social+post', create: 'https://express.adobe.com/sp/design/social', submit: '#' },
-  { name: 'July', theme: 'Independence Month', activity: 'Freedom Comic Strip', desc: 'Create a 4-panel comic strip about India freedom fighters. Use speech bubbles and bright illustrations.', dur: '60 min', skills: ['Comic Design','Storytelling','Illustration'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+comic+strip', create: 'https://express.adobe.com/sp/design/comics', submit: '#' },
-  { name: 'August', theme: 'Independence Day', activity: 'Independence Day Celebration Video', desc: 'Make a short video (30-60 sec) to celebrate India Independence Day! Add photos, patriotic music, and your voice message.', dur: '60 min', skills: ['Video Editing','Narration','Music'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+video+tutorial', create: 'https://express.adobe.com/sp/design/videos', submit: '#' },
-  { name: 'September', theme: 'Teachers Day', activity: 'Thank You Teacher Card', desc: 'Design a beautiful card to thank your favourite teacher! Add their name, a nice photo or illustration, and a message from your heart.', dur: '45 min', skills: ['Card Design','Personal Message','Typography'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+card', create: 'https://express.adobe.com/sp/design/cards', submit: '#' },
-  { name: 'October', theme: 'Diwali Festive', activity: 'Diwali Greeting & Rangoli Design', desc: 'Create a Diwali greeting card with a beautiful digital rangoli design. Use gold, red, and orange colours. Wish everyone "Happy Diwali!"', dur: '55 min', skills: ['Festival Design','Colour','Cultural Art'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+diwali+poster', create: 'https://express.adobe.com/sp/design/cards', submit: '#' },
-  { name: 'November', theme: 'My School', activity: 'School Brochure or Magazine Page', desc: 'Create a 1-page mini magazine or brochure about your school. Include school events, cool facts, and photos or illustrations!', dur: '55 min', skills: ['Layout Design','Content Writing','Brochure'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+brochure+tutorial', create: 'https://express.adobe.com/sp/design/flyers', submit: '#' },
-  { name: 'December', theme: 'Year in Review', activity: 'My Creative Year Portfolio', desc: 'Look back at all 11 projects you made this year! Create a collage or presentation showing your 3 favourite works. You have come so far!', dur: '60 min', skills: ['Portfolio Design','Reflection','Collage'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+portfolio', create: 'https://express.adobe.com/sp/design/collages', submit: '#' }
+  { name: 'January', nameHi: 'जनवरी', theme: 'Republic Day', themeHi: 'गणतंत्र दिवस', activity: 'Republic Day Poster', activityHi: 'गणतंत्र दिवस पोस्टर', desc: 'Make a colourful poster to celebrate Republic Day! Use bright red, white, and blue colours. Add the Indian flag and a patriotic message.', descHi: 'गणतंत्र दिवस मनाने के लिए एक रंगीन पोस्टर बनाएं! चमकीले रंगों का उपयोग करें, भारतीय तिरंगा और देशभक्ति का संदेश जोड़ें।', dur: '45 min', durHi: '45 मिनट', skills: ['Poster Design','Colour','Typography'], skillsHi: ['पोस्टर डिज़ाइन','रंग संयोजन','टाइपोग्राफी'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+poster+tutorial', create: 'https://express.adobe.com/sp/design/posters', submit: '#' },
+  { name: 'February', nameHi: 'फ़रवरी', theme: 'Friendship Day', themeHi: 'मित्रता दिवस', activity: 'Friendship Greeting Card', activityHi: 'मित्रता ग्रीटिंग कार्ड', desc: 'Make a lovely card for your best friend or family. Use hearts, nice colours, and a sweet message inside!', descHi: 'अपने सबसे अच्छे दोस्त या परिवार के लिए एक प्यारा कार्ड बनाएं। सुंदर रंगों और प्यारे संदेश का उपयोग करें!', dur: '40 min', durHi: '40 मिनट', skills: ['Card Design','Colour Theory','Typography'], skillsHi: ['कार्ड डिज़ाइन','रंग सिद्धांत','टाइपोग्राफी'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+card+tutorial', create: 'https://express.adobe.com/sp/design/cards', submit: '#' },
+  { name: 'March', nameHi: 'मार्च', theme: 'Holi Festival', themeHi: 'होली उत्सव', activity: 'Holi Fest Flyer', activityHi: 'होली उत्सव फ़्लायर', desc: 'Create a fun, colourful flyer for the Holi festival! Use lots of colours — pink, green, yellow — and write where and when your school Holi event is.', descHi: 'होली उत्सव के लिए एक मज़ेदार, रंगीन फ़्लायर बनाएं! गुलाबी, हरे, पीले रंगों का उपयोग करें और स्कूल कार्यक्रम का विवरण लिखें।', dur: '45 min', durHi: '45 मिनट', skills: ['Flyer Design','Vibrant Colours','Layout'], skillsHi: ['फ़्लायर डिज़ाइन','रंग संयोजन','लेआउट'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+flyer+tutorial', create: 'https://express.adobe.com/sp/design/flyers', submit: '#' },
+  { name: 'April', nameHi: 'अप्रैल', theme: 'Earth Day', themeHi: 'पृथ्वी दिवस', activity: 'Save the Earth Poster', activityHi: 'पृथ्वी बचाओ पोस्टर', desc: 'Make a poster that tells people how to save the Earth. Draw trees, water, or animals and write a message like "Plant More Trees!"', descHi: 'पृथ्वी को बचाने का संदेश देने वाला पोस्टर बनाएं। पेड़, पानी या जानवरों के चित्र बनाएं और "अधिक पेड़ लगाएं!" जैसा संदेश लिखें।', dur: '50 min', durHi: '50 मिनट', skills: ['Social Awareness','Poster Design','Illustration'], skillsHi: ['सामाजिक जागरूकता','पोस्टर डिज़ाइन','चित्रण'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+poster+earth+day', create: 'https://express.adobe.com/sp/design/posters', submit: '#' },
+  { name: 'May', nameHi: 'मई', theme: 'Mothers Day', themeHi: 'मातृ दिवस', activity: 'Mothers Day Card & Video', activityHi: 'मातृ दिवस कार्ड और वीडियो', desc: 'Create a special card OR a short video message for your mom. Tell her why she is amazing! Share it with your family.', descHi: 'अपनी माँ के लिए एक विशेष कार्ड या छोटा वीडियो संदेश बनाएं। उन्हें बताएं कि वे कितनी खास हैं!', dur: '50 min', durHi: '50 मिनट', skills: ['Card Design','Video','Personal Message'], skillsHi: ['कार्ड डिज़ाइन','वीडियो','व्यक्तिगत संदेश'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+mothers+day', create: 'https://express.adobe.com/sp/design/cards', submit: '#' },
+  { name: 'June', nameHi: 'जून', theme: 'Yoga & Health', themeHi: 'योग और स्वास्थ्य', activity: 'International Yoga Day Post', activityHi: 'अंतर्राष्ट्रीय योग दिवस पोस्ट', desc: 'Make a social media post or poster about Yoga. Show a yoga pose or write about how yoga keeps us healthy.', descHi: 'योग के बारे में एक सोशल मीडिया पोस्ट या पोस्टर बनाएं। योगासन दिखाएं और योग से स्वस्थ रहने के लाभ लिखें।', dur: '40 min', durHi: '40 मिनट', skills: ['Health Awareness','Social Post Design','Layout'], skillsHi: ['स्वास्थ्य जागरूकता','सोशल पोस्ट डिज़ाइन','लेआउट'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+social+post', create: 'https://express.adobe.com/sp/design/social', submit: '#' },
+  { name: 'July', nameHi: 'जुलाई', theme: 'Independence Month', themeHi: 'स्वतंत्रता माह', activity: 'Freedom Comic Strip', activityHi: 'स्वतंत्रता कॉमिक स्ट्रिप', desc: 'Create a 4-panel comic strip about India freedom fighters. Use speech bubbles and bright illustrations.', descHi: 'भारत के स्वतंत्रता सेनानियों पर 4-पैनल वाली कॉमिक स्ट्रिप बनाएं। स्पीच बबल और सुंदर चित्रों का उपयोग करें।', dur: '60 min', durHi: '60 मिनट', skills: ['Comic Design','Storytelling','Illustration'], skillsHi: ['कॉमिक डिज़ाइन','कहानी','चित्रण'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+comic+strip', create: 'https://express.adobe.com/sp/design/comics', submit: '#' },
+  { name: 'August', nameHi: 'अगस्त', theme: 'Independence Day', themeHi: 'स्वतंत्रता दिवस', activity: 'Independence Day Celebration Video', activityHi: 'स्वतंत्रता दिवस समारोह वीडियो', desc: 'Make a short video (30-60 sec) to celebrate India Independence Day! Add photos, patriotic music, and your voice message.', descHi: 'स्वतंत्रता दिवस समारोह के लिए 30-60 सेकंड का वीडियो बनाएं! तस्वीरें, देशभक्ति संगीत और अपनी आवाज़ जोड़ें।', dur: '60 min', durHi: '60 मिनट', skills: ['Video Editing','Narration','Music'], skillsHi: ['वीडियो संपादन','कथावाचन','संगीत'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+video+tutorial', create: 'https://express.adobe.com/sp/design/videos', submit: '#' },
+  { name: 'September', nameHi: 'सितंबर', theme: 'Teachers Day', themeHi: 'शिक्षक दिवस', activity: 'Thank You Teacher Card', activityHi: 'थैंक यू टीचर कार्ड', desc: 'Design a beautiful card to thank your favourite teacher! Add their name, a nice photo or illustration, and a message from your heart.', descHi: 'अपने पसंदीदा शिक्षक को धन्यवाद देने के लिए एक सुंदर कार्ड डिज़ाइन करें! उनका नाम और दिल से आभार संदेश लिखें।', dur: '45 min', durHi: '45 मिनट', skills: ['Card Design','Personal Message','Typography'], skillsHi: ['कार्ड डिज़ाइन','व्यक्तिगत संदेश','टाइपोग्राफी'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+card', create: 'https://express.adobe.com/sp/design/cards', submit: '#' },
+  { name: 'October', nameHi: 'अक्टूबर', theme: 'Diwali Festive', themeHi: 'दीपावली उत्सव', activity: 'Diwali Greeting & Rangoli Design', activityHi: 'दीवाली ग्रीटिंग और रंगोली डिज़ाइन', desc: 'Create a Diwali greeting card with a beautiful digital rangoli design. Use gold, red, and orange colours. Wish everyone "Happy Diwali!"', descHi: 'सुंदर डिजिटल रंगोली डिज़ाइन के साथ दीवाली ग्रीटिंग कार्ड बनाएं। सुनहरे, लाल और नारंगी रंगों का उपयोग करें।', dur: '55 min', durHi: '55 मिनट', skills: ['Festival Design','Colour','Cultural Art'], skillsHi: ['उत्सव डिज़ाइन','रंग','पारंपरिक कला'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+diwali+poster', create: 'https://express.adobe.com/sp/design/cards', submit: '#' },
+  { name: 'November', nameHi: 'नवंबर', theme: 'My School', themeHi: 'मेरा स्कूल', activity: 'School Brochure or Magazine Page', activityHi: 'स्कूल ब्रोशर या पत्रिका पृष्ठ', desc: 'Create a 1-page mini magazine or brochure about your school. Include school events, cool facts, and photos or illustrations!', descHi: 'अपने स्कूल के बारे में 1-पेज की मिनी पत्रिका या ब्रोशर बनाएं। स्कूल के कार्यक्रम और रोचक तथ्य शामिल करें!', dur: '55 min', durHi: '55 मिनट', skills: ['Layout Design','Content Writing','Brochure'], skillsHi: ['लेआउट डिज़ाइन','सामग्री लेखन','ब्रोशर'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+brochure+tutorial', create: 'https://express.adobe.com/sp/design/flyers', submit: '#' },
+  { name: 'December', nameHi: 'दिसंबर', theme: 'Year in Review', themeHi: 'वर्ष का पुनरावलोकन', activity: 'My Creative Year Portfolio', activityHi: 'मेरा रचनात्मक वर्ष पोर्टफ़ोलियो', desc: 'Look back at all 11 projects you made this year! Create a collage or presentation showing your 3 favourite works. You have come so far!', descHi: 'इस वर्ष आपके द्वारा बनाए गए सभी प्रोजेक्ट देखें! अपने 3 पसंदीदा कार्यों को दर्शाते हुए एक कोलाज या प्रस्तुति बनाएं।', dur: '60 min', durHi: '60 मिनट', skills: ['Portfolio Design','Reflection','Collage'], skillsHi: ['पोर्टफ़ोलियो डिज़ाइन','पुनरावलोकन','कोलाज'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+portfolio', create: 'https://express.adobe.com/sp/design/collages', submit: '#' }
 ];
 
 function renderMonthSectionHtml() {
+  var isHi = (currentLang === 'hi');
   var m = MONTHS[curMonth];
   var pillsHtml = MONTHS.map(function(mo, i) {
-    return '<button class="mp' + (i === curMonth ? ' active' : '') + '" onclick="selectMonthTab(' + i + ')">' + mo.name + '</button>';
+    var name = isHi ? mo.nameHi : mo.name;
+    return '<button class="mp' + (i === curMonth ? ' active' : '') + '" onclick="selectMonthTab(' + i + ')">' + name + '</button>';
   }).join('');
+  var theme = isHi ? m.themeHi : m.theme;
+  var dur = isHi ? m.durHi : m.dur;
+  var activity = isHi ? m.activityHi : m.activity;
+  var desc = isHi ? m.descHi : m.desc;
+  var skills = isHi ? (m.skillsHi || m.skills) : m.skills;
   var cardHtml =
     '<div class="mcard">' +
       '<div class="mcard-row">' +
-        '<span class="mcard-theme">' + m.theme + '</span>' +
-        '<span class="mcard-dur">⏱ ' + m.dur + '</span>' +
+        '<span class="mcard-theme">' + theme + '</span>' +
+        '<span class="mcard-dur">⏱ ' + dur + '</span>' +
       '</div>' +
-      '<h3>✨ ' + m.activity + '</h3>' +
-      '<p>' + m.desc + '</p>' +
-      '<div class="mcard-skills">' + m.skills.map(function(s){ return '<span class="mskill">' + s + '</span>'; }).join('') + '</div>' +
+      '<h3>✨ ' + activity + '</h3>' +
+      '<p>' + desc + '</p>' +
+      '<div class="mcard-skills">' + skills.map(function(s){ return '<span class="mskill">' + s + '</span>'; }).join('') + '</div>' +
       '<div class="mcard-actions">' +
-        '<a href="' + m.tutorial + '" target="_blank" class="btn btn-dark">▶ Watch Tutorial ↗</a>' +
-        '<a href="' + m.create + '" target="_blank" class="btn btn-primary">🎨 Create in Adobe Express ↗</a>' +
-        '<a href="' + m.submit + '" class="btn btn-outline">📤 Submit My Work</a>' +
+        '<a href="' + m.tutorial + '" target="_blank" class="btn btn-dark">' + (isHi ? '▶ ट्यूटोरियल देखें ↗' : '▶ Watch Tutorial ↗') + '</a>' +
+        '<a href="' + m.create + '" target="_blank" class="btn btn-primary">' + (isHi ? '🎨 Adobe Express में बनाएं ↗' : '🎨 Create in Adobe Express ↗') + '</a>' +
+        '<a href="' + m.submit + '" class="btn btn-outline">' + (isHi ? '📤 काम जमा करें' : '📤 Submit My Work') + '</a>' +
       '</div>' +
     '</div>';
-  return '<p style="font-size:.85rem;color:var(--ink-2);margin-bottom:14px;">Tap a month to see your activity:</p>' +
+  return '<p style="font-size:.85rem;color:var(--ink-2);margin-bottom:14px;">' + (isHi ? 'अपनी गतिविधि देखने के लिए किसी महीने पर टैप करें:' : 'Tap a month to see your activity:') + '</p>' +
     '<div class="month-pills">' + pillsHtml + '</div>' +
     '<div id="activeMonthBox">' + cardHtml + '</div>';
 }
@@ -2740,16 +2750,24 @@ function searchAimActivities(q) {
 var STUDENT_SECTIONS_DATA = {
   '1': {
     num: '📅',
-    tag: 'Section 1 • Monthly Activities',
-    title: 'Monthly Creative Activities',
-    desc: 'Pick your month, watch the tutorial video, make your art in Adobe Express, and submit it!',
-    render: function() { return renderMonthSectionHtml(); }
+    tagEn: 'Section 1 • Monthly Activities',
+    tagHi: 'सेक्शन 1 • मासिक एक्टिविटीज़',
+    titleEn: 'Monthly Creative Activities',
+    titleHi: 'मासिक क्रिएटिव एक्टिविटीज़',
+    descEn: 'Pick your month, watch the tutorial video, make your art in Adobe Express, and submit it!',
+    descHi: 'अपना महीना चुनें, ट्यूटोरियल वीडियो देखें, Adobe Express में अपनी कला बनाएं और इसे जमा करें!',
+    render: function(lang) { return renderMonthSectionHtml(); }
   },
+  /*
+  // Section 2 [Commented out as not needed now]
   '2': {
     num: '🎯',
-    tag: 'Section 2 • Skill Tracks',
-    title: 'Skill Building Tracks',
-    desc: 'Learn specific creative skills step by step. Start simple and level up every week!',
+    tagEn: 'Section 2 • Skill Tracks',
+    tagHi: 'सेक्शन 2 • स्किल ट्रैक्स',
+    titleEn: 'Skill Building Tracks',
+    titleHi: 'स्किल बिल्डिंग ट्रैक्स',
+    descEn: 'Learn specific creative skills step by step. Start simple and level up every week!',
+    descHi: 'कदम दर कदम रचनात्मक कौशल सीखें। सरलता से शुरू करें और हर हफ्ते आगे बढ़ें!',
     render: function() {
       return '<div class="rg">' +
         '<div class="rc"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Design</div><h4>Poster &amp; Flyer Design</h4><p>Learn how to pick colours, use big text, and make eye-catching posters for school events!</p><div class="sbar"><div class="sbar-fill" style="width:75%"></div></div></div><a href="https://express.adobe.com/sp/design/posters" target="_blank" class="btn btn-primary">Start →</a></div>' +
@@ -2760,13 +2778,20 @@ var STUDENT_SECTIONS_DATA = {
       '</div>';
     }
   },
+  */
   '3': {
     num: '🌟',
-    tag: 'Section 3 • DCAIS Activities',
-    title: 'DCAIS Activities (AIM Curriculum)',
-    desc: 'Complete curriculum for Grades 3–8 from AIM. Select your grade, complete activities, and earn your DCAIS certificate!',
-    render: function() { return renderDcaisSection(); }
-  },
+    tagEn: 'Section 3 • DCAIS Activities',
+    tagHi: 'सेक्शन 3 • DCAIS एक्टिविटीज़',
+    titleEn: 'DCAIS Activities (AIM Curriculum)',
+    titleHi: 'DCAIS एक्टिविटीज़ (AIM पाठ्यक्रम)',
+    descEn: 'Complete curriculum for Grades 3–8 from AIM. Select your grade, complete activities, and earn your DCAIS certificate!',
+    descHi: 'AIM से कक्षा 3-8 के लिए संपूर्ण पाठ्यक्रम। अपनी कक्षा चुनें, गतिविधियाँ पूरी करें और DCAIS प्रमाणपत्र प्राप्त करें!',
+    render: function(lang) { return renderDcaisSection(); }
+  }
+  /*
+  // Sections 4, 5, 6, 7 [Commented out as not needed now]
+  ,
   '4': {
     num: '🖼️',
     tag: 'Section 4 • My Portfolio',
@@ -2838,31 +2863,41 @@ var STUDENT_SECTIONS_DATA = {
       '</div>';
     }
   }
+  */
 };
 
 /* ===== NAVIGATION CONTROLLER ===== */
-function openSection(num) {
+function openSection(num, noScroll) {
   var data = STUDENT_SECTIONS_DATA[num];
   if (!data) return;
+  currentOpenSection = num;
   location.hash = '#section-' + num;
+
+  var isHi = (currentLang === 'hi');
+  var tag = isHi ? data.tagHi : data.tagEn;
+  var title = isHi ? data.titleHi : data.titleEn;
+  var desc = isHi ? data.descHi : data.descEn;
+
+  var crumbHome = document.getElementById('crumbHome');
+  if (crumbHome) crumbHome.innerHTML = isHi ? 'होम' : 'Home';
   var crumb = document.getElementById('crumbName');
-  if (crumb) crumb.innerHTML = data.tag;
+  if (crumb) crumb.innerHTML = tag;
   var badge = document.getElementById('secBadge');
   if (badge) badge.innerHTML = data.num;
-  var tag = document.getElementById('secTag');
-  if (tag) tag.innerHTML = data.tag;
-  var title = document.getElementById('secTitle');
-  if (title) title.innerHTML = data.title;
-  var desc = document.getElementById('secDesc');
-  if (desc) desc.innerHTML = data.desc;
+  var secTag = document.getElementById('secTag');
+  if (secTag) secTag.innerHTML = tag;
+  var secTitle = document.getElementById('secTitle');
+  if (secTitle) secTitle.innerHTML = title;
+  var secDesc = document.getElementById('secDesc');
+  if (secDesc) secDesc.innerHTML = desc;
   var content = document.getElementById('secContent');
-  if (content) content.innerHTML = data.render();
+  if (content) content.innerHTML = data.render(currentLang);
 
   var keys = Object.keys(STUDENT_SECTIONS_DATA);
   var idx = keys.indexOf(num);
   var nextPrevHtml = '';
-  if (idx > 0) nextPrevHtml += '<button class="btn btn-ghost" onclick="openSection(&quot;' + keys[idx-1] + '&quot;)">← Prev Section</button> ';
-  if (idx < keys.length-1) nextPrevHtml += '<button class="btn btn-primary" onclick="openSection(&quot;' + keys[idx+1] + '&quot;)">Next Section →</button>';
+  if (idx > 0) nextPrevHtml += '<button class="btn btn-ghost" onclick="openSection(&quot;' + keys[idx-1] + '&quot;)">' + (isHi ? '← पिछला सेक्शन' : '← Prev Section') + '</button> ';
+  if (idx < keys.length-1) nextPrevHtml += '<button class="btn btn-primary" onclick="openSection(&quot;' + keys[idx+1] + '&quot;)">' + (isHi ? 'अगला सेक्शन →' : 'Next Section →') + '</button>';
   var np = document.getElementById('secNextPrev');
   if (np) np.innerHTML = nextPrevHtml;
 
@@ -2873,10 +2908,13 @@ function openSection(num) {
   var sv = document.getElementById('sectionView');
   if (sv) sv.style.display = 'block';
 
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (!noScroll) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
 
 function showDashboard() {
+  currentOpenSection = null;
   location.hash = '';
   var sv = document.getElementById('sectionView');
   if (sv) sv.style.display = 'none';

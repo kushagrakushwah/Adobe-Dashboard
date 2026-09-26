@@ -252,7 +252,11 @@ footer p+p{margin-top:5px}
       <span class="flow-arr">→</span>
       <div class="flow-step" data-flow-section="C" onclick="openSection('C')" role="button" tabindex="0" title="Go to Section C: Student DCAIS Monitor"><span class="flow-n">3</span><span id="flow3">DCAIS Monitor</span></div>
       <span class="flow-arr">→</span>
-      <div class="flow-step" data-flow-section="G" onclick="openSection('G')" role="button" tabindex="0" title="Go to Section G: Certification Path &amp; Digital Badges"><span class="flow-n">4</span><span id="flow4">Certification</span></div>
+      <div class="flow-step" data-flow-section="D" onclick="openSection('D')" role="button" tabindex="0" title="Go to Section D: Classroom Resources"><span class="flow-n">4</span><span id="flow4">Classroom Resources</span></div>
+      <!-- Commented out flow step for Section G as not needed now
+      <span class="flow-arr">→</span>
+      <div class="flow-step" data-flow-section="G" onclick="openSection('G')"><span class="flow-n">5</span><span>Certification</span></div>
+      -->
     </div>
   </div>
 </section>
@@ -344,7 +348,7 @@ footer p+p{margin-top:5px}
         </div>
       </div>
 
-      <!-- Section E -->
+      <!-- Sections E, F, G [Commented out as not needed now]
       <div class="tile-card" data-section="E" onclick="openSection('E')">
         <div class="tile-img-wrap">
           <img class="tile-img" src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=600&h=200&fit=crop&q=80" alt="Progress" crossorigin="anonymous">
@@ -363,7 +367,6 @@ footer p+p{margin-top:5px}
         </div>
       </div>
 
-      <!-- Section F -->
       <div class="tile-card" data-section="F" onclick="openSection('F')">
         <div class="tile-img-wrap">
           <img class="tile-img" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=200&fit=crop&q=80" alt="Community" crossorigin="anonymous">
@@ -382,7 +385,6 @@ footer p+p{margin-top:5px}
         </div>
       </div>
 
-      <!-- Section G: Certification Path (Fixed Image!) -->
       <div class="tile-card" data-section="G" onclick="openSection('G')">
         <div class="tile-img-wrap">
           <img class="tile-img" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=200&fit=crop&q=80" alt="Certification" crossorigin="anonymous">
@@ -400,6 +402,7 @@ footer p+p{margin-top:5px}
           </div>
         </div>
       </div>
+      -->
 
     </div>
   </div>
@@ -408,7 +411,7 @@ footer p+p{margin-top:5px}
   <div id="sectionView" class="section-full-view">
     <div class="sec-nav-bar">
       <button class="back-btn" onclick="showDashboard()">&larr; <span id="backBtnLabel">Back to Sections</span></button>
-      <div class="sec-breadcrumb">Home / <strong id="crumbName">Section</strong></div>
+      <div class="sec-breadcrumb"><span id="crumbHome">Home</span> / <strong id="crumbName">Section</strong></div>
     </div>
     <div class="sec-hero-card">
       <div class="sec-hero-badge" id="secBadge">A</div>
@@ -2352,33 +2355,31 @@ var LANG = {
     hdrSub:'Educator Workspace', hdrBadge:'Educator Portal',
     heroTag:'Educator &amp; Curriculum Hub', heroTitle:'Educator Hub &amp; Curriculum Portal',
     heroSub:'Manage school access, CPD training, student DCAIS monitoring, classroom resources, and certification — all in one place.',
-    flow1:'School Access', flow2:'CPD Training', flow3:'DCAIS Monitor', flow4:'Certification',
+    flow1:'School Access', flow2:'CPD Training', flow3:'DCAIS Monitor', flow4:'Classroom Resources',
     guideText:'<strong>Click any section card below</strong> to open its complete workspace in full-screen view.',
     backBtn:'Back to Sections',
+    crumbHome:'Home',
     sAtag:'Section A', sAtitle:'Adobe ID &amp; Access', sAdesc:'School login, institutional account creation, single sign-on &amp; IT admin deployment guide.', sAhint:'5 Institutional Tools', sAbtn:'Open &rarr;',
     sBtag:'Section B', sBtitle:'CPD Modules', sBdesc:'5 accredited professional development modules (CPD-AE 01 to 05) totaling 48 training hours.', sBhint:'48 Hours Training', sBbtn:'Open &rarr;',
     sCtag:'Section C • DCAIS', sCtitle:'Student DCAIS Monitor (AIM)', sCdesc:'Monitor what DCAIS activities your students are doing across Grades 3–8. Inspect curriculum instructions and templates.', sChint:'Grades 3–8 Full Monitor', sCbtn:'Open &rarr;',
-    sDtag:'Section D', sDtitle:'Classroom Resources', sDdesc:'Lesson plan templates, classroom printables, grading rubrics, tutorial videos, and project kits.', sDhint:'6 Resource Packs', sDbtn:'Open &rarr;',
-    sEtag:'Section E', sEtitle:'Student Progress Tracker', sEdesc:'Monitor monthly activity completion rates, review submissions across grade bands, and evaluate portfolios.', sEhint:'Grade-wise Analytics', sEbtn:'Open &rarr;',
-    sFtag:'Section F', sFtitle:'Community &amp; Support', sFdesc:'Connect with educators, attend live webinars, join the national forum, and get technical help.', sFhint:'500+ Educators Network', sFbtn:'Open &rarr;',
-    sGtag:'Section G', sGtitle:'Certification Path', sGdesc:'Earn your Adobe Certified Educator credential. Track CPD hours and claim your digital badge.', sGhint:'4 Certification Levels', sGbtn:'Open &rarr;'
+    sDtag:'Section D', sDtitle:'Classroom Resources', sDdesc:'Lesson plan templates, classroom printables, grading rubrics, tutorial videos, and project kits.', sDhint:'6 Resource Packs', sDbtn:'Open &rarr;'
   },
   hi: {
     hdrSub:'शिक्षक कार्यक्षेत्र', hdrBadge:'शिक्षक पोर्टल',
     heroTag:'शिक्षक पैनल', heroTitle:'शिक्षक हब और पाठ्यक्रम विभाग',
-    heroSub:'स्कूल एक्सेस, CPD प्रशिक्षण, DCAIS मॉनिटरिंग, कक्षा संसाधन और प्रमाणीकरण सब एक जगह पर।',
-    flow1:'स्कूल एक्सेस', flow2:'CPD प्रशिक्षण', flow3:'DCAIS मॉनिटर', flow4:'प्रमाणीकरण',
+    heroSub:'स्कूल एक्सेस, CPD प्रशिक्षण, DCAIS मॉनिटरिंग और कक्षा संसाधन सब एक जगह पर।',
+    flow1:'स्कूल एक्सेस', flow2:'CPD प्रशिक्षण', flow3:'DCAIS मॉनिटर', flow4:'कक्षा संसाधन',
     guideText:'<strong>नीचे किसी भी सेक्शन कार्ड पर क्लिक करें</strong> और उसे पूरी स्क्रीन पर खोलें।',
     backBtn:'वापस जाएं',
+    crumbHome:'होम',
     sAtag:'सेक्शन A', sAtitle:'Adobe ID और एक्सेस', sAdesc:'स्कूल लॉगिन, संस्थागत खाता निर्माण, SSO और IT तैनाती गाइड।', sAhint:'5 संस्थागत टूल्स', sAbtn:'खोलें &rarr;',
     sBtag:'सेक्शन B', sBtitle:'CPD मॉड्यूल', sBdesc:'5 मान्यता प्राप्त प्रशिक्षण मॉड्यूल — CPD-AE 01 से 05 — कुल 48 घंटे।', sBhint:'48 घंटे प्रशिक्षण', sBbtn:'खोलें &rarr;',
     sCtag:'सेक्शन C • DCAIS', sCtitle:'छात्र DCAIS मॉनिटर (AIM)', sCdesc:'देखें कक्षा 3 से 8 तक आपके छात्र कौन सी DCAIS गतिविधियाँ कर रहे हैं।', sChint:'कक्षा 3–8 पूर्ण मॉनिटर', sCbtn:'खोलें &rarr;',
-    sDtag:'सेक्शन D', sDtitle:'कक्षा संसाधन', sDdesc:'पाठ योजना टेम्पलेट, क्लासरूम प्रिंटेबल्स, ग्रेडिंग रूब्रिक्स और वीडियो।', sDhint:'6 संसाधन पैक', sDbtn:'खोलें &rarr;',
-    sEtag:'सेक्शन E', sEtitle:'छात्र प्रगति ट्रैकर', sEdesc:'मासिक गतिविधि समाप्ति दर देखें और छात्र पोर्टफोलियो का मूल्यांकन करें।', sEhint:'कक्षावार विश्लेषण', sEbtn:'खोलें &rarr;',
-    sFtag:'सेक्शन F', sFtitle:'समुदाय और सहायता', sFdesc:'शिक्षकों से जुड़ें, लाइव वेबिनार में भाग लें और तकनीकी सहायता पाएं।', sFhint:'500+ शिक्षक नेटवर्क', sFbtn:'खोलें &rarr;',
-    sGtag:'सेक्शन G', sGtitle:'प्रमाणीकरण पथ', sGdesc:'Adobe सर्टिफाइड शिक्षक बनें। CPD घंटे ट्रैक करें और डिजिटल बैज क्लेम करें।', sGhint:'4 स्तरीय प्रमाणीकरण', sGbtn:'खोलें &rarr;'
+    sDtag:'सेक्शन D', sDtitle:'कक्षा संसाधन', sDdesc:'पाठ योजना टेम्पलेट, क्लासरूम प्रिंटेबल्स, ग्रेडिंग रूब्रिक्स और वीडियो।', sDhint:'6 संसाधन पैक', sDbtn:'खोलें &rarr;'
   }
 };
+
+var currentTeacherSection = null;
 
 function toggleLang() {
   currentLang = (currentLang === 'en') ? 'hi' : 'en';
@@ -2387,9 +2388,8 @@ function toggleLang() {
   if (bEn) bEn.classList.toggle('active', currentLang === 'en');
   if (bHi) bHi.classList.toggle('active', currentLang === 'hi');
   applyLang();
-  if (location.hash === '#section-C') {
-    var c = document.getElementById('secContent');
-    if (c) c.innerHTML = renderDcaisMonitor();
+  if (currentTeacherSection) {
+    openSection(currentTeacherSection, true);
   }
 }
 
@@ -2410,36 +2410,100 @@ function applyLang() {
   set('flow4', L.flow4);
   set('guideText', L.guideText);
   set('backBtnLabel', L.backBtn);
+  set('crumbHome', L.crumbHome || (currentLang === 'hi' ? 'होम' : 'Home'));
   set('sA-tag', L.sAtag); set('sA-title', L.sAtitle); set('sA-desc', L.sAdesc); set('sA-hint', L.sAhint); set('sA-btn', L.sAbtn);
   set('sB-tag', L.sBtag); set('sB-title', L.sBtitle); set('sB-desc', L.sBdesc); set('sB-hint', L.sBhint); set('sB-btn', L.sBbtn);
   set('sC-tag', L.sCtag); set('sC-title', L.sCtitle); set('sC-desc', L.sCdesc); set('sC-hint', L.sChint); set('sC-btn', L.sCbtn);
   set('sD-tag', L.sDtag); set('sD-title', L.sDtitle); set('sD-desc', L.sDdesc); set('sD-hint', L.sDhint); set('sD-btn', L.sDbtn);
-  set('sE-tag', L.sEtag); set('sE-title', L.sEtitle); set('sE-desc', L.sEdesc); set('sE-hint', L.sEhint); set('sE-btn', L.sEbtn);
-  set('sF-tag', L.sFtag); set('sF-title', L.sFtitle); set('sF-desc', L.sFdesc); set('sF-hint', L.sFhint); set('sF-btn', L.sFbtn);
-  set('sG-tag', L.sGtag); set('sG-title', L.sGtitle); set('sG-desc', L.sGdesc); set('sG-hint', L.sGhint); set('sG-btn', L.sGbtn);
 }
 
 /* ===== CPD DATA ===== */
 var CPD_MODULES = [
-  { code:'CPD-AE-01', title:'Digital Creativity Foundations', duration:'10 hrs', level:'Foundation', desc:'Introduction to Adobe Express, digital design principles, and foundational visual literacy for classroom application.', outcomes:['Basic design workflow','Colour & Typography fundamentals','Creating your first classroom project'] },
-  { code:'CPD-AE-02', title:'Visual Communication & Design', duration:'10 hrs', level:'Foundation', desc:'Deep dive into layout design, visual hierarchy, infographics, and presenting complex ideas through visual storytelling.', outcomes:['Layout hierarchy mastery','Infographic creation','Visual storytelling rubric'] },
-  { code:'CPD-AE-03', title:'Collaborative Digital Projects', duration:'10 hrs', level:'Intermediate', desc:'Design cross-curricular, collaborative group projects for students. Manage team workflows in Adobe Express.', outcomes:['Group project frameworks','Assessment rubrics','Cross-curricular integration'] },
-  { code:'CPD-AE-04', title:'Video & Animation for Education', duration:'8 hrs', level:'Intermediate', desc:'Produce educational video content, animated explainers, and multimedia classroom materials using Adobe Express video tools.', outcomes:['Educational video production','Animation principles','Classroom multimedia creation'] },
-  { code:'CPD-AE-05', title:'Advanced Pedagogy & Certification Prep', duration:'10 hrs', level:'Mastery', desc:'Develop comprehensive DCAIS curriculum units, prepare your certification portfolio, and train fellow educators.', outcomes:['Full curriculum design','Peer training methodology','Adobe Educator portfolio preparation'] }
+  {
+    code: 'CPD-AE-01',
+    titleEn: 'Digital Creativity Foundations',
+    titleHi: 'डिजिटल रचनात्मकता की बुनियादी बातें',
+    duration: '10 hrs',
+    durationHi: '10 घंटे',
+    levelEn: 'Foundation',
+    levelHi: 'बुनियाद',
+    descEn: 'Introduction to Adobe Express, digital design principles, and foundational visual literacy for classroom application.',
+    descHi: 'Adobe Express, डिजिटल डिज़ाइन सिद्धांतों और कक्षा अनुप्रयोग के लिए दृश्य साक्षरता का परिचय।',
+    outcomesEn: ['Basic design workflow', 'Colour & Typography fundamentals', 'Creating your first classroom project'],
+    outcomesHi: ['मूल डिज़ाइन कार्यप्रवाह', 'रंग और टाइपोग्राफी के सिद्धांत', 'अपना पहला क्लासरूम प्रोजेक्ट बनाना']
+  },
+  {
+    code: 'CPD-AE-02',
+    titleEn: 'Visual Communication & Design',
+    titleHi: 'विज़ुअल संचार और डिज़ाइन',
+    duration: '10 hrs',
+    durationHi: '10 घंटे',
+    levelEn: 'Foundation',
+    levelHi: 'बुनियाद',
+    descEn: 'Deep dive into layout design, visual hierarchy, infographics, and presenting complex ideas through visual storytelling.',
+    descHi: 'लेआउट डिज़ाइन, विज़ुअल पदानुक्रम, इन्फोग्राफिक्स और विज़ुअल स्टोरीटेलिंग का गहन अध्ययन।',
+    outcomesEn: ['Layout hierarchy mastery', 'Infographic creation', 'Visual storytelling rubric'],
+    outcomesHi: ['लेआउट पदानुक्रम में महारत', 'इन्फोग्राफिक निर्माण', 'विज़ुअल स्टोरीटेलिंग रूब्रिक']
+  },
+  {
+    code: 'CPD-AE-03',
+    titleEn: 'Collaborative Digital Projects',
+    titleHi: 'सहयोगात्मक डिजिटल प्रोजेक्ट्स',
+    duration: '10 hrs',
+    durationHi: '10 घंटे',
+    levelEn: 'Intermediate',
+    levelHi: 'एकीकरण',
+    descEn: 'Design cross-curricular, collaborative group projects for students. Manage team workflows in Adobe Express.',
+    descHi: 'छात्रों के लिए अंतर-विषयक, सहयोगात्मक समूह प्रोजेक्ट डिज़ाइन करें। Adobe Express में टीम वर्कफ़्लो प्रबंधित करें।',
+    outcomesEn: ['Group project frameworks', 'Assessment rubrics', 'Cross-curricular integration'],
+    outcomesHi: ['समूह प्रोजेक्ट फ्रेमवर्क', 'मूल्यांकन रूब्रिक्स', 'पाठ्यचर्या एकीकरण']
+  },
+  {
+    code: 'CPD-AE-04',
+    titleEn: 'Video & Animation for Education',
+    titleHi: 'शिक्षा के लिए वीडियो और एनिमेशन',
+    duration: '8 hrs',
+    durationHi: '8 घंटे',
+    levelEn: 'Intermediate',
+    levelHi: 'उन्नत',
+    descEn: 'Produce educational video content, animated explainers, and multimedia classroom materials using Adobe Express video tools.',
+    descHi: 'Adobe Express वीडियो टूल्स का उपयोग करके शैक्षिक वीडियो सामग्री, एनिमेटेड व्याख्याता और मल्टीमीडिया सामग्री तैयार करें।',
+    outcomesEn: ['Educational video production', 'Animation principles', 'Classroom multimedia creation'],
+    outcomesHi: ['शैक्षिक वीडियो निर्माण', 'एनिमेशन के सिद्धांत', 'कक्षा मल्टीमीडिया निर्माण']
+  },
+  {
+    code: 'CPD-AE-05',
+    titleEn: 'Advanced Pedagogy & Certification Prep',
+    titleHi: 'उन्नत शिक्षाशास्त्र और प्रमाणन तैयारी',
+    duration: '10 hrs',
+    durationHi: '10 घंटे',
+    levelEn: 'Mastery',
+    levelHi: 'प्रवीणता',
+    descEn: 'Develop comprehensive DCAIS curriculum units, prepare your certification portfolio, and train fellow educators.',
+    descHi: 'व्यापक DCAIS पाठ्यक्रम इकाइयाँ विकसित करें, अपना प्रमाणन पोर्टफोलियो तैयार करें और साथी शिक्षकों को प्रशिक्षित करें।',
+    outcomesEn: ['Full curriculum design', 'Peer training methodology', 'Adobe Educator portfolio preparation'],
+    outcomesHi: ['पूर्ण पाठ्यक्रम डिज़ाइन', 'सहकर्मी प्रशिक्षण पद्धति', 'Adobe Educator पोर्टफोलियो तैयारी']
+  }
 ];
 
 function renderCpdSectionHtml() {
+  var isHi = (currentLang === 'hi');
   var stepsHtml = CPD_MODULES.map(function(m, i) {
+    var lvl = isHi ? m.levelHi : m.levelEn;
     return (i > 0 ? '<div class="cpd-connector"></div>' : '') +
-      '<div class="cpd-step"><div class="cpd-step-n">' + (i+1) + '</div><div class="cpd-step-l">' + m.level + '</div></div>';
+      '<div class="cpd-step"><div class="cpd-step-n">' + (i+1) + '</div><div class="cpd-step-l">' + lvl + '</div></div>';
   }).join('');
   var cardsHtml = CPD_MODULES.map(function(m) {
+    var title = isHi ? m.titleHi : m.titleEn;
+    var dur = isHi ? m.durationHi : m.duration;
+    var desc = isHi ? m.descHi : m.descEn;
+    var outcomes = isHi ? m.outcomesHi : m.outcomesEn;
     return '<div class="rc">' +
-      '<div><div class="rc-badge">' + m.code + ' • ' + m.duration + '</div><h4>' + m.title + '</h4><p>' + m.desc + '</p>' +
+      '<div><div class="rc-badge">' + m.code + ' • ' + dur + '</div><h4>' + title + '</h4><p>' + desc + '</p>' +
       '<ul style="font-size:.78rem;color:var(--ink-2);padding-left:18px;margin-bottom:14px;">' +
-      m.outcomes.map(function(o){ return '<li style="margin-bottom:3px;">' + o + '</li>'; }).join('') +
+      outcomes.map(function(o){ return '<li style="margin-bottom:3px;">' + o + '</li>'; }).join('') +
       '</ul></div>' +
-      '<a href="https://express.adobe.com/learn" target="_blank" class="btn btn-primary">Start Module &#8599;</a>' +
+      '<a href="https://express.adobe.com/learn" target="_blank" class="btn btn-primary">' + (isHi ? 'मॉड्यूल शुरू करें ↗' : 'Start Module ↗') + '</a>' +
     '</div>';
   }).join('');
   return '<div class="cpd-steps">' + stepsHtml + '</div><div class="rg">' + cardsHtml + '</div>';
@@ -2637,50 +2701,176 @@ function searchTeacherActivities(q) {
 var TEACHER_SECTIONS_DATA = {
   'A': {
     letter: '🔑',
-    tag: 'Section A • Institutional Access',
-    title: 'Adobe ID &amp; Password Access Management',
-    desc: 'Ensure seamless institutional access to Adobe Express for Education for your school or institution.',
-    render: function() {
-      return '<div class="notice"><div class="notice-t">Institutional Login Required</div><div class="notice-d">All teachers must use school-assigned Adobe IDs. Contact your IT administrator if you do not have institutional access credentials.</div></div>' +
+    tagEn: 'Section A • Institutional Access',
+    tagHi: 'सेक्शन A • संस्थागत एक्सेस',
+    titleEn: 'Adobe ID & Password Access Management',
+    titleHi: 'Adobe ID और पासवर्ड एक्सेस प्रबंधन',
+    descEn: 'Ensure seamless institutional access to Adobe Express for Education for your school or institution.',
+    descHi: 'अपने स्कूल या संस्थान के लिए Adobe Express for Education तक सहज संस्थागत पहुंच सुनिश्चित करें।',
+    render: function(lang) {
+      var isHi = (currentLang === 'hi');
+      var noticeTitle = isHi ? 'संस्थागत लॉगिन आवश्यक' : 'Institutional Login Required';
+      var noticeDesc = isHi ? 'सभी शिक्षकों को स्कूल द्वारा निर्दिष्ट आधिकारिक Adobe ID का उपयोग करना होगा। यदि आपके पास क्रेडेंशियल नहीं हैं तो IT व्यवस्थापक से संपर्क करें।' : 'All teachers must use school-assigned Adobe IDs. Contact your IT administrator if you do not have institutional access credentials.';
+      var actions = [
+        {
+          tEn: 'School Admin Console',
+          tHi: 'स्कूल एडमिन कंसोल',
+          dEn: 'Manage institutional Adobe licenses, user permissions, and school-wide directory sync.',
+          dHi: 'संस्थागत Adobe लाइसेंस, उपयोगकर्ता अनुमतियां और स्कूल-व्यापी निर्देशिका सिंक प्रबंधित करें।',
+          btnEn: 'Open Console ↗',
+          btnHi: 'कंसोल खोलें ↗',
+          href: 'https://adminconsole.adobe.com',
+          primary: true
+        },
+        {
+          tEn: 'Create Adobe ID',
+          tHi: 'Adobe ID बनाएं',
+          dEn: 'Step-by-step account setup using your designated official school email address.',
+          dHi: 'अपने आधिकारिक स्कूल ईमेल पते का उपयोग करके चरण-दर-चरण खाता सेटअप करें।',
+          btnEn: 'Create Account ↗',
+          btnHi: 'खाता बनाएं ↗',
+          href: 'https://account.adobe.com',
+          primary: true
+        },
+        {
+          tEn: 'Password & Security Settings',
+          tHi: 'पासवर्ड और सुरक्षा सेटिंग्स',
+          dEn: 'Reset credentials, manage two-factor authentication, and update recovery options.',
+          dHi: 'क्रेडेंशियल रीसेट करें, दो-चरणीय प्रमाणीकरण प्रबंधित करें और रिकवरी विकल्प अपडेट करें।',
+          btnEn: 'Manage Security ↗',
+          btnHi: 'सुरक्षा प्रबंधित करें ↗',
+          href: 'https://account.adobe.com/security',
+          primary: false
+        },
+        {
+          tEn: 'IT Admin Deployment Guide',
+          tHi: 'IT एडमिन परिनियोजन गाइड',
+          dEn: 'Enterprise deployment manual for school IT administrators to roll out Adobe Express across computer labs.',
+          dHi: 'स्कूल कंप्यूटर लैब में Adobe Express लागू करने के लिए स्कूल IT प्रशासकों के लिए मार्गदर्शिका।',
+          btnEn: 'View Guide ↗',
+          btnHi: 'गाइड देखें ↗',
+          href: 'https://helpx.adobe.com/enterprise',
+          primary: false
+        },
+        {
+          tEn: 'Single Sign-On (SSO) Integration',
+          tHi: 'सिंगल साइन-ऑन (SSO) एकीकरण',
+          dEn: 'Connect your school institutional Google Workspace or Microsoft 365 for one-click logins.',
+          dHi: 'एक-क्लिक लॉगिन के लिए अपने स्कूल के Google Workspace या Microsoft 365 को कनेक्ट करें।',
+          btnEn: 'Setup SSO ↗',
+          btnHi: 'SSO सेटअप करें ↗',
+          href: 'https://helpx.adobe.com/enterprise/using/sso.html',
+          primary: false
+        }
+      ];
+
+      return '<div class="notice"><div class="notice-t">' + noticeTitle + '</div><div class="notice-d">' + noticeDesc + '</div></div>' +
       '<div class="al">' +
-        '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">School Admin Console</div><div class="ai-d">Manage institutional Adobe licenses, user permissions, and school-wide directory sync.</div></div></div><div class="ai-r"><a href="https://adminconsole.adobe.com" target="_blank" class="btn btn-primary">Open Console &#8599;</a></div></div>' +
-        '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Create Adobe ID</div><div class="ai-d">Step-by-step account setup using your designated official school email address.</div></div></div><div class="ai-r"><a href="https://account.adobe.com" target="_blank" class="btn btn-primary">Create Account &#8599;</a></div></div>' +
-        '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Password &amp; Security Settings</div><div class="ai-d">Reset credentials, manage two-factor authentication, and update recovery options.</div></div></div><div class="ai-r"><a href="https://account.adobe.com/security" target="_blank" class="btn btn-ghost">Manage Security &#8599;</a></div></div>' +
-        '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">IT Admin Deployment Guide</div><div class="ai-d">Enterprise deployment manual for school IT administrators to roll out Adobe Express across computer labs.</div></div></div><div class="ai-r"><a href="https://helpx.adobe.com/enterprise" target="_blank" class="btn btn-ghost">View Guide &#8599;</a></div></div>' +
-        '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Single Sign-On (SSO) Integration</div><div class="ai-d">Connect your school institutional Google Workspace or Microsoft 365 for one-click logins.</div></div></div><div class="ai-r"><a href="https://helpx.adobe.com/enterprise/using/sso.html" target="_blank" class="btn btn-ghost">Setup SSO &#8599;</a></div></div>' +
+        actions.map(function(a) {
+          var t = isHi ? a.tHi : a.tEn;
+          var d = isHi ? a.dHi : a.dEn;
+          var b = isHi ? a.btnHi : a.btnEn;
+          var btnCls = a.primary ? 'btn btn-primary' : 'btn btn-ghost';
+          return '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">' + t + '</div><div class="ai-d">' + d + '</div></div></div><div class="ai-r"><a href="' + a.href + '" target="_blank" class="' + btnCls + '">' + b + '</a></div></div>';
+        }).join('') +
       '</div>';
     }
   },
   'B': {
     letter: '📚',
-    tag: 'Section B • Professional Development',
-    title: 'CPD Training Modules (48 Hours)',
-    desc: 'Five progressive accredited modules designed to equip educators with foundational to advanced digital creativity pedagogy.',
-    render: function() { return renderCpdSectionHtml(); }
+    tagEn: 'Section B • Professional Development',
+    tagHi: 'सेक्शन B • व्यावसायिक विकास',
+    titleEn: 'CPD Training Modules (48 Hours)',
+    titleHi: 'CPD प्रशिक्षण मॉड्यूल (48 घंटे)',
+    descEn: 'Five progressive accredited modules designed to equip educators with foundational to advanced digital creativity pedagogy.',
+    descHi: 'शिक्षकों को बुनियादी से उन्नत डिजिटल रचनात्मकता शिक्षाशास्त्र से लैस करने के लिए तैयार किए गए पांच मान्यता प्राप्त मॉड्यूल।',
+    render: function(lang) { return renderCpdSectionHtml(); }
   },
   'C': {
     letter: '🔭',
-    tag: 'Section C • Student DCAIS Monitor',
-    title: 'Student DCAIS Activities Monitor (AIM)',
-    desc: 'Explore the full DCAIS activity catalog (Grades 3–8) exactly as presented to students. Inspect templates, tasks, and test student activities.',
-    render: function() { return renderDcaisMonitor(); }
+    tagEn: 'Section C • Student DCAIS Monitor',
+    tagHi: 'सेक्शन C • छात्र DCAIS मॉनिटर',
+    titleEn: 'Student DCAIS Activities Monitor (AIM)',
+    titleHi: 'छात्र DCAIS गतिविधियाँ मॉनिटर (AIM)',
+    descEn: 'Explore the full DCAIS activity catalog (Grades 3–8) exactly as presented to students. Inspect templates, tasks, and test student activities.',
+    descHi: 'कक्षा 3 से 8 तक की पूर्ण DCAIS गतिविधि सूची का निरीक्षण करें। टेम्पलेट, निर्देश देखें और गतिविधियों का परीक्षण करें।',
+    render: function(lang) { return renderDcaisMonitor(); }
   },
   'D': {
     letter: '📝',
-    tag: 'Section D • Classroom Assets',
-    title: 'Classroom Resources &amp; Printables',
-    desc: 'Ready-to-use lesson plans, assessment rubrics, smartboard tutorial videos, and printable design thinking posters.',
-    render: function() {
+    tagEn: 'Section D • Classroom Assets',
+    tagHi: 'सेक्शन D • कक्षा संसाधन',
+    titleEn: 'Classroom Resources & Printables',
+    titleHi: 'कक्षा संसाधन और प्रिंटेबल्स',
+    descEn: 'Ready-to-use lesson plans, assessment rubrics, smartboard tutorial videos, and printable design thinking posters.',
+    descHi: 'उपयोग के लिए तैयार पाठ योजनाएँ, मूल्यांकन रूब्रिक्स, स्मार्टबोर्ड ट्यूटोरियल वीडियो और प्रिंट करने योग्य डिज़ाइन थिंकिंग पोस्टर।',
+    render: function(lang) {
+      var isHi = (currentLang === 'hi');
+      var items = [
+        {
+          badgeEn: 'Templates', badgeHi: 'टेम्पलेट्स',
+          titleEn: 'Lesson Plan Templates', titleHi: 'पाठ योजना टेम्पलेट्स',
+          descEn: 'Pre-designed lesson plan templates aligned with DCAIS curriculum standards for all grade levels.',
+          descHi: 'सभी ग्रेड स्तरों के लिए DCAIS पाठ्यक्रम मानकों के अनुरूप पूर्व-डिज़ाइन किए गए पाठ योजना टेम्पलेट।',
+          btnEn: 'Download Templates ↗', btnHi: 'टेम्पलेट डाउनलोड करें ↗',
+          href: 'https://express.adobe.com/templates'
+        },
+        {
+          badgeEn: 'Printables', badgeHi: 'प्रिंटेबल्स',
+          titleEn: 'Classroom Posters & Cheatsheets', titleHi: 'कक्षा के पोस्टर और चीटशीट्स',
+          descEn: 'Design thinking posters and Adobe Express quick reference cards, ready to print for school computer labs.',
+          descHi: 'डिज़ाइन थिंकिंग पोस्टर और Adobe Express त्वरित संदर्भ कार्ड, कंप्यूटर लैब के लिए प्रिंट करने हेतु तैयार।',
+          btnEn: 'Get Posters ↗', btnHi: 'पोस्टर प्राप्त करें ↗',
+          href: 'https://express.adobe.com'
+        },
+        {
+          badgeEn: 'Assessment', badgeHi: 'मूल्यांकन',
+          titleEn: 'Standardized Grading Rubrics', titleHi: 'मानकीकृत ग्रेडिंग रूब्रिक्स',
+          descEn: 'Comprehensive rubrics for evaluating student creative projects across beginner, intermediate, and advanced levels.',
+          descHi: 'प्रारंभिक, मध्यवर्ती और उन्नत स्तरों पर छात्र रचनात्मक परियोजनाओं के मूल्यांकन के लिए व्यापक रूब्रिक्स।',
+          btnEn: 'View Rubrics ↗', btnHi: 'रूब्रिक्स देखें ↗',
+          href: 'https://express.adobe.com'
+        },
+        {
+          badgeEn: 'Video', badgeHi: 'वीडियो',
+          titleEn: 'Classroom Tutorial Videos', titleHi: 'कक्षा ट्यूटोरियल वीडियो',
+          descEn: 'Step-by-step instructional videos optimized for classroom smartboard projection and teacher-led demonstrations.',
+          descHi: 'स्मार्टबोर्ड प्रोजेक्शन और शिक्षक के नेतृत्व वाले प्रदर्शन के लिए अनुकूलित चरण-दर-चरण निर्देशात्मक वीडियो।',
+          btnEn: 'Watch Videos ↗', btnHi: 'वीडियो देखें ↗',
+          href: 'https://express.adobe.com/learn'
+        },
+        {
+          badgeEn: 'Project Kits', badgeHi: 'प्रोजेक्ट किट',
+          titleEn: 'Project Starter Kits', titleHi: 'प्रोजेक्ट स्टार्टर किट',
+          descEn: 'Complete project packs with instructions, editable templates, and benchmark student exemplar outputs.',
+          descHi: 'निर्देशों, संपादन योग्य टेम्पलेट्स और मॉडल छात्र प्रोजेक्ट नमूनों के साथ पूर्ण प्रोजेक्ट पैक।',
+          btnEn: 'Get Starter Kits ↗', btnHi: 'स्टार्टर किट प्राप्त करें ↗',
+          href: 'https://express.adobe.com'
+        },
+        {
+          badgeEn: 'Pedagogy', badgeHi: 'शिक्षाशास्त्र',
+          titleEn: 'Teacher Integration Manual', titleHi: 'शिक्षक एकीकरण नियमावली',
+          descEn: 'Guide on embedding digital creativity into existing Science, Social Studies, and Language curricula.',
+          descHi: 'विज्ञान, सामाजिक अध्ययन और भाषा पाठ्यक्रमों में डिजिटल रचनात्मकता को शामिल करने के लिए मार्गदर्शिका।',
+          btnEn: 'Read Guide ↗', btnHi: 'गाइड पढ़ें ↗',
+          href: 'https://express.adobe.com'
+        }
+      ];
+
       return '<div class="rg">' +
-        '<div class="rc"><div><div class="rc-badge">Templates</div><h4>Lesson Plan Templates</h4><p>Pre-designed lesson plan templates aligned with DCAIS curriculum standards for all grade levels.</p></div><a href="https://express.adobe.com/templates" target="_blank" class="btn btn-primary">Download Templates &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Printables</div><h4>Classroom Posters &amp; Cheatsheets</h4><p>Design thinking posters and Adobe Express quick reference cards, ready to print for school computer labs.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Get Posters &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Assessment</div><h4>Standardized Grading Rubrics</h4><p>Comprehensive rubrics for evaluating student creative projects across beginner, intermediate, and advanced levels.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Rubrics &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Video</div><h4>Classroom Tutorial Videos</h4><p>Step-by-step instructional videos optimized for classroom smartboard projection and teacher-led demonstrations.</p></div><a href="https://express.adobe.com/learn" target="_blank" class="btn btn-primary">Watch Videos &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Project Kits</div><h4>Project Starter Kits</h4><p>Complete project packs with instructions, editable templates, and benchmark student exemplar outputs.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Get Starter Kits &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Pedagogy</div><h4>Teacher Integration Manual</h4><p>Guide on embedding digital creativity into existing Science, Social Studies, and Language curricula.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Read Guide &#8599;</a></div>' +
+        items.map(function(item) {
+          var badge = isHi ? item.badgeHi : item.badgeEn;
+          var title = isHi ? item.titleHi : item.titleEn;
+          var desc = isHi ? item.descHi : item.descEn;
+          var btn = isHi ? item.btnHi : item.btnEn;
+          return '<div class="rc"><div><div class="rc-badge">' + badge + '</div><h4>' + title + '</h4><p>' + desc + '</p></div><a href="' + item.href + '" target="_blank" class="btn btn-primary">' + btn + '</a></div>';
+        }).join('') +
       '</div>';
     }
-  },
+  }
+  /*
+  // Sections E, F, G [Commented out as not needed now]
+  ,
   'E': {
     letter: '📊',
     tag: 'Section E • Student Submissions',
@@ -2742,31 +2932,41 @@ var TEACHER_SECTIONS_DATA = {
       '</div>';
     }
   }
+  */
 };
 
 /* ===== NAVIGATION CONTROLLER ===== */
-function openSection(letter) {
+function openSection(letter, noScroll) {
   var data = TEACHER_SECTIONS_DATA[letter];
   if (!data) return;
+  currentTeacherSection = letter;
   location.hash = '#section-' + letter;
+
+  var isHi = (currentLang === 'hi');
+  var tag = isHi ? data.tagHi : data.tagEn;
+  var title = isHi ? data.titleHi : data.titleEn;
+  var desc = isHi ? data.descHi : data.descEn;
+
+  var crumbHome = document.getElementById('crumbHome');
+  if (crumbHome) crumbHome.innerHTML = isHi ? 'होम' : 'Home';
   var crumb = document.getElementById('crumbName');
-  if (crumb) crumb.innerHTML = data.tag;
+  if (crumb) crumb.innerHTML = tag;
   var badge = document.getElementById('secBadge');
   if (badge) badge.innerHTML = data.letter;
-  var tag = document.getElementById('secTag');
-  if (tag) tag.innerHTML = data.tag;
-  var title = document.getElementById('secTitle');
-  if (title) title.innerHTML = data.title;
-  var desc = document.getElementById('secDesc');
-  if (desc) desc.innerHTML = data.desc;
+  var secTag = document.getElementById('secTag');
+  if (secTag) secTag.innerHTML = tag;
+  var secTitle = document.getElementById('secTitle');
+  if (secTitle) secTitle.innerHTML = title;
+  var secDesc = document.getElementById('secDesc');
+  if (secDesc) secDesc.innerHTML = desc;
   var content = document.getElementById('secContent');
-  if (content) content.innerHTML = data.render();
+  if (content) content.innerHTML = data.render(currentLang);
 
   var keys = Object.keys(TEACHER_SECTIONS_DATA);
   var idx = keys.indexOf(letter);
   var nextPrevHtml = '';
-  if (idx > 0) nextPrevHtml += '<button class="btn btn-ghost" onclick="openSection(&quot;' + keys[idx-1] + '&quot;)">&#8592; Prev Section</button> ';
-  if (idx < keys.length-1) nextPrevHtml += '<button class="btn btn-primary" onclick="openSection(&quot;' + keys[idx+1] + '&quot;)">Next Section &#8594;</button>';
+  if (idx > 0) nextPrevHtml += '<button class="btn btn-ghost" onclick="openSection(&quot;' + keys[idx-1] + '&quot;)">' + (isHi ? '← पिछला सेक्शन' : '← Prev Section') + '</button> ';
+  if (idx < keys.length-1) nextPrevHtml += '<button class="btn btn-primary" onclick="openSection(&quot;' + keys[idx+1] + '&quot;)">' + (isHi ? 'अगला सेक्शन →' : 'Next Section →') + '</button>';
   var np = document.getElementById('secNextPrev');
   if (np) np.innerHTML = nextPrevHtml;
 
@@ -2777,10 +2977,13 @@ function openSection(letter) {
   var sv = document.getElementById('sectionView');
   if (sv) sv.style.display = 'block';
 
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (!noScroll) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
 
 function showDashboard() {
+  currentTeacherSection = null;
   location.hash = '';
   var sv = document.getElementById('sectionView');
   if (sv) sv.style.display = 'none';
@@ -2790,6 +2993,8 @@ function showDashboard() {
   if (mh) mh.style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+
 
 window.addEventListener('hashchange', function() {
   var hash = location.hash;
