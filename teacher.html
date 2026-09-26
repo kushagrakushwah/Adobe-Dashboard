@@ -212,6 +212,51 @@ footer p+p{margin-top:5px}
   .aim-top-nav{flex-direction:column;align-items:stretch}
   .aim-search{max-width:100%}
 }
+
+/* DCAIS EXAM STYLES */
+.exam-tabs{display:flex;gap:10px;margin-bottom:22px;border-bottom:2px solid var(--border);padding-bottom:12px;overflow-x:auto;scrollbar-width:thin}
+.exam-tab-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 20px;border-radius:999px;font-size:.84rem;font-weight:800;border:1.5px solid var(--border);background:var(--surface);color:var(--ink-2);cursor:pointer;transition:all .18s;white-space:nowrap}
+.exam-tab-btn:hover{border-color:var(--red);color:var(--red);background:var(--red-bg)}
+.exam-tab-btn.active{background:var(--red);border-color:var(--red);color:#FFF;box-shadow:0 3px 10px rgba(250,15,0,.25)}
+.exam-meta-banner{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#FFF2F1 0%,#FFF8F7 100%);border:1.5px solid var(--red-border);border-radius:var(--radius);padding:18px 22px;margin-bottom:24px;gap:16px;flex-wrap:wrap}
+.exam-meta-title{font-size:1.05rem;font-weight:900;color:var(--ink);display:flex;align-items:center;gap:10px}
+.exam-meta-badges{display:flex;gap:8px;flex-wrap:wrap}
+.exam-pill{font-size:.74rem;font-weight:800;padding:4px 12px;border-radius:999px;background:#FFF;border:1px solid var(--red-border);color:var(--red)}
+.exam-search-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.exam-search-box{flex:1;min-width:240px;position:relative}
+.exam-search-box input{width:100%;padding:9px 16px 9px 36px;border:1.5px solid var(--border);border-radius:999px;font-size:.84rem;outline:none;font-family:inherit}
+.exam-search-box input:focus{border-color:var(--red)}
+.exam-search-box::before{content:'🔍';position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:.82rem;opacity:.5}
+.exam-region-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+.exam-region-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:20px;display:flex;flex-direction:column;justify-content:space-between;transition:all .22s;box-shadow:var(--shadow-sm);position:relative;overflow:hidden}
+.exam-region-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(250,15,0,.12)}
+.exam-region-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.exam-region-icon{width:46px;height:46px;border-radius:12px;background:#FFF0F0;border:1.5px solid rgba(250,15,0,.2);display:flex;align-items:center;justify-content:center;font-size:1.45rem;flex-shrink:0}
+.exam-region-title{font-size:1.08rem;font-weight:900;color:var(--ink);line-height:1.2}
+.exam-region-sub{font-size:.74rem;font-weight:700;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
+.exam-region-actions{display:flex;flex-direction:column;gap:8px;margin-top:16px;padding-top:14px;border-top:1px solid var(--border)}
+.exam-qa-card{background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:18px;transition:all .2s}
+.exam-qa-card:hover{border-color:rgba(250,15,0,.3);box-shadow:var(--shadow-sm)}
+.exam-qa-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.exam-qa-num{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:900;color:var(--red);text-transform:uppercase;letter-spacing:.05em}
+.exam-qa-marks{background:var(--surface);border:1px solid var(--border);padding:3px 11px;border-radius:999px;font-size:.74rem;font-weight:800;color:var(--ink-2)}
+.exam-qa-title{font-size:1.02rem;font-weight:800;color:var(--ink);line-height:1.45;margin-bottom:14px}
+.exam-opts{display:grid;grid-template-columns:1fr;gap:9px;margin-bottom:14px}
+@media(min-width:640px){.exam-opts{grid-template-columns:1fr 1fr}}
+.exam-opt{background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:11px 14px;font-size:.84rem;color:var(--ink-2);font-weight:600;display:flex;align-items:center;gap:10px;transition:all .18s}
+.exam-opt.correct{background:#F0FDF4;border-color:#22C55E;color:#15803D;font-weight:800;box-shadow:0 2px 8px rgba(34,197,94,.15)}
+.exam-opt.correct::after{content:'✓ Correct / सत्यापित उत्तर';margin-left:auto;background:#22C55E;color:#FFF;font-size:.65rem;font-weight:900;padding:2px 8px;border-radius:999px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+.exam-explanation{background:rgba(34,197,94,.08);border-left:3px solid #22C55E;border-radius:0 8px 8px 0;padding:10px 14px;font-size:.8rem;color:#166534;line-height:1.5}
+.exam-project-card{background:var(--surface);border:2px solid var(--border);border-radius:var(--radius-lg);padding:24px;margin-bottom:20px;box-shadow:var(--shadow-sm);transition:all .22s}
+.exam-project-card:hover{border-color:var(--red);box-shadow:0 8px 24px rgba(250,15,0,.1)}
+.exam-workflow{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:20px 0}
+.exam-step-item{background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:18px 16px;display:flex;flex-direction:column;gap:8px}
+.exam-step-num{width:32px;height:32px;border-radius:50%;background:var(--red);color:#FFF;font-size:.88rem;font-weight:900;display:flex;align-items:center;justify-content:center}
+.exam-step-title{font-size:.92rem;font-weight:800;color:var(--ink)}
+.exam-step-desc{font-size:.8rem;color:var(--ink-2);line-height:1.45}
+.exam-toast{position:fixed;bottom:24px;right:24px;z-index:9999;background:var(--ink);color:#FFF;padding:12px 22px;border-radius:999px;font-size:.84rem;font-weight:800;box-shadow:0 8px 30px rgba(0,0,0,.25);display:flex;align-items:center;gap:10px;animation:toastIn .25s ease}
+@keyframes toastIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
 </style>
 </head>
 <body>
@@ -253,6 +298,8 @@ footer p+p{margin-top:5px}
       <div class="flow-step" data-flow-section="C" onclick="openSection('C')" role="button" tabindex="0" title="Go to Section C: Student DCAIS Monitor"><span class="flow-n">3</span><span id="flow3">DCAIS Monitor</span></div>
       <span class="flow-arr">→</span>
       <div class="flow-step" data-flow-section="D" onclick="openSection('D')" role="button" tabindex="0" title="Go to Section D: Classroom Resources"><span class="flow-n">4</span><span id="flow4">Classroom Resources</span></div>
+      <span class="flow-arr">→</span>
+      <div class="flow-step" data-flow-section="E" onclick="openSection('E')" role="button" tabindex="0" title="Go to Section E: DCAIS Exam"><span class="flow-n">5</span><span id="flow5">DCAIS Exam</span></div>
       <!-- Commented out flow step for Section G as not needed now
       <span class="flow-arr">→</span>
       <div class="flow-step" data-flow-section="G" onclick="openSection('G')"><span class="flow-n">5</span><span>Certification</span></div>
@@ -344,6 +391,26 @@ footer p+p{margin-top:5px}
           <div class="tile-footer">
             <span class="tile-hint" id="sD-hint">6 Resource Packs</span>
             <span class="tile-btn" id="sD-btn">Open &rarr;</span>
+          </div>
+        </div>
+      </div>
+
+      
+      <!-- Section E: DCAIS Exam -->
+      <div class="tile-card" data-section="E" onclick="openSection('E')">
+        <div class="tile-img-wrap">
+          <img class="tile-img" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=200&fit=crop&q=80" alt="DCAIS Exam" crossorigin="anonymous">
+          <div class="tile-img-ov">📝</div>
+        </div>
+        <div class="tile-body">
+          <div>
+            <div class="tile-tag" id="sE-tag">Section E • DCAIS Exam</div>
+            <h2 class="tile-title" id="sE-title">DCAIS Exam &amp; Answer Key</h2>
+            <p class="tile-desc" id="sE-desc">KVS Semester-1 examination portal: 11 regional Google Form links, exam guidelines, and verified Answer Key.</p>
+          </div>
+          <div class="tile-footer">
+            <span class="tile-hint" id="sE-hint">11 Regions • Answer Key</span>
+            <span class="tile-btn" id="sE-btn">Open &rarr;</span>
           </div>
         </div>
       </div>
@@ -2362,7 +2429,8 @@ var LANG = {
     sAtag:'Section A', sAtitle:'Adobe ID &amp; Access', sAdesc:'School login, institutional account creation, single sign-on &amp; IT admin deployment guide.', sAhint:'5 Institutional Tools', sAbtn:'Open &rarr;',
     sBtag:'Section B', sBtitle:'CPD Modules', sBdesc:'5 accredited professional development modules (CPD-AE 01 to 05) totaling 48 training hours.', sBhint:'48 Hours Training', sBbtn:'Open &rarr;',
     sCtag:'Section C • DCAIS', sCtitle:'Student DCAIS Monitor (AIM)', sCdesc:'Monitor what DCAIS activities your students are doing across Grades 3–8. Inspect curriculum instructions and templates.', sChint:'Grades 3–8 Full Monitor', sCbtn:'Open &rarr;',
-    sDtag:'Section D', sDtitle:'Classroom Resources', sDdesc:'Lesson plan templates, classroom printables, grading rubrics, tutorial videos, and project kits.', sDhint:'6 Resource Packs', sDbtn:'Open &rarr;'
+    sDtag:'Section D', sDtitle:'Classroom Resources', sDdesc:'Lesson plan templates, classroom printables, grading rubrics, tutorial videos, and project kits.', sDhint:'6 Resource Packs', sDbtn:'Open &rarr;',
+    flow5:'DCAIS Exam', sEtag:'Section E • DCAIS Exam', sEtitle:'DCAIS Exam &amp; Answer Key', sEdesc:'KVS Semester-1 examination portal: 11 regional Google Form links, exam guidelines, and verified Answer Key.', sEhint:'11 Regions • Answer Key', sEbtn:'Open &rarr;'
   },
   hi: {
     hdrSub:'शिक्षक कार्यक्षेत्र', hdrBadge:'शिक्षक पोर्टल',
@@ -2375,7 +2443,8 @@ var LANG = {
     sAtag:'सेक्शन A', sAtitle:'Adobe ID और एक्सेस', sAdesc:'स्कूल लॉगिन, संस्थागत खाता निर्माण, SSO और IT तैनाती गाइड।', sAhint:'5 संस्थागत टूल्स', sAbtn:'खोलें &rarr;',
     sBtag:'सेक्शन B', sBtitle:'CPD मॉड्यूल', sBdesc:'5 मान्यता प्राप्त प्रशिक्षण मॉड्यूल — CPD-AE 01 से 05 — कुल 48 घंटे।', sBhint:'48 घंटे प्रशिक्षण', sBbtn:'खोलें &rarr;',
     sCtag:'सेक्शन C • DCAIS', sCtitle:'छात्र DCAIS मॉनिटर (AIM)', sCdesc:'देखें कक्षा 3 से 8 तक आपके छात्र कौन सी DCAIS गतिविधियाँ कर रहे हैं।', sChint:'कक्षा 3–8 पूर्ण मॉनिटर', sCbtn:'खोलें &rarr;',
-    sDtag:'सेक्शन D', sDtitle:'कक्षा संसाधन', sDdesc:'पाठ योजना टेम्पलेट, क्लासरूम प्रिंटेबल्स, ग्रेडिंग रूब्रिक्स और वीडियो।', sDhint:'6 संसाधन पैक', sDbtn:'खोलें &rarr;'
+    sDtag:'सेक्शन D', sDtitle:'कक्षा संसाधन', sDdesc:'पाठ योजना टेम्पलेट, क्लासरूम प्रिंटेबल्स, ग्रेडिंग रूब्रिक्स और वीडियो।', sDhint:'6 संसाधन पैक', sDbtn:'खोलें &rarr;',
+    flow5:'DCAIS परीक्षा', sEtag:'सेक्शन E • DCAIS परीक्षा', sEtitle:'DCAIS परीक्षा और उत्तर कुंजी', sEdesc:'KVS सेमेस्टर-1 परीक्षा पोर्टल: 11 क्षेत्रीय गूगल फॉर्म लिंक, परीक्षा दिशानिर्देश और सत्यापित उत्तर कुंजी।', sEhint:'11 क्षेत्र • उत्तर कुंजी', sEbtn:'खोलें &rarr;'
   }
 };
 
@@ -2408,6 +2477,7 @@ function applyLang() {
   set('flow2', L.flow2);
   set('flow3', L.flow3);
   set('flow4', L.flow4);
+  set('flow5', L.flow5);
   set('guideText', L.guideText);
   set('backBtnLabel', L.backBtn);
   set('crumbHome', L.crumbHome || (currentLang === 'hi' ? 'होम' : 'Home'));
@@ -2415,6 +2485,7 @@ function applyLang() {
   set('sB-tag', L.sBtag); set('sB-title', L.sBtitle); set('sB-desc', L.sBdesc); set('sB-hint', L.sBhint); set('sB-btn', L.sBbtn);
   set('sC-tag', L.sCtag); set('sC-title', L.sCtitle); set('sC-desc', L.sCdesc); set('sC-hint', L.sChint); set('sC-btn', L.sCbtn);
   set('sD-tag', L.sDtag); set('sD-title', L.sDtitle); set('sD-desc', L.sDdesc); set('sD-hint', L.sDhint); set('sD-btn', L.sDbtn);
+  set('sE-tag', L.sEtag); set('sE-title', L.sEtitle); set('sE-desc', L.sEdesc); set('sE-hint', L.sEhint); set('sE-btn', L.sEbtn);
 }
 
 /* ===== CPD DATA ===== */
@@ -2697,6 +2768,545 @@ function searchTeacherActivities(q) {
   document.getElementById('secContent').innerHTML = renderDcaisMonitor();
 }
 
+
+/* ===== DCAIS EXAM DATA & CONTROLLER ===== */
+var currentExamSubTab = 'regions'; // 'regions', 'key', 'guidelines'
+var examRegionQuery = '';
+
+var KVS_REGIONS = [
+  { id: 'lucknow', nameEn: 'Lucknow Region', nameHi: 'लखनऊ संभाग', stateEn: 'Uttar Pradesh', stateHi: 'उत्तर प्रदेश', link: 'https://forms.gle/YUsd4e3qnG5ggWAy9', icon: '🏛️' },
+  { id: 'dehradun', nameEn: 'Dehradun Region', nameHi: 'देहरादून संभाग', stateEn: 'Uttarakhand', stateHi: 'उत्तराखंड', link: 'https://forms.gle/67YhLy9erkwYd5Ds9', icon: '🌲' },
+  { id: 'gurugram', nameEn: 'Gurugram Region', nameHi: 'गुरुग्राम संभाग', stateEn: 'Haryana', stateHi: 'हरियाणा', link: 'https://forms.gle/JKXq25oTzXgVSyrA6', icon: '🏙️' },
+  { id: 'hyderabad', nameEn: 'Hyderabad Region', nameHi: 'हैदराबाद संभाग', stateEn: 'Telangana', stateHi: 'तेलंगाना', link: 'https://forms.gle/1YiY3SXTLYzEkCim9', icon: '🏰' },
+  { id: 'bangalore', nameEn: 'Bangalore Region', nameHi: 'बैंगलोर संभाग', stateEn: 'Karnataka', stateHi: 'कर्नाटक', link: 'https://forms.gle/wvhQQNHTZCbcpQPN8', icon: '💻' },
+  { id: 'chennai', nameEn: 'Chennai Region', nameHi: 'चेन्नई संभाग', stateEn: 'Tamil Nadu', stateHi: 'तमिलनाडु', link: 'https://forms.gle/YbMkP3cvYbEqd1Vz8', icon: '🌊' },
+  { id: 'ranchi', nameEn: 'Ranchi Region', nameHi: 'रांची संभाग', stateEn: 'Jharkhand', stateHi: 'झारखंड', link: 'https://forms.gle/HqLzSqLeEnNBEXS29', icon: '🌿' },
+  { id: 'bhopal', nameEn: 'Bhopal Region', nameHi: 'भोपाल संभाग', stateEn: 'Madhya Pradesh', stateHi: 'मध्य प्रदेश', link: 'https://forms.gle/nfzQq9WvX14VKY2k9', icon: '🏞️' },
+  { id: 'agra', nameEn: 'Agra Region', nameHi: 'आगरा संभाग', stateEn: 'Uttar Pradesh', stateHi: 'उत्तर प्रदेश', link: 'https://forms.gle/s2rF2Ntgt4pQtAYFA', icon: '🕌' },
+  { id: 'jaipur', nameEn: 'Jaipur Region', nameHi: 'जयपुर संभाग', stateEn: 'Rajasthan', stateHi: 'राजस्थान', link: 'https://forms.gle/Pcp5CRgeugWozw5k8', icon: '👑' },
+  { id: 'chandigarh', nameEn: 'Chandigarh Region', nameHi: 'चंडीगढ़ संभाग', stateEn: 'Punjab & Haryana', stateHi: 'पंजाब और हरियाणा', link: 'https://forms.gle/oT2ovd4rVTjQM8ws6', icon: '🌹' }
+];
+
+var EXAM_MCQS = [
+  {
+    num: 1,
+    marksEn: '2 Marks',
+    marksHi: '2 अंक',
+    qEn: 'Which of the following is NOT one of the 4Cs?',
+    qHi: 'निम्नलिखित में से कौन सा 4Cs में से एक नहीं है?',
+    optionsEn: ['A. CREATIVITY', 'B. COLLABORATION', 'C. CALCULATION', 'D. COMMUNICATION'],
+    optionsHi: ['A. रचनात्मकता (Creativity)', 'B. सहयोग (Collaboration)', 'C. गणना (Calculation)', 'D. संचार (Communication)'],
+    correctIndex: 2,
+    noteEn: 'The 4Cs of 21st-century education are Critical Thinking, Creativity, Collaboration, and Communication. Calculation is not one of them.',
+    noteHi: '21वीं सदी के 4Cs में क्रिटिकल थिंकिंग, रचनात्मकता (Creativity), सहयोग (Collaboration) और संचार (Communication) शामिल हैं। Calculation इसका हिस्सा नहीं है।'
+  },
+  {
+    num: 2,
+    marksEn: '2 Marks',
+    marksHi: '2 अंक',
+    qEn: 'How does creativity help in everyday life?',
+    qHi: 'रचनात्मकता दैनिक जीवन में कैसे मदद करती है?',
+    optionsEn: [
+      'A. It makes school more difficult',
+      'B. Helps in solving problems and thinking differently',
+      'C. Works when you are doing art',
+      'D. No use out side of artistic field'
+    ],
+    optionsHi: [
+      'A. यह स्कूल को और कठिन बनाती है',
+      'B. समस्याओं को हल करने और अलग तरह से सोचने में मदद करती है',
+      'C. केवल कला करते समय ही काम आती है',
+      'D. कला क्षेत्र के बाहर इसका कोई उपयोग नहीं है'
+    ],
+    correctIndex: 1,
+    noteEn: 'Creativity enables innovative problem-solving and divergent thinking in everyday scenarios beyond traditional art.',
+    noteHi: 'रचनात्मकता छात्रों को समस्याओं को नए दृष्टिकोण से देखने और दैनिक जीवन में समाधान खोजने में सक्षम बनाती है।'
+  },
+  {
+    num: 3,
+    marksEn: '2 Marks',
+    marksHi: '2 अंक',
+    qEn: 'What is the main use of Adobe express in the classroom?',
+    qHi: 'कक्षा में Adobe Express का मुख्य उपयोग क्या है?',
+    optionsEn: [
+      'A. Solving math problems',
+      'B. Expressing concepts using visual content such as posters, videos, animations, etc.',
+      'C. Learning coding languages',
+      'D. Playing online games'
+    ],
+    optionsHi: [
+      'A. गणित की समस्याओं को हल करना',
+      'B. पोस्टर, वीडियो, एनिमेशन आदि दृश्य सामग्री का उपयोग करके अवधारणाओं को व्यक्त करना',
+      'C. कोडिंग भाषाएं सीखना',
+      'D. ऑनलाइन गेम खेलना'
+    ],
+    correctIndex: 1,
+    noteEn: 'Adobe Express empowers learners to visualize, design, and share concepts through posters, infographics, videos, and presentations.',
+    noteHi: 'Adobe Express छात्रों और शिक्षकों को पोस्टर, वीडियो और ग्राफिक्स के माध्यम से अपने विचारों को अभिव्यक्त करने की शक्ति देता है।'
+  },
+  {
+    num: 4,
+    marksEn: '2 Marks',
+    marksHi: '2 अंक',
+    qEn: 'Which of these is not a feature of Adobe express?',
+    qHi: 'इनमें से कौन सी सुविधा Adobe Express की नहीं है?',
+    optionsEn: [
+      'A. Ready to use templates',
+      'B. Creating infographics and videos',
+      'C. Sharing projects for feedback',
+      'D. Playing multiplayer games'
+    ],
+    optionsHi: [
+      'A. उपयोग के लिए तैयार टेम्पलेट्स (Templates)',
+      'B. इन्फोग्राफिक्स और वीडियो बनाना',
+      'C. प्रतिक्रिया (Feedback) के लिए प्रोजेक्ट साझा करना',
+      'D. मल्टीप्लेयर गेम खेलना'
+    ],
+    correctIndex: 3,
+    noteEn: 'Adobe Express is a creative graphic, layout, and video editing platform; it does not feature multiplayer gaming.',
+    noteHi: 'Adobe Express एक रचनात्मक डिज़ाइन और वीडियो टूल है, यह गेम खेलने का प्लेटफॉर्म नहीं है।'
+  },
+  {
+    num: 5,
+    marksEn: '2 Marks',
+    marksHi: '2 अंक',
+    qEn: 'How does Adobe Express help us share and engage with ideas in the digital world?',
+    qHi: 'डिजिटल दुनिया में विचारों को साझा करने और जोड़ने में Adobe Express कैसे मदद करता है?',
+    optionsEn: [
+      'A. Limiting our ability to communicate',
+      'B. Improving how we communicate and present ideas',
+      'C. No important role in communication',
+      'D. Making communication only about fun and games'
+    ],
+    optionsHi: [
+      'A. हमारी संवाद करने की क्षमता को सीमित करके',
+      'B. हम विचारों को कैसे संवाद और प्रस्तुत करते हैं, उसमें सुधार करके',
+      'C. संचार में कोई महत्वपूर्ण भूमिका नहीं निभाकर',
+      'D. संचार को केवल खेल और मनोरंजन तक सीमित करके'
+    ],
+    correctIndex: 1,
+    noteEn: 'Adobe Express enhances personal expression, audience engagement, and persuasive digital storytelling.',
+    noteHi: 'Adobe Express विचारों को स्पष्ट, आकर्षक और प्रभावी ढंग से प्रस्तुत करने में सशक्त डिजिटल माध्यम प्रदान करता है।'
+  }
+];
+
+var EXAM_PROJECTS = [
+  {
+    num: 6,
+    marksEn: 'Practical Assessment • Hands-On',
+    marksHi: 'व्यावहारिक मूल्यांकन • प्रैक्टिकल',
+    titleEn: 'Project 1: Image Background Removal',
+    titleHi: 'प्रोजेक्ट 1: इमेज बैकग्राउंड हटाना',
+    taskEn: 'Remove the background on the image by clicking on the link and using Adobe express.',
+    taskHi: 'लिंक पर क्लिक करके और Adobe Express का उपयोग करके छवि का बैकग्राउंड हटाएं।',
+    templateLink: 'https://tinyurl.com/removethebackgroundsem-1',
+    submissionEn: 'PASTE THE FINAL LINK in Google Form',
+    submissionHi: 'गूगल फॉर्म में अंतिम पब्लिश्ड लिंक पेस्ट करें',
+    rubricEn: 'Marks will be awarded to students based on the work they have submitted (accuracy of cutout, edge cleanliness, and valid published URL).',
+    rubricHi: 'छात्रों को उनके द्वारा सबमिट किए गए कार्य (कटआउट की सटीकता, किनारों की सफाई और वैध लिंक) के आधार पर अंक दिए जाएंगे।'
+  },
+  {
+    num: 7,
+    marksEn: 'Practical Assessment • Hands-On',
+    marksHi: 'व्यावहारिक मूल्यांकन • प्रैक्टिकल',
+    titleEn: 'Project 2: Tree Plantation Drive Awareness Poster',
+    titleHi: 'प्रोजेक्ट 2: वृक्षारोपण अभियान जागरूकता पोस्टर',
+    taskEn: 'Create an awareness / notification poster for a tree plantation drive at school. Paste the final output.',
+    taskHi: 'स्कूल में वृक्षारोपण अभियान के लिए एक जागरूकता / सूचना पोस्टर बनाएं। अंतिम आउटपुट लिंक पेस्ट करें।',
+    templateLink: 'https://tinyurl.com/Plantationdrivesem-1',
+    submissionEn: 'PASTE THE FINAL LINK in Google Form',
+    submissionHi: 'गूगल फॉर्म में अंतिम पब्लिश्ड लिंक पेस्ट करें',
+    rubricEn: 'Marks will be awarded based on visual hierarchy, message clarity, layout balance, typography, and environmental drive theme alignment.',
+    rubricHi: 'विज़ुअल पदानुक्रम, संदेश की स्पष्टता, लेआउट संतुलन, टाइपोग्राफी और थीम प्रासंगिकता के आधार पर अंक प्रदान किए जाएंगे।'
+  }
+];
+
+var EXAM_GUIDELINES = {
+  generalEn: 'These instructions are being shared to ensure a smooth and error-free examination process for all Kendriya Vidyalaya students.',
+  generalHi: 'ये निर्देश सभी केंद्रीय विद्यालय के छात्रों के लिए एक सहज और त्रुटिहीन परीक्षा प्रक्रिया सुनिश्चित करने के लिए साझा किए जा रहे हैं।',
+  rulesEn: [
+    { title: 'Student Information Accuracy', desc: 'Students must correctly enter their Name, Class, Section, and Complete School Name.' },
+    { title: 'MANDATORY: KV Name & KV Code', desc: 'For KVs, students MUST mention the complete Kendriya Vidyalaya (KV) name along with the official KV Code. This is mandatory to prevent student identification issues and examination record mismatches.' },
+    { title: 'Pre-Submission Verification', desc: 'Students should carefully recheck all answers, personal details, and project links before final submission.' },
+    { title: 'Adobe ID Login Mandate', desc: 'Students must log in using their official institutional Adobe ID to complete and publish their work.' },
+    { title: 'Attempt All Components', desc: 'Students should attempt all questions (both Section 1 MCQs and Section 2 Hands-On Projects) in the Google Form.' },
+    { title: 'Regional Form Distribution', desc: 'Teachers should provide students with the specific Google Form link mapped to their respective KVS region.' }
+  ],
+  rulesHi: [
+    { title: 'छात्र विवरण की सटीकता', desc: 'छात्रों को अपना नाम, कक्षा, अनुभाग (Section) और पूरा स्कूल का नाम सही-सही भरना होगा।' },
+    { title: 'अनिवार्य: KV नाम और KV कोड', desc: 'केवी के लिए, छात्रों को आधिकारिक KV कोड के साथ पूरा केंद्रीय विद्यालय (KV) का नाम अवश्य लिखना होगा। यह छात्र पहचान और परीक्षा रिकॉर्ड के लिए अनिवार्य है।' },
+    { title: 'सबमिशन से पूर्व पुनः जांच', desc: 'अंतिम सबमिशन से पहले छात्रों को सभी विवरणों, उत्तरों और प्रोजेक्ट लिंक की सावधानीपूर्वक पुनः जांच करनी चाहिए।' },
+    { title: 'Adobe ID से लॉगिन अनिवार्य', desc: 'छात्रों को अपना काम पूरा करने और प्रकाशित करने के लिए अपनी आधिकारिक संस्थागत Adobe ID का उपयोग करना होगा।' },
+    { title: 'सभी प्रश्न हल करें', desc: 'छात्रों को गूगल फॉर्म में सभी प्रश्नों (सेक्शन 1 MCQ और सेक्शन 2 प्रैक्टिकल प्रोजेक्ट दोनों) को हल करना चाहिए।' },
+    { title: 'क्षेत्रीय गूगल फॉर्म वितरण', desc: 'शिक्षकों को छात्रों को उनके संबंधित KVS क्षेत्र (Region) का ही गूगल फॉर्म लिंक उपलब्ध कराना चाहिए।' }
+  ],
+  stepsEn: [
+    { step: 1, title: 'Click Project Link', desc: 'Click on the remixable project template link provided in the question.' },
+    { step: 2, title: 'Design in Express', desc: 'Use the remixable templates in Adobe Express to complete the designated project.' },
+    { step: 3, title: 'Publish Project', desc: 'Click "Share" → "Publish to web" to generate the live project link.' },
+    { step: 4, title: 'Copy Published Link', desc: 'Copy the complete published project URL to your clipboard.' },
+    { step: 5, title: 'Paste in Google Form', desc: 'Paste the copied URL in the "PASTE THE FINAL LINK" field in your regional form and submit.' }
+  ],
+  stepsHi: [
+    { step: 1, title: 'प्रोजेक्ट लिंक पर क्लिक करें', desc: 'प्रश्न में दिए गए रीमिक्स करने योग्य प्रोजेक्ट टेम्पलेट लिंक पर क्लिक करें।' },
+    { step: 2, title: 'Express में डिज़ाइन करें', desc: 'प्रैक्टिकल प्रोजेक्ट पूरा करने के लिए Adobe Express में उपलब्ध टेम्पलेट का उपयोग करें।' },
+    { step: 3, title: 'प्रोजेक्ट पब्लिश करें', desc: 'लाइव प्रोजेक्ट लिंक बनाने के लिए "Share" → "Publish to web" पर क्लिक करें।' },
+    { step: 4, title: 'पब्लिश्ड लिंक कॉपी करें', desc: 'पूरा पब्लिश्ड प्रोजेक्ट URL क्लिपबोर्ड पर कॉपी करें।' },
+    { step: 5, title: 'गूगल फॉर्म में पेस्ट करें', desc: 'कॉपी किए गए URL को क्षेत्रीय फॉर्म में "PASTE THE FINAL LINK" फ़ील्ड में पेस्ट करें और सबमिट करें।' }
+  ],
+  ictEn: {
+    title: 'Role of ICT Instructors & Teachers',
+    desc: 'Teachers are requested to guide students through the examination and project submission process and ensure that all required details are entered correctly before final submission.',
+    warning: 'Important: Please ensure that the complete KV name and KV Code are entered correctly to avoid any issues with student identification and examination records.',
+    contactPerson: 'Mridula Pandey',
+    contactPhone: '8860133876',
+    contactNote: 'Should you require any assistance, please feel free to reach out to the helpline.'
+  },
+  ictHi: {
+    title: 'ICT प्रशिक्षकों और शिक्षकों की भूमिका',
+    desc: 'शिक्षकों से अनुरोध है कि वे छात्रों को परीक्षा और प्रोजेक्ट सबमिशन प्रक्रिया में मार्गदर्शन करें और यह सुनिश्चित करें कि अंतिम सबमिशन से पहले सभी आवश्यक विवरण सही भरे गए हैं।',
+    warning: 'महत्वपूर्ण: कृपया सुनिश्चित करें कि छात्र पहचान और परीक्षा रिकॉर्ड में किसी भी समस्या से बचने के लिए पूरा KV नाम और KV कोड सही दर्ज किया गया है।',
+    contactPerson: 'मृदुला पांडे (Mridula Pandey)',
+    contactPhone: '8860133876',
+    contactNote: 'यदि आपको परीक्षा के संबंध में किसी भी सहायता की आवश्यकता है, तो कृपया हेल्पलाइन से संपर्क करें।'
+  }
+};
+
+function showToast(msg) {
+  var old = document.querySelector('.exam-toast');
+  if (old) old.remove();
+  var toast = document.createElement('div');
+  toast.className = 'exam-toast';
+  toast.innerHTML = '<span>📋</span> <span>' + msg + '</span>';
+  document.body.appendChild(toast);
+  setTimeout(function() {
+    toast.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+    toast.style.opacity = '0';
+    toast.style.transform = 'translateY(10px)';
+    setTimeout(function() { toast.remove(); }, 300);
+  }, 2500);
+}
+
+function copyExamLink(url, regionName) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(function() {
+      showToast((currentLang === 'hi' ? regionName + ' का परीक्षा लिंक कॉपी हो गया!' : 'Link for ' + regionName + ' copied!'));
+    }).catch(function() {
+      prompt((currentLang === 'hi' ? 'लिंक कॉपी करें:' : 'Copy Link:'), url);
+    });
+  } else {
+    prompt((currentLang === 'hi' ? 'लिंक कॉपी करें:' : 'Copy Link:'), url);
+  }
+}
+
+function setExamSubTab(tab) {
+  currentExamSubTab = tab;
+  examRegionQuery = '';
+  var container = document.getElementById('secContent');
+  if (container) {
+    container.innerHTML = renderDcaisExamSection();
+  }
+}
+
+function filterExamRegions(query) {
+  examRegionQuery = query || '';
+  var q = examRegionQuery.toLowerCase().trim();
+  var grid = document.getElementById('examRegionGrid');
+  if (!grid) return;
+  
+  var isHi = (currentLang === 'hi');
+  var filtered = KVS_REGIONS.filter(function(r) {
+    if (!q) return true;
+    return r.nameEn.toLowerCase().indexOf(q) !== -1 ||
+           r.nameHi.toLowerCase().indexOf(q) !== -1 ||
+           r.stateEn.toLowerCase().indexOf(q) !== -1 ||
+           r.stateHi.toLowerCase().indexOf(q) !== -1;
+  });
+
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div style="grid-column:1/-1;background:var(--surface-2);border-radius:var(--radius);padding:32px;text-align:center;color:var(--ink-3);">' +
+      '<h4>' + (isHi ? 'कोई संभाग नहीं मिला' : 'No matching regions found') + '</h4>' +
+    '</div>';
+    return;
+  }
+
+  grid.innerHTML = filtered.map(function(r) {
+    var name = isHi ? r.nameHi : r.nameEn;
+    var state = isHi ? r.stateHi : r.stateEn;
+    var copyBtnLabel = isHi ? 'लिंक कॉपी करें 📋' : 'Copy Form Link 📋';
+    var openBtnLabel = isHi ? 'गूगल फॉर्म खोलें ↗' : 'Open Google Form ↗';
+    return '<div class="exam-region-card">' +
+      '<div>' +
+        '<div class="exam-region-head">' +
+          '<div class="exam-region-icon">' + r.icon + '</div>' +
+          '<div>' +
+            '<h3 class="exam-region-title">' + name + '</h3>' +
+            '<div class="exam-region-sub">📍 ' + state + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<p style="font-size:.8rem;color:var(--ink-2);line-height:1.45;margin-bottom:12px;">' +
+          (isHi ? 'सेमेस्टर-1 DCAIS परीक्षा के लिए आधिकारिक KVS क्षेत्रीय लिंक।' : 'Official KVS Regional examination form for DCAIS Semester-1 assessment.') +
+        '</p>' +
+      '</div>' +
+      '<div class="exam-region-actions">' +
+        '<a href="' + r.link + '" target="_blank" class="btn btn-primary" style="justify-content:center;font-size:.8rem;padding:9px 16px;">' + openBtnLabel + '</a>' +
+        '<button type="button" onclick="copyExamLink(&quot;' + r.link + '&quot;, &quot;' + name + '&quot;)" class="btn btn-ghost" style="justify-content:center;font-size:.78rem;padding:8px 14px;">' + copyBtnLabel + '</button>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function renderDcaisExamSection() {
+  var isHi = (currentLang === 'hi');
+
+  // Sub tabs bar
+  var tabsHtml =
+    '<div class="exam-tabs">' +
+      '<button class="exam-tab-btn' + (currentExamSubTab === 'regions' ? ' active' : '') + '" onclick="setExamSubTab(&quot;regions&quot;)">' +
+        '📍 ' + (isHi ? '11 क्षेत्रीय परीक्षा फॉर्म' : '11 Regional Exam Forms') +
+      '</button>' +
+      '<button class="exam-tab-btn' + (currentExamSubTab === 'key' ? ' active' : '') + '" onclick="setExamSubTab(&quot;key&quot;)">' +
+        '🔑 ' + (isHi ? 'आधिकारिक उत्तर कुंजी (Sem-1)' : 'Verified Answer Key (Sem-1)') +
+      '</button>' +
+      '<button class="exam-tab-btn' + (currentExamSubTab === 'guidelines' ? ' active' : '') + '" onclick="setExamSubTab(&quot;guidelines&quot;)">' +
+        '📋 ' + (isHi ? 'परीक्षा दिशानिर्देश व प्रक्रिया' : 'Exam Guidelines & Instructions') +
+      '</button>' +
+    '</div>';
+
+  if (currentExamSubTab === 'regions') {
+    var metaBanner =
+      '<div class="exam-meta-banner">' +
+        '<div>' +
+          '<div class="exam-meta-title">📍 ' + (isHi ? 'KVS क्षेत्रीय गूगल फॉर्म पोर्टल' : 'KVS Regional Google Form Portals') + '</div>' +
+          '<p style="font-size:.84rem;color:var(--ink-2);margin-top:4px;">' +
+            (isHi ? 'अपने संभाग का चयन करें, छात्रों के साथ परीक्षा फॉर्म साझा करें या लाइव फॉर्म खोलें।' : 'Select your KVS region, copy student submission links, or open regional Google Forms directly.') +
+          '</p>' +
+        '</div>' +
+        '<div class="exam-meta-badges">' +
+          '<span class="exam-pill">11 KVS Regions</span>' +
+          '<span class="exam-pill">Semester-1</span>' +
+          '<span class="exam-pill">Google Forms</span>' +
+        '</div>' +
+      '</div>';
+
+    var searchBar =
+      '<div class="exam-search-bar">' +
+        '<div class="exam-search-box">' +
+          '<input type="text" placeholder="' + (isHi ? 'संभाग या राज्य खोजें (जैसे Lucknow, Dehradun, Agra)...' : 'Search region or state (e.g. Lucknow, Dehradun, Agra)...') + '" value="' + examRegionQuery + '" oninput="filterExamRegions(this.value)">' +
+        '</div>' +
+        '<div style="font-size:.78rem;font-weight:700;color:var(--ink-3);">' +
+          (isHi ? 'कुल संभाग: 11' : 'Total Regions: 11 Active') +
+        '</div>' +
+      '</div>';
+
+    var cardsHtml = KVS_REGIONS.map(function(r) {
+      var name = isHi ? r.nameHi : r.nameEn;
+      var state = isHi ? r.stateHi : r.stateEn;
+      var copyBtnLabel = isHi ? 'लिंक कॉपी करें 📋' : 'Copy Form Link 📋';
+      var openBtnLabel = isHi ? 'गूगल फॉर्म खोलें ↗' : 'Open Google Form ↗';
+      return '<div class="exam-region-card">' +
+        '<div>' +
+          '<div class="exam-region-head">' +
+            '<div class="exam-region-icon">' + r.icon + '</div>' +
+            '<div>' +
+              '<h3 class="exam-region-title">' + name + '</h3>' +
+              '<div class="exam-region-sub">📍 ' + state + '</div>' +
+            '</div>' +
+          '</div>' +
+          '<p style="font-size:.8rem;color:var(--ink-2);line-height:1.45;margin-bottom:12px;">' +
+            (isHi ? 'सेमेस्टर-1 DCAIS परीक्षा के लिए आधिकारिक KVS क्षेत्रीय लिंक।' : 'Official KVS Regional examination form for DCAIS Semester-1 assessment.') +
+          '</p>' +
+        '</div>' +
+        '<div class="exam-region-actions">' +
+          '<a href="' + r.link + '" target="_blank" class="btn btn-primary" style="justify-content:center;font-size:.8rem;padding:9px 16px;">' + openBtnLabel + '</a>' +
+          '<button type="button" onclick="copyExamLink(&quot;' + r.link + '&quot;, &quot;' + name + '&quot;)" class="btn btn-ghost" style="justify-content:center;font-size:.78rem;padding:8px 14px;">' + copyBtnLabel + '</button>' +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    return tabsHtml + metaBanner + searchBar + '<div class="exam-region-grid" id="examRegionGrid">' + cardsHtml + '</div>';
+  }
+
+  if (currentExamSubTab === 'key') {
+    var keyBanner =
+      '<div class="exam-meta-banner">' +
+        '<div>' +
+          '<div class="exam-meta-title">🔑 ' + (isHi ? 'DCAIS सेमेस्टर-1 आधिकारिक उत्तर कुंजी' : 'DCAIS Semester-1 Official Answer Key') + '</div>' +
+          '<p style="font-size:.84rem;color:var(--ink-2);margin-top:4px;">' +
+            (isHi ? 'कुल अंक: 25 अंक | समय: 1 घंटा | हरा बॉक्स सत्यापित सही उत्तर दर्शाता है।' : 'Total Marks: 25 Marks | Time: 1 Hour | Green highlight marks verified correct answers.') +
+          '</p>' +
+        '</div>' +
+        '<div class="exam-meta-badges">' +
+          '<span class="exam-pill">5 MCQs (10 Marks)</span>' +
+          '<span class="exam-pill">2 Projects (15 Marks)</span>' +
+          '<span class="exam-pill" style="background:#22C55E;color:#FFF;border-color:#22C55E;">Verified Accurate</span>' +
+        '</div>' +
+      '</div>';
+
+    var sec1Heading =
+      '<div style="margin:24px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">' +
+        '<h3 style="font-size:1.18rem;font-weight:900;color:var(--ink);">' +
+          (isHi ? 'खंड 1: बहुविकल्पीय प्रश्न (MCQ) — 2 अंक प्रत्येक (कुल 10 अंक)' : 'Section 1: Multiple Choice Questions (2 Marks Each — Total 10 Marks)') +
+        '</h3>' +
+        '<span style="font-size:.78rem;font-weight:800;color:#166534;background:#DCFCE7;padding:4px 12px;border-radius:999px;">' +
+          (isHi ? 'हरे रंग का बॉक्स सही उत्तर है' : 'Green Color Box is the Correct Answer') +
+        '</span>' +
+      '</div>';
+
+    var mcqsHtml = EXAM_MCQS.map(function(q) {
+      var qText = isHi ? q.qHi : q.qEn;
+      var opts = isHi ? q.optionsHi : q.optionsEn;
+      var marks = isHi ? q.marksHi : q.marksEn;
+      var note = isHi ? q.noteHi : q.noteEn;
+
+      var optsHtml = opts.map(function(opt, idx) {
+        var isCorrect = (idx === q.correctIndex);
+        return '<div class="exam-opt' + (isCorrect ? ' correct' : '') + '">' +
+          '<span style="width:20px;font-weight:900;">' + String.fromCharCode(65 + idx) + '.</span>' +
+          '<span>' + opt.replace(/^[A-D]\.\s*/, '') + '</span>' +
+        '</div>';
+      }).join('');
+
+      return '<div class="exam-qa-card">' +
+        '<div class="exam-qa-header">' +
+          '<span class="exam-qa-num">Q' + q.num + ' • Question ' + q.num + '</span>' +
+          '<span class="exam-qa-marks">' + marks + '</span>' +
+        '</div>' +
+        '<div class="exam-qa-title">' + qText + '</div>' +
+        '<div class="exam-opts">' + optsHtml + '</div>' +
+        '<div class="exam-explanation">💡 <strong>' + (isHi ? 'विवरण:' : 'Pedagogical Context:') + '</strong> ' + note + '</div>' +
+      '</div>';
+    }).join('');
+
+    var sec2Heading =
+      '<div style="margin:36px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">' +
+        '<h3 style="font-size:1.18rem;font-weight:900;color:var(--ink);">' +
+          (isHi ? 'खंड 2: व्यावहारिक परियोजनाएं (प्रैक्टिकल प्रोजेक्ट्स) — शिक्षक द्वारा मूल्यांकन (कुल 15 अंक)' : 'Section 2: Hands-On Projects — Practical Teacher Evaluation (Total 15 Marks)') +
+        '</h3>' +
+        '<span style="font-size:.78rem;font-weight:800;color:var(--red);background:var(--red-bg);padding:4px 12px;border-radius:999px;">' +
+          (isHi ? 'रीमिक्स करने योग्य टेम्पलेट्स' : 'Remixable Templates Included') +
+        '</span>' +
+      '</div>';
+
+    var projectsHtml = EXAM_PROJECTS.map(function(p) {
+      var title = isHi ? p.titleHi : p.titleEn;
+      var task = isHi ? p.taskHi : p.taskEn;
+      var marks = isHi ? p.marksHi : p.marksEn;
+      var sub = isHi ? p.submissionHi : p.submissionEn;
+      var rubric = isHi ? p.rubricHi : p.rubricEn;
+
+      return '<div class="exam-project-card">' +
+        '<div class="exam-qa-header">' +
+          '<span class="exam-qa-num">Q' + p.num + ' • ' + title + '</span>' +
+          '<span class="exam-qa-marks">' + marks + '</span>' +
+        '</div>' +
+        '<p style="font-size:.95rem;color:var(--ink);font-weight:700;line-height:1.5;margin-bottom:14px;">' + task + '</p>' +
+        '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;">' +
+          '<a href="' + p.templateLink + '" target="_blank" class="btn btn-primary" style="font-size:.82rem;">🎨 ' + (isHi ? 'रीमिक्स टेम्पलेट खोलें ↗' : 'Open Remixable Template ↗') + '</a>' +
+          '<button type="button" onclick="copyExamLink(&quot;' + p.templateLink + '&quot;, &quot;Project ' + p.num + ' Template&quot;)" class="btn btn-ghost" style="font-size:.82rem;">📋 ' + (isHi ? 'टेम्पलेट लिंक कॉपी करें' : 'Copy Template URL') + '</button>' +
+        '</div>' +
+        '<div style="background:var(--surface-2);border-radius:8px;padding:12px 16px;border:1px solid var(--border);margin-bottom:12px;">' +
+          '<div style="font-size:.74rem;font-weight:800;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em;">' + (isHi ? 'गूगल फॉर्म सबमिशन फील्ड' : 'Google Form Submission Field') + '</div>' +
+          '<div style="font-size:.92rem;font-weight:900;color:var(--red);margin-top:2px;">' + sub + '</div>' +
+        '</div>' +
+        '<div style="font-size:.82rem;color:var(--ink-2);line-height:1.5;">' +
+          '⭐ <strong>' + (isHi ? 'मूल्यांकन रूब्रिक:' : 'Evaluation Rubric:') + '</strong> ' + rubric +
+        '</div>' +
+      '</div>';
+    }).join('');
+
+    return tabsHtml + keyBanner + sec1Heading + mcqsHtml + sec2Heading + projectsHtml;
+  }
+
+  if (currentExamSubTab === 'guidelines') {
+    var guide = EXAM_GUIDELINES;
+    var generalText = isHi ? guide.generalHi : guide.generalEn;
+    var rules = isHi ? guide.rulesHi : guide.rulesEn;
+    var steps = isHi ? guide.stepsHi : guide.stepsEn;
+    var ict = isHi ? guide.ictHi : guide.ictEn;
+
+    var guideBanner =
+      '<div class="exam-meta-banner">' +
+        '<div>' +
+          '<div class="exam-meta-title">📋 ' + (isHi ? 'KVS परीक्षा प्रक्रिया – महत्वपूर्ण निर्देश' : 'KVS Examination Process – Important Instructions') + '</div>' +
+          '<p style="font-size:.84rem;color:var(--ink-2);margin-top:4px;">' + generalText + '</p>' +
+        '</div>' +
+        '<div class="exam-meta-badges">' +
+          '<span class="exam-pill">Mandatory KV Code</span>' +
+          '<span class="exam-pill">5-Step Project Flow</span>' +
+          '<span class="exam-pill">ICT Instructor Role</span>' +
+        '</div>' +
+      '</div>';
+
+    var rulesHtml =
+      '<div style="margin:24px 0 16px;">' +
+        '<h3 style="font-size:1.18rem;font-weight:900;color:var(--ink);margin-bottom:14px;">' +
+          (isHi ? 'छात्रों के लिए अनिवार्य निर्देश (Student Instructions)' : 'Student Mandatory Instructions') +
+        '</h3>' +
+        '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;">' +
+          rules.map(function(r) {
+            var isKvCode = r.title.indexOf('KV Code') !== -1 || r.title.indexOf('KV कोड') !== -1;
+            return '<div style="background:' + (isKvCode ? '#FFF2F1' : 'var(--surface-2)') + ';border:1.5px solid ' + (isKvCode ? 'var(--red)' : 'var(--border)') + ';border-radius:var(--radius);padding:18px 20px;">' +
+              '<div style="font-size:.88rem;font-weight:900;color:' + (isKvCode ? 'var(--red)' : 'var(--ink)') + ';margin-bottom:6px;">' +
+                (isKvCode ? '🚨 ' : '✓ ') + r.title +
+              '</div>' +
+              '<div style="font-size:.82rem;color:var(--ink-2);line-height:1.5;">' + r.desc + '</div>' +
+            '</div>';
+          }).join('') +
+        '</div>' +
+      '</div>';
+
+    var workflowHtml =
+      '<div style="margin:36px 0 20px;">' +
+        '<h3 style="font-size:1.18rem;font-weight:900;color:var(--ink);margin-bottom:6px;">' +
+          (isHi ? 'प्रोजेक्ट वर्क: 5-चरणीय सबमिशन कार्यप्रवाह' : 'Project Work: 5-Step Submission Flowchart') +
+        '</h3>' +
+        '<p style="font-size:.84rem;color:var(--ink-3);margin-bottom:14px;">' +
+          (isHi ? 'व्यावहारिक प्रोजेक्ट को पूरा करने और उसका लिंक फॉर्म में दर्ज करने की सही प्रक्रिया:' : 'Standardized process for students to complete and submit hands-on creative projects:') +
+        '</p>' +
+        '<div class="exam-workflow">' +
+          steps.map(function(s) {
+            return '<div class="exam-step-item">' +
+              '<div class="exam-step-num">' + s.step + '</div>' +
+              '<div class="exam-step-title">' + s.title + '</div>' +
+              '<div class="exam-step-desc">' + s.desc + '</div>' +
+            '</div>';
+          }).join('') +
+        '</div>' +
+      '</div>';
+
+    var ictHtml =
+      '<div style="margin:32px 0;background:var(--surface);border:2px solid var(--red);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-sm);">' +
+        '<div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">' +
+          '<div style="width:44px;height:44px;border-radius:12px;background:var(--red);color:#FFF;display:flex;align-items:center;justify-content:center;font-size:1.3rem;">👨‍🏫</div>' +
+          '<div>' +
+            '<h3 style="font-size:1.15rem;font-weight:900;color:var(--ink);">' + ict.title + '</h3>' +
+            '<div style="font-size:.76rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.04em;">Kendriya Vidyalaya Sangathan Examination Facilitation</div>' +
+          '</div>' +
+        '</div>' +
+        '<p style="font-size:.88rem;color:var(--ink-2);line-height:1.6;margin-bottom:14px;">' + ict.desc + '</p>' +
+        '<div style="background:#FFF2F1;border:1.5px solid var(--red-border);border-left:4px solid var(--red);border-radius:8px;padding:12px 16px;margin-bottom:18px;">' +
+          '<strong style="color:var(--red);font-size:.85rem;">' + ict.warning + '</strong>' +
+        '</div>' +
+        '<div style="display:flex;align-items:center;justify-content:space-between;background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:14px 18px;gap:12px;flex-wrap:wrap;">' +
+          '<div>' +
+            '<div style="font-size:.72rem;font-weight:800;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em;">' + (isHi ? 'परीक्षा सहायता हेल्पलाइन' : 'Official Examination Helpline') + '</div>' +
+            '<div style="font-size:1.05rem;font-weight:900;color:var(--ink);margin-top:2px;">📞 ' + ict.contactPerson + ' &bull; <a href="tel:' + ict.contactPhone + '" style="color:var(--red);text-decoration:none;">' + ict.contactPhone + '</a></div>' +
+            '<div style="font-size:.78rem;color:var(--ink-3);margin-top:2px;">' + ict.contactNote + '</div>' +
+          '</div>' +
+          '<div style="display:flex;gap:8px;">' +
+            '<a href="tel:' + ict.contactPhone + '" class="btn btn-primary" style="font-size:.8rem;">📞 ' + (isHi ? 'कॉल करें' : 'Call Helpline') + '</a>' +
+            '<button type="button" onclick="copyExamLink(&quot;' + ict.contactPhone + '&quot;, &quot;Helpline Number&quot;)" class="btn btn-ghost" style="font-size:.8rem;">📋 ' + (isHi ? 'नंबर कॉपी करें' : 'Copy Number') + '</button>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
+    return tabsHtml + guideBanner + rulesHtml + workflowHtml + ictHtml;
+  }
+
+  return tabsHtml;
+}
+
 /* ===== SECTIONS DATA ===== */
 var TEACHER_SECTIONS_DATA = {
   'A': {
@@ -2867,11 +3477,23 @@ var TEACHER_SECTIONS_DATA = {
         }).join('') +
       '</div>';
     }
+  },
+  'E': {
+    letter: '📝',
+    tagEn: 'Section E • DCAIS Exam Portal',
+    tagHi: 'सेक्शन E • DCAIS परीक्षा पोर्टल',
+    titleEn: 'KVS DCAIS Exam, Regional Forms & Verified Answer Key',
+    titleHi: 'KVS DCAIS परीक्षा, क्षेत्रीय गूगल फॉर्म और सत्यापित उत्तर कुंजी',
+    descEn: 'Semester-1 Examination Portal: Access 11 regional examination Google Forms, step-by-step examination guidelines, and official verified Answer Key.',
+    descHi: 'सेमेस्टर-1 परीक्षा पोर्टल: 11 क्षेत्रीय गूगल फॉर्म लिंक, चरण-दर-चरण परीक्षा दिशानिर्देश और आधिकारिक सत्यापित उत्तर कुंजी प्राप्त करें।',
+    render: function(lang) {
+      return renderDcaisExamSection();
+    }
   }
   /*
-  // Sections E, F, G [Commented out as not needed now]
+  // Sections F and G [Commented out as not needed now]
   ,
-  'E': {
+  'old_E': {
     letter: '📊',
     tag: 'Section E • Student Submissions',
     title: 'Student Progress &amp; Activity Tracking',
@@ -3028,6 +3650,10 @@ window.showDashboard = showDashboard;
 window.toggleLang = toggleLang;
 window.selectTeacherGrade = selectTeacherGrade;
 window.searchTeacherActivities = searchTeacherActivities;
+window.setExamSubTab = setExamSubTab;
+window.filterExamRegions = filterExamRegions;
+window.copyExamLink = copyExamLink;
+window.showToast = showToast;
 
 // Explicit global attachment
 window.openSection = openSection;
