@@ -257,6 +257,35 @@ footer p+p{margin-top:5px}
 .exam-toast{position:fixed;bottom:24px;right:24px;z-index:9999;background:var(--ink);color:#FFF;padding:12px 22px;border-radius:999px;font-size:.84rem;font-weight:800;box-shadow:0 8px 30px rgba(0,0,0,.25);display:flex;align-items:center;gap:10px;animation:toastIn .25s ease}
 @keyframes toastIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 
+
+/* DCAIS Weekly Modules & Month Tabs */
+.aim-month-tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px;margin-bottom:18px;scrollbar-width:thin}
+.aim-month-btn{padding:7px 16px;border-radius:999px;font-size:.8rem;font-weight:700;border:1.5px solid var(--border);background:var(--surface);color:var(--ink-2);cursor:pointer;white-space:nowrap;transition:all .18s;flex-shrink:0}
+.aim-month-btn:hover{border-color:var(--red);color:var(--red);background:var(--red-bg)}
+.aim-month-btn.active{background:var(--red);border-color:var(--red);color:#FFF;box-shadow:0 3px 10px rgba(250,15,0,.28)}
+.aim-weekly-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.aim-weekly-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:22px;display:flex;flex-direction:column;justify-content:space-between;transition:all .22s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow-sm);position:relative}
+.aim-weekly-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 10px 28px rgba(250,15,0,.12)}
+.aim-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:10px}
+.aim-week-badge{background:var(--red-bg);color:var(--red);font-size:.72rem;font-weight:800;padding:4px 12px;border-radius:999px;border:1px solid var(--red-border);text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
+.aim-mod-badge{background:var(--surface-3);color:var(--ink-2);font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:999px;border:1px solid var(--border)}
+.aim-card-modname{font-size:.78rem;font-weight:700;color:var(--ink-3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.03em}
+.aim-card-actname{font-size:1.1rem;font-weight:900;color:var(--ink);margin-bottom:8px;line-height:1.3}
+.aim-card-section-title{font-size:.72rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.05em;margin:10px 0 4px}
+.aim-card-outcomes{font-size:.78rem;color:var(--ink-2);line-height:1.5;margin-bottom:8px;background:var(--surface-2);border-radius:8px;padding:10px 12px;border:1px solid var(--border)}
+.aim-card-instr{font-size:.78rem;color:var(--ink-2);line-height:1.5;margin-bottom:10px;white-space:pre-line}
+.aim-card-skills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.aim-skill-pill{background:#FFF0F0;color:#FA0F00;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:6px;border:1px solid rgba(250,15,0,.15)}
+
+/* Prominent Book Screenshot Box for Teachers */
+.t-book-box{background:linear-gradient(135deg, #FFFDF5 0%, #FFF8E7 100%);border:1.5px solid #FDE68A;border-left:5px solid #D97706;border-radius:12px;padding:14px 16px;margin:12px 0 14px;display:flex;flex-direction:column;gap:8px;box-shadow:0 2px 8px rgba(217,119,6,.08)}
+.t-book-header{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.t-book-title{font-size:.82rem;font-weight:900;color:#B45309;display:flex;align-items:center;gap:6px}
+.t-book-ref{font-size:.78rem;font-weight:800;background:#FFF;color:#78350F;padding:3px 10px;border-radius:6px;border:1px solid #FCD34D}
+.t-book-link{display:inline-flex;align-items:center;gap:6px;background:#D97706;color:#FFF;font-size:.78rem;font-weight:800;padding:7px 16px;border-radius:999px;text-decoration:none;transition:all .18s;box-shadow:0 2px 6px rgba(217,119,6,.3);width:fit-content}
+.t-book-link:hover{background:#B45309;color:#FFF;transform:translateY(-1px)}
+.t-book-note{font-size:.74rem;color:#78350F;line-height:1.45}
+
 </style>
 </head>
 <body>
@@ -509,905 +538,435 @@ footer p+p{margin-top:5px}
 
 // DCAIS Full Curriculum Data from aeskills.github.io/AIM
 window.DCAIS_DATA = {
-  "aimActivities": {
-    "Grade 6 (Hindi)": [
-      {
-        "col": 1,
-        "name": "रीसाइक्लिंग पर रचनात्मक गतिविधि",
-        "skills": "भाषा और अभिव्यक्ति कौशल",
-        "instructions": "इस टेम्पलेट में रीसाइक्लिंग पर अपने विचार लिखें।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:11bb5ca4-e3e5-512f-9d2b-0c95bcc23472?category=text&entryPoint=template&taskID=book-cover",
-        "book": ""
-      },
-      {
-        "col": 2,
-        "name": "हिंदी दिवस का पोस्टर बनाएँ",
-        "skills": "भाषा कौशल, सांस्कृतिक जागरूकता\nरचनात्मकता और कल्पनाशक्ति",
-        "instructions": "हिंदी दिवस की विशेषता दर्शाते हुए एक पोस्टर बनाएं।\n\nदिए गए टेम्पलेट में टेक्स्ट और बैकग्राउंड बदल सकते हैं, डिज़ाइन एलिमेंट्स, आकार या आइकन भी जोड़ सकते हैं।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:d39ed8d5-51e5-5f12-a076-9407c44c405b?category=text&entryPoint=template&taskID=instagram-portrait-post",
-        "book": "https://drive.google.com/file/d/1XPaOTOnlwvfgk5tj_E8ruZduKZsIfmTR/view?usp=sharing"
-      },
-      {
-        "col": 3,
-        "name": "Adobe Express का उपयोग करके डिजिटल अभियान के लिए पोस्टर बनाना",
-        "skills": "डिजिटल डिज़ाइन और सौंदर्य बोध",
-        "instructions": "दिए गए टेम्पलेट का उपयोग करके ‘रीडिंग क्लब’ विषय पर एक पोस्टर बनाएं।\n\nआप इसका टेक्स्ट और बैकग्राउंड बदल सकते हैं, डिज़ाइन एलिमेंट्स, आकार या आइकन भी जोड़ सकते हैं।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:8a3e9f83-ae1d-5ed7-9526-f3e7023921b0?category=text&entryPoint=template&taskID=poster",
-        "book": "https://drive.google.com/file/d/1pZjLqOzH0-gTq0yiywtJJ42DiolD3Vul/view?usp=drive_link"
-      },
-      {
-        "col": 4,
-        "name": "अपनी पसंदीदा कहानी की पुस्तक (अंग्रेज़ी/हिंदी/क्षेत्रीय भाषा) का कवर डिज़ाइन करें।",
-        "skills": "दृश्य कहानी की कला, रचनात्मकता और कल्पनाशक्ति",
-        "instructions": "अपने आप को एक लेखक के रूप में कल्पना करें और दिए गए टेम्पलेट का उपयोग करके अपनी पुस्तक का कवर डिज़ाइन करें।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:9500c964-9001-5be1-abce-f82018b1a370?category=text&entryPoint=template&taskID=book-cover",
-        "book": "https://drive.google.com/file/d/1Zpe1e3wBZ2vkuwBfc6-3lnree5TOlFVa/view?usp=drive_link"
-      },
-      {
-        "col": 5,
-        "name": "चित्र की पृष्ठभूमि हटाना",
-        "skills": "चित्र संपादन के बुनियादी कौशल और टूल्स का उपयोग करना",
-        "instructions": "Adobe Express के होमपेज पर जाएँ → ऊपर दिए गए “एडिट करें” विकल्प पर क्लिक करें → “बैकग्राउंड हटाएँ” पर क्लिक करें → अपनी पसंद की कोई भी तस्वीर चुनें → फिर उसका बैकग्राउंड हटा दें।\n\nउदाहरण के लिए: आप गतिविधि लिंक में दी गई तस्वीर का बैकग्राउंड हटाकर देख सकते हैं।",
-        "link": "https://new.express.adobe.com/publishedV2/urn:aaid:sc:AP:6f6807c9-f9f6-5806-8c23-ae6e57336ca8?promoid=Y69SGM5H&mv=other",
-        "book": "https://drive.google.com/file/d/1aJ6l2ZLmu_s8Wzgm-bk9EtmAooQVYQUH/view?usp=drive_link"
-      },
-      {
-        "col": 6,
-        "name": "एक एनिमेटेड वीडियो बनाएं",
-        "skills": "डिजिटल कहानी कहना, ऑडियो-विज़ुअल संवाद कौशल, योजना बनाना",
-        "instructions": "1. अपने Adobe Express School Account में लॉग इन करें।\n2. अपने शिक्षक के मार्गदर्शन में “Animate from Audio” का उपयोग करके किसी भी विषय, साइ-फाई घटना, अंग्रेज़ी या हिंदी कविता या मुहावरों पर एक छोटा वीडियो बनाएं।\n3. Adobe Express डैशबोर्ड पर “Animate Character” चुनें।\n4. वीडियो के विषय के अनुसार उपयुक्त पात्र (character) और बैकग्राउंड चुनें।\n5. एनीमेशन के लिए अपनी आवाज़ रिकॉर्ड करें।\n6. ‘Open in Editor’ पर क्लिक करके एनीमेशन को एडिटर में खोलें।\n7. इस वीडियो में बैकग्राउंड म्यूज़िक और शीर्षक जोड़कर एक छोटा वीडियो तैयार करें।\n8. यदि आप चाहें तो स्क्रीन पर टेक्स्ट भी जोड़ सकते हैं।\n\nसैम्पल वीडियो गतिविधि लिंक में दिया गया है।",
-        "link": "https://new.express.adobe.com/publishedV2/urn:aaid:sc:AP:eaca04fc-8417-4c67-8d1c-371f86bc0041?promoid=Y69SGM5H&mv=other",
-        "book": "https://drive.google.com/file/d/1uqZPn3GP3PG_AX4RsnrKMpvWEVSSF_Fr/view?usp=drive_link"
-      },
-      {
-        "col": 7,
-        "name": "Adobe पर शैक्षिक टेम्पलेट्स का उपयोग करना",
-        "skills": "देखने-समझने की क्षमता और सीखी हुई चीज़ों को रोज़मर्रा के जीवन में उपयोग करना",
-        "instructions": "अपने आसपास किसी ऐसी वस्तु का एक उदाहरण लिखें, जिसकी आकृति टेम्पलेट में दिए गए किसी भी दो त्रिभुजों जैसी हो।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:12308d9a-f6ab-5776-8ab1-63c0b95ef7a2?category=text&entryPoint=template&taskID=infographic",
-        "book": "https://drive.google.com/file/d/1BYyWyDY0fisJJ6_kAxZ9EC1JnEcvVAGW/view?usp=drive_link"
-      },
-      {
-        "col": 8,
-        "name": "गेनेरेटिवे एआई का उपयोग करके स्टीकर डिज़ाइन करें",
-        "skills": "आलोचनात्मक सोच (कम डिज़ाइन में प्रभाव को स्पष्ट रूप से दिखाना)",
-        "instructions": "जलवायु कार्रवाई को बढ़ावा देने के लिए एक स्टिकर डिज़ाइन करें।",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fdesign-a-sticker-to-promote-a-cause",
-        "book": "https://drive.google.com/file/d/1FgmlGOOZOvkIfjbPUr1FP2YB4jV-ysic/view?usp=drive_link"
-      },
-      {
-        "col": 9,
-        "name": "रचनात्मक मूल्यांकन 1",
-        "skills": "",
-        "instructions": "",
-        "link": "",
-        "book": ""
-      },
-      {
-        "col": 10,
-        "name": "जनरेटिव एआई की मदद से अपना एक रचनात्मक चित्र बनाएं।",
-        "skills": "अपने बारे में सोचना और खुद को समझना, तस्वीरों के माध्यम से अपनी बात बताना",
-        "instructions": "जनरेटिव एआई की मदद से अपना एक चित्र बनाएं, फिर उसमें ऐसा टेक्स्ट जोड़ें जो आपकी खास और अनोखी खूबियों को बताए।",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fcreative-self-portrait",
-        "book": "https://drive.google.com/file/d/1KABphgNpq2Mc2UIh2ciErPifn3ob3Zxt/view?usp=drive_link"
-      },
-      {
-        "col": 11,
-        "name": "जनरेटिव एआई की मदद से एक अनोखा टाइपोग्राफी डिज़ाइन बनाएं।",
-        "skills": "रचनात्मकता, टाइपोग्राफी कौशल और टेक्स्ट को सुंदर ढंग से सजाना",
-        "instructions": "कोई प्रेरणादायक शब्द लिखें, फिर जनरेटिव एआई/टेक्स्ट इफेक्ट्स का उपयोग करके उसे आकर्षक बनाएँ।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:8e02268e-101a-4a31-9d41-28bc9760d9b5?category=text&entryPoint=template&taskID=instagram-square-post",
-        "book": "https://drive.google.com/file/d/1umwaexPNvUSM1pNj0wF7CQcEvMYnxt0p/view?usp=drive_link"
-      },
-      {
-        "col": 12,
-        "name": "भारतीय हैंडलूम को बढ़ावा देने के लिए एक विज्ञापन तैयार करें।",
-        "skills": "विज्ञापन निर्माण कौशल, सांस्कृतिक जागरूकता",
-        "instructions": "विद्यार्थी Adobe Express का उपयोग करके भारत के विभिन्न राज्यों के हैंडलूम पर आधारित एक विज्ञापन तैयार करेंगे।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:c9b44c7b-cceb-5b88-adc8-e48579272e4d?category=text&entryPoint=template&taskID=pinterest-square",
-        "book": "https://drive.google.com/file/d/1tbRWTByuLBBCNNyPxF4Lm2dK-Q69G2Z1/view?usp=drive_link"
-      },
-      {
-        "col": 13,
-        "name": "स्कूलों में जनरेटिव एआई के उपयोग पर एक प्रस्तुति बनाएं।",
-        "skills": "प्रस्तुति कौशल, सोच-समझकर विचार करना",
-        "instructions": "दिए गए टेम्पलेट का उपयोग करके “आपकी सीखने की यात्रा में जनरेटिव एआई का उपयोग” विषय पर एक प्रस्तुति (प्रेसेंटेशन) बनाएं। अपने अनुभव के बारे में लिखें कि आपने जनरेटिव एआई का कैसे उपयोग किया और इसने आपके विचारों को व्यक्त करने में कैसे मदद की। साथ ही, अपने द्वारा बनाए गए Gen AI चित्र भी जोड़ें।",
-        "link": "https://new.express.adobe.com/publishedV2/urn:aaid:sc:AP:855861c0-d481-5dfc-aaed-936a7603e3d0?promoid=Y69SGM5H&mv=other",
-        "book": "https://drive.google.com/file/d/1fUSuuBqDbjLOuiU6zN5I5L_dKycpf_L7/view?usp=drive_link"
-      },
-      {
-        "col": 14,
-        "name": "गांधी जयंती/दशहरा (विजयादशमी)/ विश्व पशु कल्याण दिवस पर अपना पोस्टर डिज़ाइन करें।",
-        "skills": "दृश्य संवाद, सांस्कृतिक समझ और सौंदर्य बोध",
-        "instructions": "सर्च बार में जाकर “Dussehra” टाइप करें, Adobe के अलग-अलग टेम्पलेट्स देखें या नीचे दिए गए टेम्पलेट लिंक का उपयोग करें। उसमें टेक्स्ट, डिज़ाइन एलिमेंट्स या स्टिकर्स जोड़कर Adobe Express की मदद से अपना खुद का पोस्टर बनाएं।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:0da26552-f748-5727-aca2-6840eeadd2ca?category=text&entryPoint=template&taskID=whatsapp-status",
-        "book": "https://drive.google.com/file/d/1FA7ptNYGF1AyIbOl2mANTRJH7wIaS20_/view?usp=drive_link"
-      },
-      {
-        "col": 15,
-        "name": "ऐसा ग्राफिक डिज़ाइन करें जो इतिहास की छह शब्दों वाली कहानी बताए।",
-        "skills": "कम शब्दों में अपनी बात कहना, चित्रों के माध्यम से कहानी बताना",
-        "instructions": "किसी ऐतिहासिक व्यक्ति/घटना/खोज को चुनकर उसकी छह शब्दों वाली कहानी बनाएं। आपके इस्तेमाल के लिए  रवींद्रनाथ टैगोर का टेम्पलेट लिंक नीचे दिया गया है।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:62caebe5-f905-5d4f-b57b-2c76db2a4c25?category=text&entryPoint=template&taskID=instagram-story",
-        "book": "https://drive.google.com/file/d/1bii5-ahNf75sl5WH-bCkzaVFxP6CTkOM/view?usp=drive_link"
-      },
-      {
-        "col": 16,
-        "name": "ग्राफिक डिज़ाइन चुनौती",
-        "skills": "जानकारी खोजना और उसे लिखने की प्रक्रिया का तरीका, सामग्री को सही ढंग से व्यवस्थित करना और क्रम में लगाना",
-        "instructions": "दिए गए टेम्पलेट में खाद (कम्पोस्ट) बनाने की प्रक्रिया के बारे में लिखें। आप बैकग्राउंड बदल सकते हैं, डिज़ाइन एलिमेंट्स, आकार या आइकन भी जोड़ सकते हैं।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:c613ba06-7f77-5e34-96c4-2a86daadd30f?category=text&entryPoint=template&taskID=infographic",
-        "book": ""
-      },
-      {
-        "col": 17,
-        "name": "Adobe Express टेम्पलेट्स का उपयोग करके ‘हमारे जीवन में शिक्षक का योगदान’ विषय पर एक ‘फोटो कोलाज’ डिज़ाइन करें।",
-        "skills": "दृश्य कहानी कहने की कला, सामग्री का चयन और उसका व्यवस्थित रूप से प्रस्तुत करना, सराहना और महत्व को समझना",
-        "instructions": "दिए गए फोटो कोलाज टेम्पलेट में तस्वीरें या टेक्स्ट जोड़कर ‘हमारे जीवन में शिक्षक का योगदान’ को दर्शाएं।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:f25b66b9-4186-55ea-89d8-ca2acc20424d?category=text&entryPoint=template&taskID=instagram-portrait-post",
-        "book": ""
-      },
-      {
-        "col": 18,
-        "name": "रचनात्मक मूल्यांकन 2",
-        "skills": "",
-        "instructions": "",
-        "link": "",
-        "book": ""
-      }
-    ],
-    "Grade 7 (Hindi)": [
-      {
-        "col": 1,
-        "name": "रीसाइक्लिंग पर रचनात्मक गतिविधि",
-        "skills": "डिज़ाइन थिंकिंग और दृश्य संवाद कौशल",
-        "instructions": "रीसाइक्लिंग ड्राइव के इस पोस्टर को अपनी पसंद के अनुसार बदलें। आप इसका बैकग्राउंड बदल सकते हैं, डिज़ाइन एलिमेंट्स, आकार या आइकन जोड़ सकते हैं।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:df8c10ed-19ab-5a79-98d6-a012526049bd?category=text&entryPoint=template&taskID=banner-web",
-        "book": ""
-      },
-      {
-        "col": 2,
-        "name": "हिंदी दिवस का पोस्टर बनाएँ",
-        "skills": "भाषा कौशल, सांस्कृतिक जागरूकता\nरचनात्मकता और कल्पनाशक्ति",
-        "instructions": "हिंदी दिवस की विशेषता दर्शाते हुए एक पोस्टर बनाएं।\n\nदिए गए टेम्पलेट में टेक्स्ट और बैकग्राउंड बदल सकते हैं, डिज़ाइन एलिमेंट्स, आकार या आइकन जोड़ सकते हैं।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:6d81434d-80dc-568c-8503-ea352856c2cf?category=text&entryPoint=template&taskID=instagram-portrait-post",
-        "book": "https://drive.google.com/file/d/1XPaOTOnlwvfgk5tj_E8ruZduKZsIfmTR/view?usp=sharing"
-      },
-      {
-        "col": 3,
-        "name": "Adobe Express का उपयोग करके डिजिटल अभियान के लिए पोस्टर बनाना",
-        "skills": "डिजिटल डिज़ाइन और सौंदर्य बोध",
-        "instructions": "दिए गए टेम्पलेट को अपनी पसंद के अनुसार बदलकर छात्रों को अपने आर्ट क्लब में आमंत्रित करें।\n\nआप इसका टेक्स्ट और बैकग्राउंड बदल सकते हैं, डिज़ाइन एलिमेंट्स, आकार या आइकन जोड़ सकते हैं।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:6373ed30-0a53-5ef0-9e29-e3b379fbb011?category=text&entryPoint=template&taskID=poster",
-        "book": "https://drive.google.com/file/d/1pZjLqOzH0-gTq0yiywtJJ42DiolD3Vul/view?usp=drive_link"
-      },
-      {
-        "col": 4,
-        "name": "अपनी पसंदीदा कहानी की पुस्तक (अंग्रेज़ी/हिंदी/क्षेत्रीय भाषा) का कवर डिज़ाइन करें।",
-        "skills": "दृश्य कहानी की कला, रचनात्मकता और कल्पनाशक्ति",
-        "instructions": "अपने आप को एक लेखक के रूप में कल्पना करें और दिए गए टेम्पलेट का उपयोग करके अपनी पुस्तक का कवर डिज़ाइन करें।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:ace9a887-f1fd-5b76-90d6-cfce28b77f0d?category=text&entryPoint=template&taskID=book-cover",
-        "book": "https://drive.google.com/file/d/1Zpe1e3wBZ2vkuwBfc6-3lnree5TOlFVa/view?usp=drive_link"
-      },
-      {
-        "col": 5,
-        "name": "चित्र की पृष्ठभूमि हटाना",
-        "skills": "चित्र संपादन के बुनियादी कौशल और टूल्स का उपयोग करना",
-        "instructions": "Adobe Express के होमपेज पर जाएँ → ऊपर दिए गए “एडिट करें” विकल्प पर क्लिक करें → “बैकग्राउंड हटाएँ” पर क्लिक करें → अपनी पसंद की कोई भी तस्वीर चुनें → फिर उसका बैकग्राउंड हटा दें।\n\nउदाहरण के लिए: आप गतिविधि लिंक में दी गई तस्वीर का बैकग्राउंड हटाकर देख सकते हैं।",
-        "link": "https://new.express.adobe.com/publishedV2/urn:aaid:sc:AP:6f6807c9-f9f6-5806-8c23-ae6e57336ca8?promoid=Y69SGM5H&mv=other",
-        "book": "https://drive.google.com/file/d/1aJ6l2ZLmu_s8Wzgm-bk9EtmAooQVYQUH/view?usp=drive_link"
-      },
-      {
-        "col": 6,
-        "name": "एक एनिमेटेड वीडियो बनाएं",
-        "skills": "डिजिटल कहानी कहना, ऑडियो-विज़ुअल संवाद कौशल, योजना बनाना",
-        "instructions": "1. अपने Adobe Express School Account में लॉग इन करें।\n2. अपने शिक्षक के मार्गदर्शन में “Animate from Audio” का उपयोग करके किसी भी विषय, साइ-फाई घटना, अंग्रेज़ी या हिंदी कविता या मुहावरों पर एक छोटा वीडियो बनाएं।\n3. Adobe Express डैशबोर्ड पर “Animate Character” चुनें।\n4. वीडियो के विषय के अनुसार उपयुक्त पात्र (character) और बैकग्राउंड चुनें।\n5. एनीमेशन के लिए अपनी आवाज़ रिकॉर्ड करें।\n6. ‘Open in Editor’ पर क्लिक करके एनीमेशन को एडिटर में खोलें।\n7. इस वीडियो में बैकग्राउंड म्यूज़िक और शीर्षक जोड़कर एक छोटा वीडियो तैयार करें।\n8. यदि आप चाहें तो स्क्रीन पर टेक्स्ट भी जोड़ सकते हैं।\n\nसैम्पल वीडियो गतिविधि लिंक में दिया गया है।",
-        "link": "https://new.express.adobe.com/publishedV2/urn:aaid:sc:AP:eaca04fc-8417-4c67-8d1c-371f86bc0041?promoid=Y69SGM5H&mv=other",
-        "book": "https://drive.google.com/file/d/1uqZPn3GP3PG_AX4RsnrKMpvWEVSSF_Fr/view?usp=drive_link"
-      },
-      {
-        "col": 7,
-        "name": "Adobe पर शैक्षिक टेम्पलेट्स का उपयोग करना",
-        "skills": "सामग्री को व्यवस्थित करना और डिजिटल डिज़ाइन",
-        "instructions": "दिए गए टेम्पलेट में महासागरों के बारे में जानकारी लिखें और उन में पाए जाने वाले जीवों के स्टिकर्स जोड़ें।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:a9cc3dcc-2bf9-5f7f-b2dd-52eb104bba07?category=text&entryPoint=template&taskID=mobile-video",
-        "book": "https://drive.google.com/file/d/1BYyWyDY0fisJJ6_kAxZ9EC1JnEcvVAGW/view?usp=drive_link"
-      },
-      {
-        "col": 8,
-        "name": "गेनेरेटिवे एआई का उपयोग करके स्टीकर डिज़ाइन करें",
-        "skills": "आलोचनात्मक सोच (कम डिज़ाइन में प्रभाव को स्पष्ट रूप से दिखाना)",
-        "instructions": "वन्यजीव संरक्षण को बढ़ावा देने के लिए एक स्टिकर डिज़ाइन करें।",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fdesign-a-sticker-to-promote-a-cause",
-        "book": "https://drive.google.com/file/d/1FgmlGOOZOvkIfjbPUr1FP2YB4jV-ysic/view?usp=drive_link"
-      },
-      {
-        "col": 9,
-        "name": "रचनात्मक मूल्यांकन 1",
-        "skills": "",
-        "instructions": "",
-        "link": "",
-        "book": ""
-      },
-      {
-        "col": 10,
-        "name": "जनरेटिव एआई की मदद से अपना एक रचनात्मक चित्र बनाएं।",
-        "skills": "अपने बारे में सोचना और खुद को समझना, तस्वीरों के माध्यम से अपनी बात बताना",
-        "instructions": "जनरेटिव एआई की मदद से अपना एक चित्र बनाएं, फिर उसमें ऐसा टेक्स्ट जोड़ें जो आपकी खास और अनोखी खूबियों को बताए।",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fcreative-self-portrait",
-        "book": "https://drive.google.com/file/d/1KABphgNpq2Mc2UIh2ciErPifn3ob3Zxt/view?usp=drive_link"
-      },
-      {
-        "col": 11,
-        "name": "जनरेटिव एआई की मदद से एक अनोखा टाइपोग्राफी डिज़ाइन बनाएं।",
-        "skills": "रचनात्मकता, टाइपोग्राफी कौशल और टेक्स्ट को सुंदर ढंग से सजाना",
-        "instructions": "कोई प्रेरणादायक शब्द लिखें, फिर जनरेटिव एआई/टेक्स्ट इफेक्ट्स का उपयोग करके उसे आकर्षक बनाएँ।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:64bbb8cd-cf04-4112-8cb2-239c6db3b7b0?category=text&entryPoint=template&taskID=instagram-ad",
-        "book": "https://drive.google.com/file/d/1umwaexPNvUSM1pNj0wF7CQcEvMYnxt0p/view?usp=drive_link"
-      },
-      {
-        "col": 12,
-        "name": "एक कहानी की पुस्तक बनाएं।",
-        "skills": "कहानी बनाना, रचनात्मकता और कल्पनाशक्ति",
-        "instructions": "जनरेटिव एआई टूल की मदद से एक कहानी की कल्पना करें और उसका चित्र बनाएं।",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fillustrated-storybook",
-        "book": ""
-      },
-      {
-        "col": 13,
-        "name": "स्कूलों में जनरेटिव एआई के उपयोग पर एक प्रस्तुति बनाएं।",
-        "skills": "प्रस्तुति कौशल, सोच-समझकर विचार करना",
-        "instructions": "दिए गए टेम्पलेट का उपयोग करके “आपकी सीखने की यात्रा में जनरेटिव एआई का उपयोग” विषय पर एक प्रस्तुति (प्रेसेंटेशन) बनाएं। अपने अनुभव के बारे में लिखें कि आपने जनरेटिव एआई का कैसे उपयोग किया और इसने आपके विचारों को व्यक्त करने में कैसे मदद की। साथ ही, अपने द्वारा बनाए गए Gen AI चित्र भी जोड़ें।",
-        "link": "https://new.express.adobe.com/publishedV2/urn:aaid:sc:AP:855861c0-d481-5dfc-aaed-936a7603e3d0?promoid=Y69SGM5H&mv=other",
-        "book": "https://drive.google.com/file/d/1fUSuuBqDbjLOuiU6zN5I5L_dKycpf_L7/view?usp=drive_link"
-      },
-      {
-        "col": 14,
-        "name": "विश्व खाद्य दिवस/गांधी जयंती/दशहरा (विजयादशमी) पर अपना स्वयं का पोस्टर डिज़ाइन करें।",
-        "skills": "दृश्य संवाद, सांस्कृतिक समझ और सौंदर्य बोध",
-        "instructions": "सर्च बार में जाकर “Gandhi Jayanti” टाइप करें, Adobe के विभिन्न टेम्पलेट्स देखें या नीचे दिए गए टेम्पलेट लिंक का उपयोग करें। उसमें टेक्स्ट, आइकन या स्टिकर्स जोड़कर Adobe Express की मदद से अपना खुद का पोस्टर बनाएं।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:c07e8de8-5a67-5abd-962b-93c1f890cfe1?category=text&entryPoint=template&taskID=instagram-story",
-        "book": "https://drive.google.com/file/d/1FA7ptNYGF1AyIbOl2mANTRJH7wIaS20_/view?usp=drive_link"
-      },
-      {
-        "col": 15,
-        "name": "ऐसा ग्राफिक डिज़ाइन करें जो इतिहास की छह शब्दों वाली कहानी बताए।",
-        "skills": "कम शब्दों में अपनी बात कहना, चित्रों के माध्यम से कहानी बताना",
-        "instructions": "इतिहास की निम्नलिखित घटना पर छह शब्दों की कहानी बनाएं: पुणे में राष्ट्रीय रक्षा अकादमी (NDA) की नींव 6 अक्टूबर 1949 को रखी गई थी।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:df2f3e6d-9445-5acb-a730-f763743ea6bf?category=text&entryPoint=template&taskID=instagram-story",
-        "book": "https://drive.google.com/file/d/1bii5-ahNf75sl5WH-bCkzaVFxP6CTkOM/view?usp=drive_link"
-      },
-      {
-        "col": 16,
-        "name": "ग्राफिक डिज़ाइन चुनौती",
-        "skills": "कम शब्दों में लिखने का कौशल, सामग्री को सही तरीके से व्यवस्थित करना",
-        "instructions": "दिए गए इन्फोग्राफिक टेम्पलेट में आप जो 4 स्वास्थ्य संबंधी सुझाव अपनाते हैं, उन्हें लिखें। आप बैकग्राउंड बदल सकते हैं, डिज़ाइन एलिमेंट्स, आकार या आइकन भी जोड़ सकते हैं।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:d455eb6a-9e2a-4ed2-8a23-00da15f6b672?category=text&entryPoint=template&taskID=infographic",
-        "book": ""
-      },
-      {
-        "col": 17,
-        "name": "एक ‘वार्षिक न्यूज़लेटर’ बनाइए, जिसमें आपकी उपलब्धियाँ, यादगार घटनाएँ और वर्ष की विशेष गतिविधियाँ दिखाई जाएँ।",
-        "skills": "लेखन, सामग्री को सही क्रम में व्यवस्थित करना, अपनी बात को व्यक्त करना, कहानी सुनाना और सोच-समझकर विचार करना।",
-        "instructions": "दिए गए न्यूज़लेटर टेम्पलेट में अपनी उपलब्धियाँ या यादगार घटनाएँ लिखिए। आप बैकग्राउंड बदल सकते हैं और डिज़ाइन एलिमेंट, आकृतियाँ या आइकन भी जोड़ सकते हैं।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:7671efd1-e296-5a73-bb52-4479de47acfa?category=text&entryPoint=template&taskID=newsletter",
-        "book": ""
-      },
-      {
-        "col": 18,
-        "name": "रचनात्मक मूल्यांकन 2",
-        "skills": "",
-        "instructions": "",
-        "link": "",
-        "book": ""
-      }
-    ],
-    "Grade 8 (Hindi)": [
-      {
-        "col": 1,
-        "name": "रीसाइक्लिंग पर रचनात्मक गतिविधि",
-        "skills": "विचारात्मक सोच",
-        "instructions": "इस टेम्पलेट में रोज़मर्रा के जीवन में आप कैसे रीसाइक्लिंग करते हैं, इसके बारे में अपने बिंदु लिखें। आप इसका बैकग्राउंड बदल सकते हैं, डिज़ाइन एलिमेंट्स, आकार या आइकन भी जोड़ सकते हैं।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:9b348900-6f4f-5c36-a6a7-b7d32f2846e6?category=text&entryPoint=template&taskID=instagram-portrait-post",
-        "book": ""
-      },
-      {
-        "col": 2,
-        "name": "हिंदी दिवस का पोस्टर बनाएँ",
-        "skills": "भाषा कौशल, सांस्कृतिक जागरूकता\nरचनात्मकता और कल्पनाशक्ति",
-        "instructions": "हिंदी दिवस की विशेषता दर्शाते हुए एक पोस्टर बनाएं।\n\nदिए गए टेम्पलेट में टेक्स्ट और बैकग्राउंड बदल सकते हैं, डिज़ाइन एलिमेंट्स, आकार या आइकन भी जोड़ सकते हैं।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:5e236be0-5990-5333-bbee-bc73bb5c345b?category=text&entryPoint=template&taskID=flyer",
-        "book": "https://drive.google.com/file/d/1XPaOTOnlwvfgk5tj_E8ruZduKZsIfmTR/view?usp=sharing"
-      },
-      {
-        "col": 3,
-        "name": "Adobe Express का उपयोग करके डिजिटल अभियान के लिए पोस्टर बनाना",
-        "skills": "डिजिटल डिज़ाइन और सौंदर्य बोध",
-        "instructions": "दिए गए टेम्पलेट को अपनी पसंद के अनुसार बदलकर अपने साथियों को STEM क्लब से जुड़ने के लिए प्रेरित करें।\n\nआप इसका टेक्स्ट और बैकग्राउंड बदल सकते हैं, डिज़ाइन एलिमेंट्स, आकार या आइकन जोड़ सकते हैं।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:625b8779-44c3-576a-b3a9-07b091ea0656?category=text&entryPoint=template&taskID=poster",
-        "book": "https://drive.google.com/file/d/1pZjLqOzH0-gTq0yiywtJJ42DiolD3Vul/view?usp=drive_link"
-      },
-      {
-        "col": 4,
-        "name": "अपनी पसंदीदा कहानी की पुस्तक (अंग्रेज़ी/हिंदी/क्षेत्रीय भाषा) का कवर डिज़ाइन करें।",
-        "skills": "दृश्य कहानी की कला, रचनात्मकता और कल्पनाशक्ति",
-        "instructions": "अपने आप को एक लेखक के रूप में कल्पना करें और दिए गए टेम्पलेट का उपयोग करके अपनी पुस्तक का कवर डिज़ाइन करें।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:ca405652-bfd8-4e7c-8691-3b4ce5d7b81f?category=text&entryPoint=template&taskID=book-cover",
-        "book": "https://drive.google.com/file/d/1Zpe1e3wBZ2vkuwBfc6-3lnree5TOlFVa/view?usp=drive_link"
-      },
-      {
-        "col": 5,
-        "name": "चित्र की पृष्ठभूमि हटाना",
-        "skills": "चित्र संपादन के बुनियादी कौशल और टूल्स का उपयोग करना",
-        "instructions": "Adobe Express के होमपेज पर जाएँ → ऊपर दिए गए “एडिट करें” विकल्प पर क्लिक करें → “बैकग्राउंड हटाएँ” पर क्लिक करें → अपनी पसंद की कोई भी तस्वीर चुनें → फिर उसका बैकग्राउंड हटा दें।\n\nउदाहरण के लिए: आप गतिविधि लिंक में दी गई तस्वीर का बैकग्राउंड हटाकर देख सकते हैं।",
-        "link": "https://new.express.adobe.com/publishedV2/urn:aaid:sc:AP:6f6807c9-f9f6-5806-8c23-ae6e57336ca8?promoid=Y69SGM5H&mv=other",
-        "book": "https://drive.google.com/file/d/1aJ6l2ZLmu_s8Wzgm-bk9EtmAooQVYQUH/view?usp=drive_link"
-      },
-      {
-        "col": 6,
-        "name": "एक एनिमेटेड वीडियो बनाएं",
-        "skills": "डिजिटल कहानी कहना, ऑडियो-विज़ुअल संवाद कौशल, योजना बनाना",
-        "instructions": "1. अपने Adobe Express School Account में लॉग इन करें।\n2. अपने शिक्षक के मार्गदर्शन में “Animate from Audio” का उपयोग करके किसी भी विषय, साइ-फाई घटना, अंग्रेज़ी या हिंदी कविता या मुहावरों पर एक छोटा वीडियो बनाएं।\n3. Adobe Express डैशबोर्ड पर “Animate Character” चुनें।\n4. वीडियो के विषय के अनुसार उपयुक्त पात्र (character) और बैकग्राउंड चुनें।\n5. एनीमेशन के लिए अपनी आवाज़ रिकॉर्ड करें।\n6. ‘Open in Editor’ पर क्लिक करके एनीमेशन को एडिटर में खोलें।\n7. इस वीडियो में बैकग्राउंड म्यूज़िक और शीर्षक जोड़कर एक छोटा वीडियो तैयार करें।\n8. यदि आप चाहें तो स्क्रीन पर टेक्स्ट भी जोड़ सकते हैं।\n\nसैम्पल वीडियो गतिविधि लिंक में दिया गया है।",
-        "link": "https://new.express.adobe.com/publishedV2/urn:aaid:sc:AP:eaca04fc-8417-4c67-8d1c-371f86bc0041?promoid=Y69SGM5H&mv=other",
-        "book": "https://drive.google.com/file/d/1uqZPn3GP3PG_AX4RsnrKMpvWEVSSF_Fr/view?usp=drive_link"
-      },
-      {
-        "col": 7,
-        "name": "Adobe पर शैक्षिक टेम्पलेट्स का उपयोग करना",
-        "skills": "वाक्य बनाना",
-        "instructions": "दिए गए टेम्पलेट में विभिन्न प्रकार के काल पर आधारित वाक्य लिखें। आप अपनी लिखित सामग्री को एनीमेट कर सकते हैं और बैकग्राउंड भी बदल सकते हैं।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:6090778f-07d6-5e3b-88d4-c8700bd272b0?category=text&entryPoint=template&taskID=concept-map",
-        "book": "https://drive.google.com/file/d/1BYyWyDY0fisJJ6_kAxZ9EC1JnEcvVAGW/view?usp=drive_link"
-      },
-      {
-        "col": 8,
-        "name": "गेनेरेटिवे एआई का उपयोग करके स्टीकर डिज़ाइन करें",
-        "skills": "आलोचनात्मक सोच (कम डिज़ाइन में प्रभाव को स्पष्ट रूप से दिखाना)",
-        "instructions": "स्थानीय खरीदें, समुदायों को आगे बढ़ाएँ” संदेश को बढ़ावा देने के लिए एक स्टिकर डिज़ाइन करें।",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fdesign-a-sticker-to-promote-a-cause",
-        "book": "https://drive.google.com/file/d/1FgmlGOOZOvkIfjbPUr1FP2YB4jV-ysic/view?usp=drive_link"
-      },
-      {
-        "col": 9,
-        "name": "रचनात्मक मूल्यांकन 1",
-        "skills": "",
-        "instructions": "",
-        "link": "",
-        "book": ""
-      },
-      {
-        "col": 10,
-        "name": "जनरेटिव एआई की मदद से अपना एक रचनात्मक चित्र बनाएं।",
-        "skills": "अपने बारे में सोचना और खुद को समझना, तस्वीरों के माध्यम से अपनी बात बताना",
-        "instructions": "जनरेटिव एआई की मदद से अपना एक चित्र बनाएं, फिर उसमें ऐसा टेक्स्ट जोड़ें जो आपकी खास और अनोखी खूबियों को बताए।",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fcreative-self-portrait",
-        "book": "https://drive.google.com/file/d/1KABphgNpq2Mc2UIh2ciErPifn3ob3Zxt/view?usp=drive_link"
-      },
-      {
-        "col": 11,
-        "name": "जनरेटिव एआई की मदद से एक अनोखा टाइपोग्राफी डिज़ाइन बनाएं।",
-        "skills": "रचनात्मकता, टाइपोग्राफी कौशल और टेक्स्ट को सुंदर ढंग से सजाना",
-        "instructions": "कोई प्रेरणादायक शब्द लिखें, फिर जनरेटिव एआई/टेक्स्ट इफेक्ट्स का उपयोग करके उसे आकर्षक बनाएँ।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:fe6276f1-e509-5d5c-aa1c-d75a352681ad?category=text&entryPoint=template&taskID=tshirt",
-        "book": "https://drive.google.com/file/d/1umwaexPNvUSM1pNj0wF7CQcEvMYnxt0p/view?usp=drive_link"
-      },
-      {
-        "col": 12,
-        "name": "एक कहानी की पुस्तक बनाएं।",
-        "skills": "कहानी बनाना, रचनात्मकता और कल्पनाशक्ति",
-        "instructions": "जनरेटिव एआई टूल की मदद से एक कहानी की कल्पना करें और उसका चित्र बनाएं।",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fillustrated-storybook",
-        "book": ""
-      },
-      {
-        "col": 13,
-        "name": "स्कूलों में जनरेटिव एआई के उपयोग पर एक प्रस्तुति बनाएं।",
-        "skills": "प्रस्तुति कौशल, सोच-समझकर विचार करना",
-        "instructions": "दिए गए टेम्पलेट का उपयोग करके “आपकी सीखने की यात्रा में जनरेटिव एआई का उपयोग” विषय पर एक प्रस्तुति (प्रेसेंटेशन) बनाएं। अपने अनुभव के बारे में लिखें कि आपने जनरेटिव एआई का कैसे उपयोग किया और इसने आपके विचारों को व्यक्त करने में कैसे मदद की। साथ ही, अपने द्वारा बनाए गए Gen AI चित्र भी जोड़ें।",
-        "link": "https://new.express.adobe.com/publishedV2/urn:aaid:sc:AP:855861c0-d481-5dfc-aaed-936a7603e3d0?promoid=Y69SGM5H&mv=other",
-        "book": "https://drive.google.com/file/d/1fUSuuBqDbjLOuiU6zN5I5L_dKycpf_L7/view?usp=drive_link"
-      },
-      {
-        "col": 14,
-        "name": "विश्व मानसिक स्वास्थ्य दिवस/गांधी जयंती/दशहरा (विजयादशमी) पर अपना स्वयं का पोस्टर डिज़ाइन करें।",
-        "skills": "दृश्य संवाद, सांस्कृतिक समझ और सौंदर्य बोध",
-        "instructions": "सर्च बार में जाकर “World Mental Health Day” टाइप करें, Adobe के विभिन्न टेम्पलेट्स देखें या नीचे दिए गए टेम्पलेट लिंक का उपयोग करें। उसमें टेक्स्ट, आइकन या स्टिकर्स जोड़कर Adobe Express की मदद से अपना खुद का पोस्टर बनाएं।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:008a714e-6801-57a1-9007-94554134bd4c?category=text&entryPoint=template&taskID=poster",
-        "book": "https://drive.google.com/file/d/1FA7ptNYGF1AyIbOl2mANTRJH7wIaS20_/view?usp=drive_link"
-      },
-      {
-        "col": 15,
-        "name": "ऐसा ग्राफिक डिज़ाइन करें जो इतिहास की छह शब्दों वाली कहानी बताए।",
-        "skills": "कम शब्दों में अपनी बात कहना, चित्रों के माध्यम से कहानी बताना",
-        "instructions": "इतिहास की निम्नलिखित घटना पर छह शब्दों की कहानी बनाएं: स्वतंत्र भारत में डाक सेवा शुरू हुई और पहला डाक टिकट 24 अक्टूबर 1947 को जारी किया गया।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:009590dd-e918-53ef-bb3e-8cf8eb3d898f?category=text&entryPoint=template&taskID=instagram-portrait-post",
-        "book": "https://drive.google.com/file/d/1bii5-ahNf75sl5WH-bCkzaVFxP6CTkOM/view?usp=drive_link"
-      },
-      {
-        "col": 16,
-        "name": "ग्राफिक डिज़ाइन चुनौती",
-        "skills": "सार लिखना, पढ़ी हुई बातों को समझना और उनका अर्थ निकालना",
-        "instructions": "दिए गए इन्फोग्राफिक टेम्पलेट में अपनी पसंदीदा पुस्तक के बारे में लिखें। आप बैकग्राउंड बदल सकते हैं, डिज़ाइन एलिमेंट्स, आकार या आइकन भी जोड़ सकते हैं।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:760571c7-d836-59a5-904b-2db38de2b7c0?category=text&entryPoint=template&taskID=infographic",
-        "book": ""
-      },
-      {
-        "col": 17,
-        "name": "एक ‘वार्षिक न्यूज़लेटर’ बनाएं जिसमें छात्रों की उपलब्धियाँ, यादगार कार्यक्रम और वर्षभर की विशेष गतिविधियों को दर्शाया गया हो।",
-        "skills": "लेखन, सामग्री को सही क्रम में व्यवस्थित करना, अपनी बात को व्यक्त करना, कहानी सुनाना और सोच-समझकर विचार करना।",
-        "instructions": "दिए गए न्यूज़लेटर टेम्पलेट में अपनी कक्षा के विद्यार्थियों की उपलब्धियाँ या यादगार घटनाएँ लिखिए। आप बैकग्राउंड बदल सकते हैं और डिज़ाइन एलिमेंट, आकृतियाँ या आइकन भी जोड़ सकते हैं।",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:79ca154a-a739-5913-86c6-4c0b8a3f9ac8?category=text&entryPoint=template&taskID=newsletter",
-        "book": ""
-      },
-      {
-        "col": 18,
-        "name": "रचनात्मक मूल्यांकन 2",
-        "skills": "",
-        "instructions": "",
-        "link": "",
-        "book": ""
-      }
-    ],
-        "Grade 6": [
-      {
-        "col": 1,
-        "name": "Creative on Recycling",
-        "skills": "Language and expression skills",
-        "instructions": "Write a new quote in the given template",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:11bb5ca4-e3e5-512f-9d2b-0c95bcc23472?category=text&entryPoint=template&taskID=book-cover",
-        "book": "https://drive.google.com/file/d/1htE44AoWx7tXhyt6itCe69TnaXVhgZgz/view?usp=drive_link"
-      },
-      {
-        "col": 2,
-        "name": "Create a Generative AI character",
-        "skills": "Generative AI literacy, Prompt engineering, Creativity",
-        "instructions": "Create a graphic and learn to refine generative AI prompts using Generate image. Click on the activity link to start!",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fliterary-paper-doll",
-        "book": ""
-      },
-      {
-        "col": 3,
-        "name": "Poster Making for a Digital Campaign using Adobe Express",
-        "skills": "Digital design and Aesthetic sense",
-        "instructions": "Make your Poster on Reading club using the template provided",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:8a3e9f83-ae1d-5ed7-9526-f3e7023921b0?category=text&entryPoint=template&taskID=poster",
-        "book": "https://drive.google.com/file/d/1xKEuQEEN0tw-G0Mpu751SGmsH9wr44wq/view?usp=drive_link"
-      },
-      {
-        "col": 4,
-        "name": "Design a book cover of your all-time favourite storybook English/ Hindi/Regional.",
-        "skills": "Visual storytelling, Creativity and Imagination",
-        "instructions": "Imagine yourself as an author of a book and Design your book cover using the provided template",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:9500c964-9001-5be1-abce-f82018b1a370?category=text&entryPoint=template&taskID=book-cover",
-        "book": "https://drive.google.com/file/d/1RYDNoViKvYlhmZVtm89KvVq4S35kKaH8/view?usp=drive_link"
-      },
-      {
-        "col": 5,
-        "name": "Removing background from an image",
-        "skills": "Basic image editing and Tool navigation skills",
-        "instructions": "On the homepage of Adobe express -> Go to Edit at the top -> Click on remove background -> Select an image of your choice -> then remove background.\n\nFor example, you can remove background from an image as given in the activity link.",
-        "link": "https://new.express.adobe.com/publishedV2/urn:aaid:sc:AP:6f6807c9-f9f6-5806-8c23-ae6e57336ca8?promoid=Y69SGM5H&mv=other",
-        "book": "https://drive.google.com/file/d/1nYR9T1gaUGMW0UfGyzkXRPxAY2iUX9Fl/view?usp=drive_link"
-      },
-      {
-        "col": 6,
-        "name": "Create an Animated Videos",
-        "skills": "Digital storytelling, Audio-visual communication skills, Planning and sequencing",
-        "instructions": "1. Login into your Adobe Express School Account.\n2. Create a short video on any subject, Sci-fi event, English or Hindi Poem or Idioms using Animate from\nAudio as guided by your teachers.\n3. On the Adobe Express Dashboard, select \"Animate Character\" .\n4. Select the appropriate character and background as per the theme of the video decided by the\nstudent.\n5. Record your voice for the animation.\n6. Open the animation in the editor by clicking on 'Open in Editor'.\n7. Create a short video by adding background music and title to this video.\n8. You can also add text on the screen if you want.\n\nSAMPLE VIDEO is given in the activity link.",
-        "link": "https://new.express.adobe.com/publishedV2/urn:aaid:sc:AP:eaca04fc-8417-4c67-8d1c-371f86bc0041?promoid=Y69SGM5H&mv=other",
-        "book": "https://drive.google.com/file/d/1cTQdzS9nsVbGmi1nbPZVGe_MOULg8Bpt/view?usp=drive_link"
-      },
-      {
-        "col": 7,
-        "name": "Using Educational templates on Adobe",
-        "skills": "Observation skills, Conceptual understanding and Application of knowledge to real-life situations",
-        "instructions": "Write one example of an object around you that has the same shape as any 2 of the triangles shown in the template.",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:12308d9a-f6ab-5776-8ab1-63c0b95ef7a2?category=text&entryPoint=template&taskID=infographic",
-        "book": "https://drive.google.com/file/d/1KTKlg6fc1wB_QVkB-xCFXT_M-NdWqgNs/view?usp=drive_link"
-      },
-      {
-        "col": 8,
-        "name": "Using Educational templates on Adobe",
-        "skills": "Critical thinking (conveying impact through minimal design)",
-        "instructions": "Design a sticker to promote a cause- Climate Action. Click on the activity link to start!",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fdesign-a-sticker-to-promote-a-cause",
-        "book": "https://drive.google.com/file/d/16WEBZfqNljF_pIivYUGKkLMnpLQe9Og4/view?usp=drive_link"
-      },
-      {
-        "col": 9,
-        "name": "Creative Assessment 1",
-        "skills": "",
-        "instructions": "",
-        "link": "",
-        "book": ""
-      },
-      {
-        "col": 10,
-        "name": "Using Gen AI, Illustrate a creative self-portrait",
-        "skills": "Personal reflection and self-awareness, Visual communication",
-        "instructions": "Use Gen AI to create a self-portrait, then add text that describes your special and unique qualities. Click on the activity link to start!",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fcreative-self-portrait",
-        "book": ""
-      },
-      {
-        "col": 11,
-        "name": "Create a unique typography Design using Gen AI",
-        "skills": "Creativity and design innovation, Typography skills and text styling",
-        "instructions": "Create an image of a character from your English or Hindi textbook and present the text using different typography styles. Click on the activity link to start!",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fcreate-a-portrait-masterpiece",
-        "book": "https://drive.google.com/file/d/1OI4CioxhYdqSKgzyAtl7zbllj6zjz-TP/view?usp=drive_link"
-      },
-      {
-        "col": 12,
-        "name": "Create a storybook",
-        "skills": "Storytelling, Creativity and imagination, Narrative building",
-        "instructions": "Imagine and illustrate a story with generative AI tool. Click on the activity link to start!",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fillustrated-storybook",
-        "book": ""
-      },
-      {
-        "col": 13,
-        "name": "Create Presentation on the usage of Gen AI in Schools",
-        "skills": "Presentation and communication skills, Reflective thinking",
-        "instructions": "Using the provided template, create a presentation on- Use of Gen AI in your learning Journey. Write about your experience of using Gen AI and how it helped in expressing your ideas. Also Paste GenAI images created by you",
-        "link": "https://new.express.adobe.com/publishedV2/urn:aaid:sc:AP:4bbf2be5-ca70-57ea-bb60-8f91e1466826?promoid=Y69SGM5H&mv=other",
-        "book": "https://drive.google.com/file/d/12R6_zvGQzwtksStpKeUqwB6ZMVDPgak2/view?usp=drive_link"
-      },
-      {
-        "col": 14,
-        "name": "Design your own Poster on Gandhi Jayanti/Dussehra (Vijayadashami)/ World Animal Welfare Day",
-        "skills": "Visual communication, Cultural awareness and Aesthetic sense",
-        "instructions": "Go to the Search bar and type Dussehra, explore various Adobe Templates or use the template link given below, add text or design asset or stickers and create your own custom poster using Adobe Express",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:0da26552-f748-5727-aca2-6840eeadd2ca?category=text&entryPoint=template&taskID=whatsapp-status",
-        "book": "https://drive.google.com/file/d/1rQa0-vAK7b8ucT_te6fQmxStD8eB1dZu/view?usp=sharing"
-      },
-      {
-        "col": 15,
-        "name": "Design a graphic that tells a six-word story from history",
-        "skills": "Concise expression, Visual storytelling",
-        "instructions": "Select a historical character/event/discovery to make a six-word\r\nstory. Template link of Rabindranath Tagore is given below",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:62caebe5-f905-5d4f-b57b-2c76db2a4c25?category=text&entryPoint=template&taskID=instagram-story",
-        "book": "https://drive.google.com/file/d/1PIFfF7s2OJt8R7g4Nqa07Gg7klW5qNwO/view?usp=sharing"
-      },
-      {
-        "col": 16,
-        "name": "Graphic Design Challenge",
-        "skills": "Research and procedural writing skills, Content organization and sequencing",
-        "instructions": "In the provided template write about How to do composting, you can also change background, add design assets, shapes or icons.",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:c613ba06-7f77-5e34-96c4-2a86daadd30f?category=text&entryPoint=template&taskID=infographic",
-        "book": "https://drive.google.com/file/d/17vad_ZUq_qMEp8hOIsCu3hqFbFHTBzWh/view?usp=sharing"
-      },
-      {
-        "col": 17,
-        "name": "Design a ‘Photo Collage’ on the theme ‘Contribution of a Teacher in our\nLife’ using Adobe Express Templates.",
-        "skills": "Visual storytelling, Content selection and organization, Appreciation and value recognition",
-        "instructions": "In the provided template of photo collage, add photos or text highlighting ‘Contribution of a Teacher in our Life’",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:f25b66b9-4186-55ea-89d8-ca2acc20424d?category=text&entryPoint=template&taskID=instagram-portrait-post",
-        "book": ""
-      },
-      {
-        "col": 18,
-        "name": "Creative Assessment 2",
-        "skills": "",
-        "instructions": "",
-        "link": "",
-        "book": ""
-      }
-    ],
-    "Grade 7": [
-      {
-        "col": 1,
-        "name": "Creative on Recycling",
-        "skills": "Design thinking, Visual communication",
-        "instructions": "Customise this poster on recycling drive. You can change background, add design assets, shapes or icons.",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:df8c10ed-19ab-5a79-98d6-a012526049bd?category=text&entryPoint=template&taskID=banner-web",
-        "book": "https://drive.google.com/file/d/1htE44AoWx7tXhyt6itCe69TnaXVhgZgz/view?usp=drive_link"
-      },
-      {
-        "col": 2,
-        "name": "Create a Generative AI character",
-        "skills": "Generative AI literacy, Prompt engineering, Creativity",
-        "instructions": "Create a graphic and learn to refine generative AI prompts using Generate image. Click on the activity link to start!",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fliterary-paper-doll",
-        "book": ""
-      },
-      {
-        "col": 3,
-        "name": "Poster Making for a Digital Campaign using Adobe Express",
-        "skills": "Digital design and Aesthetic sense",
-        "instructions": "Invite students to your Art Club by customising the provided template",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:6373ed30-0a53-5ef0-9e29-e3b379fbb011?category=text&entryPoint=template&taskID=poster",
-        "book": "https://drive.google.com/file/d/1xKEuQEEN0tw-G0Mpu751SGmsH9wr44wq/view?usp=drive_link"
-      },
-      {
-        "col": 4,
-        "name": "Design a book cover of your all-time favourite storybook English/ Hindi/Regional.",
-        "skills": "Visual storytelling, Creativity and Imagination",
-        "instructions": "Imagine yourself as an author of a book and Design your book cover using the provided template",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:ace9a887-f1fd-5b76-90d6-cfce28b77f0d?category=text&entryPoint=template&taskID=book-cover",
-        "book": "https://drive.google.com/file/d/1RYDNoViKvYlhmZVtm89KvVq4S35kKaH8/view?usp=drive_link"
-      },
-      {
-        "col": 5,
-        "name": "Removing background from an image",
-        "skills": "Basic image editing and Tool navigation",
-        "instructions": "On the homepage of Adobe express -> Go to Edit at the top -> Click on remove background -> Select an image of your choice -> then remove background\n\nFor example, you can remove background from an image as given in the activity link.",
-        "link": "https://new.express.adobe.com/publishedV2/urn:aaid:sc:AP:6f6807c9-f9f6-5806-8c23-ae6e57336ca8?promoid=Y69SGM5H&mv=other",
-        "book": "https://drive.google.com/file/d/1nYR9T1gaUGMW0UfGyzkXRPxAY2iUX9Fl/view?usp=drive_link"
-      },
-      {
-        "col": 6,
-        "name": "Create an Animated Videos",
-        "skills": "Digital storytelling, Audio-visual communication skills, Planning and sequencing",
-        "instructions": "1. Login into your Adobe Express School Account.\n2. Create a short video on any subject, Sci-fi event, English or Hindi Poem or Idioms using Animate from\nAudio as guided by your teachers.\n3. On the Adobe Express Dashboard, select \"Animate Character\" .\n4. Select the appropriate character and background as per the theme of the video decided by the\nstudent.\n5. Record your voice for the animation.\n6. Open the animation in the editor by clicking on 'Open in Editor'.\n7. Create a short video by adding background music and title to this video.\n8. You can also add text on the screen if you want.\n\nSAMPLE VIDEO is given in the activity link.",
-        "link": "https://new.express.adobe.com/publishedV2/urn:aaid:sc:AP:eaca04fc-8417-4c67-8d1c-371f86bc0041?promoid=Y69SGM5H&mv=other",
-        "book": "https://drive.google.com/file/d/1cTQdzS9nsVbGmi1nbPZVGe_MOULg8Bpt/view?usp=drive_link"
-      },
-      {
-        "col": 7,
-        "name": "Using Educational templates on Adobe",
-        "skills": "Content organization and Digital design",
-        "instructions": "Add information on Oceans and stickers of aquatic animals in the provided template",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:a9cc3dcc-2bf9-5f7f-b2dd-52eb104bba07?category=text&entryPoint=template&taskID=mobile-video",
-        "book": "https://drive.google.com/file/d/1KTKlg6fc1wB_QVkB-xCFXT_M-NdWqgNs/view?usp=drive_link"
-      },
-      {
-        "col": 8,
-        "name": "Using Educational templates on Adobe",
-        "skills": "Critical thinking (conveying impact through minimal design)",
-        "instructions": "Design a sticker to promote a cause- Wildlife conservation. Click on the activity link to start!",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fdesign-a-sticker-to-promote-a-cause",
-        "book": "https://drive.google.com/file/d/16WEBZfqNljF_pIivYUGKkLMnpLQe9Og4/view?usp=drive_link"
-      },
-      {
-        "col": 9,
-        "name": "Creative Assessment 1",
-        "skills": "",
-        "instructions": "",
-        "link": "",
-        "book": ""
-      },
-      {
-        "col": 10,
-        "name": "Using Gen AI, Illustrate a creative self-portrait",
-        "skills": "Personal reflection and self-awareness, Visual communication",
-        "instructions": "Use Gen AI to create a self-portrait, then add text that describes your special and unique qualities. Click on the activity link to start!",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fcreative-self-portrait",
-        "book": ""
-      },
-      {
-        "col": 11,
-        "name": "Create a unique typography Design using Gen AI",
-        "skills": "Creativity and design innovation, Typography skills and text styling",
-        "instructions": "Create an image of a character from your English or Hindi textbook and present the text using different typography styles. Click on the activity link to start!",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fcreate-a-portrait-masterpiece",
-        "book": "https://drive.google.com/file/d/1OI4CioxhYdqSKgzyAtl7zbllj6zjz-TP/view?usp=drive_link"
-      },
-      {
-        "col": 12,
-        "name": "Create a storybook",
-        "skills": "Storytelling, Creativity and imagination, Narrative building",
-        "instructions": "Imagine and illustrate a story with generative AI tool. Click on the activity link to start!",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fillustrated-storybook",
-        "book": ""
-      },
-      {
-        "col": 13,
-        "name": "Create Presentation on the usage of Gen AI in Schools",
-        "skills": "Presentation and communication skills, Reflective thinking",
-        "instructions": "Using the provided template, create a presentation on- Use of Gen AI in your learning Journey. Write about your experience of using Gen AI and how it helped in expressing your ideas. Also Paste GenAI images created by you",
-        "link": "https://new.express.adobe.com/publishedV2/urn:aaid:sc:AP:4bbf2be5-ca70-57ea-bb60-8f91e1466826?promoid=Y69SGM5H&mv=other",
-        "book": "https://drive.google.com/file/d/12R6_zvGQzwtksStpKeUqwB6ZMVDPgak2/view?usp=drive_link"
-      },
-      {
-        "col": 14,
-        "name": "Design your own Poster on World Food Day/Gandhi Jayanti/Dussehra (Vijayadashami)",
-        "skills": "Visual communication, Cultural awareness and Aesthetic sense",
-        "instructions": "Go to the Search bar and type Gandhi Jayanti, explore various Adobe Templates or use the template link given below, add text or icons or stickers and create your own custom poster using Adobe Express",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:c07e8de8-5a67-5abd-962b-93c1f890cfe1?category=text&entryPoint=template&taskID=instagram-story",
-        "book": "https://drive.google.com/file/d/1rQa0-vAK7b8ucT_te6fQmxStD8eB1dZu/view?usp=sharing"
-      },
-      {
-        "col": 15,
-        "name": "Design a graphic that tells a six-word story from history",
-        "skills": "Concise expression, Visual storytelling",
-        "instructions": "Create a six-word story on the following event from history- Foundation stone of the National Defence Academy (NDA) in Pune was laid on Oct 6, 1949",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:df2f3e6d-9445-5acb-a730-f763743ea6bf?category=text&entryPoint=template&taskID=instagram-story",
-        "book": "https://drive.google.com/file/d/1PIFfF7s2OJt8R7g4Nqa07Gg7klW5qNwO/view?usp=sharing"
-      },
-      {
-        "col": 16,
-        "name": "Graphic Design Challenge",
-        "skills": "Concise writing skills, Content organization",
-        "instructions": "In the provided template of infographic, write 4 health tips you follow. You can also change background, add design assets, shapes or icons.",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:d455eb6a-9e2a-4ed2-8a23-00da15f6b672?category=text&entryPoint=template&taskID=infographic",
-        "book": "https://drive.google.com/file/d/17vad_ZUq_qMEp8hOIsCu3hqFbFHTBzWh/view?usp=sharing"
-      },
-      {
-        "col": 17,
-        "name": "Create a ‘Yearly Newslett\u001der’ that highlights your achievements,\nmemorable events, and special activities from the year.",
-        "skills": "Writing, Content organization, Self-expression, storytelling and Reflective thinking",
-        "instructions": "In the provided template of newsletter, write about your achievements or memorable events. You can also change background, add design assets, shapes or icons.",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:7671efd1-e296-5a73-bb52-4479de47acfa?category=text&entryPoint=template&taskID=newsletter",
-        "book": ""
-      },
-      {
-        "col": 18,
-        "name": "Creative Assessment 2",
-        "skills": "",
-        "instructions": "",
-        "link": "",
-        "book": ""
-      }
-    ],
-    "Grade 8": [
-      {
-        "col": 1,
-        "name": "Creative on Recycling",
-        "skills": "Reflective thinking",
-        "instructions": "Write your points in this template about how you recycle every day. You can also change background, add design assets, shapes or icons.",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:9b348900-6f4f-5c36-a6a7-b7d32f2846e6?category=text&entryPoint=template&taskID=instagram-portrait-post",
-        "book": "https://drive.google.com/file/d/1htE44AoWx7tXhyt6itCe69TnaXVhgZgz/view?usp=drive_link"
-      },
-      {
-        "col": 2,
-        "name": "Create a Generative AI character",
-        "skills": "Generative AI literacy, Prompt engineering, Creativity",
-        "instructions": "Create a graphic and learn to refine generative AI prompts using Generate image. Click on the activity link to start!",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fliterary-paper-doll",
-        "book": ""
-      },
-      {
-        "col": 3,
-        "name": "Poster Making for a Digital Campaign using Adobe Express",
-        "skills": "Digital design and Aesthetic sense",
-        "instructions": "Motivate your peers to join the STEM club by customising the provided template",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:625b8779-44c3-576a-b3a9-07b091ea0656?category=text&entryPoint=template&taskID=poster",
-        "book": "https://drive.google.com/file/d/1xKEuQEEN0tw-G0Mpu751SGmsH9wr44wq/view?usp=drive_link"
-      },
-      {
-        "col": 4,
-        "name": "Design a book cover of your all-time favourite storybook English/ Hindi/Regional.",
-        "skills": "Visual storytelling, Creativity and Imagination",
-        "instructions": "Imagine yourself as an author of a book and Design your book cover using the provided template",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:ca405652-bfd8-4e7c-8691-3b4ce5d7b81f?category=text&entryPoint=template&taskID=book-cover",
-        "book": "https://drive.google.com/file/d/1RYDNoViKvYlhmZVtm89KvVq4S35kKaH8/view?usp=drive_link"
-      },
-      {
-        "col": 5,
-        "name": "Removing background from an image",
-        "skills": "Basic image editing and Tool navigation skills",
-        "instructions": "On the homepage of Adobe express -> Go to Edit at the top -> Click on remove background -> Select an image of your choice -> then remove background.\n\nFor example, you can remove background from an image as given in the activity link.",
-        "link": "https://new.express.adobe.com/publishedV2/urn:aaid:sc:AP:6f6807c9-f9f6-5806-8c23-ae6e57336ca8?promoid=Y69SGM5H&mv=other",
-        "book": "https://drive.google.com/file/d/1nYR9T1gaUGMW0UfGyzkXRPxAY2iUX9Fl/view?usp=drive_link"
-      },
-      {
-        "col": 6,
-        "name": "Create an Animated Videos",
-        "skills": "Digital storytelling, Audio-visual communication skills, Planning and sequencing",
-        "instructions": "1. Login into your Adobe Express School Account.\n2. Create a short video on any subject, Sci-fi event, English or Hindi Poem or Idioms using Animate from\nAudio as guided by your teachers.\n3. On the Adobe Express Dashboard, select \"Animate Character\" .\n4. Select the appropriate character and background as per the theme of the video decided by the\nstudent.\n5. Record your voice for the animation.\n6. Open the animation in the editor by clicking on 'Open in Editor'.\n7. Create a short video by adding background music and title to this video.\n8. You can also add text on the screen if you want.\n\nSAMPLE VIDEO is given in the activity link.",
-        "link": "https://new.express.adobe.com/publishedV2/urn:aaid:sc:AP:eaca04fc-8417-4c67-8d1c-371f86bc0041?promoid=Y69SGM5H&mv=other",
-        "book": "https://drive.google.com/file/d/1cTQdzS9nsVbGmi1nbPZVGe_MOULg8Bpt/view?usp=drive_link"
-      },
-      {
-        "col": 7,
-        "name": "Using Educational Templates on Adobe",
-        "skills": "Sentence construction",
-        "instructions": "Write sentences on 'has; and 'have' with the hints given in the template",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:0cf1aa7a-8ded-4993-87e2-f547d51ac82b?category=text&entryPoint=template&taskID=poster",
-        "book": "https://drive.google.com/file/d/1KTKlg6fc1wB_QVkB-xCFXT_M-NdWqgNs/view?usp=drive_link"
-      },
-      {
-        "col": 8,
-        "name": "Using Educational templates on Adobe",
-        "skills": "Critical thinking (conveying impact through minimal design)",
-        "instructions": "Design a sticker to promote a cause- \"Buy Local, Help Communities Grow\". Click on the activity link to start!",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fdesign-a-sticker-to-promote-a-cause",
-        "book": "https://drive.google.com/file/d/16WEBZfqNljF_pIivYUGKkLMnpLQe9Og4/view?usp=drive_link"
-      },
-      {
-        "col": 9,
-        "name": "Creative Assessment 1",
-        "skills": "",
-        "instructions": "",
-        "link": "",
-        "book": ""
-      },
-      {
-        "col": 10,
-        "name": "Using Gen AI, Illustrate a creative self-portrait",
-        "skills": "Personal reflection and self-awareness, Visual communication",
-        "instructions": "Use Gen AI to create a self-portrait, then add text that describes your special and unique qualities. Click on the activity link to start!",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fcreative-self-portrait",
-        "book": ""
-      },
-      {
-        "col": 11,
-        "name": "Create a unique typography Design using Gen AI",
-        "skills": "Creativity and design innovation, Typography skills and text styling",
-        "instructions": "Create an image of a character from your English or Hindi textbook and present the text using different typography styles. Click on the activity link to start!",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fcreate-a-portrait-masterpiece",
-        "book": "https://drive.google.com/file/d/1OI4CioxhYdqSKgzyAtl7zbllj6zjz-TP/view?usp=drive_link"
-      },
-      {
-        "col": 12,
-        "name": "Create a storybook",
-        "skills": "Storytelling, Creativity and imagination, Narrative building",
-        "instructions": "Imagine and illustrate a story with generative AI tool. Click on the activity link to start!",
-        "link": "https://new.express.adobe.com/new?instructions=view%3Aexpress%2Fhow-to%2Fin-app%2Fillustrated-storybook",
-        "book": ""
-      },
-      {
-        "col": 13,
-        "name": "Create Presentation on the usage of Gen AI in Schools",
-        "skills": "Presentation and communication skills, Reflective thinking",
-        "instructions": "Using the provided template, create a presentation on- Use of Gen AI in your learning Journey. Write about your experience of using Gen AI and how it helped in expressing your ideas. Also Paste GenAI images created by you",
-        "link": "https://new.express.adobe.com/publishedV2/urn:aaid:sc:AP:4bbf2be5-ca70-57ea-bb60-8f91e1466826?promoid=Y69SGM5H&mv=other",
-        "book": "https://drive.google.com/file/d/12R6_zvGQzwtksStpKeUqwB6ZMVDPgak2/view?usp=drive_link"
-      },
-      {
-        "col": 14,
-        "name": "Design your own Poster on World Mental Health Day/Gandhi Jayanti/Dussehra (Vijayadashami)",
-        "skills": "Visual communication, Cultural awareness and Aesthetic sense",
-        "instructions": "Go to the Search bar and type World Mental Health Day, explore various Adobe Templates or use the template link given below, add text or icons or stickers and create your own custom poster using Adobe Express",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:008a714e-6801-57a1-9007-94554134bd4c?category=text&entryPoint=template&taskID=poster",
-        "book": "https://drive.google.com/file/d/1rQa0-vAK7b8ucT_te6fQmxStD8eB1dZu/view?usp=sharing"
-      },
-      {
-        "col": 15,
-        "name": "Design a graphic that tells a six-word story from history",
-        "skills": "Concise expression, Visual storytelling",
-        "instructions": "Create a six-word story on the following event from history- The postal service started in independent India, with the first stamp issued on Oct 24, 1947",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:009590dd-e918-53ef-bb3e-8cf8eb3d898f?category=text&entryPoint=template&taskID=instagram-portrait-post",
-        "book": "https://drive.google.com/file/d/1PIFfF7s2OJt8R7g4Nqa07Gg7klW5qNwO/view?usp=sharing"
-      },
-      {
-        "col": 16,
-        "name": "Graphic Design Challenge",
-        "skills": "Summarization, Reading comprehension and interpretation",
-        "instructions": "In the provided template of infographic, write about your favourite book. You can also change background, add design assets, shapes or icons.",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:760571c7-d836-59a5-904b-2db38de2b7c0?category=text&entryPoint=template&taskID=infographic",
-        "book": "https://drive.google.com/file/d/17vad_ZUq_qMEp8hOIsCu3hqFbFHTBzWh/view?usp=sharing"
-      },
-      {
-        "col": 17,
-        "name": "Create a ‘Yearly Newslett\u001der’ that highlights student achievements,\nmemorable events, and special activities from the year.",
-        "skills": "Writing, Content organization, Self-expression, storytelling and Reflective thinking",
-        "instructions": "In the provided template of newsletter, write about achievements or memorable events involving students of your class. You can also change background, add design assets, shapes or icons.",
-        "link": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:79ca154a-a739-5913-86c6-4c0b8a3f9ac8?category=text&entryPoint=template&taskID=newsletter",
-        "book": ""
-      },
-      {
-        "col": 18,
-        "name": "Creative Assessment 2",
-        "skills": "",
-        "instructions": "",
-        "link": "",
-        "book": ""
-      }
-    ]
-  },
+  "weeklyModules": [
+    {
+      "id": "m_1",
+      "index": 1,
+      "month": "July",
+      "monthHi": "जुलाई",
+      "week": "July - Week 1",
+      "weekHi": "जुलाई - सप्ताह 1",
+      "moduleName": "Module 1: Creativity for All",
+      "moduleNameHi": "मॉड्यूल 1: सभी के लिए रचनात्मकता",
+      "subtopic": "1.1 What is Creativity?",
+      "activityName": "Creative on Recycling",
+      "learningOutcomes": "• Understand the defination of creativity.\n• Learn why creativity is important.\n• Explore examples of creative geniuses who have changed the shape of the world.\n• Recognize creativity skills as a crucial aspect of the future of work and life.",
+      "instructions": "The teacher explains how posters and quotes can raise awareness and communicate ideas creatively.\nTeacher demonstrates:\n• Opening template\n• Editing quote\n• Changing colors/fonts\n• Saving project\n\nFor E-Module activity: Teacher to guide students to log in to Adobe Express school Account; guide them towards Module 1 (Section 1.1) of the online course on ‘Digital Creativity and AI Skills (Level-1).’",
+      "skillsInFocus": "Creative Exploration & Digital Literacy",
+      "bookScreenshot": "M1, Page-27,28",
+      "bookScreenshotLink": "https://drive.google.com/file/d/1BKfQL3qP8O9H8dksl8yny9-sYwjjit1n/view?usp=drive_link",
+      "activityLinkClassroom": "Swachhata drive at school- https://adobe.ly/3PCLotc",
+      "activityLinkClassroomUrl": "https://adobe.ly/3PCLotc",
+      "activityLinkHomework": "",
+      "activityLinkHomeworkUrl": "",
+      "activityNameHi": "रीसाइक्लिंग पर रचनात्मक गतिविधि",
+      "skillsInFocusHi": "रचनात्मक अन्वेषण एवं डिजिटल साक्षरता",
+      "learningOutcomesHi": "• रचनात्मकता की परिभाषा को समझना।\n• रचनात्मकता क्यों महत्वपूर्ण है, यह जानना।\n• दुनिया को बदलने वाले रचनात्मक दिग्गजों के उदाहरण तलाशना।\n• रचनात्मक कौशल को भविष्य के कार्य और जीवन के महत्वपूर्ण पहलू के रूप में पहचानना।",
+      "instructionsHi": "शिक्षक समझाते हैं कि पोस्टर और उद्धरण किस प्रकार जागरूकता बढ़ा सकते हैं।\nशिक्षक प्रदर्शन करते हैं:\n• टेम्पलेट खोलना\n• उद्धरण संपादित करना\n• रंग/फ़ॉन्ट बदलना\n• प्रोजेक्ट सहेजना\n\nई-मॉड्यूल गतिविधि: एडोब एक्सप्रेस स्कूल खाते में लॉगिन करें और मॉड्यूल 1 (अनुभाग 1.1) पूरा करें।"
+    },
+    {
+      "id": "m_2",
+      "index": 2,
+      "month": "July",
+      "monthHi": "जुलाई",
+      "week": "July - Week 3",
+      "weekHi": "जुलाई - सप्ताह 3",
+      "moduleName": "Module 1: Creativity for All",
+      "moduleNameHi": "मॉड्यूल 1: सभी के लिए रचनात्मकता",
+      "subtopic": "1.2 Fostering Creativity in the Classroom",
+      "activityName": "Yoga or Culural Club Poster",
+      "learningOutcomes": "• Get introduced to the 4 Cs: Creativity, Critical inking, Communication, and Collaboration.\n• Understand the interconnections between the 4 Cs.\n• Learn how to integrate the 4 Cs into daily life.",
+      "instructions": "The teacher explains how colors, text, and images help communicate messages effectively.\nTeacher demonstrates:\n• Opening template\n• writing or adding new text\n• Changing font/colors\n• Adding one icon/image\n• Saving project\n\nFor E-Module activity: Teacher to guide students to log in to Adobe Express school Account; guide them towards Module 1 (Section 1.2) of the online course on ‘Digital Creativity and AI Skills (Level-1).’",
+      "skillsInFocus": "Visual Communication & Design Skills",
+      "bookScreenshot": "M1,Page 34.35,36",
+      "bookScreenshotLink": "https://drive.google.com/file/d/1r568cq_vA_fOx-uzsW2uXEHBMfmgjZzI/view?usp=drive_link",
+      "activityLinkClassroom": "Yoga Club : https://adobe.ly/3R0K18c",
+      "activityLinkClassroomUrl": "https://adobe.ly/3R0K18c",
+      "activityLinkHomework": "Create a Movie Poster : https://adobe.ly/4wqooyg",
+      "activityLinkHomeworkUrl": "https://adobe.ly/4wqooyg",
+      "activityNameHi": "योग या सांस्कृतिक क्लब पोस्टर",
+      "skillsInFocusHi": "दृश्य संचार और डिज़ाइन कौशल",
+      "learningOutcomesHi": "• डिजिटल पोस्टर के घटकों को समझना।\n• आकर्षक पोस्टर बनाने के लिए डिज़ाइन सिद्धांतों का उपयोग करना।\n• एडोब एक्सप्रेस में टेक्स्ट, रंग और आकृतियों का प्रभावी उपयोग करना।",
+      "instructionsHi": "शिक्षक स्कूल के योग दिवस या सांस्कृतिक क्लब के लिए पोस्टर डिज़ाइन का प्रदर्शन करते हैं। छात्र टेम्पलेट चुनकर अपना अनूठा पोस्टर तैयार करते हैं।"
+    },
+    {
+      "id": "m_3",
+      "index": 3,
+      "month": "July",
+      "monthHi": "जुलाई",
+      "week": "July - Week 4",
+      "weekHi": "जुलाई - सप्ताह 4",
+      "moduleName": "Module 1: Creativity for All",
+      "moduleNameHi": "मॉड्यूल 1: सभी के लिए रचनात्मकता",
+      "subtopic": "1.3 Digital Creativity and Creative Tools",
+      "activityName": "Imaginary Storybook Cover",
+      "learningOutcomes": "• Get introduced to Technology and Digital Creativity skills.\n• Learn about Adobe Express and its basic functions.\n• Explore how Adobe Express can be used to enhance your own creative projects.",
+      "instructions": "The teacher explains how to generate a book cover image or background and edit a Storybook cover template.\nTeacher demonstrates:\n• Using Generative AI\n• Adding title\n• Adding subtitle/tagline\n• Adding/editing image/background\n• Customizing fonts/colors\n• Saving project\n\nFor E-Module activity: Teacher to guide students to log in to Adobe Express school Account; guide them towards Module 1 (Section 1.3) of the online course on ‘Digital Creativity and AI Skills (Level-1).’",
+      "skillsInFocus": "Creative Self-Expression & AI Creative Skills",
+      "bookScreenshot": "M1,Page 41-42.pdf",
+      "bookScreenshotLink": "https://drive.google.com/file/d/1T2DYDaIqUy36giJZ7Y7KWb1P-hX5HD1e/view?usp=drive_link",
+      "activityLinkClassroom": "Create a book Cover - https://adobe.ly/42ulMBQ",
+      "activityLinkClassroomUrl": "https://adobe.ly/42ulMBQ",
+      "activityLinkHomework": "",
+      "activityLinkHomeworkUrl": "",
+      "activityNameHi": "काल्पनिक स्टोरीबुक कवर डिज़ाइन",
+      "skillsInFocusHi": "रचनात्मक आत्म-अभिव्यक्ति और एआई रचनात्मक कौशल",
+      "learningOutcomesHi": "• पुस्तक कवर डिज़ाइन के मुख्य तत्वों (शीर्षक, लेखक, चित्र) को समझना।\n• कहानी के विषय के अनुसार लेआउट और टाइपोग्राफी चुनना।",
+      "instructionsHi": "छात्र अपनी पसंदीदा काल्पनिक कहानी के लिए एक आकर्षक कवर पेज डिज़ाइन करते हैं।"
+    },
+    {
+      "id": "m_4",
+      "index": 4,
+      "month": "August",
+      "monthHi": "अगस्त",
+      "week": "August - Week 1 (Part 1)",
+      "weekHi": "अगस्त - सप्ताह 1 (भाग 1)",
+      "moduleName": "Module 2: Unleash Creativity with Adobe Express",
+      "moduleNameHi": "मॉड्यूल 2: Adobe Express के साथ रचनात्मकता का विस्तार",
+      "subtopic": "2.1 Getting started with Adobe Express\n2.2 Exploring “Quick Actions” in Adobe Express",
+      "activityName": "Remove background (Activity 2.1.1)",
+      "learningOutcomes": "• Familiarization with various features of Adobe Express dashboard\n• Familiarization with various actions under 'Quick Actions'",
+      "instructions": "Teacher demonstrates:\n• Remove background\n• Dashboard\n• Access 'quick actions' on dashboard\n• Quick Action Tools (Such as, Edit Images and Videos, Work with PDFs, Animate Characters, Create GIFs)\n\nFor E-Module activity: Teacher to guide students to login into Adobe Express school; guide them towards Module 2 (Section 2.1 and Section 2.2) of online course on ‘Digital Creativity and AI Skills (Level-1)’",
+      "skillsInFocus": "Functionality of digital tools",
+      "bookScreenshot": "",
+      "bookScreenshotLink": "",
+      "activityLinkClassroom": "https://express.adobe.com/sp/tools/remove-background",
+      "activityLinkClassroomUrl": "https://express.adobe.com/sp/tools/remove-background",
+      "activityLinkHomework": "",
+      "activityLinkHomeworkUrl": "",
+      "activityNameHi": "बैकग्राउंड हटाएं (क्विक एक्शन 2.1.1)",
+      "skillsInFocusHi": "डिजिटल टूल्स की कार्यप्रणाली",
+      "learningOutcomesHi": "• एडोब एक्सप्रेस के क्विक एक्शन टूल्स को समझना।\n• एक क्लिक में इमेज से बैकग्राउंड हटाना सीखना।",
+      "instructionsHi": "शिक्षक एडोब एक्सप्रेस में 'रिमूव बैकग्राउंड' फीचर का उपयोग करके दिखाते हैं। छात्र अपनी इमेज का बैकग्राउंड हटाकर पारदर्शी पीएनजी बनाते हैं।"
+    },
+    {
+      "id": "m_5",
+      "index": 5,
+      "month": "August",
+      "monthHi": "अगस्त",
+      "week": "August - Week 1 (Part 2)",
+      "weekHi": "अगस्त - सप्ताह 1 (भाग 2)",
+      "moduleName": "Module 2: Unleash Creativity with Adobe Express",
+      "moduleNameHi": "मॉड्यूल 2: Adobe Express के साथ रचनात्मकता का विस्तार",
+      "subtopic": "2.2 Exploring “Quick Actions” in Adobe Express",
+      "activityName": "Create a short Animated video (Activity 2.2.1)",
+      "learningOutcomes": "• Actions under 'Quick Actions'\n• How to perform various tasks under 'Quick actions.’",
+      "instructions": "Teacher demonstrates:\n• Quick Action Tools\n• Animate character\n\nFor E-Module activity: Teacher to guide students to login into Adobe Express school; guide them towards Module 2 (Section 2.2) of online course on ‘Digital Creativity and AI Skills (Level-1)’",
+      "skillsInFocus": "Express by creating professional looking content, quickly",
+      "bookScreenshot": "",
+      "bookScreenshotLink": "",
+      "activityLinkClassroom": "https://express.adobe.com/sp/tools/animate-from-audio",
+      "activityLinkClassroomUrl": "https://express.adobe.com/sp/tools/animate-from-audio",
+      "activityLinkHomework": "",
+      "activityLinkHomeworkUrl": "",
+      "activityNameHi": "लघु एनिमेटेड वीडियो बनाएं (एक्टिविटी 2.2.1)",
+      "skillsInFocusHi": "त्वरित व पेशेवर सामग्री निर्माण",
+      "learningOutcomesHi": "• ऑडियो से एनीमेशन बनाने की प्रक्रिया सीखना।\n• कैरेक्टर चुनना और अपनी आवाज रिकॉर्ड करना।",
+      "instructionsHi": "छात्र एक एनिमेटेड कैरेक्टर चुनते हैं, संवाद रिकॉर्ड करते हैं और वीडियो डाउनलोड/शेयर करते हैं।"
+    },
+    {
+      "id": "m_6",
+      "index": 6,
+      "month": "August",
+      "monthHi": "अगस्त",
+      "week": "August - Week 3",
+      "weekHi": "अगस्त - सप्ताह 3",
+      "moduleName": "Module 2: Unleash Creativity with Adobe Express",
+      "moduleNameHi": "मॉड्यूल 2: Adobe Express के साथ रचनात्मकता का विस्तार",
+      "subtopic": "2.3 Getting Started with Educational Templates in Adobe Express",
+      "activityName": "Book report or poster on any chapter of NCERT book (Activity 2.3.1)",
+      "learningOutcomes": "• Familiarization with educational templates infographics\n• How to use and remix templates",
+      "instructions": "Teacher demonstrates:\n• Search for templates (poster, educational template etc)\n• Customize template/ Personalize poster (Edit text, add visual elements etc)\n\nFor E-Module activity:\nTeacher to guide students towards Module 2 (Section 2.3) of the online course on ‘Digital Creativity and AI Skills (Level-1)’",
+      "skillsInFocus": "Use educational templates, personalize, enhance and create projects",
+      "bookScreenshot": "M2,Page-55-56",
+      "bookScreenshotLink": "https://drive.google.com/file/d/1bEl2UC5oTx2XfpTO4xs3I0oyDYGcePVu/view?usp=drive_link",
+      "activityLinkClassroom": "Click the activity link - https://adobe.ly/3Rjf5jy",
+      "activityLinkClassroomUrl": "https://adobe.ly/3Rjf5jy",
+      "activityLinkHomework": "Personalize your school bag - https://adobe.ly/498BIgH",
+      "activityLinkHomeworkUrl": "https://adobe.ly/498BIgH",
+      "activityNameHi": "एनसीईआरटी अध्याय पर बुक रिपोर्ट या पोस्टर (एक्टिविटी 2.3.1)",
+      "skillsInFocusHi": "शैक्षिक टेम्पलेट अनुकूलन व प्रस्तुति",
+      "learningOutcomesHi": "• एनसीईआरटी विषय वस्तु का सार प्रस्तुत करना।\n• शैक्षिक टेम्पलेट्स को कस्टमाइज़ करना सीखना।",
+      "instructionsHi": "शिक्षक एनसीईआरटी के किसी पाठ पर आधारित बुक रिपोर्ट का टेम्पलेट दिखाते हैं। छात्र अपने पाठ के मुख्य बिंदुओं को ग्राफिक रूप में प्रस्तुत करते हैं।"
+    },
+    {
+      "id": "m_7",
+      "index": 7,
+      "month": "August",
+      "monthHi": "अगस्त",
+      "week": "August - Week 4",
+      "weekHi": "अगस्त - सप्ताह 4",
+      "moduleName": "Module 2: Unleash Creativity with Adobe Express",
+      "moduleNameHi": "मॉड्यूल 2: Adobe Express के साथ रचनात्मकता का विस्तार",
+      "subtopic": "2.3 Getting Started with Educational Templates in Adobe Express",
+      "activityName": "Video on separation of substances (Science, NCERT) - Activity 2.3.2",
+      "learningOutcomes": "Use educational template",
+      "instructions": "Teacher demonstrates:\n• Search templates\n• Select, open and customize a template (video)\n• Instructions to students for student collaborations, Science book activity\n\nFor E-Module activity:\nTeacher to guide students towards Module 2 (Section 2.3) of the online course on ‘Digital Creativity and AI Skills (Level-1)’",
+      "skillsInFocus": "Use educational templates and create school project in collaboration with other students",
+      "bookScreenshot": "M2,Page 57-58",
+      "bookScreenshotLink": "https://drive.google.com/file/d/1baTvdlz4bGlZecu1c0gA6sYwO1lE9MqJ/view?usp=drive_link",
+      "activityLinkClassroom": "Click the activity link  -https://adobe.ly/495H0JQ",
+      "activityLinkClassroomUrl": "https://adobe.ly/495H0JQ",
+      "activityLinkHomework": "Share your Summer Vibe - https://adobe.ly/3POGlpE",
+      "activityLinkHomeworkUrl": "https://adobe.ly/3POGlpE",
+      "activityNameHi": "पदार्थों के पृथक्करण पर वीडियो (विज्ञान, एनसीईआरटी) - 2.3.2",
+      "skillsInFocusHi": "सहयोगात्मक डिजिटल प्रोजेक्ट निर्माण",
+      "learningOutcomesHi": "• विज्ञान की अवधारणाओं को दृश्य रूप में समझाना।\n• साथियों के साथ मिलकर वीडियो प्रोजेक्ट बनाना।",
+      "instructionsHi": "छात्र समूह में पदार्थों के पृथक्करण (Separation of Substances) की विधियों पर संक्षिप्त व्याख्यात्मक वीडियो बनाते हैं।"
+    },
+    {
+      "id": "m_8",
+      "index": 8,
+      "month": "September",
+      "monthHi": "सितंबर",
+      "week": "September - Week 1",
+      "weekHi": "सितंबर - सप्ताह 1",
+      "moduleName": "Module 3: Exploring the Power of Generative AI in Adobe Express",
+      "moduleNameHi": "मॉड्यूल 3: Adobe Express में जनरेटिव AI की शक्ति का अन्वेषण",
+      "subtopic": "3.1 Introduction to AI and Generative AI",
+      "activityName": "Introduction to AI & Generative AI",
+      "learningOutcomes": "• Get introduced to the ‘Generative AI’ technology.\n• Understand the buzz around ‘Generative AI’.\n• Know about various Generative AI tools.",
+      "instructions": "The teacher will create a simple 2-slide presentation explaining how AI can support learning and creativity. Introduce AI and Generative AI concepts. Discuss popular AI tools such as Adobe Firefly and ChatGPT. Discuss real-world AI tools and their uses. Guide students to complete the Ignite video and Skill Check-up. Facilitate the Creativity Showcase activity and encourage students to explore additional resources.\n\n\nFor E-Module activity: Teacher to guide students to log in to Adobe Express school Account; guide them towards Module 3 (Section 3.3.1) of the online course on ‘Digital Creativity and AI Skills (Level-1).’",
+      "skillsInFocus": "AI Literacy, Creativity, Digital Awareness",
+      "bookScreenshot": "M3,Page-64,65",
+      "bookScreenshotLink": "https://drive.google.com/file/d/1nEAQBASCocTUQ9atX9poAHvS6sn25gDP/view?usp=drive_link",
+      "activityLinkClassroom": "Click the activity link-\nhttps://adobe.ly/3PYIy1O",
+      "activityLinkClassroomUrl": "https://adobe.ly/3PYIy1O",
+      "activityLinkHomework": "Create your own Robot helper-https://adobe.ly/4vv5ViQ",
+      "activityLinkHomeworkUrl": "https://adobe.ly/4vv5ViQ",
+      "activityNameHi": "एआई एवं जनरेटिव एआई का परिचय",
+      "skillsInFocusHi": "एआई साक्षरता, रचनात्मकता, डिजिटल जागरूकता",
+      "learningOutcomesHi": "• आर्टिफिशियल इंटेलिजेंस और जनरेटिव एआई की मूल बातें समझना।\n• जिम्मेदार और नैतिक एआई उपयोग के नियम जानना।",
+      "instructionsHi": "शिक्षक एडोब एक्सप्रेस में जनरेटिव एआई की कार्यप्रणाली समझाते हैं और सुरक्षित उपयोग के दिशा-निर्देश देते हैं।"
+    },
+    {
+      "id": "m_9",
+      "index": 9,
+      "month": "September",
+      "monthHi": "सितंबर",
+      "week": "September - Week 3",
+      "weekHi": "सितंबर - सप्ताह 3",
+      "moduleName": "Module 3: Exploring the Power of Generative AI in Adobe Express",
+      "moduleNameHi": "मॉड्यूल 3: Adobe Express में जनरेटिव AI की शक्ति का अन्वेषण",
+      "subtopic": "3.2 Generative AI Features In Adobe Express",
+      "activityName": "Generate Images & Insert Objects using Gen AI - Playing with Insert Object",
+      "learningOutcomes": "• Get introduced to the Generative AI features of Adobe Express.\n• Understand the Generate Image (text to image ), Insert objects (generative ll),\nGenerate Template and Generate Text E ects features.\n• Learn how to access these features on Adobe Express.",
+      "instructions": "The teacher explains the Generate Image and Insert Objects features in Adobe Express. Assists students in inserting objects into the AI-generated scene. Complete Skill Check-up and Creativity Showcase activities from the Guidebook.\n\nTeacher demonstrates:\n• Create an AI-generated scene beforehand\n• Insert objects in the AI-generated scene\n• Saving project/Download\n• Creating a link\n• Sharing link\n\nFor E-Module activity: Teacher to guide students to log in to Adobe Express school Account; guide them towards Module 3 (Section 3.2.1, 3.2.2, and 3.2.3) of the online course on ‘Digital Creativity and AI Skills (Level-1).’",
+      "skillsInFocus": "Image Creation, Design Thinking, Creativity, Content Creation, Visual Design, Creativity",
+      "bookScreenshot": "M3,Page 74-75",
+      "bookScreenshotLink": "https://drive.google.com/file/d/1TW2LYNpnyiq2k7bULg_RP0AfXy5-Gwpb/view?usp=drive_link",
+      "activityLinkClassroom": "Click the activity link\n-https://adobe.ly/4fv4sEh",
+      "activityLinkClassroomUrl": "https://adobe.ly/4fv4sEh",
+      "activityLinkHomework": "Design your Id card-https://adobe.ly/4o6R2k3",
+      "activityLinkHomeworkUrl": "https://adobe.ly/4o6R2k3",
+      "activityNameHi": "जनरेटिव एआई द्वारा इमेज निर्माण और ऑब्जेक्ट जोड़ना",
+      "skillsInFocusHi": "इमेज निर्माण, डिज़ाइन थिंकिंग, दृश्य डिज़ाइन",
+      "learningOutcomesHi": "• टेक्स्ट प्रॉम्प्ट से नई छवियां बनाना।\n• मौजूदा छवि में नए ऑब्जेक्ट सम्मिलित करना ('Insert Object')।",
+      "instructionsHi": "छात्र प्रॉम्प्ट लिखकर नई छवियां उत्पन्न करते हैं और 'Insert Object' टूल से अपने प्रोजेक्ट को समृद्ध करते हैं।"
+    },
+    {
+      "id": "m_10",
+      "index": 10,
+      "month": "September",
+      "monthHi": "सितंबर",
+      "week": "September - Week 4",
+      "weekHi": "सितंबर - सप्ताह 4",
+      "moduleName": "Module 3: Exploring the Power of Generative AI in Adobe Express",
+      "moduleNameHi": "मॉड्यूल 3: Adobe Express में जनरेटिव AI की शक्ति का अन्वेषण",
+      "subtopic": "3.3 Writing Generative AI Prompts",
+      "activityName": "Art of Prompt Texting - Crafting Precise Prompts for Generative AI in Adobe Express",
+      "learningOutcomes": "• Understand what Generative AI Prompts are.\n• Learn to write the prompts to generate the desired image or text effects.",
+      "instructions": "The teacher explains the importance of clear and detailed prompts. Guide students to identify elements of an effective prompt and practice prompt writing through the assigned activity. Facilitate discussion on how prompts influence AI outputs.\nTeacher demonstrates:\n• Using Generative AI\n• Writing detailed prompts\n• Insert objects in the generated image\n• Saving project/Download\n• Creating a link\n• Sharing link\n\nFor E-Module activity: Teacher to guide students to log in to Adobe Express school Account; guide them towards Module 1 (Section 3.3.1 and 3.3.2) of the online course on ‘Digital Creativity and AI Skills (Level-1).’",
+      "skillsInFocus": "Prompt Engineering, Critical Thinking, Communication",
+      "bookScreenshot": "M3,Page 82-83",
+      "bookScreenshotLink": "https://drive.google.com/file/d/1kEvi-QiHu590F3nMZkV5jhnw1N2W6_PY/view?usp=drive_link",
+      "activityLinkClassroom": "Click the activity link\nhttps://adobe.ly/4atuO6f",
+      "activityLinkClassroomUrl": "https://adobe.ly/4atuO6f",
+      "activityLinkHomework": "",
+      "activityLinkHomeworkUrl": "",
+      "activityNameHi": "प्रॉम्प्ट लेखन की कला: प्रभावी एआई प्रॉम्प्ट्स",
+      "skillsInFocusHi": "प्रॉम्प्ट इंजीनियरिंग, आलोचनात्मक चिंतन",
+      "learningOutcomesHi": "• सटीक और विस्तृत प्रॉम्प्ट लिखने की कला सीखना।\n• वर्णनात्मक शब्दों और शैलियों का सही चयन करना।",
+      "instructionsHi": "छात्र विभिन्न प्रॉम्प्ट संरचनाओं के साथ प्रयोग करते हैं और सीखते हैं कि कैसे बेहतर निर्देश बेहतर परिणाम देते हैं।"
+    },
+    {
+      "id": "m_11",
+      "index": 11,
+      "month": "October",
+      "monthHi": "अक्टूबर",
+      "week": "October - Week 1",
+      "weekHi": "अक्टूबर - सप्ताह 1",
+      "moduleName": "Module 3: Exploring the Power of Generative AI in Adobe Express",
+      "moduleNameHi": "मॉड्यूल 3: Adobe Express में जनरेटिव AI की शक्ति का अन्वेषण",
+      "subtopic": "3.4 Text effects using Generative AI in Adobe Express",
+      "activityName": "Text Effects Exploration with Adobe Express - Typography Design Challenge",
+      "learningOutcomes": "• Explore the feature Generate Text Effects of Generative AI.\n• Customise the predefined styles.\n• Apply styles and textures to text using prompts.",
+      "instructions": "The teacher explores Generate Text Effects in Adobe Express. Creates a title/poster using AI-generated text styles and textures. Experiments with different prompts to customize text appearance.\n\nTeacher demonstrates:\n• Text Effects in Adobe Express.\n• Guide students in creating customized text styles using prompts.\n• Encourage experimentation with different effects and completion of the collaborative activity.\n\n\nFor E-Module activity: Teacher to guide students to log in to Adobe Express school Account; guide them towards Module 3 (Section 3.4.1 and 3.4.2) of the online course on ‘Digital Creativity and AI Skills (Level-1).’",
+      "skillsInFocus": "Typography, Creativity, Visual Communication",
+      "bookScreenshot": "M3,Page 90-91",
+      "bookScreenshotLink": "https://drive.google.com/file/d/17a-BEZ5Tcd7fJpZOJpS7GvEMLPWHwj-Q/view?usp=drive_link",
+      "activityLinkClassroom": "https://www.youtube.com/watch?v=iSBJDoYBNmI",
+      "activityLinkClassroomUrl": "https://www.youtube.com/watch?v=iSBJDoYBNmI",
+      "activityLinkHomework": "",
+      "activityLinkHomeworkUrl": "",
+      "activityNameHi": "एडोब एक्सप्रेस टेक्स्ट प्रभाव अन्वेषण (टाइपोग्राफी चुनौती)",
+      "skillsInFocusHi": "टाइपोग्राफी, रचनात्मकता, दृश्य संचार",
+      "learningOutcomesHi": "• टेक्स्ट इफेक्ट्स का रचनात्मक उपयोग सीखना।\n• अक्षरों पर अनूठी बनावट और सामग्री लागू करना।",
+      "instructionsHi": "छात्र सामान्य टेक्स्ट को एआई टेक्स्ट इफेक्ट्स से बदलकर आकर्षक शीर्षक बनाते हैं।"
+    },
+    {
+      "id": "m_12",
+      "index": 12,
+      "month": "October",
+      "monthHi": "अक्टूबर",
+      "week": "October - Week 5",
+      "weekHi": "अक्टूबर - सप्ताह 5",
+      "moduleName": "Module 4: Designing Graphics and Enhancing Productivity with Adobe Express",
+      "moduleNameHi": "मॉड्यूल 4: ग्राफिक्स डिज़ाइन और उत्पादकता वृद्धि",
+      "subtopic": "4.1 Exploring Templates in Adobe Express",
+      "activityName": "Design poster on Earth Day/ Indian Festivals/ National Science Day (Activity 4.1.1)",
+      "learningOutcomes": "• Explore a diverse range of templates available in Adobe Express to elevate designs and presentation.\n• Learn how to customize these templates to add personal touch.",
+      "instructions": "Variety of templates on Adobe Express, including specifically for educational, academic, and non-academic purposes. Templates such as videos, presentation templates, social media templates, posters, flyers, infographics.\n\nTeacher to demostrate:\n• Look through templates, choose a template that suits a project\n• After selecting template, personalize by changing text, colors, images\n• After completion of the work, save and share\n\nFor E-Module activity: Teacher to guide students to Module 4 (Section 4.1) of the online course on ‘Digital Creativity and AI Skills (Level-1).’",
+      "skillsInFocus": "Search and select templates, personalize and design templates as per requirements",
+      "bookScreenshot": "M4,Page 101-102",
+      "bookScreenshotLink": "https://drive.google.com/file/d/1RBBJ_phKNR48lMjKbSOy6x5Yj7YT_d50/view?usp=drive_link",
+      "activityLinkClassroom": "https://adobe.ly/4nHhKQh",
+      "activityLinkClassroomUrl": "https://adobe.ly/4nHhKQh",
+      "activityLinkHomework": "Click here for the activity link- https://adobe.ly/4nHhKQh",
+      "activityLinkHomeworkUrl": "https://adobe.ly/4nHhKQh",
+      "activityNameHi": "पृथ्वी दिवस / त्योहारों पर पोस्टर डिज़ाइन (एक्टिविटी 4.1.1)",
+      "skillsInFocusHi": "टेम्पलेट चयन, अनुकूलन व डिज़ाइन",
+      "learningOutcomesHi": "• सामाजिक व पर्यावरणीय मुद्दों पर जागरूकता पोस्टर बनाना।\n• रंगों और लेआउट का संतुलित प्रयोग करना।",
+      "instructionsHi": "छात्र पृथ्वी दिवस या किसी राष्ट्रीय त्योहार पर एडोब एक्सप्रेस टेम्पलेट्स की सहायता से पोस्टर बनाते हैं।"
+    },
+    {
+      "id": "m_13",
+      "index": 13,
+      "month": "November",
+      "monthHi": "नवंबर",
+      "week": "November - Week 1",
+      "weekHi": "नवंबर - सप्ताह 1",
+      "moduleName": "Module 4: Designing Graphics and Enhancing Productivity with Adobe Express",
+      "moduleNameHi": "मॉड्यूल 4: ग्राफिक्स डिज़ाइन और उत्पादकता वृद्धि",
+      "subtopic": "4.1 Exploring Templates in Adobe Express",
+      "activityName": "Activity 4.1.2: Collaborative template exploration of the Activity 4.1.1",
+      "learningOutcomes": "• Explore templates to elevate designs and presentation\n• Customize and personalize templates, in collaboration",
+      "instructions": "Teacher to:\n• Divide students into groups of 3 or 4. Each group to be given a task to create 2-3 awareness posters on Earth Day\n• Nominate 1 person from the group who would add other team members for collaboration\nGuide students to:\n- In an existing Earth Day poster file, click on ‘Invite’, to add other team members (school email IDs) to contribute to the file\n- Press 'invite to edit’ or ‘invite to comment’ button as per requirement\n- Create new posters by clicking on the ‘Add page’ and let the group complete the activity.\n- Once completed designing the poster, Click on Download\n- Next, click on ‘Share’ and go to ‘View only Link’ and ‘Create a Link’. Wait for Adobe Express to create a shareable link.\n- Copy the URL and submit the work at the provided location\n- Work can also be shared through ‘Google Classrooms’ and allow access to friends to collaborate on the poster.\n\nFor E-Module activity: Teacher to guide students to Module 4 (Section 4.1) of the online course on ‘Digital Creativity and AI Skills (Level-1).’",
+      "skillsInFocus": "Collaborative template exploration, share work and work together with other students",
+      "bookScreenshot": "M4,Page 101-102",
+      "bookScreenshotLink": "https://drive.google.com/file/d/1RBBJ_phKNR48lMjKbSOy6x5Yj7YT_d50/view?usp=drive_link",
+      "activityLinkClassroom": "https://express.adobe.com",
+      "activityLinkClassroomUrl": "https://express.adobe.com",
+      "activityLinkHomework": "",
+      "activityLinkHomeworkUrl": "",
+      "activityNameHi": "सहयोगात्मक टेम्पलेट अन्वेषण (एक्टिविटी 4.1.2)",
+      "skillsInFocusHi": "सहयोगात्मक कार्य एवं टीमवर्क",
+      "learningOutcomesHi": "• अन्य छात्रों के साथ लाइव प्रोजेक्ट साझा करना।\n• संयुक्त रूप से एक डिज़ाइन पर फीडबैक देना और सुधारना।",
+      "instructionsHi": "छात्र अपने प्रोजेक्ट को कक्षा के साथी के साथ शेयर करते हैं और मिलकर डिज़ाइन पूरा करते हैं।"
+    },
+    {
+      "id": "m_14",
+      "index": 14,
+      "month": "November",
+      "monthHi": "नवंबर",
+      "week": "November - Week 3",
+      "weekHi": "नवंबर - सप्ताह 3",
+      "moduleName": "Module 4: Designing Graphics and Enhancing Productivity with Adobe Express",
+      "moduleNameHi": "मॉड्यूल 4: ग्राफिक्स डिज़ाइन और उत्पादकता वृद्धि",
+      "subtopic": "4.2 Graphical features of Adobe Express",
+      "activityName": "Design a graphic that tells a six-word story from history (Activity 4.2.1)",
+      "learningOutcomes": "• Learn about various features available in Adobe Express to design graphic\n• Understand how to download the designed graphic and collaborate with peers",
+      "instructions": "Teacher to demonstrate:\nVarious features on Adobe Express to design a graphic: such as templates, media, text, elements, charts and grids.\n\n• Media Files: Such as, Adobe Stock images and videos, generative AI for custom image creation using text prompts, audio options like music, sound effects, and voiceovers.\n• Customizable Text Options Add and customize text in various fonts, colors, and styles. Options to also adjust size, spacing, alignment to fit a design.\n- Generative AI Text Effects, Add shadows and shapes, outlines, and highlights to words, Choose from a library of fonts, Animate Text\n• Elements: Includes, design assets, backgrounds, icons, shapes, charts etc. Design assets include creative elements like stickers, illustrations, and textures that add personality and style to the designs.\n\nFor E-Module activity: Teacher to guide students to Module 4 (Section 4.2) of the online course on ‘Digital Creativity and AI Skills (Level-1).’",
+      "skillsInFocus": "Create well-organized and visually striking projects. Demonstrate an idea/ understanding by designing a graphic that tells the story.",
+      "bookScreenshot": "M4,Page-108-109",
+      "bookScreenshotLink": "https://drive.google.com/file/d/1581hh8cbYUh1aNEDHaDGqy6urTsPj7od/view?usp=drive_link",
+      "activityLinkClassroom": "https://express.adobe.com",
+      "activityLinkClassroomUrl": "https://express.adobe.com",
+      "activityLinkHomework": "",
+      "activityLinkHomeworkUrl": "",
+      "activityNameHi": "इतिहास की छह शब्दों की कहानी का ग्राफिक डिज़ाइन (4.2.1)",
+      "skillsInFocusHi": "दृश्य कहानी और संक्षिप्त संचार",
+      "learningOutcomesHi": "• केवल छह शब्दों में एक ऐतिहासिक घटना को बयान करना।\n• उपयुक्त पृष्ठभूमि और टाइपोग्राफी से कहानी को जीवंत बनाना।",
+      "instructionsHi": "छात्र इतिहास की किसी प्रमुख घटना को 6 शब्दों में लिखते हैं और प्रभावशाली ग्राफिक तैयार करते हैं।"
+    },
+    {
+      "id": "m_15",
+      "index": 15,
+      "month": "November",
+      "monthHi": "नवंबर",
+      "week": "November - Week 4",
+      "weekHi": "नवंबर - सप्ताह 4",
+      "moduleName": "Module 4: Designing Graphics and Enhancing Productivity with Adobe Express",
+      "moduleNameHi": "मॉड्यूल 4: ग्राफिक्स डिज़ाइन और उत्पादकता वृद्धि",
+      "subtopic": "4.3 Step-by-Step Guide to Design a Graphic",
+      "activityName": "Graphic Design Challenge (Activity 4.3.1)",
+      "learningOutcomes": "• Learn about creating graphics from scratch.\n• Explore various methods to customize templates and incorporate unique elements into it.",
+      "instructions": "Teacher to explain and demonstrate:\n\nStep 1: Select a theme or Message (such as, patriotic, educational, environmental themes)\nStep 2: Select a Template in Adobe Express\nStep 3: Add and Customize Visual Elements\n• Customize the Template: Edit the text to reflect a message. Use large, bold fonts for headings, smaller fonts for details.\n• Add relevant images or icons from Adobe’s library.\n• Utilize shapes to organize layout, create emphasis, or enhance the overall design.\nStep 4: Review and Finalize the Design.\nEnsure that text is easy to read and the message is clear. Check for balance and alignment; arrange elements in a symmetrical and visually pleasing way.\n\nWhen complete, click “Download” to save the design. Then share and submit the link.\n\nFor E-Module activity: Teacher to guide students to Module 4 (Section 4.3) of the online course on ‘Digital Creativity and AI Skills (Level-1).’",
+      "skillsInFocus": "Apply planning and creativity to digital design. Create polished, impactful graphics that communicate ideas effectively.",
+      "bookScreenshot": "",
+      "bookScreenshotLink": "",
+      "activityLinkClassroom": "https://express.adobe.com",
+      "activityLinkClassroomUrl": "https://express.adobe.com",
+      "activityLinkHomework": "",
+      "activityLinkHomeworkUrl": "",
+      "activityNameHi": "संपूर्ण ग्राफिक डिज़ाइन चुनौती (एक्टिविटी 4.3.1)",
+      "skillsInFocusHi": "योजना, रचनात्मकता और डिज़ाइन निष्पादन",
+      "learningOutcomesHi": "• स्क्रैच से पूर्ण ग्राफिक डिज़ाइन तैयार करना।\n• संतुलित संयोजन, पदानुक्रम और सौंदर्यबोध का प्रदर्शन करना।",
+      "instructionsHi": "छात्र स्वतंत्र रूप से एक संपूर्ण डिज़ाइन प्रोजेक्ट (पोस्टर, ब्रोशर या सोशल पोस्ट) बनाते हैं।"
+    },
+    {
+      "id": "m_16",
+      "index": 16,
+      "month": "December",
+      "monthHi": "दिसंबर",
+      "week": "December - Week 1",
+      "weekHi": "दिसंबर - सप्ताह 1",
+      "moduleName": "Module 4: Designing Graphics and Enhancing Productivity with Adobe Express",
+      "moduleNameHi": "मॉड्यूल 4: ग्राफिक्स डिज़ाइन और उत्पादकता वृद्धि",
+      "subtopic": "4.3 Step-by-Step Guide to Design a Graphic",
+      "activityName": "Collaborative template exploration on given topics (Activity 4.3.2)",
+      "learningOutcomes": "• Learn about creating graphics from scratch.\n• Explore various methods to customize templates and incorporate unique elements into it.",
+      "instructions": "Teacher to guide students to work together, and design a project from given topics, download and share the link.\n\nTeacher to:\n• Form a group of 2-4 students, to work in collaboration, create and submit project\n• Assign roles within the group, such as project manager, designer, editor, and communicator, to ensure smooth collaboration\n• Guide students to define and divide the tasks among themselves\n• Direct students to collaboratively design and customize graphic, as per the step by step guide\n\nFor E-Module activity: Teacher to guide students to Module 4 (Section 4.3) of the online course on ‘Digital Creativity and AI Skills (Level-1).’",
+      "skillsInFocus": "Collaboratively design and customize graphic, on given topics. Collaborate with students by sharing work, and work together.",
+      "bookScreenshot": "M4,Page-108-109",
+      "bookScreenshotLink": "https://drive.google.com/file/d/1581hh8cbYUh1aNEDHaDGqy6urTsPj7od/view?usp=drive_link",
+      "activityLinkClassroom": "Click the activity link-https://adobe.ly/4dOufWQ",
+      "activityLinkClassroomUrl": "https://adobe.ly/4dOufWQ",
+      "activityLinkHomework": "",
+      "activityLinkHomeworkUrl": "",
+      "activityNameHi": "दिए गए विषयों पर सहयोगात्मक टेम्पलेट अन्वेषण (4.3.2)",
+      "skillsInFocusHi": "टीम सहयोग एवं रचनात्मक अनुकूलन",
+      "learningOutcomesHi": "• समसामयिक विषयों पर सहयोगात्मक प्रोजेक्ट पूरा करना।\n• टीम के साथ मिलकर अंतिम पोर्टफोलियो पीस तैयार करना।",
+      "instructionsHi": "छात्र दिए गए विषयों पर समूह में एडोब एक्सप्रेस में सहयोगात्मक डिज़ाइन तैयार करते हैं और अंतिम प्रस्तुति देते हैं।"
+    }
+  ],
   "grades": [
     {
       "id": "6",
       "nameEn": "Grade 6",
       "nameHi": "कक्षा 6",
-      "count": 18,
-      "icon": "🎓"
+      "count": 16,
+      "icon": "🎓",
+      "tagEn": "Middle School Level 1",
+      "tagHi": "मिडिल स्कूल स्तर 1"
     },
     {
       "id": "7",
       "nameEn": "Grade 7",
       "nameHi": "कक्षा 7",
-      "count": 18,
-      "icon": "🎓"
+      "count": 16,
+      "icon": "🎓",
+      "tagEn": "Middle School Level 2",
+      "tagHi": "मिडिल स्कूल स्तर 2"
     },
     {
       "id": "8",
       "nameEn": "Grade 8",
       "nameHi": "कक्षा 8",
-      "count": 18,
-      "icon": "🎓"
+      "count": 16,
+      "icon": "🎓",
+      "tagEn": "Middle School Level 3",
+      "tagHi": "मिडिल स्कूल स्तर 3"
     }
   ]
 };
@@ -1579,10 +1138,30 @@ function renderCpdSectionHtml() {
   return '<div class="cpd-steps">' + stepsHtml + '</div><div class="rg">' + cardsHtml + '</div>';
 }
 
-/* ===== DCAIS STUDENT MONITOR CONTROLLER ===== */
+/* ===== DCAIS EDUCATOR CURRICULUM CONTROLLER (GRADES 6-8 WEEKLY) ===== */
 var teacherMonitorGrade = null;
-var teacherHindiGradeFilter = 'all';
+var teacherMonitorMonth = 'all';
 var teacherSearchQuery = '';
+
+function filterTeacherMonth(m) {
+  teacherMonitorMonth = m;
+  var container = document.getElementById('secContent');
+  if (container) container.innerHTML = renderDcaisMonitor();
+}
+
+function searchTeacherActivities(q) {
+  teacherSearchQuery = q;
+  var container = document.getElementById('secContent');
+  if (container) container.innerHTML = renderDcaisMonitor();
+}
+
+function selectTeacherGrade(gradeId) {
+  teacherMonitorGrade = gradeId;
+  teacherMonitorMonth = 'all';
+  teacherSearchQuery = '';
+  var container = document.getElementById('secContent');
+  if (container) container.innerHTML = renderDcaisMonitor();
+}
 
 function renderDcaisMonitor() {
   var isHi = (currentLang === 'hi');
@@ -1602,29 +1181,21 @@ function renderDcaisMonitor() {
 
   if (!teacherMonitorGrade) {
     var gradeCards = [
-      { id: '6', nameEn: 'Grade 6', nameHi: 'कक्षा 6', count: '18 activities', countHi: '18 गतिविधियाँ', icon: '🎓' },
-      { id: '7', nameEn: 'Grade 7', nameHi: 'कक्षा 7', count: '18 activities', countHi: '18 गतिविधियाँ', icon: '🎓' },
-      { id: '8', nameEn: 'Grade 8', nameHi: 'कक्षा 8', count: '18 activities', countHi: '18 गतिविधियाँ', icon: '🎓' },
-      { id: 'hindi', isHindiTrack: true, nameEn: 'DCAIS Activities / Hindi', nameHi: 'DCAIS गतिविधियाँ / हिंदी', count: '54 activities • Grades 6–8', countHi: '54 गतिविधियाँ • कक्षा 6–8', icon: '✏️' }
+      { id: '6', nameEn: 'Grade 6', nameHi: 'कक्षा 6', count: '16 Weekly Modules • July–Dec', countHi: '16 साप्ताहिक मॉड्यूल • जुलाई–दिसंबर', icon: '🎓', levelEn: 'Middle School Level 1', levelHi: 'मिडिल स्कूल स्तर 1' },
+      { id: '7', nameEn: 'Grade 7', nameHi: 'कक्षा 7', count: '16 Weekly Modules • July–Dec', countHi: '16 साप्ताहिक मॉड्यूल • जुलाई–दिसंबर', icon: '🎓', levelEn: 'Middle School Level 2', levelHi: 'मिडिल स्कूल स्तर 2' },
+      { id: '8', nameEn: 'Grade 8', nameHi: 'कक्षा 8', count: '16 Weekly Modules • July–Dec', countHi: '16 साप्ताहिक मॉड्यूल • जुलाई–दिसंबर', icon: '🎓', levelEn: 'Middle School Level 3', levelHi: 'मिडिल स्कूल स्तर 3' }
     ];
 
-    var cardsGrid = '<div style="margin-bottom:14px;"><h3 style="font-size:1.15rem;font-weight:900;color:var(--ink);">' +
-      (isHi ? 'कक्षा या पाठ्यक्रम चुनें:' : 'Select Grade or Curriculum Track to Inspect Activities:') + '</h3></div>' +
+    var cardsGrid = '<div style="margin-bottom:16px;"><h3 style="font-size:1.15rem;font-weight:900;color:var(--ink);">' +
+      (isHi ? 'कक्षा चुनें और साप्ताहिक पाठ्यक्रम व गाइडबुक का निरीक्षण करें:' : 'Select Grade to Inspect Weekly Modules & Guidebook Scans:') + '</h3></div>' +
       '<div class="aim-grade-cards">' +
       gradeCards.map(function(g) {
-        if (g.isHindiTrack) {
-          return '<div class="aim-gc-hindi" onclick="selectTeacherGrade(&quot;hindi&quot;)">' +
-            '<div class="aim-gc-hindi-icon">✏️</div>' +
-            '<h3>' + (isHi ? g.nameHi : g.nameEn) + '</h3>' +
-            '<div class="aim-gc-hindi-cnt">' + (isHi ? g.countHi : g.count) + '</div>' +
-            '<button class="aim-gc-hindi-btn">' + (isHi ? 'शुरू करें' : 'Start') + '</button>' +
-          '</div>';
-        }
         return '<div class="aim-gc" onclick="selectTeacherGrade(&quot;' + g.id + '&quot;)">' +
           '<div class="aim-gc-icon">' + g.icon + '</div>' +
           '<h3>' + (isHi ? g.nameHi : g.nameEn) + '</h3>' +
+          '<div style="font-size:.78rem;font-weight:800;color:var(--red);margin-bottom:4px;">' + (isHi ? g.levelHi : g.levelEn) + '</div>' +
           '<div class="aim-gc-cnt">' + (isHi ? g.countHi : g.count) + '</div>' +
-          '<div class="aim-gc-btn">' + (isHi ? 'गतिविधियां देखें →' : 'Inspect Grade →') + '</div>' +
+          '<div class="aim-gc-btn">' + (isHi ? 'पाठ्यक्रम देखें →' : 'Inspect Curriculum →') + '</div>' +
         '</div>';
       }).join('') +
       '</div>';
@@ -1632,118 +1203,179 @@ function renderDcaisMonitor() {
     return portalLinkBanner + cardsGrid;
   }
 
-  var activities = [];
-  var gradeLabel = '';
+  // Inside Selected Grade View
+  var gradeName = (isHi ? ('कक्षा ' + teacherMonitorGrade) : ('Grade ' + teacherMonitorGrade));
+  var allModules = (window.DCAIS_DATA && window.DCAIS_DATA.weeklyModules) || [];
 
-  if (teacherMonitorGrade === 'hindi') {
-    gradeLabel = isHi ? 'DCAIS गतिविधियाँ / हिंदी' : 'DCAIS Activities / Hindi';
-    var th6 = (window.DCAIS_DATA && window.DCAIS_DATA.aimActivities && window.DCAIS_DATA.aimActivities['Grade 6 (Hindi)']) || [];
-    var th7 = (window.DCAIS_DATA && window.DCAIS_DATA.aimActivities && window.DCAIS_DATA.aimActivities['Grade 7 (Hindi)']) || [];
-    var th8 = (window.DCAIS_DATA && window.DCAIS_DATA.aimActivities && window.DCAIS_DATA.aimActivities['Grade 8 (Hindi)']) || [];
-
-    if (teacherHindiGradeFilter === '6') {
-      activities = th6.slice();
-    } else if (teacherHindiGradeFilter === '7') {
-      activities = th7.slice();
-    } else if (teacherHindiGradeFilter === '8') {
-      activities = th8.slice();
-    } else {
-      activities = [].concat(th6, th7, th8);
-    }
-  } else {
-    gradeLabel = isHi ? ('कक्षा ' + teacherMonitorGrade) : ('Grade ' + teacherMonitorGrade);
-    var key = 'Grade ' + teacherMonitorGrade;
-    if (isHi && (teacherMonitorGrade === '6' || teacherMonitorGrade === '7' || teacherMonitorGrade === '8')) {
-      key = 'Grade ' + teacherMonitorGrade + ' (Hindi)';
-    }
-    activities = (window.DCAIS_DATA && window.DCAIS_DATA.aimActivities && window.DCAIS_DATA.aimActivities[key]) || [];
-  }
-
-  if (teacherSearchQuery) {
-    var q = teacherSearchQuery.toLowerCase();
-    activities = activities.filter(function(a) {
-      return (a.name && a.name.toLowerCase().indexOf(q) !== -1) ||
-             (a.skills && a.skills.toLowerCase().indexOf(q) !== -1) ||
-             (a.instructions && a.instructions.toLowerCase().indexOf(q) !== -1);
+  // Filter by month
+  var filtered = allModules;
+  if (teacherMonitorMonth !== 'all') {
+    filtered = filtered.filter(function(m) {
+      return (m.month || '').toLowerCase() === teacherMonitorMonth.toLowerCase();
     });
   }
 
-  var subFilterHtml = '';
-  if (teacherMonitorGrade === 'hindi') {
-    subFilterHtml =
-      '<div class="aim-sub-filters">' +
-        '<button class="aim-sub-btn' + (teacherHindiGradeFilter === 'all' ? ' active' : '') + '" onclick="filterTeacherHindiGrade(&quot;all&quot;)">' + (isHi ? 'सभी हिंदी (54)' : 'All Hindi (54)') + '</button>' +
-        '<button class="aim-sub-btn' + (teacherHindiGradeFilter === '6' ? ' active' : '') + '" onclick="filterTeacherHindiGrade(&quot;6&quot;)">' + (isHi ? 'कक्षा 6 (18)' : 'Grade 6 (18)') + '</button>' +
-        '<button class="aim-sub-btn' + (teacherHindiGradeFilter === '7' ? ' active' : '') + '" onclick="filterTeacherHindiGrade(&quot;7&quot;)">' + (isHi ? 'कक्षा 7 (18)' : 'Grade 7 (18)') + '</button>' +
-        '<button class="aim-sub-btn' + (teacherHindiGradeFilter === '8' ? ' active' : '') + '" onclick="filterTeacherHindiGrade(&quot;8&quot;)">' + (isHi ? 'कक्षा 8 (18)' : 'Grade 8 (18)') + '</button>' +
-      '</div>';
+  // Filter by search query
+  if (teacherSearchQuery && teacherSearchQuery.trim()) {
+    var q = teacherSearchQuery.toLowerCase().trim();
+    filtered = filtered.filter(function(m) {
+      var actName = (m.activityName || '').toLowerCase();
+      var actNameHi = (m.activityNameHi || '').toLowerCase();
+      var modName = (m.moduleName || '').toLowerCase();
+      var modNameHi = (m.moduleNameHi || '').toLowerCase();
+      var sub = (m.subtopic || '').toLowerCase();
+      var skills = (m.skillsInFocus || '').toLowerCase();
+      var skillsHi = (m.skillsInFocusHi || '').toLowerCase();
+      var outcomes = (m.learningOutcomes || '').toLowerCase();
+      var outcomesHi = (m.learningOutcomesHi || '').toLowerCase();
+      var instr = (m.instructions || '').toLowerCase();
+      var instrHi = (m.instructionsHi || '').toLowerCase();
+      var book = (m.bookScreenshot || '').toLowerCase();
+      return actName.indexOf(q) !== -1 || actNameHi.indexOf(q) !== -1 ||
+             modName.indexOf(q) !== -1 || modNameHi.indexOf(q) !== -1 ||
+             sub.indexOf(q) !== -1 ||
+             skills.indexOf(q) !== -1 || skillsHi.indexOf(q) !== -1 ||
+             outcomes.indexOf(q) !== -1 || outcomesHi.indexOf(q) !== -1 ||
+             instr.indexOf(q) !== -1 || instrHi.indexOf(q) !== -1 ||
+             book.indexOf(q) !== -1;
+    });
   }
 
-  var navHtml =
+  var topNav =
     '<div class="aim-top-nav">' +
-      '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">' +
-        '<button class="aim-back-grade" onclick="selectTeacherGrade(null)">← ' + (isHi ? 'सभी पाठ्यक्रम' : 'All Tracks') + '</button>' +
-        '<span style="font-size:.92rem;font-weight:900;color:var(--ink);">' + gradeLabel + ' (' + activities.length + ' ' + (isHi ? 'गतिविधियां' : 'activities') + ')</span>' +
-        subFilterHtml +
+      '<button class="aim-back-grade" onclick="selectTeacherGrade(null)">' +
+        (isHi ? '← कक्षा चयन पर वापस जाएं' : '← Back to Grade Selection') +
+      '</button>' +
+      '<div style="font-weight:900;color:var(--ink);font-size:.95rem;">' +
+        '📖 ' + gradeName + ' • ' + (isHi ? '16 साप्ताहिक मॉड्यूल एवं गाइडबुक संदर्भ (जुलाई–दिसंबर)' : '16 Weekly Modules & Guidebook Scans (July–Dec)') +
       '</div>' +
       '<div class="aim-search">' +
-        '<input type="text" placeholder="' + (isHi ? 'गतिविधि खोजें...' : 'Search activity...') + '" value="' + teacherSearchQuery + '" oninput="searchTeacherActivities(this.value)">' +
+        '<input type="text" placeholder="' + (isHi ? 'गतिविधि, गाइडबुक पेज, कौशल खोजें...' : 'Search activity, guidebook page, skills...') + '" ' +
+          'value="' + (teacherSearchQuery ? teacherSearchQuery.replace(/"/g, '&quot;') : '') + '" ' +
+          'oninput="searchTeacherActivities(this.value)">' +
       '</div>' +
     '</div>';
 
-  var actGridHtml = '';
-  if (activities.length === 0) {
-    actGridHtml = '<div style="background:var(--surface-2);border-radius:var(--radius);padding:32px;text-align:center;color:var(--ink-3);">' +
-      '<h3>' + (isHi ? 'कोई गतिविधि नहीं मिली' : 'No activities found') + '</h3>' +
+  var monthList = [
+    { key: 'all', nameEn: 'All Months (16)', nameHi: 'सभी महीने (16)' },
+    { key: 'july', nameEn: 'July (3)', nameHi: 'जुलाई (3)' },
+    { key: 'august', nameEn: 'August (4)', nameHi: 'अगस्त (4)' },
+    { key: 'september', nameEn: 'September (3)', nameHi: 'सितंबर (3)' },
+    { key: 'october', nameEn: 'October (2)', nameHi: 'अक्टूबर (2)' },
+    { key: 'november', nameEn: 'November (3)', nameHi: 'नवंबर (3)' },
+    { key: 'december', nameEn: 'December (1)', nameHi: 'दिसंबर (1)' }
+  ];
+
+  var monthTabsHtml =
+    '<div class="aim-month-tabs">' +
+      monthList.map(function(m) {
+        var activeClass = (teacherMonitorMonth.toLowerCase() === m.key) ? ' active' : '';
+        return '<button class="aim-month-btn' + activeClass + '" onclick="filterTeacherMonth(&quot;' + m.key + '&quot;)">' +
+          (isHi ? m.nameHi : m.nameEn) +
+        '</button>';
+      }).join('') +
+    '</div>';
+
+  var cardsHtml = '';
+  if (filtered.length === 0) {
+    cardsHtml = '<div style="background:var(--surface);border:1.5px dashed var(--border);border-radius:var(--radius-lg);padding:36px;text-align:center;color:var(--ink-3);">' +
+      '<div style="font-size:2rem;margin-bottom:8px;">🔍</div>' +
+      '<div style="font-weight:800;font-size:1rem;color:var(--ink);margin-bottom:4px;">' +
+        (isHi ? 'कोई मॉड्यूल नहीं मिला' : 'No modules found') + '</div>' +
+      '<p style="font-size:.85rem;">' + (isHi ? 'कृपया अन्य कीवर्ड खोजें या "सभी महीने" चुनें।' : 'Try searching for different keywords or select All Months.') + '</p>' +
     '</div>';
   } else {
-    actGridHtml = '<div class="aim-act-grid">' +
-      activities.map(function(act, idx) {
-        var numBadge = (isHi ? 'गतिविधि ' : 'Activity ') + (act.col || (idx + 1));
-        var templateBtn = act.link ?
-          '<a href="' + act.link + '" target="_blank" class="btn btn-primary" style="font-size:.76rem;padding:7px 14px;">🎨 ' + (isHi ? 'टेम्पलेट का पूर्वावलोकन ↗' : 'Preview Template ↗') + '</a>' :
-          '<a href="https://express.adobe.com" target="_blank" class="btn btn-primary" style="font-size:.76rem;padding:7px 14px;">🎨 ' + (isHi ? 'Express खोलें ↗' : 'Open in Express ↗') + '</a>';
-        
-        var bookBtn = act.book ?
-          '<a href="' + act.book + '" target="_blank" class="btn btn-ghost" style="font-size:.74rem;padding:6px 12px;">📖 ' + (isHi ? 'पुस्तक का स्क्रीनशॉट ↗' : 'Book Screenshot ↗') + '</a>' : '';
+    cardsHtml = '<div class="aim-weekly-grid">' +
+      filtered.map(function(m) {
+        var weekLabel = isHi ? m.weekHi : m.week;
+        var actTitle = isHi ? m.activityNameHi : m.activityName;
+        var modTitle = isHi ? m.moduleNameHi : m.moduleName;
+        var skillsText = isHi ? m.skillsInFocusHi : m.skillsInFocus;
+        var outcomesText = isHi ? m.learningOutcomesHi : m.learningOutcomes;
+        var instrText = isHi ? m.instructionsHi : m.instructions;
 
-        var studentViewBtn = '<a href="https://kushagrakushwah.github.io/Adobe-Dashboard/student/#section-3" target="_blank" class="btn btn-dark" style="font-size:.74rem;padding:6px 12px;">🔗 ' + (isHi ? 'छात्र पोर्टल में देखें ↗' : 'View in Student Portal ↗') + '</a>';
+        var skillsArr = (skillsText || '').split(/[,&•]+/).map(function(s){ return s.trim(); }).filter(Boolean);
+        var skillsHtml = skillsArr.map(function(s){
+          return '<span class="aim-skill-pill">' + s + '</span>';
+        }).join('');
 
-        return '<div class="aim-card">' +
+        // PROMINENT BOOK SCREENSHOT BOX
+        var bookBoxHtml = '';
+        if (m.bookScreenshotLink) {
+          bookBoxHtml =
+            '<div class="t-book-box">' +
+              '<div class="t-book-header">' +
+                '<div class="t-book-title">📖 ' + (isHi ? 'गाइडबुक संदर्भ एवं स्क्रीनशॉट:' : 'Curriculum Guidebook Reference:') + '</div>' +
+                '<span class="t-book-ref">' + m.bookScreenshot + '</span>' +
+              '</div>' +
+              '<p class="t-book-note">' +
+                (isHi ? 'कक्षा में प्रदर्शन और पाठ योजना के लिए आधिकारिक गाइडबुक पेज संदर्भ और पाठ्यपुस्तक लेआउट देखें।' :
+                        'Official guidebook alignment for visual textbook context, lesson planning, and classroom demonstration.') +
+              '</p>' +
+              '<a href="' + m.bookScreenshotLink + '" target="_blank" class="t-book-link">' +
+                '📄 ' + (isHi ? 'गाइडबुक स्क्रीनशॉट खोलें (Google Drive) ↗' : 'Open Book Screenshot (Google Drive) ↗') +
+              '</a>' +
+            '</div>';
+        } else {
+          bookBoxHtml =
+            '<div class="t-book-box" style="background:#F0F4FF;border-color:#C7D7FE;border-left-color:#3B82F6;">' +
+              '<div class="t-book-header">' +
+                '<div class="t-book-title" style="color:#1D4ED8;">⚡ ' + (isHi ? 'एडोब एक्सप्रेस क्विक एक्शन' : 'Adobe Express Quick Action') + '</div>' +
+                '<span class="t-book-ref" style="border-color:#C7D7FE;">' + (isHi ? 'इन-बिल्ट टूल' : 'Built-in Tool') + '</span>' +
+              '</div>' +
+              '<p class="t-book-note" style="color:#1E3A8A;">' +
+                (isHi ? 'एडोब एक्सप्रेस में अंतर्निहित क्विक एक्शन टूल। छात्रों को सीधे टूल से अभ्यास करवाएं (अलग मुद्रित गाइडबुक पेज की आवश्यकता नहीं है)।' :
+                        'Built-in quick action inside Adobe Express. Students perform this directly with 1-click tools without separate printed guidebook scans.') +
+              '</p>' +
+            '</div>';
+        }
+
+        var hwBtn = '';
+        if (m.activityLinkHomeworkUrl) {
+          hwBtn = '<a href="' + m.activityLinkHomeworkUrl + '" target="_blank" class="btn btn-outline" style="font-size:.8rem;padding:8px 16px;justify-content:center;">' +
+            '🏠 ' + (isHi ? 'होमवर्क लिंक खोलें ↗' : 'Open Homework ↗') + '</a>';
+        }
+
+        var bookBtn = '';
+        if (m.bookScreenshotLink) {
+          bookBtn = '<a href="' + m.bookScreenshotLink + '" target="_blank" class="btn btn-ghost" style="font-size:.8rem;padding:8px 16px;justify-content:center;color:#B45309;border-color:#FDE68A;">' +
+            '📖 ' + (isHi ? 'गाइडबुक स्क्रीनशॉट ↗' : 'Book Screenshot ↗') + '</a>';
+        }
+
+        return '<div class="aim-weekly-card">' +
           '<div>' +
-            '<div class="aim-badge">' + numBadge + '</div>' +
-            '<h4 class="aim-title">' + act.name + '</h4>' +
-            (act.skills ? '<div class="aim-skills">⚡ ' + act.skills + '</div>' : '') +
-            (act.instructions ? '<div class="aim-instr">' + act.instructions + '</div>' : '') +
+            '<div class="aim-card-header">' +
+              '<span class="aim-week-badge">📅 ' + weekLabel + '</span>' +
+              '<span class="aim-mod-badge">#' + m.index + '</span>' +
+            '</div>' +
+            '<div class="aim-card-modname">' + modTitle + (m.subtopic ? (' • ' + m.subtopic) : '') + '</div>' +
+            '<h3 class="aim-card-actname">' + actTitle + '</h3>' +
+            
+            // Highlighted Book Screenshot Box
+            bookBoxHtml +
+
+            '<div class="aim-card-section-title">🎯 ' + (isHi ? 'सीखने के परिणाम:' : 'Learning Outcomes:') + '</div>' +
+            '<div class="aim-card-outcomes" style="white-space:pre-line;">' + outcomesText + '</div>' +
+            
+            '<div class="aim-card-section-title">👨‍🏫 ' + (isHi ? 'शिक्षक निर्देश एवं शिक्षण विधि:' : 'Teacher Instructions & Pedagogy:') + '</div>' +
+            '<div class="aim-card-instr">' + instrText + '</div>' +
+            
+            '<div class="aim-card-section-title">✨ ' + (isHi ? 'केंद्रित कौशल:' : 'Skills in Focus:') + '</div>' +
+            '<div class="aim-card-skills">' + skillsHtml + '</div>' +
           '</div>' +
+
           '<div class="aim-actions">' +
-            templateBtn +
+            '<a href="' + m.activityLinkClassroomUrl + '" target="_blank" class="btn btn-primary" style="font-size:.82rem;padding:9px 18px;justify-content:center;">' +
+              '🚀 ' + (isHi ? 'कक्षा एक्टिविटी लॉन्च करें ↗' : 'Launch Classroom Activity ↗') + '</a>' +
+            hwBtn +
             bookBtn +
-            studentViewBtn +
           '</div>' +
         '</div>';
       }).join('') +
     '</div>';
   }
 
-  return portalLinkBanner + navHtml + actGridHtml;
-}
-
-function selectTeacherGrade(g) {
-  teacherMonitorGrade = g;
-  teacherHindiGradeFilter = 'all';
-  teacherSearchQuery = '';
-  document.getElementById('secContent').innerHTML = renderDcaisMonitor();
-}
-
-function filterTeacherHindiGrade(f) {
-  teacherHindiGradeFilter = f;
-  document.getElementById('secContent').innerHTML = renderDcaisMonitor();
-}
-
-function searchTeacherActivities(q) {
-  teacherSearchQuery = q;
-  document.getElementById('secContent').innerHTML = renderDcaisMonitor();
+  return topNav + monthTabsHtml + cardsHtml;
 }
 
 
@@ -2627,6 +2259,7 @@ window.openSection = openSection;
 window.showDashboard = showDashboard;
 window.toggleLang = toggleLang;
 window.selectTeacherGrade = selectTeacherGrade;
+window.filterTeacherMonth = filterTeacherMonth;
 window.searchTeacherActivities = searchTeacherActivities;
 window.setExamSubTab = setExamSubTab;
 window.filterExamRegions = filterExamRegions;
@@ -2638,7 +2271,7 @@ window.openSection = openSection;
 window.showDashboard = showDashboard;
 window.toggleLang = toggleLang;
 window.selectTeacherGrade = selectTeacherGrade;
-window.filterTeacherHindiGrade = filterTeacherHindiGrade;
+window.filterTeacherMonth = filterTeacherMonth;
 window.searchTeacherActivities = searchTeacherActivities;
 
 // Event delegation for cards and hero flow pills
