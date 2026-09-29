@@ -436,10 +436,10 @@ footer p+p{margin-top:5px}
           <div>
             <div class="tile-tag" id="sE-tag">Section E • DCAIS Exam</div>
             <h2 class="tile-title" id="sE-title">DCAIS Exam &amp; Answer Key</h2>
-            <p class="tile-desc" id="sE-desc">KVS Semester-1 examination portal: 11 regional Google Form links, exam guidelines, and verified Answer Key.</p>
+            <p class="tile-desc" id="sE-desc">KVS Semester-1 examination portal: 15 regional Google Form links, exam guidelines, and verified Answer Key.</p>
           </div>
           <div class="tile-footer">
-            <span class="tile-hint" id="sE-hint">11 Regions • Answer Key</span>
+            <span class="tile-hint" id="sE-hint">15 Regions • Answer Key</span>
             <span class="tile-btn" id="sE-btn">Open &rarr;</span>
           </div>
         </div>
@@ -990,7 +990,7 @@ var LANG = {
     sBtag:'Section B', sBtitle:'CPD Modules', sBdesc:'5 accredited professional development modules (CPD-AE 01 to 05) totaling 48 training hours.', sBhint:'48 Hours Training', sBbtn:'Open &rarr;',
     sCtag:'Section C • DCAIS', sCtitle:'Student DCAIS Monitor (AIM)', sCdesc: 'Monitor what DCAIS activities your students are doing across Grades 6–8. Inspect curriculum instructions and templates.', sChint: 'Grades 6–8 Full Monitor', sCbtn:'Open &rarr;',
     sDtag:'Section D', sDtitle:'Classroom Resources', sDdesc:'Lesson plan templates, classroom printables, grading rubrics, tutorial videos, and project kits.', sDhint:'6 Resource Packs', sDbtn:'Open &rarr;',
-    flow5:'DCAIS Exam', sEtag:'Section E • DCAIS Exam', sEtitle:'DCAIS Exam &amp; Answer Key', sEdesc:'KVS Semester-1 examination portal: 11 regional Google Form links, exam guidelines, and verified Answer Key.', sEhint:'11 Regions • Answer Key', sEbtn:'Open &rarr;'
+    flow5:'DCAIS Exam', sEtag:'Section E • DCAIS Exam', sEtitle:'DCAIS Exam &amp; Answer Key', sEdesc:'KVS Semester-1 examination portal: 15 regional Google Form links, exam guidelines, and verified Answer Key.', sEhint:'15 Regions • Answer Key', sEbtn:'Open &rarr;'
   },
   hi: {
     hdrSub:'शिक्षक कार्यक्षेत्र', hdrBadge:'शिक्षक पोर्टल',
@@ -1004,7 +1004,7 @@ var LANG = {
     sBtag:'सेक्शन B', sBtitle:'CPD मॉड्यूल', sBdesc:'5 मान्यता प्राप्त प्रशिक्षण मॉड्यूल — CPD-AE 01 से 05 — कुल 48 घंटे।', sBhint:'48 घंटे प्रशिक्षण', sBbtn:'खोलें &rarr;',
     sCtag:'सेक्शन C • DCAIS', sCtitle:'छात्र DCAIS मॉनिटर (AIM)', sCdesc: 'देखें कक्षा 6 से 8 तक आपके छात्र कौन सी DCAIS गतिविधियाँ कर रहे हैं।', sChint: 'कक्षा 6–8 पूर्ण मॉनिटर', sCbtn:'खोलें &rarr;',
     sDtag:'सेक्शन D', sDtitle:'कक्षा संसाधन', sDdesc:'पाठ योजना टेम्पलेट, क्लासरूम प्रिंटेबल्स, ग्रेडिंग रूब्रिक्स और वीडियो।', sDhint:'6 संसाधन पैक', sDbtn:'खोलें &rarr;',
-    flow5:'DCAIS परीक्षा', sEtag:'सेक्शन E • DCAIS परीक्षा', sEtitle:'DCAIS परीक्षा और उत्तर कुंजी', sEdesc:'KVS सेमेस्टर-1 परीक्षा पोर्टल: 11 क्षेत्रीय गूगल फॉर्म लिंक, परीक्षा दिशानिर्देश और सत्यापित उत्तर कुंजी।', sEhint:'11 क्षेत्र • उत्तर कुंजी', sEbtn:'खोलें &rarr;'
+    flow5:'DCAIS परीक्षा', sEtag:'सेक्शन E • DCAIS परीक्षा', sEtitle:'DCAIS परीक्षा और उत्तर कुंजी', sEdesc:'KVS सेमेस्टर-1 परीक्षा पोर्टल: 15 क्षेत्रीय गूगल फॉर्म लिंक, परीक्षा दिशानिर्देश और सत्यापित उत्तर कुंजी।', sEhint:'15 क्षेत्र • उत्तर कुंजी', sEbtn:'खोलें &rarr;'
   }
 };
 
@@ -1417,7 +1417,11 @@ var KVS_REGIONS = [
   { id: 'bhopal', nameEn: 'Bhopal Region', nameHi: 'भोपाल संभाग', stateEn: 'Madhya Pradesh', stateHi: 'मध्य प्रदेश', link: 'https://forms.gle/nfzQq9WvX14VKY2k9', icon: '🏞️' },
   { id: 'agra', nameEn: 'Agra Region', nameHi: 'आगरा संभाग', stateEn: 'Uttar Pradesh', stateHi: 'उत्तर प्रदेश', link: 'https://forms.gle/s2rF2Ntgt4pQtAYFA', icon: '🕌' },
   { id: 'jaipur', nameEn: 'Jaipur Region', nameHi: 'जयपुर संभाग', stateEn: 'Rajasthan', stateHi: 'राजस्थान', link: 'https://forms.gle/Pcp5CRgeugWozw5k8', icon: '👑' },
-  { id: 'chandigarh', nameEn: 'Chandigarh Region', nameHi: 'चंडीगढ़ संभाग', stateEn: 'Punjab & Haryana', stateHi: 'पंजाब और हरियाणा', link: 'https://forms.gle/oT2ovd4rVTjQM8ws6', icon: '🌹' }
+  { id: 'chandigarh', nameEn: 'Chandigarh Region', nameHi: 'चंडीगढ़ संभाग', stateEn: 'Punjab & Haryana', stateHi: 'पंजाब और हरियाणा', link: 'https://forms.gle/oT2ovd4rVTjQM8ws6', icon: '🌹' },
+  { id: 'ahmedabad', nameEn: 'Ahmedabad Region', nameHi: 'अहमदाबाद संभाग', stateEn: 'Gujarat', stateHi: 'गुजरात', link: '', icon: '🏛️' },
+  { id: 'mumbai', nameEn: 'Mumbai Region', nameHi: 'मुंबई संभाग', stateEn: 'Maharashtra', stateHi: 'महाराष्ट्र', link: '', icon: '🌊' },
+  { id: 'raipur', nameEn: 'Raipur Region', nameHi: 'रायपुर संभाग', stateEn: 'Chhattisgarh', stateHi: 'छत्तीसगढ़', link: '', icon: '🌾' },
+  { id: 'kolkata', nameEn: 'Kolkata Region', nameHi: 'कोलकाता संभाग', stateEn: 'West Bengal', stateHi: 'पश्चिम बंगाल', link: '', icon: '🌉' }
 ];
 
 var EXAM_MCQS = [
@@ -1621,9 +1625,13 @@ function showToast(msg) {
 }
 
 function copyExamLink(url, regionName) {
+  if (!url || url === '#' || url.trim() === '') {
+    showToast((currentLang === 'hi' ? regionName + ' का टेस्ट लिंक जल्द उपलब्ध कराया जाएगा!' : 'Test link for ' + regionName + ' will be available soon!'));
+    return;
+  }
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(url).then(function() {
-      showToast((currentLang === 'hi' ? regionName + ' का परीक्षा लिंक कॉपी हो गया!' : 'Link for ' + regionName + ' copied!'));
+      showToast((currentLang === 'hi' ? regionName + ' का टेस्ट लिंक कॉपी हो गया!' : 'Test link for ' + regionName + ' copied!'));
     }).catch(function() {
       prompt((currentLang === 'hi' ? 'लिंक कॉपी करें:' : 'Copy Link:'), url);
     });
@@ -1666,14 +1674,21 @@ function filterExamRegions(query) {
   grid.innerHTML = filtered.map(function(r) {
     var name = isHi ? r.nameHi : r.nameEn;
     var state = isHi ? r.stateHi : r.stateEn;
-    var copyBtnLabel = isHi ? 'लिंक कॉपी करें 📋' : 'Copy Form Link 📋';
-    var openBtnLabel = isHi ? 'गूगल फॉर्म खोलें ↗' : 'Open Google Form ↗';
+    var copyBtnLabel = isHi ? 'मिड-टर्म टेस्ट लिंक कॉपी करें 📋' : 'Copy test link mid term 📋';
+    var openBtnLabel = isHi ? 'मिड-टर्म टेस्ट लिंक खोलें ↗' : 'Open test link mid term ↗';
+    var hasLink = (r.link && r.link !== '#' && r.link.trim() !== '');
+    var openBtnHtml = hasLink ?
+      '<a href="' + r.link + '" target="_blank" class="btn btn-primary" style="justify-content:center;font-size:.8rem;padding:9px 16px;">' + openBtnLabel + '</a>' :
+      '<button type="button" onclick="showToast(&quot;' + (isHi ? name + ' का टेस्ट लिंक जल्द उपलब्ध कराया जाएगा!' : 'Test link for ' + name + ' will be available soon!') + '&quot;)" class="btn btn-primary" style="justify-content:center;font-size:.8rem;padding:9px 16px;opacity:0.88;">' + openBtnLabel + '</button>';
+    var linkBadge = hasLink ? '' :
+      '<span style="background:#FEF3C7;color:#92400E;font-size:.68rem;font-weight:800;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle;">' + (isHi ? 'लिंक जल्द' : 'Link Soon') + '</span>';
+
     return '<div class="exam-region-card">' +
       '<div>' +
         '<div class="exam-region-head">' +
           '<div class="exam-region-icon">' + r.icon + '</div>' +
           '<div>' +
-            '<h3 class="exam-region-title">' + name + '</h3>' +
+            '<h3 class="exam-region-title">' + name + linkBadge + '</h3>' +
             '<div class="exam-region-sub">📍 ' + state + '</div>' +
           '</div>' +
         '</div>' +
@@ -1682,8 +1697,8 @@ function filterExamRegions(query) {
         '</p>' +
       '</div>' +
       '<div class="exam-region-actions">' +
-        '<a href="' + r.link + '" target="_blank" class="btn btn-primary" style="justify-content:center;font-size:.8rem;padding:9px 16px;">' + openBtnLabel + '</a>' +
-        '<button type="button" onclick="copyExamLink(&quot;' + r.link + '&quot;, &quot;' + name + '&quot;)" class="btn btn-ghost" style="justify-content:center;font-size:.78rem;padding:8px 14px;">' + copyBtnLabel + '</button>' +
+        openBtnHtml +
+        '<button type="button" onclick="copyExamLink(&quot;' + (r.link || '') + '&quot;, &quot;' + name + '&quot;)" class="btn btn-ghost" style="justify-content:center;font-size:.78rem;padding:8px 14px;">' + copyBtnLabel + '</button>' +
       '</div>' +
     '</div>';
   }).join('');
@@ -1696,7 +1711,7 @@ function renderDcaisExamSection() {
   var tabsHtml =
     '<div class="exam-tabs">' +
       '<button class="exam-tab-btn' + (currentExamSubTab === 'regions' ? ' active' : '') + '" onclick="setExamSubTab(&quot;regions&quot;)">' +
-        '📍 ' + (isHi ? '11 क्षेत्रीय परीक्षा फॉर्म' : '11 Regional Exam Forms') +
+        '📍 ' + (isHi ? '15 क्षेत्रीय परीक्षा फॉर्म' : '15 Regional Exam Forms') +
       '</button>' +
       '<button class="exam-tab-btn' + (currentExamSubTab === 'key' ? ' active' : '') + '" onclick="setExamSubTab(&quot;key&quot;)">' +
         '🔑 ' + (isHi ? 'आधिकारिक उत्तर कुंजी (Sem-1)' : 'Verified Answer Key (Sem-1)') +
@@ -1738,7 +1753,7 @@ function renderDcaisExamSection() {
           '</p>' +
         '</div>' +
         '<div class="exam-meta-badges">' +
-          '<span class="exam-pill">11 KVS Regions</span>' +
+          '<span class="exam-pill">15 KVS Regions</span>' +
           '<span class="exam-pill">Semester-1</span>' +
           '<span class="exam-pill">Google Forms</span>' +
         '</div>' +
@@ -1747,24 +1762,31 @@ function renderDcaisExamSection() {
     var searchBar =
       '<div class="exam-search-bar">' +
         '<div class="exam-search-box">' +
-          '<input type="text" placeholder="' + (isHi ? 'संभाग या राज्य खोजें (जैसे Lucknow, Dehradun, Agra)...' : 'Search region or state (e.g. Lucknow, Dehradun, Agra)...') + '" value="' + examRegionQuery + '" oninput="filterExamRegions(this.value)">' +
+          '<input type="text" placeholder="' + (isHi ? 'संभाग या राज्य खोजें (जैसे Lucknow, Mumbai, Ahmedabad)...' : 'Search region or state (e.g. Lucknow, Mumbai, Ahmedabad)...') + '" value="' + examRegionQuery + '" oninput="filterExamRegions(this.value)">' +
         '</div>' +
         '<div style="font-size:.78rem;font-weight:700;color:var(--ink-3);">' +
-          (isHi ? 'कुल संभाग: 11' : 'Total Regions: 11 Active') +
+          (isHi ? 'कुल संभाग: ' + KVS_REGIONS.length : 'Total Regions: ' + KVS_REGIONS.length + ' Active') +
         '</div>' +
       '</div>';
 
     var cardsHtml = KVS_REGIONS.map(function(r) {
       var name = isHi ? r.nameHi : r.nameEn;
       var state = isHi ? r.stateHi : r.stateEn;
-      var copyBtnLabel = isHi ? 'लिंक कॉपी करें 📋' : 'Copy Form Link 📋';
-      var openBtnLabel = isHi ? 'गूगल फॉर्म खोलें ↗' : 'Open Google Form ↗';
+      var copyBtnLabel = isHi ? 'मिड-टर्म टेस्ट लिंक कॉपी करें 📋' : 'Copy test link mid term 📋';
+      var openBtnLabel = isHi ? 'मिड-टर्म टेस्ट लिंक खोलें ↗' : 'Open test link mid term ↗';
+      var hasLink = (r.link && r.link !== '#' && r.link.trim() !== '');
+      var openBtnHtml = hasLink ?
+        '<a href="' + r.link + '" target="_blank" class="btn btn-primary" style="justify-content:center;font-size:.8rem;padding:9px 16px;">' + openBtnLabel + '</a>' :
+        '<button type="button" onclick="showToast(&quot;' + (isHi ? name + ' का टेस्ट लिंक जल्द उपलब्ध कराया जाएगा!' : 'Test link for ' + name + ' will be available soon!') + '&quot;)" class="btn btn-primary" style="justify-content:center;font-size:.8rem;padding:9px 16px;opacity:0.88;">' + openBtnLabel + '</button>';
+      var linkBadge = hasLink ? '' :
+        '<span style="background:#FEF3C7;color:#92400E;font-size:.68rem;font-weight:800;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle;">' + (isHi ? 'लिंक जल्द' : 'Link Soon') + '</span>';
+
       return '<div class="exam-region-card">' +
         '<div>' +
           '<div class="exam-region-head">' +
             '<div class="exam-region-icon">' + r.icon + '</div>' +
             '<div>' +
-              '<h3 class="exam-region-title">' + name + '</h3>' +
+              '<h3 class="exam-region-title">' + name + linkBadge + '</h3>' +
               '<div class="exam-region-sub">📍 ' + state + '</div>' +
             '</div>' +
           '</div>' +
@@ -1773,8 +1795,8 @@ function renderDcaisExamSection() {
           '</p>' +
         '</div>' +
         '<div class="exam-region-actions">' +
-          '<a href="' + r.link + '" target="_blank" class="btn btn-primary" style="justify-content:center;font-size:.8rem;padding:9px 16px;">' + openBtnLabel + '</a>' +
-          '<button type="button" onclick="copyExamLink(&quot;' + r.link + '&quot;, &quot;' + name + '&quot;)" class="btn btn-ghost" style="justify-content:center;font-size:.78rem;padding:8px 14px;">' + copyBtnLabel + '</button>' +
+          openBtnHtml +
+          '<button type="button" onclick="copyExamLink(&quot;' + (r.link || '') + '&quot;, &quot;' + name + '&quot;)" class="btn btn-ghost" style="justify-content:center;font-size:.78rem;padding:8px 14px;">' + copyBtnLabel + '</button>' +
         '</div>' +
       '</div>';
     }).join('');
@@ -2315,8 +2337,8 @@ var TEACHER_SECTIONS_DATA = {
     tagHi: 'सेक्शन E • DCAIS परीक्षा पोर्टल',
     titleEn: 'KVS DCAIS Exam, Regional Forms & Verified Answer Key',
     titleHi: 'KVS DCAIS परीक्षा, क्षेत्रीय गूगल फॉर्म और सत्यापित उत्तर कुंजी',
-    descEn: 'Semester-1 Examination Portal: Access 11 regional examination Google Forms, step-by-step examination guidelines, and official verified Answer Key.',
-    descHi: 'सेमेस्टर-1 परीक्षा पोर्टल: 11 क्षेत्रीय गूगल फॉर्म लिंक, चरण-दर-चरण परीक्षा दिशानिर्देश और आधिकारिक सत्यापित उत्तर कुंजी प्राप्त करें।',
+    descEn: 'Semester-1 Examination Portal: Access 15 regional examination Google Forms, step-by-step examination guidelines, and official verified Answer Key.',
+    descHi: 'सेमेस्टर-1 परीक्षा पोर्टल: 15 क्षेत्रीय गूगल फॉर्म लिंक, चरण-दर-चरण परीक्षा दिशानिर्देश और आधिकारिक सत्यापित उत्तर कुंजी प्राप्त करें।',
     render: function(lang) {
       return renderDcaisExamSection();
     }
