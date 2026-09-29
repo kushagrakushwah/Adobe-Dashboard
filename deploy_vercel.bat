@@ -6,7 +6,7 @@ echo ===================================================================
 echo.
 cd /d "%~dp0"
 echo Running Vercel deployment...
-echo (When prompted for Project Name, enter: adobe-express-education)
+echo (When prompted to link to existing project, choose [Y] and enter project: adobedash)
 echo.
 call npx vercel --prod
 echo.
