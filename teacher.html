@@ -1167,6 +1167,27 @@ function selectTeacherGrade(gradeId) {
 
 function renderDcaisMonitor() {
   var isHi = (currentLang === 'hi');
+  var dcaisSubmissionUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScEzxzVqZp3ivr-C18TAimHJV-hXIFzVaVmR-q7Ab-031xVQA/viewform?usp=header';
+
+  var dcaisSubmissionBanner =
+    '<div style="display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg, #1E1B4B 0%, #312E81 50%, #4338CA 100%);color:#fff;border-radius:var(--radius);padding:18px 22px;margin-bottom:20px;flex-wrap:wrap;gap:14px;box-shadow:0 6px 20px rgba(49,46,129,0.22);">' +
+      '<div style="max-width:680px;">' +
+        '<div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.18);padding:3px 10px;border-radius:9999px;font-size:0.74rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:6px;">' +
+          '<span>📤</span> <span>' + (isHi ? 'DCAIS आधिकारिक छात्र सबमिशन पोर्टल' : 'Official Student DCAIS Submission Portal') + '</span>' +
+        '</div>' +
+        '<div style="font-weight:900;font-size:1.15rem;color:#fff;margin-bottom:4px;">' +
+          (isHi ? 'DCAIS प्रोजेक्ट सबमिशन फॉर्म (गूगल फॉर्म)' : 'DCAIS Project Submission Link (Google Form)') + '</div>' +
+        '<div style="font-size:.84rem;color:#E0E7FF;line-height:1.45;">' +
+          (isHi ? 'कक्षा 6–8 के छात्रों के साप्ताहिक और मासिक प्रोजेक्ट सबमिशन एकत्र करने के लिए आधिकारिक गूगल फॉर्म लिंक। इसे छात्रों के साथ साझा करें या सबमिशन की समीक्षा के लिए खोलें।' :
+                  'Official Google Form link for collecting completed DCAIS classroom & homework projects across Grades 6–8. Share with students or open to inspect submissions.') + '</div>' +
+      '</div>' +
+      '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">' +
+        '<a href="' + dcaisSubmissionUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#FA0F00;border:none;font-weight:800;font-size:.85rem;padding:10px 20px;border-radius:9999px;box-shadow:0 4px 12px rgba(250,15,0,0.35);">' +
+          (isHi ? 'सबमिशन फॉर्म खोलें ↗' : 'Open Submission Form ↗') + '</a>' +
+        '<button onclick="navigator.clipboard.writeText(\'' + dcaisSubmissionUrl + '\').then(function(){ alert(\'' + (isHi ? 'सबमिशन लिंक कॉपी हो गया!' : 'DCAIS submission link copied to clipboard!') + '\'); })" class="btn btn-outline" style="border:1.5px solid rgba(255,255,255,0.6);color:#fff;font-weight:800;font-size:.84rem;padding:9px 16px;border-radius:9999px;background:rgba(255,255,255,0.08);">' +
+          '📋 ' + (isHi ? 'लिंक कॉपी करें' : 'Copy Link') + '</button>' +
+      '</div>' +
+    '</div>';
 
   var portalLinkBanner =
     '<div style="display:flex;align-items:center;justify-content:space-between;background:var(--red-bg);border:1.5px solid var(--red-border);border-radius:var(--radius);padding:16px 20px;margin-bottom:22px;flex-wrap:wrap;gap:12px;">' +
@@ -1202,7 +1223,7 @@ function renderDcaisMonitor() {
       }).join('') +
       '</div>';
 
-    return portalLinkBanner + cardsGrid;
+    return dcaisSubmissionBanner + portalLinkBanner + cardsGrid;
   }
 
   // Inside Selected Grade View
@@ -1377,12 +1398,12 @@ function renderDcaisMonitor() {
     '</div>';
   }
 
-  return topNav + monthTabsHtml + cardsHtml;
+  return dcaisSubmissionBanner + topNav + monthTabsHtml + cardsHtml;
 }
 
 
 /* ===== DCAIS EXAM DATA & CONTROLLER ===== */
-var currentExamSubTab = 'regions'; // 'regions', 'key', 'guidelines'
+var currentExamSubTab = 'regions'; // 'regions', 'key', 'evaluation', 'guidelines'
 var examRegionQuery = '';
 
 var KVS_REGIONS = [
@@ -1680,12 +1701,34 @@ function renderDcaisExamSection() {
       '<button class="exam-tab-btn' + (currentExamSubTab === 'key' ? ' active' : '') + '" onclick="setExamSubTab(&quot;key&quot;)">' +
         '🔑 ' + (isHi ? 'आधिकारिक उत्तर कुंजी (Sem-1)' : 'Verified Answer Key (Sem-1)') +
       '</button>' +
+      '<button class="exam-tab-btn' + (currentExamSubTab === 'evaluation' ? ' active' : '') + '" onclick="setExamSubTab(&quot;evaluation&quot;)">' +
+        '📊 ' + (isHi ? 'KVS मूल्यांकन शीट (.xlsx)' : 'KVS Evaluation Sheet (.xlsx)') +
+      '</button>' +
       '<button class="exam-tab-btn' + (currentExamSubTab === 'guidelines' ? ' active' : '') + '" onclick="setExamSubTab(&quot;guidelines&quot;)">' +
         '📋 ' + (isHi ? 'परीक्षा दिशानिर्देश व प्रक्रिया' : 'Exam Guidelines & Instructions') +
       '</button>' +
     '</div>';
 
   if (currentExamSubTab === 'regions') {
+    var evalQuickBar =
+      '<div style="background:var(--surface);border:1.5px solid #10B981;border-radius:var(--radius);padding:14px 20px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;box-shadow:0 2px 10px rgba(16,185,129,0.08);">' +
+        '<div style="display:flex;align-items:center;gap:12px;">' +
+          '<div style="width:42px;height:42px;border-radius:10px;background:#ECFDF5;border:1px solid #A7F3D0;display:flex;align-items:center;justify-content:center;font-size:1.4rem;">📊</div>' +
+          '<div>' +
+            '<div style="font-weight:900;color:#065F46;font-size:.95rem;">' + (isHi ? 'KVS आधिकारिक मूल्यांकन शीट (25 अंक) एवं सबमिशन लिंक' : 'Official KVS Evaluation Sheet (25 Marks) & Submission Link') + '</div>' +
+            '<div style="font-size:.82rem;color:var(--ink-2);">' + (isHi ? 'छात्रों के अंकों (MCQs + प्रोजेक्ट्स) को संकलित करने के लिए आधिकारिक एक्सेल शीट डाउनलोड करें।' : 'Download the standardized Excel scoring spreadsheet for compiling student marks (MCQs + Projects).') + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div style="display:flex;gap:8px;flex-wrap:wrap;">' +
+          '<a href="downloads/KVS_evaluation_sheet.xlsx" download="KVS_evaluation_sheet.xlsx" class="btn btn-primary" style="background:#059669;padding:9px 18px;font-size:.84rem;font-weight:800;border:none;">' +
+            '📥 ' + (isHi ? 'एक्सेल शीट डाउनलोड करें (.xlsx)' : 'Download Evaluation Sheet (.xlsx)') + '</a>' +
+          '<button onclick="setExamSubTab(&quot;evaluation&quot;)" class="btn btn-outline" style="border-color:#059669;color:#059669;padding:9px 16px;font-size:.84rem;font-weight:800;">' +
+            '👀 ' + (isHi ? 'शीट का विवरण देखें' : 'View Sheet Details') + '</button>' +
+          '<a href="https://docs.google.com/forms/d/e/1FAIpQLScEzxzVqZp3ivr-C18TAimHJV-hXIFzVaVmR-q7Ab-031xVQA/viewform?usp=header" target="_blank" class="btn btn-outline" style="border-color:#4338CA;color:#4338CA;padding:9px 16px;font-size:.84rem;font-weight:800;background:#EEF2FF;">' +
+            '📤 ' + (isHi ? 'DCAIS सबमिशन फॉर्म ↗' : 'DCAIS Submission Link ↗') + '</a>' +
+        '</div>' +
+      '</div>';
+
     var metaBanner =
       '<div class="exam-meta-banner">' +
         '<div>' +
@@ -1736,7 +1779,7 @@ function renderDcaisExamSection() {
       '</div>';
     }).join('');
 
-    return tabsHtml + metaBanner + searchBar + '<div class="exam-region-grid" id="examRegionGrid">' + cardsHtml + '</div>';
+    return tabsHtml + evalQuickBar + metaBanner + searchBar + '<div class="exam-region-grid" id="examRegionGrid">' + cardsHtml + '</div>';
   }
 
   if (currentExamSubTab === 'key') {
@@ -1914,6 +1957,182 @@ function renderDcaisExamSection() {
       '</div>';
 
     return tabsHtml + guideBanner + rulesHtml + workflowHtml + ictHtml;
+  }
+
+  if (currentExamSubTab === 'evaluation') {
+    var dcaisSubmissionUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScEzxzVqZp3ivr-C18TAimHJV-hXIFzVaVmR-q7Ab-031xVQA/viewform?usp=header';
+
+    var evalBanner =
+      '<div class="exam-meta-banner" style="background:linear-gradient(135deg,#064E3B 0%,#065F46 50%,#047857 100%);color:#fff;border-color:#059669;padding:22px 24px;">' +
+        '<div>' +
+          '<div class="exam-meta-title" style="color:#fff;font-size:1.15rem;margin-bottom:6px;">📊 ' +
+            (isHi ? 'KVS आधिकारिक DCAIS मूल्यांकन शीट (Marks Scoring Sheet)' : 'Official KVS DCAIS Evaluation Sheet (.xlsx)') +
+          '</div>' +
+          '<p style="font-size:.84rem;color:#D1FAE5;margin:0;max-width:720px;line-height:1.5;">' +
+            (isHi ? 'केंद्रीय विद्यालय संगठन (KVS) सेमेस्टर-1 परीक्षा अंक संकलन के लिए आधिकारिक एक्सेल स्प्रेडशीट टेम्पलेट। MCQs और दोनों व्यावहारिक प्रोजेक्ट्स के अंक (कुल 25 अंक) दर्ज करें।' :
+                    'Official Kendriya Vidyalaya Sangathan (KVS) standardized evaluation spreadsheet for DCAIS Semester-1 assessment scoring (Total 25 Marks: 5 MCQs + 2 Practical Projects).') +
+          '</p>' +
+        '</div>' +
+        '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">' +
+          '<a href="downloads/KVS_evaluation_sheet.xlsx" download="KVS_evaluation_sheet.xlsx" class="btn btn-primary" style="background:#10B981;color:#fff;border:none;font-weight:900;font-size:.9rem;padding:12px 24px;border-radius:999px;box-shadow:0 4px 14px rgba(16,185,129,0.35);display:inline-flex;align-items:center;gap:8px;">' +
+            '📥 ' + (isHi ? 'मूल्यांकन शीट डाउनलोड करें (.xlsx)' : 'Download Evaluation Sheet (.xlsx)') +
+          '</a>' +
+          '<a href="' + dcaisSubmissionUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border:1.5px solid rgba(255,255,255,0.7);color:#fff;font-weight:800;font-size:.86rem;padding:11px 20px;border-radius:999px;background:rgba(255,255,255,0.1);">' +
+            '📤 ' + (isHi ? 'DCAIS सबमिशन फॉर्म ↗' : 'DCAIS Submission Link ↗') +
+          '</a>' +
+        '</div>' +
+      '</div>';
+
+    var markSchemeCards =
+      '<div style="margin:24px 0 16px;">' +
+        '<h3 style="font-size:1.18rem;font-weight:900;color:var(--ink);margin-bottom:6px;">' +
+          (isHi ? 'अंक योजना विवरण (25 अंक कुल)' : 'Assessment Scoring Scheme (Total 25 Marks)') +
+        '</h3>' +
+        '<p style="font-size:.84rem;color:var(--ink-3);margin-bottom:14px;">' +
+          (isHi ? 'KVS मूल्यांकन शीट में निम्नलिखित 3 घटकों के अनुसार अंक दर्ज किए जाने हैं:' :
+                  'The official evaluation sheet divides the assessment into 3 standardized evaluation components:') +
+        '</p>' +
+        '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;">' +
+          '<div style="background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow-sm);">' +
+            '<div style="display:inline-block;background:#EFF6FF;color:#1D4ED8;font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:999px;margin-bottom:8px;">भाग 1 • MCQs (Q1–Q5)</div>' +
+            '<h4 style="font-size:1.05rem;font-weight:900;color:var(--ink);margin-bottom:4px;">15 ' + (isHi ? 'अंक (3 अंक x 5 प्रश्न)' : 'Marks (3 Marks x 5 Qs)') + '</h4>' +
+            '<p style="font-size:.8rem;color:var(--ink-2);line-height:1.45;">' +
+              (isHi ? 'डिजिटल साक्षरता, Adobe Express टूल्स, 4Cs और वेक्टर ग्राफिक्स। टैब 2 में दी गई उत्तर कुंजी के अनुसार ग्रेड करें।' :
+                      'Questions 1 to 5 testing digital creativity fundamentals and Adobe Express tools. Grade using Verified Answer Key.') +
+            '</p>' +
+          '</div>' +
+          '<div style="background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow-sm);">' +
+            '<div style="display:inline-block;background:#ECFDF5;color:#047857;font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:999px;margin-bottom:8px;">भाग 2 • प्रोजेक्ट 1</div>' +
+            '<h4 style="font-size:1.05rem;font-weight:900;color:var(--ink);margin-bottom:4px;">5 ' + (isHi ? 'अंक • बैकग्राउंड रिमूवल' : 'Marks • Background Removal') + '</h4>' +
+            '<p style="font-size:.8rem;color:var(--ink-2);line-height:1.45;">' +
+              (isHi ? 'Adobe Express त्वरित क्रियाओं (Quick Actions) का उपयोग करके छवि पृष्ठभूमि को सटीकता से हटाने का मूल्यांकन।' :
+                      'Evaluating accurate and clean image background extraction using Adobe Express Quick Actions.') +
+            '</p>' +
+          '</div>' +
+          '<div style="background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow-sm);">' +
+            '<div style="display:inline-block;background:#FEF3C7;color:#B45309;font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:999px;margin-bottom:8px;">भाग 3 • प्रोजेक्ट 2</div>' +
+            '<h4 style="font-size:1.05rem;font-weight:900;color:var(--ink);margin-bottom:4px;">5 ' + (isHi ? 'अंक • जागरूकता पोस्टर' : 'Marks • Awareness Poster') + '</h4>' +
+            '<p style="font-size:.8rem;color:var(--ink-2);line-height:1.45;">' +
+              (isHi ? 'रचनात्मकता, दृश्य पदानुक्रम, टाइपोग्राफी और थीम संरेखण के साथ अवेयरनेस पोस्टर डिज़ाइन का मूल्यांकन।' :
+                      'Evaluating creative layout, typographic hierarchy, color contrast, and thematic messaging in Adobe Express.') +
+            '</p>' +
+          '</div>' +
+          '<div style="background:#F0FDF4;border:1.5px solid #22C55E;border-radius:var(--radius);padding:18px 20px;box-shadow:var(--shadow-sm);">' +
+            '<div style="display:inline-block;background:#22C55E;color:#FFF;font-size:.72rem;font-weight:800;padding:2px 8px;border-radius:999px;margin-bottom:8px;">कुल पूर्णांक</div>' +
+            '<h4 style="font-size:1.05rem;font-weight:900;color:#15803D;margin-bottom:4px;">25 ' + (isHi ? 'अंक (Total Maximum Marks)' : 'Marks (Total Maximum Marks)') + '</h4>' +
+            '<p style="font-size:.8rem;color:#166534;line-height:1.45;">' +
+              (isHi ? 'एक्सेल शीट कॉलम N में स्वचालित योग सूत्र शामिल है जो स्वतः कुल अंक निकालता है।' :
+                      'Excel column N contains the automated sum formula to automatically compute total student scores out of 25.') +
+            '</p>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
+    var tablePreviewHtml =
+      '<div style="margin:36px 0 24px;">' +
+        '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:10px;">' +
+          '<div>' +
+            '<h3 style="font-size:1.18rem;font-weight:900;color:var(--ink);margin-bottom:4px;">' +
+              (isHi ? 'KVS मूल्यांकन स्प्रेडशीट संरचना (14 कॉलम पूर्वावलोकन)' : 'KVS Evaluation Spreadsheet Structure (14 Columns Preview)') +
+            '</h3>' +
+            '<p style="font-size:.84rem;color:var(--ink-3);margin:0;">' +
+              (isHi ? 'यह आधिकारिक "KVS evaluation sheet.xlsx" की सटीक संरचना है जिसे डाउनलोड किया जा सकता है:' :
+                      'Exact column layout of the official "KVS evaluation sheet.xlsx" ready for download:') +
+            '</p>' +
+          '</div>' +
+          '<a href="downloads/KVS_evaluation_sheet.xlsx" download="KVS_evaluation_sheet.xlsx" class="btn btn-outline" style="border-color:#059669;color:#059669;font-weight:800;font-size:.82rem;padding:8px 16px;">' +
+            '📥 ' + (isHi ? 'डाउनलोड .xlsx' : 'Download .xlsx') +
+          '</a>' +
+        '</div>' +
+        '<div style="overflow-x:auto;border:1.5px solid var(--border);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow-sm);">' +
+          '<table style="width:100%;border-collapse:collapse;font-size:.78rem;text-align:left;min-width:980px;">' +
+            '<thead>' +
+              '<tr style="background:#F1F5F9;border-bottom:2px solid #CBD5E1;color:#1E293B;font-weight:800;">' +
+                '<th style="padding:10px 12px;border-right:1px solid #E2E8F0;">S.NO.</th>' +
+                '<th style="padding:10px 12px;border-right:1px solid #E2E8F0;">Name of the school</th>' +
+                '<th style="padding:10px 12px;border-right:1px solid #E2E8F0;">KV Code</th>' +
+                '<th style="padding:10px 12px;border-right:1px solid #E2E8F0;">Name of Student</th>' +
+                '<th style="padding:10px 8px;border-right:1px solid #E2E8F0;text-align:center;">Class</th>' +
+                '<th style="padding:10px 8px;border-right:1px solid #E2E8F0;text-align:center;">Section</th>' +
+                '<th style="padding:10px 8px;border-right:1px solid #E2E8F0;text-align:center;background:#EFF6FF;">MCQ (q-1)<br>3 marks</th>' +
+                '<th style="padding:10px 8px;border-right:1px solid #E2E8F0;text-align:center;background:#EFF6FF;">MCQ q-2<br>3 marks</th>' +
+                '<th style="padding:10px 8px;border-right:1px solid #E2E8F0;text-align:center;background:#EFF6FF;">MCQ q-3<br>3 marks</th>' +
+                '<th style="padding:10px 8px;border-right:1px solid #E2E8F0;text-align:center;background:#EFF6FF;">MCQ q-4<br>3 marks</th>' +
+                '<th style="padding:10px 8px;border-right:1px solid #E2E8F0;text-align:center;background:#EFF6FF;">MCQ q-5<br>3 marks</th>' +
+                '<th style="padding:10px 10px;border-right:1px solid #E2E8F0;text-align:center;background:#ECFDF5;">Project- Remove background<br>(5 Marks)</th>' +
+                '<th style="padding:10px 10px;border-right:1px solid #E2E8F0;text-align:center;background:#FEF3C7;">Project- Create Awareness poster<br>(5 Marks)</th>' +
+                '<th style="padding:10px 12px;text-align:center;background:#DCFCE7;color:#15803D;font-weight:900;">Total marks<br>out of 25</th>' +
+              '</tr>' +
+            '</thead>' +
+            '<tbody>' +
+              '<tr style="border-bottom:1px solid #E2E8F0;">' +
+                '<td style="padding:9px 12px;border-right:1px solid #E2E8F0;font-weight:700;">1</td>' +
+                '<td style="padding:9px 12px;border-right:1px solid #E2E8F0;">KV No. 1 AFS Agra</td>' +
+                '<td style="padding:9px 12px;border-right:1px solid #E2E8F0;font-weight:700;">1082</td>' +
+                '<td style="padding:9px 12px;border-right:1px solid #E2E8F0;">Aarav Sharma</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">6</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">A</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">3</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">3</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">3</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">3</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">3</td>' +
+                '<td style="padding:9px 10px;border-right:1px solid #E2E8F0;text-align:center;">5</td>' +
+                '<td style="padding:9px 10px;border-right:1px solid #E2E8F0;text-align:center;">4.5</td>' +
+                '<td style="padding:9px 12px;text-align:center;font-weight:900;color:#15803D;background:#F0FDF4;">24.5</td>' +
+              '</tr>' +
+              '<tr style="border-bottom:1px solid #E2E8F0;background:#F8FAFC;">' +
+                '<td style="padding:9px 12px;border-right:1px solid #E2E8F0;font-weight:700;">2</td>' +
+                '<td style="padding:9px 12px;border-right:1px solid #E2E8F0;">KV Gomti Nagar Lucknow</td>' +
+                '<td style="padding:9px 12px;border-right:1px solid #E2E8F0;font-weight:700;">1420</td>' +
+                '<td style="padding:9px 12px;border-right:1px solid #E2E8F0;">Ananya Verma</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">7</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">B</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">3</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">3</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">3</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">0</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">3</td>' +
+                '<td style="padding:9px 10px;border-right:1px solid #E2E8F0;text-align:center;">5</td>' +
+                '<td style="padding:9px 10px;border-right:1px solid #E2E8F0;text-align:center;">5</td>' +
+                '<td style="padding:9px 12px;text-align:center;font-weight:900;color:#15803D;background:#F0FDF4;">22</td>' +
+              '</tr>' +
+              '<tr>' +
+                '<td style="padding:9px 12px;border-right:1px solid #E2E8F0;font-weight:700;">3</td>' +
+                '<td style="padding:9px 12px;border-right:1px solid #E2E8F0;">KV HBK Dehradun</td>' +
+                '<td style="padding:9px 12px;border-right:1px solid #E2E8F0;font-weight:700;">1156</td>' +
+                '<td style="padding:9px 12px;border-right:1px solid #E2E8F0;">Rohan Gupta</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">8</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">A</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">3</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">3</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">3</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">3</td>' +
+                '<td style="padding:9px 8px;border-right:1px solid #E2E8F0;text-align:center;">3</td>' +
+                '<td style="padding:9px 10px;border-right:1px solid #E2E8F0;text-align:center;">4</td>' +
+                '<td style="padding:9px 10px;border-right:1px solid #E2E8F0;text-align:center;">4</td>' +
+                '<td style="padding:9px 12px;text-align:center;font-weight:900;color:#15803D;background:#F0FDF4;">20</td>' +
+              '</tr>' +
+            '</tbody>' +
+          '</table>' +
+        '</div>' +
+      '</div>';
+
+    var stepsGuidance =
+      '<div style="margin:24px 0 32px;background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px;">' +
+        '<h4 style="font-size:1.05rem;font-weight:900;color:var(--ink);margin-bottom:10px;">📋 ' +
+          (isHi ? 'शिक्षकों के लिए मूल्यांकन और अंक दर्ज करने के चरण:' : 'Step-by-Step Instructions for Teachers:') +
+        '</h4>' +
+        '<ol style="margin-left:20px;font-size:.84rem;color:var(--ink-2);line-height:1.6;">' +
+          '<li>' + (isHi ? 'ऊपर दिए गए हरे बटन से "KVS evaluation sheet.xlsx" स्प्रेडशीट डाउनलोड करें।' : 'Click the green button above to download the official "KVS evaluation sheet.xlsx" spreadsheet.') + '</li>' +
+          '<li>' + (isHi ? 'अपने विद्यालय का नाम, 4-अंकीय KV Code, छात्र का नाम, कक्षा (6, 7 या 8) और सेक्शन दर्ज करें।' : 'Fill in your school name, 4-digit KV Code, student names, class (6, 7, or 8), and section.') + '</li>' +
+          '<li>' + (isHi ? 'टैब 2 ("सत्यापित उत्तर कुंजी") का उपयोग करके छात्र द्वारा हल किए गए MCQs (Q1 से Q5) के अंक (प्रत्येक 3 अंक) भरें।' : 'Score MCQ Questions 1 to 5 (3 marks each) using the official Verified Answer Key in Tab 2.') + '</li>' +
+          '<li>' + (isHi ? 'DCAIS प्रोजेक्ट सबमिशन फॉर्म के माध्यम से प्राप्त प्रोजेक्ट्स का मूल्यांकन करें (बैकग्राउंड रिमूवल - 5 अंक, अवेयरनेस पोस्टर - 5 अंक)।' : 'Evaluate student practical projects submitted via the DCAIS Google Form (Background Removal - 5 marks, Poster Design - 5 marks).') + '</li>' +
+          '<li>' + (isHi ? 'कॉलम N में कुल अंक (25 में से) स्वचालित रूप से जुड़ जाएंगे। फ़ाइल को सहेजें और अपने क्षेत्रीय परीक्षा समन्वयक को जमा करें।' : 'Column N automatically tallies the final score out of 25. Save the file and forward it to your Regional KVS Examination Coordinator.') + '</li>' +
+        '</ol>' +
+      '</div>';
+
+    return tabsHtml + evalBanner + markSchemeCards + tablePreviewHtml + stepsGuidance;
   }
 
   return tabsHtml;
