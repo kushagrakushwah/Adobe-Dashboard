@@ -287,6 +287,8 @@ footer p+p{margin-top:5px}
 .t-book-link:hover{background:#B45309;color:#FFF;transform:translateY(-1px)}
 .t-book-note{font-size:.74rem;color:#78350F;line-height:1.45}
 @keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.tile-toggle-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--ink-2);font-size:.78rem;font-weight:700;cursor:pointer;transition:all .18s ease;margin-top:4px}
+.tile-toggle-btn:hover{background:var(--surface-3);color:var(--ink);border-color:rgba(0,0,0,0.2)}
 </style>
 </head>
 <body>
@@ -1244,12 +1246,13 @@ var CPD_MODULES = [
 function toggleTileDetails(id) {
   var el = document.getElementById(id);
   var btn = document.getElementById('btn-' + id);
+  var chev = document.getElementById('chev-' + id);
   if (!el || !btn) return;
   var isOpen = (el.style.display !== 'none');
   el.style.display = isOpen ? 'none' : 'block';
-  var showTxt = btn.getAttribute('data-show');
-  var hideTxt = btn.getAttribute('data-hide');
-  btn.innerHTML = isOpen ? showTxt : hideTxt;
+  if (chev) {
+    chev.innerHTML = isOpen ? '▼' : '▲';
+  }
 }
 window.toggleTileDetails = toggleTileDetails;
 
@@ -1286,43 +1289,48 @@ function renderCpdSectionHtml() {
     var chapter = isHi ? m.chapterHi : m.chapter;
     var outcomes = isHi ? m.outcomesHi : m.outcomesEn;
     var cpdDetailId = 'cpd-detail-' + idx;
-    var btnTextShow = isHi ? '📖 उद्देश्य एवं पाठ्यक्रम विवरण देखें ▼' : '📖 View Objectives & Full Details ▼';
-    var btnTextHide = isHi ? '▲ विवरण छुपाएं' : '▲ Hide Objectives & Details';
 
     return '<div class="rc" style="display:flex;flex-direction:column;justify-content:space-between;">' +
       '<div>' +
-        '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;flex-wrap:wrap;">' +
-          '<div class="rc-badge">' + m.code + '</div>' +
+        '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px;height:26px;">' +
+          '<span style="font-size:.74rem;font-weight:800;color:var(--ink-2);background:var(--surface-3);padding:3px 10px;border-radius:999px;border:1px solid var(--border);">' + m.code + '</span>' +
           '<span style="font-size:.74rem;font-weight:800;color:var(--red);background:var(--red-bg);padding:3px 10px;border-radius:999px;border:1px solid var(--red-border);">' + chapter + '</span>' +
         '</div>' +
-        '<h4 style="font-size:1.05rem;line-height:1.35;margin-bottom:8px;">' + title + '</h4>' +
-        '<p style="font-size:.82rem;line-height:1.5;color:var(--ink-2);margin-bottom:12px;">' + desc + '</p>' +
+        '<h4 style="font-size:1.02rem;font-weight:800;line-height:1.35;height:4.1em;min-height:4.1em;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;color:var(--ink);">' + title + '</h4>' +
+        '<p style="font-size:.82rem;line-height:1.45;color:var(--ink-2);height:2.9em;min-height:2.9em;margin-bottom:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">' + desc + '</p>' +
       '</div>' +
 
       '<div style="margin-top:auto;padding-top:14px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;">' +
         '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">' +
-          '<a href="' + m.courseLink + '" target="_blank" class="btn btn-primary" style="justify-content:center;font-size:.82rem;font-weight:700;padding:9px 8px;text-align:center;">' +
+          '<a href="' + m.courseLink + '" target="_blank" class="btn btn-primary" style="height:36px;justify-content:center;font-size:.82rem;font-weight:700;padding:0 6px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' +
             '🚀 ' + (isHi ? 'कोर्स खोलें ↗' : 'Go to Course ↗') +
           '</a>' +
-          '<a href="' + m.recordingLink + '" target="_blank" class="btn" style="justify-content:center;font-size:.82rem;font-weight:700;padding:9px 8px;background:#4F46E5;color:#FFFFFF;border-radius:var(--radius-sm);text-align:center;text-decoration:none;box-shadow:0 2px 4px rgba(79,70,229,0.2);">' +
+          '<a href="' + m.recordingLink + '" target="_blank" class="btn" style="height:36px;justify-content:center;font-size:.82rem;font-weight:700;padding:0 6px;background:#4F46E5;color:#FFFFFF;border-radius:var(--radius-sm);text-align:center;text-decoration:none;box-shadow:0 2px 4px rgba(79,70,229,0.2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' +
             '🎥 ' + (isHi ? 'रिकॉर्डिंग ↗' : 'Recording ↗') +
           '</a>' +
         '</div>' +
         '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">' +
-          '<a href="' + m.week1Assignment + '" target="_blank" class="btn btn-ghost" style="justify-content:center;font-size:.8rem;font-weight:700;padding:8px 8px;background:var(--surface-2);border:1.5px solid var(--border);color:var(--ink);text-align:center;">' +
-            '📋 ' + (isHi ? 'असाइनमेंट 1 खोलें ↗' : 'Open Assignment 1 ↗') +
+          '<a href="' + m.week1Assignment + '" target="_blank" class="btn btn-ghost" style="height:34px;justify-content:center;font-size:.78rem;font-weight:700;padding:0 6px;background:var(--surface-2);border:1.5px solid var(--border);color:var(--ink);text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="' + (isHi ? 'असाइनमेंट 1 खोलें' : 'Open Assignment 1') + '">' +
+            '📋 ' + (isHi ? 'असाइनमेंट 1 ↗' : 'Assignment 1 ↗') +
           '</a>' +
-          '<a href="' + m.week2Assignment + '" target="_blank" class="btn btn-ghost" style="justify-content:center;font-size:.8rem;font-weight:700;padding:8px 8px;background:var(--surface-2);border:1.5px solid var(--border);color:var(--ink);text-align:center;">' +
-            '📋 ' + (isHi ? 'असाइनमेंट 2 खोलें ↗' : 'Open Assignment 2 ↗') +
+          '<a href="' + m.week2Assignment + '" target="_blank" class="btn btn-ghost" style="height:34px;justify-content:center;font-size:.78rem;font-weight:700;padding:0 6px;background:var(--surface-2);border:1.5px solid var(--border);color:var(--ink);text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="' + (isHi ? 'असाइनमेंट 2 खोलें' : 'Open Assignment 2') + '">' +
+            '📋 ' + (isHi ? 'असाइनमेंट 2 ↗' : 'Assignment 2 ↗') +
           '</a>' +
         '</div>' +
 
-        '<button id="btn-' + cpdDetailId + '" class="btn btn-ghost" data-show="' + btnTextShow + '" data-hide="' + btnTextHide + '" onclick="toggleTileDetails(\'' + cpdDetailId + '\')" style="width:100%;margin-top:4px;justify-content:center;font-size:.78rem;font-weight:700;border:1px dashed var(--border);color:var(--ink-2);background:var(--surface-2);padding:7px 10px;border-radius:var(--radius-sm);cursor:pointer;">' +
-          btnTextShow +
+        '<button id="btn-' + cpdDetailId + '" class="tile-toggle-btn" onclick="toggleTileDetails(\'' + cpdDetailId + '\')">' +
+          '<span style="display:flex;align-items:center;gap:6px;">' +
+            '<span>📖</span> <span>' + (isHi ? 'पाठ्यक्रम एवं उद्देश्य' : 'Curriculum & Objectives') + '</span>' +
+          '</span>' +
+          '<span id="chev-' + cpdDetailId + '" style="font-size:.7rem;color:var(--ink-3);">▼</span>' +
         '</button>' +
         '<div id="' + cpdDetailId + '" style="display:none;margin-top:8px;padding-top:10px;border-top:1px dashed var(--border);animation:fadeIn .2s ease;">' +
-          '<div style="font-size:.76rem;font-weight:800;color:var(--ink);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em;">' +
-            (isHi ? 'प्रमुख उद्देश्य एवं दक्षताएं:' : 'Key Learning Objectives:') +
+          '<div style="font-size:.74rem;font-weight:800;color:var(--ink-3);margin-bottom:4px;text-transform:uppercase;letter-spacing:.04em;">' +
+            (isHi ? 'मॉड्यूल अवलोकन:' : 'Module Overview:') +
+          '</div>' +
+          '<p style="font-size:.8rem;color:var(--ink-2);line-height:1.5;margin-bottom:10px;">' + desc + '</p>' +
+          '<div style="font-size:.74rem;font-weight:800;color:var(--red);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em;">' +
+            '🎯 ' + (isHi ? 'प्रमुख उद्देश्य एवं दक्षताएं:' : 'Key Learning Objectives:') +
           '</div>' +
           '<ul style="font-size:.78rem;color:var(--ink-2);padding-left:18px;margin-bottom:8px;line-height:1.45;">' +
             outcomes.map(function(o){ return '<li style="margin-bottom:4px;">' + o + '</li>'; }).join('') +
@@ -1548,37 +1556,57 @@ function renderDcaisMonitor() {
             '</div>';
         }
 
-        var smallIntro = skillsText || (outcomesText ? outcomesText.replace(/\n+/g, ' ').substring(0, 140) + '...' : '');
+        var smallIntro = skillsText ? ('💡 ' + (isHi ? 'कौशल: ' : 'Skills: ') + skillsText) : (outcomesText ? outcomesText.replace(/\n+/g, ' ').substring(0, 85) + '...' : '');
         var detailId = 't-act-' + (m.index || Math.random().toString(36).substring(2, 7));
-        var btnShowText = isHi ? '📖 विस्तृत निर्देश एवं संदर्भ देखें ▼' : '📖 View Pedagogy & Guidebook Details ▼';
-        var btnHideText = isHi ? '▲ निर्देश एवं संदर्भ छुपाएं' : '▲ Hide Pedagogy & Guidebook Details';
 
-        var hwBtn = '';
+        var secActionHtml = '';
         if (m.activityLinkHomeworkUrl) {
-          hwBtn = '<a href="' + m.activityLinkHomeworkUrl + '" target="_blank" class="btn btn-outline" style="font-size:.8rem;padding:8px 14px;justify-content:center;">' +
-            '🏠 ' + (isHi ? 'होमवर्क ↗' : 'Homework ↗') + '</a>';
+          secActionHtml =
+            '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">' +
+              '<a href="' + m.activityLinkHomeworkUrl + '" target="_blank" class="btn btn-outline" style="height:34px;justify-content:center;font-size:.78rem;font-weight:700;padding:0 8px;border-radius:var(--radius-sm);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' +
+                '🏠 ' + (isHi ? 'होमवर्क ↗' : 'Homework ↗') +
+              '</a>' +
+              '<a href="' + dcaisSubmissionUrl + '" target="_blank" class="btn btn-outline" style="height:34px;justify-content:center;font-size:.78rem;font-weight:700;padding:0 8px;border-radius:var(--radius-sm);border-color:#10B981;color:#059669;background:#ECFDF5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' +
+                '📤 ' + (isHi ? 'सबमिशन फॉर्म ↗' : 'Submit Form ↗') +
+              '</a>' +
+            '</div>';
+        } else {
+          secActionHtml =
+            '<div style="display:grid;grid-template-columns:1fr;gap:8px;">' +
+              '<a href="' + dcaisSubmissionUrl + '" target="_blank" class="btn btn-outline" style="height:34px;justify-content:center;font-size:.78rem;font-weight:700;padding:0 8px;border-radius:var(--radius-sm);border-color:#10B981;color:#059669;background:#ECFDF5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' +
+                '📤 ' + (isHi ? 'छात्र सबमिशन पोर्टल (गूगल फॉर्म) ↗' : 'Student Submission Form (Google) ↗') +
+              '</a>' +
+            '</div>';
         }
 
         return '<div class="aim-weekly-card" style="display:flex;flex-direction:column;justify-content:space-between;">' +
           '<div>' +
-            '<div class="aim-card-header">' +
+            '<div class="aim-card-header" style="height:26px;display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">' +
               '<span class="aim-week-badge">📅 ' + weekLabel + '</span>' +
               '<span class="aim-mod-badge">#' + m.index + '</span>' +
             '</div>' +
-            '<div class="aim-card-modname">' + modTitle + (m.subtopic ? (' • ' + m.subtopic) : '') + '</div>' +
-            '<h3 class="aim-card-actname">' + actTitle + '</h3>' +
-            '<p style="font-size:.82rem;color:var(--ink-2);line-height:1.5;margin-bottom:12px;">' + smallIntro + '</p>' +
+            '<div class="aim-card-modname" style="font-size:.76rem;font-weight:800;color:var(--ink-3);text-transform:uppercase;letter-spacing:.03em;height:1.4em;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:4px;">' +
+              modTitle + (m.subtopic ? (' • ' + m.subtopic) : '') +
+            '</div>' +
+            '<h3 class="aim-card-actname" style="font-size:1.05rem;font-weight:900;color:var(--ink);line-height:1.3;height:2.6em;min-height:2.6em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:8px;">' +
+              actTitle +
+            '</h3>' +
+            '<p style="font-size:.82rem;color:var(--ink-2);line-height:1.45;height:2.9em;min-height:2.9em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:14px;">' +
+              smallIntro +
+            '</p>' +
           '</div>' +
 
-          '<div style="margin-top:auto;padding-top:12px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;">' +
-            '<div class="aim-actions" style="display:flex;gap:8px;flex-wrap:wrap;">' +
-              '<a href="' + m.activityLinkClassroomUrl + '" target="_blank" class="btn btn-primary" style="font-size:.82rem;padding:9px 16px;justify-content:center;flex:1;">' +
-                '🚀 ' + (isHi ? 'कक्षा एक्टिविटी लॉन्च करें ↗' : 'Launch Classroom Activity ↗') + '</a>' +
-              hwBtn +
-            '</div>' +
+          '<div style="margin-top:auto;padding-top:14px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;">' +
+            '<a href="' + m.activityLinkClassroomUrl + '" target="_blank" class="btn btn-primary" style="height:36px;justify-content:center;font-size:.82rem;font-weight:800;padding:0 10px;border-radius:var(--radius-sm);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' +
+              '🚀 ' + (isHi ? 'कक्षा एक्टिविटी लॉन्च करें ↗' : 'Launch Classroom Activity ↗') +
+            '</a>' +
+            secActionHtml +
 
-            '<button id="btn-' + detailId + '" class="btn btn-ghost" data-show="' + btnShowText + '" data-hide="' + btnHideText + '" onclick="toggleTileDetails(\'' + detailId + '\')" style="width:100%;justify-content:center;font-size:.78rem;font-weight:700;border:1px dashed var(--border);color:var(--ink-2);background:var(--surface-2);padding:7px 10px;border-radius:var(--radius-sm);cursor:pointer;">' +
-              btnShowText +
+            '<button id="btn-' + detailId + '" class="tile-toggle-btn" onclick="toggleTileDetails(\'' + detailId + '\')">' +
+              '<span style="display:flex;align-items:center;gap:6px;">' +
+                '<span>📖</span> <span>' + (isHi ? 'शिक्षण विधि एवं गाइडबुक संदर्भ' : 'Pedagogy & Guidebook Scans') + '</span>' +
+              '</span>' +
+              '<span id="chev-' + detailId + '" style="font-size:.7rem;color:var(--ink-3);font-weight:900;">▼</span>' +
             '</button>' +
 
             '<div id="' + detailId + '" style="display:none;margin-top:10px;padding-top:12px;border-top:1px dashed var(--border);animation:fadeIn .2s ease;">' +
