@@ -9,7 +9,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23FA0F00'/%3E%3Cg transform='translate(17.5, 20) scale(0.72)' fill='%23FFFFFF'%3E%3Cpath d='M56.9686 0H90.4318V80L56.9686 0Z'/%3E%3Cpath d='M33.4632 0H0V80L33.4632 0Z'/%3E%3Cpath d='M45.1821 29.4668L66.5199 80.0002H52.5657L46.1982 63.9461H30.6182L45.1821 29.4668Z'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAABYUlEQVR4nMWWPU7DQBCFPydUJIhU/EhcIFRIoaCCCtFRRdQ0pKdACRIF0NHQ0nABOAKi4gYU3AFoEOKnAyKjBW1WM/YsdsyTLK1mZ+b5zc6OnTy2qBS1aumonnAi0r8JfAov/ToOhXPAC/AWPKltYxyEg4y9U2uSJKJLv3L254H7shRuG3yOLImsCvPU/eajBIUd7NgpQ+EVsB5BmhRR2FTIdoFjJWalCOGeYj8HzpS9kyIllZrlBlhz6ztgUfCZ0qZPlsKuYu97633F5+AvCh+AGSnGeGWSGIVthSxtFuuZdWMUXgBbgr0BvAe2WWWkPQMti8JJhexSIPsp/a1gn3aVyiXsIeMaWHKTpxMk8xvJx6GlpNa5+R1viGv4lQkVmj+kDpveWps8vSyF2kXW4A8BrXlGKuErbEeSpVh18zareUauiP8T9QQsAx/YUReOZCHIUffPMOYXoxTUqqX7B8IhRiE+9/rssZgAAAAASUVORK5CYII=">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
@@ -28,7 +28,8 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 .hdr{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.94);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:0 28px}
 .hdr-in{max-width:1160px;margin:0 auto;height:62px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit;cursor:pointer}
-.brand-mark{width:38px;height:38px;border-radius:10px;background:var(--red);color:#FFF;font-weight:900;font-size:1rem;display:flex;align-items:center;justify-content:center;letter-spacing:-.02em;flex-shrink:0;font-family:'Georgia',serif}
+.brand-mark{width:38px;height:38px;border-radius:10px;background:#FFF;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,.06);transition:all .18s ease}
+.brand:hover .brand-mark{border-color:var(--red);transform:scale(1.05)}
 .brand-text{line-height:1.2}
 .brand-name{font-size:.88rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
 .brand-sub{font-size:.68rem;font-weight:600;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
@@ -294,7 +295,7 @@ footer p+p{margin-top:5px}
 <header class="hdr">
   <div class="hdr-in">
     <div class="brand" onclick="showDashboard()">
-      <div class="brand-mark" aria-label="Adobe"><svg viewBox="0 0 91 80" width="20" height="18" fill="#FFFFFF" aria-hidden="true" style="display:block;"><path d="M56.9686 0H90.4318V80L56.9686 0Z"/><path d="M33.4632 0H0V80L33.4632 0Z"/><path d="M45.1821 29.4668L66.5199 80.0002H52.5657L46.1982 63.9461H30.6182L45.1821 29.4668Z"/></svg></div>
+      <div class="brand-mark" aria-label="Adobe"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAABYUlEQVR4nMWWPU7DQBCFPydUJIhU/EhcIFRIoaCCCtFRRdQ0pKdACRIF0NHQ0nABOAKi4gYU3AFoEOKnAyKjBW1WM/YsdsyTLK1mZ+b5zc6OnTy2qBS1aumonnAi0r8JfAov/ToOhXPAC/AWPKltYxyEg4y9U2uSJKJLv3L254H7shRuG3yOLImsCvPU/eajBIUd7NgpQ+EVsB5BmhRR2FTIdoFjJWalCOGeYj8HzpS9kyIllZrlBlhz6ztgUfCZ0qZPlsKuYu97633F5+AvCh+AGSnGeGWSGIVthSxtFuuZdWMUXgBbgr0BvAe2WWWkPQMti8JJhexSIPsp/a1gn3aVyiXsIeMaWHKTpxMk8xvJx6GlpNa5+R1viGv4lQkVmj+kDpveWps8vSyF2kXW4A8BrXlGKuErbEeSpVh18zareUauiP8T9QQsAx/YUReOZCHIUffPMOYXoxTUqqX7B8IhRiE+9/rssZgAAAAASUVORK5CYII=" alt="Adobe" width="26" height="26" style="object-fit:contain;display:block;"></div>
       <div class="brand-text">
         <div class="brand-name">Adobe Express for Education</div>
         <div class="brand-sub" id="hdrSubLabel">Educator Workspace</div>
@@ -528,7 +529,7 @@ footer p+p{margin-top:5px}
 </main>
 
 <footer>
-  <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:6px;"><svg viewBox="0 0 91 80" width="18" height="16" fill="#FA0F00" aria-hidden="true" style="display:inline-block;vertical-align:middle;"><path d="M56.9686 0H90.4318V80L56.9686 0Z"/><path d="M33.4632 0H0V80L33.4632 0Z"/><path d="M45.1821 29.4668L66.5199 80.0002H52.5657L46.1982 63.9461H30.6182L45.1821 29.4668Z"/></svg> <strong>Adobe Express for Education</strong></div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:6px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAABYUlEQVR4nMWWPU7DQBCFPydUJIhU/EhcIFRIoaCCCtFRRdQ0pKdACRIF0NHQ0nABOAKi4gYU3AFoEOKnAyKjBW1WM/YsdsyTLK1mZ+b5zc6OnTy2qBS1aumonnAi0r8JfAov/ToOhXPAC/AWPKltYxyEg4y9U2uSJKJLv3L254H7shRuG3yOLImsCvPU/eajBIUd7NgpQ+EVsB5BmhRR2FTIdoFjJWalCOGeYj8HzpS9kyIllZrlBlhz6ztgUfCZ0qZPlsKuYu97633F5+AvCh+AGSnGeGWSGIVthSxtFuuZdWMUXgBbgr0BvAe2WWWkPQMti8JJhexSIPsp/a1gn3aVyiXsIeMaWHKTpxMk8xvJx6GlpNa5+R1viGv4lQkVmj+kDpveWps8vSyF2kXW4A8BrXlGKuErbEeSpVh18zareUauiP8T9QQsAx/YUReOZCHIUffPMOYXoxTUqqX7B8IhRiE+9/rssZgAAAAASUVORK5CYII=" alt="Adobe" width="18" height="18" style="vertical-align:middle;display:inline-block;"> <strong>Adobe Express for Education</strong></div>
   <p>Adobe Express for Education &mdash; Educator &amp; Curriculum Hub</p>
   <p>&copy; Adobe Inc. All rights reserved.</p>
 </footer>
@@ -1166,6 +1167,27 @@ function selectTeacherGrade(gradeId) {
 
 function renderDcaisMonitor() {
   var isHi = (currentLang === 'hi');
+  var dcaisSubmissionUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScEzxzVqZp3ivr-C18TAimHJV-hXIFzVaVmR-q7Ab-031xVQA/viewform?usp=header';
+
+  var dcaisSubmissionBanner =
+    '<div style="display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg, #1E1B4B 0%, #312E81 50%, #4338CA 100%);color:#fff;border-radius:var(--radius);padding:18px 22px;margin-bottom:20px;flex-wrap:wrap;gap:14px;box-shadow:0 6px 20px rgba(49,46,129,0.22);">' +
+      '<div style="max-width:680px;">' +
+        '<div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.18);padding:3px 10px;border-radius:9999px;font-size:0.74rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:6px;">' +
+          '<span>📤</span> <span>' + (isHi ? 'DCAIS आधिकारिक छात्र सबमिशन पोर्टल' : 'Official Student DCAIS Submission Portal') + '</span>' +
+        '</div>' +
+        '<div style="font-weight:900;font-size:1.15rem;color:#fff;margin-bottom:4px;">' +
+          (isHi ? 'DCAIS प्रोजेक्ट सबमिशन फॉर्म (गूगल फॉर्म)' : 'DCAIS Project Submission Link (Google Form)') + '</div>' +
+        '<div style="font-size:.84rem;color:#E0E7FF;line-height:1.45;">' +
+          (isHi ? 'कक्षा 6–8 के छात्रों के साप्ताहिक और मासिक प्रोजेक्ट सबमिशन एकत्र करने के लिए आधिकारिक गूगल फॉर्म लिंक। इसे छात्रों के साथ साझा करें या सबमिशन की समीक्षा के लिए खोलें।' :
+                  'Official Google Form link for collecting completed DCAIS classroom & homework projects across Grades 6–8. Share with students or open to inspect submissions.') + '</div>' +
+      '</div>' +
+      '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">' +
+        '<a href="' + dcaisSubmissionUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#FA0F00;border:none;font-weight:800;font-size:.85rem;padding:10px 20px;border-radius:9999px;box-shadow:0 4px 12px rgba(250,15,0,0.35);">' +
+          (isHi ? 'सबमिशन फॉर्म खोलें ↗' : 'Open Submission Form ↗') + '</a>' +
+        '<button onclick="navigator.clipboard.writeText(\'' + dcaisSubmissionUrl + '\').then(function(){ alert(\'' + (isHi ? 'सबमिशन लिंक कॉपी हो गया!' : 'DCAIS submission link copied to clipboard!') + '\'); })" class="btn btn-outline" style="border:1.5px solid rgba(255,255,255,0.6);color:#fff;font-weight:800;font-size:.84rem;padding:9px 16px;border-radius:9999px;background:rgba(255,255,255,0.08);">' +
+          '📋 ' + (isHi ? 'लिंक कॉपी करें' : 'Copy Link') + '</button>' +
+      '</div>' +
+    '</div>';
 
   var portalLinkBanner =
     '<div style="display:flex;align-items:center;justify-content:space-between;background:var(--red-bg);border:1.5px solid var(--red-border);border-radius:var(--radius);padding:16px 20px;margin-bottom:22px;flex-wrap:wrap;gap:12px;">' +
@@ -1201,7 +1223,7 @@ function renderDcaisMonitor() {
       }).join('') +
       '</div>';
 
-    return portalLinkBanner + cardsGrid;
+    return dcaisSubmissionBanner + portalLinkBanner + cardsGrid;
   }
 
   // Inside Selected Grade View
@@ -1376,12 +1398,12 @@ function renderDcaisMonitor() {
     '</div>';
   }
 
-  return topNav + monthTabsHtml + cardsHtml;
+  return dcaisSubmissionBanner + topNav + monthTabsHtml + cardsHtml;
 }
 
 
 /* ===== DCAIS EXAM DATA & CONTROLLER ===== */
-var currentExamSubTab = 'regions'; // 'regions', 'key', 'guidelines'
+var currentExamSubTab = 'regions'; // 'regions', 'key', 'evaluation', 'guidelines'
 var examRegionQuery = '';
 
 var KVS_REGIONS = [
@@ -1679,12 +1701,34 @@ function renderDcaisExamSection() {
       '<button class="exam-tab-btn' + (currentExamSubTab === 'key' ? ' active' : '') + '" onclick="setExamSubTab(&quot;key&quot;)">' +
         '🔑 ' + (isHi ? 'आधिकारिक उत्तर कुंजी (Sem-1)' : 'Verified Answer Key (Sem-1)') +
       '</button>' +
+      '<button class="exam-tab-btn' + (currentExamSubTab === 'evaluation' ? ' active' : '') + '" onclick="setExamSubTab(&quot;evaluation&quot;)">' +
+        '📊 ' + (isHi ? 'KVS मूल्यांकन शीट (.xlsx)' : 'KVS Evaluation Sheet (.xlsx)') +
+      '</button>' +
       '<button class="exam-tab-btn' + (currentExamSubTab === 'guidelines' ? ' active' : '') + '" onclick="setExamSubTab(&quot;guidelines&quot;)">' +
         '📋 ' + (isHi ? 'परीक्षा दिशानिर्देश व प्रक्रिया' : 'Exam Guidelines & Instructions') +
       '</button>' +
     '</div>';
 
   if (currentExamSubTab === 'regions') {
+    var evalQuickBar =
+      '<div style="background:var(--surface);border:1.5px solid #10B981;border-radius:var(--radius);padding:14px 20px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;box-shadow:0 2px 10px rgba(16,185,129,0.08);">' +
+        '<div style="display:flex;align-items:center;gap:12px;">' +
+          '<div style="width:42px;height:42px;border-radius:10px;background:#ECFDF5;border:1px solid #A7F3D0;display:flex;align-items:center;justify-content:center;font-size:1.4rem;">📊</div>' +
+          '<div>' +
+            '<div style="font-weight:900;color:#065F46;font-size:.95rem;">' + (isHi ? 'KVS आधिकारिक मूल्यांकन शीट (25 अंक) एवं सबमिशन लिंक' : 'Official KVS Evaluation Sheet (25 Marks) & Submission Link') + '</div>' +
+            '<div style="font-size:.82rem;color:var(--ink-2);">' + (isHi ? 'छात्रों के अंकों (MCQs + प्रोजेक्ट्स) को संकलित करने के लिए आधिकारिक एक्सेल शीट डाउनलोड करें।' : 'Download the standardized Excel scoring spreadsheet for compiling student marks (MCQs + Projects).') + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div style="display:flex;gap:8px;flex-wrap:wrap;">' +
+          '<a href="downloads/KVS_evaluation_sheet.xlsx" download="KVS_evaluation_sheet.xlsx" class="btn btn-primary" style="background:#059669;padding:9px 18px;font-size:.84rem;font-weight:800;border:none;">' +
+            '📥 ' + (isHi ? 'एक्सेल शीट डाउनलोड करें (.xlsx)' : 'Download Evaluation Sheet (.xlsx)') + '</a>' +
+          '<button onclick="setExamSubTab(&quot;evaluation&quot;)" class="btn btn-outline" style="border-color:#059669;color:#059669;padding:9px 16px;font-size:.84rem;font-weight:800;">' +
+            '👀 ' + (isHi ? 'शीट का विवरण देखें' : 'View Sheet Details') + '</button>' +
+          '<a href="https://docs.google.com/forms/d/e/1FAIpQLScEzxzVqZp3ivr-C18TAimHJV-hXIFzVaVmR-q7Ab-031xVQA/viewform?usp=header" target="_blank" class="btn btn-outline" style="border-color:#4338CA;color:#4338CA;padding:9px 16px;font-size:.84rem;font-weight:800;background:#EEF2FF;">' +
+            '📤 ' + (isHi ? 'DCAIS सबमिशन फॉर्म ↗' : 'DCAIS Submission Link ↗') + '</a>' +
+        '</div>' +
+      '</div>';
+
     var metaBanner =
       '<div class="exam-meta-banner">' +
         '<div>' +

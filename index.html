@@ -13,7 +13,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-s
 .hdr{background:#FFF;border-bottom:3px solid #FA0F00;padding:0 24px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.08)}
 .hdr-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:66px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
-.brand-ico{width:42px;height:42px;border-radius:10px;background:#FA0F00;color:#FFF;font-weight:900;font-size:1.1rem;display:flex;align-items:center;justify-content:center;letter-spacing:-.02em;flex-shrink:0}
+.brand-ico{width:40px;height:40px;border-radius:10px;background:#FFF;border:1.5px solid #E5E5E5;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:all .18s ease}
+.brand:hover .brand-ico{border-color:#FA0F00;transform:scale(1.05)}
 .brand-name{font-size:1.05rem;font-weight:800;color:#1A1A1A;line-height:1.2}
 .brand-sub{font-size:.7rem;font-weight:600;color:#999;text-transform:uppercase;letter-spacing:.07em}
 .hdr-pill{background:#FFF0F0;color:#FA0F00;border:1.5px solid rgba(250,15,0,.25);padding:7px 18px;border-radius:9999px;font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
@@ -67,14 +68,14 @@ footer{background:#1A1A1A;padding:28px 24px;text-align:center;color:#999;font-si
   .portal-card{padding:26px 20px}
 }
 </style>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23FA0F00'/%3E%3Cg transform='translate(17.5, 20) scale(0.72)' fill='%23FFFFFF'%3E%3Cpath d='M56.9686 0H90.4318V80L56.9686 0Z'/%3E%3Cpath d='M33.4632 0H0V80L33.4632 0Z'/%3E%3Cpath d='M45.1821 29.4668L66.5199 80.0002H52.5657L46.1982 63.9461H30.6182L45.1821 29.4668Z'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAABYUlEQVR4nMWWPU7DQBCFPydUJIhU/EhcIFRIoaCCCtFRRdQ0pKdACRIF0NHQ0nABOAKi4gYU3AFoEOKnAyKjBW1WM/YsdsyTLK1mZ+b5zc6OnTy2qBS1aumonnAi0r8JfAov/ToOhXPAC/AWPKltYxyEg4y9U2uSJKJLv3L254H7shRuG3yOLImsCvPU/eajBIUd7NgpQ+EVsB5BmhRR2FTIdoFjJWalCOGeYj8HzpS9kyIllZrlBlhz6ztgUfCZ0qZPlsKuYu97633F5+AvCh+AGSnGeGWSGIVthSxtFuuZdWMUXgBbgr0BvAe2WWWkPQMti8JJhexSIPsp/a1gn3aVyiXsIeMaWHKTpxMk8xvJx6GlpNa5+R1viGv4lQkVmj+kDpveWps8vSyF2kXW4A8BrXlGKuErbEeSpVh18zareUauiP8T9QQsAx/YUReOZCHIUffPMOYXoxTUqqX7B8IhRiE+9/rssZgAAAAASUVORK5CYII=">
 </head>
 <body>
 
 <header class="hdr">
   <div class="hdr-in">
     <div class="brand">
-      <div class="brand-ico" aria-label="Adobe"><svg viewBox="0 0 91 80" width="22" height="19.5" fill="#FFFFFF" aria-hidden="true" style="display:block;"><path d="M56.9686 0H90.4318V80L56.9686 0Z"/><path d="M33.4632 0H0V80L33.4632 0Z"/><path d="M45.1821 29.4668L66.5199 80.0002H52.5657L46.1982 63.9461H30.6182L45.1821 29.4668Z"/></svg></div>
+      <div class="brand-ico" aria-label="Adobe"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAABYUlEQVR4nMWWPU7DQBCFPydUJIhU/EhcIFRIoaCCCtFRRdQ0pKdACRIF0NHQ0nABOAKi4gYU3AFoEOKnAyKjBW1WM/YsdsyTLK1mZ+b5zc6OnTy2qBS1aumonnAi0r8JfAov/ToOhXPAC/AWPKltYxyEg4y9U2uSJKJLv3L254H7shRuG3yOLImsCvPU/eajBIUd7NgpQ+EVsB5BmhRR2FTIdoFjJWalCOGeYj8HzpS9kyIllZrlBlhz6ztgUfCZ0qZPlsKuYu97633F5+AvCh+AGSnGeGWSGIVthSxtFuuZdWMUXgBbgr0BvAe2WWWkPQMti8JJhexSIPsp/a1gn3aVyiXsIeMaWHKTpxMk8xvJx6GlpNa5+R1viGv4lQkVmj+kDpveWps8vSyF2kXW4A8BrXlGKuErbEeSpVh18zareUauiP8T9QQsAx/YUReOZCHIUffPMOYXoxTUqqX7B8IhRiE+9/rssZgAAAAASUVORK5CYII=" alt="Adobe" width="28" height="28" style="object-fit:contain;display:block;"></div>
       <div>
         <div class="brand-name">Adobe Express for Education</div>
         <div class="brand-sub">Gateway Portal</div>
@@ -143,7 +144,7 @@ footer{background:#1A1A1A;padding:28px 24px;text-align:center;color:#999;font-si
 </main>
 
 <footer>
-  <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:6px;"><svg viewBox="0 0 91 80" width="18" height="16" fill="#FA0F00" aria-hidden="true" style="display:inline-block;vertical-align:middle;"><path d="M56.9686 0H90.4318V80L56.9686 0Z"/><path d="M33.4632 0H0V80L33.4632 0Z"/><path d="M45.1821 29.4668L66.5199 80.0002H52.5657L46.1982 63.9461H30.6182L45.1821 29.4668Z"/></svg> <strong>Adobe Express for Education</strong></div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:6px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAABYUlEQVR4nMWWPU7DQBCFPydUJIhU/EhcIFRIoaCCCtFRRdQ0pKdACRIF0NHQ0nABOAKi4gYU3AFoEOKnAyKjBW1WM/YsdsyTLK1mZ+b5zc6OnTy2qBS1aumonnAi0r8JfAov/ToOhXPAC/AWPKltYxyEg4y9U2uSJKJLv3L254H7shRuG3yOLImsCvPU/eajBIUd7NgpQ+EVsB5BmhRR2FTIdoFjJWalCOGeYj8HzpS9kyIllZrlBlhz6ztgUfCZ0qZPlsKuYu97633F5+AvCh+AGSnGeGWSGIVthSxtFuuZdWMUXgBbgr0BvAe2WWWkPQMti8JJhexSIPsp/a1gn3aVyiXsIeMaWHKTpxMk8xvJx6GlpNa5+R1viGv4lQkVmj+kDpveWps8vSyF2kXW4A8BrXlGKuErbEeSpVh18zareUauiP8T9QQsAx/YUReOZCHIUffPMOYXoxTUqqX7B8IhRiE+9/rssZgAAAAASUVORK5CYII=" alt="Adobe" width="18" height="18" style="vertical-align:middle;display:inline-block;"> <strong>Adobe Express for Education</strong></div>
   <p>&copy; Adobe Express for Education &mdash; Certified Digital Skills Program for Schools &amp; Educators</p>
 </footer>
 
