@@ -10,7 +10,7 @@ var LANG = {
     guideText:'<strong>Click any section card below</strong> to open its complete workspace in full-screen view.',
     backBtn:'Back to Sections',
     sAtag:'Section A', sAtitle:'Adobe ID &amp; Access', sAdesc:'School login, institutional account creation, single sign-on &amp; IT admin deployment guide.', sAhint:'5 Institutional Tools', sAbtn:'Open &rarr;',
-    sBtag:'Section B', sBtitle:'CPD Modules', sBdesc:'5 accredited professional development modules (CPD-AE 01 to 05) totaling 48 training hours.', sBhint:'48 Hours Training', sBbtn:'Open &rarr;',
+    sBtag:'Section B', sBtitle:'CPD Modules', sBdesc:'6 accredited professional development modules (CPD 01 to 06) totaling 20 training hours.', sBhint:'20 Hours Training', sBbtn:'Open &rarr;',
     sCtag:'Section C • DCAIS', sCtitle:'Student DCAIS Monitor (AIM)', sCdesc:'Monitor what DCAIS activities your students are doing across Grades 3–8. Inspect curriculum instructions and templates.', sChint:'Grades 3–8 Full Monitor', sCbtn:'Open &rarr;',
     sDtag:'Section D', sDtitle:'Classroom Resources', sDdesc:'Lesson plan templates, classroom printables, grading rubrics, tutorial videos, and project kits.', sDhint:'6 Resource Packs', sDbtn:'Open &rarr;',
     sEtag:'Section E', sEtitle:'Student Progress Tracker', sEdesc:'Monitor monthly activity completion rates, review submissions across grade bands, and evaluate portfolios.', sEhint:'Grade-wise Analytics', sEbtn:'Open &rarr;',
@@ -25,7 +25,7 @@ var LANG = {
     guideText:'<strong>नीचे किसी भी सेक्शन कार्ड पर क्लिक करें</strong> और उसे पूरी स्क्रीन पर खोलें।',
     backBtn:'वापस जाएं',
     sAtag:'सेक्शन A', sAtitle:'Adobe ID और एक्सेस', sAdesc:'स्कूल लॉगिन, संस्थागत खाता निर्माण, SSO और IT तैनाती गाइड।', sAhint:'5 संस्थागत टूल्स', sAbtn:'खोलें &rarr;',
-    sBtag:'सेक्शन B', sBtitle:'CPD मॉड्यूल', sBdesc:'5 मान्यता प्राप्त प्रशिक्षण मॉड्यूल — CPD-AE 01 से 05 — कुल 48 घंटे।', sBhint:'48 घंटे प्रशिक्षण', sBbtn:'खोलें &rarr;',
+    sBtag:'सेक्शन B', sBtitle:'CPD मॉड्यूल', sBdesc:'6 मान्यता प्राप्त प्रशिक्षण मॉड्यूल — CPD 01 से 06 — कुल 20 घंटे।', sBhint:'20 घंटे प्रशिक्षण', sBbtn:'खोलें &rarr;',
     sCtag:'सेक्शन C • DCAIS', sCtitle:'छात्र DCAIS मॉनिटर (AIM)', sCdesc:'देखें कक्षा 3 से 8 तक आपके छात्र कौन सी DCAIS गतिविधियाँ कर रहे हैं।', sChint:'कक्षा 3–8 पूर्ण मॉनिटर', sCbtn:'खोलें &rarr;',
     sDtag:'सेक्शन D', sDtitle:'कक्षा संसाधन', sDdesc:'पाठ योजना टेम्पलेट, क्लासरूम प्रिंटेबल्स, ग्रेडिंग रूब्रिक्स और वीडियो।', sDhint:'6 संसाधन पैक', sDbtn:'खोलें &rarr;',
     sEtag:'सेक्शन E', sEtitle:'छात्र प्रगति ट्रैकर', sEdesc:'मासिक गतिविधि समाप्ति दर देखें और छात्र पोर्टफोलियो का मूल्यांकन करें।', sEhint:'कक्षावार विश्लेषण', sEbtn:'खोलें &rarr;',
@@ -265,8 +265,8 @@ var TEACHER_SECTIONS_DATA = {
   'B': {
     letter: '📚',
     tag: 'Section B • Professional Development',
-    title: 'CPD Training Modules (48 Hours)',
-    desc: 'Five progressive accredited modules designed to equip educators with foundational to advanced digital creativity pedagogy.',
+    title: 'CPD Training Modules (20 Hours)',
+    desc: 'Six progressive accredited modules totaling 20 hours designed to equip educators with foundational to subject-specific digital creativity and AI pedagogy.',
     render: function() { return renderCpdSectionHtml(); }
   },
   'C': {
@@ -301,7 +301,7 @@ var TEACHER_SECTIONS_DATA = {
       return '<div class="pstats">' +
         '<div class="pstat"><div class="pstat-n">500+</div><div class="pstat-l">Certified Teachers</div></div>' +
         '<div class="pstat"><div class="pstat-n">78%</div><div class="pstat-l">Avg Completion</div></div>' +
-        '<div class="pstat"><div class="pstat-n">48 hrs</div><div class="pstat-l">Accredited Training</div></div>' +
+        '<div class="pstat"><div class="pstat-n">20 hrs</div><div class="pstat-l">Accredited Training</div></div>' +
         '<div class="pstat"><div class="pstat-n">12+</div><div class="pstat-l">Curriculum Units</div></div>' +
       '</div>' +
       '<div class="rg" style="margin-bottom:28px">' +
