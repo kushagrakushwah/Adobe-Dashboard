@@ -344,6 +344,20 @@ window.ADOBE_DATA = {
           "desc": { "en": "Complete textbook covering all 4 modules, student worksheets, and glossary.", "hi": "सभी 4 मॉड्यूल, छात्र वर्कशीट और शब्दावली को कवर करने वाली संपूर्ण पाठ्यपुस्तक।" },
           "badge": { "en": "Full Book", "hi": "संपूर्ण पुस्तक" },
           "link": "https://edex.adobe.com"
+        },
+        {
+          "icon": "📤",
+          "title": { "en": "DCAIS Project Submission Form", "hi": "डीसीएआईएस प्रोजेक्ट सबमिशन फॉर्म" },
+          "desc": { "en": "Direct Google Form portal for collecting student DCAIS weekly & monthly creative project links.", "hi": "छात्र डीसीएआईएस प्रोजेक्ट कार्य एकत्र करने के लिए सीधा गूगल फॉर्म लिंक।" },
+          "badge": { "en": "Google Form", "hi": "गूगल फॉर्म" },
+          "link": "https://docs.google.com/forms/d/e/1FAIpQLScEzxzVqZp3ivr-C18TAimHJV-hXIFzVaVmR-q7Ab-031xVQA/viewform?usp=header"
+        },
+        {
+          "icon": "📊",
+          "title": { "en": "KVS Evaluation Sheet (.xlsx)", "hi": "केवीएस मूल्यांकन शीट (.xlsx)" },
+          "desc": { "en": "Standardized Excel scoring template for recording student assessment marks out of 25 (MCQs + Projects).", "hi": "25 अंकों (MCQs + प्रोजेक्ट्स) में से छात्र अंकों को संकलित करने के लिए आधिकारिक एक्सेल शीट।" },
+          "badge": { "en": "Excel Template", "hi": "एक्सेल शीट" },
+          "link": "downloads/KVS_evaluation_sheet.xlsx"
         }
       ],
       "activitiesTitle": {
