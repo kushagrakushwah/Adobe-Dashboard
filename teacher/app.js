@@ -266,6 +266,18 @@ var CPD_MODULES = [
   }
 ];
 
+function toggleTileDetails(id) {
+  var el = document.getElementById(id);
+  var btn = document.getElementById('btn-' + id);
+  if (!el || !btn) return;
+  var isOpen = (el.style.display !== 'none');
+  el.style.display = isOpen ? 'none' : 'block';
+  var showTxt = btn.getAttribute('data-show');
+  var hideTxt = btn.getAttribute('data-hide');
+  btn.innerHTML = isOpen ? showTxt : hideTxt;
+}
+window.toggleTileDetails = toggleTileDetails;
+
 function renderCpdSectionHtml() {
   var isHi = (currentLang === 'hi');
 
@@ -293,33 +305,25 @@ function renderCpdSectionHtml() {
       '</div>' +
     '</div>';
 
-  var stepsHtml = CPD_MODULES.map(function(m, i) {
-    return (i > 0 ? '<div class="cpd-connector"></div>' : '') +
-      '<div class="cpd-step"><div class="cpd-step-n">' + (i+1) + '</div><div class="cpd-step-l">' + m.code + ' (' + (isHi ? m.durationHi : m.duration) + ')</div></div>';
-  }).join('');
-
-  var cardsHtml = CPD_MODULES.map(function(m) {
+  var cardsHtml = CPD_MODULES.map(function(m, idx) {
     var title = isHi ? m.titleHi : m.titleEn;
-    var dur = isHi ? m.durationHi : m.duration;
     var desc = isHi ? m.descHi : m.descEn;
     var chapter = isHi ? m.chapterHi : m.chapter;
     var outcomes = isHi ? m.outcomesHi : m.outcomesEn;
+    var cpdDetailId = 'cpd-detail-' + idx;
+    var btnTextShow = isHi ? '📖 उद्देश्य एवं पाठ्यक्रम विवरण देखें ▼' : '📖 View Objectives & Full Details ▼';
+    var btnTextHide = isHi ? '▲ विवरण छुपाएं' : '▲ Hide Objectives & Details';
 
     return '<div class="rc" style="display:flex;flex-direction:column;justify-content:space-between;">' +
       '<div>' +
         '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;flex-wrap:wrap;">' +
-          '<div class="rc-badge">' + m.code + ' • ' + dur + '</div>' +
-          '<span style="font-size:.72rem;font-weight:800;color:var(--red);background:var(--red-bg);padding:3px 10px;border-radius:999px;border:1px solid var(--red-border);">' + chapter + '</span>' +
+          '<div class="rc-badge">' + m.code + '</div>' +
+          '<span style="font-size:.74rem;font-weight:800;color:var(--red);background:var(--red-bg);padding:3px 10px;border-radius:999px;border:1px solid var(--red-border);">' + chapter + '</span>' +
         '</div>' +
         '<h4 style="font-size:1.05rem;line-height:1.35;margin-bottom:8px;">' + title + '</h4>' +
         '<p style="font-size:.82rem;line-height:1.5;color:var(--ink-2);margin-bottom:12px;">' + desc + '</p>' +
-        '<div style="font-size:.76rem;font-weight:800;color:var(--ink);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em;">' +
-          (isHi ? 'प्रमुख उद्देश्य एवं दक्षताएं:' : 'Key Learning Objectives:') +
-        '</div>' +
-        '<ul style="font-size:.78rem;color:var(--ink-2);padding-left:18px;margin-bottom:18px;line-height:1.45;">' +
-          outcomes.map(function(o){ return '<li style="margin-bottom:4px;">' + o + '</li>'; }).join('') +
-        '</ul>' +
       '</div>' +
+
       '<div style="margin-top:auto;padding-top:14px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;">' +
         '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">' +
           '<a href="' + m.courseLink + '" target="_blank" class="btn btn-primary" style="justify-content:center;font-size:.82rem;font-weight:700;padding:9px 8px;text-align:center;">' +
@@ -337,11 +341,23 @@ function renderCpdSectionHtml() {
             '📋 ' + (isHi ? 'असाइनमेंट 2 खोलें ↗' : 'Open Assignment 2 ↗') +
           '</a>' +
         '</div>' +
+
+        '<button id="btn-' + cpdDetailId + '" class="btn btn-ghost" data-show="' + btnTextShow + '" data-hide="' + btnTextHide + '" onclick="toggleTileDetails(\'' + cpdDetailId + '\')" style="width:100%;margin-top:4px;justify-content:center;font-size:.78rem;font-weight:700;border:1px dashed var(--border);color:var(--ink-2);background:var(--surface-2);padding:7px 10px;border-radius:var(--radius-sm);cursor:pointer;">' +
+          btnTextShow +
+        '</button>' +
+        '<div id="' + cpdDetailId + '" style="display:none;margin-top:8px;padding-top:10px;border-top:1px dashed var(--border);animation:fadeIn .2s ease;">' +
+          '<div style="font-size:.76rem;font-weight:800;color:var(--ink);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em;">' +
+            (isHi ? 'प्रमुख उद्देश्य एवं दक्षताएं:' : 'Key Learning Objectives:') +
+          '</div>' +
+          '<ul style="font-size:.78rem;color:var(--ink-2);padding-left:18px;margin-bottom:8px;line-height:1.45;">' +
+            outcomes.map(function(o){ return '<li style="margin-bottom:4px;">' + o + '</li>'; }).join('') +
+          '</ul>' +
+        '</div>' +
       '</div>' +
     '</div>';
   }).join('');
 
-  return bannerHtml + '<div class="cpd-steps">' + stepsHtml + '</div><div class="rg">' + cardsHtml + '</div>';
+  return bannerHtml + '<div class="rg">' + cardsHtml + '</div>';
 }
 
 /* ===== DCAIS STUDENT MONITOR CONTROLLER ===== */
