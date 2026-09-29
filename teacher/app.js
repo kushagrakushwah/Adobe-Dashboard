@@ -73,30 +73,275 @@ function applyLang() {
   set('sG-tag', L.sGtag); set('sG-title', L.sGtitle); set('sG-desc', L.sGdesc); set('sG-hint', L.sGhint); set('sG-btn', L.sGbtn);
 }
 
-/* ===== CPD DATA ===== */
+/* ===== CPD DATA (20 HOURS • 6 MODULES) ===== */
+var CPD_RECORDINGS_HUB_URL = 'https://new.express.adobe.com/id/urn:aaid:sc:AP:cd583276-9743-5a92-b9ae-fc590ae9bbcc?accept=true&pageId=4948e919-bfb3-4521-afe0-aeed28a3a327';
+var CPD_CALENDAR_URL = 'https://new.express.adobe.com/webpage/kCbIh0WBMLVse';
+
 var CPD_MODULES = [
-  { code:'CPD-AE-01', title:'Digital Creativity Foundations', duration:'10 hrs', level:'Foundation', desc:'Introduction to Adobe Express, digital design principles, and foundational visual literacy for classroom application.', outcomes:['Basic design workflow','Colour & Typography fundamentals','Creating your first classroom project'] },
-  { code:'CPD-AE-02', title:'Visual Communication & Design', duration:'10 hrs', level:'Foundation', desc:'Deep dive into layout design, visual hierarchy, infographics, and presenting complex ideas through visual storytelling.', outcomes:['Layout hierarchy mastery','Infographic creation','Visual storytelling rubric'] },
-  { code:'CPD-AE-03', title:'Collaborative Digital Projects', duration:'10 hrs', level:'Intermediate', desc:'Design cross-curricular, collaborative group projects for students. Manage team workflows in Adobe Express.', outcomes:['Group project frameworks','Assessment rubrics','Cross-curricular integration'] },
-  { code:'CPD-AE-04', title:'Video & Animation for Education', duration:'8 hrs', level:'Intermediate', desc:'Produce educational video content, animated explainers, and multimedia classroom materials using Adobe Express video tools.', outcomes:['Educational video production','Animation principles','Classroom multimedia creation'] },
-  { code:'CPD-AE-05', title:'Advanced Pedagogy & Certification Prep', duration:'10 hrs', level:'Mastery', desc:'Develop comprehensive DCAIS curriculum units, prepare your certification portfolio, and train fellow educators.', outcomes:['Full curriculum design','Peer training methodology','Adobe Educator portfolio preparation'] }
+  {
+    code: 'CPD-01',
+    chapter: 'Level A | Chapter-1',
+    chapterHi: 'लेवल A | अध्याय-1',
+    titleEn: 'Implementation of NEP 2020 & SDGs in Schools through Digital Creativity',
+    titleHi: 'डिजिटल रचनात्मकता के माध्यम से NEP 2020 एवं SDGs का क्रियान्वयन',
+    duration: '3.5 hrs',
+    durationHi: '3.5 घंटे',
+    levelEn: 'Foundation (Level A)',
+    levelHi: 'बुनियाद (लेवल A)',
+    descEn: 'Introduction to Adobe Express for project-based learning, cross-curricular integration, aligning lesson plans with NEP 2020 and SDG goals, and Generative AI in the classroom.',
+    descHi: 'प्रोजेक्ट-आधारित शिक्षण, पाठ्यचर्या एकीकरण, NEP 2020 और SDG लक्ष्यों के साथ पाठ योजनाओं का संयोजन और कक्षा में जनरेटिव AI का उपयोग।',
+    outcomesEn: [
+      'Align lesson plans with NEP 2020 & SDG principles (Quality Education, Climate Action, Gender Equality)',
+      'Introduction to Adobe Express for project-based learning and digital portfolios',
+      'Learn to use Generative AI in the classroom to enhance teaching strategies'
+    ],
+    outcomesHi: [
+      'NEP 2020 और SDG सिद्धांतों (गुणवत्तापूर्ण शिक्षा, जलवायु कार्य, लैंगिक समानता) के साथ पाठ योजनाओं का संयोजन',
+      'प्रोजेक्ट-आधारित शिक्षण और डिजिटल पोर्टफोलियो के लिए Adobe Express का परिचय',
+      'शिक्षण रणनीतियों को बढ़ाने के लिए कक्षा में जनरेटिव AI का उपयोग'
+    ],
+    courseLink: 'https://new.express.adobe.com/publishedV2/urn:aaid:sc:VA6C2:5023fc43-fdb6-4e41-a7aa-399b5cb69347?promoid=Y69SGM5H&mv=other',
+    recordingLink: CPD_RECORDINGS_HUB_URL,
+    week1Assignment: 'https://docs.google.com/forms/d/e/1FAIpQLSfinGi6YEIC8sCKYzBZiZOXJWq3MmpQfCYGY6x-Tn6VjxbYwA/viewform',
+    week1LabelEn: 'Submit Assignment (Week-1)',
+    week1LabelHi: 'असाइनमेंट जमा करें (सप्ताह-1)',
+    week2Assignment: 'https://docs.google.com/forms/d/e/1FAIpQLSfCC3fwmPoZzasOOD-l0Ger2y4moQnfI8CPu5mO0HhgN8fZvg/viewform?usp=dialog',
+    week2LabelEn: 'Submit Assignment (Week-2)',
+    week2LabelHi: 'असाइनमेंट जमा करें (सप्ताह-2)'
+  },
+  {
+    code: 'CPD-02',
+    chapter: 'Level A | Chapter-2',
+    chapterHi: 'लेवल A | अध्याय-2',
+    titleEn: 'Enhance Classroom Organization with Adobe Express Lesson Plans & Calendars',
+    titleHi: 'Adobe Express पाठ योजनाओं और कैलेंडरों से कक्षा संगठन सुदृढ़ करना',
+    duration: '3.5 hrs',
+    durationHi: '3.5 घंटे',
+    levelEn: 'Foundation (Level A)',
+    levelHi: 'बुनियाद (लेवल A)',
+    descEn: 'Design and customize visually engaging lesson plans using Adobe Express, improve clarity and organization, and build interactive annual activity calendars on Adobe Webpages.',
+    descHi: 'Adobe Express का उपयोग करके आकर्षक पाठ योजनाएं तैयार करें, स्पष्टता और संगठन में सुधार करें, और Adobe Webpages पर इंटरैक्टिव वार्षिक कैलेंडर बनाएं।',
+    outcomesEn: [
+      'Design & customize visually engaging lesson plans in Adobe Express',
+      'Design digital calendars to streamline scheduling and track academic events',
+      'Design Annual Activity Calendars on Adobe Webpages integrating lesson roadmaps'
+    ],
+    outcomesHi: [
+      'Adobe Express में आकर्षक पाठ योजनाएं डिजाइन और कस्टमाइज़ करना',
+      'शैक्षणिक कार्यक्रमों को ट्रैक करने और शेड्यूल सुव्यवस्थित करने के लिए डिजिटल कैलेंडर डिजाइन करना',
+      'पाठ योजनाओं को एकीकृत करते हुए Adobe Webpages पर वार्षिक गतिविधि कैलेंडर बनाना'
+    ],
+    courseLink: 'https://new.express.adobe.com/publishedV2/urn:aaid:sc:VA6C2:3e519e66-75af-48d9-8dc6-f1d53c26ad96?promoid=Y69SGM5H&mv=other',
+    recordingLink: CPD_RECORDINGS_HUB_URL,
+    week1Assignment: 'https://docs.google.com/forms/d/e/1FAIpQLSez25EvvIfSasZo6_EuSMhq8E-aCSPvA2Sb_2GdeQIz_vjgtA/viewform?usp=sharing&ouid=100381120956091401245',
+    week1LabelEn: 'Submit Assignment 1',
+    week1LabelHi: 'असाइनमेंट 1 जमा करें',
+    week2Assignment: 'https://docs.google.com/forms/d/e/1FAIpQLSchBRxr4rMtxbR529B0uB2JN23zUjv4lwvjRssCrhTR7Hyc2Q/viewform?usp=header',
+    week2LabelEn: 'Submit Assignment 2',
+    week2LabelHi: 'असाइनमेंट 2 जमा करें'
+  },
+  {
+    code: 'CPD-03',
+    chapter: 'Level A | Chapter-3',
+    chapterHi: 'लेवल A | अध्याय-3',
+    titleEn: 'Socio-Emotional Learning (SEL) in the Classroom Using Adobe Express',
+    titleHi: 'Adobe Express द्वारा कक्षा में सामाजिक-भावनात्मक शिक्षण (SEL)',
+    duration: '3.5 hrs',
+    durationHi: '3.5 घंटे',
+    levelEn: 'Foundation (Level A)',
+    levelHi: 'बुनियाद (लेवल A)',
+    descEn: 'Understand SEL core competencies (Self-Awareness, Relationship Skills), explore the role of digital creativity in emotional expression, and utilize creative collaboration tools.',
+    descHi: 'SEL प्रमुख दक्षताओं (आत्म-जागरूकता, संबंध कौशल) को समझें, भावनात्मक अभिव्यक्ति में डिजिटल रचनात्मकता की भूमिका और सहयोगी टूल का उपयोग करें।',
+    outcomesEn: [
+      'Understand SEL Core Competencies to integrate SEL strategies into activities',
+      'Fostering emotional intelligence: digital storytelling & reflective journals',
+      'Utilize creative tools for student collaboration and relationship-building'
+    ],
+    outcomesHi: [
+      'गतिविधियों में SEL रणनीतियों को एकीकृत करने के लिए SEL प्रमुख दक्षताओं को समझना',
+      'भावनात्मक बुद्धिमत्ता को बढ़ावा: डिजिटल स्टोरीटेलिंग और चिंतनशील पत्रिकाएं',
+      'छात्र सहयोग और संबंध-निर्माण के लिए रचनात्मक टूल्स का उपयोग'
+    ],
+    courseLink: 'https://new.express.adobe.com/id/urn:aaid:sc:VA6C2:85668525-2093-52ea-a732-30fbaee8b5d5?invite=true&accept=true%3Fpreload%3Dsharesheet&promoid=Z2G1FQKR&mv=other',
+    recordingLink: CPD_RECORDINGS_HUB_URL,
+    week1Assignment: 'https://docs.google.com/forms/d/e/1FAIpQLSdDAUiVtoqTkT8CelqQHkD0ZnAZEFn6kqNh5PTRRa7tosx2uw/viewform?usp=sharing&ouid=100381120956091401245',
+    week1LabelEn: 'Submit Assignment (Week-1)',
+    week1LabelHi: 'असाइनमेंट जमा करें (सप्ताह-1)',
+    week2Assignment: 'https://forms.gle/hFnSNvWabNRtVCWa9',
+    week2LabelEn: 'Submit Assignment (Week-2)',
+    week2LabelHi: 'असाइनमेंट जमा करें (सप्ताह-2)'
+  },
+  {
+    code: 'CPD-04',
+    chapter: 'Level A | Chapter-4',
+    chapterHi: 'लेवल A | अध्याय-4',
+    titleEn: 'Designing Formative Assessments and Holiday Assignments',
+    titleHi: 'रचनात्मक मूल्यांकन और अवकाश गृहकार्य तैयार करना',
+    duration: '3.0 hrs',
+    durationHi: '3.0 घंटे',
+    levelEn: 'Foundation (Level A)',
+    levelHi: 'बुनियाद (लेवल A)',
+    descEn: 'Learn to create interactive and visually engaging formative assessments for 360-degree holistic evaluation aligned to NEP 2020, and develop creative holiday assignments.',
+    descHi: 'NEP 2020 के अनुरूप 360-डिग्री समग्र मूल्यांकन के लिए इंटरैक्टिव रचनात्मक मूल्यांकन और छुट्टियों के लिए रचनात्मक प्रोजेक्ट तैयार करें।',
+    outcomesEn: [
+      'Create interactive formative assessments for 360-degree holistic evaluation',
+      'Design engaging holiday assignments encouraging comprehensive skill development',
+      'Publish guided creative activities on Adobe Express for the classroom'
+    ],
+    outcomesHi: [
+      '360-डिग्री समग्र मूल्यांकन के लिए इंटरैक्टिव रचनात्मक मूल्यांकन तैयार करना',
+      'कौशल विकास को प्रोत्साहित करने वाले आकर्षक अवकाश कार्य डिजाइन करना',
+      'कक्षा में उपयोग के लिए Adobe Express पर निर्देशित रचनात्मक गतिविधियां प्रकाशित करना'
+    ],
+    courseLink: 'https://express.adobe.com/publishedV2/urn:aaid:sc:VA6C2:31554989-64cd-458b-be2b-3da630ce4ef6?promoid=Y69SGM5H&mv=other',
+    recordingLink: CPD_RECORDINGS_HUB_URL,
+    week1Assignment: 'https://tinyurl.com/cpd4assignment1',
+    week1LabelEn: 'Submit Assignment (Week-1)',
+    week1LabelHi: 'असाइनमेंट जमा करें (सप्ताह-1)',
+    week2Assignment: 'https://tinyurl.com/cpd4assignment2',
+    week2LabelEn: 'Submit Assignment (Week-2)',
+    week2LabelHi: 'असाइनमेंट जमा करें (सप्ताह-2)'
+  },
+  {
+    code: 'CPD-05',
+    chapter: 'Level B | Chapter-5',
+    chapterHi: 'लेवल B | अध्याय-5',
+    titleEn: 'Subject Integration: Language, Science, Social Studies & Art Lessons',
+    titleHi: 'विषय एकीकरण: भाषा, विज्ञान, सामाजिक अध्ययन एवं कला शिक्षण',
+    duration: '3.5 hrs',
+    durationHi: '3.5 घंटे',
+    levelEn: 'Integration (Level B)',
+    levelHi: 'एकीकरण (लेवल B)',
+    descEn: 'Transform subject-specific teaching: Generative AI and audio animations in Literature, visual storytelling in Science & Social Studies, and digital canvas with motion illustration in Art.',
+    descHi: 'विषय-विशिष्ट शिक्षण को रूपांतरित करें: साहित्य में जनरेटिव AI और ऑडियो एनिमेशन, विज्ञान व सामाजिक अध्ययन में विज़ुअल स्टोरीटेलिंग, और कला में डिजिटल कैनवस।',
+    outcomesEn: [
+      'Transform Language & Literature with Generative AI and audio-based animation',
+      'Innovative pedagogies: Visual communication & storytelling in Science and Social Studies',
+      'Digital Canvas: Integrate technology & motion illustration into Art lessons'
+    ],
+    outcomesHi: [
+      'जनरेटिव AI और ऑडियो एनिमेशन के साथ भाषा एवं साहित्य शिक्षण का रूपांतरण',
+      'नवाचारी शिक्षाशास्त्र: विज्ञान और सामाजिक अध्ययन में दृश्य संचार और स्टोरीटेलिंग',
+      'डिजिटल कैनवस: कला कक्षाओं में प्रौद्योगिकी और मोशन इलस्ट्रेशन का एकीकरण'
+    ],
+    courseLink: 'https://new.express.adobe.com/publishedV2/urn:aaid:sc:VA6C2:e10d2c17-8724-452a-be78-1eeb768d022e?promoid=Y69SGM5H&mv=other',
+    recordingLink: CPD_RECORDINGS_HUB_URL,
+    week1Assignment: 'https://forms.gle/aFGjT2HgXH7NyVH4A',
+    week1LabelEn: 'Submit Assignment (Week-1)',
+    week1LabelHi: 'असाइनमेंट जमा करें (सप्ताह-1)',
+    week2Assignment: 'https://forms.gle/1tx2dNKcKsiWjcjX9',
+    week2LabelEn: 'Submit Assignment (Week-2)',
+    week2LabelHi: 'असाइनमेंट जमा करें (सप्ताह-2)'
+  },
+  {
+    code: 'CPD-06',
+    chapter: 'Level B | Chapter-6',
+    chapterHi: 'लेवल B | अध्याय-6',
+    titleEn: 'Leveraging Creative Thinking & AI-Enabled Pedagogies to Enhance Learning Outcomes',
+    titleHi: 'सीखने के परिणामों को बेहतर बनाने हेतु रचनात्मक सोच एवं AI शिक्षाशास्त्र का उपयोग',
+    duration: '3.0 hrs',
+    durationHi: '3.0 घंटे',
+    levelEn: 'Pedagogy & AI (Level B)',
+    levelHi: 'शिक्षाशास्त्र एवं AI (लेवल B)',
+    descEn: 'Analyze engagement challenges, apply creative thinking strategies, implement AI-enabled personalized learning, and customize NCERT/CBSE bundles via Adobe Express Classrooms and Gallery.',
+    descHi: 'कक्षा सहभागिता चुनौतियों का विश्लेषण करें, रचनात्मक रणनीतियाँ लागू करें, व्यक्तिगत शिक्षण हेतु AI अपनाएं और NCERT/CBSE बंडलों को कस्टमाइज़ करें।',
+    outcomesEn: [
+      'Analyze classroom engagement challenges and apply creative thinking strategies',
+      'Integrate AI-enabled approaches to support personalized and interactive learning',
+      'Deploy NCERT/CBSE bundles & collect assignments using the Classrooms Gallery feature'
+    ],
+    outcomesHi: [
+      'कक्षा सहभागिता चुनौतियों का विश्लेषण और रचनात्मक शिक्षण रणनीतियाँ लागू करना',
+      'व्यक्तिगत एवं इंटरैक्टिव शिक्षण हेतु AI-सक्षम दृष्टिकोण का एकीकरण',
+      'NCERT/CBSE बंडल लागू करना और क्लासरूम गैलरी फीचर से असाइनमेंट एकत्र करना'
+    ],
+    courseLink: 'https://new.express.adobe.com/publishedV2/urn:aaid:sc:VA6C2:44453fd3-5a6b-5bf0-9b60-ae7259e7fa93?promoid=Y69SGM5H&mv=other',
+    recordingLink: CPD_RECORDINGS_HUB_URL,
+    week1Assignment: 'https://tinyurl.com/cpd6assignment1',
+    week1LabelEn: 'Submit Assignment 1',
+    week1LabelHi: 'असाइनमेंट 1 जमा करें',
+    week2Assignment: 'https://tinyurl.com/cpd6assignment1',
+    week2LabelEn: 'Submit Assignment 2',
+    week2LabelHi: 'असाइनमेंट 2 जमा करें'
+  }
 ];
 
 function renderCpdSectionHtml() {
+  var isHi = (currentLang === 'hi');
+
+  var bannerHtml =
+    '<div style="background:linear-gradient(135deg,#FA0F00 0%,#7A0000 100%);color:#FFF;border-radius:var(--radius);padding:24px 28px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;box-shadow:0 6px 20px rgba(250,15,0,0.18);">' +
+      '<div>' +
+        '<div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.3);padding:4px 12px;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px;">' +
+          '⭐ ' + (isHi ? 'PM SHRI वार्षिक CPD कैलेंडर' : 'PM SHRI Annual CPD Training') +
+        '</div>' +
+        '<h3 style="font-size:1.35rem;font-weight:900;letter-spacing:-.02em;line-height:1.25;margin-bottom:6px;">' +
+          (isHi ? '20 घंटे सतत व्यावसायिक विकास (6 मॉड्यूल)' : '20 Hours Continuous Professional Development (6 Modules)') +
+        '</h3>' +
+        '<p style="font-size:.86rem;color:rgba(255,255,255,0.9);max-width:680px;line-height:1.5;">' +
+          (isHi ? 'NEP 2020 और यूनेस्को ESD सिद्धांतों के अनुरूप डिजिटल रचनात्मकता, AI शिक्षाशास्त्र और क्लासरूम प्रोजेक्ट्स में 6 प्रमाणित मॉड्यूल पूरा करें।' :
+                  'Accredited training framework equipping educators with digital creativity, Generative AI pedagogies, and classroom project implementation aligned with NEP 2020.') +
+        '</p>' +
+      '</div>' +
+      '<div style="display:flex;gap:10px;flex-wrap:wrap;">' +
+        '<a href="' + CPD_CALENDAR_URL + '" target="_blank" class="btn" style="background:#FFF;color:#FA0F00;font-weight:800;font-size:.84rem;padding:10px 18px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,0.15);">' +
+          '📅 ' + (isHi ? 'वार्षिक CPD कैलेंडर खोलें ↗' : 'Open Annual Calendar ↗') +
+        '</a>' +
+        '<a href="' + CPD_RECORDINGS_HUB_URL + '" target="_blank" class="btn" style="background:rgba(255,255,255,0.18);border:1.5px solid rgba(255,255,255,0.5);color:#FFF;font-weight:800;font-size:.84rem;padding:10px 18px;border-radius:999px;">' +
+          '🎥 ' + (isHi ? 'सभी सेशन रिकॉर्डिंग्स ↗' : 'All Session Recordings ↗') +
+        '</a>' +
+      '</div>' +
+    '</div>';
+
   var stepsHtml = CPD_MODULES.map(function(m, i) {
     return (i > 0 ? '<div class="cpd-connector"></div>' : '') +
-      '<div class="cpd-step"><div class="cpd-step-n">' + (i+1) + '</div><div class="cpd-step-l">' + m.level + '</div></div>';
+      '<div class="cpd-step"><div class="cpd-step-n">' + (i+1) + '</div><div class="cpd-step-l">' + m.code + ' (' + (isHi ? m.durationHi : m.duration) + ')</div></div>';
   }).join('');
+
   var cardsHtml = CPD_MODULES.map(function(m) {
-    return '<div class="rc">' +
-      '<div><div class="rc-badge">' + m.code + ' • ' + m.duration + '</div><h4>' + m.title + '</h4><p>' + m.desc + '</p>' +
-      '<ul style="font-size:.78rem;color:var(--ink-2);padding-left:18px;margin-bottom:14px;">' +
-      m.outcomes.map(function(o){ return '<li style="margin-bottom:3px;">' + o + '</li>'; }).join('') +
-      '</ul></div>' +
-      '<a href="https://express.adobe.com/learn" target="_blank" class="btn btn-primary">Start Module &#8599;</a>' +
+    var title = isHi ? m.titleHi : m.titleEn;
+    var dur = isHi ? m.durationHi : m.duration;
+    var desc = isHi ? m.descHi : m.descEn;
+    var chapter = isHi ? m.chapterHi : m.chapter;
+    var outcomes = isHi ? m.outcomesHi : m.outcomesEn;
+
+    return '<div class="rc" style="display:flex;flex-direction:column;justify-content:space-between;">' +
+      '<div>' +
+        '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;flex-wrap:wrap;">' +
+          '<div class="rc-badge">' + m.code + ' • ' + dur + '</div>' +
+          '<span style="font-size:.72rem;font-weight:800;color:var(--red);background:var(--red-bg);padding:3px 10px;border-radius:999px;border:1px solid var(--red-border);">' + chapter + '</span>' +
+        '</div>' +
+        '<h4 style="font-size:1.05rem;line-height:1.35;margin-bottom:8px;">' + title + '</h4>' +
+        '<p style="font-size:.82rem;line-height:1.5;color:var(--ink-2);margin-bottom:12px;">' + desc + '</p>' +
+        '<div style="font-size:.76rem;font-weight:800;color:var(--ink);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em;">' +
+          (isHi ? 'प्रमुख उद्देश्य एवं दक्षताएं:' : 'Key Learning Objectives:') +
+        '</div>' +
+        '<ul style="font-size:.78rem;color:var(--ink-2);padding-left:18px;margin-bottom:18px;line-height:1.45;">' +
+          outcomes.map(function(o){ return '<li style="margin-bottom:4px;">' + o + '</li>'; }).join('') +
+        '</ul>' +
+      '</div>' +
+      '<div style="margin-top:auto;padding-top:14px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;">' +
+        '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">' +
+          '<a href="' + m.courseLink + '" target="_blank" class="btn btn-primary" style="justify-content:center;font-size:.82rem;font-weight:700;padding:9px 8px;text-align:center;">' +
+            '🚀 ' + (isHi ? 'कोर्स खोलें ↗' : 'Go to Course ↗') +
+          '</a>' +
+          '<a href="' + m.recordingLink + '" target="_blank" class="btn" style="justify-content:center;font-size:.82rem;font-weight:700;padding:9px 8px;background:#4F46E5;color:#FFFFFF;border-radius:var(--radius-sm);text-align:center;text-decoration:none;box-shadow:0 2px 4px rgba(79,70,229,0.2);">' +
+            '🎥 ' + (isHi ? 'रिकॉर्डिंग ↗' : 'Recording ↗') +
+          '</a>' +
+        '</div>' +
+        '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">' +
+          '<a href="' + m.week1Assignment + '" target="_blank" class="btn btn-ghost" style="justify-content:center;font-size:.8rem;font-weight:700;padding:8px 8px;background:var(--surface-2);border:1.5px solid var(--border);color:var(--ink);text-align:center;">' +
+            '📋 ' + (isHi ? 'असाइनमेंट 1 खोलें ↗' : 'Open Assignment 1 ↗') +
+          '</a>' +
+          '<a href="' + m.week2Assignment + '" target="_blank" class="btn btn-ghost" style="justify-content:center;font-size:.8rem;font-weight:700;padding:8px 8px;background:var(--surface-2);border:1.5px solid var(--border);color:var(--ink);text-align:center;">' +
+            '📋 ' + (isHi ? 'असाइनमेंट 2 खोलें ↗' : 'Open Assignment 2 ↗') +
+          '</a>' +
+        '</div>' +
+      '</div>' +
     '</div>';
   }).join('');
-  return '<div class="cpd-steps">' + stepsHtml + '</div><div class="rg">' + cardsHtml + '</div>';
+
+  return bannerHtml + '<div class="cpd-steps">' + stepsHtml + '</div><div class="rg">' + cardsHtml + '</div>';
 }
 
 /* ===== DCAIS STUDENT MONITOR CONTROLLER ===== */
