@@ -73,7 +73,7 @@ function applyLang() {
   set('sG-tag', L.sGtag); set('sG-title', L.sGtitle); set('sG-desc', L.sGdesc); set('sG-hint', L.sGhint); set('sG-btn', L.sGbtn);
 }
 
-/* ===== CPD DATA (20 HOURS • 6 MODULES) ===== */
+/* ===== CPD DATA (20 HOURS • 2 MODULES READY • 4 PENDING) ===== */
 var CPD_RECORDINGS_HUB_URL = 'https://new.express.adobe.com/id/urn:aaid:sc:AP:cd583276-9743-5a92-b9ae-fc590ae9bbcc?accept=true&pageId=4948e919-bfb3-4521-afe0-aeed28a3a327';
 var CPD_CALENDAR_URL = 'https://new.express.adobe.com/webpage/kCbIh0WBMLVse';
 
@@ -139,7 +139,11 @@ var CPD_MODULES = [
     week2Assignment: 'https://docs.google.com/forms/d/e/1FAIpQLSchBRxr4rMtxbR529B0uB2JN23zUjv4lwvjRssCrhTR7Hyc2Q/viewform?usp=header',
     week2LabelEn: 'Submit Assignment 2',
     week2LabelHi: 'असाइनमेंट 2 जमा करें'
-  },
+  }
+];
+
+/* Pending modules to be activated once user uploads the remaining 4 links */
+var CPD_PENDING_MODULES = [
   {
     code: 'CPD-03',
     chapter: 'Level A | Chapter-3',
@@ -289,11 +293,11 @@ function renderCpdSectionHtml() {
           '⭐ ' + (isHi ? 'PM SHRI वार्षिक CPD कैलेंडर' : 'PM SHRI Annual CPD Training') +
         '</div>' +
         '<h3 style="font-size:1.35rem;font-weight:900;letter-spacing:-.02em;line-height:1.25;margin-bottom:6px;">' +
-          (isHi ? '20 घंटे सतत व्यावसायिक विकास (6 मॉड्यूल)' : '20 Hours Continuous Professional Development (6 Modules)') +
+          (isHi ? '20 घंटे सतत व्यावसायिक विकास (2 मॉड्यूल उपलब्ध • 4 जल्द)' : '20 Hours Continuous Professional Development (2 Modules Ready • 4 Coming Soon)') +
         '</h3>' +
         '<p style="font-size:.86rem;color:rgba(255,255,255,0.9);max-width:680px;line-height:1.5;">' +
-          (isHi ? 'NEP 2020 और यूनेस्को ESD सिद्धांतों के अनुरूप डिजिटल रचनात्मकता, AI शिक्षाशास्त्र और क्लासरूम प्रोजेक्ट्स में 6 प्रमाणित मॉड्यूल पूरा करें।' :
-                  'Accredited training framework equipping educators with digital creativity, Generative AI pedagogies, and classroom project implementation aligned with NEP 2020.') +
+          (isHi ? 'NEP 2020 और यूनेस्को ESD सिद्धांतों के अनुरूप डिजिटल रचनात्मकता, AI शिक्षाशास्त्र और क्लासरूम प्रोजेक्ट्स में 2 प्रमाणित मॉड्यूल उपलब्ध हैं। शेष 4 मॉड्यूल जल्द अपलोड किए जाएंगे।' :
+                  'Accredited training framework equipping educators with digital creativity, Generative AI pedagogies, and classroom project implementation. 2 foundational modules available now; remaining 4 modules will be uploaded soon.') +
         '</p>' +
       '</div>' +
       '<div style="display:flex;gap:10px;flex-wrap:wrap;">' +
@@ -363,7 +367,25 @@ function renderCpdSectionHtml() {
     '</div>';
   }).join('');
 
-  return bannerHtml + '<div class="rg">' + cardsHtml + '</div>';
+  var pendingCardHtml =
+    '<div class="rc" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--surface-2);border:2px dashed var(--border);padding:28px 20px;min-height:300px;">' +
+      '<div style="font-size:2.2rem;margin-bottom:10px;">⏳</div>' +
+      '<span style="font-size:.74rem;font-weight:800;color:var(--ink-3);background:var(--surface-3);padding:3px 12px;border-radius:999px;border:1px solid var(--border);margin-bottom:10px;">' +
+        'CPD-03 &bull; CPD-04 &bull; CPD-05 &bull; CPD-06' +
+      '</span>' +
+      '<h4 style="font-size:1.02rem;font-weight:800;color:var(--ink);margin-bottom:8px;line-height:1.35;">' +
+        (isHi ? 'शेष 4 CPD मॉड्यूल जल्द अपलोड किए जाएंगे' : 'Remaining 4 CPD Modules Coming Soon') +
+      '</h4>' +
+      '<p style="font-size:.82rem;color:var(--ink-2);max-width:320px;line-height:1.5;margin-bottom:14px;">' +
+        (isHi ? 'अध्यापक प्रशिक्षण के अगले 4 मॉड्यूल के आधिकारिक वीडियो लिंक एवं असाइनमेंट गूगल फॉर्म जल्द ही यहां उपलब्ध कराए जाएंगे।' :
+                'Course links, session recordings, and Google Form assignments for the remaining 4 training modules will be uploaded soon.') +
+      '</p>' +
+      '<span style="display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;color:var(--ink-3);background:var(--surface);border:1px solid var(--border);padding:5px 14px;border-radius:999px;">' +
+        '🔒 ' + (isHi ? '4 मॉड्यूल प्रक्रियाधीन' : '4 Modules Pending') +
+      '</span>' +
+    '</div>';
+
+  return bannerHtml + '<div class="rg">' + cardsHtml + pendingCardHtml + '</div>';
 }
 
 /* ===== DCAIS STUDENT MONITOR CONTROLLER ===== */

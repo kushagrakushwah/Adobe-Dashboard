@@ -380,10 +380,10 @@ footer p+p{margin-top:5px}
           <div>
             <div class="tile-tag" id="sB-tag">Section B</div>
             <h2 class="tile-title" id="sB-title">CPD Modules</h2>
-            <p class="tile-desc" id="sB-desc">6 accredited professional development modules (CPD 01 to 06) totaling 20 training hours.</p>
+            <p class="tile-desc" id="sB-desc">2 accredited professional development modules (CPD 01 &amp; 02) available; remaining 4 modules uploading soon.</p>
           </div>
           <div class="tile-footer">
-            <span class="tile-hint" id="sB-hint">20 Hours Training</span>
+            <span class="tile-hint" id="sB-hint">2 Modules (4 Soon)</span>
             <span class="tile-btn" id="sB-btn">Open &rarr;</span>
           </div>
         </div>
@@ -989,7 +989,7 @@ var LANG = {
     backBtn:'Back to Sections',
     crumbHome:'Home',
     sAtag:'Section A', sAtitle:'Adobe ID &amp; Access', sAdesc:'School login, institutional account creation, single sign-on &amp; IT admin deployment guide.', sAhint:'5 Institutional Tools', sAbtn:'Open &rarr;',
-    sBtag:'Section B', sBtitle:'CPD Modules', sBdesc:'6 accredited professional development modules (CPD 01 to 06) totaling 20 training hours.', sBhint:'20 Hours Training', sBbtn:'Open &rarr;',
+    sBtag:'Section B', sBtitle:'CPD Modules', sBdesc:'2 accredited professional development modules (CPD 01 &amp; 02) available; remaining 4 modules uploading soon.', sBhint:'2 Modules (4 Soon)', sBbtn:'Open &rarr;',
     sCtag:'Section C • DCAIS', sCtitle:'Student DCAIS Monitor (AIM)', sCdesc: 'Monitor what DCAIS activities your students are doing across Grades 6–8. Inspect curriculum instructions and templates.', sChint: 'Grades 6–8 Full Monitor', sCbtn:'Open &rarr;',
     sDtag:'Section D', sDtitle:'Classroom Resources', sDdesc:'Lesson plan templates, classroom printables, grading rubrics, tutorial videos, and project kits.', sDhint:'6 Resource Packs', sDbtn:'Open &rarr;',
     flow5:'DCAIS Exam', sEtag:'Section E • DCAIS Exam', sEtitle:'DCAIS Exam &amp; Answer Key', sEdesc:'KVS Semester-1 examination portal: 15 regional Google Form links, exam guidelines, and verified Answer Key.', sEhint:'15 Regions • Answer Key', sEbtn:'Open &rarr;'
@@ -1003,7 +1003,7 @@ var LANG = {
     backBtn:'वापस जाएं',
     crumbHome:'होम',
     sAtag:'सेक्शन A', sAtitle:'Adobe ID और एक्सेस', sAdesc:'स्कूल लॉगिन, संस्थागत खाता निर्माण, SSO और IT तैनाती गाइड।', sAhint:'5 संस्थागत टूल्स', sAbtn:'खोलें &rarr;',
-    sBtag:'सेक्शन B', sBtitle:'CPD मॉड्यूल', sBdesc:'6 मान्यता प्राप्त प्रशिक्षण मॉड्यूल — CPD 01 से 06 — कुल 20 घंटे।', sBhint:'20 घंटे प्रशिक्षण', sBbtn:'खोलें &rarr;',
+    sBtag:'सेक्शन B', sBtitle:'CPD मॉड्यूल', sBdesc:'2 मान्यता प्राप्त प्रशिक्षण मॉड्यूल (CPD 01 व 02) उपलब्ध हैं; शेष 4 मॉड्यूल जल्द अपलोड किए जाएंगे।', sBhint:'2 मॉड्यूल (4 जल्द)', sBbtn:'खोलें &rarr;',
     sCtag:'सेक्शन C • DCAIS', sCtitle:'छात्र DCAIS मॉनिटर (AIM)', sCdesc: 'देखें कक्षा 6 से 8 तक आपके छात्र कौन सी DCAIS गतिविधियाँ कर रहे हैं।', sChint: 'कक्षा 6–8 पूर्ण मॉनिटर', sCbtn:'खोलें &rarr;',
     sDtag:'सेक्शन D', sDtitle:'कक्षा संसाधन', sDdesc:'पाठ योजना टेम्पलेट, क्लासरूम प्रिंटेबल्स, ग्रेडिंग रूब्रिक्स और वीडियो।', sDhint:'6 संसाधन पैक', sDbtn:'खोलें &rarr;',
     flow5:'DCAIS परीक्षा', sEtag:'सेक्शन E • DCAIS परीक्षा', sEtitle:'DCAIS परीक्षा और उत्तर कुंजी', sEdesc:'KVS सेमेस्टर-1 परीक्षा पोर्टल: 15 क्षेत्रीय गूगल फॉर्म लिंक, परीक्षा दिशानिर्देश और सत्यापित उत्तर कुंजी।', sEhint:'15 क्षेत्र • उत्तर कुंजी', sEbtn:'खोलें &rarr;'
@@ -1050,7 +1050,7 @@ function applyLang() {
   set('sE-tag', L.sEtag); set('sE-title', L.sEtitle); set('sE-desc', L.sEdesc); set('sE-hint', L.sEhint); set('sE-btn', L.sEbtn);
 }
 
-/* ===== CPD DATA (20 HOURS • 6 MODULES) ===== */
+/* ===== CPD DATA (20 HOURS • 2 MODULES READY • 4 PENDING) ===== */
 var CPD_RECORDINGS_HUB_URL = 'https://new.express.adobe.com/id/urn:aaid:sc:AP:cd583276-9743-5a92-b9ae-fc590ae9bbcc?accept=true&pageId=4948e919-bfb3-4521-afe0-aeed28a3a327';
 var CPD_CALENDAR_URL = 'https://new.express.adobe.com/webpage/kCbIh0WBMLVse';
 
@@ -1116,7 +1116,11 @@ var CPD_MODULES = [
     week2Assignment: 'https://docs.google.com/forms/d/e/1FAIpQLSchBRxr4rMtxbR529B0uB2JN23zUjv4lwvjRssCrhTR7Hyc2Q/viewform?usp=header',
     week2LabelEn: 'Submit Assignment 2',
     week2LabelHi: 'असाइनमेंट 2 जमा करें'
-  },
+  }
+];
+
+/* Pending modules to be activated once user uploads the remaining 4 links */
+var CPD_PENDING_MODULES = [
   {
     code: 'CPD-03',
     chapter: 'Level A | Chapter-3',
@@ -1266,11 +1270,11 @@ function renderCpdSectionHtml() {
           '⭐ ' + (isHi ? 'PM SHRI वार्षिक CPD कैलेंडर' : 'PM SHRI Annual CPD Training') +
         '</div>' +
         '<h3 style="font-size:1.35rem;font-weight:900;letter-spacing:-.02em;line-height:1.25;margin-bottom:6px;">' +
-          (isHi ? '20 घंटे सतत व्यावसायिक विकास (6 मॉड्यूल)' : '20 Hours Continuous Professional Development (6 Modules)') +
+          (isHi ? '20 घंटे सतत व्यावसायिक विकास (2 मॉड्यूल उपलब्ध • 4 जल्द)' : '20 Hours Continuous Professional Development (2 Modules Ready • 4 Coming Soon)') +
         '</h3>' +
         '<p style="font-size:.86rem;color:rgba(255,255,255,0.9);max-width:680px;line-height:1.5;">' +
-          (isHi ? 'NEP 2020 और यूनेस्को ESD सिद्धांतों के अनुरूप डिजिटल रचनात्मकता, AI शिक्षाशास्त्र और क्लासरूम प्रोजेक्ट्स में 6 प्रमाणित मॉड्यूल पूरा करें।' :
-                  'Accredited training framework equipping educators with digital creativity, Generative AI pedagogies, and classroom project implementation aligned with NEP 2020.') +
+          (isHi ? 'NEP 2020 और यूनेस्को ESD सिद्धांतों के अनुरूप डिजिटल रचनात्मकता, AI शिक्षाशास्त्र और क्लासरूम प्रोजेक्ट्स में 2 प्रमाणित मॉड्यूल उपलब्ध हैं। शेष 4 मॉड्यूल जल्द अपलोड किए जाएंगे।' :
+                  'Accredited training framework equipping educators with digital creativity, Generative AI pedagogies, and classroom project implementation. 2 foundational modules available now; remaining 4 modules will be uploaded soon.') +
         '</p>' +
       '</div>' +
       '<div style="display:flex;gap:10px;flex-wrap:wrap;">' +
@@ -1340,7 +1344,25 @@ function renderCpdSectionHtml() {
     '</div>';
   }).join('');
 
-  return bannerHtml + '<div class="rg">' + cardsHtml + '</div>';
+  var pendingCardHtml =
+    '<div class="rc" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--surface-2);border:2px dashed var(--border);padding:28px 20px;min-height:300px;">' +
+      '<div style="font-size:2.2rem;margin-bottom:10px;">⏳</div>' +
+      '<span style="font-size:.74rem;font-weight:800;color:var(--ink-3);background:var(--surface-3);padding:3px 12px;border-radius:999px;border:1px solid var(--border);margin-bottom:10px;">' +
+        'CPD-03 &bull; CPD-04 &bull; CPD-05 &bull; CPD-06' +
+      '</span>' +
+      '<h4 style="font-size:1.02rem;font-weight:800;color:var(--ink);margin-bottom:8px;line-height:1.35;">' +
+        (isHi ? 'शेष 4 CPD मॉड्यूल जल्द अपलोड किए जाएंगे' : 'Remaining 4 CPD Modules Coming Soon') +
+      '</h4>' +
+      '<p style="font-size:.82rem;color:var(--ink-2);max-width:320px;line-height:1.5;margin-bottom:14px;">' +
+        (isHi ? 'अध्यापक प्रशिक्षण के अगले 4 मॉड्यूल के आधिकारिक वीडियो लिंक एवं असाइनमेंट गूगल फॉर्म जल्द ही यहां उपलब्ध कराए जाएंगे।' :
+                'Course links, session recordings, and Google Form assignments for the remaining 4 training modules will be uploaded soon.') +
+      '</p>' +
+      '<span style="display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;color:var(--ink-3);background:var(--surface);border:1px solid var(--border);padding:5px 14px;border-radius:999px;">' +
+        '🔒 ' + (isHi ? '4 मॉड्यूल प्रक्रियाधीन' : '4 Modules Pending') +
+      '</span>' +
+    '</div>';
+
+  return bannerHtml + '<div class="rg">' + cardsHtml + pendingCardHtml + '</div>';
 }
 
 /* ===== DCAIS EDUCATOR CURRICULUM CONTROLLER (GRADES 6-8 WEEKLY) ===== */
@@ -2471,8 +2493,8 @@ var TEACHER_SECTIONS_DATA = {
     tagHi: 'सेक्शन B • व्यावसायिक विकास',
     titleEn: 'CPD Training Modules (20 Hours)',
     titleHi: 'CPD प्रशिक्षण मॉड्यूल (20 घंटे)',
-    descEn: 'Six progressive accredited modules totaling 20 hours designed to equip educators with foundational to subject-specific digital creativity and AI pedagogy.',
-    descHi: 'शिक्षकों को डिजिटल रचनात्मकता और AI शिक्षाशास्त्र से लैस करने के लिए तैयार किए गए 6 मान्यता प्राप्त मॉड्यूल (कुल 20 घंटे)।',
+    descEn: 'Accredited modules designed to equip educators with digital creativity and AI pedagogy (2 foundational modules available now; remaining 4 modules uploading soon).',
+    descHi: 'शिक्षकों को डिजिटल रचनात्मकता और AI शिक्षाशास्त्र से लैस करने के लिए तैयार किए गए मान्यता प्राप्त मॉड्यूल (2 मॉड्यूल उपलब्ध हैं; शेष 4 मॉड्यूल जल्द अपलोड किए जाएंगे)।',
     render: function(lang) { return renderCpdSectionHtml(); }
   },
   'C': {
