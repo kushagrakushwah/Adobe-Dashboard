@@ -73,8 +73,8 @@ function applyLang() {
   set('sG-tag', L.sGtag); set('sG-title', L.sGtitle); set('sG-desc', L.sGdesc); set('sG-hint', L.sGhint); set('sG-btn', L.sGbtn);
 }
 
-/* ===== CPD DATA (20 HOURS • 2 MODULES READY • 4 PENDING) ===== */
-var CPD_RECORDINGS_HUB_URL = 'https://new.express.adobe.com/id/urn:aaid:sc:AP:cd583276-9743-5a92-b9ae-fc590ae9bbcc?accept=true&pageId=4948e919-bfb3-4521-afe0-aeed28a3a327';
+/* ===== CPD DATA (20 HOURS • 6 MODULES READY • 4 PENDING • TOTAL 10) ===== */
+var CPD_RECORDINGS_HUB_URL = 'https://drive.google.com/drive/folders/1BeRQWOL4WCnDoKfScvP6hFcqVl7JKsj8?usp=sharing';
 var CPD_CALENDAR_URL = 'https://new.express.adobe.com/webpage/kCbIh0WBMLVse';
 
 var CPD_MODULES = [
@@ -101,7 +101,7 @@ var CPD_MODULES = [
       'शिक्षण रणनीतियों को बढ़ाने के लिए कक्षा में जनरेटिव AI का उपयोग'
     ],
     courseLink: 'https://new.express.adobe.com/publishedV2/urn:aaid:sc:VA6C2:5023fc43-fdb6-4e41-a7aa-399b5cb69347?promoid=Y69SGM5H&mv=other',
-    recordingLink: CPD_RECORDINGS_HUB_URL,
+    recordingLink: 'https://drive.google.com/file/d/1Z5jV25HlniKZAscEWHY86UEzVwIATCCC/view?usp=sharing',
     week1Assignment: 'https://docs.google.com/forms/d/e/1FAIpQLSfinGi6YEIC8sCKYzBZiZOXJWq3MmpQfCYGY6x-Tn6VjxbYwA/viewform',
     week1LabelEn: 'Submit Assignment (Week-1)',
     week1LabelHi: 'असाइनमेंट जमा करें (सप्ताह-1)',
@@ -132,7 +132,7 @@ var CPD_MODULES = [
       'पाठ योजनाओं को एकीकृत करते हुए Adobe Webpages पर वार्षिक गतिविधि कैलेंडर बनाना'
     ],
     courseLink: 'https://new.express.adobe.com/publishedV2/urn:aaid:sc:VA6C2:3e519e66-75af-48d9-8dc6-f1d53c26ad96?promoid=Y69SGM5H&mv=other',
-    recordingLink: CPD_RECORDINGS_HUB_URL,
+    recordingLink: 'https://drive.google.com/file/d/1fYm4v_44uNc0BCOZd_2F-4HIM5__oJ8E/view?usp=sharing',
     week1Assignment: 'https://docs.google.com/forms/d/e/1FAIpQLSez25EvvIfSasZo6_EuSMhq8E-aCSPvA2Sb_2GdeQIz_vjgtA/viewform?usp=sharing&ouid=100381120956091401245',
     week1LabelEn: 'Submit Assignment 1',
     week1LabelHi: 'असाइनमेंट 1 जमा करें',
@@ -163,7 +163,7 @@ var CPD_MODULES = [
       'छात्र सहयोग और संबंध-निर्माण के लिए रचनात्मक टूल्स का उपयोग'
     ],
     courseLink: 'https://new.express.adobe.com/id/urn:aaid:sc:VA6C2:85668525-2093-52ea-a732-30fbaee8b5d5?invite=true&accept=true%3Fpreload%3Dsharesheet&promoid=Z2G1FQKR&mv=other',
-    recordingLink: CPD_RECORDINGS_HUB_URL,
+    recordingLink: 'https://drive.google.com/file/d/1-YnZlFJ7v6T30yD_iWxTR1EzpEb2LOe7/view?usp=sharing',
     week1Assignment: 'https://docs.google.com/forms/d/e/1FAIpQLSdDAUiVtoqTkT8CelqQHkD0ZnAZEFn6kqNh5PTRRa7tosx2uw/viewform?usp=sharing&ouid=100381120956091401245',
     week1LabelEn: 'Submit Assignment (Week-1)',
     week1LabelHi: 'असाइनमेंट जमा करें (सप्ताह-1)',
@@ -194,7 +194,7 @@ var CPD_MODULES = [
       'कक्षा में उपयोग के लिए Adobe Express पर निर्देशित रचनात्मक गतिविधियां प्रकाशित करना'
     ],
     courseLink: 'https://express.adobe.com/publishedV2/urn:aaid:sc:VA6C2:31554989-64cd-458b-be2b-3da630ce4ef6?promoid=Y69SGM5H&mv=other',
-    recordingLink: CPD_RECORDINGS_HUB_URL,
+    recordingLink: 'https://drive.google.com/file/d/1rAi6dXpcmyqBfQVdtT2uvyaALqOWk_63/view?usp=sharing',
     week1Assignment: 'https://tinyurl.com/cpd4assignment1',
     week1LabelEn: 'Submit Assignment (Week-1)',
     week1LabelHi: 'असाइनमेंट जमा करें (सप्ताह-1)',
@@ -225,7 +225,7 @@ var CPD_MODULES = [
       'डिजिटल कैनवस: कला कक्षाओं में प्रौद्योगिकी और मोशन इलस्ट्रेशन का एकीकरण'
     ],
     courseLink: 'https://new.express.adobe.com/publishedV2/urn:aaid:sc:VA6C2:e10d2c17-8724-452a-be78-1eeb768d022e?promoid=Y69SGM5H&mv=other',
-    recordingLink: CPD_RECORDINGS_HUB_URL,
+    recordingLink: 'https://drive.google.com/file/d/15FZJslPAnWcvaCqcE9K7ogOcTB_Vvni6/view?usp=sharing',
     week1Assignment: 'https://forms.gle/aFGjT2HgXH7NyVH4A',
     week1LabelEn: 'Submit Assignment (Week-1)',
     week1LabelHi: 'असाइनमेंट जमा करें (सप्ताह-1)',
@@ -256,7 +256,7 @@ var CPD_MODULES = [
       'NCERT/CBSE बंडल लागू करना और क्लासरूम गैलरी फीचर से असाइनमेंट एकत्र करना'
     ],
     courseLink: 'https://new.express.adobe.com/publishedV2/urn:aaid:sc:VA6C2:44453fd3-5a6b-5bf0-9b60-ae7259e7fa93?promoid=Y69SGM5H&mv=other',
-    recordingLink: CPD_RECORDINGS_HUB_URL,
+    recordingLink: 'https://drive.google.com/file/d/13wQ3JlkchsMAw24q2wzyYjWUhR9lewEZ/view?usp=sharing',
     week1Assignment: 'https://tinyurl.com/cpd6assignment1',
     week1LabelEn: 'Submit Assignment 1',
     week1LabelHi: 'असाइनमेंट 1 जमा करें',
