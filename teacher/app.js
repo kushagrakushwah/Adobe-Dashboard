@@ -714,25 +714,7 @@ var TEACHER_SECTIONS_DATA = {
           '</div>' +
         '</div>';
 
-      var adminResourcesHtml =
-        '<div style="background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:18px 22px;">' +
-          '<div style="font-weight:900;color:var(--ink);font-size:.92rem;margin-bottom:10px;">' +
-            '⚙️ Additional Administrator &amp; Security Resources' +
-          '</div>' +
-          '<div style="display:flex;gap:10px;flex-wrap:wrap;">' +
-            '<a href="https://adminconsole.adobe.com" target="_blank" class="btn btn-ghost" style="font-size:.78rem;padding:7px 14px;background:var(--surface-2);border:1px solid var(--border);">' +
-              'School Admin Console ↗' +
-            '</a>' +
-            '<a href="https://account.adobe.com/security" target="_blank" class="btn btn-ghost" style="font-size:.78rem;padding:7px 14px;background:var(--surface-2);border:1px solid var(--border);">' +
-              'Password &amp; Security Settings ↗' +
-            '</a>' +
-            '<a href="https://helpx.adobe.com/enterprise/using/sso.html" target="_blank" class="btn btn-ghost" style="font-size:.78rem;padding:7px 14px;background:var(--surface-2);border:1px solid var(--border);">' +
-              'SSO Setup Manual ↗' +
-            '</a>' +
-          '</div>' +
-        '</div>';
-
-      return bannerHtml + guideHtml + cardsHtml + adminResourcesHtml;
+      return bannerHtml + guideHtml + cardsHtml;
     }
   },
   'B': {
