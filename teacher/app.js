@@ -556,6 +556,9 @@ var TEACHER_SECTIONS_DATA = {
             '</p>' +
           '</div>' +
           '<div style="display:flex;gap:10px;flex-wrap:wrap;">' +
+            '<a href="https://new.express.adobe.com/" target="_blank" class="btn" style="background:#FA0F00;color:#FFF;font-weight:800;font-size:.84rem;padding:10px 18px;border-radius:999px;box-shadow:0 4px 12px rgba(250,15,0,0.35);">' +
+              '🚀 Quick Login to Adobe Express ↗' +
+            '</a>' +
             '<a href="' + teacherIdUrl + '" target="_blank" class="btn" style="background:#FFF;color:#1E1B4B;font-weight:800;font-size:.84rem;padding:10px 18px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,0.15);">' +
               '📊 Find Teacher ID ↗' +
             '</a>' +
@@ -680,9 +683,14 @@ var TEACHER_SECTIONS_DATA = {
               '<div style="font-weight:900;font-size:.88rem;color:#4F46E5;margin-bottom:4px;">Step 3: Watch Tutorial</div>' +
               '<div style="font-size:.8rem;color:var(--ink-2);line-height:1.45;">Watch the mobile or browser login video to follow the exact sign-in steps.</div>' +
             '</div>' +
-            '<div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;">' +
-              '<div style="font-weight:900;font-size:.88rem;color:var(--ink);margin-bottom:4px;">Step 4: Login &amp; Create</div>' +
-              '<div style="font-size:.8rem;color:var(--ink-2);line-height:1.45;">Select "Company or School Account" to log in and start creating projects.</div>' +
+            '<div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;display:flex;flex-direction:column;justify-content:space-between;">' +
+              '<div>' +
+                '<div style="font-weight:900;font-size:.88rem;color:var(--ink);margin-bottom:4px;">Step 4: Login &amp; Create</div>' +
+                '<div style="font-size:.8rem;color:var(--ink-2);line-height:1.45;margin-bottom:8px;">Select "Company or School Account" to log in and start creating projects.</div>' +
+              '</div>' +
+              '<a href="https://new.express.adobe.com/" target="_blank" class="btn btn-primary" style="padding:7px 12px;font-size:.76rem;font-weight:800;justify-content:center;text-decoration:none;border-radius:var(--radius-sm);">' +
+                '🚀 Log In to Express ↗' +
+              '</a>' +
             '</div>' +
           '</div>' +
         '</div>';
@@ -705,7 +713,7 @@ var TEACHER_SECTIONS_DATA = {
           '</div>' +
         '</div>';
 
-      return bannerHtml + cardsHtml + guideHtml + adminResourcesHtml;
+      return bannerHtml + guideHtml + cardsHtml + adminResourcesHtml;
     }
   },
   'B': {
