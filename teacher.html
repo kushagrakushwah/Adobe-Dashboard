@@ -359,13 +359,13 @@ footer p+p{margin-top:5px}
         </div>
         <div class="tile-body">
           <div>
-            <div class="tile-tag" id="sA-tag">Section A</div>
-            <h2 class="tile-title" id="sA-title">Adobe ID &amp; Access</h2>
-            <p class="tile-desc" id="sA-desc">School login, institutional account creation, single sign-on &amp; IT admin deployment guide.</p>
+            <div class="tile-tag" id="sA-tag">Section A • Institutional Access</div>
+            <h2 class="tile-title" id="sA-title">Adobe ID &amp; Password Access</h2>
+            <p class="tile-desc" id="sA-desc">Teacher ID directory, missing ID creation request, and step-by-step mobile &amp; desktop login video tutorials.</p>
           </div>
           <div class="tile-footer">
-            <span class="tile-hint" id="sA-hint">5 Institutional Tools</span>
-            <span class="tile-btn" id="sA-btn">Open &rarr;</span>
+            <span class="tile-hint" id="sA-hint">4 Core Access Portals</span>
+            <span class="tile-btn" id="sA-btn">Open Section &rarr;</span>
           </div>
         </div>
       </div>
@@ -988,7 +988,7 @@ var LANG = {
     guideText:'<strong>Click any section card below</strong> to open its complete workspace in full-screen view.',
     backBtn:'Back to Sections',
     crumbHome:'Home',
-    sAtag:'Section A', sAtitle:'Adobe ID &amp; Access', sAdesc:'School login, institutional account creation, single sign-on &amp; IT admin deployment guide.', sAhint:'5 Institutional Tools', sAbtn:'Open &rarr;',
+    sAtag:'Section A • Institutional Access', sAtitle:'Adobe ID &amp; Password Access', sAdesc:'Teacher ID directory, missing ID creation request, and step-by-step mobile &amp; desktop login video tutorials.', sAhint:'4 Core Access Portals', sAbtn:'Open Section &rarr;',
     sBtag:'Section B', sBtitle:'CPD Modules', sBdesc:'6 accredited professional development modules (CPD 01 to 06) available out of 10; remaining 4 modules uploading soon.', sBhint:'6 of 10 Modules', sBbtn:'Open &rarr;',
     sCtag:'Section C • DCAIS', sCtitle:'Student DCAIS Monitor (AIM)', sCdesc: 'Monitor what DCAIS activities your students are doing across Grades 6–8. Inspect curriculum instructions and templates.', sChint: 'Grades 6–8 Full Monitor', sCbtn:'Open &rarr;',
     sDtag:'Section D', sDtitle:'Classroom Resources', sDdesc:'Lesson plan templates, classroom printables, grading rubrics, tutorial videos, and project kits.', sDhint:'6 Resource Packs', sDbtn:'Open &rarr;',
@@ -1002,7 +1002,7 @@ var LANG = {
     guideText:'<strong>नीचे किसी भी सेक्शन कार्ड पर क्लिक करें</strong> और उसे पूरी स्क्रीन पर खोलें।',
     backBtn:'वापस जाएं',
     crumbHome:'होम',
-    sAtag:'सेक्शन A', sAtitle:'Adobe ID और एक्सेस', sAdesc:'स्कूल लॉगिन, संस्थागत खाता निर्माण, SSO और IT तैनाती गाइड।', sAhint:'5 संस्थागत टूल्स', sAbtn:'खोलें &rarr;',
+    sAtag:'सेक्शन A • संस्थागत एक्सेस', sAtitle:'Adobe ID और पासवर्ड एक्सेस', sAdesc:'शिक्षक ID डायरेक्टरी, नई ID अनुरोध फ़ॉर्म, और मोबाइल व डेस्कटॉप लॉगिन वीडियो ट्यूटोरियल।', sAhint:'4 मुख्य एक्सेस टूल्स', sAbtn:'सेक्शन खोलें &rarr;',
     sBtag:'सेक्शन B', sBtitle:'CPD मॉड्यूल', sBdesc:'कुल 10 में से 6 मान्यता प्राप्त प्रशिक्षण मॉड्यूल (CPD 01 से 06) उपलब्ध हैं; शेष 4 मॉड्यूल जल्द अपलोड किए जाएंगे।', sBhint:'10 में से 6 मॉड्यूल', sBbtn:'खोलें &rarr;',
     sCtag:'सेक्शन C • DCAIS', sCtitle:'छात्र DCAIS मॉनिटर (AIM)', sCdesc: 'देखें कक्षा 6 से 8 तक आपके छात्र कौन सी DCAIS गतिविधियाँ कर रहे हैं।', sChint: 'कक्षा 6–8 पूर्ण मॉनिटर', sCbtn:'खोलें &rarr;',
     sDtag:'सेक्शन D', sDtitle:'कक्षा संसाधन', sDdesc:'पाठ योजना टेम्पलेट, क्लासरूम प्रिंटेबल्स, ग्रेडिंग रूब्रिक्स और वीडियो।', sDhint:'6 संसाधन पैक', sDbtn:'खोलें &rarr;',
@@ -2416,71 +2416,221 @@ var TEACHER_SECTIONS_DATA = {
     descHi: 'अपने स्कूल या संस्थान के लिए Adobe Express for Education तक सहज संस्थागत पहुंच सुनिश्चित करें।',
     render: function(lang) {
       var isHi = (currentLang === 'hi');
-      var noticeTitle = isHi ? 'संस्थागत लॉगिन आवश्यक' : 'Institutional Login Required';
-      var noticeDesc = isHi ? 'सभी शिक्षकों को स्कूल द्वारा निर्दिष्ट आधिकारिक Adobe ID का उपयोग करना होगा। यदि आपके पास क्रेडेंशियल नहीं हैं तो IT व्यवस्थापक से संपर्क करें।' : 'All teachers must use school-assigned Adobe IDs. Contact your IT administrator if you do not have institutional access credentials.';
-      var actions = [
+
+      var teacherIdUrl = 'https://tinyurl.com/kvsteacherid';
+      var idRequestUrl = 'https://tinyurl.com/Kvs-idcreationtemplate';
+      var mobileTutorialUrl = 'https://drive.google.com/file/d/1yFK5JO38uod0BPn-qLobvRnHtxviJQRS/view?usp=sharing';
+      var desktopTutorialUrl = 'https://tinyurl.com/adobeloginsteps';
+
+      var bannerHtml =
+        '<div style="background:linear-gradient(135deg,#1E1B4B 0%,#312E81 100%);color:#FFF;border-radius:var(--radius);padding:24px 28px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;box-shadow:0 6px 20px rgba(30,27,75,0.22);">' +
+          '<div>' +
+            '<div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.3);padding:4px 12px;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px;">' +
+              '⭐ ' + (isHi ? 'संस्थागत एक्सेस और खाता प्रबंधन' : 'Institutional Access & Account Provisioning') +
+            '</div>' +
+            '<h3 style="font-size:1.35rem;font-weight:900;letter-spacing:-.02em;line-height:1.25;margin-bottom:6px;">' +
+              (isHi ? 'Adobe Express शिक्षक ID और लॉगिन सहायता केंद्र' : 'Adobe Express Teacher ID & Login Support Hub') +
+            '</h3>' +
+            '<p style="font-size:.86rem;color:rgba(255,255,255,0.9);max-width:700px;line-height:1.5;">' +
+              (isHi ? 'KVS शिक्षक अपने स्कूल ईमेल ID से Adobe Express में आसानी से लॉगिन कर सकते हैं। नीचे दिए गए 4 चरणों का उपयोग करके अपनी ID खोजें, नई ID का अनुरोध करें और मोबाइल व डेस्कटॉप वीडियो ट्यूटोरियल देखें।' :
+                      'Empowering educators with seamless institutional sign-in. Locate your pre-provisioned Teacher ID in the master sheet, submit an ID request if your email is missing, and follow step-by-step video tutorials for mobile and browser login.') +
+            '</p>' +
+          '</div>' +
+          '<div style="display:flex;gap:10px;flex-wrap:wrap;">' +
+            '<a href="' + teacherIdUrl + '" target="_blank" class="btn" style="background:#FFF;color:#1E1B4B;font-weight:800;font-size:.84rem;padding:10px 18px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,0.15);">' +
+              '📊 ' + (isHi ? 'शिक्षक ID शीट खोलें ↗' : 'Find Teacher ID ↗') +
+            '</a>' +
+            '<a href="' + idRequestUrl + '" target="_blank" class="btn" style="background:rgba(255,255,255,0.18);border:1.5px solid rgba(255,255,255,0.5);color:#FFF;font-weight:800;font-size:.84rem;padding:10px 18px;border-radius:999px;">' +
+              '📝 ' + (isHi ? 'नई ID का अनुरोध करें ↗' : 'Request Adobe ID ↗') +
+            '</a>' +
+          '</div>' +
+        '</div>';
+
+      var coreCards = [
         {
-          tEn: 'School Admin Console',
-          tHi: 'स्कूल एडमिन कंसोल',
-          dEn: 'Manage institutional Adobe licenses, user permissions, and school-wide directory sync.',
-          dHi: 'संस्थागत Adobe लाइसेंस, उपयोगकर्ता अनुमतियां और स्कूल-व्यापी निर्देशिका सिंक प्रबंधित करें।',
-          btnEn: 'Open Console ↗',
-          btnHi: 'कंसोल खोलें ↗',
-          href: 'https://adminconsole.adobe.com',
-          primary: true
+          num: '01',
+          tagEn: 'Master Directory Worksheet',
+          tagHi: 'मास्टर डायरेक्टरी वर्कशीट',
+          titleEn: '1. Find Your Adobe Teacher ID',
+          titleHi: '1. अपना Adobe शिक्षक ID खोजें',
+          descEn: 'Access the centralized master Google Spreadsheet containing pre-provisioned Adobe Express email accounts for KVS teachers across all regions.',
+          descHi: 'सभी क्षेत्रों के KVS शिक्षकों के लिए पहले से निर्मित Adobe Express ईमेल खातों वाली मुख्य गूगल स्प्रेडशीट एक्सेस करें।',
+          detailsEn: [
+            'Search your name, employee code, or school using Ctrl+F',
+            'Verify the official domain assigned to your institutional profile',
+            'Use this verified email ID to sign into Adobe Express'
+          ],
+          detailsHi: [
+            'Ctrl+F दबाकर अपना नाम, कर्मचारी कोड या स्कूल खोजें',
+            'अपने संस्थान प्रोफ़ाइल के लिए निर्दिष्ट आधिकारिक डोमेन सत्यापित करें',
+            'Adobe Express में लॉगिन करने के लिए इस सत्यापित ईमेल ID का उपयोग करें'
+          ],
+          url: teacherIdUrl,
+          btnEn: 'Open Teacher ID Sheet ↗',
+          btnHi: 'शिक्षक ID शीट खोलें ↗',
+          btnStyle: 'background:#FA0F00;color:#FFF;',
+          icon: '📊'
         },
         {
-          tEn: 'Create Adobe ID',
-          tHi: 'Adobe ID बनाएं',
-          dEn: 'Step-by-step account setup using your designated official school email address.',
-          dHi: 'अपने आधिकारिक स्कूल ईमेल पते का उपयोग करके चरण-दर-चरण खाता सेटअप करें।',
-          btnEn: 'Create Account ↗',
-          btnHi: 'खाता बनाएं ↗',
-          href: 'https://account.adobe.com',
-          primary: true
+          num: '02',
+          tagEn: 'Account Request Form',
+          tagHi: 'खाता अनुरोध फ़ॉर्म',
+          titleEn: '2. Adobe ID Creation Request',
+          titleHi: '2. Adobe ID निर्माण अनुरोध',
+          descEn: 'If a teacher still cannot find their email ID in the master worksheet, submit an official request through this template to have an Adobe ID generated.',
+          descHi: 'यदि शिक्षक को अभी भी वर्कशीट में अपना ईमेल ID नहीं मिलता है, तो Adobe ID तैयार करवाने के लिए इस लिंक के माध्यम से अनुरोध सबमिट करें।',
+          detailsEn: [
+            'Fill in teacher name, school name, region, and official school email',
+            'Direct submission routed to the administrative provisioning team',
+            'Ensures all eligible educators receive active institutional licenses'
+          ],
+          detailsHi: [
+            'शिक्षक का नाम, स्कूल का नाम, क्षेत्र और आधिकारिक ईमेल दर्ज करें',
+            'प्रशासनिक प्रोविजनिंग टीम को सीधा अनुरोध प्रेषित होता है',
+            'सुनिश्चित करता है कि सभी शिक्षकों को सक्रिय संस्थागत लाइसेंस मिले'
+          ],
+          url: idRequestUrl,
+          btnEn: 'Submit ID Request Template ↗',
+          btnHi: 'ID अनुरोध टेम्पलेट खोलें ↗',
+          btnStyle: 'background:#059669;color:#FFF;',
+          icon: '📝'
         },
         {
-          tEn: 'Password & Security Settings',
-          tHi: 'पासवर्ड और सुरक्षा सेटिंग्स',
-          dEn: 'Reset credentials, manage two-factor authentication, and update recovery options.',
-          dHi: 'क्रेडेंशियल रीसेट करें, दो-चरणीय प्रमाणीकरण प्रबंधित करें और रिकवरी विकल्प अपडेट करें।',
-          btnEn: 'Manage Security ↗',
-          btnHi: 'सुरक्षा प्रबंधित करें ↗',
-          href: 'https://account.adobe.com/security',
-          primary: false
+          num: '03',
+          tagEn: 'Smartphone & Tablet Guide',
+          tagHi: 'स्मार्टफोन और टैबलेट गाइड',
+          titleEn: '3. Mobile Login Tutorial',
+          titleHi: '3. मोबाइल लॉगिन वीडियो ट्यूटोरियल',
+          descEn: 'Step-by-step video demonstration guiding you through signing in to the official Adobe Express application on Android and iOS mobile devices.',
+          descHi: 'एंड्रॉइड और iOS मोबाइल उपकरणों पर आधिकारिक Adobe Express एप्लिकेशन में साइन इन करने का चरण-दर-चरण वीडियो मार्गदर्शन।',
+          detailsEn: [
+            'How to download and launch the Adobe Express mobile app',
+            'Selecting "Sign in with Company or School Account"',
+            'Entering your institutional credentials for instant access'
+          ],
+          detailsHi: [
+            'Adobe Express मोबाइल ऐप डाउनलोड और लॉन्च कैसे करें',
+            '"Company or School Account" विकल्प का चयन करना',
+            'तत्काल एक्सेस के लिए अपनी संस्थागत क्रेडेंशियल दर्ज करना'
+          ],
+          url: mobileTutorialUrl,
+          btnEn: 'Watch Mobile Tutorial ↗',
+          btnHi: 'मोबाइल ट्यूटोरियल देखें ↗',
+          btnStyle: 'background:#4F46E5;color:#FFF;',
+          icon: '📱'
         },
         {
-          tEn: 'IT Admin Deployment Guide',
-          tHi: 'IT एडमिन परिनियोजन गाइड',
-          dEn: 'Enterprise deployment manual for school IT administrators to roll out Adobe Express across computer labs.',
-          dHi: 'स्कूल कंप्यूटर लैब में Adobe Express लागू करने के लिए स्कूल IT प्रशासकों के लिए मार्गदर्शिका।',
-          btnEn: 'View Guide ↗',
-          btnHi: 'गाइड देखें ↗',
-          href: 'https://helpx.adobe.com/enterprise',
-          primary: false
-        },
-        {
-          tEn: 'Single Sign-On (SSO) Integration',
-          tHi: 'सिंगल साइन-ऑन (SSO) एकीकरण',
-          dEn: 'Connect your school institutional Google Workspace or Microsoft 365 for one-click logins.',
-          dHi: 'एक-क्लिक लॉगिन के लिए अपने स्कूल के Google Workspace या Microsoft 365 को कनेक्ट करें।',
-          btnEn: 'Setup SSO ↗',
-          btnHi: 'SSO सेटअप करें ↗',
-          href: 'https://helpx.adobe.com/enterprise/using/sso.html',
-          primary: false
+          num: '04',
+          tagEn: 'Browser Sign-In Guide',
+          tagHi: 'ब्राउज़र साइन-इन गाइड',
+          titleEn: '4. Desktop/Laptop Login Tutorial',
+          titleHi: '4. डेस्कटॉप / लैपटॉप लॉगिन ट्यूटोरियल',
+          descEn: 'Detailed instructional video and guide demonstrating how to log in via web browser (Chrome, Edge, Firefox) on desktop or laptop computers.',
+          descHi: 'डेस्कटॉप या लैपटॉप पर वेब ब्राउज़र (Chrome, Edge, Firefox) के माध्यम से लॉगिन करने का विस्तृत निर्देशात्मक वीडियो और गाइड।',
+          detailsEn: [
+            'Open new.express.adobe.com in any web browser',
+            'Choose "Log in with School Account" (Enterprise ID)',
+            'Complete SSO authentication to reach your Educator Workspace'
+          ],
+          detailsHi: [
+            'किसी भी वेब ब्राउज़र में new.express.adobe.com खोलें',
+            '"Log in with School Account" (Enterprise ID) चुनें',
+            'एजुकेटर वर्कस्पेस तक पहुंचने के लिए SSO प्रमाणीकरण पूरा करें'
+          ],
+          url: desktopTutorialUrl,
+          btnEn: 'Watch Desktop Tutorial ↗',
+          btnHi: 'डेस्कटॉप ट्यूटोरियल देखें ↗',
+          btnStyle: 'background:#4F46E5;color:#FFF;',
+          icon: '💻'
         }
       ];
 
-      return '<div class="notice"><div class="notice-t">' + noticeTitle + '</div><div class="notice-d">' + noticeDesc + '</div></div>' +
-      '<div class="al">' +
-        actions.map(function(a) {
-          var t = isHi ? a.tHi : a.tEn;
-          var d = isHi ? a.dHi : a.dEn;
-          var b = isHi ? a.btnHi : a.btnEn;
-          var btnCls = a.primary ? 'btn btn-primary' : 'btn btn-ghost';
-          return '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">' + t + '</div><div class="ai-d">' + d + '</div></div></div><div class="ai-r"><a href="' + a.href + '" target="_blank" class="' + btnCls + '">' + b + '</a></div></div>';
+      var cardsHtml = '<div class="rg" style="margin-bottom:28px;">' +
+        coreCards.map(function(c) {
+          var tag = isHi ? c.tagHi : c.tagEn;
+          var title = isHi ? c.titleHi : c.titleEn;
+          var desc = isHi ? c.descHi : c.descEn;
+          var btn = isHi ? c.btnHi : c.btnEn;
+          var details = isHi ? c.detailsHi : c.detailsEn;
+
+          return '<div class="rc" style="display:flex;flex-direction:column;justify-content:space-between;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:0 4px 12px rgba(0,0,0,0.03);">' +
+            '<div>' +
+              '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px;">' +
+                '<span style="font-size:.74rem;font-weight:800;color:var(--ink-2);background:var(--surface-3);padding:3px 10px;border-radius:999px;border:1px solid var(--border);">' + c.num + '</span>' +
+                '<span style="font-size:.74rem;font-weight:800;color:var(--red);background:var(--red-bg);padding:3px 10px;border-radius:999px;border:1px solid var(--red-border);">' + tag + '</span>' +
+              '</div>' +
+              '<h4 style="font-size:1.15rem;font-weight:900;color:var(--ink);margin-bottom:8px;line-height:1.3;">' + title + '</h4>' +
+              '<p style="font-size:.85rem;color:var(--ink-2);line-height:1.5;margin-bottom:14px;">' + desc + '</p>' +
+              '<div style="background:var(--surface-2);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:18px;">' +
+                '<div style="font-size:.74rem;font-weight:800;color:var(--ink);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;">' +
+                  (isHi ? 'मुख्य बिंदु / निर्देश:' : 'Key Instructions:') +
+                '</div>' +
+                '<ul style="margin:0;padding-left:18px;font-size:.8rem;color:var(--ink-2);line-height:1.5;">' +
+                  details.map(function(d){ return '<li style="margin-bottom:3px;">' + d + '</li>'; }).join('') +
+                '</ul>' +
+              '</div>' +
+            '</div>' +
+            '<div style="display:flex;gap:8px;align-items:center;margin-top:auto;padding-top:14px;border-top:1px solid var(--border);flex-wrap:wrap;">' +
+              '<a href="' + c.url + '" target="_blank" class="btn" style="' + c.btnStyle + 'flex:1;justify-content:center;font-size:.84rem;font-weight:800;padding:10px 16px;border-radius:var(--radius-sm);text-align:center;text-decoration:none;box-shadow:0 2px 6px rgba(0,0,0,0.12);">' +
+                btn +
+              '</a>' +
+              '<button onclick="navigator.clipboard.writeText(\'' + c.url + '\').then(function(){ alert(\'' + (isHi ? 'लिंक कॉपी हो गया!' : 'Link copied to clipboard!') + '\'); })" class="btn btn-ghost" style="height:38px;padding:0 12px;font-size:.78rem;font-weight:700;background:var(--surface-2);border:1.5px solid var(--border);color:var(--ink);" title="' + (isHi ? 'लिंक कॉपी करें' : 'Copy Link') + '">' +
+                '📋 ' + (isHi ? 'कॉपी' : 'Copy') +
+              '</button>' +
+            '</div>' +
+          '</div>';
         }).join('') +
       '</div>';
+
+      var guideHtml =
+        '<div style="background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px 24px;margin-bottom:24px;">' +
+          '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px;">' +
+            '<div style="font-weight:900;color:var(--ink);font-size:1.05rem;">' +
+              '🚀 ' + (isHi ? 'त्वरित लॉगिन चेकलिस्ट (चरण-दर-चरण)' : 'Quick Login Checklist (Step-by-Step)') +
+            '</div>' +
+            '<span style="font-size:.76rem;font-weight:800;color:var(--red);background:var(--red-bg);padding:3px 10px;border-radius:999px;border:1px solid var(--red-border);">' +
+              (isHi ? '4 आसान चरण' : '4 Easy Steps') +
+            '</span>' +
+          '</div>' +
+          '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;">' +
+            '<div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;">' +
+              '<div style="font-weight:900;font-size:.88rem;color:var(--red);margin-bottom:4px;">' + (isHi ? 'स्टेप 1: ID चेक करें' : 'Step 1: Find ID') + '</div>' +
+              '<div style="font-size:.8rem;color:var(--ink-2);line-height:1.45;">' + (isHi ? 'टीचर ID शीट खोलें और Ctrl+F दबाकर अपना आधिकारिक स्कूल ईमेल ID ढूंढें।' : 'Open the Teacher ID Sheet and find your assigned official school email ID.') + '</div>' +
+            '</div>' +
+            '<div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;">' +
+              '<div style="font-weight:900;font-size:.88rem;color:#059669;margin-bottom:4px;">' + (isHi ? 'स्टेप 2: लापता होने पर अनुरोध' : 'Step 2: Request if Missing') + '</div>' +
+              '<div style="font-size:.8rem;color:var(--ink-2);line-height:1.45;">' + (isHi ? 'यदि आपकी ID नहीं है, तो ID निर्माण टेम्पलेट फ़ॉर्म भरकर सबमिट करें।' : 'If not found, submit the ID Creation Template to have your ID provisioned.') + '</div>' +
+            '</div>' +
+            '<div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;">' +
+              '<div style="font-weight:900;font-size:.88rem;color:#4F46E5;margin-bottom:4px;">' + (isHi ? 'स्टेप 3: ट्यूटोरियल देखें' : 'Step 3: Watch Tutorial') + '</div>' +
+              '<div style="font-size:.8rem;color:var(--ink-2);line-height:1.45;">' + (isHi ? 'मोबाइल या ब्राउज़र लॉगिन वीडियो ट्यूटोरियल देखकर सही प्रक्रिया समझें।' : 'Watch the mobile or browser login video to follow the exact sign-in steps.') + '</div>' +
+            '</div>' +
+            '<div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;">' +
+              '<div style="font-weight:900;font-size:.88rem;color:var(--ink);margin-bottom:4px;">' + (isHi ? 'स्टेप 4: लॉगिन व निर्माण' : 'Step 4: Login & Create') + '</div>' +
+              '<div style="font-size:.8rem;color:var(--ink-2);line-height:1.45;">' + (isHi ? 'Company or School Account चुनकर लॉगिन करें और रचनात्मक प्रोजेक्ट्स शुरू करें।' : 'Select "Company or School Account" to log in and start creating projects.') + '</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+
+      var adminResourcesHtml =
+        '<div style="background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:18px 22px;">' +
+          '<div style="font-weight:900;color:var(--ink);font-size:.92rem;margin-bottom:10px;">' +
+            '⚙️ ' + (isHi ? 'अतिरिक्त IT व्यवस्थापक संसाधन' : 'Additional Administrator & Security Resources') +
+          '</div>' +
+          '<div style="display:flex;gap:10px;flex-wrap:wrap;">' +
+            '<a href="https://adminconsole.adobe.com" target="_blank" class="btn btn-ghost" style="font-size:.78rem;padding:7px 14px;background:var(--surface-2);border:1px solid var(--border);">' +
+              (isHi ? 'स्कूल एडमिन कंसोल ↗' : 'School Admin Console ↗') +
+            '</a>' +
+            '<a href="https://account.adobe.com/security" target="_blank" class="btn btn-ghost" style="font-size:.78rem;padding:7px 14px;background:var(--surface-2);border:1px solid var(--border);">' +
+              (isHi ? 'पासवर्ड व सुरक्षा सेटिंग्स ↗' : 'Password & Security Settings ↗') +
+            '</a>' +
+            '<a href="https://helpx.adobe.com/enterprise/using/sso.html" target="_blank" class="btn btn-ghost" style="font-size:.78rem;padding:7px 14px;background:var(--surface-2);border:1px solid var(--border);">' +
+              (isHi ? 'सिंगल साइन-ऑन (SSO) गाइड ↗' : 'SSO Setup Manual ↗') +
+            '</a>' +
+          '</div>' +
+        '</div>';
+
+      return bannerHtml + cardsHtml + guideHtml + adminResourcesHtml;
     }
   },
   'B': {

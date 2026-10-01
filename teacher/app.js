@@ -537,14 +537,175 @@ var TEACHER_SECTIONS_DATA = {
     title: 'Adobe ID &amp; Password Access Management',
     desc: 'Ensure seamless institutional access to Adobe Express for Education for your school or institution.',
     render: function() {
-      return '<div class="notice"><div class="notice-t">Institutional Login Required</div><div class="notice-d">All teachers must use school-assigned Adobe IDs. Contact your IT administrator if you do not have institutional access credentials.</div></div>' +
-      '<div class="al">' +
-        '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">School Admin Console</div><div class="ai-d">Manage institutional Adobe licenses, user permissions, and school-wide directory sync.</div></div></div><div class="ai-r"><a href="https://adminconsole.adobe.com" target="_blank" class="btn btn-primary">Open Console &#8599;</a></div></div>' +
-        '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Create Adobe ID</div><div class="ai-d">Step-by-step account setup using your designated official school email address.</div></div></div><div class="ai-r"><a href="https://account.adobe.com" target="_blank" class="btn btn-primary">Create Account &#8599;</a></div></div>' +
-        '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Password &amp; Security Settings</div><div class="ai-d">Reset credentials, manage two-factor authentication, and update recovery options.</div></div></div><div class="ai-r"><a href="https://account.adobe.com/security" target="_blank" class="btn btn-ghost">Manage Security &#8599;</a></div></div>' +
-        '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">IT Admin Deployment Guide</div><div class="ai-d">Enterprise deployment manual for school IT administrators to roll out Adobe Express across computer labs.</div></div></div><div class="ai-r"><a href="https://helpx.adobe.com/enterprise" target="_blank" class="btn btn-ghost">View Guide &#8599;</a></div></div>' +
-        '<div class="ai"><div class="ai-l"><div class="ai-dot"></div><div><div class="ai-t">Single Sign-On (SSO) Integration</div><div class="ai-d">Connect your school institutional Google Workspace or Microsoft 365 for one-click logins.</div></div></div><div class="ai-r"><a href="https://helpx.adobe.com/enterprise/using/sso.html" target="_blank" class="btn btn-ghost">Setup SSO &#8599;</a></div></div>' +
+      var teacherIdUrl = 'https://tinyurl.com/kvsteacherid';
+      var idRequestUrl = 'https://tinyurl.com/Kvs-idcreationtemplate';
+      var mobileTutorialUrl = 'https://drive.google.com/file/d/1yFK5JO38uod0BPn-qLobvRnHtxviJQRS/view?usp=sharing';
+      var desktopTutorialUrl = 'https://tinyurl.com/adobeloginsteps';
+
+      var bannerHtml =
+        '<div style="background:linear-gradient(135deg,#1E1B4B 0%,#312E81 100%);color:#FFF;border-radius:var(--radius);padding:24px 28px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;box-shadow:0 6px 20px rgba(30,27,75,0.22);">' +
+          '<div>' +
+            '<div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.3);padding:4px 12px;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px;">' +
+              '⭐ Institutional Access &amp; Account Provisioning' +
+            '</div>' +
+            '<h3 style="font-size:1.35rem;font-weight:900;letter-spacing:-.02em;line-height:1.25;margin-bottom:6px;">' +
+              'Adobe Express Teacher ID &amp; Login Support Hub' +
+            '</h3>' +
+            '<p style="font-size:.86rem;color:rgba(255,255,255,0.9);max-width:700px;line-height:1.5;">' +
+              'Empowering educators with seamless institutional sign-in. Locate your pre-provisioned Teacher ID in the master sheet, submit an ID request if your email is missing, and follow step-by-step video tutorials for mobile and browser login.' +
+            '</p>' +
+          '</div>' +
+          '<div style="display:flex;gap:10px;flex-wrap:wrap;">' +
+            '<a href="' + teacherIdUrl + '" target="_blank" class="btn" style="background:#FFF;color:#1E1B4B;font-weight:800;font-size:.84rem;padding:10px 18px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,0.15);">' +
+              '📊 Find Teacher ID ↗' +
+            '</a>' +
+            '<a href="' + idRequestUrl + '" target="_blank" class="btn" style="background:rgba(255,255,255,0.18);border:1.5px solid rgba(255,255,255,0.5);color:#FFF;font-weight:800;font-size:.84rem;padding:10px 18px;border-radius:999px;">' +
+              '📝 Request Adobe ID ↗' +
+            '</a>' +
+          '</div>' +
+        '</div>';
+
+      var coreCards = [
+        {
+          num: '01',
+          tag: 'Master Directory Worksheet',
+          title: '1. Find Your Adobe Teacher ID',
+          desc: 'Access the centralized master Google Spreadsheet containing pre-provisioned Adobe Express email accounts for KVS teachers across all regions.',
+          details: [
+            'Search your name, employee code, or school using Ctrl+F',
+            'Verify the official domain assigned to your institutional profile',
+            'Use this verified email ID to sign into Adobe Express'
+          ],
+          url: teacherIdUrl,
+          btn: 'Open Teacher ID Sheet ↗',
+          btnStyle: 'background:#FA0F00;color:#FFF;',
+          icon: '📊'
+        },
+        {
+          num: '02',
+          tag: 'Account Request Form',
+          title: '2. Adobe ID Creation Request',
+          desc: 'If a teacher still cannot find their email ID in the master worksheet, submit an official request through this template to have an Adobe ID generated.',
+          details: [
+            'Fill in teacher name, school name, region, and official school email',
+            'Direct submission routed to the administrative provisioning team',
+            'Ensures all eligible educators receive active institutional licenses'
+          ],
+          url: idRequestUrl,
+          btn: 'Submit ID Request Template ↗',
+          btnStyle: 'background:#059669;color:#FFF;',
+          icon: '📝'
+        },
+        {
+          num: '03',
+          tag: 'Smartphone & Tablet Guide',
+          title: '3. Mobile Login Tutorial',
+          desc: 'Step-by-step video demonstration guiding you through signing in to the official Adobe Express application on Android and iOS mobile devices.',
+          details: [
+            'How to download and launch the Adobe Express mobile app',
+            'Selecting "Sign in with Company or School Account"',
+            'Entering your institutional credentials for instant access'
+          ],
+          url: mobileTutorialUrl,
+          btn: 'Watch Mobile Tutorial ↗',
+          btnStyle: 'background:#4F46E5;color:#FFF;',
+          icon: '📱'
+        },
+        {
+          num: '04',
+          tag: 'Browser Sign-In Guide',
+          title: '4. Desktop/Laptop Login Tutorial',
+          desc: 'Detailed instructional video and guide demonstrating how to log in via web browser (Chrome, Edge, Firefox) on desktop or laptop computers.',
+          details: [
+            'Open new.express.adobe.com in any web browser',
+            'Choose "Log in with School Account" (Enterprise ID)',
+            'Complete SSO authentication to reach your Educator Workspace'
+          ],
+          url: desktopTutorialUrl,
+          btn: 'Watch Desktop Tutorial ↗',
+          btnStyle: 'background:#4F46E5;color:#FFF;',
+          icon: '💻'
+        }
+      ];
+
+      var cardsHtml = '<div class="rg" style="margin-bottom:28px;">' +
+        coreCards.map(function(c) {
+          return '<div class="rc" style="display:flex;flex-direction:column;justify-content:space-between;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:0 4px 12px rgba(0,0,0,0.03);">' +
+            '<div>' +
+              '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px;">' +
+                '<span style="font-size:.74rem;font-weight:800;color:var(--ink-2);background:var(--surface-3);padding:3px 10px;border-radius:999px;border:1px solid var(--border);">' + c.num + '</span>' +
+                '<span style="font-size:.74rem;font-weight:800;color:var(--red);background:var(--red-bg);padding:3px 10px;border-radius:999px;border:1px solid var(--red-border);">' + c.tag + '</span>' +
+              '</div>' +
+              '<h4 style="font-size:1.15rem;font-weight:900;color:var(--ink);margin-bottom:8px;line-height:1.3;">' + c.title + '</h4>' +
+              '<p style="font-size:.85rem;color:var(--ink-2);line-height:1.5;margin-bottom:14px;">' + c.desc + '</p>' +
+              '<div style="background:var(--surface-2);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:18px;">' +
+                '<div style="font-size:.74rem;font-weight:800;color:var(--ink);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;">Key Instructions:</div>' +
+                '<ul style="margin:0;padding-left:18px;font-size:.8rem;color:var(--ink-2);line-height:1.5;">' +
+                  c.details.map(function(d){ return '<li style="margin-bottom:3px;">' + d + '</li>'; }).join('') +
+                '</ul>' +
+              '</div>' +
+            '</div>' +
+            '<div style="display:flex;gap:8px;align-items:center;margin-top:auto;padding-top:14px;border-top:1px solid var(--border);flex-wrap:wrap;">' +
+              '<a href="' + c.url + '" target="_blank" class="btn" style="' + c.btnStyle + 'flex:1;justify-content:center;font-size:.84rem;font-weight:800;padding:10px 16px;border-radius:var(--radius-sm);text-align:center;text-decoration:none;box-shadow:0 2px 6px rgba(0,0,0,0.12);">' +
+                c.btn +
+              '</a>' +
+              '<button onclick="navigator.clipboard.writeText(\'' + c.url + '\').then(function(){ alert(\'Link copied to clipboard!\'); })" class="btn btn-ghost" style="height:38px;padding:0 12px;font-size:.78rem;font-weight:700;background:var(--surface-2);border:1.5px solid var(--border);color:var(--ink);" title="Copy Link">' +
+                '📋 Copy' +
+              '</button>' +
+            '</div>' +
+          '</div>';
+        }).join('') +
       '</div>';
+
+      var guideHtml =
+        '<div style="background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px 24px;margin-bottom:24px;">' +
+          '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:gap:8px;">' +
+            '<div style="font-weight:900;color:var(--ink);font-size:1.05rem;">' +
+              '🚀 Quick Login Checklist (Step-by-Step)' +
+            '</div>' +
+            '<span style="font-size:.76rem;font-weight:800;color:var(--red);background:var(--red-bg);padding:3px 10px;border-radius:999px;border:1px solid var(--red-border);">' +
+              '4 Easy Steps' +
+            '</span>' +
+          '</div>' +
+          '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;">' +
+            '<div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;">' +
+              '<div style="font-weight:900;font-size:.88rem;color:var(--red);margin-bottom:4px;">Step 1: Find ID</div>' +
+              '<div style="font-size:.8rem;color:var(--ink-2);line-height:1.45;">Open the Teacher ID Sheet and find your assigned official school email ID.</div>' +
+            '</div>' +
+            '<div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;">' +
+              '<div style="font-weight:900;font-size:.88rem;color:#059669;margin-bottom:4px;">Step 2: Request if Missing</div>' +
+              '<div style="font-size:.8rem;color:var(--ink-2);line-height:1.45;">If not found, submit the ID Creation Template to have your ID provisioned.</div>' +
+            '</div>' +
+            '<div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;">' +
+              '<div style="font-weight:900;font-size:.88rem;color:#4F46E5;margin-bottom:4px;">Step 3: Watch Tutorial</div>' +
+              '<div style="font-size:.8rem;color:var(--ink-2);line-height:1.45;">Watch the mobile or browser login video to follow the exact sign-in steps.</div>' +
+            '</div>' +
+            '<div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;">' +
+              '<div style="font-weight:900;font-size:.88rem;color:var(--ink);margin-bottom:4px;">Step 4: Login &amp; Create</div>' +
+              '<div style="font-size:.8rem;color:var(--ink-2);line-height:1.45;">Select "Company or School Account" to log in and start creating projects.</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+
+      var adminResourcesHtml =
+        '<div style="background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:18px 22px;">' +
+          '<div style="font-weight:900;color:var(--ink);font-size:.92rem;margin-bottom:10px;">' +
+            '⚙️ Additional Administrator &amp; Security Resources' +
+          '</div>' +
+          '<div style="display:flex;gap:10px;flex-wrap:wrap;">' +
+            '<a href="https://adminconsole.adobe.com" target="_blank" class="btn btn-ghost" style="font-size:.78rem;padding:7px 14px;background:var(--surface-2);border:1px solid var(--border);">' +
+              'School Admin Console ↗' +
+            '</a>' +
+            '<a href="https://account.adobe.com/security" target="_blank" class="btn btn-ghost" style="font-size:.78rem;padding:7px 14px;background:var(--surface-2);border:1px solid var(--border);">' +
+              'Password &amp; Security Settings ↗' +
+            '</a>' +
+            '<a href="https://helpx.adobe.com/enterprise/using/sso.html" target="_blank" class="btn btn-ghost" style="font-size:.78rem;padding:7px 14px;background:var(--surface-2);border:1px solid var(--border);">' +
+              'SSO Setup Manual ↗' +
+            '</a>' +
+          '</div>' +
+        '</div>';
+
+      return bannerHtml + cardsHtml + guideHtml + adminResourcesHtml;
     }
   },
   'B': {
