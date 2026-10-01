@@ -289,6 +289,12 @@ footer p+p{margin-top:5px}
 @keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
 .tile-toggle-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:8px 12px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--ink-2);font-size:.78rem;font-weight:700;cursor:pointer;transition:all .18s ease;margin-top:4px}
 .tile-toggle-btn:hover{background:var(--surface-3);color:var(--ink);border-color:rgba(0,0,0,0.2)}
+
+/* SECTION A • ACCESS CARDS 2x2 GRID */
+.access-cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:28px}
+.access-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 4px 14px rgba(0,0,0,0.03);transition:all .2s ease}
+.access-card:hover{border-color:rgba(250,15,0,0.35);box-shadow:0 8px 24px rgba(0,0,0,0.07);transform:translateY(-2px)}
+@media(max-width:820px){.access-cards-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1884,6 +1890,22 @@ function copyExamLink(url, regionName) {
   }
 }
 
+function copyResourceLink(url, label) {
+  if (!url || url === '#' || url.trim() === '') {
+    showToast((currentLang === 'hi' ? label + ' का लिंक जल्द उपलब्ध कराया जाएगा!' : label + ' link will be available soon!'));
+    return;
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(function() {
+      showToast((currentLang === 'hi' ? label + ' लिंक कॉपी हो गया!' : label + ' link copied!'));
+    }).catch(function() {
+      prompt((currentLang === 'hi' ? 'लिंक कॉपी करें:' : 'Copy Link:'), url);
+    });
+  } else {
+    prompt((currentLang === 'hi' ? 'लिंक कॉपी करें:' : 'Copy Link:'), url);
+  }
+}
+
 function setExamSubTab(tab) {
   currentExamSubTab = tab;
   examRegionQuery = '';
@@ -2454,8 +2476,8 @@ var TEACHER_SECTIONS_DATA = {
           num: '01',
           tagEn: 'Master Directory Worksheet',
           tagHi: 'मास्टर डायरेक्टरी वर्कशीट',
-          titleEn: '1. Find Your Adobe Teacher ID',
-          titleHi: '1. अपना Adobe शिक्षक ID खोजें',
+          titleEn: 'Find Your Adobe Teacher ID',
+          titleHi: 'अपना Adobe शिक्षक ID खोजें',
           descEn: 'Access the centralized master Google Spreadsheet containing pre-provisioned Adobe Express email accounts for KVS teachers across all regions.',
           descHi: 'सभी क्षेत्रों के KVS शिक्षकों के लिए पहले से निर्मित Adobe Express ईमेल खातों वाली मुख्य गूगल स्प्रेडशीट एक्सेस करें।',
           detailsEn: [
@@ -2469,18 +2491,20 @@ var TEACHER_SECTIONS_DATA = {
             'Adobe Express में लॉगिन करने के लिए इस सत्यापित ईमेल ID का उपयोग करें'
           ],
           url: teacherIdUrl,
-          btnEn: 'Open Teacher ID Sheet ↗',
+          btnEn: 'Open Master Sheet ↗',
           btnHi: 'शिक्षक ID शीट खोलें ↗',
           btnStyle: 'background:#FA0F00;color:#FFF;',
+          accentColor: '#FA0F00',
+          accentBg: 'rgba(250,15,0,0.08)',
           icon: '📊'
         },
         {
           num: '02',
           tagEn: 'Account Request Form',
           tagHi: 'खाता अनुरोध फ़ॉर्म',
-          titleEn: '2. Adobe ID Creation Request',
-          titleHi: '2. Adobe ID निर्माण अनुरोध',
-          descEn: 'If a teacher still cannot find their email ID in the master worksheet, submit an official request through this template to have an Adobe ID generated.',
+          titleEn: 'Adobe ID Creation Request',
+          titleHi: 'Adobe ID निर्माण अनुरोध',
+          descEn: 'If a teacher cannot find their email ID in the worksheet, submit an official request through this template to have an Adobe ID generated.',
           descHi: 'यदि शिक्षक को अभी भी वर्कशीट में अपना ईमेल ID नहीं मिलता है, तो Adobe ID तैयार करवाने के लिए इस लिंक के माध्यम से अनुरोध सबमिट करें।',
           detailsEn: [
             'Fill in teacher name, school name, region, and official school email',
@@ -2493,17 +2517,19 @@ var TEACHER_SECTIONS_DATA = {
             'सुनिश्चित करता है कि सभी शिक्षकों को सक्रिय संस्थागत लाइसेंस मिले'
           ],
           url: idRequestUrl,
-          btnEn: 'Submit ID Request Template ↗',
-          btnHi: 'ID अनुरोध टेम्पलेट खोलें ↗',
+          btnEn: 'Submit ID Request ↗',
+          btnHi: 'ID अनुरोध फ़ॉर्म खोलें ↗',
           btnStyle: 'background:#059669;color:#FFF;',
+          accentColor: '#059669',
+          accentBg: 'rgba(5,150,105,0.08)',
           icon: '📝'
         },
         {
           num: '03',
           tagEn: 'Smartphone & Tablet Guide',
           tagHi: 'स्मार्टफोन और टैबलेट गाइड',
-          titleEn: '3. Mobile Login Tutorial',
-          titleHi: '3. मोबाइल लॉगिन वीडियो ट्यूटोरियल',
+          titleEn: 'Mobile Login Tutorial',
+          titleHi: 'मोबाइल लॉगिन वीडियो ट्यूटोरियल',
           descEn: 'Step-by-step video demonstration guiding you through signing in to the official Adobe Express application on Android and iOS mobile devices.',
           descHi: 'एंड्रॉइड और iOS मोबाइल उपकरणों पर आधिकारिक Adobe Express एप्लिकेशन में साइन इन करने का चरण-दर-चरण वीडियो मार्गदर्शन।',
           detailsEn: [
@@ -2520,14 +2546,16 @@ var TEACHER_SECTIONS_DATA = {
           btnEn: 'Watch Mobile Tutorial ↗',
           btnHi: 'मोबाइल ट्यूटोरियल देखें ↗',
           btnStyle: 'background:#4F46E5;color:#FFF;',
+          accentColor: '#4F46E5',
+          accentBg: 'rgba(79,70,229,0.08)',
           icon: '📱'
         },
         {
           num: '04',
           tagEn: 'Browser Sign-In Guide',
           tagHi: 'ब्राउज़र साइन-इन गाइड',
-          titleEn: '4. Desktop/Laptop Login Tutorial',
-          titleHi: '4. डेस्कटॉप / लैपटॉप लॉगिन ट्यूटोरियल',
+          titleEn: 'Desktop / Laptop Login Tutorial',
+          titleHi: 'डेस्कटॉप / लैपटॉप लॉगिन ट्यूटोरियल',
           descEn: 'Detailed instructional video and guide demonstrating how to log in via web browser (Chrome, Edge, Firefox) on desktop or laptop computers.',
           descHi: 'डेस्कटॉप या लैपटॉप पर वेब ब्राउज़र (Chrome, Edge, Firefox) के माध्यम से लॉगिन करने का विस्तृत निर्देशात्मक वीडियो और गाइड।',
           detailsEn: [
@@ -2543,12 +2571,14 @@ var TEACHER_SECTIONS_DATA = {
           url: desktopTutorialUrl,
           btnEn: 'Watch Desktop Tutorial ↗',
           btnHi: 'डेस्कटॉप ट्यूटोरियल देखें ↗',
-          btnStyle: 'background:#4F46E5;color:#FFF;',
+          btnStyle: 'background:#2563EB;color:#FFF;',
+          accentColor: '#2563EB',
+          accentBg: 'rgba(37,99,235,0.08)',
           icon: '💻'
         }
       ];
 
-      var cardsHtml = '<div class="rg" style="margin-bottom:28px;">' +
+      var cardsHtml = '<div class="access-cards-grid">' +
         coreCards.map(function(c) {
           var tag = isHi ? c.tagHi : c.tagEn;
           var title = isHi ? c.titleHi : c.titleEn;
@@ -2556,28 +2586,37 @@ var TEACHER_SECTIONS_DATA = {
           var btn = isHi ? c.btnHi : c.btnEn;
           var details = isHi ? c.detailsHi : c.detailsEn;
 
-          return '<div class="rc" style="display:flex;flex-direction:column;justify-content:space-between;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:0 4px 12px rgba(0,0,0,0.03);">' +
+          return '<div class="access-card">' +
             '<div>' +
               '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px;">' +
-                '<span style="font-size:.74rem;font-weight:800;color:var(--ink-2);background:var(--surface-3);padding:3px 10px;border-radius:999px;border:1px solid var(--border);">' + c.num + '</span>' +
-                '<span style="font-size:.74rem;font-weight:800;color:var(--red);background:var(--red-bg);padding:3px 10px;border-radius:999px;border:1px solid var(--red-border);">' + tag + '</span>' +
+                '<span style="display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:800;color:' + c.accentColor + ';background:' + c.accentBg + ';padding:4px 10px;border-radius:999px;border:1px solid ' + c.accentColor + '22;">' +
+                  '<span>' + c.icon + '</span> <span>' + tag + '</span>' +
+                '</span>' +
+                '<span style="font-size:.72rem;font-weight:800;letter-spacing:.04em;color:var(--ink-3);background:var(--surface-3);padding:3px 9px;border-radius:999px;border:1px solid var(--border);">' +
+                  (isHi ? 'चरण ' + c.num : 'STEP ' + c.num) +
+                '</span>' +
               '</div>' +
               '<h4 style="font-size:1.15rem;font-weight:900;color:var(--ink);margin-bottom:8px;line-height:1.3;">' + title + '</h4>' +
-              '<p style="font-size:.85rem;color:var(--ink-2);line-height:1.5;margin-bottom:14px;">' + desc + '</p>' +
-              '<div style="background:var(--surface-2);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:18px;">' +
-                '<div style="font-size:.74rem;font-weight:800;color:var(--ink);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;">' +
-                  (isHi ? 'मुख्य बिंदु / निर्देश:' : 'Key Instructions:') +
+              '<p style="font-size:.84rem;color:var(--ink-2);line-height:1.5;margin-bottom:14px;">' + desc + '</p>' +
+              '<div style="background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:16px;">' +
+                '<div style="font-size:.72rem;font-weight:800;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;display:flex;align-items:center;gap:6px;">' +
+                  '<span>📌</span> <span>' + (isHi ? 'त्वरित निर्देश एवं चरण:' : 'Key Instructions & Steps:') + '</span>' +
                 '</div>' +
-                '<ul style="margin:0;padding-left:18px;font-size:.8rem;color:var(--ink-2);line-height:1.5;">' +
-                  details.map(function(d){ return '<li style="margin-bottom:3px;">' + d + '</li>'; }).join('') +
-                '</ul>' +
+                '<div style="display:flex;flex-direction:column;gap:6px;">' +
+                  details.map(function(d, idx) {
+                    return '<div style="display:flex;align-items:flex-start;gap:8px;font-size:.8rem;color:var(--ink-2);line-height:1.45;">' +
+                      '<span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:rgba(0,0,0,0.06);color:var(--ink);font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:1px;">' + (idx + 1) + '</span>' +
+                      '<span>' + d + '</span>' +
+                    '</div>';
+                  }).join('') +
+                '</div>' +
               '</div>' +
             '</div>' +
-            '<div style="display:flex;gap:8px;align-items:center;margin-top:auto;padding-top:14px;border-top:1px solid var(--border);flex-wrap:wrap;">' +
-              '<a href="' + c.url + '" target="_blank" class="btn" style="' + c.btnStyle + 'flex:1;justify-content:center;font-size:.84rem;font-weight:800;padding:10px 16px;border-radius:var(--radius-sm);text-align:center;text-decoration:none;box-shadow:0 2px 6px rgba(0,0,0,0.12);">' +
+            '<div style="display:flex;gap:10px;align-items:center;margin-top:auto;padding-top:14px;border-top:1px solid var(--border);">' +
+              '<a href="' + c.url + '" target="_blank" class="btn" style="' + c.btnStyle + 'flex:1;min-width:0;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:.84rem;font-weight:800;padding:10px 14px;border-radius:var(--radius-sm);text-align:center;text-decoration:none;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.12);">' +
                 btn +
               '</a>' +
-              '<button onclick="navigator.clipboard.writeText(\'' + c.url + '\').then(function(){ alert(\'' + (isHi ? 'लिंक कॉपी हो गया!' : 'Link copied to clipboard!') + '\'); })" class="btn btn-ghost" style="height:38px;padding:0 12px;font-size:.78rem;font-weight:700;background:var(--surface-2);border:1.5px solid var(--border);color:var(--ink);" title="' + (isHi ? 'लिंक कॉपी करें' : 'Copy Link') + '">' +
+              '<button onclick="copyResourceLink(\'' + c.url + '\',\'' + (isHi ? c.titleHi : c.titleEn).replace(/'/g, "\\'") + '\')" class="btn btn-ghost" style="flex-shrink:0;height:38px;padding:0 14px;display:inline-flex;align-items:center;gap:4px;font-size:.78rem;font-weight:700;background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius-sm);color:var(--ink);white-space:nowrap;" title="' + (isHi ? 'लिंक कॉपी करें' : 'Copy Link') + '">' +
                 '📋 ' + (isHi ? 'कॉपी' : 'Copy') +
               '</button>' +
             '</div>' +

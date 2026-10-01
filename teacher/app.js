@@ -572,7 +572,7 @@ var TEACHER_SECTIONS_DATA = {
         {
           num: '01',
           tag: 'Master Directory Worksheet',
-          title: '1. Find Your Adobe Teacher ID',
+          title: 'Find Your Adobe Teacher ID',
           desc: 'Access the centralized master Google Spreadsheet containing pre-provisioned Adobe Express email accounts for KVS teachers across all regions.',
           details: [
             'Search your name, employee code, or school using Ctrl+F',
@@ -580,14 +580,16 @@ var TEACHER_SECTIONS_DATA = {
             'Use this verified email ID to sign into Adobe Express'
           ],
           url: teacherIdUrl,
-          btn: 'Open Teacher ID Sheet ↗',
+          btn: 'Open Master Sheet ↗',
           btnStyle: 'background:#FA0F00;color:#FFF;',
+          accentColor: '#FA0F00',
+          accentBg: 'rgba(250,15,0,0.08)',
           icon: '📊'
         },
         {
           num: '02',
           tag: 'Account Request Form',
-          title: '2. Adobe ID Creation Request',
+          title: 'Adobe ID Creation Request',
           desc: 'If a teacher still cannot find their email ID in the master worksheet, submit an official request through this template to have an Adobe ID generated.',
           details: [
             'Fill in teacher name, school name, region, and official school email',
@@ -595,14 +597,16 @@ var TEACHER_SECTIONS_DATA = {
             'Ensures all eligible educators receive active institutional licenses'
           ],
           url: idRequestUrl,
-          btn: 'Submit ID Request Template ↗',
+          btn: 'Submit ID Request ↗',
           btnStyle: 'background:#059669;color:#FFF;',
+          accentColor: '#059669',
+          accentBg: 'rgba(5,150,105,0.08)',
           icon: '📝'
         },
         {
           num: '03',
           tag: 'Smartphone & Tablet Guide',
-          title: '3. Mobile Login Tutorial',
+          title: 'Mobile Login Tutorial',
           desc: 'Step-by-step video demonstration guiding you through signing in to the official Adobe Express application on Android and iOS mobile devices.',
           details: [
             'How to download and launch the Adobe Express mobile app',
@@ -612,12 +616,14 @@ var TEACHER_SECTIONS_DATA = {
           url: mobileTutorialUrl,
           btn: 'Watch Mobile Tutorial ↗',
           btnStyle: 'background:#4F46E5;color:#FFF;',
+          accentColor: '#4F46E5',
+          accentBg: 'rgba(79,70,229,0.08)',
           icon: '📱'
         },
         {
           num: '04',
           tag: 'Browser Sign-In Guide',
-          title: '4. Desktop/Laptop Login Tutorial',
+          title: 'Desktop / Laptop Login Tutorial',
           desc: 'Detailed instructional video and guide demonstrating how to log in via web browser (Chrome, Edge, Firefox) on desktop or laptop computers.',
           details: [
             'Open new.express.adobe.com in any web browser',
@@ -626,33 +632,46 @@ var TEACHER_SECTIONS_DATA = {
           ],
           url: desktopTutorialUrl,
           btn: 'Watch Desktop Tutorial ↗',
-          btnStyle: 'background:#4F46E5;color:#FFF;',
+          btnStyle: 'background:#2563EB;color:#FFF;',
+          accentColor: '#2563EB',
+          accentBg: 'rgba(37,99,235,0.08)',
           icon: '💻'
         }
       ];
 
-      var cardsHtml = '<div class="rg" style="margin-bottom:28px;">' +
+      var cardsHtml = '<div class="access-cards-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:20px;margin-bottom:28px;">' +
         coreCards.map(function(c) {
-          return '<div class="rc" style="display:flex;flex-direction:column;justify-content:space-between;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px;box-shadow:0 4px 12px rgba(0,0,0,0.03);">' +
+          return '<div class="access-card" style="background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 4px 14px rgba(0,0,0,0.03);">' +
             '<div>' +
               '<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px;">' +
-                '<span style="font-size:.74rem;font-weight:800;color:var(--ink-2);background:var(--surface-3);padding:3px 10px;border-radius:999px;border:1px solid var(--border);">' + c.num + '</span>' +
-                '<span style="font-size:.74rem;font-weight:800;color:var(--red);background:var(--red-bg);padding:3px 10px;border-radius:999px;border:1px solid var(--red-border);">' + c.tag + '</span>' +
+                '<span style="display:inline-flex;align-items:center;gap:6px;font-size:.74rem;font-weight:800;color:' + c.accentColor + ';background:' + c.accentBg + ';padding:4px 10px;border-radius:999px;border:1px solid ' + c.accentColor + '22;">' +
+                  '<span>' + c.icon + '</span> <span>' + c.tag + '</span>' +
+                '</span>' +
+                '<span style="font-size:.72rem;font-weight:800;letter-spacing:.04em;color:var(--ink-3);background:var(--surface-3);padding:3px 9px;border-radius:999px;border:1px solid var(--border);">' +
+                  'STEP ' + c.num +
+                '</span>' +
               '</div>' +
               '<h4 style="font-size:1.15rem;font-weight:900;color:var(--ink);margin-bottom:8px;line-height:1.3;">' + c.title + '</h4>' +
-              '<p style="font-size:.85rem;color:var(--ink-2);line-height:1.5;margin-bottom:14px;">' + c.desc + '</p>' +
-              '<div style="background:var(--surface-2);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:18px;">' +
-                '<div style="font-size:.74rem;font-weight:800;color:var(--ink);text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px;">Key Instructions:</div>' +
-                '<ul style="margin:0;padding-left:18px;font-size:.8rem;color:var(--ink-2);line-height:1.5;">' +
-                  c.details.map(function(d){ return '<li style="margin-bottom:3px;">' + d + '</li>'; }).join('') +
-                '</ul>' +
+              '<p style="font-size:.84rem;color:var(--ink-2);line-height:1.5;margin-bottom:14px;">' + c.desc + '</p>' +
+              '<div style="background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:16px;">' +
+                '<div style="font-size:.72rem;font-weight:800;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;display:flex;align-items:center;gap:6px;">' +
+                  '<span>📌</span> <span>Key Instructions & Steps:</span>' +
+                '</div>' +
+                '<div style="display:flex;flex-direction:column;gap:6px;">' +
+                  c.details.map(function(d, idx) {
+                    return '<div style="display:flex;align-items:flex-start;gap:8px;font-size:.8rem;color:var(--ink-2);line-height:1.45;">' +
+                      '<span style="display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:rgba(0,0,0,0.06);color:var(--ink);font-size:.68rem;font-weight:800;flex-shrink:0;margin-top:1px;">' + (idx + 1) + '</span>' +
+                      '<span>' + d + '</span>' +
+                    '</div>';
+                  }).join('') +
+                '</div>' +
               '</div>' +
             '</div>' +
-            '<div style="display:flex;gap:8px;align-items:center;margin-top:auto;padding-top:14px;border-top:1px solid var(--border);flex-wrap:wrap;">' +
-              '<a href="' + c.url + '" target="_blank" class="btn" style="' + c.btnStyle + 'flex:1;justify-content:center;font-size:.84rem;font-weight:800;padding:10px 16px;border-radius:var(--radius-sm);text-align:center;text-decoration:none;box-shadow:0 2px 6px rgba(0,0,0,0.12);">' +
+            '<div style="display:flex;gap:10px;align-items:center;margin-top:auto;padding-top:14px;border-top:1px solid var(--border);">' +
+              '<a href="' + c.url + '" target="_blank" class="btn" style="' + c.btnStyle + 'flex:1;min-width:0;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:.84rem;font-weight:800;padding:10px 14px;border-radius:var(--radius-sm);text-align:center;text-decoration:none;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.12);">' +
                 c.btn +
               '</a>' +
-              '<button onclick="navigator.clipboard.writeText(\'' + c.url + '\').then(function(){ alert(\'Link copied to clipboard!\'); })" class="btn btn-ghost" style="height:38px;padding:0 12px;font-size:.78rem;font-weight:700;background:var(--surface-2);border:1.5px solid var(--border);color:var(--ink);" title="Copy Link">' +
+              '<button onclick="navigator.clipboard.writeText(\'' + c.url + '\').then(function(){ alert(\'Link copied to clipboard!\'); })" class="btn btn-ghost" style="flex-shrink:0;height:38px;padding:0 14px;display:inline-flex;align-items:center;gap:4px;font-size:.78rem;font-weight:700;background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius-sm);color:var(--ink);white-space:nowrap;" title="Copy Link">' +
                 '📋 Copy' +
               '</button>' +
             '</div>' +
