@@ -56,9 +56,9 @@ var LANG = {
     hdrBadge: 'à¤›à¤¾à¤¤à¥à¤° à¤ªà¥‹à¤°à¥à¤Ÿà¤²',
     heroTag: 'ðŸŽ¨ à¤•à¥à¤°à¤¿à¤à¤Ÿà¤¿à¤µ à¤¸à¥à¤Ÿà¥‚à¤¡à¤¿à¤¯à¥‹ â€” à¤›à¤¾à¤¤à¥à¤°à¥‹à¤‚ à¤•à¥‡ à¤²à¤¿à¤',
     heroTitle: 'à¤¹à¤° à¤®à¤¹à¥€à¤¨à¥‡ à¤•à¥à¤› à¤¨à¤¯à¤¾ à¤¬à¤¨à¤¾à¤“! ðŸŽ‰',
-    heroSub: 'à¤…à¤ªà¤¨à¤¾ à¤ªà¥à¤°à¥‹à¤œà¥‡à¤•à¥à¤Ÿ à¤šà¥à¤¨à¥‹, à¤›à¥‹à¤Ÿà¤¾ à¤µà¥€à¤¡à¤¿à¤¯à¥‹ à¤¦à¥‡à¤–à¥‹, Adobe Express à¤®à¥‡à¤‚ à¤¬à¤¨à¤¾à¤“, à¤”à¤° à¤Ÿà¥€à¤šà¤° à¤•à¥‹ à¤¦à¤¿à¤–à¤¾à¤“à¥¤ à¤¬à¤¸ à¤‡à¤¤à¤¨à¤¾ à¤¹à¥€!',
+    heroSub: 'à¤…à¤ªà¤¨à¤¾ à¤ªà¥à¤°à¥‹à¤œà¥‡à¤•à¥à¤Ÿ à¤šà¥à¤¨à¥‹, à¤›à¥‹à¤Ÿà¤¾ à¤µà¥€à¤¡à¤¿à¤¯à¥‹ à¤¦à¥‡à¤-à¥‹, Adobe Express à¤®à¥‡à¤‚ à¤¬à¤¨à¤¾à¤“, à¤”à¤° à¤Ÿà¥€à¤šà¤° à¤•à¥‹ à¤¦à¤¿à¤-à¤¾à¤“à¥¤ à¤¬à¤¸ à¤‡à¤¤à¤¨à¤¾ à¤¹à¥€!',
     flow1: 'à¤®à¤¹à¥€à¤¨à¤¾ à¤šà¥à¤¨à¥‹',
-    flow2: 'à¤µà¥€à¤¡à¤¿à¤¯à¥‹ à¤¦à¥‡à¤–à¥‹',
+    flow2: 'à¤µà¥€à¤¡à¤¿à¤¯à¥‹ à¤¦à¥‡à¤-à¥‹',
     flow3: 'à¤†à¤°à¥à¤Ÿ à¤¬à¤¨à¤¾à¤“',
     flow4: 'à¤œà¤®à¤¾ à¤•à¤°à¥‹!',
     guideText: '<strong>à¤¨à¥€à¤šà¥‡ à¤•à¤¿à¤¸à¥€ à¤­à¥€ à¤¬à¥‰à¤•à¥à¤¸ à¤ªà¤° à¤Ÿà¥ˆà¤ª à¤•à¤°à¥‹</strong> à¤”à¤° à¤…à¤ªà¤¨à¤¾ à¤•à¥à¤°à¤¿à¤à¤Ÿà¤¿à¤µ à¤•à¤¾à¤® à¤¶à¥à¤°à¥‚ à¤•à¤°à¥‹!',
@@ -67,37 +67,37 @@ var LANG = {
     s1title: 'à¤®à¤¾à¤¸à¤¿à¤• à¤•à¥à¤°à¤¿à¤à¤Ÿà¤¿à¤µ à¤à¤•à¥à¤Ÿà¤¿à¤µà¤¿à¤Ÿà¥€',
     s1desc: 'à¤¹à¤° à¤®à¤¹à¥€à¤¨à¥‡ à¤à¤• à¤®à¤œà¤¼à¥‡à¤¦à¤¾à¤° à¤†à¤°à¥à¤Ÿ à¤ªà¥à¤°à¥‹à¤œà¥‡à¤•à¥à¤Ÿ â€” à¤œà¤¨à¤µà¤°à¥€ à¤¸à¥‡ à¤¦à¤¿à¤¸à¤‚à¤¬à¤° à¤¤à¤•à¥¤',
     s1hint: '12 à¤®à¤œà¤¼à¥‡à¤¦à¤¾à¤° à¤šà¥ˆà¤²à¥‡à¤‚à¤œ',
-    s1btn: 'à¤–à¥‹à¤²à¥‹ â†’',
+    s1btn: 'à¤-à¥‹à¤²à¥‹ â†’',
     s2tag: 'à¤¸à¥‡à¤•à¥à¤¶à¤¨ 2',
     s2title: 'à¤¸à¥à¤•à¤¿à¤² à¤Ÿà¥à¤°à¥ˆà¤•à¥à¤¸',
-    s2desc: 'à¤ªà¥‹à¤¸à¥à¤Ÿà¤° à¤¬à¤¨à¤¾à¤“, à¤µà¥€à¤¡à¤¿à¤¯à¥‹ à¤¬à¤¨à¤¾à¤“, à¤¸à¥‹à¤¶à¤² à¤ªà¥‹à¤¸à¥à¤Ÿ à¤¬à¤¨à¤¾à¤“ â€” à¤•à¤¦à¤® à¤¦à¤° à¤•à¤¦à¤® à¤¸à¥€à¤–à¥‹!',
-    s2hint: '5 à¤—à¤¾à¤‡à¤¡à¥‡à¤¡ à¤Ÿà¥à¤°à¥ˆà¤•à¥à¤¸',
-    s2btn: 'à¤–à¥‹à¤²à¥‹ â†’',
+    s2desc: 'à¤ªà¥‹à¤¸à¥à¤Ÿà¤° à¤¬à¤¨à¤¾à¤“, à¤µà¥€à¤¡à¤¿à¤¯à¥‹ à¤¬à¤¨à¤¾à¤“, à¤¸à¥‹à¤¶à¤² à¤ªà¥‹à¤¸à¥à¤Ÿ à¤¬à¤¨à¤¾à¤“ â€” à¤•à¤¦à¤® à¤¦à¤° à¤•à¤¦à¤® à¤¸à¥€à¤-à¥‹!',
+    s2hint: '5 à¤-à¤¾à¤‡à¤¡à¥‡à¤¡ à¤Ÿà¥à¤°à¥ˆà¤•à¥à¤¸',
+    s2btn: 'à¤-à¥‹à¤²à¥‹ â†’',
     s3tag: 'à¤¸à¥‡à¤•à¥à¤¶à¤¨ 3',
     s3title: 'à¤®à¥‡à¤°à¤¾ à¤•à¥à¤°à¤¿à¤à¤Ÿà¤¿à¤µ à¤ªà¥‹à¤°à¥à¤Ÿà¤«à¥‹à¤²à¤¿à¤¯à¥‹',
-    s3desc: 'à¤…à¤ªà¤¨à¥€ à¤¸à¤¾à¤°à¥€ à¤¬à¤¨à¤¾à¤ˆ à¤¹à¥à¤ˆ à¤•à¤²à¤¾à¤•à¥ƒà¤¤à¤¿à¤¯à¤¾à¤ à¤¦à¥‡à¤–à¥‹! à¤…à¤ªà¤¨à¤¾ à¤•à¤¾à¤® à¤œà¤®à¤¾ à¤•à¤°à¥‹ à¤”à¤° à¤Ÿà¥€à¤šà¤° à¤•à¥‹ à¤¦à¤¿à¤–à¤¾à¤“à¥¤',
+    s3desc: 'à¤…à¤ªà¤¨à¥€ à¤¸à¤¾à¤°à¥€ à¤¬à¤¨à¤¾à¤ˆ à¤¹à¥à¤ˆ à¤•à¤²à¤¾à¤•à¥ƒà¤¤à¤¿à¤¯à¤¾à¤ à¤¦à¥‡à¤-à¥‹! à¤…à¤ªà¤¨à¤¾ à¤•à¤¾à¤® à¤œà¤®à¤¾ à¤•à¤°à¥‹ à¤”à¤° à¤Ÿà¥€à¤šà¤° à¤•à¥‹ à¤¦à¤¿à¤-à¤¾à¤“à¥¤',
     s3hint: 'à¤ªà¥‹à¤°à¥à¤Ÿà¤«à¥‹à¤²à¤¿à¤¯à¥‹ à¤”à¤° à¤¸à¤¬à¤®à¤¿à¤¶à¤¨',
-    s3btn: 'à¤–à¥‹à¤²à¥‹ â†’',
+    s3btn: 'à¤-à¥‹à¤²à¥‹ â†’',
     s4tag: 'à¤¸à¥‡à¤•à¥à¤¶à¤¨ 4',
     s4title: 'à¤•à¥ˆà¤¸à¥‡ à¤•à¤°à¥‡à¤‚ à¤µà¥€à¤¡à¤¿à¤¯à¥‹',
-    s4desc: 'à¤›à¥‹à¤Ÿà¥‡ à¤µà¥€à¤¡à¤¿à¤¯à¥‹ à¤œà¥‹ à¤¦à¤¿à¤–à¤¾à¤¤à¥‡ à¤¹à¥ˆà¤‚ Adobe Express à¤•à¥‡ à¤Ÿà¥‚à¤²à¥à¤¸ à¤•à¥ˆà¤¸à¥‡ à¤‡à¤¸à¥à¤¤à¥‡à¤®à¤¾à¤² à¤•à¤°à¥‡à¤‚à¥¤',
+    s4desc: 'à¤›à¥‹à¤Ÿà¥‡ à¤µà¥€à¤¡à¤¿à¤¯à¥‹ à¤œà¥‹ à¤¦à¤¿à¤-à¤¾à¤¤à¥‡ à¤¹à¥ˆà¤‚ Adobe Express à¤•à¥‡ à¤Ÿà¥‚à¤²à¥à¤¸ à¤•à¥ˆà¤¸à¥‡ à¤‡à¤¸à¥à¤¤à¥‡à¤®à¤¾à¤² à¤•à¤°à¥‡à¤‚à¥¤',
     s4hint: '5 à¤µà¥€à¤¡à¤¿à¤¯à¥‹ à¤®à¤¾à¤¸à¥à¤Ÿà¤°à¤•à¥à¤²à¤¾à¤¸',
-    s4btn: 'à¤–à¥‹à¤²à¥‹ â†’',
+    s4btn: 'à¤-à¥‹à¤²à¥‹ â†’',
     s5tag: 'à¤¸à¥‡à¤•à¥à¤¶à¤¨ 5',
     s5title: 'à¤•à¥à¤°à¤¿à¤à¤Ÿà¤¿à¤µ à¤Ÿà¥‚à¤²à¥à¤¸',
     s5desc: 'à¤¸à¥€à¤§à¥‡ à¤¬à¤¨à¤¾à¤¨à¤¾ à¤¶à¥à¤°à¥‚ à¤•à¤°à¥‹! à¤ªà¥‹à¤¸à¥à¤Ÿà¤°, à¤µà¥€à¤¡à¤¿à¤¯à¥‹, à¤•à¤¾à¤°à¥à¤¡à¥à¤¸ à¤”à¤° à¤¬à¤¹à¥à¤¤ à¤•à¥à¤› Adobe Express à¤®à¥‡à¤‚ à¤¬à¤¨à¤¾à¤“à¥¤',
     s5hint: '8 à¤¤à¥à¤µà¤°à¤¿à¤¤ à¤²à¥‰à¤¨à¥à¤š à¤Ÿà¥‚à¤²à¥à¤¸',
-    s5btn: 'à¤–à¥‹à¤²à¥‹ â†’',
+    s5btn: 'à¤-à¥‹à¤²à¥‹ â†’',
     s6tag: 'à¤¸à¥‡à¤•à¥à¤¶à¤¨ 6',
     s6title: 'à¤®à¥‡à¤°à¥‡ à¤¬à¥ˆà¤œ à¤”à¤° à¤ªà¥à¤°à¤¸à¥à¤•à¤¾à¤°',
-    s6desc: 'à¤¦à¥‡à¤–à¥‹ à¤¤à¥à¤®à¤¨à¥‡ à¤•à¥Œà¤¨ à¤¸à¥‡ à¤¬à¥ˆà¤œ à¤œà¥€à¤¤à¥‡ à¤¹à¥ˆà¤‚! à¤”à¤° à¤œà¤¼à¥à¤¯à¤¾à¤¦à¤¾ à¤ªà¥à¤°à¥‹à¤œà¥‡à¤•à¥à¤Ÿ à¤•à¤°à¥‹, à¤”à¤° à¤ªà¥à¤°à¤¸à¥à¤•à¤¾à¤° à¤ªà¤¾à¤“à¥¤',
+    s6desc: 'à¤¦à¥‡à¤-à¥‹ à¤¤à¥à¤®à¤¨à¥‡ à¤•à¥Œà¤¨ à¤¸à¥‡ à¤¬à¥ˆà¤œ à¤œà¥€à¤¤à¥‡ à¤¹à¥ˆà¤‚! à¤”à¤° à¤œà¤¼à¥à¤¯à¤¾à¤¦à¤¾ à¤ªà¥à¤°à¥‹à¤œà¥‡à¤•à¥à¤Ÿ à¤•à¤°à¥‹, à¤”à¤° à¤ªà¥à¤°à¤¸à¥à¤•à¤¾à¤° à¤ªà¤¾à¤“à¥¤',
     s6hint: '6 à¤®à¥€à¤² à¤•à¥‡ à¤ªà¤¤à¥à¤¥à¤° à¤•à¥‡ à¤¬à¥ˆà¤œ',
-    s6btn: 'à¤–à¥‹à¤²à¥‹ â†’',
+    s6btn: 'à¤-à¥‹à¤²à¥‹ â†’',
     s7tag: 'à¤¸à¥‡à¤•à¥à¤¶à¤¨ 7 â€¢ DCAIS',
     s7title: 'DCAIS à¤à¤•à¥à¤Ÿà¤¿à¤µà¤¿à¤Ÿà¥€à¤œà¤¼',
     s7desc: 'AIM à¤ªà¤¾à¤ à¥à¤¯à¤•à¥à¤°à¤® à¤•à¤•à¥à¤·à¤¾ 3 à¤¸à¥‡ 8 à¤¤à¤•à¥¤ à¤…à¤ªà¤¨à¥€ à¤•à¤•à¥à¤·à¤¾ à¤šà¥à¤¨à¥‡à¤‚, à¤ªà¥‹à¤¸à¥à¤Ÿà¤°, à¤µà¥€à¤¡à¤¿à¤¯à¥‹ à¤¬à¤¨à¤¾à¤à¤‚ à¤”à¤° DCAIS à¤ªà¥à¤°à¤®à¤¾à¤£à¤ªà¤¤à¥à¤° à¤ªà¥à¤°à¤¾à¤ªà¥à¤¤ à¤•à¤°à¥‡à¤‚!',
-    s7hint: '150+ à¤—à¤¤à¤¿à¤µà¤¿à¤§à¤¿à¤¯à¤¾à¤ â€¢ à¤•à¤•à¥à¤·à¤¾ 3â€“8',
-    s7btn: 'à¤–à¥‹à¤²à¥‹ â†’'
+    s7hint: '150+ à¤-à¤¤à¤¿à¤µà¤¿à¤§à¤¿à¤¯à¤¾à¤ â€¢ à¤•à¤•à¥à¤·à¤¾ 3â€“8',
+    s7btn: 'à¤-à¥‹à¤²à¥‹ â†’'
   }
 };
 
@@ -172,8 +172,8 @@ function renderMonthSectionHtml() {
       '<p>' + m.desc + '</p>' +
       '<div class="mcard-skills">' + m.skills.map(function(s){ return '<span class="mskill">' + s + '</span>'; }).join('') + '</div>' +
       '<div class="mcard-actions">' +
-        '<a href="' + m.tutorial + '" target="_blank" class="btn btn-dark">â–¶ Watch Tutorial â†—</a>' +
-        '<a href="' + m.create + '" target="_blank" class="btn btn-primary">ðŸŽ¨ Create in Adobe Express â†—</a>' +
+        '<a href="' + m.tutorial + '" target="_blank" class="btn btn-dark">â-¶ Watch Tutorial â†-</a>' +
+        '<a href="' + m.create + '" target="_blank" class="btn btn-primary">ðŸŽ¨ Create in Adobe Express â†-</a>' +
         '<a href="' + m.submit + '" class="btn btn-outline">ðŸ“¤ Submit My Work</a>' +
       '</div>' +
     '</div>';
@@ -199,19 +199,19 @@ function renderDcaisSection() {
       '<div class="aim-tip-ico">ðŸ¼</div>' +
       '<div class="aim-tip-txt">' +
         '<strong>' + (isHi ? 'DCAIS à¤°à¤šà¤¨à¤¾à¤¤à¥à¤®à¤• à¤Ÿà¤¿à¤ª:' : 'AIM Creative Tip:') + '</strong> ' +
-        (isHi ? 'à¤…à¤ªà¤¨à¥€ à¤•à¤•à¥à¤·à¤¾ à¤šà¥à¤¨à¥‡à¤‚ à¤”à¤° à¤µà¤¹ à¤—à¤¤à¤¿à¤µà¤¿à¤§à¤¿ à¤šà¥à¤¨à¥‡à¤‚ à¤œà¥‹ à¤†à¤ªà¤•à¥‹ à¤ªà¤¸à¤‚à¤¦ à¤¹à¥‹! à¤ªà¥à¤°à¤®à¤¾à¤£ à¤ªà¤¤à¥à¤° à¤ªà¥à¤°à¤¾à¤ªà¥à¤¤ à¤•à¤°à¤¨à¥‡ à¤•à¥‡ à¤²à¤¿à¤ à¤ªà¥à¤°à¤¤à¤¿ à¤®à¤¾à¤¹ à¤•à¤® à¤¸à¥‡ à¤•à¤® à¤à¤• à¤—à¤¤à¤¿à¤µà¤¿à¤§à¤¿ à¤…à¤µà¤¶à¥à¤¯ à¤ªà¥‚à¤°à¥€ à¤•à¤°à¥‡à¤‚à¥¤' :
+        (isHi ? 'à¤…à¤ªà¤¨à¥€ à¤•à¤•à¥à¤·à¤¾ à¤šà¥à¤¨à¥‡à¤‚ à¤”à¤° à¤µà¤¹ à¤-à¤¤à¤¿à¤µà¤¿à¤§à¤¿ à¤šà¥à¤¨à¥‡à¤‚ à¤œà¥‹ à¤†à¤ªà¤•à¥‹ à¤ªà¤¸à¤‚à¤¦ à¤¹à¥‹! à¤ªà¥à¤°à¤®à¤¾à¤£ à¤ªà¤¤à¥à¤° à¤ªà¥à¤°à¤¾à¤ªà¥à¤¤ à¤•à¤°à¤¨à¥‡ à¤•à¥‡ à¤²à¤¿à¤ à¤ªà¥à¤°à¤¤à¤¿ à¤®à¤¾à¤¹ à¤•à¤® à¤¸à¥‡ à¤•à¤® à¤à¤• à¤-à¤¤à¤¿à¤µà¤¿à¤§à¤¿ à¤…à¤µà¤¶à¥à¤¯ à¤ªà¥‚à¤°à¥€ à¤•à¤°à¥‡à¤‚à¥¤' :
                 'Pick your grade and select an activity that interests you! All students are advised to finish a minimum of one activity per month to earn the DCAIS certificate.') +
       '</div>' +
     '</div>';
 
   if (!selectedAimGrade) {
     var gradeCards = [
-      { id: '3', nameEn: 'Grade 3', nameHi: 'à¤•à¤•à¥à¤·à¤¾ 3', count: '32 activities', countHi: '32 à¤—à¤¤à¤¿à¤µà¤¿à¤§à¤¿à¤¯à¤¾à¤' },
-      { id: '4', nameEn: 'Grade 4', nameHi: 'à¤•à¤•à¥à¤·à¤¾ 4', count: '32 activities', countHi: '32 à¤—à¤¤à¤¿à¤µà¤¿à¤§à¤¿à¤¯à¤¾à¤' },
-      { id: '5', nameEn: 'Grade 5', nameHi: 'à¤•à¤•à¥à¤·à¤¾ 5', count: '32 activities', countHi: '32 à¤—à¤¤à¤¿à¤µà¤¿à¤§à¤¿à¤¯à¤¾à¤' },
-      { id: '6', nameEn: 'Grade 6', nameHi: 'à¤•à¤•à¥à¤·à¤¾ 6', count: '18 activities', countHi: '18 à¤—à¤¤à¤¿à¤µà¤¿à¤§à¤¿à¤¯à¤¾à¤' },
-      { id: '7', nameEn: 'Grade 7', nameHi: 'à¤•à¤•à¥à¤·à¤¾ 7', count: '18 activities', countHi: '18 à¤—à¤¤à¤¿à¤µà¤¿à¤§à¤¿à¤¯à¤¾à¤' },
-      { id: '8', nameEn: 'Grade 8', nameHi: 'à¤•à¤•à¥à¤·à¤¾ 8', count: '18 activities', countHi: '18 à¤—à¤¤à¤¿à¤µà¤¿à¤§à¤¿à¤¯à¤¾à¤' },
+      { id: '3', nameEn: 'Grade 3', nameHi: 'à¤•à¤•à¥à¤·à¤¾ 3', count: '32 activities', countHi: '32 à¤-à¤¤à¤¿à¤µà¤¿à¤§à¤¿à¤¯à¤¾à¤' },
+      { id: '4', nameEn: 'Grade 4', nameHi: 'à¤•à¤•à¥à¤·à¤¾ 4', count: '32 activities', countHi: '32 à¤-à¤¤à¤¿à¤µà¤¿à¤§à¤¿à¤¯à¤¾à¤' },
+      { id: '5', nameEn: 'Grade 5', nameHi: 'à¤•à¤•à¥à¤·à¤¾ 5', count: '32 activities', countHi: '32 à¤-à¤¤à¤¿à¤µà¤¿à¤§à¤¿à¤¯à¤¾à¤' },
+      { id: '6', nameEn: 'Grade 6', nameHi: 'à¤•à¤•à¥à¤·à¤¾ 6', count: '18 activities', countHi: '18 à¤-à¤¤à¤¿à¤µà¤¿à¤§à¤¿à¤¯à¤¾à¤' },
+      { id: '7', nameEn: 'Grade 7', nameHi: 'à¤•à¤•à¥à¤·à¤¾ 7', count: '18 activities', countHi: '18 à¤-à¤¤à¤¿à¤µà¤¿à¤§à¤¿à¤¯à¤¾à¤' },
+      { id: '8', nameEn: 'Grade 8', nameHi: 'à¤•à¤•à¥à¤·à¤¾ 8', count: '18 activities', countHi: '18 à¤-à¤¤à¤¿à¤µà¤¿à¤§à¤¿à¤¯à¤¾à¤' },
       { id: 'kb', nameEn: 'Kaushal Bodh', nameHi: 'à¤•à¥Œà¤¶à¤² à¤¬à¥‹à¤§', count: '18 projects', countHi: '18 à¤ªà¥à¤°à¥‹à¤œà¥‡à¤•à¥à¤Ÿà¥à¤¸' }
     ];
 
@@ -223,7 +223,7 @@ function renderDcaisSection() {
           '<div class="aim-gc-icon">ðŸŽ“</div>' +
           '<h3>' + (isHi ? g.nameHi : g.nameEn) + '</h3>' +
           '<div class="aim-gc-cnt">' + (isHi ? g.countHi : g.count) + '</div>' +
-          '<div class="aim-gc-btn">' + (isHi ? 'à¤•à¤•à¥à¤·à¤¾ à¤–à¥‹à¤²à¥‡à¤‚ â†’' : 'Explore Grade â†’') + '</div>' +
+          '<div class="aim-gc-btn">' + (isHi ? 'à¤•à¤•à¥à¤·à¤¾ à¤-à¥‹à¤²à¥‡à¤‚ â†’' : 'Explore Grade â†’') + '</div>' +
         '</div>';
       }).join('') +
       '</div>';
@@ -273,29 +273,29 @@ function renderDcaisSection() {
     '<div class="aim-top-nav">' +
       '<div style="display:flex;align-items:center;gap:10px;">' +
         '<button class="aim-back-grade" onclick="selectAimGrade(null)">â† ' + (isHi ? 'à¤¸à¤­à¥€ à¤•à¤•à¥à¤·à¤¾à¤à¤‚' : 'All Grades') + '</button>' +
-        '<span style="font-size:.92rem;font-weight:900;color:var(--ink);">' + gradeLabel + ' (' + activities.length + ' ' + (isHi ? 'à¤—à¤¤à¤¿à¤µà¤¿à¤§à¤¿à¤¯à¤¾à¤‚' : 'activities') + ')</span>' +
+        '<span style="font-size:.92rem;font-weight:900;color:var(--ink);">' + gradeLabel + ' (' + activities.length + ' ' + (isHi ? 'à¤-à¤¤à¤¿à¤µà¤¿à¤§à¤¿à¤¯à¤¾à¤‚' : 'activities') + ')</span>' +
       '</div>' +
       '<div class="aim-search">' +
-        '<input type="text" placeholder="' + (isHi ? 'à¤—à¤¤à¤¿à¤µà¤¿à¤§à¤¿ à¤–à¥‹à¤œà¥‡à¤‚...' : 'Search activity...') + '" value="' + aimSearchQuery + '" oninput="searchAimActivities(this.value)">' +
+        '<input type="text" placeholder="' + (isHi ? 'à¤-à¤¤à¤¿à¤µà¤¿à¤§à¤¿ à¤-à¥‹à¤œà¥‡à¤‚...' : 'Search activity...') + '" value="' + aimSearchQuery + '" oninput="searchAimActivities(this.value)">' +
       '</div>' +
     '</div>';
 
   var actGridHtml = '';
   if (activities.length === 0) {
     actGridHtml = '<div style="background:var(--surface-2);border-radius:var(--radius);padding:32px;text-align:center;color:var(--ink-3);">' +
-      '<h3>' + (isHi ? 'à¤•à¥‹à¤ˆ à¤—à¤¤à¤¿à¤µà¤¿à¤§à¤¿ à¤¨à¤¹à¥€à¤‚ à¤®à¤¿à¤²à¥€' : 'No activities found') + '</h3>' +
-      '<p style="font-size:.85rem;margin-top:6px;">' + (isHi ? 'à¤•à¥ƒà¤ªà¤¯à¤¾ à¤…à¤ªà¤¨à¤¾ à¤–à¥‹à¤œ à¤¶à¤¬à¥à¤¦ à¤¬à¤¦à¤²à¥‡à¤‚à¥¤' : 'Try clearing your search query.') + '</p>' +
+      '<h3>' + (isHi ? 'à¤•à¥‹à¤ˆ à¤-à¤¤à¤¿à¤µà¤¿à¤§à¤¿ à¤¨à¤¹à¥€à¤‚ à¤®à¤¿à¤²à¥€' : 'No activities found') + '</h3>' +
+      '<p style="font-size:.85rem;margin-top:6px;">' + (isHi ? 'à¤•à¥ƒà¤ªà¤¯à¤¾ à¤…à¤ªà¤¨à¤¾ à¤-à¥‹à¤œ à¤¶à¤¬à¥à¤¦ à¤¬à¤¦à¤²à¥‡à¤‚à¥¤' : 'Try clearing your search query.') + '</p>' +
     '</div>';
   } else {
     actGridHtml = '<div class="aim-act-grid">' +
       activities.map(function(act, idx) {
-        var numBadge = (isHi ? 'à¤—à¤¤à¤¿à¤µà¤¿à¤§à¤¿ ' : 'Activity ') + (act.col || (idx + 1));
+        var numBadge = (isHi ? 'à¤-à¤¤à¤¿à¤µà¤¿à¤§à¤¿ ' : 'Activity ') + (act.col || (idx + 1));
         var templateBtn = act.link ?
-          '<a href="' + act.link + '" target="_blank" class="btn btn-primary" style="font-size:.76rem;padding:7px 14px;">ðŸŽ¨ ' + (isHi ? 'à¤Ÿà¥‡à¤®à¥à¤ªà¤²à¥‡à¤Ÿ à¤–à¥‹à¤²à¥‡à¤‚ â†—' : 'Open Template â†—') + '</a>' :
-          '<a href="https://express.adobe.com" target="_blank" class="btn btn-primary" style="font-size:.76rem;padding:7px 14px;">ðŸŽ¨ ' + (isHi ? 'Express à¤–à¥‹à¤²à¥‡à¤‚ â†—' : 'Open in Express â†—') + '</a>';
+          '<a href="' + act.link + '" target="_blank" class="btn btn-primary" style="font-size:.76rem;padding:7px 14px;">ðŸŽ¨ ' + (isHi ? 'à¤Ÿà¥‡à¤®à¥à¤ªà¤²à¥‡à¤Ÿ à¤-à¥‹à¤²à¥‡à¤‚ â†-' : 'Open Template â†-') + '</a>' :
+          '<a href="https://express.adobe.com" target="_blank" class="btn btn-primary" style="font-size:.76rem;padding:7px 14px;">ðŸŽ¨ ' + (isHi ? 'Express à¤-à¥‹à¤²à¥‡à¤‚ â†-' : 'Open in Express â†-') + '</a>';
         
         var bookBtn = act.book ?
-          '<a href="' + act.book + '" target="_blank" class="btn btn-ghost" style="font-size:.74rem;padding:6px 12px;">ðŸ“– ' + (isHi ? 'à¤ªà¥à¤¸à¥à¤¤à¤• à¤•à¤¾ à¤¸à¥à¤•à¥à¤°à¥€à¤¨à¤¶à¥‰à¤Ÿ â†—' : 'Book Screenshot â†—') + '</a>' : '';
+          '<a href="' + act.book + '" target="_blank" class="btn btn-ghost" style="font-size:.74rem;padding:6px 12px;">ðŸ“- ' + (isHi ? 'à¤ªà¥à¤¸à¥à¤¤à¤• à¤•à¤¾ à¤¸à¥à¤•à¥à¤°à¥€à¤¨à¤¶à¥‰à¤Ÿ â†-' : 'Book Screenshot â†-') + '</a>' : '';
 
         var submitBtn = '<button class="btn btn-empty" style="font-size:.74rem;padding:6px 12px;" onclick="return false;" title="Teacher will provide the submission link soon">ðŸ“¤ ' + (isHi ? 'à¤ªà¥à¤°à¥‹à¤œà¥‡à¤•à¥à¤Ÿ à¤œà¤®à¤¾ à¤•à¤°à¥‡à¤‚' : 'Submit Activity Link') + '</button>';
 
@@ -319,7 +319,7 @@ function renderDcaisSection() {
   var subNotice =
     '<div style="background:var(--surface-2);border:1.5px dashed var(--border);border-radius:var(--radius);padding:14px;text-align:center;margin-top:20px;">' +
       '<p style="font-size:.8rem;color:var(--ink-3);">ðŸ“Œ ' +
-      (isHi ? 'à¤¸à¤¬à¤®à¤¿à¤¶à¤¨ à¤²à¤¿à¤‚à¤• à¤†à¤ªà¤•à¥‡ à¤¶à¤¿à¤•à¥à¤·à¤• à¤¦à¥à¤µà¤¾à¤°à¤¾ à¤¬à¤¾à¤¦ à¤®à¥‡à¤‚ à¤…à¤ªà¤²à¥‹à¤¡ à¤•à¤¿à¤¯à¤¾ à¤œà¤¾à¤à¤—à¤¾à¥¤ <strong>à¤ªà¥à¤°à¥‹à¤œà¥‡à¤•à¥à¤Ÿ à¤œà¤®à¤¾ à¤•à¤°à¥‡à¤‚</strong> à¤¬à¤Ÿà¤¨ à¤œà¤²à¥à¤¦ à¤¸à¤•à¥à¤°à¤¿à¤¯ à¤¹à¥‹à¤—à¤¾à¥¤' :
+      (isHi ? 'à¤¸à¤¬à¤®à¤¿à¤¶à¤¨ à¤²à¤¿à¤‚à¤• à¤†à¤ªà¤•à¥‡ à¤¶à¤¿à¤•à¥à¤·à¤• à¤¦à¥à¤µà¤¾à¤°à¤¾ à¤¬à¤¾à¤¦ à¤®à¥‡à¤‚ à¤…à¤ªà¤²à¥‹à¤¡ à¤•à¤¿à¤¯à¤¾ à¤œà¤¾à¤à¤-à¤¾à¥¤ <strong>à¤ªà¥à¤°à¥‹à¤œà¥‡à¤•à¥à¤Ÿ à¤œà¤®à¤¾ à¤•à¤°à¥‡à¤‚</strong> à¤¬à¤Ÿà¤¨ à¤œà¤²à¥à¤¦ à¤¸à¤•à¥à¤°à¤¿à¤¯ à¤¹à¥‹à¤-à¤¾à¥¤' :
               'Submission link will be uploaded by your teacher later. The <strong>Submit Activity Link</strong> buttons will become active then.') +
       '</p>' +
     '</div>';
@@ -363,7 +363,7 @@ var STUDENT_SECTIONS_DATA = {
     }
   },
   '3': {
-    num: 'ðŸ–¼ï¸',
+    num: 'ðŸ-¼ï¸',
     tag: 'Section 3 â€¢ My Portfolio',
     title: 'My Creative Portfolio',
     desc: 'All your art in one place! See how much you have made and share it with your teacher.',
@@ -388,11 +388,11 @@ var STUDENT_SECTIONS_DATA = {
     desc: 'Watch short videos to learn how to use Adobe Express. Follow along and make something amazing!',
     render: function() {
       return '<div class="rg">' +
-        '<div class="rc"><img src="https://images.unsplash.com/photo-1581726690015-c9861fa5057f?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Beginner â€¢ 5 min</div><h4>First Steps in Adobe Express</h4><p>Tour the workspace, find the basic tools, and make your first design in 5 minutes!</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+beginner+tutorial" target="_blank" class="btn btn-dark">â–¶ Watch â†’</a></div>' +
-        '<div class="rc"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Easy â€¢ 8 min</div><h4>Make a School Poster</h4><p>Learn how to pick colours and make a beautiful poster for your school notice board!</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+poster+tutorial" target="_blank" class="btn btn-dark">â–¶ Watch â†’</a></div>' +
-        '<div class="rc"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Medium â€¢ 12 min</div><h4>Make a Short Video</h4><p>Add music, your voice, and animated text to make a really cool short video!</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+video+tutorial" target="_blank" class="btn btn-dark">â–¶ Watch â†’</a></div>' +
-        '<div class="rc"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Fun â€¢ 10 min</div><h4>Animated Stickers &amp; Text</h4><p>Make things move! Add cool animations to your designs and share as GIFs.</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+animation+tutorial" target="_blank" class="btn btn-dark">â–¶ Watch â†’</a></div>' +
-        '<div class="rc"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Advanced â€¢ 15 min</div><h4>Design Your Own Logo</h4><p>Create a personal logo and brand mark. Make it look like a real company or brand!</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+logo+tutorial" target="_blank" class="btn btn-dark">â–¶ Watch â†’</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1581726690015-c9861fa5057f?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Beginner â€¢ 5 min</div><h4>First Steps in Adobe Express</h4><p>Tour the workspace, find the basic tools, and make your first design in 5 minutes!</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+beginner+tutorial" target="_blank" class="btn btn-dark">â-¶ Watch â†’</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Easy â€¢ 8 min</div><h4>Make a School Poster</h4><p>Learn how to pick colours and make a beautiful poster for your school notice board!</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+poster+tutorial" target="_blank" class="btn btn-dark">â-¶ Watch â†’</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Medium â€¢ 12 min</div><h4>Make a Short Video</h4><p>Add music, your voice, and animated text to make a really cool short video!</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+video+tutorial" target="_blank" class="btn btn-dark">â-¶ Watch â†’</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Fun â€¢ 10 min</div><h4>Animated Stickers &amp; Text</h4><p>Make things move! Add cool animations to your designs and share as GIFs.</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+animation+tutorial" target="_blank" class="btn btn-dark">â-¶ Watch â†’</a></div>' +
+        '<div class="rc"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=100&fit=crop&q=80" class="rc-thumb" crossorigin="anonymous" alt=""><div><div class="rc-badge">Advanced â€¢ 15 min</div><h4>Design Your Own Logo</h4><p>Create a personal logo and brand mark. Make it look like a real company or brand!</p></div><a href="https://www.youtube.com/results?search_query=adobe+express+logo+tutorial" target="_blank" class="btn btn-dark">â-¶ Watch â†’</a></div>' +
       '</div>';
     }
   },
@@ -406,14 +406,14 @@ var STUDENT_SECTIONS_DATA = {
         '<a href="https://express.adobe.com/sp/design/posters" target="_blank" class="tool"><div class="tool-ico">ðŸª§</div><h4>Posters</h4><span>Flyers &amp; Art</span></a>' +
         '<a href="https://express.adobe.com/sp/design/videos" target="_blank" class="tool"><div class="tool-ico">ðŸ“¹</div><h4>Videos</h4><span>Clips &amp; Reels</span></a>' +
         '<a href="https://express.adobe.com/sp/design/cards" target="_blank" class="tool"><div class="tool-ico">ðŸ’Œ</div><h4>Cards</h4><span>Greetings</span></a>' +
-        '<a href="https://express.adobe.com/sp/design/collages" target="_blank" class="tool"><div class="tool-ico">ðŸ–¼ï¸</div><h4>Collages</h4><span>Photo Grids</span></a>' +
+        '<a href="https://express.adobe.com/sp/design/collages" target="_blank" class="tool"><div class="tool-ico">ðŸ-¼ï¸</div><h4>Collages</h4><span>Photo Grids</span></a>' +
         '<a href="https://express.adobe.com/sp/tools/remove-background" target="_blank" class="tool"><div class="tool-ico">âœ‚ï¸</div><h4>Remove BG</h4><span>1-Click Clear</span></a>' +
         '<a href="https://express.adobe.com/sp/design/bookcovers" target="_blank" class="tool"><div class="tool-ico">ðŸ“š</div><h4>Book Covers</h4><span>Novel Layout</span></a>' +
         '<a href="https://express.adobe.com/sp/design/comics" target="_blank" class="tool"><div class="tool-ico">ðŸ¦¸</div><h4>Comics</h4><span>4-Panel Strips</span></a>' +
         '<a href="https://express.adobe.com/sp/design/social" target="_blank" class="tool"><div class="tool-ico">ðŸ“±</div><h4>Social Posts</h4><span>Campaigns</span></a>' +
       '</div>' +
       '<div style="margin-top:24px;text-align:center">' +
-        '<a href="https://express.adobe.com" target="_blank" class="btn btn-primary" style="padding:12px 28px;font-size:.9rem;">ðŸš€ Open Full Adobe Express â†—</a>' +
+        '<a href="https://express.adobe.com" target="_blank" class="btn btn-primary" style="padding:12px 28px;font-size:.9rem;">ðŸš€ Open Full Adobe Express â†-</a>' +
       '</div>';
     }
   },

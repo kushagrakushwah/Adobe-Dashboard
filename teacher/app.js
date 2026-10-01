@@ -5,13 +5,13 @@ var LANG = {
   en: {
     hdrSub:'Educator Workspace', hdrBadge:'Educator Portal',
     heroTag:'Educator &amp; Curriculum Hub', heroTitle:'Educator Hub &amp; Curriculum Portal',
-    heroSub:'Manage school access, CPD training, student DCAIS monitoring, classroom resources, and certification — all in one place.',
+    heroSub:'Manage school access, CPD training, student DCAIS monitoring, classroom resources, and certification - all in one place.',
     flow1:'School Access', flow2:'CPD Training', flow3:'DCAIS Monitor', flow4:'Certification',
     guideText:'<strong>Click any section card below</strong> to open its complete workspace in full-screen view.',
     backBtn:'Back to Sections',
     sAtag:'Section A', sAtitle:'Adobe ID &amp; Access', sAdesc:'School login, institutional account creation, single sign-on &amp; IT admin deployment guide.', sAhint:'5 Institutional Tools', sAbtn:'Open &rarr;',
     sBtag:'Section B', sBtitle:'CPD Modules', sBdesc:'6 accredited professional development modules (CPD 01 to 06) totaling 20 training hours.', sBhint:'20 Hours Training', sBbtn:'Open &rarr;',
-    sCtag:'Section C • DCAIS', sCtitle:'Student DCAIS Activities', sCdesc:'Monitor what DCAIS activities your students are doing across Grades 3–8. Inspect curriculum instructions and templates.', sChint:'Grades 3–8 Activities', sCbtn:'Open &rarr;',
+    sCtag:'Section C • DCAIS', sCtitle:'Student DCAIS Activities', sCdesc:'Monitor what DCAIS activities your students are doing across Grades 3-8. Inspect curriculum instructions and templates.', sChint:'Grades 3-8 Activities', sCbtn:'Open &rarr;',
     sDtag:'Section D', sDtitle:'Classroom Resources', sDdesc:'Lesson plan templates, classroom printables, grading rubrics, tutorial videos, and project kits.', sDhint:'6 Resource Packs', sDbtn:'Open &rarr;',
     sEtag:'Section E', sEtitle:'Student Progress Tracker', sEdesc:'Monitor monthly activity completion rates, review submissions across grade bands, and evaluate portfolios.', sEhint:'Grade-wise Analytics', sEbtn:'Open &rarr;',
     sFtag:'Section F', sFtitle:'Community &amp; Support', sFdesc:'Connect with educators, attend live webinars, join the national forum, and get technical help.', sFhint:'500+ Educators Network', sFbtn:'Open &rarr;',
@@ -25,8 +25,8 @@ var LANG = {
     guideText:'<strong>नीचे किसी भी सेक्शन कार्ड पर क्लिक करें</strong> और उसे पूरी स्क्रीन पर खोलें।',
     backBtn:'वापस जाएं',
     sAtag:'सेक्शन A', sAtitle:'Adobe ID और एक्सेस', sAdesc:'स्कूल लॉगिन, संस्थागत खाता निर्माण, SSO और IT तैनाती गाइड।', sAhint:'5 संस्थागत टूल्स', sAbtn:'खोलें &rarr;',
-    sBtag:'सेक्शन B', sBtitle:'CPD मॉड्यूल', sBdesc:'6 मान्यता प्राप्त प्रशिक्षण मॉड्यूल — CPD 01 से 06 — कुल 20 घंटे।', sBhint:'20 घंटे प्रशिक्षण', sBbtn:'खोलें &rarr;',
-    sCtag:'सेक्शन C • DCAIS', sCtitle:'छात्र DCAIS गतिविधियाँ', sCdesc:'देखें कक्षा 3 से 8 तक आपके छात्र कौन सी DCAIS गतिविधियाँ कर रहे हैं।', sChint:'कक्षा 3–8 गतिविधियाँ', sCbtn:'खोलें &rarr;',
+    sBtag:'सेक्शन B', sBtitle:'CPD मॉड्यूल', sBdesc:'6 मान्यता प्राप्त प्रशिक्षण मॉड्यूल - CPD 01 से 06 - कुल 20 घंटे।', sBhint:'20 घंटे प्रशिक्षण', sBbtn:'खोलें &rarr;',
+    sCtag:'सेक्शन C • DCAIS', sCtitle:'छात्र DCAIS गतिविधियाँ', sCdesc:'देखें कक्षा 3 से 8 तक आपके छात्र कौन सी DCAIS गतिविधियाँ कर रहे हैं।', sChint:'कक्षा 3-8 गतिविधियाँ', sCbtn:'खोलें &rarr;',
     sDtag:'सेक्शन D', sDtitle:'कक्षा संसाधन', sDdesc:'पाठ योजना टेम्पलेट, क्लासरूम प्रिंटेबल्स, ग्रेडिंग रूब्रिक्स और वीडियो।', sDhint:'6 संसाधन पैक', sDbtn:'खोलें &rarr;',
     sEtag:'सेक्शन E', sEtitle:'छात्र प्रगति ट्रैकर', sEdesc:'मासिक गतिविधि समाप्ति दर देखें और छात्र पोर्टफोलियो का मूल्यांकन करें।', sEhint:'कक्षावार विश्लेषण', sEbtn:'खोलें &rarr;',
     sFtag:'सेक्शन F', sFtitle:'समुदाय और सहायता', sFdesc:'शिक्षकों से जुड़ें, लाइव वेबिनार में भाग लें और तकनीकी सहायता पाएं।', sFhint:'500+ शिक्षक नेटवर्क', sFbtn:'खोलें &rarr;',
@@ -370,10 +370,10 @@ function renderCpdSectionHtml() {
         'CPD-07 &bull; CPD-08 &bull; CPD-09 &bull; CPD-10' +
       '</span>' +
       '<h4 style="font-size:1.02rem;font-weight:800;color:var(--ink);margin-bottom:8px;line-height:1.35;">' +
-        (isHi ? 'शेष 4 CPD मॉड्यूल (07–10) जल्द अपलोड किए जाएंगे' : 'Remaining 4 CPD Modules (07–10) Coming Soon') +
+        (isHi ? 'शेष 4 CPD मॉड्यूल (07-10) जल्द अपलोड किए जाएंगे' : 'Remaining 4 CPD Modules (07-10) Coming Soon') +
       '</h4>' +
       '<p style="font-size:.82rem;color:var(--ink-2);max-width:320px;line-height:1.5;margin-bottom:14px;">' +
-        (isHi ? 'कुल 10 में से पहले 6 मॉड्यूल उपलब्ध हैं। अध्यापक प्रशिक्षण के अगले 4 मॉड्यूल (CPD 07–10) के आधिकारिक लिंक जल्द ही यहां उपलब्ध कराए जाएंगे।' :
+        (isHi ? 'कुल 10 में से पहले 6 मॉड्यूल उपलब्ध हैं। अध्यापक प्रशिक्षण के अगले 4 मॉड्यूल (CPD 07-10) के आधिकारिक लिंक जल्द ही यहां उपलब्ध कराए जाएंगे।' :
                 '6 of 10 modules available now. Course links, session recordings, and Google Form assignments for modules 07 to 10 will be uploaded soon.') +
       '</p>' +
       '<span style="display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:700;color:var(--ink-3);background:var(--surface);border:1px solid var(--border);padding:5px 14px;border-radius:999px;">' +
@@ -728,7 +728,7 @@ var TEACHER_SECTIONS_DATA = {
     letter: '🔭',
     tag: 'Section C • Student DCAIS Activities',
     title: 'Student DCAIS Activities',
-    desc: 'Explore the full DCAIS activity catalog (Grades 3–8) exactly as presented to students. Inspect templates, tasks, and test student activities.',
+    desc: 'Explore the full DCAIS activity catalog (Grades 3-8) exactly as presented to students. Inspect templates, tasks, and test student activities.',
     render: function() { return renderDcaisMonitor(); }
   },
   'D': {
@@ -760,9 +760,9 @@ var TEACHER_SECTIONS_DATA = {
         '<div class="pstat"><div class="pstat-n">12+</div><div class="pstat-l">Curriculum Units</div></div>' +
       '</div>' +
       '<div class="rg" style="margin-bottom:28px">' +
-        '<div class="rc"><div><div class="rc-badge">Grades 6–8</div><h4>Middle School Tracker</h4><p>Monitor monthly completion rates, portfolio growth, and fundamental digital literacy milestones.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Dashboard &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Grades 9–10</div><h4>Secondary Tracker</h4><p>Track advanced project submissions, team collaboration, and CPD-aligned creative activities.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Progress &#8599;</a></div>' +
-        '<div class="rc"><div><div class="rc-badge">Grades 11–12</div><h4>Senior Portfolio Reviews</h4><p>Evaluate senior portfolios, assess capstone assignments, and verify readiness for Adobe certification.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Review Portfolios &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Grades 6-8</div><h4>Middle School Tracker</h4><p>Monitor monthly completion rates, portfolio growth, and fundamental digital literacy milestones.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Dashboard &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Grades 9-10</div><h4>Secondary Tracker</h4><p>Track advanced project submissions, team collaboration, and CPD-aligned creative activities.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">View Progress &#8599;</a></div>' +
+        '<div class="rc"><div><div class="rc-badge">Grades 11-12</div><h4>Senior Portfolio Reviews</h4><p>Evaluate senior portfolios, assess capstone assignments, and verify readiness for Adobe certification.</p></div><a href="https://express.adobe.com" target="_blank" class="btn btn-primary">Review Portfolios &#8599;</a></div>' +
       '</div>' +
       '<div style="background:var(--surface-2);border-radius:var(--radius);padding:24px;border:1.5px solid var(--border)">' +
         '<div class="sec-label" style="margin-top:0;">Classroom Activity Completion (Academic Year)</div>' +
