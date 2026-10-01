@@ -1,4 +1,4 @@
-﻿
+
 /* ===== LANGUAGE SYSTEM ===== */
 var currentLang = 'en';
 
@@ -46,8 +46,8 @@ var LANG = {
     s6hint: '6 Milestone Badges',
     s6btn: 'Open â†’',
     s7tag: 'Section 7 â€¢ DCAIS',
-    s7title: 'DCAIS Activities (AIM)',
-    s7desc: 'Complete curriculum for Grades 3â€“8 from AIM. Select your grade, make posters, videos and earn your DCAIS certificate!',
+    s7title: 'DCAIS Activities',
+    s7desc: 'Complete curriculum for Grades 3â€“8 from DCAIS. Select your grade, make posters, videos and earn your DCAIS certificate!',
     s7hint: '150+ Activities â€¢ Grades 3â€“8',
     s7btn: 'Open â†’'
   },
@@ -94,7 +94,7 @@ var LANG = {
     s6hint: '6 à¤®à¥€à¤² à¤•à¥‡ à¤ªà¤¤à¥à¤¥à¤° à¤•à¥‡ à¤¬à¥ˆà¤œ',
     s6btn: 'à¤–à¥‹à¤²à¥‹ â†’',
     s7tag: 'à¤¸à¥‡à¤•à¥à¤¶à¤¨ 7 â€¢ DCAIS',
-    s7title: 'DCAIS à¤à¤•à¥à¤Ÿà¤¿à¤µà¤¿à¤Ÿà¥€à¤œà¤¼ (AIM)',
+    s7title: 'DCAIS à¤à¤•à¥à¤Ÿà¤¿à¤µà¤¿à¤Ÿà¥€à¤œà¤¼',
     s7desc: 'AIM à¤ªà¤¾à¤ à¥à¤¯à¤•à¥à¤°à¤® à¤•à¤•à¥à¤·à¤¾ 3 à¤¸à¥‡ 8 à¤¤à¤•à¥¤ à¤…à¤ªà¤¨à¥€ à¤•à¤•à¥à¤·à¤¾ à¤šà¥à¤¨à¥‡à¤‚, à¤ªà¥‹à¤¸à¥à¤Ÿà¤°, à¤µà¥€à¤¡à¤¿à¤¯à¥‹ à¤¬à¤¨à¤¾à¤à¤‚ à¤”à¤° DCAIS à¤ªà¥à¤°à¤®à¤¾à¤£à¤ªà¤¤à¥à¤° à¤ªà¥à¤°à¤¾à¤ªà¥à¤¤ à¤•à¤°à¥‡à¤‚!',
     s7hint: '150+ à¤—à¤¤à¤¿à¤µà¤¿à¤§à¤¿à¤¯à¤¾à¤ â€¢ à¤•à¤•à¥à¤·à¤¾ 3â€“8',
     s7btn: 'à¤–à¥‹à¤²à¥‹ â†’'
