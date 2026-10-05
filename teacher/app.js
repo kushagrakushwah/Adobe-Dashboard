@@ -537,8 +537,8 @@ var TEACHER_SECTIONS_DATA = {
     title: 'Adobe ID &amp; Password Access Management',
     desc: 'Ensure seamless institutional access to Adobe Express for Education for your school or institution.',
     render: function() {
-      var teacherIdUrl = 'https://tinyurl.com/kvsteacherid';
-      var idRequestUrl = 'https://tinyurl.com/Kvs-idcreationtemplate';
+      var teacherIdUrl = '#';
+      var idRequestUrl = '#';
       var mobileTutorialUrl = 'https://drive.google.com/file/d/1yFK5JO38uod0BPn-qLobvRnHtxviJQRS/view?usp=sharing';
       var desktopTutorialUrl = 'https://tinyurl.com/adobeloginsteps';
 
@@ -559,10 +559,10 @@ var TEACHER_SECTIONS_DATA = {
             '<a href="https://new.express.adobe.com/" target="_blank" class="btn" style="background:#FA0F00;color:#FFF;font-weight:800;font-size:.84rem;padding:10px 18px;border-radius:999px;box-shadow:0 4px 12px rgba(250,15,0,0.35);">' +
               '🚀 Quick Login to Adobe Express ↗' +
             '</a>' +
-            '<a href="' + teacherIdUrl + '" target="_blank" class="btn" style="background:#FFF;color:#1E1B4B;font-weight:800;font-size:.84rem;padding:10px 18px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,0.15);">' +
+            '<a href="' + (teacherIdUrl || '#') + '"' + (!teacherIdUrl || teacherIdUrl === '#' ? ' onclick="alert(\'Teacher ID Sheet link will be updated soon!\'); return false;"' : ' target="_blank"') + ' class="btn" style="background:#FFF;color:#1E1B4B;font-weight:800;font-size:.84rem;padding:10px 18px;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,0.15);">' +
               '📊 Find Teacher ID ↗' +
             '</a>' +
-            '<a href="' + idRequestUrl + '" target="_blank" class="btn" style="background:rgba(255,255,255,0.18);border:1.5px solid rgba(255,255,255,0.5);color:#FFF;font-weight:800;font-size:.84rem;padding:10px 18px;border-radius:999px;">' +
+            '<a href="' + (idRequestUrl || '#') + '"' + (!idRequestUrl || idRequestUrl === '#' ? ' onclick="alert(\'ID Request Form link will be updated soon!\'); return false;"' : ' target="_blank"') + ' class="btn" style="background:rgba(255,255,255,0.18);border:1.5px solid rgba(255,255,255,0.5);color:#FFF;font-weight:800;font-size:.84rem;padding:10px 18px;border-radius:999px;">' +
               '📝 Request Adobe ID ↗' +
             '</a>' +
           '</div>' +
@@ -668,10 +668,10 @@ var TEACHER_SECTIONS_DATA = {
               '</div>' +
             '</div>' +
             '<div style="display:flex;gap:10px;align-items:center;margin-top:auto;padding-top:14px;border-top:1px solid var(--border);">' +
-              '<a href="' + c.url + '" target="_blank" class="btn" style="' + c.btnStyle + 'flex:1;min-width:0;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:.84rem;font-weight:800;padding:10px 14px;border-radius:var(--radius-sm);text-align:center;text-decoration:none;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.12);">' +
+              '<a href="' + (c.url || '#') + '"' + (!c.url || c.url === '#' ? ' onclick="alert(\'' + c.title.replace(/'/g, "\\'") + ' link will be available soon!\'); return false;"' : ' target="_blank"') + ' class="btn" style="' + c.btnStyle + 'flex:1;min-width:0;display:inline-flex;align-items:center;justify-content:center;gap:6px;font-size:.84rem;font-weight:800;padding:10px 14px;border-radius:var(--radius-sm);text-align:center;text-decoration:none;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,0.12);">' +
                 c.btn +
               '</a>' +
-              '<button onclick="navigator.clipboard.writeText(\'' + c.url + '\').then(function(){ alert(\'Link copied to clipboard!\'); })" class="btn btn-ghost" style="flex-shrink:0;height:38px;padding:0 14px;display:inline-flex;align-items:center;gap:4px;font-size:.78rem;font-weight:700;background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius-sm);color:var(--ink);white-space:nowrap;" title="Copy Link">' +
+              '<button onclick="if(!\'' + c.url + '\' || \'' + c.url + '\' === \'#\'){ alert(\'' + c.title.replace(/'/g, "\\'") + ' link will be available soon!\'); } else { navigator.clipboard.writeText(\'' + c.url + '\').then(function(){ alert(\'Link copied to clipboard!\'); }); }" class="btn btn-ghost" style="flex-shrink:0;height:38px;padding:0 14px;display:inline-flex;align-items:center;gap:4px;font-size:.78rem;font-weight:700;background:var(--surface-2);border:1.5px solid var(--border);border-radius:var(--radius-sm);color:var(--ink);white-space:nowrap;" title="Copy Link">' +
                 '📋 Copy' +
               '</button>' +
             '</div>' +
