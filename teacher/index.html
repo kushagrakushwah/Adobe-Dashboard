@@ -9,7 +9,7 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAABYUlEQVR4nMWWPU7DQBCFPydUJIhU/EhcIFRIoaCCCtFRRdQ0pKdACRIF0NHQ0nABOAKi4gYU3AFoEOKnAyKjBW1WM/YsdsyTLK1mZ+b5zc6OnTy2qBS1aumonnAi0r8JfAov/ToOhXPAC/AWPKltYxyEg4y9U2uSJKJLv3L254H7shRuG3yOLImsCvPU/eajBIUd7NgpQ+EVsB5BmhRR2FTIdoFjJWalCOGeYj8HzpS9kyIllZrlBlhz6ztgUfCZ0qZPlsKuYu97633F5+AvCh+AGSnGeGWSGIVthSxtFuuZdWMUXgBbgr0BvAe2WWWkPQMti8JJhexSIPsp/a1gn3aVyiXsIeMaWHKTpxMk8xvJx6GlpNa5+R1viGv4lQkVmj+kDpveWps8vSyF2kXW4A8BrXlGKuErbEeSpVh18zareUauiP8T9QQsAx/YUReOZCHIUffPMOYXoxTUqqX7B8IhRiE+9/rssZgAAAAASUVORK5CYII=">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23FA0F00'/><text y='.9em' font-size='72' x='15' fill='white' font-weight='900'>A</text></svg>">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
@@ -29,7 +29,7 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 .hdr-in{max-width:1160px;margin:0 auto;height:62px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit;cursor:pointer}
 .brand-mark{width:38px;height:38px;border-radius:10px;background:#FFF;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,.06);transition:all .18s ease}
-.brand:hover .brand-mark{border-color:var(--red);transform:scale(1.05)}
+.brand:hover .brand-mark{border-color:var(--red);transform:scale(1.05);box-shadow:0 4px 12px rgba(250,15,0,.15)}
 .brand-text{line-height:1.2}
 .brand-name{font-size:.88rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
 .brand-sub{font-size:.68rem;font-weight:600;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
@@ -423,7 +423,11 @@ footer p+p{margin-top:5px}
 <header class="hdr">
   <div class="hdr-in">
     <div class="brand" onclick="showDashboard()">
-      <div class="brand-mark" aria-label="Adobe"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAABYUlEQVR4nMWWPU7DQBCFPydUJIhU/EhcIFRIoaCCCtFRRdQ0pKdACRIF0NHQ0nABOAKi4gYU3AFoEOKnAyKjBW1WM/YsdsyTLK1mZ+b5zc6OnTy2qBS1aumonnAi0r8JfAov/ToOhXPAC/AWPKltYxyEg4y9U2uSJKJLv3L254H7shRuG3yOLImsCvPU/eajBIUd7NgpQ+EVsB5BmhRR2FTIdoFjJWalCOGeYj8HzpS9kyIllZrlBlhz6ztgUfCZ0qZPlsKuYu97633F5+AvCh+AGSnGeGWSGIVthSxtFuuZdWMUXgBbgr0BvAe2WWWkPQMti8JJhexSIPsp/a1gn3aVyiXsIeMaWHKTpxMk8xvJx6GlpNa5+R1viGv4lQkVmj+kDpveWps8vSyF2kXW4A8BrXlGKuErbEeSpVh18zareUauiP8T9QQsAx/YUReOZCHIUffPMOYXoxTUqqX7B8IhRiE+9/rssZgAAAAASUVORK5CYII=" alt="Adobe" width="26" height="26" style="object-fit:contain;display:block;"></div>
+      <div class="brand-mark" aria-label="Adobe">
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#FA0F00" aria-hidden="true" style="display:block;">
+          <path d="M15.1 2H24v20L15.1 2zM8.9 2H0v20L8.9 2zM12 9.4L17.6 22h-3.8l-1.6-4H8.1L12 9.4z"/>
+        </svg>
+      </div>
       <div class="brand-text">
         <div class="brand-name">Adobe Express for Education</div>
         <div class="brand-sub" id="hdrSubLabel">Educator Workspace</div>
@@ -657,7 +661,7 @@ footer p+p{margin-top:5px}
 </main>
 
 <footer>
-  <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:6px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAABYUlEQVR4nMWWPU7DQBCFPydUJIhU/EhcIFRIoaCCCtFRRdQ0pKdACRIF0NHQ0nABOAKi4gYU3AFoEOKnAyKjBW1WM/YsdsyTLK1mZ+b5zc6OnTy2qBS1aumonnAi0r8JfAov/ToOhXPAC/AWPKltYxyEg4y9U2uSJKJLv3L254H7shRuG3yOLImsCvPU/eajBIUd7NgpQ+EVsB5BmhRR2FTIdoFjJWalCOGeYj8HzpS9kyIllZrlBlhz6ztgUfCZ0qZPlsKuYu97633F5+AvCh+AGSnGeGWSGIVthSxtFuuZdWMUXgBbgr0BvAe2WWWkPQMti8JJhexSIPsp/a1gn3aVyiXsIeMaWHKTpxMk8xvJx6GlpNa5+R1viGv4lQkVmj+kDpveWps8vSyF2kXW4A8BrXlGKuErbEeSpVh18zareUauiP8T9QQsAx/YUReOZCHIUffPMOYXoxTUqqX7B8IhRiE+9/rssZgAAAAASUVORK5CYII=" alt="Adobe" width="18" height="18" style="vertical-align:middle;display:inline-block;"> <strong>Adobe Express for Education</strong></div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:6px;"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#FA0F00" aria-hidden="true" style="vertical-align:middle;display:inline-block;"><path d="M15.1 2H24v20L15.1 2zM8.9 2H0v20L8.9 2zM12 9.4L17.6 22h-3.8l-1.6-4H8.1L12 9.4z"/></svg> <strong>Adobe Express for Education</strong></div>
   <p>Adobe Express for Education - Educator &amp; Curriculum Hub</p>
   <p>&copy; Adobe Inc. All rights reserved.</p>
 </footer>
