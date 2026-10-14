@@ -1365,7 +1365,9 @@ var CPD_MODULES = [
     week1LabelHi: 'असाइनमेंट जमा करें (सप्ताह-1)',
     week2Assignment: 'https://forms.gle/hFnSNvWabNRtVCWa9',
     week2LabelEn: 'Submit Assignment (Week-2)',
-    week2LabelHi: 'असाइनमेंट जमा करें (सप्ताह-2)'
+    week2LabelHi: 'असाइनमेंट जमा करें (सप्ताह-2)',
+    leadAssignmentUrl: 'https://express.adobe.com/publishedV2/urn:aaid:sc:AP:43759e32-bd25-5bb1-ac71-3e917e44bc1d?promoid=Y69SGM5H&sdid=C4SZ2FYJ&mv=other',
+    leadSubmissionUrl: 'https://adobe.ly/CPD3leadershipsubmissionlink'
   },
   {
     code: 'CPD-04',
@@ -1732,6 +1734,15 @@ function renderCpdSectionHtml() {
             (m.week2Assignment.endsWith('.pdf') ? '📄 ' : '📋 ') + (isHi ? (m.week2LabelHi || 'असाइनमेंट 2 ↗') : (m.week2LabelEn || 'Assignment 2 ↗')) +
           '</a>' +
         '</div>' +
+        (m.leadAssignmentUrl ?
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">' +
+            '<a href="' + m.leadAssignmentUrl + '" target="_blank" rel="noopener noreferrer" class="btn" style="height:32px;justify-content:center;font-size:.75rem;font-weight:800;background:#FFF1F0;border:1.5px solid rgba(250,15,0,0.35);color:#FA0F00;padding:0 4px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="Assignment CPD 3 (Level A Principal): My Vision Board 2028">' +
+              '🎯 ' + (isHi ? 'प्राचार्य असाइनमेंट ↗' : 'Principal Assignment ↗') +
+            '</a>' +
+            '<a href="' + m.leadSubmissionUrl + '" target="_blank" rel="noopener noreferrer" class="btn" style="height:32px;justify-content:center;font-size:.75rem;font-weight:800;background:#EEF2FF;border:1.5px solid #C7D2FE;color:#4338CA;padding:0 4px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="Submit Assignment 1 (Level A Principal) via Google Form">' +
+              '📝 ' + (isHi ? 'सबमिट फॉर्म ↗' : 'Submit Form ↗') +
+            '</a>' +
+          '</div>' : '') +
 
         '<button id="btn-' + cpdDetailId + '" class="tile-toggle-btn" onclick="toggleTileDetails(\'' + cpdDetailId + '\')">' +
           '<span style="display:flex;align-items:center;gap:6px;">' +
@@ -1800,6 +1811,80 @@ function renderCpdLeadershipSection(isHi) {
       '</div>' +
     '</div>';
 
+  /* DEDICATED OFFICIAL LEADERSHIP ASSIGNMENT CARD (ASSIGNMENT CPD 3) */
+  var leadAssignmentCard =
+    '<div class="cpd-lead-assignment-card" style="background:#FFFFFF;border:2.5px solid #4338CA;border-radius:var(--radius-lg);padding:26px 30px;margin-bottom:26px;box-shadow:0 10px 30px rgba(67,56,202,0.12);position:relative;overflow:hidden;">' +
+      '<div style="position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg, #FA0F00 0%, #4338CA 50%, #10B981 100%);"></div>' +
+
+      '<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:16px;">' +
+        '<div>' +
+          '<div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;">' +
+            '<span style="font-size:.76rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em;background:#EEF2FF;color:#4338CA;padding:4px 12px;border-radius:999px;border:1.5px solid #C7D2FE;">' +
+              '🎯 ' + (isHi ? 'आधिकारिक प्राचार्य असाइनमेंट • लेवल A | अध्याय-3' : 'Official Leadership Assignment • Level A | Chapter 3') +
+            '</span>' +
+            '<span style="font-size:.74rem;font-weight:800;background:#ECFDF5;color:#059669;padding:4px 12px;border-radius:999px;border:1.5px solid #A7F3D0;">' +
+              '✓ ' + (isHi ? 'सबमिशन लिंक सक्रिय (Google Forms)' : 'Submission Link Active (Google Forms)') +
+            '</span>' +
+            '<span style="font-size:.74rem;font-weight:800;background:#FFF1F0;color:#FA0F00;padding:4px 12px;border-radius:999px;border:1.5px solid rgba(250,15,0,0.25);">' +
+              (isHi ? 'असाइनमेंट CPD 3' : 'Assignment CPD 3') +
+            '</span>' +
+          '</div>' +
+          '<h3 style="font-size:1.35rem;font-weight:900;color:#0F172A;letter-spacing:-.02em;line-height:1.25;margin:0 0 6px;">' +
+            (isHi ? 'Assignment - 1 | Chapter 3 | Level A (Principal) — असाइनमेंट CPD 3' : 'Assignment - 1 | Chapter 3 | Level A (Principal) — Assignment CPD 3') +
+          '</h3>' +
+          '<p style="font-size:.86rem;color:#475569;margin:0;line-height:1.5;">' +
+            (isHi ? 'केंद्रीय विद्यालय प्राचार्यों एवं विद्यालय नेतृत्व के लिए आधिकारिक व्यावहारिक असाइनमेंट कार्य।' :
+                    'Accredited CPD practical leadership submission for Kendriya Vidyalaya Principals, Vice-Principals & School Leaders.') +
+          '</p>' +
+        '</div>' +
+      '</div>' +
+
+      '<div style="background:#F8FAFC;border:1.5px solid #E2E8F0;border-left:5px solid #FA0F00;border-radius:10px;padding:18px 22px;margin-bottom:18px;">' +
+        '<div style="font-size:.76rem;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:#FA0F00;margin-bottom:6px;">' +
+          '🎯 ' + (isHi ? 'असाइनमेंट प्रश्न एवं कार्य विवरण (Assignment Question):' : 'Assignment Question & Brief:') +
+        '</div>' +
+        '<div style="font-size:1.15rem;font-weight:900;color:#0F172A;margin-bottom:8px;">' +
+          '🎯 ' + (isHi ? 'My Vision Board 2028: Future-Ready School (मेरा विज़न बोर्ड 2028: भविष्य के लिए तैयार विद्यालय)' : 'My Vision Board 2028: Future-Ready School') +
+        '</div>' +
+        '<p style="font-size:.95rem;color:#1E293B;line-height:1.6;font-weight:600;margin:0 0 10px;">' +
+          '"Create a one-page Vision Board in Adobe Express showcasing your vision for your school in 2028. Use school photos, add future-ready facilities, and include a short vision statement."' +
+        '</p>' +
+        '<div style="font-size:.82rem;color:#64748B;line-height:1.5;display:flex;gap:18px;flex-wrap:wrap;border-top:1px dashed #CBD5E1;padding-top:10px;margin-top:10px;">' +
+          '<span>📸 <strong>' + (isHi ? 'आवश्यक सामग्री:' : 'Key Assets:') + '</strong> ' + (isHi ? 'विद्यालय की वास्तविक तस्वीरें व आधुनिक सुविधाएं' : 'School Photos & Modern Facilities') + '</span>' +
+          '<span>💡 <strong>' + (isHi ? 'केंद्रीय विषय:' : 'Focus:') + '</strong> ' + (isHi ? '2028 फ्यूचर-रेडी स्कूल व NEP 2020' : 'Future-Ready School & NEP 2020 Vision') + '</span>' +
+          '<span>✍️ <strong>' + (isHi ? 'वक्तव्य:' : 'Deliverable:') + '</strong> ' + (isHi ? 'संक्षिप्त विज़न वक्तव्य (1-Page Board)' : '1-Page Board + Short Vision Statement') + '</span>' +
+        '</div>' +
+      '</div>' +
+
+      '<div style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1.5px solid #F1F5F9;padding-top:16px;">' +
+        '<div style="display:flex;align-items:center;gap:10px;font-size:.82rem;color:#64748B;font-weight:700;flex-wrap:wrap;">' +
+          '<span style="display:inline-flex;align-items:center;gap:6px;">' +
+            '<span style="width:22px;height:22px;border-radius:50%;background:#EEF2FF;color:#4338CA;display:inline-flex;align-items:center;justify-content:center;font-size:.74rem;font-weight:900;">1</span>' +
+            (isHi ? 'एक्सप्रेस में प्रोजेक्ट खोलें' : 'Open in Adobe Express') +
+          '</span>' +
+          '<span>→</span>' +
+          '<span style="display:inline-flex;align-items:center;gap:6px;">' +
+            '<span style="width:22px;height:22px;border-radius:50%;background:#EEF2FF;color:#4338CA;display:inline-flex;align-items:center;justify-content:center;font-size:.74rem;font-weight:900;">2</span>' +
+            (isHi ? 'विज़न बोर्ड तैयार करें' : 'Design Vision Board') +
+          '</span>' +
+          '<span>→</span>' +
+          '<span style="display:inline-flex;align-items:center;gap:6px;">' +
+            '<span style="width:22px;height:22px;border-radius:50%;background:#ECFDF5;color:#059669;display:inline-flex;align-items:center;justify-content:center;font-size:.74rem;font-weight:900;">3</span>' +
+            (isHi ? 'गूगल फॉर्म द्वारा सबमिट करें' : 'Submit via Google Form') +
+          '</span>' +
+        '</div>' +
+
+        '<div style="display:flex;gap:12px;flex-wrap:wrap;">' +
+          '<a href="https://express.adobe.com/publishedV2/urn:aaid:sc:AP:43759e32-bd25-5bb1-ac71-3e917e44bc1d?promoid=Y69SGM5H&sdid=C4SZ2FYJ&mv=other" target="_blank" rel="noopener noreferrer" class="btn" style="background:#FA0F00;color:#FFF;font-weight:900;font-size:.86rem;padding:11px 22px;border-radius:999px;box-shadow:0 4px 14px rgba(250,15,0,0.3);text-decoration:none;display:inline-flex;align-items:center;gap:8px;">' +
+            '🎨 ' + (isHi ? 'असाइनमेंट खोलें (Adobe Express) ↗' : 'Open Assignment in Adobe Express ↗') +
+          '</a>' +
+          '<a href="https://adobe.ly/CPD3leadershipsubmissionlink" target="_blank" rel="noopener noreferrer" class="btn" style="background:#1E1B4B;color:#FFF;border:1.5px solid #4338CA;font-weight:900;font-size:.86rem;padding:11px 22px;border-radius:999px;box-shadow:0 4px 14px rgba(30,27,75,0.25);text-decoration:none;display:inline-flex;align-items:center;gap:8px;">' +
+            '📝 ' + (isHi ? 'सबमिशन लिंक (Google Forms) ↗' : 'Submit Assignment (Google Form) ↗') +
+          '</a>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+
   var leadModules = [
     {
       code: 'CPD-L01',
@@ -1839,17 +1924,21 @@ function renderCpdLeadershipSection(isHi) {
       code: 'CPD-L03',
       titleEn: 'Instructional Coaching & CPD Mentorship Circles',
       titleHi: 'निर्देशात्मक कोचिंग एवं शिक्षक परामर्श मंडल',
-      descEn: 'Building teacher capacity across PRT, TGT, and PGT cadres. Monitoring 25-hour CPD completion (Series 1 & 2), organizing peer learning circles, and recognizing creative teachers.',
-      descHi: 'PRT, TGT और PGT शिक्षकों की क्षमता संवर्धन। 25 घंटे के CPD प्रशिक्षण की निगरानी और सहकर्मी शिक्षण मंडलों का गठन।',
+      descEn: 'Building teacher capacity across all teachers. Monitoring 25-hour CPD completion (Series 1 & 2), organizing peer learning circles, and recognizing creative teachers.',
+      descHi: 'सभी शिक्षकों की क्षमता संवर्धन। 25 घंटे के CPD प्रशिक्षण की निगरानी और सहकर्मी शिक्षण मंडलों का गठन।',
       target: 'Principals, Headmasters & Senior Mentors',
       tools: 'Teacher Roster Verification, Peer Observation Matrix',
-      actionUrl: '../principal/',
-      actionLabelEn: 'Inspect Teacher Roster ↗',
-      actionLabelHi: 'शिक्षक रोस्टर देखें ↗',
+      actionUrl: 'https://express.adobe.com/publishedV2/urn:aaid:sc:AP:43759e32-bd25-5bb1-ac71-3e917e44bc1d?promoid=Y69SGM5H&sdid=C4SZ2FYJ&mv=other',
+      actionLabelEn: '🎨 Open Assignment CPD 3 ↗',
+      actionLabelHi: '🎨 असाइनमेंट CPD 3 खोलें ↗',
+      submissionUrl: 'https://adobe.ly/CPD3leadershipsubmissionlink',
+      submissionLabelEn: '📝 Submit Assignment 1 ↗',
+      submissionLabelHi: '📝 असाइनमेंट 1 सबमिट करें ↗',
       guidelines: [
+        'Assignment - 1 (Level A Principal): Create "My Vision Board 2028: Future-Ready School" in Adobe Express.',
+        'Submit completed project link at: https://adobe.ly/CPD3leadershipsubmissionlink',
         'Review school teacher roster in the Principal Portal weekly.',
-        'Facilitate monthly 30-minute peer showcase meetings for educators.',
-        'Issue school-level appreciation certificates for CPD certified faculty.'
+        'Facilitate monthly 30-minute peer showcase meetings for educators.'
       ]
     },
     {
@@ -1889,7 +1978,13 @@ function renderCpdLeadershipSection(isHi) {
         '<div style="font-size:.74rem;font-weight:700;color:var(--ink-3);background:var(--surface-2);border:1px solid var(--border);padding:4px 8px;border-radius:6px;margin-bottom:16px;">🛠️ ' + lm.tools + '</div>' +
       '</div>' +
       '<div style="border-top:1px solid var(--border);padding-top:14px;display:flex;flex-direction:column;gap:8px;">' +
-        '<a href="' + lm.actionUrl + '" target="_blank" class="btn btn-primary" style="justify-content:center;background:#1E1B4B;border-color:#1E1B4B;font-size:.82rem;font-weight:800;padding:9px 16px;">' + actLabel + '</a>' +
+        (lm.submissionUrl ?
+          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">' +
+            '<a href="' + lm.actionUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="justify-content:center;background:#FA0F00;border-color:#FA0F00;font-size:.80rem;font-weight:800;padding:8px 8px;text-align:center;">' + actLabel + '</a>' +
+            '<a href="' + lm.submissionUrl + '" target="_blank" rel="noopener noreferrer" class="btn" style="justify-content:center;background:#1E1B4B;color:#FFF;border:1px solid #4338CA;font-size:.80rem;font-weight:800;padding:8px 8px;text-align:center;border-radius:var(--radius-sm);">' + (isHi ? lm.submissionLabelHi : lm.submissionLabelEn) + '</a>' +
+          '</div>' :
+          '<a href="' + lm.actionUrl + '" target="_blank" class="btn btn-primary" style="justify-content:center;background:#1E1B4B;border-color:#1E1B4B;font-size:.82rem;font-weight:800;padding:9px 16px;">' + actLabel + '</a>'
+        ) +
         '<button id="btn-' + leadDetId + '" class="tile-toggle-btn" onclick="toggleTileDetails(\'' + leadDetId + '\')">' +
           '<span>📋 ' + (isHi ? 'प्राचार्य दिशानिर्देश व क्रियान्वयन' : 'Leadership Action Guidelines') + '</span>' +
           '<span id="chev-' + leadDetId + '">▼</span>' +
@@ -1903,9 +1998,8 @@ function renderCpdLeadershipSection(isHi) {
     '</div>';
   }).join('');
 
-  return leadBanner + '<div class="cpd-lead-grid">' + leadCardsHtml + '</div>';
+  return leadBanner + leadAssignmentCard + '<div class="cpd-lead-grid">' + leadCardsHtml + '</div>';
 }
-
 
 
 /* ===== AUTUMN BOOTCAMP TEACHER MENTORSHIP RENDERER ===== */
