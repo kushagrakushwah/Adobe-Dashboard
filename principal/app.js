@@ -566,7 +566,15 @@ function setSchool(kvCode) {
     const dcaisStats = document.getElementById('homeDcaisStats');
     const benchPill = document.getElementById('homeBenchmarkPill');
 
-    if (badge) badge.textContent = kvCode === 'ALL' ? 'REGION' : `KV ${sch.code}`;
+    if (badge) {
+      if (kvCode === 'ALL') {
+        badge.innerHTML = '<img src="kvs-logo.svg" onerror="this.onerror=null; this.src=\'../assets/kvs-logo.svg\';" alt="Kendriya Vidyalaya Sangathan" style="width:38px;height:38px;object-fit:contain;display:block;">';
+        badge.title = 'Kendriya Vidyalaya Sangathan — Regional Overview';
+      } else {
+        badge.innerHTML = `<div style="display:flex;flex-direction:column;align-items:center;line-height:1.1;"><span style="font-size:0.62rem;font-weight:800;color:var(--slate-500);text-transform:uppercase;letter-spacing:0.04em;">KV</span><span style="font-size:0.92rem;font-weight:900;color:var(--slate-900);">${sch.code}</span></div>`;
+        badge.title = `KV ${sch.code} — ${sch.name}`;
+      }
+    }
     if (title) title.textContent = `KV ${sch.code} — ${sch.name}`;
     if (reg) reg.textContent = `${sch.region} Region`;
     if (cpdStats) cpdStats.textContent = `${sch.attendedCount} Attended • ${sch.certifiedCount} Certified • ${sch.totalTeachers} Total Teachers`;
@@ -598,7 +606,22 @@ function setSchool(kvCode) {
   const cpdCert = document.getElementById('cpdSumCertified');
   const cpdBench = document.getElementById('cpdBenchmarkPill');
 
-  if (cpdBadge) cpdBadge.textContent = kvCode === 'ALL' ? 'REGION' : sch.code;
+  const cpdBadgeBox = cpdBadge ? cpdBadge.closest('.kv-badge-square') : null;
+  if (cpdBadgeBox) {
+    if (kvCode === 'ALL') {
+      cpdBadgeBox.style.background = '#FFFFFF';
+      cpdBadgeBox.style.border = '1.5px solid var(--slate-200)';
+      cpdBadgeBox.style.boxShadow = '0 2px 6px rgba(0,0,0,0.06)';
+      cpdBadgeBox.innerHTML = '<img src="kvs-logo.svg" onerror="this.onerror=null; this.src=\'../assets/kvs-logo.svg\';" alt="Kendriya Vidyalaya Sangathan" style="width:36px;height:36px;object-fit:contain;display:block;">';
+    } else {
+      cpdBadgeBox.style.background = '';
+      cpdBadgeBox.style.border = '';
+      cpdBadgeBox.style.boxShadow = '';
+      cpdBadgeBox.innerHTML = `<span>KV</span><span id="cpdSchoolCodeBadge">${sch.code}</span>`;
+    }
+  } else if (cpdBadge) {
+    cpdBadge.textContent = kvCode === 'ALL' ? 'ALL' : sch.code;
+  }
   if (cpdTitle) cpdTitle.textContent = sch.name;
   if (cpdReg) cpdReg.textContent = `${sch.region} Region`;
   if (cpdRating) cpdRating.textContent = `Rating: ${sch.rating}`;
@@ -628,7 +651,22 @@ function setSchool(kvCode) {
   const regSum = (KVS_DATA.DCAIS_SUMMARY || []).find(r => r.region.toLowerCase() === sch.region.toLowerCase());
   const regM1Attended = regSum ? regSum.m1_present : 0;
 
-  if (dcaisBadge) dcaisBadge.textContent = kvCode === 'ALL' ? 'REGION' : sch.code;
+  const dcaisBadgeBox = dcaisBadge ? dcaisBadge.closest('.kv-badge-square') : null;
+  if (dcaisBadgeBox) {
+    if (kvCode === 'ALL') {
+      dcaisBadgeBox.style.background = '#FFFFFF';
+      dcaisBadgeBox.style.border = '1.5px solid var(--slate-200)';
+      dcaisBadgeBox.style.boxShadow = '0 2px 6px rgba(0,0,0,0.06)';
+      dcaisBadgeBox.innerHTML = '<img src="kvs-logo.svg" onerror="this.onerror=null; this.src=\'../assets/kvs-logo.svg\';" alt="Kendriya Vidyalaya Sangathan" style="width:36px;height:36px;object-fit:contain;display:block;">';
+    } else {
+      dcaisBadgeBox.style.background = '#1E1B4B';
+      dcaisBadgeBox.style.border = '';
+      dcaisBadgeBox.style.boxShadow = '';
+      dcaisBadgeBox.innerHTML = `<span>KV</span><span id="dcaisSchoolCodeBadge">${sch.code}</span>`;
+    }
+  } else if (dcaisBadge) {
+    dcaisBadge.textContent = kvCode === 'ALL' ? 'ALL' : sch.code;
+  }
   if (dcaisTitle) dcaisTitle.textContent = sch.name;
   if (dcaisReg) dcaisReg.textContent = `${sch.region} Region`;
   if (dcaisStage) dcaisStage.textContent = `DCAIS: ${sch.dcais && sch.dcais.m1 === 'Yes' ? 'M1 Attended' : 'Initiating'}`;
