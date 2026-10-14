@@ -322,7 +322,7 @@ function renderRegionSummary(regObj) {
   if (cpdAtt) cpdAtt.textContent = regObj.cpdAttended.toLocaleString();
   if (cpdTot) cpdTot.textContent = regObj.totalTeachers.toLocaleString();
   if (cpdFill) cpdFill.style.width = `${Math.min(100, Math.max(6, cpdRate))}%`;
-  if (cpdText) cpdText.textContent = `${cpdRate}% Regional Certification Rate • Modules 1–6 Grounded Telemetry`;
+  if (cpdText) cpdText.textContent = `${cpdRate}% Regional Certification Rate • CPD 1–6 Completed (10 Total Modules)`;
 
   const dcaisDesc = document.getElementById('regDcaisDesc');
   if (dcaisDesc) dcaisDesc.textContent = `Digital Creativity & Innovation Skills (Stages M1–M4) implementation across ${regObj.name} Region.`;
@@ -453,7 +453,7 @@ function setSchool(kvCode) {
     if (badge) badge.textContent = `KV ${sch.code}`;
     if (title) title.textContent = `KV ${sch.code} — ${sch.name}`;
     if (reg) reg.textContent = `${sch.region} Region • Academic Rating: ${sch.rating}`;
-    if (cpdStats) cpdStats.textContent = `${sch.certifiedCount} Certified • ${sch.attendedCount} Attended • ${sch.totalTeachers} Total Teachers`;
+    if (cpdStats) cpdStats.textContent = `${sch.attendedCount} Attended • ${sch.certifiedCount} Certified • ${sch.totalTeachers} Total Teachers`;
     if (dcaisStats) dcaisStats.textContent = `${sch.dcaisStage} Active • ${sch.bootcampCount} Bootcamp Students`;
     if (benchPill) {
       benchPill.textContent = benchmark.text;
@@ -472,8 +472,8 @@ function setSchool(kvCode) {
   const cpdReg = document.getElementById('cpdSchoolRegionTag');
   const cpdRating = document.getElementById('cpdSchoolRatingTag');
   const cpdFaculty = document.getElementById('cpdSumFaculty');
-  const cpdCert = document.getElementById('cpdSumCertified');
   const cpdAtt = document.getElementById('cpdSumAttended');
+  const cpdCert = document.getElementById('cpdSumCertified');
   const cpdBench = document.getElementById('cpdBenchmarkPill');
 
   if (cpdBadge) cpdBadge.textContent = sch.code;
@@ -481,8 +481,8 @@ function setSchool(kvCode) {
   if (cpdReg) cpdReg.textContent = `${sch.region} Region`;
   if (cpdRating) cpdRating.textContent = `Rating: ${sch.rating}`;
   if (cpdFaculty) cpdFaculty.textContent = sch.totalTeachers;
-  if (cpdCert) cpdCert.textContent = sch.certifiedCount;
   if (cpdAtt) cpdAtt.textContent = sch.attendedCount;
+  if (cpdCert) cpdCert.textContent = sch.certifiedCount;
   if (cpdBench) {
     cpdBench.textContent = benchmark.text;
     cpdBench.className = `benchmark-pill ${benchmark.cls}`;
@@ -659,8 +659,9 @@ function renderCpdCharts(sch) {
 
 // Roster Filter Pills
 function updateRosterFilterCounts(roster) {
-  let cert = 0, pend = 0, prt = 0, tgt = 0, pgt = 0;
+  let attended = 0, cert = 0, pend = 0, prt = 0, tgt = 0, pgt = 0;
   roster.forEach(t => {
+    if (t.a === 'Yes') attended++;
     if (t.crt === 'Dispatched') cert++;
     else pend++;
     if (t.c === 'PRT') prt++;
@@ -669,6 +670,7 @@ function updateRosterFilterCounts(roster) {
   });
 
   const cAll = document.getElementById('countFilterAll');
+  const cAtt = document.getElementById('countFilterAttended');
   const cCert = document.getElementById('countFilterCertified');
   const cPend = document.getElementById('countFilterPending');
   const cPrt = document.getElementById('countFilterPRT');
@@ -676,6 +678,7 @@ function updateRosterFilterCounts(roster) {
   const cPgt = document.getElementById('countFilterPGT');
 
   if (cAll) cAll.textContent = roster.length;
+  if (cAtt) cAtt.textContent = attended;
   if (cCert) cCert.textContent = cert;
   if (cPend) cPend.textContent = pend;
   if (cPrt) cPrt.textContent = prt;
@@ -701,11 +704,12 @@ function filterRoster() {
   const all = KVS_DATA.SCHOOLS[selectedKVCode].roster || [];
   const filtered = all.filter(t => {
     // 1. Check search text
-    const matchesSearch = q === '' || t.n.toLowerCase().includes(q) || t.s.toLowerCase().includes(q);
+    const matchesSearch = q === '' || t.n.toLowerCase().includes(q) || t.s.toLowerCase().includes(q) || (t.m && t.m.toLowerCase().includes(q));
     if (!matchesSearch) return false;
 
     // 2. Check category / status filter pill
     if (currentRosterFilter === 'all') return true;
+    if (currentRosterFilter === 'attended') return t.a === 'Yes';
     if (currentRosterFilter === 'certified') return t.crt === 'Dispatched';
     if (currentRosterFilter === 'pending') return t.crt !== 'Dispatched';
     if (currentRosterFilter === 'PRT') return t.c === 'PRT';
@@ -723,7 +727,7 @@ function renderRosterTable(roster) {
   tbody.innerHTML = '';
 
   if (roster.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:24px;color:var(--slate-400);">No teacher records found matching criteria.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:24px;color:var(--slate-400);">No teacher records found matching criteria.</td></tr>';
     return;
   }
 
@@ -731,6 +735,7 @@ function renderRosterTable(roster) {
 
   roster.forEach(t => {
     const isCert = t.crt === 'Dispatched';
+    const isAtt = t.a === 'Yes';
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td><strong>${t.n}</strong></td>
@@ -739,8 +744,15 @@ function renderRosterTable(roster) {
       <td><strong>${t.m}</strong></td>
       <td>
         <span class="status-dot-wrap">
+          <span class="dot green"></span>
+          <span style="font-weight:700;color:var(--green-text);">Attended</span>
+        </span>
+        <div style="font-size:0.72rem;color:var(--slate-500);margin-top:2px;">${t.d || '15-04-2025'}</div>
+      </td>
+      <td>
+        <span class="status-dot-wrap">
           <span class="dot ${isCert ? 'green' : 'amber'}"></span>
-          <span>${isCert ? 'Certified' : 'Pending'}</span>
+          <span style="font-weight:700;color:${isCert ? 'var(--green-text)' : 'var(--amber-text)'};">${isCert ? 'Received Certificate' : 'Pending'}</span>
         </span>
       </td>
       <td>
@@ -882,8 +894,11 @@ function printSchoolReport(type) {
         <td style="padding:6px 8px;border-bottom:1px solid #E2E8F0;font-size:11px;">${t.c}</td>
         <td style="padding:6px 8px;border-bottom:1px solid #E2E8F0;font-size:11px;">${t.s}</td>
         <td style="padding:6px 8px;border-bottom:1px solid #E2E8F0;font-size:11px;font-weight:600;">${t.m}</td>
+        <td style="padding:6px 8px;border-bottom:1px solid #E2E8F0;font-size:11px;font-weight:bold;color:#10B981;">
+          ✓ Attended (${t.d || '15-04-2025'})
+        </td>
         <td style="padding:6px 8px;border-bottom:1px solid #E2E8F0;font-size:11px;font-weight:bold;color:${t.crt === 'Dispatched' ? '#10B981' : '#D97706'};">
-          ${t.crt === 'Dispatched' ? '✓ Dispatched & Certified' : '○ Assignment Pending'}
+          ${t.crt === 'Dispatched' ? '✓ Received Certificate' : '○ Assignment Pending'}
         </td>
       </tr>
     `).join('');
@@ -945,18 +960,18 @@ function printSchoolReport(type) {
           <div class="summary-cards">
             <div class="s-tile">
               <div class="s-val">${sch.totalTeachers}</div>
-              <div class="s-lbl">Total Registered Teachers</div>
+              <div class="s-lbl">Participating Teachers</div>
+            </div>
+            <div class="s-tile">
+              <div class="s-val" style="color:#0F172A;">${sch.attendedCount}</div>
+              <div class="s-lbl">CPD Attended</div>
             </div>
             <div class="s-tile">
               <div class="s-val" style="color:#FA0F00;">${sch.certifiedCount}</div>
-              <div class="s-lbl">Certified Educators</div>
+              <div class="s-lbl">CPD Certified</div>
             </div>
             <div class="s-tile">
-              <div class="s-val">${sch.attendedCount}</div>
-              <div class="s-lbl">Attended Modules 1–6</div>
-            </div>
-            <div class="s-tile">
-              <div class="s-val" style="color:#10B981;">${Math.round((sch.certifiedCount / Math.max(1, sch.totalTeachers)) * 100)}%</div>
+              <div class="s-val" style="color:#10B981;">${Math.round((sch.certifiedCount / Math.max(1, sch.attendedCount)) * 100)}%</div>
               <div class="s-lbl">Certification Ratio</div>
             </div>
           </div>
@@ -973,11 +988,12 @@ function printSchoolReport(type) {
                 <th>Category</th>
                 <th>Subject</th>
                 <th>Module</th>
-                <th>Certification Status</th>
+                <th>CPD Attendance</th>
+                <th>CPD Certificate</th>
               </tr>
             </thead>
             <tbody>
-              ${rosterRows || '<tr><td colspan="6" style="text-align:center;padding:14px;">No teacher records registered.</td></tr>'}
+              ${rosterRows || '<tr><td colspan="7" style="text-align:center;padding:14px;">No teacher records registered.</td></tr>'}
             </tbody>
           </table>
 
@@ -1179,10 +1195,22 @@ function exportSchoolCsv(type) {
   if (type === 'cpd') {
     filename = `KV_${sch.code}_${sch.name.replace(/[^a-zA-Z0-9]/g, '_')}_CPD_Teachers.csv`;
     const rows = [
-      ['KV Code', 'School Name', 'Region', 'Teacher Name', 'Category', 'Subject', 'Module', 'Status']
+      ['KV Code', 'School Name', 'Region', 'Teacher Name', 'Category', 'Subject', 'Module', 'CPD Attendance', 'Attendance Date', 'CPD Certificate', 'Email']
     ];
     (sch.roster || []).forEach(t => {
-      rows.push([sch.code, sch.name, sch.region, t.n, t.c, t.s, t.m, t.crt]);
+      rows.push([
+        sch.code,
+        sch.name,
+        sch.region,
+        t.n,
+        t.c,
+        t.s,
+        t.m,
+        t.a === 'Yes' ? 'Attended' : 'Absent',
+        t.d || '',
+        t.crt === 'Dispatched' ? 'Received Certificate' : 'Pending',
+        t.e || ''
+      ]);
     });
     csvContent = rows.map(r => r.map(c => `"${c}"`).join(',')).join('\n');
   } else {
