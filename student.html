@@ -1955,10 +1955,14 @@ var STUDENT_SECTIONS_DATA = {
 
 /* ===== NAVIGATION CONTROLLER ===== */
 function openSection(num, noScroll) {
-  var data = STUDENT_SECTIONS_DATA[num];
+  if (!num) return;
+  var normKey = (num + '').toLowerCase() === 'bootcamp' ? 'bootcamp' : (num + '');
+  var data = STUDENT_SECTIONS_DATA[normKey] || STUDENT_SECTIONS_DATA[num];
   if (!data) return;
-  currentOpenSection = num;
-  location.hash = '#section-' + num;
+  currentOpenSection = normKey;
+  if (location.hash !== '#section-' + normKey) {
+    location.hash = '#section-' + normKey;
+  }
 
   var isHi = (currentLang === 'hi');
   var tag = isHi ? data.tagHi : data.tagEn;
@@ -1981,7 +1985,7 @@ function openSection(num, noScroll) {
   if (content) content.innerHTML = data.render(currentLang);
 
   var keys = Object.keys(STUDENT_SECTIONS_DATA);
-  var idx = keys.indexOf(num);
+  var idx = keys.indexOf(normKey);
   var nextPrevHtml = '';
   if (idx > 0) nextPrevHtml += '<button class="btn btn-ghost" onclick="openSection(&quot;' + keys[idx-1] + '&quot;)">' + (isHi ? '← पिछला सेक्शन' : '← Prev Section') + '</button> ';
   if (idx < keys.length-1) nextPrevHtml += '<button class="btn btn-primary" onclick="openSection(&quot;' + keys[idx+1] + '&quot;)">' + (isHi ? 'अगला सेक्शन →' : 'Next Section →') + '</button>';
@@ -2002,7 +2006,9 @@ function openSection(num, noScroll) {
 
 function showDashboard() {
   currentOpenSection = null;
-  location.hash = '';
+  if (location.hash && location.hash !== '#') {
+    location.hash = '';
+  }
   var sv = document.getElementById('sectionView');
   if (sv) sv.style.display = 'none';
   var dv = document.getElementById('dashboardView');
@@ -2015,21 +2021,30 @@ function showDashboard() {
 window.addEventListener('hashchange', function() {
   var hash = location.hash;
   if (hash.indexOf('#section-') === 0) {
-    var num = hash.replace('#section-', '');
-    if (STUDENT_SECTIONS_DATA[num]) {
-      openSection(num);
+    var rawKey = hash.replace('#section-', '');
+    var normKey = rawKey.toLowerCase() === 'bootcamp' ? 'bootcamp' : rawKey;
+    if (STUDENT_SECTIONS_DATA[normKey] || STUDENT_SECTIONS_DATA[rawKey]) {
+      var resolved = STUDENT_SECTIONS_DATA[normKey] ? normKey : rawKey;
+      if (currentOpenSection !== resolved) {
+        openSection(resolved, true);
+      }
       return;
     }
   }
-  showDashboard();
+  if (!hash || hash === '#' || hash === '#dashboard') {
+    showDashboard();
+  }
 });
 
 window.addEventListener('DOMContentLoaded', function() {
   var hash = location.hash;
   if (hash.indexOf('#section-') === 0) {
-    var num = hash.replace('#section-', '');
-    if (STUDENT_SECTIONS_DATA[num]) {
-      openSection(num);
+    var rawKey = hash.replace('#section-', '');
+    var normKey = rawKey.toLowerCase() === 'bootcamp' ? 'bootcamp' : rawKey;
+    if (STUDENT_SECTIONS_DATA[normKey] || STUDENT_SECTIONS_DATA[rawKey]) {
+      var resolved = STUDENT_SECTIONS_DATA[normKey] ? normKey : rawKey;
+      openSection(resolved);
+      applyLang();
       return;
     }
   }
