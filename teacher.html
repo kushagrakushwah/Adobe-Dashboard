@@ -634,16 +634,16 @@ footer p+p{margin-top:5px}
         </div>
       </div>
 
-      <!-- Section Bootcamp: PM SHRI KVS Autumn Bootcamp -->
+      <!-- Section Bootcamp: KVS Autumn Bootcamp -->
       <div class="tile-card" data-section="bootcamp" onclick="openSection('bootcamp')">
         <div class="tile-img-wrap" style="background:#02B6F9;">
-          <img class="tile-img" src="assets/autumn_bootcamp_poster.jpg" alt="PM SHRI KVS Autumn Bootcamp" crossorigin="anonymous" style="object-fit:contain;background:#02B6F9;">
+          <img class="tile-img" src="assets/autumn_bootcamp_banner.jpg?v=2" alt="KVS Autumn Bootcamp" crossorigin="anonymous" style="object-fit:contain;background:#02B6F9;">
           <div class="tile-img-ov">🎒</div>
         </div>
         <div class="tile-body">
           <div>
             <div class="tile-tag" id="tBoot-tag">Autumn Bootcamp • 17–24 Oct 2026</div>
-            <h2 class="tile-title" id="tBoot-title">PM SHRI KVS Autumn Bootcamp</h2>
+            <h2 class="tile-title" id="tBoot-title">KVS Autumn Bootcamp</h2>
             <p class="tile-desc" id="tBoot-desc">Teacher Mentorship Hub: Guide students through 3 live sessions: Comic-a-concept, Hero of My Nation, and My Childhood Memory.</p>
           </div>
           <div class="tile-footer">
@@ -1202,7 +1202,7 @@ var LANG = {
     flow5:'DCAIS Exam', sEtag:'Section E • DCAIS Exam', sEtitle:'DCAIS Exam &amp; Answer Key', sEdesc:'KVS Semester-1 examination portal: 15 regional Google Form links, exam guidelines, and verified Answer Key.', sEhint:'15 Regions • Answer Key', sEbtn:'Open &rarr;',
     flowBootcamp: 'Autumn Bootcamp',
     tBootTag: 'Autumn Bootcamp • 17–24 Oct 2026',
-    tBootTitle: 'PM SHRI KVS Autumn Bootcamp',
+    tBootTitle: 'KVS Autumn Bootcamp',
     tBootDesc: 'Teacher Mentorship Hub: Guide students through 3 live sessions: Comic-a-concept, Hero of My Nation, and My Childhood Memory.',
     tBootHint: '3 Live Sessions • Templates & Resources',
     tBootBtn: 'Open Bootcamp Hub →',
@@ -1222,7 +1222,7 @@ var LANG = {
     flow5:'DCAIS परीक्षा', sEtag:'सेक्शन E • DCAIS परीक्षा', sEtitle:'DCAIS परीक्षा और उत्तर कुंजी', sEdesc:'KVS सेमेस्टर-1 परीक्षा पोर्टल: 15 क्षेत्रीय गूगल फॉर्म लिंक, परीक्षा दिशानिर्देश और सत्यापित उत्तर कुंजी।', sEhint:'15 क्षेत्र • उत्तर कुंजी', sEbtn:'खोलें &rarr;',
     flowBootcamp: 'शरद ऋतु बूटकैंप',
     tBootTag: 'शरद ऋतु बूटकैंप • 17–24 अक्टूबर 2026',
-    tBootTitle: 'पीएम श्री केवीएस शरद ऋतु बूटकैंप',
+    tBootTitle: 'केवीएस शरद ऋतु बूटकैंप',
     tBootDesc: 'शिक्षक मार्गदर्शन हब: 3 लाइव सत्रों में छात्रों का मार्गदर्शन करें: कॉमिक-ए-कॉन्सेप्ट, हीरो ऑफ़ माय नेशन और माय चाइल्डहुड मेमोरी।',
     tBootHint: '3 लाइव सत्र • टेम्पलेट्स और संसाधन',
     tBootBtn: 'बूटकैंप हब खोलें →',
@@ -2011,10 +2011,10 @@ function renderTeacherBootcampSection() {
   var heroBanner =
     '<div class="bc-hero-banner">' +
       '<div style="flex:1;min-width:280px;z-index:2;">' +
-        '<div class="bc-tag-pill">🎓 ' + (isHi ? 'शिक्षक मार्गदर्शन हब • पीएम श्री केवीएस बूटकैंप 2026' : 'Teacher Mentorship Hub • PM SHRI KVS Bootcamp 2026') + '</div>' +
+        '<div class="bc-tag-pill">🎓 ' + (isHi ? 'शिक्षक मार्गदर्शन हब • केवीएस बूटकैंप 2026' : 'Teacher Mentorship Hub • KVS Bootcamp 2026') + '</div>' +
         '<div class="bc-timing-pill">📅 ' + (isHi ? '17 से 24 अक्टूबर 2026 • शाम 4:00 से 5:00 बजे' : '17th - 24th October, 2026 • 4:00 PM - 5:00 PM') + '</div>' +
         '<h2 style="font-size:1.6rem;font-weight:900;letter-spacing:-.03em;line-height:1.2;margin-bottom:8px;color:#FFF;">' +
-          (isHi ? 'पीएम श्री केवीएस ऑटम बूटकैंप — शिक्षक मार्गदर्शन एवं संसाधन' : 'PM SHRI KVS Autumn Bootcamp — Educator Mentorship Portal') +
+          (isHi ? 'केवीएस ऑटम बूटकैंप — शिक्षक मार्गदर्शन एवं संसाधन' : 'KVS Autumn Bootcamp — Educator Mentorship Portal') +
         '</h2>' +
         '<p style="font-size:.88rem;color:rgba(255,255,255,0.85);max-width:620px;line-height:1.5;margin-bottom:14px;">' +
           (isHi ? 'कक्षा 6 से 12 के छात्रों को 3 रचनात्मक सत्रों में मार्गदर्शन दें। यूट्यूब लाइव सत्रों को स्मार्टबोर्ड पर दिखाएं, एडोब एक्सप्रेस टेम्पलेट्स साझा करें और छात्र सबमिशन एकत्रित करें।' :
@@ -2025,9 +2025,9 @@ function renderTeacherBootcampSection() {
         '</div>' +
       '</div>' +
       '<div style="display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2;">' +
-        '<img src="assets/autumn_bootcamp_poster.jpg" alt="PM SHRI KVS Autumn Bootcamp" class="bc-poster-thumb" onclick="window.open(\'assets/autumn_bootcamp_poster.jpg\', \'_blank\')" title="' + (isHi ? 'बड़ा बैनर देखें' : 'Click to view full banner') + '">' +
+        '<img src="assets/autumn_bootcamp_banner.jpg?v=2" alt="KVS Autumn Bootcamp" class="bc-poster-thumb" onclick="window.open(\'assets/autumn_bootcamp_poster.jpg\', \'_blank\')" title="' + (isHi ? 'बड़ा बैनर देखें' : 'Click to view full banner') + '">' +
         '<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;">' +
-          '<a href="assets/autumn_bootcamp_poster.jpg" target="_blank" download class="btn btn-ghost" style="font-size:.74rem;padding:4px 10px;color:#FFF;border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);">' +
+          '<a href="assets/autumn_bootcamp_banner.jpg" target="_blank" download class="btn btn-ghost" style="font-size:.74rem;padding:4px 10px;color:#FFF;border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);">' +
             '🖼️ ' + (isHi ? 'बैनर देखें ↗' : 'View Banner ↗') +
           '</a>' +
           '<a href="assets/autumn_bootcamp_full_poster.jpg" target="_blank" download class="btn btn-ghost" style="font-size:.74rem;padding:4px 10px;color:#FFF;border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);">' +
@@ -3699,8 +3699,8 @@ var TEACHER_SECTIONS_DATA = {
     letter: '🎒',
     tagEn: 'Special Initiative • Autumn Bootcamp 2026',
     tagHi: 'विशेष पहल • शरद ऋतु बूटकैंप 2026',
-    titleEn: 'PM SHRI KVS Autumn Bootcamp (17th - 24th October, 2026)',
-    titleHi: 'पीएम श्री केवीएस शरद ऋतु बूटकैंप (17 - 24 अक्टूबर 2026)',
+    titleEn: 'KVS Autumn Bootcamp (17th - 24th October, 2026)',
+    titleHi: 'केवीएस शरद ऋतु बूटकैंप (17 - 24 अक्टूबर 2026)',
     descEn: 'Teacher Mentorship Hub: Guide students through 3 live sessions: Comic-a-concept, Hero of My Nation, and My Childhood Memory. Use GenAI in Adobe Express!',
     descHi: 'शिक्षक मार्गदर्शन हब: 3 लाइव सत्रों में छात्रों का मार्गदर्शन करें: कॉमिक-ए-कॉन्सेप्ट, हीरो ऑफ़ माय नेशन और माय चाइल्डहुड मेमोरी। एडोब एक्सप्रेस में जेन-एआई का उपयोग करें!',
     render: function(lang) { return renderTeacherBootcampSection(); }
