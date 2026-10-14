@@ -1845,7 +1845,7 @@ function renderCpdLeadershipSection(isHi) {
       '<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:20px;flex-wrap:wrap;">' +
         '<div style="max-width:720px;">' +
           '<div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.3);padding:4px 12px;border-radius:999px;font-size:.74rem;font-weight:900;letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px;">' +
-            '🏛️ ' + (isHi ? 'केवीएस संस्थागत नेतृत्व • प्राचार्य एवं उप-प्राचार्य' : 'KVS Institutional Leadership • Principals & School Leaders') +
+            (isHi ? 'केवीएस संस्थागत नेतृत्व • प्राचार्य एवं उप-प्राचार्य' : 'KVS Institutional Leadership • Principals & School Leaders') +
           '</div>' +
           '<h3 style="font-size:1.45rem;font-weight:900;letter-spacing:-.02em;line-height:1.25;margin-bottom:8px;">' +
             (isHi ? 'CPD लीडरशिप — प्राचार्यों के लिए कार्यकारी विकास कार्यक्रम' : 'CPD Leadership — Executive Development for Principals & Administrators') +
@@ -1860,12 +1860,9 @@ function renderCpdLeadershipSection(isHi) {
             '<span>✓ Principal Command Center Integrated</span>' +
           '</div>' +
         '</div>' +
-        '<div style="display:flex;flex-direction:column;gap:10px;min-width:200px;">' +
-          '<a href="../principal/" target="_blank" class="btn" style="background:#FA0F00;color:#FFF;font-weight:800;font-size:.84rem;padding:11px 18px;border-radius:999px;box-shadow:0 4px 12px rgba(250,15,0,0.35);text-align:center;">' +
-            '🏛️ ' + (isHi ? 'प्राचार्य कमान केंद्र खोलें ↗' : 'Principal Command Center ↗') +
-          '</a>' +
-          '<a href="https://kushagrakushwah.github.io/kvspdashboard/" target="_blank" class="btn" style="background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.4);color:#FFF;font-weight:800;font-size:.82rem;padding:10px 18px;border-radius:999px;text-align:center;">' +
-            '📊 ' + (isHi ? 'लाइव स्कूल टेलीमेट्री ↗' : 'Live School Telemetry ↗') +
+        '<div style="display:flex;align-items:center;min-width:200px;">' +
+          '<a href="../principal/" target="_blank" class="btn" style="background:#FA0F00;color:#FFF;font-weight:800;font-size:.88rem;padding:12px 22px;border-radius:999px;box-shadow:0 4px 14px rgba(250,15,0,0.35);text-align:center;white-space:nowrap;text-decoration:none;width:100%;">' +
+            (isHi ? 'प्राचार्य कमान केंद्र खोलें ↗' : 'Principal Command Center ↗') +
           '</a>' +
         '</div>' +
       '</div>' +
@@ -1989,11 +1986,11 @@ function renderCpdLeadershipSection(isHi) {
       target: 'Principals, Headmasters & Senior Mentors',
       tools: 'Teacher Roster Verification, Peer Observation Matrix',
       actionUrl: 'https://express.adobe.com/publishedV2/urn:aaid:sc:AP:43759e32-bd25-5bb1-ac71-3e917e44bc1d?promoid=Y69SGM5H&sdid=C4SZ2FYJ&mv=other',
-      actionLabelEn: '🎨 Open Assignment CPD 3 ↗',
-      actionLabelHi: '🎨 असाइनमेंट CPD 3 खोलें ↗',
+      actionLabelEn: 'Open Assignment CPD 3 ↗',
+      actionLabelHi: 'असाइनमेंट CPD 3 खोलें ↗',
       submissionUrl: 'https://adobe.ly/CPD3leadershipsubmissionlink',
-      submissionLabelEn: '📝 Submit Assignment 1 ↗',
-      submissionLabelHi: '📝 असाइनमेंट 1 सबमिट करें ↗',
+      submissionLabelEn: 'Submit Assignment (Google Form) ↗',
+      submissionLabelHi: 'असाइनमेंट सबमिट करें (Google Form) ↗',
       guidelines: [
         'Assignment - 1 (Level A Principal): Create "My Vision Board 2028: Future-Ready School" in Adobe Express.',
         'Submit completed project link at: https://adobe.ly/CPD3leadershipsubmissionlink',
@@ -2039,11 +2036,11 @@ function renderCpdLeadershipSection(isHi) {
       '</div>' +
       '<div style="border-top:1px solid var(--border);padding-top:14px;display:flex;flex-direction:column;gap:8px;">' +
         (lm.submissionUrl ?
-          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">' +
-            '<a href="' + lm.actionUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="justify-content:center;background:#FA0F00;border-color:#FA0F00;font-size:.80rem;font-weight:800;padding:8px 8px;text-align:center;">' + actLabel + '</a>' +
-            '<a href="' + lm.submissionUrl + '" target="_blank" rel="noopener noreferrer" class="btn" style="justify-content:center;background:#1E1B4B;color:#FFF;border:1px solid #4338CA;font-size:.80rem;font-weight:800;padding:8px 8px;text-align:center;border-radius:var(--radius-sm);">' + (isHi ? lm.submissionLabelHi : lm.submissionLabelEn) + '</a>' +
+          '<div style="display:flex;flex-direction:column;gap:8px;width:100%;">' +
+            '<a href="' + lm.actionUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="justify-content:center;background:#FA0F00;border-color:#FA0F00;font-size:.82rem;font-weight:800;padding:9px 12px;text-align:center;border-radius:var(--radius-sm);width:100%;box-sizing:border-box;">' + actLabel + '</a>' +
+            '<a href="' + lm.submissionUrl + '" target="_blank" rel="noopener noreferrer" class="btn" style="justify-content:center;background:#1E1B4B;color:#FFF;border:1.5px solid #4338CA;font-size:.82rem;font-weight:800;padding:9px 12px;text-align:center;border-radius:var(--radius-sm);width:100%;box-sizing:border-box;">' + (isHi ? lm.submissionLabelHi : lm.submissionLabelEn) + '</a>' +
           '</div>' :
-          '<a href="' + lm.actionUrl + '" target="_blank" class="btn btn-primary" style="justify-content:center;background:#1E1B4B;border-color:#1E1B4B;font-size:.82rem;font-weight:800;padding:9px 16px;">' + actLabel + '</a>'
+          '<a href="' + lm.actionUrl + '" target="_blank" class="btn btn-primary" style="justify-content:center;background:#1E1B4B;border-color:#1E1B4B;font-size:.82rem;font-weight:800;padding:9px 16px;width:100%;box-sizing:border-box;">' + actLabel + '</a>'
         ) +
         '<button id="btn-' + leadDetId + '" class="tile-toggle-btn" onclick="toggleTileDetails(\'' + leadDetId + '\')">' +
           '<span>📋 ' + (isHi ? 'प्राचार्य दिशानिर्देश व क्रियान्वयन' : 'Leadership Action Guidelines') + '</span>' +
