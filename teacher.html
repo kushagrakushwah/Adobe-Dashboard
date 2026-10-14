@@ -72,11 +72,13 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 .tile-body{padding:16px 18px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
 .tile-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(250,15,0,.12)}
 .tile-tag{font-size:.62rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
-.tile-title{font-size:.98rem;font-weight:800;color:var(--ink);line-height:1.3;margin-bottom:4px}
-.tile-desc{font-size:.78rem;color:var(--ink-3);line-height:1.45;margin-bottom:12px}
-.tile-footer{display:flex;align-items:center;justify-content:space-between;padding-top:10px;border-top:1px solid var(--border)}
-.tile-hint{font-size:.7rem;color:var(--ink-3);font-weight:600}
-.tile-btn{display:inline-flex;align-items:center;gap:5px;background:var(--red-bg);color:var(--red);font-size:.75rem;font-weight:800;padding:5px 12px;border-radius:999px;transition:all .18s;border:1px solid var(--red-border)}
+.tile-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;user-select:none;transition:all .22s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;position:relative;height:100%}
+.tile-body{padding:16px 18px;flex:1;display:flex;flex-direction:column;justify-content:space-between;gap:10px}
+.tile-title{font-size:.98rem;font-weight:800;color:var(--ink);line-height:1.3;margin-bottom:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile-desc{font-size:.78rem;color:var(--ink-3);line-height:1.45;height:2.9em;min-height:2.9em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:0}
+.tile-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:10px;border-top:1px solid var(--border)}
+.tile-hint{font-size:.72rem;color:var(--ink-3);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;min-width:0}
+.tile-btn{display:inline-flex;align-items:center;gap:5px;background:var(--red-bg);color:var(--red);font-size:.75rem;font-weight:800;padding:5px 12px;border-radius:999px;transition:all .18s;border:1px solid var(--red-border);white-space:nowrap!important;flex-shrink:0}
 .tile-card:hover .tile-btn{background:var(--red);color:#FFF;border-color:var(--red)}
 /* SECTION VIEW */
 .section-full-view{display:none;animation:viewFadeIn .28s ease}
@@ -510,7 +512,9 @@ footer p+p{margin-top:5px}
     <div class="flow">
       <div class="flow-step" data-flow-section="A" onclick="openSection('A')" role="button" tabindex="0" title="Go to Section A: Adobe ID &amp; Access"><span class="flow-n">1</span><span id="flow1">School Access</span></div>
       <span class="flow-arr">→</span>
-      <div class="flow-step" data-flow-section="B" onclick="openSection('B')" role="button" tabindex="0" title="Go to Section B: CPD Continuous Professional Development"><span class="flow-n">2</span><span id="flow2">CPD Training</span></div>
+      <div class="flow-step" data-flow-section="B" onclick="openSection('B')" role="button" tabindex="0" title="Go to Section B: CPD Continuous Professional Development"><span class="flow-n">2</span><span id="flow2">CPD Module</span></div>
+      <span class="flow-arr">→</span>
+      <div class="flow-step" data-flow-section="leadership" onclick="openSection('leadership')" role="button" tabindex="0" title="Go to CPD Leadership"><span class="flow-n">★</span><span id="flowLead">CPD Leadership</span></div>
       <span class="flow-arr">→</span>
       <div class="flow-step" data-flow-section="C" onclick="openSection('C')" role="button" tabindex="0" title="Go to Section C: Student DCAIS Monitor"><span class="flow-n">3</span><span id="flow3">DCAIS Monitor</span></div>
       <span class="flow-arr">→</span>
@@ -570,8 +574,26 @@ footer p+p{margin-top:5px}
             <p class="tile-desc" id="sB-desc">CPD 1-6 completed, 10 total modules to complete covering NEP 2020 &amp; GenAI pedagogies.</p>
           </div>
           <div class="tile-footer">
-            <span class="tile-hint" id="sB-hint">CPD 1–6 Completed (10 Total Modules) • 25 Hours</span>
+            <span class="tile-hint" id="sB-hint">CPD 1–6 Complete (10 Modules) • 25 Hrs</span>
             <span class="tile-btn" id="sB-btn">Open &rarr;</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CPD Leadership Tile -->
+      <div class="tile-card" data-section="leadership" onclick="openSection('leadership')">
+        <div class="tile-img-wrap">
+          <img class="tile-img" src="assets/guidebook/cpd_ai_pedagogy.png" alt="CPD Leadership" crossorigin="anonymous">
+        </div>
+        <div class="tile-body">
+          <div>
+            <div class="tile-tag" id="sLead-tag">CPD Leadership • Principal &amp; School Leaders</div>
+            <h2 class="tile-title" id="sLead-title">CPD Leadership</h2>
+            <p class="tile-desc" id="sLead-desc">Assignment CPD 3: My Vision Board 2028: Future-Ready School. Create Vision Board in Adobe Express &amp; submit Google Form.</p>
+          </div>
+          <div class="tile-footer">
+            <span class="tile-hint" id="sLead-hint">Assignment CPD 3 • 3.5 Hrs</span>
+            <span class="tile-btn" id="sLead-btn">Open &rarr;</span>
           </div>
         </div>
       </div>
@@ -1196,7 +1218,8 @@ var LANG = {
     backBtn:'Back to Sections',
     crumbHome:'Home',
     sAtag:'Section A • Institutional Access', sAtitle:'Adobe ID &amp; Password Access', sAdesc:'Teacher ID directory, missing ID creation request, and step-by-step mobile &amp; desktop login video tutorials.', sAhint:'4 Core Access Portals', sAbtn:'Open Section &rarr;',
-    sBtag:'Section B', sBtitle:'CPD Module', sBdesc:'CPD 1-6 completed, 10 total modules to complete covering NEP 2020 & GenAI pedagogies.', sBhint:'CPD 1–6 Completed (10 Total Modules) • 25 Hours', sBbtn:'Open &rarr;',
+    sBtag:'Section B', sBtitle:'CPD Module', sBdesc:'CPD 1-6 completed, 10 total modules to complete covering NEP 2020 & GenAI pedagogies.', sBhint:'CPD 1–6 Complete (10 Modules) • 25 Hrs', sBbtn:'Open &rarr;',
+    sLeadTag:'CPD Leadership • Principal &amp; School Leaders', sLeadTitle:'CPD Leadership', sLeadDesc:'Assignment CPD 3: My Vision Board 2028: Future-Ready School. Create Vision Board in Adobe Express & submit Google Form.', sLeadHint:'Assignment CPD 3 • 3.5 Hrs', sLeadBtn:'Open &rarr;', flowLead:'CPD Leadership',
     sCtag:'Section C • DCAIS', sCtitle:'Student DCAIS Activities', sCdesc: 'Monitor what DCAIS activities your students are doing across Grades 6-8. Inspect curriculum instructions and templates.', sChint: 'Grades 6-8 Activities', sCbtn:'Open &rarr;',
     sDtag:'Section D', sDtitle:'Classroom Resources', sDdesc:'Curriculum worksheets & Adobe Express design templates for Grades 6-8: Direct links across English, Hindi, Science, Social Science & Maths.', sDhint:'Grades 6–8 Worksheets & Templates', sDbtn:'Open &rarr;',
     flow5:'DCAIS Exam', sEtag:'Section E • DCAIS Exam', sEtitle:'DCAIS Exam &amp; Answer Key', sEdesc:'KVS Semester-1 examination portal: 15 regional Google Form links, exam guidelines, and verified Answer Key.', sEhint:'15 Regions • Answer Key', sEbtn:'Open &rarr;',
@@ -1217,6 +1240,7 @@ var LANG = {
     crumbHome:'होम',
     sAtag:'सेक्शन A • संस्थागत एक्सेस', sAtitle:'Adobe ID और पासवर्ड एक्सेस', sAdesc:'शिक्षक ID डायरेक्टरी, नई ID अनुरोध फ़ॉर्म, और मोबाइल व डेस्कटॉप लॉगिन वीडियो ट्यूटोरियल।', sAhint:'4 मुख्य एक्सेस टूल्स', sAbtn:'सेक्शन खोलें &rarr;',
     sBtag:'सेक्शन B', sBtitle:'CPD मॉड्यूल', sBdesc:'CPD 1-6 पूर्ण, पूरा करने के लिए कुल 10 मॉड्यूल (NEP 2020 एवं GenAI शिक्षाशास्त्र)।', sBhint:'CPD 1–6 पूर्ण (कुल 10 मॉड्यूल) • 25 घंटे', sBbtn:'खोलें &rarr;',
+    sLeadTag:'CPD लीडरशिप • प्राचार्य एवं विद्यालय नेतृत्व', sLeadTitle:'CPD लीडरशिप', sLeadDesc:'असाइनमेंट CPD 3: मेरा विज़न बोर्ड 2028: भविष्य के लिए तैयार विद्यालय। Adobe Express में विज़न बोर्ड बनाएं और Google Form द्वारा सबमिट करें।', sLeadHint:'असाइनमेंट CPD 3 • 3.5 घंटे', sLeadBtn:'खोलें &rarr;', flowLead:'CPD लीडरशिप',
     sCtag:'सेक्शन C • DCAIS', sCtitle:'छात्र DCAIS गतिविधियाँ', sCdesc: 'देखें कक्षा 6 से 8 तक आपके छात्र कौन सी DCAIS गतिविधियाँ कर रहे हैं।', sChint: 'कक्षा 6-8 गतिविधियाँ', sCbtn:'खोलें &rarr;',
     sDtag:'सेक्शन D', sDtitle:'कक्षा संसाधन', sDdesc:'कक्षा 6-8 के लिए कार्यपत्रक (Worksheets) और Adobe Express टेम्पलेट्स: अंग्रेज़ी, हिंदी, विज्ञान, सामाजिक विज्ञान और गणित के सीधे लिंक।', sDhint:'कक्षा 6-8 कार्यपत्रक और टेम्पलेट्स', sDbtn:'खोलें &rarr;',
     flow5:'DCAIS परीक्षा', sEtag:'सेक्शन E • DCAIS परीक्षा', sEtitle:'DCAIS परीक्षा और उत्तर कुंजी', sEdesc:'KVS सेमेस्टर-1 परीक्षा पोर्टल: 15 क्षेत्रीय गूगल फॉर्म लिंक, परीक्षा दिशानिर्देश और सत्यापित उत्तर कुंजी।', sEhint:'15 क्षेत्र • उत्तर कुंजी', sEbtn:'खोलें &rarr;',
@@ -3983,6 +4007,19 @@ var TEACHER_SECTIONS_DATA = {
     descHi: 'शिक्षकों को डिजिटल रचनात्मकता, सामाजिक-भावनात्मक शिक्षण (SEL 2.0) और AI शिक्षाशास्त्र से लैस करने के लिए 10 प्रमाणित मॉड्यूल का पूर्ण पाठ्यक्रम (श्रृंखला 1 एवं 2 पूर्ण • 25 घंटे)।',
     render: function(lang) { return renderCpdSectionHtml(); }
   },
+  'leadership': {
+    letter: '★',
+    tagEn: 'CPD Leadership • Principal &amp; School Leaders',
+    tagHi: 'CPD लीडरशिप • प्राचार्य एवं विद्यालय नेतृत्व',
+    titleEn: 'CPD Leadership — Executive Development &amp; Assignment CPD 3',
+    titleHi: 'CPD लीडरशिप — कार्यकारी विकास एवं असाइनमेंट CPD 3',
+    descEn: 'Executive leadership framework for KVS Principals and School Leaders under NEP 2020. Includes Assignment CPD 3 (My Vision Board 2028: Future-Ready School), institutional roadmaps, and mentorship circles.',
+    descHi: 'NEP 2020 के तहत केवीएस प्राचार्यों एवं विद्यालय नेतृत्व के लिए कार्यकारी विकास कार्यक्रम। इसमें असाइनमेंट CPD 3 (माय विज़न बोर्ड 2028), संस्थागत रोडमैप और परामर्श मंडल शामिल हैं।',
+    render: function(lang) {
+      activeCpdTab = 'leadership';
+      return renderCpdLeadershipSection(lang === 'hi');
+    }
+  },
   'C': {
     letter: '🔭',
     tagEn: 'Section C • Student DCAIS Activities',
@@ -4085,7 +4122,7 @@ var TEACHER_SECTIONS_DATA = {
 /* ===== NAVIGATION CONTROLLER ===== */
 function openSection(letter, noScroll) {
   if (!letter) return;
-  var normKey = (letter + '').toLowerCase() === 'bootcamp' ? 'bootcamp' : (letter + '').toUpperCase();
+  var normKey = (letter + '').toLowerCase() === 'bootcamp' ? 'bootcamp' : ((letter + '').toLowerCase() === 'leadership' ? 'leadership' : (letter + '').toUpperCase());
   var data = TEACHER_SECTIONS_DATA[normKey] || TEACHER_SECTIONS_DATA[letter];
   if (!data) return;
   currentTeacherSection = normKey;
@@ -4152,7 +4189,7 @@ window.addEventListener('hashchange', function() {
   var hash = location.hash;
   if (hash.indexOf('#section-') === 0) {
     var rawKey = hash.replace('#section-', '');
-    var normKey = rawKey.toLowerCase() === 'bootcamp' ? 'bootcamp' : rawKey.toUpperCase();
+    var normKey = rawKey.toLowerCase() === 'bootcamp' ? 'bootcamp' : (rawKey.toLowerCase() === 'leadership' ? 'leadership' : rawKey.toUpperCase());
     if (TEACHER_SECTIONS_DATA[normKey] || TEACHER_SECTIONS_DATA[rawKey]) {
       var resolvedKey = TEACHER_SECTIONS_DATA[normKey] ? normKey : rawKey;
       if (currentTeacherSection !== resolvedKey) {
@@ -4170,7 +4207,7 @@ window.addEventListener('DOMContentLoaded', function() {
   var hash = location.hash;
   if (hash.indexOf('#section-') === 0) {
     var rawKey = hash.replace('#section-', '');
-    var normKey = rawKey.toLowerCase() === 'bootcamp' ? 'bootcamp' : rawKey.toUpperCase();
+    var normKey = rawKey.toLowerCase() === 'bootcamp' ? 'bootcamp' : (rawKey.toLowerCase() === 'leadership' ? 'leadership' : rawKey.toUpperCase());
     if (TEACHER_SECTIONS_DATA[normKey] || TEACHER_SECTIONS_DATA[rawKey]) {
       var resolvedKey = TEACHER_SECTIONS_DATA[normKey] ? normKey : rawKey;
       openSection(resolvedKey);
