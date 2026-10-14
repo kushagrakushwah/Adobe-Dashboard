@@ -419,7 +419,9 @@ footer p+p{margin-top:5px}
 /* ===== AUTUMN BOOTCAMP & CPD LEADERSHIP STYLES ===== */
 .bc-hero-banner { background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%); color: #FFF; border-radius: var(--radius-lg); padding: 28px 32px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; box-shadow: 0 10px 30px rgba(15,23,42,0.18); position: relative; overflow: hidden; }
 .bc-hero-banner::before { content: ''; position: absolute; top: -50px; right: -50px; width: 220px; height: 220px; border-radius: 50%; background: rgba(250,15,0,0.15); filter: blur(50px); pointer-events: none; }
-.bc-poster-thumb { width: 140px; height: 190px; border-radius: 12px; object-fit: cover; border: 2.5px solid rgba(255,255,255,0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.3); flex-shrink: 0; cursor: pointer; transition: transform .25s ease; }
+.bc-poster-thumb { width: 280px; max-width: 100%; height: auto; aspect-ratio: 723 / 335; border-radius: 12px; object-fit: contain; border: 2.5px solid rgba(255,255,255,0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.3); flex-shrink: 0; cursor: pointer; transition: transform .25s ease; background: #02B6F9; }
+.tile-card[data-section="bootcamp"] .tile-img-wrap { background: #02B6F9; }
+.tile-card[data-section="bootcamp"] .tile-img { object-fit: contain; background: #02B6F9; }
 .bc-poster-thumb:hover { transform: scale(1.04); }
 .bc-tag-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(250,15,0,0.2); border: 1px solid rgba(250,15,0,0.4); color: #FF8577; padding: 4px 12px; border-radius: 999px; font-size: .75rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; margin-bottom: 10px; }
 .bc-timing-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); color: #FFF; padding: 5px 14px; border-radius: 999px; font-size: .8rem; font-weight: 800; margin-bottom: 12px; }
@@ -634,8 +636,8 @@ footer p+p{margin-top:5px}
 
       <!-- Section Bootcamp: PM SHRI KVS Autumn Bootcamp -->
       <div class="tile-card" data-section="bootcamp" onclick="openSection('bootcamp')">
-        <div class="tile-img-wrap">
-          <img class="tile-img" src="assets/autumn_bootcamp_poster.jpg" alt="PM SHRI KVS Autumn Bootcamp" crossorigin="anonymous">
+        <div class="tile-img-wrap" style="background:#02B6F9;">
+          <img class="tile-img" src="assets/autumn_bootcamp_poster.jpg" alt="PM SHRI KVS Autumn Bootcamp" crossorigin="anonymous" style="object-fit:contain;background:#02B6F9;">
           <div class="tile-img-ov">🎒</div>
         </div>
         <div class="tile-body">
@@ -2023,10 +2025,15 @@ function renderTeacherBootcampSection() {
         '</div>' +
       '</div>' +
       '<div style="display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2;">' +
-        '<img src="assets/autumn_bootcamp_poster.jpg" alt="Bootcamp Poster" class="bc-poster-thumb" onclick="window.open(\'assets/autumn_bootcamp_poster.jpg\', \'_blank\')" title="' + (isHi ? 'बड़ा पोस्टर देखें' : 'Click to view full poster') + '">' +
-        '<a href="assets/autumn_bootcamp_poster.jpg" target="_blank" download class="btn btn-ghost" style="font-size:.74rem;padding:4px 12px;color:#FFF;border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);">' +
-          '🖼️ ' + (isHi ? 'पोस्टर डाउनलोड करें' : 'View Full Poster ↗') +
-        '</a>' +
+        '<img src="assets/autumn_bootcamp_poster.jpg" alt="PM SHRI KVS Autumn Bootcamp" class="bc-poster-thumb" onclick="window.open(\'assets/autumn_bootcamp_poster.jpg\', \'_blank\')" title="' + (isHi ? 'बड़ा बैनर देखें' : 'Click to view full banner') + '">' +
+        '<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center;">' +
+          '<a href="assets/autumn_bootcamp_poster.jpg" target="_blank" download class="btn btn-ghost" style="font-size:.74rem;padding:4px 10px;color:#FFF;border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);">' +
+            '🖼️ ' + (isHi ? 'बैनर देखें ↗' : 'View Banner ↗') +
+          '</a>' +
+          '<a href="assets/autumn_bootcamp_full_poster.jpg" target="_blank" download class="btn btn-ghost" style="font-size:.74rem;padding:4px 10px;color:#FFF;border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);">' +
+            '📄 ' + (isHi ? 'पूरा पोस्टर ↗' : 'Full Poster ↗') +
+          '</a>' +
+        '</div>' +
       '</div>' +
     '</div>';
 
