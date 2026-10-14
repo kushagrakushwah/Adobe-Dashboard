@@ -18,6 +18,10 @@ A company-grade, production-ready web application for **Adobe Express for Educat
   👉 **[https://kushagrakushwah.github.io/Adobe-Dashboard/teacher/](https://kushagrakushwah.github.io/Adobe-Dashboard/teacher/)**  
   *(Educators have their own standalone hub with Adobe ID & Password guidance, CPD 1–5 modules, and DCAIS curriculum tree).*
 
+* **🏛️ Dedicated Principal Site (Isolated Leadership Command Center):**  
+  👉 **[https://kushagrakushwah.github.io/Adobe-Dashboard/principal/](https://kushagrakushwah.github.io/Adobe-Dashboard/principal/)**  
+  *(Principals have real-time school analytics, teacher CPD tracking, student DCAIS monitoring, and print dossiers).*
+
 * **🚀 Portal Gateway:**  
   👉 **[https://kushagrakushwah.github.io/Adobe-Dashboard/](https://kushagrakushwah.github.io/Adobe-Dashboard/)**
 
@@ -37,6 +41,11 @@ dashboard/
 │   ├── styles.css             # Teacher Spectrum Styling
 │   ├── teacher.js             # Teacher CPD & DCAIS Controller
 │   └── data.js                # Teacher Credential & Curriculum Data
+├── principal/                 # COMPLETELY ISOLATED PRINCIPAL COMMAND CENTER
+│   ├── index.html             # Principal Dashboard (School & Regional Analytics)
+│   ├── styles.css             # Principal Spectrum & Executive Styling
+│   ├── app.js                 # School selector & benchmark controller
+│   └── data.js                # KVS Semi-Annual School Data CMS
 ├── index.html                 # Central Gateway Portal
 ├── css/                       # Global Spectrum Styles
 ├── js/                        # Global App Controllers
