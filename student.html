@@ -267,6 +267,48 @@ footer p+p{margin-top:5px}
 .exam-guidelines-list li{display:flex;align-items:flex-start;gap:8px}
 .exam-toast{position:fixed;bottom:24px;right:24px;z-index:9999;background:var(--ink);color:#FFF;padding:12px 22px;border-radius:999px;font-size:.84rem;font-weight:800;box-shadow:0 8px 30px rgba(0,0,0,.25);display:flex;align-items:center;gap:10px;animation:toastIn .25s ease}
 @keyframes toastIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== AUTUMN BOOTCAMP STYLES ===== */
+.bc-hero-banner { background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%); color: #FFF; border-radius: var(--radius-lg); padding: 28px 32px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; box-shadow: 0 10px 30px rgba(15,23,42,0.18); position: relative; overflow: hidden; }
+.bc-hero-banner::before { content: ''; position: absolute; top: -50px; right: -50px; width: 220px; height: 220px; border-radius: 50%; background: rgba(250,15,0,0.15); filter: blur(50px); pointer-events: none; }
+.bc-poster-thumb { width: 140px; height: 190px; border-radius: 12px; object-fit: cover; border: 2.5px solid rgba(255,255,255,0.4); box-shadow: 0 8px 24px rgba(0,0,0,0.3); flex-shrink: 0; cursor: pointer; transition: transform .25s ease; }
+.bc-poster-thumb:hover { transform: scale(1.04); }
+.bc-tag-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(250,15,0,0.2); border: 1px solid rgba(250,15,0,0.4); color: #FF8577; padding: 4px 12px; border-radius: 999px; font-size: .75rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; margin-bottom: 10px; }
+.bc-timing-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); color: #FFF; padding: 5px 14px; border-radius: 999px; font-size: .8rem; font-weight: 800; margin-bottom: 12px; }
+.bc-guide-box { background: #FFF; border: 1.5px solid var(--border); border-left: 5px solid #FA0F00; border-radius: var(--radius); padding: 18px 22px; margin-bottom: 24px; box-shadow: var(--shadow-sm); }
+.bc-flow-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 14px; }
+.bc-step-item { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; display: flex; align-items: center; gap: 10px; font-size: .84rem; font-weight: 700; color: var(--ink); }
+.bc-step-num { width: 28px; height: 28px; border-radius: 50%; background: #FA0F00; color: #FFF; font-size: .8rem; font-weight: 900; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.bc-sessions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-bottom: 28px; }
+.bc-card { background: var(--surface); border: 2px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; transition: all .25s ease; box-shadow: var(--shadow-sm); }
+.bc-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+.bc-card.session-1 { border-top: 6px solid #0284C7; }
+.bc-card.session-1:hover { border-color: #0284C7; }
+.bc-card.session-2 { border-top: 6px solid #EA580C; }
+.bc-card.session-2:hover { border-color: #EA580C; }
+.bc-card.session-3 { border-top: 6px solid #EAB308; }
+.bc-card.session-3:hover { border-color: #EAB308; }
+.bc-card-hdr { padding: 16px 20px 12px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+.bc-card-date { font-size: .78rem; font-weight: 800; color: var(--ink-2); display: flex; align-items: center; gap: 6px; }
+.bc-card-tag { font-size: .7rem; font-weight: 900; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; letter-spacing: .04em; }
+.bc-tag-1 { background: #E0F2FE; color: #0369A1; border: 1px solid #BAE6FD; }
+.bc-tag-2 { background: #FFEDD5; color: #C2410C; border: 1px solid #FED7AA; }
+.bc-tag-3 { background: #FEF3C7; color: #A16207; border: 1px solid #FDE68A; }
+.bc-card-body { padding: 20px; flex: 1; }
+.bc-card-title { font-size: 1.25rem; font-weight: 900; color: var(--ink); margin-bottom: 8px; line-height: 1.25; }
+.bc-card-desc { font-size: .88rem; color: var(--ink-2); line-height: 1.5; margin-bottom: 16px; }
+.bc-tools-badge { display: inline-flex; align-items: center; gap: 6px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; font-size: .75rem; font-weight: 700; color: var(--ink-2); margin-bottom: 18px; }
+.bc-card-actions { padding: 16px 20px 20px; background: var(--surface-2); border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 10px; }
+.bc-btn-yt { display: flex; align-items: center; justify-content: center; gap: 8px; background: #DC2626; color: #FFF; padding: 10px 16px; border-radius: 8px; font-size: .84rem; font-weight: 800; text-decoration: none; transition: all .18s; box-shadow: 0 2px 6px rgba(220,38,38,0.25); }
+.bc-btn-yt:hover { background: #B91C1C; transform: translateY(-1px); color: #FFF; }
+.bc-tpl-list { display: flex; flex-direction: column; gap: 6px; }
+.bc-btn-tpl { display: flex; align-items: center; justify-content: space-between; background: #FFF; border: 1.5px solid var(--border); color: var(--ink); padding: 8px 12px; border-radius: 8px; font-size: .8rem; font-weight: 700; text-decoration: none; transition: all .16s; }
+.bc-btn-tpl:hover { border-color: #FA0F00; color: #FA0F00; background: #FFF2F1; transform: translateX(2px); }
+.bc-btn-sub { display: flex; align-items: center; justify-content: center; gap: 6px; background: #059669; color: #FFF; border: none; padding: 9px 16px; border-radius: 8px; font-size: .82rem; font-weight: 800; cursor: pointer; transition: all .18s; width: 100%; }
+.bc-btn-sub:hover { background: #047857; }
+.bc-btn-sub.pending { background: var(--surface-3); color: var(--ink-3); border: 1px dashed var(--border); cursor: pointer; }
+.bc-btn-sub.pending:hover { background: var(--surface-2); color: var(--ink-2); }
+
 </style>
 </head>
 <body>
@@ -312,6 +354,8 @@ footer p+p{margin-top:5px}
         <div class="flow-step" data-flow-section="3" onclick="openSection('3')" role="button" tabindex="0" title="Go to Section 3: DCAIS Activities"><span class="flow-n">2</span><span id="flow2">DCAIS Activities</span></div>
         <span class="flow-arr">→</span>
         <div class="flow-step" data-flow-section="4" onclick="openSection('4')" role="button" tabindex="0" title="Go to Section 4: DCAIS Mid-Term Examination"><span class="flow-n">3</span><span id="flow3">Mid-Term Exam</span></div>
+        <span class="flow-arr">→</span>
+        <div class="flow-step" data-flow-section="bootcamp" onclick="openSection('bootcamp')" role="button" tabindex="0" title="Go to Autumn Bootcamp 2026"><span class="flow-n">🎒</span><span id="flowBootcamp">Autumn Bootcamp</span></div>
       </div>
     </div>
   </div>
@@ -404,6 +448,26 @@ footer p+p{margin-top:5px}
           </div>
         </div>
       </div>
+
+      <!-- Section Bootcamp: PM SHRI KVS Autumn Bootcamp -->
+      <div class="tile-card" data-section="bootcamp" onclick="openSection('bootcamp')">
+        <div class="tile-img-wrap">
+          <img class="tile-img" src="assets/autumn_bootcamp_poster.jpg" alt="PM SHRI KVS Autumn Bootcamp" crossorigin="anonymous">
+          <div class="tile-img-ov">🎒</div>
+        </div>
+        <div class="tile-body">
+          <div>
+            <div class="tile-tag" id="sBoot-tag">Autumn Bootcamp • 17–24 Oct 2026</div>
+            <h2 class="tile-title" id="sBoot-title">PM SHRI KVS Autumn Bootcamp</h2>
+            <p class="tile-desc" id="sBoot-desc">Join 3 fun live sessions: Comic-a-concept, Hero of My Nation, and My Childhood Memory. Use GenAI in Adobe Express!</p>
+          </div>
+          <div class="tile-footer">
+            <span class="tile-hint" id="sBoot-hint">3 Live Sessions • Templates & YouTube</span>
+            <span class="tile-btn" id="sBoot-btn">Open Bootcamp →</span>
+          </div>
+        </div>
+      </div>
+
 
       <!-- Sections 5, 6, 7 [Commented out as not needed now]
 
@@ -949,6 +1013,12 @@ var LANG = {
     flow2: 'Watch Video',
     flow3: 'Mid-Term Exam',
     flow4: 'Submit!',
+    flowBootcamp: 'Autumn Bootcamp',
+    sBootTag: 'Special Initiative • Autumn Bootcamp',
+    sBootTitle: 'PM SHRI KVS Autumn Bootcamp',
+    sBootDesc: 'Join 3 fun live sessions: Comic-a-concept, Hero of My Nation, and My Childhood Memory. Use GenAI in Adobe Express!',
+    sBootHint: '3 Live Sessions • Templates & YouTube',
+    sBootBtn: 'Open Bootcamp →',
     guideText: '<strong>Tap any box below</strong> to open it and start your creative work!',
     backBtn: 'Back to Sections',
     s1tag: 'Section 1',
@@ -997,6 +1067,12 @@ var LANG = {
     flow2: 'वीडियो देखो',
     flow3: 'मिड-टर्म परीक्षा',
     flow4: 'जमा करो!',
+    flowBootcamp: 'शरद ऋतु बूटकैंप',
+    sBootTag: 'विशेष पहल • शरद ऋतु बूटकैंप',
+    sBootTitle: 'पीएम श्री केवीएस शरद ऋतु बूटकैंप',
+    sBootDesc: '3 लाइव सत्र: कॉमिक-ए-कॉन्सेप्ट, हीरो ऑफ़ माय नेशन, और माय चाइल्डहुड मेमोरी। एडोब एक्सप्रेस में जेन-एआई का उपयोग करें!',
+    sBootHint: '3 लाइव सत्र • टेम्पलेट्स और यूट्यूब',
+    sBootBtn: 'बूटकैंप खोलें →',
     guideText: '<strong>नीचे किसी भी बॉक्स पर टैप करो</strong> और अपना क्रिएटिव काम शुरू करो!',
     backBtn: 'वापस जाओ',
     s1tag: 'सेक्शन 1',
@@ -1073,6 +1149,8 @@ function applyLang() {
   set('s2-tag', L.s2tag); set('s2-title', L.s2title); set('s2-desc', L.s2desc); set('s2-hint', L.s2hint); set('s2-btn', L.s2btn);
   set('s3-tag', L.s3tag); set('s3-title', L.s3title); set('s3-desc', L.s3desc); set('s3-hint', L.s3hint); set('s3-btn', L.s3btn);
   set('s4-tag', L.s4tag); set('s4-title', L.s4title); set('s4-desc', L.s4desc); set('s4-hint', L.s4hint); set('s4-btn', L.s4btn);
+    set('flowBootcamp', L.flowBootcamp);
+  set('sBoot-tag', L.sBootTag); set('sBoot-title', L.sBootTitle); set('sBoot-desc', L.sBootDesc); set('sBoot-hint', L.sBootHint); set('sBoot-btn', L.sBootBtn);
   set('s5-tag', L.s5tag); set('s5-title', L.s5title); set('s5-desc', L.s5desc); set('s5-hint', L.s5hint); set('s5-btn', L.s5btn);
   set('s6-tag', L.s6tag); set('s6-title', L.s6title); set('s6-desc', L.s6desc); set('s6-hint', L.s6hint); set('s6-btn', L.s6btn);
   set('s7-tag', L.s7tag); set('s7-title', L.s7title); set('s7-desc', L.s7desc); set('s7-hint', L.s7hint); set('s7-btn', L.s7btn);
@@ -1576,8 +1654,191 @@ function renderStudentExamSection() {
   return metaBanner + guidelinesBox + searchBar + '<div class="exam-region-grid" id="studentExamRegionGrid">' + cardsHtml + '</div>';
 }
 
+
+/* ===== AUTUMN BOOTCAMP 2026 RENDERER ===== */
+function renderStudentBootcampSection() {
+  var isHi = (currentLang === 'hi');
+
+  var heroBanner =
+    '<div class="bc-hero-banner">' +
+      '<div style="flex:1;min-width:280px;z-index:2;">' +
+        '<div class="bc-tag-pill">🚀 ' + (isHi ? 'पीएम श्री केवीएस शरद ऋतु बूटकैंप 2026' : 'PM SHRI KVS Autumn Bootcamp 2026') + '</div>' +
+        '<div class="bc-timing-pill">📅 ' + (isHi ? '17 से 24 अक्टूबर 2026 • शाम 4:00 से 5:00 बजे' : '17th - 24th October, 2026 • Time: 4:00 PM - 5:00 PM') + '</div>' +
+        '<h2 style="font-size:1.6rem;font-weight:900;letter-spacing:-.03em;line-height:1.2;margin-bottom:8px;color:#FFF;">' +
+          (isHi ? 'एडोब एक्सप्रेस फॉर एजुकेशन ऑटम बूटकैंप' : 'PM SHRI KVS Autumn Bootcamp') +
+        '</h2>' +
+        '<p style="font-size:.88rem;color:rgba(255,255,255,0.85);max-width:580px;line-height:1.5;margin-bottom:14px;">' +
+          (isHi ? '3 लाइव इंटरैक्टिव यूट्यूब सत्र, आधिकारिक एडोब एक्सप्रेस टेम्पलेट्स, और जनरेटिव AI स्टोरीटेलिंग प्रोजेक्ट्स।' :
+                  '3 live interactive masterclasses on YouTube: Comic-a-concept, Hero of My Nation, and My Childhood Memory. Use Generative AI in Adobe Express to create digital stories!') +
+        '</p>' +
+        '<div style="font-size:.78rem;font-weight:800;color:#FCA5A5;text-transform:uppercase;letter-spacing:.05em;">' +
+          '✨ ' + (isHi ? 'नवाचार के माध्यम से • शिक्षा के माध्यम से • डिज़ाइन के माध्यम से' : 'Through Innovation. Through Education. Through Design.') +
+        '</div>' +
+      '</div>' +
+      '<div style="display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2;">' +
+        '<img src="assets/autumn_bootcamp_poster.jpg" alt="Bootcamp Poster" class="bc-poster-thumb" onclick="window.open(\'assets/autumn_bootcamp_poster.jpg\', \'_blank\')" title="' + (isHi ? 'बड़ा पोस्टर देखें' : 'Click to view full poster') + '">' +
+        '<a href="assets/autumn_bootcamp_poster.jpg" target="_blank" download class="btn btn-ghost" style="font-size:.74rem;padding:4px 12px;color:#FFF;border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);">' +
+          '🖼️ ' + (isHi ? 'पोस्टर डाउनलोड करें' : 'View Full Poster ↗') +
+        '</a>' +
+      '</div>' +
+    '</div>';
+
+  var howToGuide =
+    '<div class="bc-guide-box">' +
+      '<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px;">' +
+        '<h3 style="font-size:1.05rem;font-weight:900;color:var(--ink);">' +
+          '💡 ' + (isHi ? 'बूटकैंप में भाग कैसे लें?' : 'How to Participate in the Bootcamp') +
+        '</h3>' +
+        '<span style="font-size:.75rem;font-weight:800;background:var(--red-bg);color:var(--red);padding:3px 10px;border-radius:999px;border:1px solid var(--red-border);">' +
+          (isHi ? 'कक्षा 6 से 12 के छात्रों के लिए' : 'For Grades 6-12 Students') +
+        '</span>' +
+      '</div>' +
+      '<p style="font-size:.84rem;color:var(--ink-2);line-height:1.5;">' +
+        (isHi ? 'नीचे दिए गए तीनों सत्रों में भाग लें। शाम 4:00 बजे लाइव सेशन देखें, दिए गए टेम्पलेट्स को एडोब एक्सप्रेस में एडिट करें और अपनी रचना तैयार करें।' :
+                'Attend all 3 sessions! Watch the YouTube live stream at 4:00 PM, click the template links to remix in your Adobe Express school account, and prepare your project submissions.') +
+      '</p>' +
+      '<div class="bc-flow-steps">' +
+        '<div class="bc-step-item"><span class="bc-step-num">1</span><span>' + (isHi ? 'शाम 4:00 बजे लाइव क्लास देखें' : 'Watch Live at 4:00 PM') + '</span></div>' +
+        '<div class="bc-step-item"><span class="bc-step-num">2</span><span>' + (isHi ? 'एडोब एक्सप्रेस टेम्पलेट खोलें' : 'Open Express Template') + '</span></div>' +
+        '<div class="bc-step-item"><span class="bc-step-num">3</span><span>' + (isHi ? 'GenAI से अपनी कला बनाएं' : 'Create with Generative AI') + '</span></div>' +
+        '<div class="bc-step-item"><span class="bc-step-num">4</span><span>' + (isHi ? 'प्रोजेक्ट सबमिट करें' : 'Submit Project Online') + '</span></div>' +
+      '</div>' +
+    '</div>';
+
+  var sessionsHtml =
+    '<div style="margin-bottom:16px;">' +
+      '<h3 style="font-size:1.2rem;font-weight:900;color:var(--ink);letter-spacing:-.02em;">' +
+        '📚 ' + (isHi ? 'बूटकैंप सत्र एवं संसाधन (3 लाइव सेशन):' : 'Bootcamp Sessions & Project Launchers (3 Live Sessions):') +
+      '</h3>' +
+    '</div>' +
+    '<div class="bc-sessions-grid">' +
+
+      /* SESSION 1 */
+      '<div class="bc-card session-1">' +
+        '<div>' +
+          '<div class="bc-card-hdr">' +
+            '<span class="bc-card-date">📅 17-Oct-2026 • 4:00 PM</span>' +
+            '<span class="bc-card-tag bc-tag-1">Session 1</span>' +
+          '</div>' +
+          '<div class="bc-card-body">' +
+            '<h4 class="bc-card-title">Comic-a-concept</h4>' +
+            '<p class="bc-card-desc">' +
+              (isHi ? 'एडोब एक्सप्रेस के जनरेटिव एआई फीचर का उपयोग करके कॉमिक स्ट्रिप्स के माध्यम से किसी भी वैज्ञानिक या सामाजिक विषय को समझाएं।' :
+                      'Use generative AI feature of Adobe Express to explain an educational concept using creative comic strips.') +
+            '</p>' +
+            '<div class="bc-tools-badge">🛠️ ' + (isHi ? 'टूल्स: कॉमिक स्ट्रिप मेकर, जेनरेटिव AI' : 'Tools: Comic Strip Maker, Generative AI') + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="bc-card-actions">' +
+          '<a href="https://youtube.com/live/SoYiU1lR364?feature=share" target="_blank" class="bc-btn-yt">' +
+            '▶ ' + (isHi ? 'लाइव सेशन 1 देखें (YouTube) ↗' : 'Watch Live Session 1 (YouTube) ↗') +
+          '</a>' +
+          '<a href="https://express.adobe.com/sp/design/comics" target="_blank" class="bc-btn-tpl">' +
+            '<span>🎨 ' + (isHi ? 'कॉमिक कैनवास एडोब एक्सप्रेस में खोलें' : 'Open Comic Canvas in Express') + '</span> <span>↗</span>' +
+          '</a>' +
+          '<button type="button" onclick="showToast(\'' + (isHi ? 'प्रोजेक्ट सबमिशन लिंक जल्द ही बूटकैंप के दौरान सक्रिय होगा!' : 'Official project submission link will open during bootcamp week!') + '\')" class="bc-btn-sub pending">' +
+            '📤 ' + (isHi ? 'प्रोजेक्ट सबमिशन (लिंक जल्द खुलेगा)' : 'Project Submission (Link Opening Soon)') +
+          '</button>' +
+        '</div>' +
+      '</div>' +
+
+      /* SESSION 2 */
+      '<div class="bc-card session-2">' +
+        '<div>' +
+          '<div class="bc-card-hdr">' +
+            '<span class="bc-card-date">📅 22-Oct-2026 • 4:00 PM</span>' +
+            '<span class="bc-card-tag bc-tag-2">Session 2</span>' +
+          '</div>' +
+          '<div class="bc-card-body">' +
+            '<h4 class="bc-card-title">Hero of My Nation</h4>' +
+            '<p class="bc-card-desc">' +
+              (isHi ? 'एक प्रेरक डिजिटल डिज़ाइन बनाकर अपने पसंदीदा राष्ट्रीय व्यक्तित्व या स्वतंत्रता सेनानी को श्रद्धांजलि अर्पित करें।' :
+                      'Pay tribute to your favourite national personality or freedom fighter by creating an inspiring digital design in Adobe Express.') +
+            '</p>' +
+            '<div class="bc-tools-badge">🛠️ ' + (isHi ? 'टूल्स: जेनरेटिव AI, डिज़ाइन एसेट्स, टेक्स्ट इफेक्ट्स' : 'Tools: Generative AI, Design Assets, Text Inputs') + '</div>' +
+            '<div style="font-size:.78rem;font-weight:800;color:var(--ink);margin-bottom:8px;">🎨 ' + (isHi ? 'आधिकारिक टेम्पलेट्स:' : 'Official Templates:') + '</div>' +
+            '<div class="bc-tpl-list">' +
+              '<a href="https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:1678bef7-f487-5cdc-b36e-c9887bbc634e?category=text&taskID=poster&pageId=ea76ae65-fcfc-4788-99d2-f8941e51418f" target="_blank" class="bc-btn-tpl">' +
+                '<span>📄 ' + (isHi ? 'टेम्पलेट 1: नेशनल हीरो पोस्टर' : 'Template 1: National Hero Poster') + '</span> <span>↗</span>' +
+              '</a>' +
+              '<a href="https://express.adobe.com/design/template/urn:aaid:sc:VA6C2:2277d241-7c36-5eb6-8f97-41e18f206257?category=text&entryPoint=template&taskID=poster" target="_blank" class="bc-btn-tpl">' +
+                '<span>📄 ' + (isHi ? 'टेम्पलेट 2: हीरो ट्रिब्यूट डिज़ाइन' : 'Template 2: Hero Tribute Design') + '</span> <span>↗</span>' +
+              '</a>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="bc-card-actions">' +
+          '<a href="https://youtube.com/live/TqbePtiMqmM?feature=share" target="_blank" class="bc-btn-yt">' +
+            '▶ ' + (isHi ? 'लाइव सेशन 2 देखें (YouTube) ↗' : 'Watch Live Session 2 (YouTube) ↗') +
+          '</a>' +
+          '<button type="button" onclick="showToast(\'' + (isHi ? 'प्रोजेक्ट सबमिशन लिंक जल्द ही बूटकैंप के दौरान सक्रिय होगा!' : 'Official project submission link will open during bootcamp week!') + '\')" class="bc-btn-sub pending">' +
+            '📤 ' + (isHi ? 'प्रोजेक्ट सबमिशन (लिंक जल्द खुलेगा)' : 'Project Submission (Link Opening Soon)') +
+          '</button>' +
+        '</div>' +
+      '</div>' +
+
+      /* SESSION 3 */
+      '<div class="bc-card session-3">' +
+        '<div>' +
+          '<div class="bc-card-hdr">' +
+            '<span class="bc-card-date">📅 24-Oct-2026 • 4:00 PM</span>' +
+            '<span class="bc-card-tag bc-tag-3">Session 3</span>' +
+          '</div>' +
+          '<div class="bc-card-body">' +
+            '<h4 class="bc-card-title">My Childhood Memory</h4>' +
+            '<p class="bc-card-desc">' +
+              (isHi ? 'एडोब एक्सप्रेस का उपयोग करके एक रचनात्मक डिजिटल कहानी के माध्यम से अपनी पसंदीदा बचपन की स्मृति को जीवंत बनाएं।' :
+                      'Bring a favourite childhood memory to life through a creative digital story and visual narrative using Adobe Express.') +
+            '</p>' +
+            '<div class="bc-tools-badge">🛠️ ' + (isHi ? 'टूल्स: जेनरेटिव AI, विजुअल स्टोरीटेलिंग' : 'Tools: Generative AI, Storytelling, Collage') + '</div>' +
+            '<div style="font-size:.78rem;font-weight:800;color:var(--ink);margin-bottom:8px;">🎨 ' + (isHi ? 'आधिकारिक टेम्पलेट्स:' : 'Official Templates:') + '</div>' +
+            '<div class="bc-tpl-list">' +
+              '<a href="https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:fcf64e48-8456-5141-9d68-55b0d404d468" target="_blank" class="bc-btn-tpl">' +
+                '<span>📄 ' + (isHi ? 'टेम्पलेट 1: चाइल्डहुड ड्रीम्स' : 'Template 1: Childhood Dreams') + '</span> <span>↗</span>' +
+              '</a>' +
+              '<a href="https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:e1cb7d5d-5c61-5064-bfb1-a1d1e94b693e" target="_blank" class="bc-btn-tpl">' +
+                '<span>📄 ' + (isHi ? 'टेम्पलेट 2: मेमोरी कोलाज' : 'Template 2: Memory Collage') + '</span> <span>↗</span>' +
+              '</a>' +
+              '<a href="https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:3fda717c-85e0-57ed-8cab-bf340edd76d9" target="_blank" class="bc-btn-tpl">' +
+                '<span>📄 ' + (isHi ? 'टेम्पलेट 3: डिजिटल कैनवास' : 'Template 3: Digital Canvas') + '</span> <span>↗</span>' +
+              '</a>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="bc-card-actions">' +
+          '<a href="https://youtube.com/live/xY70phB0qiw?feature=share" target="_blank" class="bc-btn-yt">' +
+            '▶ ' + (isHi ? 'लाइव सेशन 3 देखें (YouTube) ↗' : 'Watch Live Session 3 (YouTube) ↗') +
+          '</a>' +
+          '<button type="button" onclick="showToast(\'' + (isHi ? 'प्रोजेक्ट सबमिशन लिंक जल्द ही बूटकैंप के दौरान सक्रिय होगा!' : 'Official project submission link will open during bootcamp week!') + '\')" class="bc-btn-sub pending">' +
+            '📤 ' + (isHi ? 'प्रोजेक्ट सबमिशन (लिंक जल्द खुलेगा)' : 'Project Submission (Link Opening Soon)') +
+          '</button>' +
+        '</div>' +
+      '</div>' +
+
+    '</div>';
+
+  var noticeBox =
+    '<div style="background:var(--surface);border:1.5px dashed var(--border);border-radius:var(--radius);padding:20px;text-align:center;color:var(--ink-2);font-size:.85rem;">' +
+      '📌 <strong>' + (isHi ? 'सबमिशन संबंधी सूचना:' : 'Notice on Submissions:') + '</strong> ' +
+      (isHi ? 'आधिकारिक गूगल फॉर्म सबमिशन लिंक जल्द ही यहां सक्रिय किया जाएगा। तब तक अपने प्रोजेक्ट्स को एडोब एक्सप्रेस खाते में सहेज कर रखें!' :
+              'The official Google Form submission link for student bootcamp projects will be activated here during the bootcamp week. Please save your projects in your school Adobe Express account!') +
+    '</div>';
+
+  return heroBanner + howToGuide + sessionsHtml + noticeBox;
+}
+
 /* ===== SECTIONS DATA ===== */
 var STUDENT_SECTIONS_DATA = {
+  'bootcamp': {
+    num: '🎒',
+    tagEn: 'Special Initiative • Autumn Bootcamp',
+    tagHi: 'विशेष पहल • शरद ऋतु बूटकैंप',
+    titleEn: 'PM SHRI KVS Autumn Bootcamp (17th - 24th October, 2026)',
+    titleHi: 'पीएम श्री केवीएस शरद ऋतु बूटकैंप (17 - 24 अक्टूबर 2026)',
+    descEn: '3 Live interactive masterclasses from 4:00 PM to 5:00 PM: Comic-a-concept, Hero of My Nation, and My Childhood Memory. Use GenAI in Adobe Express!',
+    descHi: 'शाम 4:00 से 5:00 बजे तक 3 लाइव इंटरएक्टिव मास्टरक्लास। यूट्यूब पर देखें, आधिकारिक एडोब एक्सप्रेस टेम्पलेट्स का उपयोग करें और अपनी डिजिटल कहानियां बनाएं!',
+    render: function(lang) { return renderStudentBootcampSection(); }
+  },
   '1': {
     num: '📅',
     tagEn: 'Section 1 • Monthly Activities',
