@@ -12,6 +12,8 @@ let selectedRegion = '';
 let selectedKVCode = null;
 let currentView = 'home';
 let currentRosterFilter = 'all';
+let currentModuleFilter = '';
+let currentSubjectFilter = '';
 let allSchoolsList = [];
 let cpdAttendanceChart = null;
 let cpdCertifiedChart = null;
@@ -648,8 +650,16 @@ function setSchool(kvCode) {
 
   // Render Sub-Views
   currentRosterFilter = 'all';
-  updateRosterFilterCounts(sch.roster || []);
-  renderRosterTable(sch.roster || []);
+  currentModuleFilter = '';
+  currentSubjectFilter = '';
+  const rSearch = document.getElementById('rosterSearch');
+  if (rSearch) rSearch.value = '';
+  document.querySelectorAll('#rosterFilterPills .filter-pill').forEach(b => {
+    b.classList.toggle('active', b.dataset.filter === 'all');
+  });
+
+  populateRosterFilters(sch.roster || []);
+  filterRoster();
   renderCpdCharts(sch);
   renderDcaisView(sch);
 }
@@ -901,6 +911,90 @@ function renderCpdCharts(sch) {
 
 // ==================== 7. TEACHER ATTENDANCE ROSTER (ALL TEACHERS — NO CATEGORY) ====================
 
+function populateRosterFilters(roster) {
+  const modSelect = document.getElementById('rosterModuleFilter');
+  const subjSelect = document.getElementById('rosterSubjectFilter');
+  if (!modSelect && !subjSelect) return;
+
+  const modules = new Set();
+  const subjects = new Set();
+
+  (roster || []).forEach(t => {
+    if (t.m && t.m.trim()) modules.add(t.m.trim());
+    if (t.s && t.s.trim()) subjects.add(t.s.trim());
+  });
+
+  if (modSelect) {
+    const curMod = modSelect.value;
+    const sortedModules = Array.from(modules).sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+    modSelect.innerHTML = '<option value="">All CPD Modules</option>' +
+      sortedModules.map(m => `<option value="${m}">${m}</option>`).join('');
+    if (modules.has(curMod)) {
+      modSelect.value = curMod;
+      currentModuleFilter = curMod;
+    } else {
+      modSelect.value = '';
+      currentModuleFilter = '';
+    }
+  }
+
+  if (subjSelect) {
+    const curSubj = subjSelect.value;
+    const sortedSubjects = Array.from(subjects).sort((a, b) => a.localeCompare(b));
+    subjSelect.innerHTML = '<option value="">All Subjects</option>' +
+      sortedSubjects.map(s => `<option value="${s}">${s}</option>`).join('');
+    if (subjects.has(curSubj)) {
+      subjSelect.value = curSubj;
+      currentSubjectFilter = curSubj;
+    } else {
+      subjSelect.value = '';
+      currentSubjectFilter = '';
+    }
+  }
+
+  const modWrap = document.getElementById('rosterModuleWrap');
+  if (modWrap) modWrap.classList.toggle('has-active-filter', currentModuleFilter !== '');
+
+  const subjWrap = document.getElementById('rosterSubjectWrap');
+  if (subjWrap) subjWrap.classList.toggle('has-active-filter', currentSubjectFilter !== '');
+}
+
+function resetRosterFilters() {
+  currentRosterFilter = 'all';
+  currentModuleFilter = '';
+  currentSubjectFilter = '';
+
+  const searchInput = document.getElementById('rosterSearch');
+  if (searchInput) searchInput.value = '';
+
+  const modSelect = document.getElementById('rosterModuleFilter');
+  if (modSelect) {
+    modSelect.value = '';
+    modSelect.classList.remove('active-filter');
+  }
+
+  const subjSelect = document.getElementById('rosterSubjectFilter');
+  if (subjSelect) {
+    subjSelect.value = '';
+    subjSelect.classList.remove('active-filter');
+  }
+
+  const modWrap = document.getElementById('rosterModuleWrap');
+  if (modWrap) modWrap.classList.remove('has-active-filter');
+
+  const subjWrap = document.getElementById('rosterSubjectWrap');
+  if (subjWrap) subjWrap.classList.remove('has-active-filter');
+
+  document.querySelectorAll('#rosterFilterPills .filter-pill').forEach(b => {
+    b.classList.toggle('active', b.dataset.filter === 'all');
+  });
+
+  const btnReset = document.getElementById('btnResetRosterFilters');
+  if (btnReset) btnReset.style.display = 'none';
+
+  filterRoster();
+}
+
 function updateRosterFilterCounts(roster) {
   let attended = 0, cert = 0, pend = 0;
   (roster || []).forEach(t => {
@@ -929,22 +1023,53 @@ function setRosterFilter(filterType, btn) {
   filterRoster();
 }
 
-function filterRoster() {
+function filterRoster(textQuery) {
   const sch = getActiveSchool();
   if (!sch) return;
+
   const searchInput = document.getElementById('rosterSearch');
-  const q = searchInput ? searchInput.value.toLowerCase().trim() : '';
+  const q = (typeof textQuery === 'string' ? textQuery : (searchInput ? searchInput.value : '')).toLowerCase().trim();
+
+  const modSelect = document.getElementById('rosterModuleFilter');
+  currentModuleFilter = modSelect ? modSelect.value.trim() : '';
+
+  const subjSelect = document.getElementById('rosterSubjectFilter');
+  currentSubjectFilter = subjSelect ? subjSelect.value.trim() : '';
+
+  const modWrap = document.getElementById('rosterModuleWrap');
+  if (modWrap) modWrap.classList.toggle('has-active-filter', currentModuleFilter !== '');
+
+  const subjWrap = document.getElementById('rosterSubjectWrap');
+  if (subjWrap) subjWrap.classList.toggle('has-active-filter', currentSubjectFilter !== '');
+
+  const btnReset = document.getElementById('btnResetRosterFilters');
+  const hasActiveFilters = (currentModuleFilter !== '') || (currentSubjectFilter !== '') || (q !== '') || (currentRosterFilter !== 'all');
+  if (btnReset) {
+    btnReset.style.display = hasActiveFilters ? 'inline-flex' : 'none';
+  }
 
   const all = sch.roster || [];
-  const filtered = all.filter(t => {
-    const matchesSearch = q === '' ||
-                          t.n.toLowerCase().includes(q) ||
-                          t.s.toLowerCase().includes(q) ||
-                          (t.m && t.m.toLowerCase().includes(q)) ||
-                          (t.schoolName && t.schoolName.toLowerCase().includes(q));
-    if (!matchesSearch) return false;
 
-    if (currentRosterFilter === 'all') return true;
+  // Filter by Module and Subject first
+  const baseFiltered = all.filter(t => {
+    if (currentModuleFilter && t.m !== currentModuleFilter) return false;
+    if (currentSubjectFilter && (t.s || '').toLowerCase() !== currentSubjectFilter.toLowerCase()) return false;
+    return true;
+  });
+
+  // Update counts on the status pills based on baseFiltered
+  updateRosterFilterCounts(baseFiltered);
+
+  // Then filter by search and status pill
+  const filtered = baseFiltered.filter(t => {
+    if (q) {
+      const matchName = t.n && t.n.toLowerCase().includes(q);
+      const matchSubj = t.s && t.s.toLowerCase().includes(q);
+      const matchMod = t.m && t.m.toLowerCase().includes(q);
+      const matchSch = t.schoolName && t.schoolName.toLowerCase().includes(q);
+      if (!matchName && !matchSubj && !matchMod && !matchSch) return false;
+    }
+
     if (currentRosterFilter === 'attended') return t.a === 'Yes';
     if (currentRosterFilter === 'certified') return t.crt === 'Dispatched';
     if (currentRosterFilter === 'pending') return t.crt !== 'Dispatched';
