@@ -68,7 +68,7 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 .tile-img-wrap{overflow:hidden;position:relative;flex-shrink:0;height:115px}
 .tile-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
 .tile-card:hover .tile-img{transform:scale(1.05)}
-.tile-img-ov{position:absolute;bottom:8px;left:10px;background:var(--red);color:#FFF;font-size:1.2rem;width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.tile-img-ov{display:none!important}
 .tile-body{padding:16px 18px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
 .tile-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(250,15,0,.12)}
 .tile-tag{font-size:.62rem;font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
@@ -566,11 +566,11 @@ footer p+p{margin-top:5px}
         <div class="tile-body">
           <div>
             <div class="tile-tag" id="sB-tag">Section B</div>
-            <h2 class="tile-title" id="sB-title">CPD Modules</h2>
-            <p class="tile-desc" id="sB-desc">10 accredited professional development modules (Series 1: CPD 01–06 • Series 2: Lessons 1–4) covering NEP 2020 &amp; GenAI pedagogies.</p>
+            <h2 class="tile-title" id="sB-title">CPD Module</h2>
+            <p class="tile-desc" id="sB-desc">CPD 1-6 completed, 10 total modules to complete covering NEP 2020 &amp; GenAI pedagogies.</p>
           </div>
           <div class="tile-footer">
-            <span class="tile-hint" id="sB-hint">10 of 10 Modules • 25 Hours</span>
+            <span class="tile-hint" id="sB-hint">CPD 1–6 Completed (10 Total Modules) • 25 Hours</span>
             <span class="tile-btn" id="sB-btn">Open &rarr;</span>
           </div>
         </div>
@@ -1196,7 +1196,7 @@ var LANG = {
     backBtn:'Back to Sections',
     crumbHome:'Home',
     sAtag:'Section A • Institutional Access', sAtitle:'Adobe ID &amp; Password Access', sAdesc:'Teacher ID directory, missing ID creation request, and step-by-step mobile &amp; desktop login video tutorials.', sAhint:'4 Core Access Portals', sAbtn:'Open Section &rarr;',
-    sBtag:'Section B', sBtitle:'CPD Modules', sBdesc:'10 accredited professional development modules (Series 1: CPD 01–06 • Series 2: Lessons 1–4) covering NEP 2020 & GenAI pedagogies.', sBhint:'10 of 10 Modules • 25 Hours', sBbtn:'Open &rarr;',
+    sBtag:'Section B', sBtitle:'CPD Module', sBdesc:'CPD 1-6 completed, 10 total modules to complete covering NEP 2020 & GenAI pedagogies.', sBhint:'CPD 1–6 Completed (10 Total Modules) • 25 Hours', sBbtn:'Open &rarr;',
     sCtag:'Section C • DCAIS', sCtitle:'Student DCAIS Activities', sCdesc: 'Monitor what DCAIS activities your students are doing across Grades 6-8. Inspect curriculum instructions and templates.', sChint: 'Grades 6-8 Activities', sCbtn:'Open &rarr;',
     sDtag:'Section D', sDtitle:'Classroom Resources', sDdesc:'Curriculum worksheets & Adobe Express design templates for Grades 6-8: Direct links across English, Hindi, Science, Social Science & Maths.', sDhint:'Grades 6–8 Worksheets & Templates', sDbtn:'Open &rarr;',
     flow5:'DCAIS Exam', sEtag:'Section E • DCAIS Exam', sEtitle:'DCAIS Exam &amp; Answer Key', sEdesc:'KVS Semester-1 examination portal: 15 regional Google Form links, exam guidelines, and verified Answer Key.', sEhint:'15 Regions • Answer Key', sEbtn:'Open &rarr;',
@@ -1216,7 +1216,7 @@ var LANG = {
     backBtn:'वापस जाएं',
     crumbHome:'होम',
     sAtag:'सेक्शन A • संस्थागत एक्सेस', sAtitle:'Adobe ID और पासवर्ड एक्सेस', sAdesc:'शिक्षक ID डायरेक्टरी, नई ID अनुरोध फ़ॉर्म, और मोबाइल व डेस्कटॉप लॉगिन वीडियो ट्यूटोरियल।', sAhint:'4 मुख्य एक्सेस टूल्स', sAbtn:'सेक्शन खोलें &rarr;',
-    sBtag:'सेक्शन B', sBtitle:'CPD मॉड्यूल', sBdesc:'10 मान्यता प्राप्त प्रशिक्षण मॉड्यूल (श्रृंखला 1: CPD 01 से 06 एवं श्रृंखला 2: पाठ 1 से 4) का संपूर्ण पाठ्यक्रम।', sBhint:'10 में से 10 मॉड्यूल • 25 घंटे', sBbtn:'खोलें &rarr;',
+    sBtag:'सेक्शन B', sBtitle:'CPD मॉड्यूल', sBdesc:'CPD 1-6 पूर्ण, पूरा करने के लिए कुल 10 मॉड्यूल (NEP 2020 एवं GenAI शिक्षाशास्त्र)।', sBhint:'CPD 1–6 पूर्ण (कुल 10 मॉड्यूल) • 25 घंटे', sBbtn:'खोलें &rarr;',
     sCtag:'सेक्शन C • DCAIS', sCtitle:'छात्र DCAIS गतिविधियाँ', sCdesc: 'देखें कक्षा 6 से 8 तक आपके छात्र कौन सी DCAIS गतिविधियाँ कर रहे हैं।', sChint: 'कक्षा 6-8 गतिविधियाँ', sCbtn:'खोलें &rarr;',
     sDtag:'सेक्शन D', sDtitle:'कक्षा संसाधन', sDdesc:'कक्षा 6-8 के लिए कार्यपत्रक (Worksheets) और Adobe Express टेम्पलेट्स: अंग्रेज़ी, हिंदी, विज्ञान, सामाजिक विज्ञान और गणित के सीधे लिंक।', sDhint:'कक्षा 6-8 कार्यपत्रक और टेम्पलेट्स', sDbtn:'खोलें &rarr;',
     flow5:'DCAIS परीक्षा', sEtag:'सेक्शन E • DCAIS परीक्षा', sEtitle:'DCAIS परीक्षा और उत्तर कुंजी', sEdesc:'KVS सेमेस्टर-1 परीक्षा पोर्टल: 15 क्षेत्रीय गूगल फॉर्म लिंक, परीक्षा दिशानिर्देश और सत्यापित उत्तर कुंजी।', sEhint:'15 क्षेत्र • उत्तर कुंजी', sEbtn:'खोलें &rarr;',
