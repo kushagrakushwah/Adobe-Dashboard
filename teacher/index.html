@@ -1367,9 +1367,51 @@ var CPD_MODULES = [
     week1LabelHi: 'असाइनमेंट जमा करें (सप्ताह-1)',
     week2Assignment: 'https://forms.gle/hFnSNvWabNRtVCWa9',
     week2LabelEn: 'Submit Assignment (Week-2)',
-    week2LabelHi: 'असाइनमेंट जमा करें (सप्ताह-2)',
-    leadAssignmentUrl: 'https://express.adobe.com/publishedV2/urn:aaid:sc:AP:43759e32-bd25-5bb1-ac71-3e917e44bc1d?promoid=Y69SGM5H&sdid=C4SZ2FYJ&mv=other',
-    leadSubmissionUrl: 'https://adobe.ly/CPD3leadershipsubmissionlink'
+    week2LabelHi: 'असाइनमेंट जमा करें (सप्ताह-2)'
+  },
+  {
+    code: 'CPD-L',
+    series: 'Series 1',
+    chapter: 'Level A | Chapter-3',
+    chapterHi: 'लेवल A | अध्याय-3',
+    titleEn: 'CPD Leadership',
+    titleHi: 'CPD लीडरशिप',
+    duration: '3.5 hrs',
+    durationHi: '3.5 घंटे',
+    timeframeEn: 'Assignment CPD 3',
+    timeframeHi: 'असाइनमेंट CPD 3',
+    levelEn: 'Leadership (Level A)',
+    levelHi: 'लीडरशिप (लेवल A)',
+    descEn: '🎯 My Vision Board 2028: Future-Ready School — Create a one-page Vision Board in Adobe Express showcasing your vision for your school in 2028. Use school photos, add future-ready facilities, and include a short vision statement.',
+    descHi: '🎯 मेरा विज़न बोर्ड 2028: भविष्य के लिए तैयार विद्यालय — Adobe Express में 2028 के लिए विद्यालय दृष्टिकोण प्रदर्शित करते हुए 1-पेज का विज़न बोर्ड बनाएं। विद्यालय की तस्वीरों का उपयोग करें, भविष्योन्मुखी सुविधाएं जोड़ें, और एक संक्षिप्त विज़न वक्तव्य शामिल करें।',
+    nepRelevance: 'NEP 2020 Institutional Leadership (Sec 5.15), SQAA Domain 1 Vision & Governance, Digital Infrastructure, 21st Century Skills & Future-Ready Schools',
+    cbseAlignment: 'KVS & CBSE Leadership Capacity Building: Vision 2028 Institutional Roadmap, Digital Pedagogies & Formative School Culture',
+    outcomesEn: [
+      '🎯 Assignment: My Vision Board 2028: Future-Ready School',
+      'Create a one-page Vision Board in Adobe Express showcasing your vision for your school in 2028',
+      'Use real school photos, add future-ready facilities (modern labs, digital classrooms, sports)',
+      'Include a short, inspiring institutional vision statement aligned with NEP 2020',
+      'Submit finalized design link via official Google Form (Assignment -1 | Chapter 3 | Level A Principal)'
+    ],
+    outcomesHi: [
+      '🎯 असाइनमेंट: मेरा विज़न बोर्ड 2028: भविष्य के लिए तैयार विद्यालय',
+      'Adobe Express में 2028 के लिए अपने विद्यालय के विज़न को प्रदर्शित करते हुए 1-पेज का विज़न बोर्ड बनाना',
+      'विद्यालय की वास्तविक तस्वीरों, आधुनिक डिजिटल सुविधाओं और प्रयोगशालाओं का समावेश करना',
+      'NEP 2020 के अनुरूप एक संक्षिप्त एवं प्रेरक संस्थागत विज़न वक्तव्य शामिल करना',
+      'आधिकारिक Google Form (Assignment -1 | Chapter 3 | Level A Principal) द्वारा लिंक जमा करना'
+    ],
+    courseLink: 'https://express.adobe.com/publishedV2/urn:aaid:sc:AP:43759e32-bd25-5bb1-ac71-3e917e44bc1d?promoid=Y69SGM5H&sdid=C4SZ2FYJ&mv=other',
+    courseLabelEn: 'Go to Course ↗',
+    courseLabelHi: 'कोर्स खोलें ↗',
+    recordingLink: 'https://express.adobe.com/publishedV2/urn:aaid:sc:AP:43759e32-bd25-5bb1-ac71-3e917e44bc1d?promoid=Y69SGM5H&sdid=C4SZ2FYJ&mv=other',
+    recordingLabelEn: 'Express Project ↗',
+    recordingLabelHi: 'एक्सप्रेस प्रोजेक्ट ↗',
+    week1Assignment: 'https://express.adobe.com/publishedV2/urn:aaid:sc:AP:43759e32-bd25-5bb1-ac71-3e917e44bc1d?promoid=Y69SGM5H&sdid=C4SZ2FYJ&mv=other',
+    week1LabelEn: 'Open Assignment ↗',
+    week1LabelHi: 'असाइनमेंट खोलें ↗',
+    week2Assignment: 'https://adobe.ly/CPD3leadershipsubmissionlink',
+    week2LabelEn: 'Submit Assignment ↗',
+    week2LabelHi: 'सबमिट असाइनमेंट ↗'
   },
   {
     code: 'CPD-04',
@@ -1641,7 +1683,7 @@ function renderCpdSectionHtml() {
   var tabNav =
     '<div class="cpd-tabs-nav">' +
       '<button class="cpd-tab-btn' + (activeCpdTab === 'all' ? ' active' : '') + '" onclick="switchCpdTab(\'all\')">' +
-        '<span>📚 ' + (isHi ? 'सभी 10 मॉड्यूल (All)' : 'All CPD Modules (10)') + '</span>' +
+        '<span>📚 ' + (isHi ? 'सभी CPD मॉड्यूल (All)' : 'All CPD Modules') + '</span>' +
       '</button>' +
       '<button class="cpd-tab-btn' + (activeCpdTab === 'series1' ? ' active' : '') + '" onclick="switchCpdTab(\'series1\')">' +
         '<span>📖 ' + (isHi ? 'श्रृंखला 1: आधारभूत (CPD 01–06)' : 'Series 1: Foundational (CPD 01–06)') + '</span>' +
@@ -1687,9 +1729,9 @@ function renderCpdSectionHtml() {
 
   var modulesToDisplay = CPD_MODULES;
   if (activeCpdTab === 'series1') {
-    modulesToDisplay = CPD_MODULES.slice(0, 6);
+    modulesToDisplay = CPD_MODULES.filter(function(m) { return m.series !== 'Series 2'; });
   } else if (activeCpdTab === 'series2') {
-    modulesToDisplay = CPD_MODULES.slice(6);
+    modulesToDisplay = CPD_MODULES.filter(function(m) { return m.series === 'Series 2'; });
   }
 
   var cardsHtml = modulesToDisplay.map(function(m) {
@@ -1698,7 +1740,7 @@ function renderCpdSectionHtml() {
     var desc = isHi ? m.descHi : m.descEn;
     var chapter = isHi ? m.chapterHi : m.chapter;
     var outcomes = isHi ? m.outcomesHi : m.outcomesEn;
-    var isSeries2 = (idx >= 6);
+    var isSeries2 = (m.series === 'Series 2');
     var cpdDetailId = 'cpd-detail-' + idx;
 
     return '<div class="rc" style="display:flex;flex-direction:column;justify-content:space-between;' + (isSeries2 ? 'border-color:rgba(79,70,229,0.3);background:linear-gradient(180deg,#FFFFFF 0%,#F8FAFC 100%);' : '') + '">' +
@@ -1722,10 +1764,10 @@ function renderCpdSectionHtml() {
       '<div style="margin-top:auto;padding-top:14px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;">' +
         '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">' +
           '<a href="' + m.courseLink + '" target="_blank" class="btn btn-primary" style="height:36px;justify-content:center;font-size:.82rem;font-weight:700;padding:0 6px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;' + (isSeries2 ? 'background:#4F46E5;border-color:#4F46E5;' : '') + '">' +
-            '🚀 ' + (isHi ? 'कोर्स खोलें ↗' : 'Go to Course ↗') +
+            '🚀 ' + (isHi ? (m.courseLabelHi || 'कोर्स खोलें ↗') : (m.courseLabelEn || 'Go to Course ↗')) +
           '</a>' +
           '<a href="' + m.recordingLink + '" target="_blank" class="btn" style="height:36px;justify-content:center;font-size:.82rem;font-weight:700;padding:0 6px;background:' + (isSeries2 ? '#1E1B4B' : '#4F46E5') + ';color:#FFFFFF;border-radius:var(--radius-sm);text-align:center;text-decoration:none;box-shadow:0 2px 4px rgba(79,70,229,0.2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">' +
-            '🎥 ' + (isHi ? 'रिकॉर्डिंग ↗' : 'Recording ↗') +
+            '🎥 ' + (isHi ? (m.recordingLabelHi || 'रिकॉर्डिंग ↗') : (m.recordingLabelEn || 'Recording ↗')) +
           '</a>' +
         '</div>' +
         '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">' +
@@ -1736,15 +1778,7 @@ function renderCpdSectionHtml() {
             (m.week2Assignment.endsWith('.pdf') ? '📄 ' : '📋 ') + (isHi ? (m.week2LabelHi || 'असाइनमेंट 2 ↗') : (m.week2LabelEn || 'Assignment 2 ↗')) +
           '</a>' +
         '</div>' +
-        (m.leadAssignmentUrl ?
-          '<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">' +
-            '<a href="' + m.leadAssignmentUrl + '" target="_blank" rel="noopener noreferrer" class="btn" style="height:32px;justify-content:center;font-size:.75rem;font-weight:800;background:#FFF1F0;border:1.5px solid rgba(250,15,0,0.35);color:#FA0F00;padding:0 4px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="Assignment CPD 3 (Level A Principal): My Vision Board 2028">' +
-              '🎯 ' + (isHi ? 'प्राचार्य असाइनमेंट ↗' : 'Principal Assignment ↗') +
-            '</a>' +
-            '<a href="' + m.leadSubmissionUrl + '" target="_blank" rel="noopener noreferrer" class="btn" style="height:32px;justify-content:center;font-size:.75rem;font-weight:800;background:#EEF2FF;border:1.5px solid #C7D2FE;color:#4338CA;padding:0 4px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="Submit Assignment 1 (Level A Principal) via Google Form">' +
-              '📝 ' + (isHi ? 'सबमिट फॉर्म ↗' : 'Submit Form ↗') +
-            '</a>' +
-          '</div>' : '') +
+
 
         '<button id="btn-' + cpdDetailId + '" class="tile-toggle-btn" onclick="toggleTileDetails(\'' + cpdDetailId + '\')">' +
           '<span style="display:flex;align-items:center;gap:6px;">' +
