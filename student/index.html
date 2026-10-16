@@ -306,8 +306,8 @@ footer p+p{margin-top:5px}
 .bc-tpl-list { display: flex; flex-direction: column; gap: 6px; }
 .bc-btn-tpl { display: flex; align-items: center; justify-content: space-between; background: #FFF; border: 1.5px solid var(--border); color: var(--ink); padding: 8px 12px; border-radius: 8px; font-size: .8rem; font-weight: 700; text-decoration: none; transition: all .16s; }
 .bc-btn-tpl:hover { border-color: #FA0F00; color: #FA0F00; background: #FFF2F1; transform: translateX(2px); }
-.bc-btn-sub { display: flex; align-items: center; justify-content: center; gap: 6px; background: #059669; color: #FFF; border: none; padding: 9px 16px; border-radius: 8px; font-size: .82rem; font-weight: 800; cursor: pointer; transition: all .18s; width: 100%; }
-.bc-btn-sub:hover { background: #047857; }
+.bc-btn-sub { display: flex; align-items: center; justify-content: center; gap: 6px; background: #059669; color: #FFF; border: none; padding: 9px 16px; border-radius: 8px; font-size: .82rem; font-weight: 800; cursor: pointer; transition: all .18s; width: 100%; text-decoration: none; }
+.bc-btn-sub:hover { background: #047857; color: #FFF; transform: translateY(-1px); }
 .bc-btn-sub.pending { background: var(--surface-3); color: var(--ink-3); border: 1px dashed var(--border); cursor: pointer; }
 .bc-btn-sub.pending:hover { background: var(--surface-2); color: var(--ink-2); }
 
@@ -1660,6 +1660,7 @@ function renderStudentExamSection() {
 /* ===== AUTUMN BOOTCAMP 2026 RENDERER ===== */
 function renderStudentBootcampSection() {
   var isHi = (currentLang === 'hi');
+  var bootcampFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdRhrYIdIu18r_HV0oyuVslHN8NEgEhroRC8c5-BCnp1nbbHA/viewform?usp=header';
 
   var heroBanner =
     '<div class="bc-hero-banner">' +
@@ -1673,8 +1674,13 @@ function renderStudentBootcampSection() {
           (isHi ? '3 लाइव इंटरैक्टिव यूट्यूब सत्र, आधिकारिक एडोब एक्सप्रेस टेम्पलेट्स, और जनरेटिव AI स्टोरीटेलिंग प्रोजेक्ट्स।' :
                   '3 live interactive masterclasses on YouTube: Comic-a-concept, Hero of My Nation, and My Childhood Memory. Use Generative AI in Adobe Express to create digital stories!') +
         '</p>' +
-        '<div style="font-size:.78rem;font-weight:800;color:#FCA5A5;text-transform:uppercase;letter-spacing:.05em;">' +
+        '<div style="font-size:.78rem;font-weight:800;color:#FCA5A5;text-transform:uppercase;letter-spacing:.05em;margin-bottom:14px;">' +
           '✨ ' + (isHi ? 'नवाचार के माध्यम से • शिक्षा के माध्यम से • डिज़ाइन के माध्यम से' : 'Through Innovation. Through Education. Through Design.') +
+        '</div>' +
+        '<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">' +
+          '<a href="' + bootcampFormUrl + '" target="_blank" class="btn btn-primary" style="background:#059669;color:#FFF;padding:8px 18px;border-radius:999px;font-weight:800;font-size:.82rem;text-decoration:none;box-shadow:0 3px 10px rgba(5,150,105,0.4);border:none;">' +
+            '📤 ' + (isHi ? 'प्रोजेक्ट सबमिट करें (Google Form) ↗' : 'Submit Project (Google Form) ↗') +
+          '</a>' +
         '</div>' +
       '</div>' +
       '<div style="display:flex;flex-direction:column;align-items:center;gap:8px;z-index:2;">' +
@@ -1708,7 +1714,7 @@ function renderStudentBootcampSection() {
         '<div class="bc-step-item"><span class="bc-step-num">1</span><span>' + (isHi ? 'शाम 4:00 बजे लाइव क्लास देखें' : 'Watch Live at 4:00 PM') + '</span></div>' +
         '<div class="bc-step-item"><span class="bc-step-num">2</span><span>' + (isHi ? 'एडोब एक्सप्रेस टेम्पलेट खोलें' : 'Open Express Template') + '</span></div>' +
         '<div class="bc-step-item"><span class="bc-step-num">3</span><span>' + (isHi ? 'GenAI से अपनी कला बनाएं' : 'Create with Generative AI') + '</span></div>' +
-        '<div class="bc-step-item"><span class="bc-step-num">4</span><span>' + (isHi ? 'प्रोजेक्ट सबमिट करें' : 'Submit Project Online') + '</span></div>' +
+        '<div class="bc-step-item" style="cursor:pointer;" onclick="window.open(\'' + bootcampFormUrl + '\', \'_blank\')"><span class="bc-step-num" style="background:#059669;color:#FFF;">4</span><span style="font-weight:800;color:#059669;">' + (isHi ? 'गूगल फॉर्म में सबमिट करें ↗' : 'Submit via Google Form ↗') + '</span></div>' +
       '</div>' +
     '</div>';
 
@@ -1743,9 +1749,9 @@ function renderStudentBootcampSection() {
           '<a href="https://express.adobe.com/sp/design/comics" target="_blank" class="bc-btn-tpl">' +
             '<span>🎨 ' + (isHi ? 'कॉमिक कैनवास एडोब एक्सप्रेस में खोलें' : 'Open Comic Canvas in Express') + '</span> <span>↗</span>' +
           '</a>' +
-          '<button type="button" onclick="showToast(\'' + (isHi ? 'प्रोजेक्ट सबमिशन लिंक जल्द ही बूटकैंप के दौरान सक्रिय होगा!' : 'Official project submission link will open during bootcamp week!') + '\')" class="bc-btn-sub pending">' +
-            '📤 ' + (isHi ? 'प्रोजेक्ट सबमिशन (लिंक जल्द खुलेगा)' : 'Project Submission (Link Opening Soon)') +
-          '</button>' +
+          '<a href="' + bootcampFormUrl + '" target="_blank" class="bc-btn-sub">' +
+            '📤 ' + (isHi ? 'प्रोजेक्ट सबमिट करें (Google Form) ↗' : 'Submit Project (Google Form) ↗') +
+          '</a>' +
         '</div>' +
       '</div>' +
 
@@ -1778,9 +1784,9 @@ function renderStudentBootcampSection() {
           '<a href="https://youtube.com/live/TqbePtiMqmM?feature=share" target="_blank" class="bc-btn-yt">' +
             '▶ ' + (isHi ? 'लाइव सेशन 2 देखें (YouTube) ↗' : 'Watch Live Session 2 (YouTube) ↗') +
           '</a>' +
-          '<button type="button" onclick="showToast(\'' + (isHi ? 'प्रोजेक्ट सबमिशन लिंक जल्द ही बूटकैंप के दौरान सक्रिय होगा!' : 'Official project submission link will open during bootcamp week!') + '\')" class="bc-btn-sub pending">' +
-            '📤 ' + (isHi ? 'प्रोजेक्ट सबमिशन (लिंक जल्द खुलेगा)' : 'Project Submission (Link Opening Soon)') +
-          '</button>' +
+          '<a href="' + bootcampFormUrl + '" target="_blank" class="bc-btn-sub">' +
+            '📤 ' + (isHi ? 'प्रोजेक्ट सबमिट करें (Google Form) ↗' : 'Submit Project (Google Form) ↗') +
+          '</a>' +
         '</div>' +
       '</div>' +
 
@@ -1816,19 +1822,31 @@ function renderStudentBootcampSection() {
           '<a href="https://youtube.com/live/xY70phB0qiw?feature=share" target="_blank" class="bc-btn-yt">' +
             '▶ ' + (isHi ? 'लाइव सेशन 3 देखें (YouTube) ↗' : 'Watch Live Session 3 (YouTube) ↗') +
           '</a>' +
-          '<button type="button" onclick="showToast(\'' + (isHi ? 'प्रोजेक्ट सबमिशन लिंक जल्द ही बूटकैंप के दौरान सक्रिय होगा!' : 'Official project submission link will open during bootcamp week!') + '\')" class="bc-btn-sub pending">' +
-            '📤 ' + (isHi ? 'प्रोजेक्ट सबमिशन (लिंक जल्द खुलेगा)' : 'Project Submission (Link Opening Soon)') +
-          '</button>' +
+          '<a href="' + bootcampFormUrl + '" target="_blank" class="bc-btn-sub">' +
+            '📤 ' + (isHi ? 'प्रोजेक्ट सबमिट करें (Google Form) ↗' : 'Submit Project (Google Form) ↗') +
+          '</a>' +
         '</div>' +
       '</div>' +
 
     '</div>';
 
   var noticeBox =
-    '<div style="background:var(--surface);border:1.5px dashed var(--border);border-radius:var(--radius);padding:20px;text-align:center;color:var(--ink-2);font-size:.85rem;">' +
-      '📌 <strong>' + (isHi ? 'सबमिशन संबंधी सूचना:' : 'Notice on Submissions:') + '</strong> ' +
-      (isHi ? 'आधिकारिक गूगल फॉर्म सबमिशन लिंक जल्द ही यहां सक्रिय किया जाएगा। तब तक अपने प्रोजेक्ट्स को एडोब एक्सप्रेस खाते में सहेज कर रखें!' :
-              'The official Google Form submission link for student bootcamp projects will be activated here during the bootcamp week. Please save your projects in your school Adobe Express account!') +
+    '<div style="background:var(--surface);border:1.5px solid #059669;border-left:5px solid #059669;border-radius:var(--radius);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;box-shadow:0 4px 14px rgba(5,150,105,0.08);">' +
+      '<div style="flex:1;min-width:260px;">' +
+        '<div style="font-size:.74rem;font-weight:900;color:#059669;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;">' +
+          '✅ ' + (isHi ? 'आधिकारिक गूगल फॉर्म सबमिशन लिंक सक्रिय' : 'Official Google Form Submission Link Active') +
+        '</div>' +
+        '<h4 style="font-size:1.05rem;font-weight:900;color:var(--ink);margin-bottom:4px;">' +
+          (isHi ? 'ऑटम बूटकैंप 2026 प्रोजेक्ट सबमिशन फॉर्म' : 'Autumn Bootcamp 2026 Project Submission Form') +
+        '</h4>' +
+        '<p style="font-size:.85rem;color:var(--ink-2);margin:0;line-height:1.45;">' +
+          (isHi ? 'सभी 3 सत्रों (सत्र 1: कॉमिक-ए-कॉन्सेप्ट, सत्र 2: हीरो ऑफ माय नेशन, सत्र 3: माय चाइल्डहुड मेमोरी) के प्रोजेक्ट्स को इस आधिकारिक फॉर्म के माध्यम से सबमिट करें।' :
+                  'Submit your projects for all 3 sessions (Session 1: Comic-a-concept, Session 2: Hero of My Nation, Session 3: My Childhood Memory) using this official Google Form.') +
+        '</p>' +
+      '</div>' +
+      '<a href="' + bootcampFormUrl + '" target="_blank" class="btn btn-primary" style="background:#059669;color:#FFF;text-decoration:none;font-weight:800;padding:12px 24px;border-radius:999px;box-shadow:0 4px 14px rgba(5,150,105,0.35);font-size:.9rem;white-space:nowrap;">' +
+        '📤 ' + (isHi ? 'सबमिशन फॉर्म खोलें ↗' : 'Open Submission Form ↗') +
+      '</a>' +
     '</div>';
 
   return heroBanner + howToGuide + sessionsHtml + noticeBox;
