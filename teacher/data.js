@@ -581,7 +581,7 @@ window.ADOBE_DATA = {
         },
         "skills": ["Sequential Art", "Comic Lettering", "Character Design"],
         "duration": "40 mins",
-        "tutorialLink": "https://www.youtube.com/watch?v=M1s8vTaJLrY",
+        "tutorialLink": "https://youtu.be/eRA7DjSb5gs?si=TJkotAxLC9WsvJON",
         "activityLink": "https://express.adobe.com/sp/design/comics",
         "submissionLink": "https://docs.google.com/forms/d/e/1FAIpQLScEzxzVqZp3ivr-C18TAimHJV-hXIFzVaVmR-q7Ab-031xVQA/viewform?usp=header"
       },
