@@ -1196,12 +1196,12 @@ var MONTHS = [
   {
     name: 'November',
     nameHi: 'नवंबर',
-    theme: "Children's Day • My Childhood Dreams",
-    themeHi: 'बाल दिवस • मेरे बचपन के सपने',
-    activity: 'MY CHILDHOOD DREAMS',
-    activityHi: 'मेरे बचपन के सपने (My Childhood Dreams)',
-    desc: 'Design your personal "My Childhood Dreams" creative poster or vision board celebrating Children\'s Day in Adobe Express! Express your hopes, aspirations, and favorite childhood memories.',
-    descHi: 'एडोबी एक्सप्रेस में बाल दिवस के उपलक्ष्य पर अपना रचनात्मक "मेरे बचपन के सपने" पोस्टर या विज़न बोर्ड बनाएं! अपनी आकांक्षाओं, बचपन की यादों और सपनों को व्यक्त करें।',
+    theme: "Children's Day • Childhood Memories / Dreams",
+    themeHi: 'बाल दिवस • बचपन की यादें / सपने',
+    activity: 'CHILDHOOD MEMORIES / MY CHILDHOOD DREAMS',
+    activityHi: 'बचपन की यादें / मेरे बचपन के सपने',
+    desc: 'Design your personal "Childhood Memories" (Existing Schools) or "My Childhood Dreams" (New Schools) creative poster celebrating Children\'s Day in Adobe Express!',
+    descHi: 'एडोबी एक्सप्रेस में बाल दिवस के उपलक्ष्य पर अपना रचनात्मक "बचपन की यादें" (मौजूदा विद्यालय) या "मेरे बचपन के सपने" (नए विद्यालय) पोस्टर बनाएं!',
     dur: '45 min',
     durHi: '45 मिनट',
     skills: ['Poster Design','Creative Expression','Visual Storytelling'],
@@ -1246,6 +1246,21 @@ function renderMonthSectionHtml() {
     var isExisting = (novSchoolType === 'existing');
     createUrl = isExisting ? m.create : (m.createNew || m.create);
 
+    // Dynamic title, theme, and description based on selected school track
+    if (isExisting) {
+      theme = isHi ? 'बाल दिवस • बचपन की यादें' : "Children's Day • Childhood Memories";
+      activity = isHi ? 'बचपन की यादें (Childhood Memories)' : 'CHILDHOOD MEMORIES';
+      desc = isHi
+        ? 'एडोबी एक्सप्रेस में बाल दिवस के उपलक्ष्य पर अपना रचनात्मक "बचपन की यादें" पोस्टर या मेमोरी बोर्ड बनाएं! अपनी बचपन की प्यारी यादों, स्कूल के दोस्तों और अविस्मरणीय पलों को व्यक्त करें।'
+        : 'Design your personal "Childhood Memories" creative poster or memory board celebrating Children\'s Day in Adobe Express! Express your favorite childhood memories, school friends, and nostalgic moments.';
+    } else {
+      theme = isHi ? 'बाल दिवस • मेरे बचपन के सपने' : "Children's Day • My Childhood Dreams";
+      activity = isHi ? 'मेरे बचपन के सपने (My Childhood Dreams)' : 'MY CHILDHOOD DREAMS';
+      desc = isHi
+        ? 'एडोबी एक्सप्रेस में बाल दिवस के उपलक्ष्य पर अपना रचनात्मक "मेरे बचपन के सपने" पोस्टर या विज़न बोर्ड बनाएं! अपनी आकांक्षाओं, बचपन की यादों और भविष्य के सपनों को व्यक्त करें।'
+        : 'Design your personal "My Childhood Dreams" creative poster or vision board celebrating Children\'s Day in Adobe Express! Express your hopes, aspirations, and favorite childhood dreams.';
+    }
+
     schoolToggleBar =
       '<div class="school-toggle-bar">' +
         '<div class="school-toggle-label">' +
@@ -1257,10 +1272,10 @@ function renderMonthSectionHtml() {
         '</div>' +
         '<div class="school-toggle-pills" role="tablist">' +
           '<button type="button" class="st-pill' + (isExisting ? ' active' : '') + '" onclick="setNovSchoolType(\'existing\')">' +
-            '🏛️ ' + (isHi ? 'मौजूदा विद्यालय (Existing Schools)' : 'Existing Schools') +
+            '🏛️ ' + (isHi ? 'मौजूदा विद्यालय: बचपन की यादें' : 'Existing Schools: Childhood Memories') +
           '</button>' +
           '<button type="button" class="st-pill' + (!isExisting ? ' active' : '') + '" onclick="setNovSchoolType(\'new\')">' +
-            '✨ ' + (isHi ? 'नए विद्यालय (New Schools)' : 'New Schools') +
+            '✨ ' + (isHi ? 'नए विद्यालय: मेरे बचपन के सपने' : 'New Schools: My Childhood Dreams') +
           '</button>' +
         '</div>' +
       '</div>';
@@ -1268,8 +1283,8 @@ function renderMonthSectionHtml() {
     trackBadgeHtml =
       '<span class="mcard-track-badge ' + (isExisting ? 'track-existing' : 'track-new') + '">' +
         (isExisting
-          ? (isHi ? '🏛️ मौजूदा विद्यालय ट्रैक' : '🏛️ Existing Schools Track')
-          : (isHi ? '✨ नए विद्यालय ट्रैक' : '✨ New Schools Track')) +
+          ? (isHi ? '🏛️ मौजूदा विद्यालय • बचपन की यादें' : '🏛️ Existing Schools • Childhood Memories')
+          : (isHi ? '✨ नए विद्यालय • My Childhood Dreams' : '✨ New Schools • My Childhood Dreams')) +
       '</span>';
 
     trackCalloutHtml =
@@ -1279,13 +1294,13 @@ function renderMonthSectionHtml() {
           '<div>' +
             '<div class="track-box-title">' +
               (isExisting
-                ? (isHi ? 'मौजूदा केवीएस विद्यालयों के लिए टेम्पलेट (Existing Schools)' : 'Template for Existing KVS Schools')
-                : (isHi ? 'नए केवीएस विद्यालयों के लिए टेम्पलेट (New Schools)' : 'Template for Newly Added KVS Schools')) +
+                ? (isHi ? 'मौजूदा केवीएस विद्यालयों के लिए टेम्पलेट: बचपन की यादें (Childhood Memories)' : 'Template for Existing KVS Schools: Childhood Memories')
+                : (isHi ? 'नए केवीएस विद्यालयों के लिए टेम्पलेट: मेरे बचपन के सपने (My Childhood Dreams)' : 'Template for Newly Added KVS Schools: My Childhood Dreams')) +
             '</div>' +
             '<div class="track-box-desc">' +
               (isExisting
-                ? (isHi ? 'यह टेम्पलेट मौजूदा केवीएस पीएम श्री विद्यालयों के लिए तैयार किया गया है।' : 'Specially curated "My Childhood Dreams" template for Existing KVS PM SHRI schools.')
-                : (isHi ? 'यह टेम्पलेट नए शामिल हुए केवीएस पीएम श्री विद्यालयों के लिए तैयार किया गया है।' : 'Specially curated "My Childhood Dreams" template for Newly Added KVS PM SHRI schools.')) +
+                ? (isHi ? 'यह टेम्पलेट मौजूदा केवीएस पीएम श्री विद्यालयों के लिए "Childhood Memories" थीम पर तैयार किया गया है।' : 'Specially curated "Childhood Memories" template for Existing KVS PM SHRI schools.')
+                : (isHi ? 'यह टेम्पलेट नए शामिल हुए केवीएस पीएम श्री विद्यालयों के लिए "My Childhood Dreams" थीम पर तैयार किया गया है।' : 'Specially curated "My Childhood Dreams" template for Newly Added KVS PM SHRI schools.')) +
             '</div>' +
           '</div>' +
         '</div>' +
@@ -1294,8 +1309,8 @@ function renderMonthSectionHtml() {
     switchLinkHtml =
       '<div style="font-size:.78rem;color:var(--ink-2);margin-top:12px;">' +
         (isExisting
-          ? (isHi ? 'क्या आप नए विद्यालय से हैं? <a href="javascript:void(0)" onclick="setNovSchoolType(\'new\')" style="color:var(--red);font-weight:700;text-decoration:underline;">नए विद्यालय के टेम्पलेट पर जाएँ →</a>' : 'From a newly onboarded KVS school? <a href="javascript:void(0)" onclick="setNovSchoolType(\'new\')" style="color:var(--red);font-weight:700;text-decoration:underline;">Switch to New Schools template →</a>')
-          : (isHi ? 'क्या आप मौजूदा विद्यालय से हैं? <a href="javascript:void(0)" onclick="setNovSchoolType(\'existing\')" style="color:var(--red);font-weight:700;text-decoration:underline;">मौजूदा विद्यालय के टेम्पलेट पर जाएँ →</a>' : 'From an existing KVS school? <a href="javascript:void(0)" onclick="setNovSchoolType(\'existing\')" style="color:var(--red);font-weight:700;text-decoration:underline;">Switch to Existing Schools template →</a>')) +
+          ? (isHi ? 'क्या आप नए विद्यालय से हैं? <a href="javascript:void(0)" onclick="setNovSchoolType(\'new\')" style="color:var(--red);font-weight:700;text-decoration:underline;">नए विद्यालय के टेम्पलेट (My Childhood Dreams) पर जाएँ →</a>' : 'From a newly onboarded KVS school? <a href="javascript:void(0)" onclick="setNovSchoolType(\'new\')" style="color:var(--red);font-weight:700;text-decoration:underline;">Switch to New Schools template (My Childhood Dreams) →</a>')
+          : (isHi ? 'क्या आप मौजूदा विद्यालय से हैं? <a href="javascript:void(0)" onclick="setNovSchoolType(\'existing\')" style="color:var(--red);font-weight:700;text-decoration:underline;">मौजूदा विद्यालय के टेम्पलेट (Childhood Memories) पर जाएँ →</a>' : 'From an existing KVS school? <a href="javascript:void(0)" onclick="setNovSchoolType(\'existing\')" style="color:var(--red);font-weight:700;text-decoration:underline;">Switch to Existing Schools template (Childhood Memories) →</a>')) +
       '</div>';
   }
 

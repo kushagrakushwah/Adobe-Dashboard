@@ -572,20 +572,21 @@ window.ADOBE_DATA = {
       },
       {
         "id": "november",
-        "monthName": { "en": "November", "hi": "à¤¨à¤µà¤‚à¤¬à¤°" },
-        "theme": { "en": "Imagination & Storytelling", "hi": "à¤•à¤²à¥à¤ªà¤¨à¤¾ à¤à¤µà¤‚ à¤•à¤¹à¤¾à¤¨à¥€" },
-        "activityName": { "en": "Children's Day 4-Panel Comic Strip", "hi": "à¤¬à¤¾à¤² à¤¦à¤¿à¤µà¤¸ 4-à¤ªà¥ˆà¤¨à¤² à¤•à¥‰à¤®à¤¿à¤• à¤¸à¥à¤Ÿà¥à¤°à¤¿à¤ª" },
+        "monthName": { "en": "November", "hi": "नवंबर" },
+        "theme": { "en": "Children's Day • Childhood Memories & Dreams", "hi": "बाल दिवस • बचपन की यादें एवं सपने" },
+        "activityName": { "en": "Childhood Memories (Existing) / My Childhood Dreams (New)", "hi": "बचपन की यादें (मौजूदा) / मेरे बचपन के सपने (नए)" },
+        "activityNameExisting": "Childhood Memories",
+        "activityNameNew": "My Childhood Dreams",
         "desc": {
-          "en": "Bring your imagination alive by writing and designing an entertaining 4-panel comic strip with character dialogues, speech bubbles, and sound effects.",
-          "hi": "à¤ªà¤¾à¤¤à¥à¤°à¥‹à¤‚ à¤•à¥‡ à¤¸à¤‚à¤µà¤¾à¤¦, à¤¸à¥à¤ªà¥€à¤š à¤¬à¤¬à¤²à¥à¤¸ à¤”à¤° à¤§à¥à¤µà¤¨à¤¿ à¤ªà¥à¤°à¤­à¤¾à¤µà¥‹à¤‚ à¤•à¥‡ à¤¸à¤¾à¤¥ 4-à¤ªà¥ˆà¤¨à¤² à¤µà¤¾à¤²à¥€ à¤®à¤¨à¥‹à¤°à¤‚à¤œà¤• à¤•à¥‰à¤®à¤¿à¤• à¤¸à¥à¤Ÿà¥à¤°à¤¿à¤ª à¤¬à¤¨à¤¾à¤à¤‚à¥¤"
+          "en": "Design a personal 'Childhood Memories' poster (Existing Schools) or 'My Childhood Dreams' poster (New Schools) celebrating Children's Day in Adobe Express.",
+          "hi": "एडोबी एक्सप्रेस में बाल दिवस के उपलक्ष्य पर 'बचपन की यादें' (मौजूदा विद्यालय) या 'मेरे बचपन के सपने' (नए विद्यालय) का रचनात्मक पोस्टर बनाएं।"
         },
-        "skills": ["Sequential Art", "Comic Lettering", "Character Design"],
-        "duration": "40 mins",
-        "tutorialLink": "https://www.youtube.com/results?search_query=adobe+express+poster+tutorial",
+        "skills": ["Poster Design", "Creative Expression", "Visual Storytelling"],
+        "duration": "45 mins",
+        "tutorialLink": "https://youtu.be/eRA7DjSb5gs?si=TJkotAxLC9WsvJON",
         "activityLink": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:fcf64e48-8456-5141-9d68-55b0d404d468?category=search&pageId=7b5aebd5-bcab-42a5-a163-05d16f18e735",
         "activityLinkNewSchools": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:e1cb7d5d-5c61-5064-bfb1-a1d1e94b693e",
-        "submissionLink": "https://forms.gle/gHbX1TfefpdyNE4B6"
-      },
+        "submissionLink": "https://forms.gle/gHbX1TfefpdyNE4B6"},
       {
         "id": "december",
         "monthName": { "en": "December", "hi": "à¤¦à¤¿à¤¸à¤‚à¤¬à¤°" },
