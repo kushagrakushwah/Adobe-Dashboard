@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Adobe Express for Education - Central Production Data Store
  * Supports both standalone execution (file://) and dynamic CMS integration.
  */
@@ -581,7 +581,7 @@ window.ADOBE_DATA = {
         },
         "skills": ["Sequential Art", "Comic Lettering", "Character Design"],
         "duration": "40 mins",
-        "tutorialLink": "https://youtu.be/eRA7DjSb5gs?si=TJkotAxLC9WsvJON",
+        "tutorialLink": "https://www.youtube.com/results?search_query=adobe+express+comic+strip+tutorial",
         "activityLink": "https://express.adobe.com/sp/design/comics",
         "submissionLink": "https://docs.google.com/forms/d/e/1FAIpQLScEzxzVqZp3ivr-C18TAimHJV-hXIFzVaVmR-q7Ab-031xVQA/viewform?usp=header"
       },
