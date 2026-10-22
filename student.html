@@ -109,6 +109,26 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F8F7F
 .mcard-skills{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}
 .mskill{background:var(--surface);color:var(--ink);border:1px solid var(--border);font-size:.73rem;font-weight:700;padding:3px 10px;border-radius:6px}
 .mcard-actions{display:flex;gap:10px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--border)}
+/* SCHOOL TRACK TOGGLE (NOVEMBER) */
+.school-toggle-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;background:#FFF;border:1.5px solid var(--border);border-left:5px solid #003087;border-radius:var(--radius);padding:14px 18px;margin-bottom:16px;box-shadow:var(--shadow-sm);flex-wrap:wrap}
+.school-toggle-label{display:flex;align-items:center;gap:10px}
+.st-icon{font-size:1.6rem;line-height:1;flex-shrink:0}
+.st-sub{font-size:.74rem;color:var(--ink-2);font-weight:500;margin-top:2px}
+.school-toggle-pills{display:inline-flex;align-items:center;background:var(--surface-3);border:1.5px solid var(--border);border-radius:999px;padding:3px;gap:3px}
+.st-pill{padding:7px 18px;border-radius:999px;font-size:.78rem;font-weight:800;color:var(--ink-2);background:transparent;border:none;cursor:pointer;transition:all .18s;user-select:none;display:inline-flex;align-items:center;gap:6px;line-height:1.2}
+.st-pill:hover{color:var(--red)}
+.st-pill.active{background:var(--red);color:#FFF;box-shadow:0 2px 8px rgba(0,48,135,.28)}
+.mcard-track-badge{font-size:.72rem;font-weight:800;padding:4px 12px;border-radius:999px;letter-spacing:.02em;display:inline-flex;align-items:center;gap:4px}
+.mcard-track-badge.track-existing{background:#EEF4FF;color:#003087;border:1px solid rgba(0,48,135,.25)}
+.mcard-track-badge.track-new{background:#FFF4ED;color:#D95300;border:1px solid rgba(217,83,0,.3)}
+.mcard-track-box{margin:14px 0 16px;padding:12px 16px;border-radius:10px;background:#FFF;border:1.5px dashed var(--border);transition:all .2s ease}
+.mcard-track-box.box-existing{border-color:rgba(0,48,135,.35);background:#F8FAFF}
+.mcard-track-box.box-new{border-color:rgba(255,102,0,.45);background:#FFFBF7}
+.track-box-header{display:flex;align-items:center;gap:12px}
+.track-box-icon{font-size:1.5rem;line-height:1}
+.track-box-title{font-size:.85rem;font-weight:800;color:var(--ink)}
+.track-box-desc{font-size:.76rem;color:var(--ink-2);margin-top:2px;line-height:1.4}
+
 /* BUTTONS */
 .btn{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:999px;font-size:.82rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;white-space:nowrap;transition:all .16s;line-height:1}
 .btn-primary{background:var(--red);color:#FFF;box-shadow:0 2px 8px rgba(250,15,0,.25)}
@@ -1160,6 +1180,7 @@ function applyLang() {
 
 /* ===== MONTH DATA ===== */
 var curMonth = 0;
+var novSchoolType = 'existing'; // 'existing' | 'new'
 var MONTH_SUBMISSION_URL = 'https://forms.gle/gHbX1TfefpdyNE4B6';
 var MONTHS = [
   { name: 'January', nameHi: 'जनवरी', theme: 'Republic Day', themeHi: 'गणतंत्र दिवस', activity: 'Republic Day Poster', activityHi: 'गणतंत्र दिवस पोस्टर', desc: 'Make a colourful poster to celebrate Republic Day! Use bright red, white, and blue colours. Add the Indian flag and a patriotic message.', descHi: 'गणतंत्र दिवस मनाने के लिए एक रंगीन पोस्टर बनाएं! चमकीले रंगों का उपयोग करें, भारतीय तिरंगा और देशभक्ति का संदेश जोड़ें।', dur: '45 min', durHi: '45 मिनट', skills: ['Poster Design','Colour','Typography'], skillsHi: ['पोस्टर डिज़ाइन','रंग संयोजन','टाइपोग्राफी'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+poster+tutorial', create: 'https://express.adobe.com/sp/design/posters', submit: MONTH_SUBMISSION_URL },
@@ -1172,9 +1193,34 @@ var MONTHS = [
   { name: 'August', nameHi: 'अगस्त', theme: 'Independence Day', themeHi: 'स्वतंत्रता दिवस', activity: 'Independence Day Celebration Video', activityHi: 'स्वतंत्रता दिवस समारोह वीडियो', desc: 'Make a short video (30-60 sec) to celebrate India Independence Day! Add photos, patriotic music, and your voice message.', descHi: 'स्वतंत्रता दिवस समारोह के लिए 30-60 सेकंड का वीडियो बनाएं! तस्वीरें, देशभक्ति संगीत और अपनी आवाज़ जोड़ें।', dur: '60 min', durHi: '60 मिनट', skills: ['Video Editing','Narration','Music'], skillsHi: ['वीडियो संपादन','कथावाचन','संगीत'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+video+tutorial', create: 'https://express.adobe.com/sp/design/videos', submit: MONTH_SUBMISSION_URL },
   { name: 'September', nameHi: 'सितंबर', theme: 'Teachers Day', themeHi: 'शिक्षक दिवस', activity: 'Thank You Teacher Card', activityHi: 'थैंक यू टीचर कार्ड', desc: 'Design a beautiful card to thank your favourite teacher! Add their name, a nice photo or illustration, and a message from your heart.', descHi: 'अपने पसंदीदा शिक्षक को धन्यवाद देने के लिए एक सुंदर कार्ड डिज़ाइन करें! उनका नाम और दिल से आभार संदेश लिखें।', dur: '45 min', durHi: '45 मिनट', skills: ['Card Design','Personal Message','Typography'], skillsHi: ['कार्ड डिज़ाइन','व्यक्तिगत संदेश','टाइपोग्राफी'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+card', create: 'https://express.adobe.com/sp/design/cards', submit: MONTH_SUBMISSION_URL },
   { name: 'October', nameHi: 'अक्टूबर', theme: 'Diwali Festive', themeHi: 'दीपावली उत्सव', activity: 'Diwali Greeting & Rangoli Design', activityHi: 'दीवाली ग्रीटिंग और रंगोली डिज़ाइन', desc: 'Create a Diwali greeting card with a beautiful digital rangoli design. Use gold, red, and orange colours. Wish everyone "Happy Diwali!"', descHi: 'सुंदर डिजिटल रंगोली डिज़ाइन के साथ दीवाली ग्रीटिंग कार्ड बनाएं। सुनहरे, लाल और नारंगी रंगों का उपयोग करें।', dur: '55 min', durHi: '55 मिनट', skills: ['Festival Design','Colour','Cultural Art'], skillsHi: ['उत्सव डिज़ाइन','रंग','पारंपरिक कला'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+diwali+poster', create: 'https://express.adobe.com/sp/design/cards', submit: MONTH_SUBMISSION_URL },
-  { name: 'November', nameHi: 'नवंबर', theme: "Children's Day • My Childhood Dreams", themeHi: 'बाल दिवस • मेरे बचपन के सपने', activity: 'MY CHILDHOOD DREAMS', activityHi: 'मेरे बचपन के सपने (My Childhood Dreams)', desc: 'Design your personal "My Childhood Dreams" creative poster or vision board celebrating Children\'s Day in Adobe Express! Express your hopes, aspirations, and favorite childhood memories.', descHi: 'एडोबी एक्सप्रेस में बाल दिवस के उपलक्ष्य पर अपना रचनात्मक "मेरे बचपन के सपने" पोस्टर या विज़न बोर्ड बनाएं! अपनी आकांक्षाओं, बचपन की यादों और सपनों को व्यक्त करें।', dur: '45 min', durHi: '45 मिनट', skills: ['Poster Design','Creative Expression','Visual Storytelling'], skillsHi: ['पोस्टर डिज़ाइन','रचनात्मक अभिव्यक्ति','विज़ुअल स्टोरीटेलिंग'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+poster+tutorial', create: 'https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:fcf64e48-8456-5141-9d68-55b0d404d468?category=search&pageId=7b5aebd5-bcab-42a5-a163-05d16f18e735', submit: MONTH_SUBMISSION_URL },
+  {
+    name: 'November',
+    nameHi: 'नवंबर',
+    theme: "Children's Day • My Childhood Dreams",
+    themeHi: 'बाल दिवस • मेरे बचपन के सपने',
+    activity: 'MY CHILDHOOD DREAMS',
+    activityHi: 'मेरे बचपन के सपने (My Childhood Dreams)',
+    desc: 'Design your personal "My Childhood Dreams" creative poster or vision board celebrating Children\'s Day in Adobe Express! Express your hopes, aspirations, and favorite childhood memories.',
+    descHi: 'एडोबी एक्सप्रेस में बाल दिवस के उपलक्ष्य पर अपना रचनात्मक "मेरे बचपन के सपने" पोस्टर या विज़न बोर्ड बनाएं! अपनी आकांक्षाओं, बचपन की यादों और सपनों को व्यक्त करें।',
+    dur: '45 min',
+    durHi: '45 मिनट',
+    skills: ['Poster Design','Creative Expression','Visual Storytelling'],
+    skillsHi: ['पोस्टर डिज़ाइन','रचनात्मक अभिव्यक्ति','विज़ुअल स्टोरीटेलिंग'],
+    tutorial: 'https://youtu.be/eRA7DjSb5gs?si=TJkotAxLC9WsvJON',
+    create: 'https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:fcf64e48-8456-5141-9d68-55b0d404d468?category=search&pageId=7b5aebd5-bcab-42a5-a163-05d16f18e735',
+    createNew: 'https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:e1cb7d5d-5c61-5064-bfb1-a1d1e94b693e',
+    submit: MONTH_SUBMISSION_URL,
+    hasSchoolToggle: true
+  },
   { name: 'December', nameHi: 'दिसंबर', theme: 'Year in Review', themeHi: 'वर्ष का पुनरावलोकन', activity: 'My Creative Year Portfolio', activityHi: 'मेरा रचनात्मक वर्ष पोर्टफ़ोलियो', desc: 'Look back at all 11 projects you made this year! Create a collage or presentation showing your 3 favourite works. You have come so far!', descHi: 'इस वर्ष आपके द्वारा बनाए गए सभी प्रोजेक्ट देखें! अपने 3 पसंदीदा कार्यों को दर्शाते हुए एक कोलाज या प्रस्तुति बनाएं।', dur: '60 min', durHi: '60 मिनट', skills: ['Portfolio Design','Reflection','Collage'], skillsHi: ['पोर्टफ़ोलियो डिज़ाइन','पुनरावलोकन','कोलाज'], tutorial: 'https://www.youtube.com/results?search_query=adobe+express+portfolio', create: 'https://express.adobe.com/sp/design/collages', submit: MONTH_SUBMISSION_URL }
 ];
+
+function setNovSchoolType(type) {
+  novSchoolType = type;
+  var c = document.getElementById('secContent');
+  if (c) c.innerHTML = renderMonthSectionHtml();
+}
+window.setNovSchoolType = setNovSchoolType;
 
 function renderMonthSectionHtml() {
   var isHi = (currentLang === 'hi');
@@ -1188,21 +1234,93 @@ function renderMonthSectionHtml() {
   var activity = isHi ? m.activityHi : m.activity;
   var desc = isHi ? m.descHi : m.desc;
   var skills = isHi ? (m.skillsHi || m.skills) : m.skills;
+
+  // School toggle logic for November
+  var schoolToggleBar = '';
+  var createUrl = m.create;
+  var trackBadgeHtml = '';
+  var trackCalloutHtml = '';
+  var switchLinkHtml = '';
+
+  if (m.hasSchoolToggle) {
+    var isExisting = (novSchoolType === 'existing');
+    createUrl = isExisting ? m.create : (m.createNew || m.create);
+
+    schoolToggleBar =
+      '<div class="school-toggle-bar">' +
+        '<div class="school-toggle-label">' +
+          '<span class="st-icon">🏫</span>' +
+          '<div>' +
+            '<strong>' + (isHi ? 'विद्यालय श्रेणी चुनें (Select School Category):' : 'Select School Category / विद्यालय श्रेणी:') + '</strong>' +
+            '<div class="st-sub">' + (isHi ? 'अपने विद्यालय के अनुसार सही एडोब एक्सप्रेस टेम्पलेट लोड करें:' : 'Choose your school track to load the dedicated Adobe Express template:') + '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="school-toggle-pills" role="tablist">' +
+          '<button type="button" class="st-pill' + (isExisting ? ' active' : '') + '" onclick="setNovSchoolType(\'existing\')">' +
+            '🏛️ ' + (isHi ? 'मौजूदा विद्यालय (Existing Schools)' : 'Existing Schools') +
+          '</button>' +
+          '<button type="button" class="st-pill' + (!isExisting ? ' active' : '') + '" onclick="setNovSchoolType(\'new\')">' +
+            '✨ ' + (isHi ? 'नए विद्यालय (New Schools)' : 'New Schools') +
+          '</button>' +
+        '</div>' +
+      '</div>';
+
+    trackBadgeHtml =
+      '<span class="mcard-track-badge ' + (isExisting ? 'track-existing' : 'track-new') + '">' +
+        (isExisting
+          ? (isHi ? '🏛️ मौजूदा विद्यालय ट्रैक' : '🏛️ Existing Schools Track')
+          : (isHi ? '✨ नए विद्यालय ट्रैक' : '✨ New Schools Track')) +
+      '</span>';
+
+    trackCalloutHtml =
+      '<div class="mcard-track-box ' + (isExisting ? 'box-existing' : 'box-new') + '">' +
+        '<div class="track-box-header">' +
+          '<span class="track-box-icon">' + (isExisting ? '🏛️' : '🏫') + '</span>' +
+          '<div>' +
+            '<div class="track-box-title">' +
+              (isExisting
+                ? (isHi ? 'मौजूदा केवीएस विद्यालयों के लिए टेम्पलेट (Existing Schools)' : 'Template for Existing KVS Schools')
+                : (isHi ? 'नए केवीएस विद्यालयों के लिए टेम्पलेट (New Schools)' : 'Template for Newly Added KVS Schools')) +
+            '</div>' +
+            '<div class="track-box-desc">' +
+              (isExisting
+                ? (isHi ? 'यह टेम्पलेट मौजूदा केवीएस पीएम श्री विद्यालयों के लिए तैयार किया गया है।' : 'Specially curated "My Childhood Dreams" template for Existing KVS PM SHRI schools.')
+                : (isHi ? 'यह टेम्पलेट नए शामिल हुए केवीएस पीएम श्री विद्यालयों के लिए तैयार किया गया है।' : 'Specially curated "My Childhood Dreams" template for Newly Added KVS PM SHRI schools.')) +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
+    switchLinkHtml =
+      '<div style="font-size:.78rem;color:var(--ink-2);margin-top:12px;">' +
+        (isExisting
+          ? (isHi ? 'क्या आप नए विद्यालय से हैं? <a href="javascript:void(0)" onclick="setNovSchoolType(\'new\')" style="color:var(--red);font-weight:700;text-decoration:underline;">नए विद्यालय के टेम्पलेट पर जाएँ →</a>' : 'From a newly onboarded KVS school? <a href="javascript:void(0)" onclick="setNovSchoolType(\'new\')" style="color:var(--red);font-weight:700;text-decoration:underline;">Switch to New Schools template →</a>')
+          : (isHi ? 'क्या आप मौजूदा विद्यालय से हैं? <a href="javascript:void(0)" onclick="setNovSchoolType(\'existing\')" style="color:var(--red);font-weight:700;text-decoration:underline;">मौजूदा विद्यालय के टेम्पलेट पर जाएँ →</a>' : 'From an existing KVS school? <a href="javascript:void(0)" onclick="setNovSchoolType(\'existing\')" style="color:var(--red);font-weight:700;text-decoration:underline;">Switch to Existing Schools template →</a>')) +
+      '</div>';
+  }
+
   var cardHtml =
+    schoolToggleBar +
     '<div class="mcard">' +
       '<div class="mcard-row">' +
-        '<span class="mcard-theme">' + theme + '</span>' +
+        '<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">' +
+          '<span class="mcard-theme">' + theme + '</span>' +
+          trackBadgeHtml +
+        '</div>' +
         '<span class="mcard-dur">⏱ ' + dur + '</span>' +
       '</div>' +
       '<h3>✨ ' + activity + '</h3>' +
       '<p>' + desc + '</p>' +
+      trackCalloutHtml +
       '<div class="mcard-skills">' + skills.map(function(s){ return '<span class="mskill">' + s + '</span>'; }).join('') + '</div>' +
       '<div class="mcard-actions">' +
         '<a href="' + m.tutorial + '" target="_blank" class="btn btn-dark">' + (isHi ? '▶ ट्यूटोरियल देखें ↗' : '▶ Watch Tutorial ↗') + '</a>' +
-        '<a href="' + m.create + '" target="_blank" class="btn btn-primary">' + (isHi ? '🎨 Adobe Express में बनाएं ↗' : '🎨 Create in Adobe Express ↗') + '</a>' +
+        '<a href="' + createUrl + '" target="_blank" class="btn btn-primary">' + (isHi ? '🎨 Adobe Express में बनाएं ↗' : '🎨 Create in Adobe Express ↗') + '</a>' +
         '<a href="' + m.submit + '" target="_blank" rel="noopener noreferrer" class="btn btn-outline">' + (isHi ? '📤 काम जमा करें ↗' : '📤 Submit My Work ↗') + '</a>' +
       '</div>' +
+      switchLinkHtml +
     '</div>';
+
   return '<p style="font-size:.85rem;color:var(--ink-2);margin-bottom:14px;">' + (isHi ? 'अपनी गतिविधि देखने के लिए किसी महीने पर टैप करें:' : 'Tap a month to see your activity:') + '</p>' +
     '<div class="month-pills">' + pillsHtml + '</div>' +
     '<div id="activeMonthBox">' + cardHtml + '</div>';
@@ -1212,6 +1330,7 @@ function selectMonthTab(i) {
   curMonth = i;
   document.getElementById('secContent').innerHTML = renderMonthSectionHtml();
 }
+
 
 /* ===== FULL DCAIS CONTROLLER (GRADES 6-8 WEEKLY) ===== */
 var selectedAimGrade = null;
