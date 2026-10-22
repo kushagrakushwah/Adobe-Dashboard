@@ -583,6 +583,7 @@ window.ADOBE_DATA = {
         "duration": "40 mins",
         "tutorialLink": "https://www.youtube.com/results?search_query=adobe+express+poster+tutorial",
         "activityLink": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:fcf64e48-8456-5141-9d68-55b0d404d468?category=search&pageId=7b5aebd5-bcab-42a5-a163-05d16f18e735",
+        "activityLinkNewSchools": "https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:e1cb7d5d-5c61-5064-bfb1-a1d1e94b693e",
         "submissionLink": "https://forms.gle/gHbX1TfefpdyNE4B6"
       },
       {
