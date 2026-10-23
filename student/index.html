@@ -1206,7 +1206,11 @@ var MONTHS = [
     durHi: '45 मिनट',
     skills: ['Poster Design','Creative Expression','Visual Storytelling'],
     skillsHi: ['पोस्टर डिज़ाइन','रचनात्मक अभिव्यक्ति','विज़ुअल स्टोरीटेलिंग'],
-    tutorial: 'https://youtu.be/eRA7DjSb5gs?si=TJkotAxLC9WsvJON',
+    tutorialMemoriesEn: 'https://tinyurl.com/Mychildhoodmemoryenglish',
+    tutorialMemoriesHi: 'https://tinyurl.com/My-childhoodmemoryhindi',
+    tutorialDreamsEn: 'https://tinyurl.com/Mychildhooddreamenglish',
+    tutorialDreamsHi: 'https://tinyurl.com/mychildhooddreamhindi',
+    tutorial: 'https://tinyurl.com/Mychildhoodmemoryenglish',
     create: 'https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:fcf64e48-8456-5141-9d68-55b0d404d468?category=search&pageId=7b5aebd5-bcab-42a5-a163-05d16f18e735',
     createNew: 'https://new.express.adobe.com/design/template/urn:aaid:sc:VA6C2:e1cb7d5d-5c61-5064-bfb1-a1d1e94b693e',
     submit: MONTH_SUBMISSION_URL,
@@ -1241,10 +1245,15 @@ function renderMonthSectionHtml() {
   var trackBadgeHtml = '';
   var trackCalloutHtml = '';
   var switchLinkHtml = '';
+  var tutorialBoxHtml = '';
+  var tutorialButtonsHtml = '';
 
   if (m.hasSchoolToggle) {
     var isExisting = (novSchoolType === 'existing');
     createUrl = isExisting ? m.create : (m.createNew || m.create);
+    var tutEn = isExisting ? (m.tutorialMemoriesEn || 'https://tinyurl.com/Mychildhoodmemoryenglish') : (m.tutorialDreamsEn || 'https://tinyurl.com/Mychildhooddreamenglish');
+    var tutHi = isExisting ? (m.tutorialMemoriesHi || 'https://tinyurl.com/My-childhoodmemoryhindi') : (m.tutorialDreamsHi || 'https://tinyurl.com/mychildhooddreamhindi');
+    var trackName = isExisting ? (isHi ? 'बचपन की यादें (Childhood Memories)' : 'Childhood Memories') : (isHi ? 'मेरे बचपन के सपने (My Childhood Dreams)' : 'My Childhood Dreams');
 
     // Dynamic title, theme, and description based on selected school track
     if (isExisting) {
@@ -1267,7 +1276,7 @@ function renderMonthSectionHtml() {
           '<span class="st-icon">🏫</span>' +
           '<div>' +
             '<strong>' + (isHi ? 'विद्यालय श्रेणी चुनें (Select School Category):' : 'Select School Category / विद्यालय श्रेणी:') + '</strong>' +
-            '<div class="st-sub">' + (isHi ? 'अपने विद्यालय के अनुसार सही एडोब एक्सप्रेस टेम्पलेट लोड करें:' : 'Choose your school track to load the dedicated Adobe Express template:') + '</div>' +
+            '<div class="st-sub">' + (isHi ? 'अपने विद्यालय के अनुसार सही एडोब एक्सप्रेस टेम्पलेट व ट्यूटोरियल लोड करें:' : 'Choose your school track to load the dedicated Adobe Express template & tutorials:') + '</div>' +
           '</div>' +
         '</div>' +
         '<div class="school-toggle-pills" role="tablist">' +
@@ -1299,19 +1308,57 @@ function renderMonthSectionHtml() {
             '</div>' +
             '<div class="track-box-desc">' +
               (isExisting
-                ? (isHi ? 'यह टेम्पलेट मौजूदा केवीएस पीएम श्री विद्यालयों के लिए "Childhood Memories" थीम पर तैयार किया गया है।' : 'Specially curated "Childhood Memories" template for Existing KVS PM SHRI schools.')
-                : (isHi ? 'यह टेम्पलेट नए शामिल हुए केवीएस पीएम श्री विद्यालयों के लिए "My Childhood Dreams" थीम पर तैयार किया गया है।' : 'Specially curated "My Childhood Dreams" template for Newly Added KVS PM SHRI schools.')) +
+                ? (isHi ? 'यह टेम्पलेट मौजूदा विद्यालयों के लिए "Childhood Memories" थीम पर तैयार किया गया है। नीचे दिए गए अंग्रेजी या हिंदी ट्यूटोरियल देखें।' : 'Specially curated "Childhood Memories" template for Existing schools. Watch the step-by-step tutorial in English or Hindi below.')
+                : (isHi ? 'यह टेम्पलेट नए शामिल हुए विद्यालयों के लिए "My Childhood Dreams" थीम पर तैयार किया गया है। नीचे दिए गए अंग्रेजी या हिंदी ट्यूटोरियल देखें।' : 'Specially curated "My Childhood Dreams" template for Newly Added schools. Watch the step-by-step tutorial in English or Hindi below.')) +
+            '</div>' +
+            '<div style="margin-top:10px;padding-top:8px;border-top:1px dashed rgba(0,0,0,0.12);display:flex;align-items:center;gap:10px;flex-wrap:wrap;">' +
+              '<span style="font-weight:700;font-size:0.78rem;color:var(--ink-2);">' + (isHi ? '📺 वीडियो ट्यूटोरियल:' : '📺 Video Tutorials:') + '</span>' +
+              '<a href="' + tutEn + '" target="_blank" rel="noopener noreferrer" style="font-size:0.78rem;font-weight:700;color:' + 'var(--red, #FA0F00)' + ';text-decoration:underline;">English Tutorial ↗</a>' +
+              '<span style="color:var(--ink-3);">&bull;</span>' +
+              '<a href="' + tutHi + '" target="_blank" rel="noopener noreferrer" style="font-size:0.78rem;font-weight:700;color:' + 'var(--red, #FA0F00)' + ';text-decoration:underline;">हिंदी ट्यूटोरियल ↗</a>' +
             '</div>' +
           '</div>' +
         '</div>' +
       '</div>';
 
+    tutorialBoxHtml =
+      '<div class="mcard-tutorial-panel" style="margin:14px 0;padding:12px 14px;background:rgba(0,48,135,0.04);border:1.5px solid rgba(0,48,135,0.18);border-radius:10px;">' +
+        '<div style="font-weight:800;font-size:0.85rem;color:' + 'var(--red, #FA0F00)' + ';margin-bottom:6px;display:flex;align-items:center;gap:6px;">' +
+          '<span>🎬</span> ' +
+          '<span>' + (isHi ? 'वीडियो ट्यूटोरियल देखें (' + trackName + '):' : 'Watch Video Tutorial (' + trackName + '):') + '</span>' +
+        '</div>' +
+        '<div style="font-size:0.78rem;color:var(--ink-2);margin-bottom:10px;">' +
+          (isHi ? 'अपनी पसंदीदा भाषा में वीडियो ट्यूटोरियल खोलें और सीखें:' : 'Watch the tutorial in English or Hindi before designing:') +
+        '</div>' +
+        '<div style="display:flex;gap:10px;flex-wrap:wrap;">' +
+          '<a href="' + tutEn + '" target="_blank" rel="noopener noreferrer" class="btn" style="background:#0F172A;color:#FFF;font-size:0.82rem;font-weight:700;padding:8px 16px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 6px rgba(0,0,0,0.15);">' +
+            '📺 <strong>English Tutorial</strong> ↗' +
+          '</a>' +
+          '<a href="' + tutHi + '" target="_blank" rel="noopener noreferrer" class="btn" style="background:' + (isKvs ? '#FA0F00' : '#003087') + ';color:#FFF;font-size:0.82rem;font-weight:700;padding:8px 16px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 6px rgba(0,0,0,0.2);">' +
+            '📺 <strong>हिंदी ट्यूटोरियल</strong> ↗' +
+          '</a>' +
+        '</div>' +
+      '</div>';
+
+    tutorialButtonsHtml =
+      '<a href="' + tutEn + '" target="_blank" rel="noopener noreferrer" class="btn btn-dark" style="background:#0F172A;color:#FFF;display:inline-flex;align-items:center;gap:6px;">' +
+        '▶ ' + (isHi ? 'ट्यूटोरियल (English) ↗' : 'Tutorial (English) ↗') +
+      '</a>' +
+      '<a href="' + tutHi + '" target="_blank" rel="noopener noreferrer" class="btn btn-dark" style="background:' + (isKvs ? '#B91C1C' : '#003087') + ';color:#FFF;display:inline-flex;align-items:center;gap:6px;">' +
+        '▶ ' + (isHi ? 'ट्यूटोरियल (हिंदी) ↗' : 'Tutorial (Hindi) ↗') +
+      '</a>';
+
     switchLinkHtml =
       '<div style="font-size:.78rem;color:var(--ink-2);margin-top:12px;">' +
         (isExisting
-          ? (isHi ? 'क्या आप नए विद्यालय से हैं? <a href="javascript:void(0)" onclick="setNovSchoolType(\'new\')" style="color:var(--red);font-weight:700;text-decoration:underline;">नए विद्यालय के टेम्पलेट (My Childhood Dreams) पर जाएँ →</a>' : 'From a newly onboarded KVS school? <a href="javascript:void(0)" onclick="setNovSchoolType(\'new\')" style="color:var(--red);font-weight:700;text-decoration:underline;">Switch to New Schools template (My Childhood Dreams) →</a>')
-          : (isHi ? 'क्या आप मौजूदा विद्यालय से हैं? <a href="javascript:void(0)" onclick="setNovSchoolType(\'existing\')" style="color:var(--red);font-weight:700;text-decoration:underline;">मौजूदा विद्यालय के टेम्पलेट (Childhood Memories) पर जाएँ →</a>' : 'From an existing KVS school? <a href="javascript:void(0)" onclick="setNovSchoolType(\'existing\')" style="color:var(--red);font-weight:700;text-decoration:underline;">Switch to Existing Schools template (Childhood Memories) →</a>')) +
+          ? (isHi ? 'क्या आप नए विद्यालय से हैं? <a href="javascript:void(0)" onclick="setNovSchoolType(\'new\')" style="color:var(--red,#FA0F00);font-weight:700;text-decoration:underline;">नए विद्यालय के टेम्पलेट व ट्यूटोरियल (My Childhood Dreams) पर जाएँ →</a>' : 'From a newly onboarded school? <a href="javascript:void(0)" onclick="setNovSchoolType(\'new\')" style="color:var(--red,#FA0F00);font-weight:700;text-decoration:underline;">Switch to New Schools template & tutorials (My Childhood Dreams) →</a>')
+          : (isHi ? 'क्या आप मौजूदा विद्यालय से हैं? <a href="javascript:void(0)" onclick="setNovSchoolType(\'existing\')" style="color:var(--red,#FA0F00);font-weight:700;text-decoration:underline;">मौजूदा विद्यालय के टेम्पलेट व ट्यूटोरियल (Childhood Memories) पर जाएँ →</a>' : 'From an existing school? <a href="javascript:void(0)" onclick="setNovSchoolType(\'existing\')" style="color:var(--red,#FA0F00);font-weight:700;text-decoration:underline;">Switch to Existing Schools template & tutorials (Childhood Memories) →</a>')) +
       '</div>';
+  } else {
+    tutorialButtonsHtml =
+      '<a href="' + m.tutorial + '" target="_blank" rel="noopener noreferrer" class="btn btn-dark">' +
+        (isHi ? '▶ ट्यूटोरियल देखें ↗' : '▶ Watch Tutorial ↗') +
+      '</a>';
   }
 
   var cardHtml =
@@ -1327,9 +1374,10 @@ function renderMonthSectionHtml() {
       '<h3>✨ ' + activity + '</h3>' +
       '<p>' + desc + '</p>' +
       trackCalloutHtml +
+      tutorialBoxHtml +
       '<div class="mcard-skills">' + skills.map(function(s){ return '<span class="mskill">' + s + '</span>'; }).join('') + '</div>' +
       '<div class="mcard-actions">' +
-        '<a href="' + m.tutorial + '" target="_blank" class="btn btn-dark">' + (isHi ? '▶ ट्यूटोरियल देखें ↗' : '▶ Watch Tutorial ↗') + '</a>' +
+        tutorialButtonsHtml +
         '<a href="' + createUrl + '" target="_blank" class="btn btn-primary">' + (isHi ? '🎨 Adobe Express में बनाएं ↗' : '🎨 Create in Adobe Express ↗') + '</a>' +
         '<a href="' + m.submit + '" target="_blank" rel="noopener noreferrer" class="btn btn-outline">' + (isHi ? '📤 काम जमा करें ↗' : '📤 Submit My Work ↗') + '</a>' +
       '</div>' +
