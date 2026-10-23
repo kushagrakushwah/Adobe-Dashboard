@@ -2703,7 +2703,8 @@ function renderDcaisTeacherResources(isHi) {
           '<span>✓ Live E-Module (Articulate 360)</span> • ' +
           '<span>✓ Implementation Instructions (PPT)</span> • ' +
           '<span>✓ Guide Book Soft Copy (Google Drive)</span> • ' +
-          '<span>✓ Real-Time Excel Telemetry</span>' +
+          '<span>✓ Real-Time Excel Telemetry</span> • ' +
+          '<span>✓ DCAIS Module 1–4 Recordings</span>' +
         '</div>' +
       '</div>' +
       '<div>' +
@@ -2813,13 +2814,133 @@ function renderDcaisTeacherResources(isHi) {
       '</div>' +
     '</div>';
 
+  
+  /* SECTION 2: DCAIS MODULE TRAINING RECORDINGS (MODULES 1-4) */
+  var recordingsSection =
+    '<div style="margin-bottom:30px;">' +
+      '<div class="dcais-res-section-title">' +
+        '<div>' +
+          '<div style="font-size:.72rem;font-weight:900;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">' +
+            'CATEGORY 2 • DCAIS MODULE TRAINING RECORDINGS' +
+          '</div>' +
+          '<h3>🎬 ' + (isHi ? 'DCAIS मॉड्यूल प्रशिक्षण रिकॉर्डिंग्स (मॉड्यूल 1-4)' : 'DCAIS Module Training Recordings (Modules 1–4)') + '</h3>' +
+        '</div>' +
+        '<span class="dcais-res-badge dcais-res-badge-ready" style="font-size:.76rem;padding:4px 12px;">' +
+          '✓ ' + (isHi ? '4 आधिकारिक सत्र रिकॉर्डिंग्स' : '4 Official Session Recordings') + '</span>' +
+      '</div>' +
+
+      '<div class="dcais-res-grid">' +
+
+        '<!-- Card: Module 1 Recording -->' +
+        '<div class="dcais-res-card" style="border:2px solid #E11D48;box-shadow:0 6px 20px rgba(225,29,72,0.08);">' +
+          '<div>' +
+            '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">' +
+              '<span class="dcais-res-badge" style="background:#FFE4E6;color:#E11D48;border:1px solid #FECDD3;">🎬 Module 1</span>' +
+              '<span style="font-size:.72rem;font-weight:800;color:#E11D48;background:#FFF1F2;padding:2px 8px;border-radius:999px;">Google Drive</span>' +
+            '</div>' +
+            '<h4>' + (isHi ? 'DCAIS मॉड्यूल 1: डिजिटल रचनात्मकता की नींव (सत्र रिकॉर्डिंग)' : 'DCAIS Module 1: Digital Creativity Foundations (Recording)') + '</h4>' +
+            '<p>' +
+              (isHi ? 'मॉड्यूल 1 का आधिकारिक रिकॉर्डेड प्रशिक्षण सत्र: एडोब एक्सप्रेस इंटरफ़ेस नेविगेशन, कैनवास साइज़िंग, बेसिक डिज़ाइन प्रिंसिपल्स और कक्षा 6-8 हेतु प्राथमिक गतिविधियाँ।' :
+                      'Official accredited recording for Module 1: Adobe Express interface tour, canvas sizing, typography fundamentals, and introductory digital communication for middle school.') +
+            '</p>' +
+          '</div>' +
+          '<div class="dcais-res-footer">' +
+            '<div style="display:flex;gap:8px;width:100%;flex-wrap:wrap;">' +
+              '<a href="https://drive.google.com/file/d/1V43u1tbXs4vOV1c5S14_x7XqdZJhyqu4/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#E11D48;border-color:#E11D48;font-size:.82rem;font-weight:800;padding:9px 16px;border-radius:999px;flex:1;text-align:center;text-decoration:none;box-shadow:0 3px 10px rgba(225,29,72,0.25);">' +
+                '🎬 ' + (isHi ? 'रिकॉर्डिंग खोलें ↗' : 'Open Recording ↗') +
+              '</a>' +
+              '<button onclick="navigator.clipboard.writeText(\'https://drive.google.com/file/d/1V43u1tbXs4vOV1c5S14_x7XqdZJhyqu4/view?usp=drive_link\').then(function(){ showResourceToast(\'' + (isHi ? 'मॉड्यूल 1 लिंक कॉपी हो गया!' : 'Module 1 recording link copied!') + '\'); })" class="btn btn-ghost" style="border:1.5px solid #CBD5E1;color:#475569;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;cursor:pointer;">' +
+                '📋 ' + (isHi ? 'कॉपी' : 'Copy') +
+              '</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+
+        '<!-- Card: Module 2 Recording -->' +
+        '<div class="dcais-res-card" style="border:2px solid #7C3AED;box-shadow:0 6px 20px rgba(124,58,237,0.08);">' +
+          '<div>' +
+            '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">' +
+              '<span class="dcais-res-badge" style="background:#EDE9FE;color:#7C3AED;border:1px solid #DDD6FE;">🎬 Module 2</span>' +
+              '<span style="font-size:.72rem;font-weight:800;color:#7C3AED;background:#F5F3FF;padding:2px 8px;border-radius:999px;">Google Drive</span>' +
+            '</div>' +
+            '<h4>' + (isHi ? 'DCAIS मॉड्यूल 2: दृश्य संचार एवं डिज़ाइन (सत्र रिकॉर्डिंग)' : 'DCAIS Module 2: Visual Communication & Design (Recording)') + '</h4>' +
+            '<p>' +
+              (isHi ? 'मॉड्यूल 2 का आधिकारिक रिकॉर्डेड प्रशिक्षण सत्र: कलर पैलेट्स, इमेज एडिटिंग, बैकग्राउंड रिमूवल, पोस्टर एवं इन्फोग्राफिक निर्माण और लेआउट स्ट्रक्चरिंग।' :
+                      'Official accredited recording for Module 2: Color harmony, remove background quick action, photo editing, visual hierarchy, and educational poster design.') +
+            '</p>' +
+          '</div>' +
+          '<div class="dcais-res-footer">' +
+            '<div style="display:flex;gap:8px;width:100%;flex-wrap:wrap;">' +
+              '<a href="https://drive.google.com/file/d/1NFVZOvjnJVlLH73f_EV8qXwCqgKC8GPr/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#7C3AED;border-color:#7C3AED;font-size:.82rem;font-weight:800;padding:9px 16px;border-radius:999px;flex:1;text-align:center;text-decoration:none;box-shadow:0 3px 10px rgba(124,58,237,0.25);">' +
+                '🎬 ' + (isHi ? 'रिकॉर्डिंग खोलें ↗' : 'Open Recording ↗') +
+              '</a>' +
+              '<button onclick="navigator.clipboard.writeText(\'https://drive.google.com/file/d/1NFVZOvjnJVlLH73f_EV8qXwCqgKC8GPr/view?usp=drive_link\').then(function(){ showResourceToast(\'' + (isHi ? 'मॉड्यूल 2 लिंक कॉपी हो गया!' : 'Module 2 recording link copied!') + '\'); })" class="btn btn-ghost" style="border:1.5px solid #CBD5E1;color:#475569;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;cursor:pointer;">' +
+                '📋 ' + (isHi ? 'कॉपी' : 'Copy') +
+              '</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+
+        '<!-- Card: Module 3 Recording -->' +
+        '<div class="dcais-res-card" style="border:2px solid #2563EB;box-shadow:0 6px 20px rgba(37,99,235,0.08);">' +
+          '<div>' +
+            '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">' +
+              '<span class="dcais-res-badge" style="background:#DBEAFE;color:#2563EB;border:1px solid #BFDBFE;">🎬 Module 3</span>' +
+              '<span style="font-size:.72rem;font-weight:800;color:#2563EB;background:#EFF6FF;padding:2px 8px;border-radius:999px;">Google Drive</span>' +
+            '</div>' +
+            '<h4>' + (isHi ? 'DCAIS मॉड्यूल 3: मल्टीमीडिया एवं वीडियो स्टोरीटेलिंग (सत्र रिकॉर्डिंग)' : 'DCAIS Module 3: Multimedia & Video Storytelling (Recording)') + '</h4>' +
+            '<p>' +
+              (isHi ? 'मॉड्यूल 3 का आधिकारिक रिकॉर्डेड प्रशिक्षण सत्र: वीडियो एडिटिंग टाइमलाइन, एनिमेशन कैरेक्टर, वॉयसओवर रिकॉर्डिंग और सहयोगी छात्र प्रोजेक्ट्स।' :
+                      'Official accredited recording for Module 3: Timeline video editing, animate character tools, voiceover narration, audio sync, and collaborative group storytelling.') +
+            '</p>' +
+          '</div>' +
+          '<div class="dcais-res-footer">' +
+            '<div style="display:flex;gap:8px;width:100%;flex-wrap:wrap;">' +
+              '<a href="https://drive.google.com/file/d/1el1dcyKDwfJOYlpLwPn05A3JAgjXsSrp/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#2563EB;border-color:#2563EB;font-size:.82rem;font-weight:800;padding:9px 16px;border-radius:999px;flex:1;text-align:center;text-decoration:none;box-shadow:0 3px 10px rgba(37,99,235,0.25);">' +
+                '🎬 ' + (isHi ? 'रिकॉर्डिंग खोलें ↗' : 'Open Recording ↗') +
+              '</a>' +
+              '<button onclick="navigator.clipboard.writeText(\'https://drive.google.com/file/d/1el1dcyKDwfJOYlpLwPn05A3JAgjXsSrp/view?usp=drive_link\').then(function(){ showResourceToast(\'' + (isHi ? 'मॉड्यूल 3 लिंक कॉपी हो गया!' : 'Module 3 recording link copied!') + '\'); })" class="btn btn-ghost" style="border:1.5px solid #CBD5E1;color:#475569;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;cursor:pointer;">' +
+                '📋 ' + (isHi ? 'कॉपी' : 'Copy') +
+              '</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+
+        '<!-- Card: Module 4 Recording -->' +
+        '<div class="dcais-res-card" style="border:2px solid #D97706;box-shadow:0 6px 20px rgba(217,119,6,0.08);">' +
+          '<div>' +
+            '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">' +
+              '<span class="dcais-res-badge" style="background:#FEF3C7;color:#D97706;border:1px solid #FDE68A;">🎬 Module 4</span>' +
+              '<span style="font-size:.72rem;font-weight:800;color:#D97706;background:#FFFBEB;padding:2px 8px;border-radius:999px;">Google Drive</span>' +
+            '</div>' +
+            '<h4>' + (isHi ? 'DCAIS मॉड्यूल 4: जनरेटिव एआई एवं डिजिटल पोर्टफोलियो (सत्र रिकॉर्डिंग)' : 'DCAIS Module 4: Generative AI & Digital Portfolios (Recording)') + '</h4>' +
+            '<p>' +
+              (isHi ? 'मॉड्यूल 4 का आधिकारिक रिकॉर्डेड प्रशिक्षण सत्र: जिम्मेदार GenAI प्रॉम्प्टिंग, एडोब जुगनू (Firefly) टूल्स, डिजिटल नागरिकता, पूर्वाग्रह शमन और छात्र पोर्टफोलियो।' :
+                      'Official accredited recording for Module 4: Responsible GenAI prompting, Adobe Firefly creative tools, digital ethics, bias mitigation, and student capstone portfolios.') +
+            '</p>' +
+          '</div>' +
+          '<div class="dcais-res-footer">' +
+            '<div style="display:flex;gap:8px;width:100%;flex-wrap:wrap;">' +
+              '<a href="https://drive.google.com/file/d/15ng_PNswkwsVZJ1QO91jtMJkh8imMPZU/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#D97706;border-color:#D97706;font-size:.82rem;font-weight:800;padding:9px 16px;border-radius:999px;flex:1;text-align:center;text-decoration:none;box-shadow:0 3px 10px rgba(217,119,6,0.25);">' +
+                '🎬 ' + (isHi ? 'रिकॉर्डिंग खोलें ↗' : 'Open Recording ↗') +
+              '</a>' +
+              '<button onclick="navigator.clipboard.writeText(\'https://drive.google.com/file/d/15ng_PNswkwsVZJ1QO91jtMJkh8imMPZU/view?usp=drive_link\').then(function(){ showResourceToast(\'' + (isHi ? 'मॉड्यूल 4 लिंक कॉपी हो गया!' : 'Module 4 recording link copied!') + '\'); })" class="btn btn-ghost" style="border:1.5px solid #CBD5E1;color:#475569;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;cursor:pointer;">' +
+                '📋 ' + (isHi ? 'कॉपी' : 'Copy') +
+              '</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+
+      '</div>' +
+    '</div>';
+
   /* SECTION 2: EXCEL TELEMETRY FILES (Already available with you) */
   var excelSection =
     '<div style="margin-bottom:30px;">' +
       '<div class="dcais-res-section-title">' +
         '<div>' +
           '<div style="font-size:.72rem;font-weight:900;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">' +
-            'CATEGORY 2 • MASTER DATA & TELEMETRY' +
+            'CATEGORY 3 • MASTER DATA & TELEMETRY' +
           '</div>' +
           '<h3>📊 ' + (isHi ? 'एक्सेल डेटा फाइलें एवं टेलीमेट्री शीट्स' : 'Excel Data Files & Telemetry Master Sheets') + '</h3>' +
         '</div>' +
@@ -2919,7 +3040,7 @@ function renderDcaisTeacherResources(isHi) {
       '<div class="dcais-res-section-title">' +
         '<div>' +
           '<div style="font-size:.72rem;font-weight:900;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">' +
-            'CATEGORY 3 • PEDAGOGICAL TOOLKITS & GUIDES' +
+            'CATEGORY 4 • PEDAGOGICAL TOOLKITS & GUIDES' +
           '</div>' +
           '<h3>📖 ' + (isHi ? 'अन्य प्रासंगिक शिक्षण संसाधन एवं मैनुअल' : 'Other Relevant Learning Resources & Manuals') + '</h3>' +
         '</div>' +
@@ -2990,7 +3111,7 @@ function renderDcaisTeacherResources(isHi) {
       '</div>' +
     '</div>';
 
-  return headerBanner + emoduleSection + excelSection + toolkitsSection;
+  return headerBanner + emoduleSection + recordingsSection + excelSection + toolkitsSection;
 }
 
 var teacherMonitorMonth = 'all';
