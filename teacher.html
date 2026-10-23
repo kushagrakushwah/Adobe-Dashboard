@@ -2253,14 +2253,9 @@ function renderCpdLeadershipSection(isHi) {
             '</p>' +
           '</div>' +
           '<div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid #F1F5F9;padding-top:14px;">' +
-            '<div style="display:flex;gap:8px;flex-wrap:wrap;">' +
-              '<a href="https://tinyurl.com/cpd3principaldigitalliteracy" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#DC2626;border-color:#DC2626;font-size:.82rem;font-weight:800;padding:9px 16px;border-radius:999px;text-decoration:none;flex:1;text-align:center;box-shadow:0 3px 10px rgba(220,38,38,0.25);">' +
-                '🎬 ' + (isHi ? 'रिकॉर्डिंग खोलें (tinyurl) ↗' : 'Watch Recording (tinyurl) ↗') +
-              '</a>' +
-              '<button onclick="playCpd3VideoModal()" class="btn btn-outline" style="border:1.5px solid #FCA5A5;color:#DC2626;font-size:.82rem;font-weight:800;padding:9px 14px;border-radius:999px;cursor:pointer;background:#FFF5F5;">' +
-                '▶ ' + (isHi ? 'प्लेयर' : 'Play') +
-              '</button>' +
-            '</div>' +
+            '<a href="https://tinyurl.com/cpd3principaldigitalliteracy" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#DC2626;border-color:#DC2626;font-size:.84rem;font-weight:800;padding:10px 18px;border-radius:999px;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 14px rgba(220,38,38,0.3);width:100%;box-sizing:border-box;">' +
+              '🎬 ' + (isHi ? 'रिकॉर्डिंग खोलें (tinyurl) ↗' : 'Watch Recording (tinyurl) ↗') +
+            '</a>' +
             '<button onclick="navigator.clipboard.writeText(\'https://tinyurl.com/cpd3principaldigitalliteracy\').then(function(){ showResourceToast(\'' + (isHi ? 'रिकॉर्डिंग लिंक कॉपी हो गया!' : 'Recording link copied!') + '\'); })" class="btn btn-ghost" style="border:1.5px solid #CBD5E1;color:#475569;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;cursor:pointer;width:100%;">' +
               '📋 ' + (isHi ? 'रिकॉर्डिंग URL कॉपी करें' : 'Copy Recording URL') +
             '</button>' +
