@@ -1338,13 +1338,7 @@ function renderMonthSectionHtml() {
         '</div>' +
       '</div>';
 
-    tutorialButtonsHtml =
-      '<a href="' + tutEn + '" target="_blank" rel="noopener noreferrer" class="btn btn-dark" style="background:#0F172A;color:#FFF;display:inline-flex;align-items:center;gap:6px;">' +
-        '▶ ' + (isHi ? 'ट्यूटोरियल (English) ↗' : 'Tutorial (English) ↗') +
-      '</a>' +
-      '<a href="' + tutHi + '" target="_blank" rel="noopener noreferrer" class="btn btn-dark" style="background:' + '#B91C1C' + ';color:#FFF;display:inline-flex;align-items:center;gap:6px;">' +
-        '▶ ' + (isHi ? 'ट्यूटोरियल (हिंदी) ↗' : 'Tutorial (Hindi) ↗') +
-      '</a>';
+    tutorialButtonsHtml = '';
 
     switchLinkHtml =
       '<div style="font-size:.78rem;color:var(--ink-2);margin-top:12px;">' +
