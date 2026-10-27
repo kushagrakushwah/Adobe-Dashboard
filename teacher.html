@@ -2735,18 +2735,24 @@ function renderDcaisTeacherResources(isHi) {
           '<div>' +
             '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">' +
               '<span class="dcais-res-badge dcais-res-badge-blue">📊 Instructions Presentation</span>' +
-              '<span style="font-size:.72rem;font-weight:800;color:#003087;background:#EEF2FF;padding:2px 8px;border-radius:999px;">tinyurl</span>' +
+              '<span style="font-size:.72rem;font-weight:800;color:#003087;background:#EEF2FF;padding:2px 8px;border-radius:999px;">PPT & Schedule</span>' +
             '</div>' +
             '<h4>' + (isHi ? 'DCAIS क्रियान्वयन निर्देश प्रस्तुति (Implementation Instructions)' : 'DCAIS Implementation Instructions Presentation') + '</h4>' +
             '<p>' +
-              (isHi ? 'विद्यालय प्रमुखों एवं शिक्षकों के लिए DCAIS क्रियान्वयन रोडमैप: 35-मिनट साप्ताहिक लैब समय-सारिणी, कक्षा 6-8 पाठ्यक्रम रूपरेखा, शिक्षक दायित्व और चरण-दर-चरण विद्यालय निष्पादन निर्देश।' :
-                      'Official operational presentation for school leaders and teachers: 35-minute lab scheduling, Grades 6–8 curriculum roadmap, pedagogical framework, and step-by-step school execution instructions.') +
+              (isHi ? 'विद्यालय प्रमुखों एवं शिक्षकों के लिए DCAIS क्रियान्वयन रोडमैप (स्लाइड्स 1-8): 35-मिनट साप्ताहिक लैब समय-सारिणी, मासिक ICT कनेक्ट लिंक, कक्षा 6-8 पाठ्यक्रम रूपरेखा, शिक्षक दायित्व और चरण-दर-चरण विद्यालय निष्पादन निर्देश।' :
+                      'Official operational presentation for school leaders and ICT instructors: 35-minute lab scheduling, monthly connect links, weekly modules index, Grades 6–8 curriculum roadmap, and school execution instructions.') +
             '</p>' +
           '</div>' +
           '<div class="dcais-res-footer">' +
             '<div style="display:flex;gap:8px;width:100%;flex-wrap:wrap;">' +
               '<a href="https://tinyurl.com/KVSDCAISinstructions" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#003087;border-color:#003087;font-size:.82rem;font-weight:800;padding:9px 18px;border-radius:999px;flex:1;text-align:center;text-decoration:none;box-shadow:0 3px 10px rgba(0,48,135,0.25);">' +
                 '📥 ' + (isHi ? 'प्रस्तुति खोलें (tinyurl) ↗' : 'Open Presentation (tinyurl) ↗') +
+              '</a>' +
+              '<a href="https://tinyurl.com/KVSDCAIS" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border:1.5px solid #003087;color:#003087;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;text-decoration:none;background:#EEF2FF;" title="Monthly Connect - Every last day of month at 11:30 AM">' +
+                '📅 ' + (isHi ? 'मासिक कनेक्ट (11:30 AM)' : 'Monthly Connect') + ' ↗' +
+              '</a>' +
+              '<a href="https://tinyurl.com/DCAISModules" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="border:1.5px solid #CBD5E1;color:#475569;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;text-decoration:none;" title="Slide 5 Weekly Modules Link">' +
+                '🗓️ ' + (isHi ? 'साप्ताहिक मॉड्यूल' : 'Weekly Modules') + ' ↗' +
               '</a>' +
               '<button onclick="navigator.clipboard.writeText(\'https://tinyurl.com/KVSDCAISinstructions\').then(function(){ showResourceToast(\'' + (isHi ? 'प्रस्तुति लिंक कॉपी हो गया!' : 'Presentation link copied!') + '\'); })" class="btn btn-ghost" style="border:1.5px solid #CBD5E1;color:#475569;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;cursor:pointer;">' +
                 '📋 ' + (isHi ? 'कॉपी' : 'Copy') +
@@ -2764,19 +2770,22 @@ function renderDcaisTeacherResources(isHi) {
             '</div>' +
             '<h4>' + (isHi ? 'DCAIS ई-मॉड्यूल: डिजिटल रचनात्मकता और एआई कौशल (आर्टिकुलेट 360)' : 'DCAIS E-Module: Digital Creativity & AI Skills (Articulate 360)') + '</h4>' +
             '<p>' +
-              (isHi ? 'केंद्रीय विद्यालय एवं सीबीएसई मध्य विद्यालय के छात्रों और शिक्षकों के लिए आधिकारिक इंटरएक्टिव ई-लर्निंग कोर्सवेयर। इसमें स्व-गति से सीखने योग्य पाठ, दृश्य डिज़ाइन के मूल सिद्धांत, डिजिटल नागरिकता और जिम्मेदार जनरेटिव एआई साक्षरता शामिल है।' :
-                      'Official interactive e-learning courseware on Articulate 360 for middle school students (Grades 6–8) and educators. Features self-paced bite-sized learning, design fundamentals, visual hierarchy, digital storytelling, and responsible AI literacy.') +
+              (isHi ? 'केंद्रीय विद्यालय एवं सीबीएसई मध्य विद्यालय के छात्रों और शिक्षकों के लिए आधिकारिक इंटरएक्टिव ई-लर्निंग कोर्सवेयर (NIT ग्रुप B अद्यतित संस्करण)। इसमें स्व-गति से सीखने योग्य पाठ, दृश्य डिज़ाइन के मूल सिद्धांत, डिजिटल नागरिकता और जिम्मेदार जनरेटिव एआई साक्षरता शामिल है।' :
+                      'Official interactive e-learning courseware on Articulate 360 for middle school students (Grades 6–8) and educators (NIT Group B Updated Edition). Features self-paced bite-sized learning, design fundamentals, visual hierarchy, digital storytelling, and responsible AI literacy.') +
             '</p>' +
           '</div>' +
           '<div class="dcais-res-footer">' +
             '<div style="display:flex;gap:8px;width:100%;flex-wrap:wrap;">' +
-              '<a href="https://360.articulate.com/review/content/56299152-1dd5-42df-984f-3f3a54e2426c/review" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#059669;border-color:#059669;font-size:.82rem;font-weight:800;padding:9px 18px;border-radius:999px;flex:1;text-align:center;text-decoration:none;box-shadow:0 3px 10px rgba(5,150,105,0.25);">' +
+              '<a href="https://360.eu.articulate.com/review/content/f72ce4a6-b142-4155-9a27-85a4d3a5df5e/review" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#059669;border-color:#059669;font-size:.82rem;font-weight:800;padding:9px 18px;border-radius:999px;flex:1;text-align:center;text-decoration:none;box-shadow:0 3px 10px rgba(5,150,105,0.25);">' +
                 '🚀 ' + (isHi ? 'ई-मॉड्यूल लाइव खोलें ↗' : 'Launch E-Module ↗') +
               '</a>' +
               '<button onclick="openEmoduleSyllabusModal()" class="btn btn-outline" style="border:1.5px solid #059669;color:#059669;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;cursor:pointer;background:#F0FDF4;">' +
                 '📋 ' + (isHi ? 'सिलेबस' : 'Syllabus') +
               '</button>' +
-              '<button onclick="navigator.clipboard.writeText(\'https://360.articulate.com/review/content/56299152-1dd5-42df-984f-3f3a54e2426c/review\').then(function(){ showResourceToast(\'' + (isHi ? 'ई-मॉड्यूल लिंक कॉपी हो गया!' : 'E-Module link copied!') + '\'); })" class="btn btn-ghost" style="border:1.5px solid #CBD5E1;color:#475569;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;cursor:pointer;">' +
+              '<a href="https://docs.google.com/spreadsheets/d/13ixEiJAG1kssCH3EVQe9HB5gU1oMqrUGjZpYdsGkiRM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border:1.5px solid #047857;color:#047857;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;text-decoration:none;background:#ECFDF5;" title="Slide 4 Module Completion Tracker">' +
+                '📊 ' + (isHi ? 'पूर्णता ट्रैकर' : 'Completion Tracker') + ' ↗' +
+              '</a>' +
+              '<button onclick="navigator.clipboard.writeText(\'https://360.eu.articulate.com/review/content/f72ce4a6-b142-4155-9a27-85a4d3a5df5e/review\').then(function(){ showResourceToast(\'' + (isHi ? 'ई-मॉड्यूल लिंक कॉपी हो गया!' : 'E-Module link copied!') + '\'); })" class="btn btn-ghost" style="border:1.5px solid #CBD5E1;color:#475569;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;cursor:pointer;">' +
                 '📋 ' + (isHi ? 'कॉपी' : 'Copy') +
               '</button>' +
             '</div>' +
@@ -2787,24 +2796,29 @@ function renderDcaisTeacherResources(isHi) {
         '<div class="dcais-res-card" style="border:2.5px solid #F59E0B;box-shadow:0 6px 20px rgba(245,158,11,0.08);">' +
           '<div>' +
             '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">' +
-              '<span class="dcais-res-badge" style="background:#FEF3C7;color:#D97706;border:1px solid #FDE68A;">📖 GUIDE BOOK SOFT COPY</span>' +
-              '<span style="font-size:.72rem;font-weight:800;color:#92400E;background:#FEF3C7;padding:2px 8px;border-radius:999px;">Google Drive</span>' +
+              '<span class="dcais-res-badge" style="background:#FEF3C7;color:#D97706;border:1px solid #FDE68A;">📖 GUIDE BOOK SOFT COPY & MANUALS</span>' +
+              '<span style="font-size:.72rem;font-weight:800;color:#92400E;background:#FEF3C7;padding:2px 8px;border-radius:999px;">Google Drive Repository</span>' +
             '</div>' +
-            '<h4>' + (isHi ? 'गाइड बुक सॉफ्ट कॉपी — DCAIS बुक 2026 (गूगल ड्राइव)' : 'GUIDE BOOK SOFT COPY — DCAIS Book 2026 (Google Drive)') + '</h4>' +
+            '<h4>' + (isHi ? 'DCAIS गाइड बुक सॉफ्ट कॉपी एवं शिक्षक नियमावली (अंग्रेज़ी व हिंदी)' : 'DCAIS Guide Book Soft Copy & Teacher Manual (English & Hindi)') + '</h4>' +
             '<p>' +
-              (isHi ? 'DCAIS 2026 पाठ्यपुस्तक एवं पाठ्यक्रम गाइड की आधिकारिक पूर्ण सॉफ्ट कॉपी। इसमें कक्षा में कराने योग्य व्यावहारिक अभ्यास, चरण-दर-चरण विज़ुअल निर्देश, प्रोजेक्ट प्रॉम्प्ट्स और शिक्षण नियमावली शामिल है।' :
-                      'Official complete curriculum soft copy of the DCAIS 2026 textbook. Contains classroom instructions, exercises, project prompts, and visual guides across all modules for middle school.') +
+              (isHi ? 'DCAIS 2026 आधिकारिक पाठ्यक्रम रिपॉजिटरी (प्रस्तुति स्लाइड 4): कक्षा 6-8 हेतु पूर्ण अंग्रेज़ी गाइडबुक (128 पृष्ठ, NSQF एवं NCVET अनुमोदित), शिक्षक नियमावली (L1), संपूर्ण गूगल ड्राइव फ़ोल्डर, एवं हिंदी संस्करण मय क्लासरूम अभ्यास स्कैन।' :
+                      'Official complete curriculum repository from Slide 4 of the DCAIS resource presentation: Complete English Edition Guidebook (Grades 6–8, 128 pages, NSQF & NCVET aligned), Teacher Manual Level 1, Master Google Drive folder, and Hindi Edition with exercise scans.') +
             '</p>' +
           '</div>' +
           '<div class="dcais-res-footer">' +
             '<div style="display:flex;gap:8px;width:100%;flex-wrap:wrap;">' +
-              '<a href="https://drive.google.com/file/d/1XPaOTOnlwvfgk5tj_E8ruZduKZsIfmTR/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#D97706;border-color:#D97706;font-size:.82rem;font-weight:800;padding:9px 18px;border-radius:999px;flex:1;text-align:center;text-decoration:none;box-shadow:0 3px 10px rgba(217,119,6,0.25);">' +
-                '📖 ' + (isHi ? 'गाइड बुक सॉफ्ट कॉपी ↗' : 'Open Guide Book Soft Copy ↗') +
+              '<a href="https://drive.google.com/file/d/1jc8UKVJ9fTeQq_t6-yvqCQz4myvtAdHA/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#D97706;border-color:#D97706;font-size:.82rem;font-weight:800;padding:9px 16px;border-radius:999px;flex:1;text-align:center;text-decoration:none;box-shadow:0 3px 10px rgba(217,119,6,0.25);">' +
+                '📖 ' + (isHi ? 'अंग्रेज़ी गाइडबुक (Grades 6–8) ↗' : 'English Guidebook (Grades 6–8) ↗') +
               '</a>' +
-              '<a href="https://drive.google.com/file/d/1581hh8cbYUh1aNEDHaDGqy6urTsPj7od/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border:1.5px solid #D97706;color:#D97706;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;text-decoration:none;background:#FFFBEB;">' +
-                '📄 ' + (isHi ? 'पेज स्कैन' : 'Scans') + ' ↗' +
-              '</a>' +
-              '<button onclick="navigator.clipboard.writeText(\'https://drive.google.com/file/d/1XPaOTOnlwvfgk5tj_E8ruZduKZsIfmTR/view?usp=sharing\').then(function(){ showResourceToast(\'' + (isHi ? 'गाइड बुक लिंक कॉपी हो गया!' : 'Guide Book link copied!') + '\'); })" class="btn btn-ghost" style="border:1.5px solid #CBD5E1;color:#475569;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;cursor:pointer;">' +
+              '<a href="https://drive.google.com/file/d/1SpVaCbY-TEYHfFbmUleByx7f6bCJ1IAk/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border:1.5px solid #D97706;color:#92400E;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;text-decoration:none;background:#FFFBEB;">' +
+                '📘 ' + (isHi ? 'शिक्षक नियमावली (L1) ↗' : 'Teacher Manual (L1) ↗') + '</a>' +
+              '<a href="https://drive.google.com/drive/folders/1H7W_5q0b-3aRjb7x4TtvclPfyx8KpWOi?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="border:1.5px solid #003087;color:#003087;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;text-decoration:none;background:#EEF2FF;">' +
+                '📁 ' + (isHi ? 'संपूर्ण ड्राइव फ़ोल्डर ↗' : 'Master Drive Folder ↗') + '</a>' +
+              '<a href="https://drive.google.com/file/d/1XPaOTOnlwvfgk5tj_E8ruZduKZsIfmTR/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="border:1.5px solid #CBD5E1;color:#475569;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;text-decoration:none;">' +
+                '📄 ' + (isHi ? 'हिंदी संस्करण ↗' : 'Hindi Edition ↗') + '</a>' +
+              '<a href="https://drive.google.com/file/d/1581hh8cbYUh1aNEDHaDGqy6urTsPj7od/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="border:1.5px solid #CBD5E1;color:#475569;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;text-decoration:none;">' +
+                '📑 ' + (isHi ? 'स्कैन' : 'Scans') + ' ↗</a>' +
+              '<button onclick="navigator.clipboard.writeText(\'https://drive.google.com/drive/folders/1H7W_5q0b-3aRjb7x4TtvclPfyx8KpWOi?usp=sharing\').then(function(){ showResourceToast(\'' + (isHi ? 'गाइड बुक ड्राइव फ़ोल्डर लिंक कॉपी हो गया!' : 'Guide Book drive folder link copied!') + '\'); })" class="btn btn-ghost" style="border:1.5px solid #CBD5E1;color:#475569;font-size:.8rem;font-weight:800;padding:7px 12px;border-radius:999px;cursor:pointer;">' +
                 '📋 ' + (isHi ? 'कॉपी' : 'Copy') +
               '</button>' +
             '</div>' +
@@ -2814,8 +2828,8 @@ function renderDcaisTeacherResources(isHi) {
       '</div>' +
     '</div>';
 
-  
-  /* SECTION 2: DCAIS MODULE TRAINING RECORDINGS (MODULES 1-4) */
+
+    /* SECTION 2: DCAIS MODULE TRAINING RECORDINGS (MODULES 1-4) */
   var recordingsSection =
     '<div style="margin-bottom:30px;">' +
       '<div class="dcais-res-section-title">' +
@@ -5365,7 +5379,7 @@ function openEmoduleSyllabusModal() {
         '</div>' +
 
         '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;border-top:1px solid #E2E8F0;padding-top:14px;">' +
-          '<a href="https://360.articulate.com/review/content/56299152-1dd5-42df-984f-3f3a54e2426c/review" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#FA0F00;border-color:#FA0F00;font-size:.82rem;font-weight:800;padding:8px 18px;border-radius:999px;text-decoration:none;">' +
+          '<a href="https://360.eu.articulate.com/review/content/f72ce4a6-b142-4155-9a27-85a4d3a5df5e/review" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:#FA0F00;border-color:#FA0F00;font-size:.82rem;font-weight:800;padding:8px 18px;border-radius:999px;text-decoration:none;">' +
             '🚀 ' + (isHi ? 'ई-मॉड्यूल लाइव खोलें (Articulate 360) ↗' : 'Launch Live E-Module (Articulate 360) ↗') +
           '</a>' +
           '<button onclick="closeAppModal()" class="btn btn-outline" style="border:1.5px solid #CBD5E1;color:#475569;font-size:.82rem;font-weight:800;padding:8px 20px;border-radius:999px;">' +
